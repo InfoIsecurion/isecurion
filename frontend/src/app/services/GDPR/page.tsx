@@ -468,7 +468,7 @@ function page() {
                                     className="relative grid min-w-0 grid-cols-[30px_minmax(0,1fr)] gap-x-3 sm:grid-cols-[minmax(0,1fr)_44px_minmax(0,1fr)] sm:gap-x-0"
                                 >
                                     {/* Left content */}
-                                    <LeftAnimation>
+                                   
                                     <div
                                         className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${item.side === "left"
                                             ? "sm:pr-7 sm:text-right lg:pr-8"
@@ -489,7 +489,7 @@ function page() {
                                             </>
                                         )}
                                     </div>
-                                    </LeftAnimation>
+                              
 
                                     {/* Number marker */}
                                     <div className="absolute left-0 top-0 z-10 flex h-[30px] w-[30px] shrink-0 items-center justify-center border border-[#8E7029] bg-[#10151D] text-[9px] font-normal text-[#C8912A] sm:relative sm:col-start-2 sm:row-start-1 sm:mx-auto sm:h-[36px] sm:w-[36px]">
@@ -497,7 +497,7 @@ function page() {
                                     </div>
 
                                     {/* Right content */}
-                                    <RightAnimation>
+                                 
                                     <div
                                         className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${item.side === "right"
                                             ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
@@ -518,7 +518,7 @@ function page() {
                                             </>
                                         )}
                                     </div>
-                                    </RightAnimation>
+                               
                                 </AnimatedCard>
                             ))}
                         </div>

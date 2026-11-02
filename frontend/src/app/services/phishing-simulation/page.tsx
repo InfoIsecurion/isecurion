@@ -728,7 +728,7 @@ function page() {
             </LeftAnimation>
 
             {/* ---------- RIGHT: DEVICE FRAME + DASHBOARD ---------- */}
-            <RightAnimation>
+            <Animation>
               <div className="relative min-w-0 mx-auto w-full max-w-[680px] lg:mx-0 lg:max-w-none">
 
                 {/* Wider than the column on lg+, so it runs off the right edge of the screen */}
@@ -757,7 +757,7 @@ function page() {
                   </div>
                 </div>
               </div>
-            </RightAnimation>
+            </Animation>
 
           </div>
         </div>
@@ -1058,7 +1058,7 @@ function page() {
             </LeftAnimation>
 
             {/* Right: Deliverables grid */}
-            <RightAnimation>
+            <Animation>
               <div className="grid min-w-0 grid-cols-1 overflow-hidden rounded-[6px] border border-[#7D70F03D] sm:grid-cols-2">
                 {phishingDeliverables.map((item, index) => (
                   <AnimatedCard
@@ -1087,7 +1087,7 @@ function page() {
                   </AnimatedCard>
                 ))}
               </div>
-            </RightAnimation>
+            </Animation>
           </div>
         </div>
       </section>
@@ -1212,12 +1212,12 @@ function page() {
               </div>
             </LeftAnimation>
 
-            <RightAnimation>
+            <Animation>
               <p className="max-w-[400px] text-[15px] leading-[24px] text-[#C3C7D1] sm:text-[17px] sm:leading-[28px] md:ml-auto md:mt-5 text-center sm:text-left">
                 Typical timeline for enterprise engagements. Schedules are adjusted to
                 business cycles and regulatory windows.
               </p>
-            </RightAnimation>
+            </Animation>
           </div>
 
           {/* Roadmap cards */}
