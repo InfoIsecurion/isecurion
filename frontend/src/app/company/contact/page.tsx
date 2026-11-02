@@ -1,11 +1,23 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import LocationMap from "../../../components/ui/LocationMap";
 import leftBackground from "../../../assets/contact/left_background.png";
 import contactBg from "../../../assets/contact/Section.svg";
 import { Animation } from "../../../components/ui/Animation";
+import { contactForm } from "../../../services/api/contact";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { Turnstile } from "@marsidev/react-turnstile";
 
+interface ContactFormData {
+  fullname: string;
+  company: string;
+  email: string;
+  phonenumber: string;
+  message: string;
+  turnstileToken: string;
+}
 const enquiredata = [
   {
     id: 1,
@@ -89,8 +101,44 @@ const contactDots = [
 ];
 
 function Contact() {
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [loading, setLoading] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>();
+
+  // this is the api calling
+  const submit = async (data: ContactFormData) => {
+    setLoading(true);
+    try {
+      if (!turnstileToken) {
+        toast.error("Please complete CAPTCHA verification");
+        return;
+      }
+      const response = await contactForm({ ...data, turnstileToken });
+      if (response.status === 200) {
+        toast.success(response.message);
+        reset();
+      } else {
+        toast.error(response.message);
+      }
+    } catch (error) {
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#131331] to-[#0C2023]">
+      <link
+        rel="preload"
+        as="image"
+        href={contactBg.src}
+        fetchPriority="high"
+      />
       <section
         className="relative mx-auto max-w-7xl bg-cover bg-center bg-repeat py-15"
         style={{ backgroundImage: `url(${contactBg.src})` }}
@@ -115,87 +163,85 @@ function Contact() {
           <div className="flex flex-col lg:flex-row gap-15">
             {/* left section  */}
             <div className="flex-1 space-y-4">
-              <Animation>
-                <div className="space-y-4 flex flex-col  items-center lg:items-start">
-                  <div className="w-fit px-4 py-1 rounded-4xl bg-[#161B2F]">
-                    <p className="text-sm font-medium flex items-center gap-2 text-[#B4CAFD]">
-                      <span>
-                        <Icon
-                          icon="material-symbols:contact-support-rounded"
-                          className="text-[#0F66EA] w-[25px] h-[25px]"
-                        />
-                      </span>
-                      {""}
-                      CONTACT US
-                    </p>
-                  </div>
-                  <h1 className="text-white text-center lg:text-left lg:leading-[56px]">
-                    We'd love to hear <br /> from you
-                  </h1>
-                  <p className="text-[18px] font-normal text-center lg:text-left leading-7 text-[#D1D1D1] max-w-[424px] leading-[31px]">
-                    Have a question, feedback, or need help? Our team is here to
-                    assist you. Whether you're a current customer or just
-                    exploring ISECURION, we're happy to help.
+              <div className="space-y-4 flex flex-col  items-center lg:items-start">
+                <div className="w-fit px-4 py-1 rounded-4xl bg-[#161B2F]">
+                  <p className="text-sm font-medium flex items-center gap-2 text-[#B4CAFD]">
+                    <span>
+                      <Icon
+                        icon="material-symbols:contact-support-rounded"
+                        className="text-[#0F66EA] w-[25px] h-[25px]"
+                      />
+                    </span>
+                    {""}
+                    CONTACT US
                   </p>
                 </div>
-              </Animation>
-              <Animation>
-                <div className="gap-5 mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
-                  <div className="flex items-center gap-4 p-5 rounded-lg bg-[#0F66EA29]">
-                    <div className="w-[45px] h-[45px] rounded-full flex items-center justify-center bg-[#002A69]">
-                      <Icon
-                        icon="material-symbols:mail-shield-rounded"
-                        className="w-[21px] h-[21px] text-white"
-                      />
-                    </div>
-                    <div className="">
-                      <p className="text-sm font-medium text-white">
-                        For job related queries:
-                      </p>
-                      <p className="text font-medium text-[#D1D1D1]">
-                        careers@isecurion.com
-                      </p>
-                    </div>
+                <h1 className="text-white text-center lg:text-left lg:leading-[56px]">
+                  We'd love to hear <br /> from you
+                </h1>
+                <p className="text-base sm:text-[18px] font-normal text-center lg:text-left leading-7 text-[#D1D1D1] max-w-[424px] leading-[31px]">
+                  Have a question, feedback, or need help? Our team is here to
+                  assist you. Whether you're a current customer or just
+                  exploring ISECURION, we're happy to help.
+                </p>
+              </div>
+
+              <div className="gap-5 mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
+                <div className="flex items-center gap-4 p-5 rounded-lg bg-[#0F66EA29]">
+                  <div className="w-[45px] h-[45px] rounded-full flex items-center justify-center bg-[#002A69]">
+                    <Icon
+                      icon="material-symbols:mail-shield-rounded"
+                      className="w-[21px] h-[21px] text-white"
+                    />
                   </div>
-                  <div className="flex items-center gap-4 p-5 rounded-lg bg-[#0F66EA29]">
-                    <div className="w-[45px] h-[45px] rounded-full flex items-center justify-center bg-[#002A69]">
-                      <Icon
-                        icon="solar:call-medicine-bold"
-                        className="w-[21px] h-[21px] text-white"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-sm font-medium text-white">
-                        Call / Whatsapp
-                      </p>
-                      <p className="text-sm font-medium text-[#D1D1D1]">
-                        8861201570 (Mon-Fri, 10:00 AM - 7:00 PM)
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4 p-5 rounded-lg bg-[#0F66EA29]">
-                    <div className="w-[45px] h-[45px] shrink-0 rounded-full flex items-center justify-center bg-[#002A69]">
-                      <Icon
-                        icon="vaadin:office"
-                        className="w-[21px] h-[21px] text-white"
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-sm font-medium text-white">
-                        Head Office
-                      </p>
-                      <p className="text-sm font-medium text-[#D1D1D1] max-w-[323px]">
-                        45, Kanakapura Main Rd, Paramount Gardens,
-                        Talaghattapura, Bengaluru, Karnataka 560109
-                      </p>
-                    </div>
+                  <div className="">
+                    <p className="text-sm font-medium text-white">
+                      For job related queries:
+                    </p>
+                    <p className="text font-medium text-[#D1D1D1]">
+                      careers@isecurion.com
+                    </p>
                   </div>
                 </div>
-              </Animation>
+                <div className="flex items-center gap-4 p-5 rounded-lg bg-[#0F66EA29]">
+                  <div className="w-[45px] h-[45px] rounded-full flex items-center justify-center bg-[#002A69]">
+                    <Icon
+                      icon="solar:call-medicine-bold"
+                      className="w-[21px] h-[21px] text-white"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-sm font-medium text-white">
+                      Call / Whatsapp
+                    </p>
+                    <p className="text-sm font-medium text-[#D1D1D1]">
+                      8861201570 (Mon-Fri, 10:00 AM - 7:00 PM)
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 p-5 rounded-lg bg-[#0F66EA29]">
+                  <div className="w-[45px] h-[45px] shrink-0 rounded-full flex items-center justify-center bg-[#002A69]">
+                    <Icon
+                      icon="vaadin:office"
+                      className="w-[21px] h-[21px] text-white"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-sm font-medium text-white">
+                      Head Office
+                    </p>
+                    <p className="text-sm font-medium text-[#D1D1D1] max-w-[323px]">
+                      45, Kanakapura Main Rd, Paramount Gardens, Talaghattapura,
+                      Bengaluru, Karnataka 560109
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+
             {/* right section form  */}
-            <Animation>
-              <div className="flex-1 space-y-5 rounded-[23px] p-4 sm:p-7 bg-[#000C1C]">
+            <div className="flex-1  rounded-[23px] p-4 sm:p-7 bg-[#000C1C]">
+              <form className="space-y-5" onSubmit={handleSubmit(submit)}>
                 <div className="flex flex-col md:flex-row w-full items-center justify-between  gap-5">
                   <div className="w-full flex flex-col gap-2">
                     <label
@@ -206,22 +252,31 @@ function Contact() {
                     </label>
                     <input
                       type="text"
-                      className="text-sm font-normal px-4 py-4 w-full rounded-[10px] outline-none border-[1.14px] border-[#262D3D] text-[#D1D1D1]"
+                      className="text-sm font-normal px-4 py-3 w-full rounded-[10px] outline-none border-[1.14px] border-[#262D3D] text-[#D1D1D1]"
                       placeholder="First name"
+                      {...register("fullname", {
+                        required: "Full name is required",
+                      })}
                     />
+                    {errors.fullname && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.fullname.message}
+                      </p>
+                    )}
                   </div>
                   <div className="w-full flex flex-col gap-2">
                     <label
                       htmlFor=""
                       className="text-sm font-medium text-white"
                     >
-                      Your Company Name{" "}
+                      Company Name{" "}
                       {/* <span className="text-[#E42F23]">*</span>{" "} */}
                     </label>
                     <input
                       type="text"
-                      className="text-sm font-normal px-4 py-4 w-full rounded-[10px] outline-none border-[1.14px] border-[#262D3D] text-[#D1D1D1]"
+                      className="text-sm font-normal px-4 py-3 w-full rounded-[10px] outline-none border-[1.14px] border-[#262D3D] text-[#D1D1D1]"
                       placeholder="Company name"
+                      {...register("company")}
                     />
                   </div>
                 </div>
@@ -235,9 +290,15 @@ function Contact() {
                     </label>
                     <input
                       type="email"
-                      className="text-sm font-normal px-4 py-4 w-full rounded-[10px] outline-none border-[1.14px] border-[#262D3D] text-[#D1D1D1]"
+                      className="text-sm font-normal px-4 py-3 w-full rounded-[10px] outline-none border-[1.14px] border-[#262D3D] text-[#D1D1D1]"
                       placeholder="youremail@gmail.com"
+                      {...register("email", { required: "Email is required" })}
                     />
+                    {errors.email && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.email.message}
+                      </p>
+                    )}
                   </div>
                   <div className="w-full flex flex-col gap-2">
                     <label
@@ -249,9 +310,17 @@ function Contact() {
                     </label>
                     <input
                       type="tel"
-                      className="text-sm font-normal px-4 py-4 w-full rounded-[10px] outline-none border-[1.14px] border-[#262D3D] text-[#D1D1D1]"
+                      className="text-sm font-normal px-4 py-3 w-full rounded-[10px] outline-none border-[1.14px] border-[#262D3D] text-[#D1D1D1]"
                       placeholder="+91 987-654-321"
+                      {...register("phonenumber", {
+                        required: "Phone number is required",
+                      })}
                     />
+                    {errors.phonenumber && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.phonenumber.message}
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div className="flex">
@@ -262,7 +331,7 @@ function Contact() {
                     >
                       Service Interested In
                     </label>
-                    <select className="text-sm font-normal px-4 py-4 w-full rounded-[10px] outline-none border-[1.14px] border-[#262D3D] text-[#D1D1D1]">
+                    <select className="text-sm font-normal px-4 py-3.5 w-full rounded-[10px] outline-none border-[1.14px] border-[#262D3D] text-[#D1D1D1]">
                       <option value="Select an option">Select an option</option>
                       <option value="1">1</option>
                     </select>
@@ -275,31 +344,33 @@ function Contact() {
                       className="text-sm font-medium text-white"
                     >
                       How Can We Help?{" "}
-                      <span className="text-[#E42F23]">*</span>{" "}
                     </label>
                     <textarea
-                      rows={10}
+                      rows={5}
                       className="text-sm font-normal px-4 py-2.5 w-full rounded-[10px] outline-none border-[1.14px] border-[#262D3D] text-[#D1D1D1]"
                       placeholder="Leave us a message..."
+                      {...register("message")}
                     />
                   </div>
                 </div>
-                <div className="flex items-center gap-5">
-                  <p className="text-sm font-medium text-white">Captcha</p>{" "}
-                  <span className="px-8 py-1.5 rounded-md text-white bg-[#1F72888A] text-[15px]">
-                    ZRLD9Y
-                  </span>
+                <div className="max-w-[300px] overflow-hidden flex flex-col gap-2">
+                  <p className="text-sm font-medium text-white">Captcha</p>
+
+                  <Turnstile
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                    onSuccess={(token) => setTurnstileToken(token)}
+                    onExpire={() => setTurnstileToken("")}
+                    onError={() => setTurnstileToken("")}
+                  />
                 </div>
-                <input
-                  type="text"
-                  className="text-sm font-normal px-4 py-3.5 w-full rounded-[10px] outline-none border-[1.14px] border-[#262D3D] text-[#D1D1D1]"
-                  placeholder="Enter the text shown above"
-                />
+
                 <div className="flex gap-3">
                   <input
                     type="checkbox"
-                    className="border-[1.4px] border-[#8F90AB]"
+                    required
+                    className="appearance-auto not-checked:appearance-none w-4 h-4 rounded-sm cursor-pointer  text-white border-[1.4px] border-[#D1D1D1] bg-[#000C1C] "
                   />
+
                   <p className="text-[11px] font-medium text-[#D1D1D1] max-w-[500px]">
                     By clicking submit below, you agree to our Terms of Use and
                     Privacy Policy. Additionally, you consent to allow ISECURION
@@ -310,17 +381,17 @@ function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="flex w-full items-center justify-center gap-2 rounded-[10px] border-[2px] border-[#3263B1] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] py-3 text-base font-semibold text-white cursor-pointer"
+                  className={`flex w-full items-center justify-center gap-2 rounded-[10px] border-[2px] border-[#3263B1] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] py-3 text-base font-semibold text-white cursor-pointer ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
                 >
-                  <span>Send Message</span>
+                  <span>{loading ? "Sending..." : "Send Message"}</span>
 
                   <Icon
                     icon="at-icons:arrow-right"
                     className="h-[15px] w-[15px]"
                   />
                 </button>
-              </div>
-            </Animation>
+              </form>
+            </div>
           </div>
 
           {/* contact cards  */}

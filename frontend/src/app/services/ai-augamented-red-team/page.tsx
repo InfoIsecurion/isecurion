@@ -1,15 +1,26 @@
 "use client";
-import React from "react";
-// import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Icon } from "@iconify/react";
 import { AnimatedCard, Animation } from "../../../components/ui/Animation";
-import { motion } from "framer-motion";
 import aienvironment from "../../../assets/services/aienvironment.svg";
 import whatwereceivebackground from "../../../assets/services/whatwereceive.svg";
 import airedteaming from "../../../assets/services/ai-redteaming.png";
-import benchmark from "../../../assets/services/benchmarkAi.jpg";
 import Image from "next/image";
 import FAQSection from "../../../components/sections/FAQSection";
+
+import { aiAugamented } from "../../../services/api/contact";
+import { toast } from "react-toastify";
+import { useState } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
+
+interface ContactFormData {
+  email: string;
+  orgname: string;
+  phonenumber: string;
+  country: string;
+  aifootprint: string;
+  turnstileToken: string;
+}
 
 const whyRedTeamDifferent = [
   {
@@ -297,7 +308,8 @@ const aiRedTeamAssessmentFAQs = [
       "AI-Augmented Red Team testing simulates attack paths where AI systems are the target, the weapon, or both. It covers AI supply chain attack simulation against ML pipelines, LLM/agent red teaming including prompt injection and jailbreaks, deepfake-based vishing and BEC simulation, and AI-accelerated recon benchmarking - going beyond traditional network and human-focused red teaming.",
   },
   {
-    question: "Does ISECURION deliver AI-Augmented Red Team engagements outside India?",
+    question:
+      "Does ISECURION deliver AI-Augmented Red Team engagements outside India?",
     answer:
       "Yes. ISECURION delivers AI-Augmented Red Team engagements globally, including the United States, United Kingdom, Europe, the GCC (UAE, Saudi Arabia, Qatar), Singapore, and Australia, through a mix of remote engagement and on-site delivery, coordinated across time zones by a dedicated engagement lead.",
   },
@@ -312,12 +324,14 @@ const aiRedTeamAssessmentFAQs = [
       "Each of the four modules - Supply Chain Attack Simulation, LLM/Agent Red Teaming, Deepfake Vishing/BEC Simulation, and AI-Accelerated Recon Benchmark - can be scoped and priced standalone. Bundling two or more modules earns a discount, and the full suite is available at a flat package price.",
   },
   {
-    question: "Is the deepfake vishing simulation legal and ethical across jurisdictions?",
+    question:
+      "Is the deepfake vishing simulation legal and ethical across jurisdictions?",
     answer:
       "Yes. Deepfake voice or video content is only created and used with documented consent from the impersonated individual, under signed rules of engagement tailored to local law in the client's jurisdiction, and destroyed after the engagement per agreed retention terms.",
   },
   {
-    question: "How does this align with data protection rules like GDPR or DPDP?",
+    question:
+      "How does this align with data protection rules like GDPR or DPDP?",
     answer:
       "Scoping and rules of engagement are adapted to the relevant data protection framework for the client's jurisdiction - including GDPR in Europe, DPDP in India, and equivalent frameworks in the GCC, Singapore, and Australia - so that test data handling, consent, and retention comply with local requirements.",
   },
@@ -344,6 +358,31 @@ const aiRedTeamAssessmentFAQs = [
 ];
 
 function AiAugamentedRedTeam() {
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [loading, setLoading] = useState(false);
+  const {
+    handleSubmit,
+    reset,
+    register,
+    formState: { errors },
+  } = useForm<ContactFormData>();
+
+  // this is the api calling
+  const submit = async (data: ContactFormData) => {
+    setLoading(true);
+    try {
+      const response = await aiAugamented({ ...data, turnstileToken });
+      if (response.status === 200) {
+        toast.success(response.message);
+      } else {
+        toast.error(response.message);
+      }
+    } catch (error) {
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="bg-[#060D1B]">
       {/* this is the hero section  */}
@@ -355,15 +394,10 @@ function AiAugamentedRedTeam() {
             <p className="text-base font-semibold text-[#E24B4A]">
               AI-AUGMENTED RED TEAM
             </p>
-            <h1 className="font-semibold leading-[40px] md:leading-[55px] text-[#FFFFFF]">
-              AI-Augmented Red Team Services
-            </h1>
-            {/* <AnimatedHeading1
-              text="AI-Augmented Red Team Services"
-              className="font-semibold leading-[40px] md:leading-[55px] text-[#FFFFFF]"
-            ></AnimatedHeading1> */}
+            <h1 className=" text-[#FFFFFF]">AI-Augmented Red Team Services</h1>
+
             <div>
-              <p className="text-base sm:text-lg leading-7 md:leading-8 text-[#D1D1D1]">
+              <p className="text-base sm:text-[17px] font-medium leading-[26px] sm:leading-[28px]  text-[#D1D1D1]">
                 ISECURION’s AI-Augmented Red Team tests AI supply chains, LLMs,
                 agents, deepfake-driven social engineering, and AI-accelerated
                 reconnaissance.
@@ -394,93 +428,185 @@ function AiAugamentedRedTeam() {
             </div>
           </div>
           {/* right  */}
-          <div className="w-full flex-1 rounded-3xl  px-6 py-8 bg-[#202123]">
+          <div className="w-full flex-1 rounded-3xl  px-7 py-8 bg-[#202123]">
             <div className="space-y-1">
-              <h3 className="text-[22px] font-semibold text-[#FFFFFF]">
+              <h3 className="text-base sm:text-lg font-semibold text-[#FFFFFF]">
                 Request AI-Augmented Red Team Consultation
               </h3>
-              <p className="text-base sm:text-lg font-medium text-[#D9D9D9]">
+              <p className="text-sm sm:text-base font-medium text-[#D9D9D9]">
                 Share your AI footprint and get a tailored quote within 24
                 hours.
               </p>
             </div>
-            <div className="mt-4">
-              <form className="space-y-4">
+            <div className="mt-5">
+              <form className="space-y-4" onSubmit={handleSubmit(submit)}>
+                {/* work email + org name  */}
                 <div className="flex flex-col sm:flex-row gap-5 ">
-                  <div className="flex flex-col gap-3 w-full">
+                  <div className="flex flex-col gap-2 w-full">
                     <label
                       htmlFor=""
-                      className="text-[15px] font-medium text-[#FEFEFE]"
+                      className="text-sm font-medium text-[#FEFEFE]"
                     >
                       Work Email <span className="text-[#E42F23]"> *</span>
                     </label>
                     <input
                       type="email"
                       placeholder="youremail@gmail.com"
-                      className="px-3 py-2.5  rounded-[10px] outline-none text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                      className="text-sm font-normal px-3 py-3  rounded-[10px] outline-none text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                      {...register("email", {
+                        required: "Email is required",
+                      })}
                     />
+                    {errors.email && (
+                      <p className="text-sm font-normal  text-red-500">
+                        {errors.email.message}
+                      </p>
+                    )}
                   </div>
-                  <div className="flex flex-col gap-3 w-full">
+                  <div className="flex flex-col gap-2 w-full">
                     <label
                       htmlFor=""
-                      className="text-[15px] font-medium text-[#FEFEFE]"
+                      className="text-sm font-medium text-[#FEFEFE]"
                     >
-                      Work Email <span className="text-[#E42F23]"> *</span>
+                      Organization / Product Name{" "}
+                      <span className="text-[#E42F23]"> *</span>
                     </label>
                     <input
-                      type="email"
-                      placeholder="youremail@gmail.com"
-                      className="px-3 py-2.5  rounded-[10px] outline-none text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                      type="text"
+                      placeholder="Product name"
+                      className="text-sm font-normal px-3 py-3  rounded-[10px] outline-none text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                      {...register("orgname", {
+                        required: "Oraganization name is required",
+                      })}
                     />
+                    {errors.orgname && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.orgname.message}
+                      </p>
+                    )}
                   </div>
                 </div>
+                {/* phone number +country  */}
                 <div className="flex flex-col sm:flex-row gap-5 ">
-                  <div className="flex flex-col gap-3 w-full">
+                  <div className="flex flex-col gap-2 w-full">
                     <label
                       htmlFor=""
-                      className="text-[15px] font-medium text-[#FEFEFE]"
+                      className="text-sm font-medium text-[#FEFEFE]"
                     >
                       Phone Number <span className="text-[#E42F23]"> *</span>
                     </label>
                     <input
-                      type="email"
-                      placeholder="youremail@gmail.com"
-                      className="px-3 py-2.5  rounded-[10px] outline-none text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                      type="tel"
+                      placeholder="+91 987-654-321"
+                      className="text-sm font-normal px-3 py-3  rounded-[10px] outline-none text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                      {...register("phonenumber", {
+                        required: "Phone number is required",
+                      })}
                     />
+                    {errors.phonenumber && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.phonenumber.message}
+                      </p>
+                    )}
                   </div>
-                  <div className="flex flex-col gap-3 w-full">
+                  <div className="flex flex-col gap-2 w-full">
                     <label
                       htmlFor=""
-                      className="text-[15px] font-medium text-[#FEFEFE]"
+                      className="text-sm font-medium text-[#FEFEFE]"
                     >
                       Country <span className="text-[#E42F23]"> *</span>
                     </label>
-                    <input
-                      type="email"
-                      placeholder="youremail@gmail.com"
-                      className="px-3 py-2.5  rounded-[10px] outline-none text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
-                    />
+                    <select
+                      name=""
+                      id=""
+                      className="text-sm font-normal px-3 py-3 outline-none  rounded-[10px] text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                      {...register("country", {
+                        required: "Country is required",
+                      })}
+                    >
+                      <option value="">Region / Country</option>
+
+                      <option value="United States">United States</option>
+                      <option value="United Kingdom">United Kingdom</option>
+                      <option value="Europe (Other)">Europe (Other)</option>
+                      <option value="UAE">UAE</option>
+                      <option value="Saudi Arabia">Saudi Arabia</option>
+                      <option value="Qatar / Other GCC">
+                        Qatar / Other GCC
+                      </option>
+                      <option value="Singapore">Singapore</option>
+                      <option value="Australia">Australia</option>
+                      <option value="India">India</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    {errors.country && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.country.message}
+                      </p>
+                    )}
                   </div>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-5 ">
-                  <div className="flex flex-col gap-3 w-full">
+                {/* Ai foot print  */}
+                <div className="flex flex-col sm:flex-row ">
+                  <div className="flex flex-col gap-2 w-full">
                     <label
                       htmlFor=""
-                      className="text-[15px] font-medium text-[#FEFEFE]"
+                      className="text-sm font-medium text-[#FEFEFE]"
                     >
                       AI Footprint <span className="text-[#E42F23]"> *</span>
                     </label>
-                    <input
-                      type="email"
-                      placeholder="youremail@gmail.com"
-                      className="px-3 py-2.5  rounded-[10px] outline-none text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
-                    />
+                    <select
+                      name=""
+                      id=""
+                      className="text-sm font-normal px-3 py-3 outline-none  rounded-[10px] text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                      {...register("aifootprint", {
+                        required: "Ai Foot print is required",
+                      })}
+                    >
+                      <option value="">Region / Country</option>
+
+                      <option value="United States">United States</option>
+                      <option value="LLM-Powered Chatbot / Copilot">
+                        LLM-Powered Chatbot / Copilot
+                      </option>
+                      <option value="AI Agent with Tool/Function-Calling Access">
+                        AI Agent with Tool/Function-Calling Access
+                      </option>
+                      <option value="ML Training / Inference Pipeline">
+                        ML Training / Inference Pipeline
+                      </option>
+                      <option value="Enterprise Exposed to Deepfake Fraud Risk">
+                        Enterprise Exposed to Deepfake Fraud Risk
+                      </option>
+                      <option value="Full Suite - All Modules">
+                        Full Suite - All Modules
+                      </option>
+                      <option value="Not Sure - Need a Consultation">
+                        Not Sure - Need a Consultation
+                      </option>
+                    </select>
+                    {errors.aifootprint && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.aifootprint.message}
+                      </p>
+                    )}
                   </div>
+                </div>
+                <div className="max-w-[300px] overflow-hidden flex flex-col gap-2">
+                  <p className="text-sm font-medium text-white">Captcha</p>
+
+                  <Turnstile
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                    onSuccess={(token) => setTurnstileToken(token)}
+                    onExpire={() => setTurnstileToken("")}
+                    onError={() => setTurnstileToken("")}
+                  />
                 </div>
                 <div className="flex gap-5">
                   <input
                     type="checkbox"
-                    className="px-3 py-4 bg-black cursor-pointer"
+                    required
+                    className="appearance-auto not-checked:appearance-none w-4 h-4 rounded-sm shrink-0 cursor-pointer  text-white border-[1.4px] border-[#D1D1D1] bg-[#202123] "
                   />{" "}
                   <p className="text-xs font-medium leading-[22px] text-[#D1D1D1]">
                     By clicking submit below, you agree to our Terms of Use and
@@ -726,8 +852,9 @@ function AiAugamentedRedTeam() {
                 ].map((title, i) => (
                   <div
                     key={title}
-                    className={`bg-[#071329] border border-white/20 px-4 py-3 text-[13px] font-medium text-[#E5E5E5] ${i === 3 ? "text-center" : ""
-                      }`}
+                    className={`bg-[#071329] border border-white/20 px-4 py-3 text-[13px] font-medium text-[#E5E5E5] ${
+                      i === 3 ? "text-center" : ""
+                    }`}
                   >
                     {title}
                   </div>
@@ -918,15 +1045,12 @@ function AiAugamentedRedTeam() {
           <>
             Frequently Asked Questions -
             <br className="hidden sm:block" />
-            AI-Augmented Red Team 
+            AI-Augmented Red Team
           </>
         }
         description="Common questions from security and engineering teams across the United States, Europe, GCC, Singapore, Australia, and India"
         faqs={aiRedTeamAssessmentFAQs}
       />
-
-
-
     </div>
   );
 }

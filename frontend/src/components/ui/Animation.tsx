@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
 interface AnimationProps {
@@ -171,6 +171,49 @@ function GradientIcon({
   );
 }
 
+interface WordRevealProps {
+  text: string;
+  className?: string;
+}
+
+export default function WordReveal({ text, className = "" }: WordRevealProps) {
+  return (
+    <motion.h2
+      className={className}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.6 }}
+      variants={{
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: 0.11,
+          },
+        },
+      }}
+    >
+      {text.split(" ").map((word, index) => (
+        <motion.span
+          key={index}
+          className="inline-block mr-[0.25em]"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                duration: 0.8,
+                ease: [0.22, 1, 0.36, 1],
+              },
+            },
+          }}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </motion.h2>
+  );
+}
+
 export {
   Animation,
   AnimatedHeading,
@@ -178,4 +221,5 @@ export {
   LeftAnimation,
   RightAnimation,
   GradientIcon,
+  WordReveal,
 };

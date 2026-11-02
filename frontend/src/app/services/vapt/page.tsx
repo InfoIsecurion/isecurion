@@ -474,7 +474,8 @@ const vaptServicesInIndia = [
 
 const vaptFAQs = [
   {
-    question: "What is Vulnerability Assessment and Penetration Testing (VAPT)?",
+    question:
+      "What is Vulnerability Assessment and Penetration Testing (VAPT)?",
     answer:
       "VAPT combines vulnerability assessment (systematically identifying known weaknesses) with penetration testing (actively exploiting them to measure real-world impact). Together they provide comprehensive security coverage - breadth from the assessment and depth from the penetration test - across web applications, mobile apps, networks, cloud environments, and infrastructure.",
   },
@@ -489,7 +490,8 @@ const vaptFAQs = [
       "ISECURION provides VAPT services across all major Indian cities including Bangalore, Mumbai, Hyderabad, Chennai, Pune, Kolkata, Ahmedabad, Noida, Delhi NCR, Gurgaon, Kochi, Chandigarh, Jaipur, and more. We have physical offices in Bangalore (HQ), Kolkata, Ahmedabad, and Noida for on-site engagements, and are fully remote-capable for all other locations across India.",
   },
   {
-    question: "What is the difference between Vulnerability Assessment and Penetration Testing?",
+    question:
+      "What is the difference between Vulnerability Assessment and Penetration Testing?",
     answer:
       "A vulnerability assessment identifies and catalogues weaknesses at scale using automated scanning and manual review - providing broad coverage across your attack surface. Penetration testing goes further by actively exploiting confirmed vulnerabilities with proof-of-concept evidence, demonstrating real-world attack paths and business impact. VAPT combines both approaches for comprehensive coverage.",
   },
@@ -509,7 +511,8 @@ const vaptFAQs = [
       "ISECURION offers: Web Application Penetration Testing, Mobile Application Security Testing (Android & iOS), Cloud Security Assessment (AWS, Azure, GCP), Network & Infrastructure Penetration Testing, API Security Testing, Red Team Assessment, IoT Security Testing, ICS / SCADA Security Assessment, Smart Contract Security Audit, Secure Code Review, Phishing Simulation, and DevSecOps Integration Testing.",
   },
   {
-    question: "Will penetration testing affect our live servers or business operations?",
+    question:
+      "Will penetration testing affect our live servers or business operations?",
     answer:
       "ISECURION uses safe, non-intrusive methodologies on production environments with agreed change-control procedures and rollback plans documented before testing begins. For aggressive scenarios such as DoS simulation or exploit chaining, we strongly recommend using a staging environment and obtain explicit written approval before proceeding. Our team coordinates closely with your IT operations team throughout the engagement.",
   },
@@ -524,7 +527,8 @@ const vaptFAQs = [
       "You receive: an Executive Summary for management, a Detailed Technical Report with proof-of-concept evidence and reproduction steps, CVSS v3.1 risk ratings (Critical/High/Medium/Low/Informational), compliance mapping for applicable frameworks, step-by-step remediation guidance, a Re-test Report validating your fixes, and an Attestation / Closure Letter for auditors, customers, or regulators.",
   },
   {
-    question: "Does ISECURION provide a re-test after we fix the vulnerabilities?",
+    question:
+      "Does ISECURION provide a re-test after we fix the vulnerabilities?",
     answer:
       "Yes. A complimentary re-test is included within the agreed window to verify that all identified vulnerabilities have been successfully remediated. Upon successful closure, ISECURION issues a closure letter or attestation document that can be shared with auditors, customers, regulators, or as part of your ISO 27001 / SOC 2 evidence pack.",
   },
@@ -581,13 +585,13 @@ function Vapt() {
           <Animation>
             <div className="relative flex flex-wrap gap-4 items-center justify-center ">
               <button className="flex items-center gap-2.5 px-6 py-3.5 rounded-lg cursor-pointer text-base font-semibold text-white border-2 border-[#3263B1] bg-gradient-to-r from-[#29559D] to-[#1C3D70]">
-                Explore VAPT Services{''}
+                Explore VAPT Services{""}
                 <span>
                   <Icon icon="ep:right" className="text-lg" />
                 </span>
               </button>
               <button className="flex items-center gap-2.5 px-6 py-3.5 rounded-[10px] cursor-pointer text-base font-semibold text-[#31435C] border border-[#FFFFFF29] bg-[#FFFFFF]  transition duration-200">
-                Request a Consultation{''}
+                Request a Consultation{""}
                 <span>
                   <Icon icon="ep:right" className="text-lg" />
                 </span>
@@ -632,15 +636,23 @@ function Vapt() {
               <ul className="space-y-2 mt-3">
                 <li className="text-sm sm:text-base font-normal  flex items-center gap-2 text-[#D1D1D1]">
                   <span>
-                    <Icon icon="boxicons:badge-check" className="text-[#0F66EA]" />
-                  </span>{''}
+                    <Icon
+                      icon="boxicons:badge-check"
+                      className="text-[#0F66EA]"
+                    />
+                  </span>
+                  {""}
                   Combines automated vulnerability scanning with expert-led
                   penetration testing.
                 </li>
                 <li className="text-sm sm:text-base font-normal  flex items-center gap-2 text-[#D1D1D1]">
                   <span>
-                    <Icon icon="boxicons:badge-check" className="text-[#0F66EA]" />
-                  </span>{''}
+                    <Icon
+                      icon="boxicons:badge-check"
+                      className="text-[#0F66EA]"
+                    />
+                  </span>
+                  {""}
                   Provides complete visibility of your security posture and
                   business risks.
                 </li>
@@ -670,8 +682,10 @@ function Vapt() {
                 </p>
               </div>
               <button className="flex gap-2 text-[16px] font-semibold w-fit z-20 py-3 px-4 items-center justify-center rounded-lg cursor-pointer bg-gradient-to-r text-white  from-[#29559D] to-[#1C3D70] border-2 border-[#3263B1] ">
-                Explore Our Methodology 
-                <span><Icon icon="ep:right" width={20}/> </span>
+                Explore Our Methodology
+                <span>
+                  <Icon icon="ep:right" width={20} />{" "}
+                </span>
               </button>
             </div>
             {/* second  */}
@@ -1257,7 +1271,7 @@ function Vapt() {
         description="Common questions from organizations across Bangalore, Mumbai, Hyderabad, Kolkata, Ahmedabad, Noida, and globally."
         faqs={vaptFAQs}
       />
-      <VAPT_CTA/>
+      <VAPT_CTA />
     </div>
   );
 }

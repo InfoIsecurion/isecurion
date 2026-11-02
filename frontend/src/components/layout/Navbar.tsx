@@ -55,7 +55,7 @@ const serviceDetails = {
           },
           {
             label: "In-House SOC Service",
-            href: "/service/house-soc-service",
+            href: "/services/inhouse-soc",
           },
           { label: "Hybrid SOC Service", href: "/service/hybrid-soc-service" },
           {
@@ -123,10 +123,6 @@ const serviceDetails = {
             label: "Smart Contract Security Audit",
             href: "/services/smart-contract-security",
           },
-          {
-            label: "MCP Pentesting Services",
-            href: "services/mcp-pentesting",
-          },
         ],
       },
       {
@@ -169,7 +165,7 @@ const serviceDetails = {
           },
           {
             label: "DPDP Compliance",
-            href: "/services/dpdp",
+            href: "/services/dpdp-compliance",
           },
         ],
       },
@@ -178,7 +174,7 @@ const serviceDetails = {
         links: [
           {
             label: "Aadhaar / UIDAI Audit",
-            href: "/services/aadhaar",
+            href: "/services/aadhar-audit",
           },
           {
             label: "IRDA Information Security Audit",
@@ -205,7 +201,7 @@ const serviceDetails = {
           },
           {
             label: "ISO 27001",
-            href: "/services/iso",
+            href: "/services/iso27001",
           },
           {
             label: "SOC 2 Compliance",
@@ -366,7 +362,7 @@ function Navbar() {
           <nav className="absolute left-1/2 hidden -translate-x-1/2 lg:block">
             <ul className="flex items-center gap-13">
               <li className="relative flex items-center justify-center group">
-                <Link href="/" className="text-[15px] font-medium text-white">
+                <Link href="/" className="text-base font-normal text-white">
                   Home
                 </Link>
                 <span className="invisible group-hover:visible absolute left-0 top-[30px] w-[45px] h-[3px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
@@ -375,7 +371,7 @@ function Navbar() {
               <li className="relative group">
                 <Link
                   href=""
-                  className="text-[15px] font-medium flex items-center gap-1 text-white"
+                  className="text-base font-normal flex items-center gap-1 text-white"
                 >
                   Products{" "}
                   <span className="transition-transform duration-300 group-hover:rotate-180">
