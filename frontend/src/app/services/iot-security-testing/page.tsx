@@ -79,7 +79,7 @@ const cards = [
 function page() {
   return (
     <main className="bg-[black]">
-     
+
       <section className="relative overflow-hidden bg-[#07101D]">
         <div
           className="absolute inset-0 bg-cover bg-no-repeat min-h-[560px] bg-[position:center_center] lg:bg-[position:center_center]"
@@ -89,164 +89,177 @@ function page() {
         />
 
         <div className="absolute inset-0 bg-[#07101D]/10" />
-        
+
         <div
           className="relative z-10 mx-auto flex min-h-[610px] max-w-7xl items-center px-6 py-16 sm:px-8 md:min-h-[560px] md:px-10
                     lg:min-h-[560px] lg:px-[26px] lg:py-[50px]"
         >
           <Animation>
-          <div className="w-full max-w-[590px] md:max-w-[560px] lg:max-w-[570px] text-center md:text-left">
-            {/* EYEBROW */}
-            <p className="text-[14px] sm:text-base font-semibold uppercase leading-[18px] tracking-[0.2px] text-[#0F66EA] sm:text-[15px]">
-              IOT SECURITY TESTING
-            </p>
+            <div className="w-full max-w-[590px] md:max-w-[560px] lg:max-w-[570px] text-center md:text-left">
+              {/* EYEBROW */}
+              <p className="text-[14px] sm:text-base font-semibold uppercase leading-[18px] tracking-[0.2px] text-[#0F66EA] sm:text-[15px]">
+                IOT SECURITY TESTING
+              </p>
 
-            {/* HEADING */}
-            <h1 className="mt-[18px] max-w-[570px]  font-semibold leading-[1.25] tracking-[-0.02em] text-white lg:mt-[22px] lg:leading-[1.4]">
-              Protect Your
-              <br />
-              Connected Ecosystem
-            </h1>
+              {/* HEADING */}
+              <h1 className="mt-[18px] max-w-[570px]  font-semibold leading-[1.25] tracking-[-0.02em] text-white lg:mt-[22px] lg:leading-[1.4]">
+                Protect Your
+                <br />
+                Connected Ecosystem
+              </h1>
 
-            {/* FIRST DESCRIPTION */}
-            <p className="mt-[24px] max-w-[550px] text-[15px] font-normal leading-[1.75] text-[#D1D1D1] sm:text-[17px] lg:mt-[26px] lg:max-w-[450px] lg:text-[17px] lg:leading-[1.72]">
-              Identify vulnerabilities across your connected devices, networks,
-              and IoT infrastructure, before attackers do.
-            </p>
+              {/* FIRST DESCRIPTION */}
+              <p className="mt-[24px] max-w-[550px] text-[15px] font-normal leading-[1.75] text-[#D1D1D1] sm:text-[17px] lg:mt-[26px] lg:max-w-[450px] lg:text-[17px] lg:leading-[1.72]">
+                Identify vulnerabilities across your connected devices, networks,
+                and IoT infrastructure, before attackers do.
+              </p>
 
-            {/* SECOND DESCRIPTION */}
-            <p className="mt-[18px] max-w-[550px] text-[15px] font-normal leading-[1.75] text-[#D1D1D1] sm:text-[17px] lg:mt-[18px] lg:max-w-[450px] lg:text-[17px] lg:leading-[1.72]">
-              ISECURION helps you secure your IoT environment with comprehensive
-              testing, risk analysis, and actionable insights for stronger,
-              safer operations.
-            </p>
+              {/* SECOND DESCRIPTION */}
+              <p className="mt-[18px] max-w-[550px] text-[15px] font-normal leading-[1.75] text-[#D1D1D1] sm:text-[17px] lg:mt-[18px] lg:max-w-[450px] lg:text-[17px] lg:leading-[1.72]">
+                ISECURION helps you secure your IoT environment with comprehensive
+                testing, risk analysis, and actionable insights for stronger,
+                safer operations.
+              </p>
 
-            <div className="mt-[30px] sm:mt-[34px]">
-              <button className="inline-flex h-[54px] items-center justify-center rounded-[9px] bg-white px-[20px] py-[14px] text-[13px] sm:text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-[#F3F5F8] sm:min-h-[54px] sm:px-[21px] lg:px-[20px]">
-                <span>Schedule My IoT Security Consultation</span>
+              <div className="mt-[30px] sm:mt-[34px]">
+                <button className="inline-flex h-[54px] items-center justify-center rounded-[9px] bg-white px-[20px] py-[14px] text-[13px] sm:text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-[#F3F5F8] sm:min-h-[54px] sm:px-[21px] lg:px-[20px]">
+                  <span>Schedule My IoT Security Consultation</span>
 
-                <span className="ml-[8px] text-[20px]">
-                  <Icon icon="mdi:arrow-right" width={20} />
-                </span>
-              </button>
+                  <span className="ml-[8px] text-[20px]">
+                    <Icon icon="mdi:arrow-right" width={20} />
+                  </span>
+                </button>
+              </div>
             </div>
-          </div>
           </Animation>
         </div>
-       
+
       </section>
-      
+
 
       {/* OVERVIEW & HOW WE TEST SECTION */}
-      <section className="relative border-t border-white/5 bg-[#07101D] pt-16 text-white sm:pt-18 lg:pt-20">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 md:px-10 lg:px-[26px]">
-          {/* TOP GRID: OVERVIEW (LEFT) & TIMELINE (RIGHT) */}
+
+
+      <section className="relative border-t border-white/5 bg-[#07101D] pt-16 text-white sm:pt-18 lg:py-20">
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-10 lg:px-[26px]">
+
+          {/* TOP GRID: OVERVIEW & TIMELINE */}
           <Animation>
-          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-24">
-            {/* LEFT COLUMN: OVERVIEW */}
-            <div className="lg:col-span-7">
-              <p className="text-[14px] sm:text-base font-semibold uppercase leading-[18px] tracking-[0.2px] text-[#0F66EA] sm:text-[15px] text-center md:text-left">
-                OVERVIEW
-              </p>
+            <div className="grid grid-cols-1 items-start gap-10 md:gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 xl:gap-16">
 
-              <h2 className="mt-[16px] text-[32px] font-medium leading-[1.25] tracking-[-0.02em] text-white sm:text-[38px] lg:text-[40px] text-center md:text-left">
-                What Is IoT Security Testing?
-              </h2>
-
-              <div className="mt-[22px] max-w-[530px] space-y-5 text-[16px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[17px] text-center md:text-left">
-                <p>
-                  IoT Security Testing is a structured assessment of connected
-                  devices, communication protocols, applications, APIs,
-                  networks, and supporting infrastructure to identify
-                  vulnerabilities before they can be exploited.
+              {/* LEFT COLUMN: OVERVIEW */}
+              <div className="min-w-0">
+                <p className="text-[14px] font-semibold uppercase leading-[18px] tracking-[0.2px] text-[#0F66EA] sm:text-[15px]">
+                  OVERVIEW
                 </p>
 
-                <p>
-                  ISECURION evaluates the complete IoT attack surface, from
-                  device firmware and interfaces to cloud platforms, mobile
-                  applications, and backend systems.
+                <h2 className="mx-auto mt-4 max-w-[570px]text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] lg:mx-0 lg:text-[36px] xl:text-[40px]">
+                  What Is IoT Security Testing?
+                </h2>
+
+                <div className="mt-[22px] max-w-[530px] space-y-5 text-[15px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[16px]  lg:mx-0 lg:text-[16px] xl:text-[17px]">
+                  <p>
+                    IoT Security Testing is a structured assessment of connected
+                    devices, communication protocols, applications, APIs,
+                    networks, and supporting infrastructure to identify
+                    vulnerabilities before they can be exploited.
+                  </p>
+
+                  <p>
+                    ISECURION evaluates the complete IoT attack surface, from
+                    device firmware and interfaces to cloud platforms, mobile
+                    applications, and backend systems.
+                  </p>
+                </div>
+              </div>
+
+              {/* RIGHT COLUMN: HOW WE TEST THE IOT ATTACK SURFACE */}
+              <div className="min-w-0">
+                <p className="mb-7 text-center text-[14px] font-medium uppercase leading-[18px] tracking-[0.2px] text-[#0F66EA] sm:text-[15px] md:text-left">
+                  HOW WE TEST THE IOT ATTACK SURFACE
                 </p>
+
+                {/* TIMELINE CONTAINER */}
+                <div className="relative">
+
+                  {/* CONTINUOUS TIMELINE LINE */}
+                  <div className="absolute bottom-[2px] left-[66px] top-[10px] w-px bg-[#626877] sm:left-[74px]" />
+
+                  {testingSteps.map((step, index) => (
+                    <AnimatedCard
+                      key={index}
+                      delay={index * 0.15}
+                      className="relative z-10 flex min-w-0 items-start gap-4 pb-7 last:pb-0 sm:gap-6"
+                    >
+                      {/* CIRCULAR ICON BADGE */}
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#DADADA26] text-[#A0AEC0]">
+                        <Icon
+                          icon={step.icon}
+                          className="h-5 w-5 text-gray-300"
+                        />
+                      </div>
+
+                      {/* GLOWING BLUE DOT */}
+                      <div className="flex h-11 w-3 shrink-0 items-center justify-center">
+                        <div className="h-3 w-3 rounded-full border border-white/80 bg-[#0F66EA]" />
+                      </div>
+
+                      {/* TEXT CONTENT */}
+                      <div className="min-w-0 pt-2">
+                        <h3 className="text-[15px] font-medium leading-tight text-white sm:text-base">
+                          {step.title}
+                        </h3>
+
+                        <p className="mt-1 max-w-[360px] text-[13px] leading-relaxed text-[#94A3B8] sm:text-[14px]">
+                          {step.description}
+                        </p>
+                      </div>
+                    </AnimatedCard>
+                  ))}
+                </div>
               </div>
+
             </div>
-
-            {/* RIGHT COLUMN: HOW WE TEST THE IOT ATTACK SURFACE */}
-            <div className="lg:col-span-5">
-              <p className="mb-8 text-[14px] font-medium uppercase leading-[18px] tracking-[0.2px] text-[#0F66EA] sm:text-[15px] text-center md:text-left">
-                HOW WE TEST THE IOT ATTACK SURFACE
-              </p>
-
-              {/* TIMELINE CONTAINER */}
-              <div className="relative">
-                {/* SINGLE CONTINUOUS BACKGROUND LINE (CENTERED WITH THE BLUE DOT) */}
-                <div className="absolute top-[10px] bottom-[2px] left-[66px] sm:left-[74px] w-[1.5px] -translate-x-1/2 bg-[#626877]" />
-
-                {testingSteps.map((step, index) => (
-                  
-                  <AnimatedCard
-                    key={index}
-                    delay={index * 0.15}
-                    className="relative z-10 flex items-start gap-4 sm:gap-6 pb-7 last:pb-0"
-                  >
-                    {/* 1. CIRCULAR ICON BADGE */}
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#DADADA26] text-[#A0AEC0]">
-                      <Icon
-                        icon={step.icon}
-                        className="h-5 w-5 text-gray-300"
-                      />
-                    </div>
-
-                    {/* 2. GLOWING BLUE DOT */}
-                    <div className="flex h-11 w-3 shrink-0 items-center justify-center">
-                      <div className="h-3 w-3 rounded-full border border-white/80 bg-[#0F66EA]" />
-                    </div>
-
-                    {/* 3. TEXT CONTENT */}
-                    <div className="pt-2">
-                      <h3 className="text-[16px] font-medium leading-tight text-white">
-                        {step.title}
-                      </h3>
-                      <p className="mt-1 text-[14px] leading-normal text-[#94A3B8]">
-                        {step.description}
-                      </p>
-                    </div>
-                  </AnimatedCard>
-                ))}
-              </div>
-            </div>
-          </div>
           </Animation>
 
           {/* BOTTOM CARDS GRID */}
-         
-          <div className="mt-12 grid grid-cols-1 gap-5 py-12 sm:grid-cols-2 lg:grid-cols-3 sm:py-16">
+          <div className="mt-10 grid grid-cols-1 items-stretch gap-5 py-10 sm:mt-12 sm:grid-cols-2 sm:py-12 lg:grid-cols-3 lg:gap-6 lg:py-16">
+
             {cards.map((card, index) => (
               <Animation key={card.title} delay={index * 0.12}>
-                <div className="flex flex-col justify-between rounded-[15px] border border-[#002C8C] bg-gradient-to-b from-[#0A1119] to-[#17366E] p-6 transition-all duration-300 hover:border-[#0F66EA]">
-                  {/* Icon */}
+                <div className="flex h-full min-h-[210px] flex-col justify-between rounded-[15px] border border-[#002C8C] bg-gradient-to-b from-[#0A1119] to-[#17366E] p-5 transition-all duration-300 hover:border-[#0F66EA] sm:p-6">
+
+                  {/* ICON */}
                   <div
-                    className="flex h-12 w-12 items-center justify-center rounded-full shrink-0"
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full"
                     style={{ backgroundColor: card.iconBg }}
                   >
-                    <Icon icon={card.icon} className="text-[22px] text-white" />
+                    <Icon
+                      icon={card.icon}
+                      className="text-[22px] text-white"
+                    />
                   </div>
 
-                  {/* Text Container */}
+                  {/* TEXT CONTAINER */}
                   <div className="mt-6 sm:mt-8">
                     <h3 className="text-[16px] font-medium text-white sm:text-[18px]">
                       {card.title}
                     </h3>
 
-                    <p className="mt-2.5 text-[13px] leading-relaxed text-[#D1D1D1] sm:text-[14px] md:w-[250px]">
+                    <p className="mt-2.5 w-full max-w-[250px] text-[13px] leading-relaxed text-[#D1D1D1] sm:text-[14px]">
                       {card.description}
                     </p>
                   </div>
+
                 </div>
               </Animation>
             ))}
+
           </div>
-          
+
         </div>
       </section>
+
 
       {/* OUR METHODOLOGY SECTION */}
       <section className="relative bg-[#07101D] text-white py-10 sm:py-12 lg:pt-8 lg:pb-22">
@@ -272,198 +285,198 @@ function page() {
 
           {/* 5-STEP METHODOLOGY GRID */}
           <Animation>
-          <div className="mt-14 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6">
-            {/* STEP 01 */}
-            <div className="flex flex-col justify-between h-full">
-              <div>
-                <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
-                  <span className="tracking-[3px]">01</span>
-                  <Icon
-                    icon="lucide:arrow-right"
-                    className="h-5 w-5 text-[#F5F0E8A1]"
-                  />
+            <div className="mt-14 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6">
+              {/* STEP 01 */}
+              <div className="flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
+                    <span className="tracking-[3px]">01</span>
+                    <Icon
+                      icon="lucide:arrow-right"
+                      className="h-5 w-5 text-[#F5F0E8A1]"
+                    />
+                  </div>
+                  <p className="mt-4 text-[16px] text-white max-w-[160px] leading-6">
+                    Information Gathering & Planning
+                  </p>
+                  <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[185px]">
+                    Define the IoT environment, devices, architecture,
+                    communication protocols, applications & assessment scope.
+                  </p>
                 </div>
-                <p className="mt-4 text-[16px] text-white max-w-[160px] leading-6">
-                  Information Gathering & Planning
-                </p>
-                <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[185px]">
-                  Define the IoT environment, devices, architecture,
-                  communication protocols, applications & assessment scope.
-                </p>
+                <div className="mt-8 pt-4">
+                  <p className="text-[12px] font-semibold uppercase tracking-wider text-[#6B7C96]">
+                    KEY FOCUS
+                  </p>
+                  <ul className="mt-3 space-y-2 text-[12px] text-[#D1D1D1D6]">
+                    <li className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                      <span>Device Inventory</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                      <span>Architecture Mapping</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                      <span>Communication Protocols</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div className="mt-8 pt-4">
-                <p className="text-[12px] font-semibold uppercase tracking-wider text-[#6B7C96]">
-                  KEY FOCUS
-                </p>
-                <ul className="mt-3 space-y-2 text-[12px] text-[#D1D1D1D6]">
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                    <span>Device Inventory</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                    <span>Architecture Mapping</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                    <span>Communication Protocols</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
 
-            {/* STEP 02 */}
-            <div className="flex flex-col justify-between h-full">
-              <div>
-                <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
-                  <span className="tracking-[3px]">02</span>
-                  <Icon
-                    icon="lucide:arrow-right"
-                    className="h-5 w-5 text-[#F5F0E8A1]"
-                  />
+              {/* STEP 02 */}
+              <div className="flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
+                    <span className="tracking-[3px]">02</span>
+                    <Icon
+                      icon="lucide:arrow-right"
+                      className="h-5 w-5 text-[#F5F0E8A1]"
+                    />
+                  </div>
+                  <p className="mt-4 text-[16px] font-medium text-white max-w-[150px]">
+                    Automated Security Analysis
+                  </p>
+                  <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
+                    Identify exposed services, configuration weaknesses, known
+                    vulnerabilities, insecure interfaces and attack-surface gaps.
+                  </p>
                 </div>
-                <p className="mt-4 text-[16px] font-medium text-white max-w-[150px]">
-                  Automated Security Analysis
-                </p>
-                <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
-                  Identify exposed services, configuration weaknesses, known
-                  vulnerabilities, insecure interfaces and attack-surface gaps.
-                </p>
+                <div className="mt-8 pt-4">
+                  <p className="text-[12px] font-semibold uppercase tracking-wider text-[#6B7C96]">
+                    KEY FOCUS
+                  </p>
+                  <ul className="mt-3 space-y-2 text-[12px] text-[#D1D1D1D6]">
+                    <li className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                      <span>Device / Firmware</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                      <span>Network / APIs</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                      <span>Cloud / Apps</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div className="mt-8 pt-4">
-                <p className="text-[12px] font-semibold uppercase tracking-wider text-[#6B7C96]">
-                  KEY FOCUS
-                </p>
-                <ul className="mt-3 space-y-2 text-[12px] text-[#D1D1D1D6]">
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                    <span>Device / Firmware</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                    <span>Network / APIs</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                    <span>Cloud / Apps</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
 
-            {/* STEP 03 */}
-            <div className="flex flex-col justify-between h-full">
-              <div>
-                <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
-                  <span className="tracking-[3px]">03</span>
-                  <Icon
-                    icon="lucide:arrow-right"
-                    className="h-5 w-5 text-[#F5F0E8A1]"
-                  />
+              {/* STEP 03 */}
+              <div className="flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
+                    <span className="tracking-[3px]">03</span>
+                    <Icon
+                      icon="lucide:arrow-right"
+                      className="h-5 w-5 text-[#F5F0E8A1]"
+                    />
+                  </div>
+                  <p className="mt-4 text-[16px] font-medium text-white max-w-[150px]">
+                    Expert-Led Penetration Testing
+                  </p>
+                  <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
+                    Manually validate vulnerabilities across devices, firmware,
+                    APIs, networks, authentication and communication layers.
+                  </p>
                 </div>
-                <p className="mt-4 text-[16px] font-medium text-white max-w-[150px]">
-                  Expert-Led Penetration Testing
-                </p>
-                <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
-                  Manually validate vulnerabilities across devices, firmware,
-                  APIs, networks, authentication and communication layers.
-                </p>
+                <div className="mt-8 pt-4">
+                  <p className="text-[12px] font-semibold uppercase tracking-wider text-[#6B7C96]">
+                    KEY FOCUS
+                  </p>
+                  <ul className="mt-3 space-y-2 text-[12px] text-[#D1D1D1D6]">
+                    <li className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                      <span>Exploitation</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                      <span>Attack Paths</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                      <span>Business Impact</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div className="mt-8 pt-4">
-                <p className="text-[12px] font-semibold uppercase tracking-wider text-[#6B7C96]">
-                  KEY FOCUS
-                </p>
-                <ul className="mt-3 space-y-2 text-[12px] text-[#D1D1D1D6]">
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                    <span>Exploitation</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                    <span>Attack Paths</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                    <span>Business Impact</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
 
-            {/* STEP 04 */}
-            <div className="flex flex-col justify-between h-full">
-              <div>
-                <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
-                  <span className="tracking-[3px]">04</span>
-                  <Icon
-                    icon="lucide:arrow-right"
-                    className="h-5 w-5 text-[#F5F0E8A1]"
-                  />
+              {/* STEP 04 */}
+              <div className="flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
+                    <span className="tracking-[3px]">04</span>
+                    <Icon
+                      icon="lucide:arrow-right"
+                      className="h-5 w-5 text-[#F5F0E8A1]"
+                    />
+                  </div>
+                  <p className="mt-4 text-[16px] text-white max-w-[150px]">
+                    Reporting & Remediation
+                  </p>
+                  <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
+                    Prioritize findings by severity and business impact with clear
+                    remediation guidance for engineering and security teams.
+                  </p>
                 </div>
-                <p className="mt-4 text-[16px] text-white max-w-[150px]">
-                  Reporting & Remediation
-                </p>
-                <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
-                  Prioritize findings by severity and business impact with clear
-                  remediation guidance for engineering and security teams.
-                </p>
+                <div className="mt-8 pt-4">
+                  <p className="text-[12px] font-semibold uppercase tracking-wider text-[#6B7C96]">
+                    KEY FOCUS
+                  </p>
+                  <ul className="mt-3 space-y-2 text-[12px] text-[#D1D1D1D6]">
+                    <li className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                      <span>Detailed Report</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                      <span>Risk Prioritization</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                      <span>Remediation Guidance</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div className="mt-8 pt-4">
-                <p className="text-[12px] font-semibold uppercase tracking-wider text-[#6B7C96]">
-                  KEY FOCUS
-                </p>
-                <ul className="mt-3 space-y-2 text-[12px] text-[#D1D1D1D6]">
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                    <span>Detailed Report</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                    <span>Risk Prioritization</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                    <span>Remediation Guidance</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
 
-            {/* STEP 05 */}
-            <div className="flex flex-col justify-between h-full">
-              <div>
-                <div className="flex items-center gap-2 text-[#0F66EA] text-[18px] font-semibold">
-                  <span className="tracking-[3px]">05</span>
+              {/* STEP 05 */}
+              <div className="flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex items-center gap-2 text-[#0F66EA] text-[18px] font-semibold">
+                    <span className="tracking-[3px]">05</span>
+                  </div>
+                  <p className="mt-4 text-[16px]  text-white max-w-[100px]">
+                    Verify and Close
+                  </p>
+                  <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[190px]">
+                    Reassess remediated vulnerabilities and confirm that
+                    identified weaknesses have been effectively addressed.
+                  </p>
                 </div>
-                <p className="mt-4 text-[16px]  text-white max-w-[100px]">
-                  Verify and Close
-                </p>
-                <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[190px]">
-                  Reassess remediated vulnerabilities and confirm that
-                  identified weaknesses have been effectively addressed.
-                </p>
-              </div>
-              <div className="mt-8 pt-4">
-                <p className="text-[12px] font-semibold uppercase tracking-wider text-[#6B7C96]">
-                  KEY FOCUS
-                </p>
-                <ul className="mt-3 space-y-2 text-[12px] text-[#D1D1D1D6]">
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                    <span>Revalidation</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                    <span>Security Posture Check</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                    <span>Final Report</span>
-                  </li>
-                </ul>
+                <div className="mt-8 pt-4">
+                  <p className="text-[12px] font-semibold uppercase tracking-wider text-[#6B7C96]">
+                    KEY FOCUS
+                  </p>
+                  <ul className="mt-3 space-y-2 text-[12px] text-[#D1D1D1D6]">
+                    <li className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                      <span>Revalidation</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                      <span>Security Posture Check</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                      <span>Final Report</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
           </Animation>
         </div>
       </section>

@@ -294,7 +294,7 @@ function page() {
           {/* Assessment Benefits */}
           <div className="mt-9 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {mobileAssessmentCards.map((card, index) => (
-              <Animation key={card.title} delay={index * 0.12}>
+              <AnimatedCard key={card.title} delay={index * 0.12}>
                 <div className="min-h-[180px] rounded-lg border border-[#002C8C] bg-gradient-to-b from-[#0A1119] to-[#17366E] p-4 sm:min-h-[235px] sm:p-5">
                   {/* Icon */}
                   <div
@@ -314,23 +314,22 @@ function page() {
                     {card.description}
                   </p>
                 </div>
-              </Animation>
+              </AnimatedCard>
             ))}
           </div>
         </div>
       </section>
 
-    
-        <section>
-          <div className="relative  overflow-hidden bg-[linear-gradient(110deg,#050B18_0%,#071321_48%,#06383C_100%)]">
-            <div className="pointer-events-none absolute right-0 top-0">
-              <Image src={methodologySettings} alt="" className="" />
-            </div>
-            {/* Optional subtle glow */}
-            <div className="pointer-events-none absolute right-[-100px] top-[-100px] h-[400px] w-[400px] rounded-full bg-[#159A9C]/10 blur-[100px]" />
+      <section>
+        <div className="relative  overflow-hidden bg-[linear-gradient(110deg,#050B18_0%,#071321_48%,#06383C_100%)]">
+          <div className="pointer-events-none absolute right-0 top-0">
+            <Image src={methodologySettings} alt="" className="" />
+          </div>
+          {/* Optional subtle glow */}
+          <div className="pointer-events-none absolute right-[-100px] top-[-100px] h-[400px] w-[400px] rounded-full bg-[#159A9C]/10 blur-[100px]" />
 
-            {/* Methodology Header */}
-            <Animation>
+          {/* Methodology Header */}
+          <Animation>
             <div className="relative mx-auto max-w-7xl px-6 pb-8 pt-16 text-center sm:px-10 lg:px-12 lg:pt-20">
               <h2 className="text-3xl font-normal leading-tight text-white sm:text-4xl lg:text-[36px]">
                 Our Mobile Security Methodology
@@ -341,129 +340,127 @@ function page() {
                 targeted automation to deliver depth and accuracy.
               </p>
             </div>
-            </Animation>
+          </Animation>
 
-            <Animation>
-              <div className="relative hidden px-6 pb-16 pt-5 lg:block lg:px-12">
-                {/* Connecting Line */}
-                <div className="pointer-events-none absolute left-[14%] right-[14%] top-[110px] h-[2.5px] bg-gradient-to-r from-[#0F66EA12] to-[#7D70F085]" />
+          <Animation>
+            <div className="relative hidden px-6 pb-16 pt-5 lg:block lg:px-12">
+              {/* Connecting Line */}
+              <div className="pointer-events-none absolute left-[14%] right-[14%] top-[110px] h-[2.5px] bg-gradient-to-r from-[#0F66EA12] to-[#7D70F085]" />
 
-                {/* Connector Nodes */}
-                <div className="pointer-events-none absolute left-[22%] top-[104px] h-[12px] w-[12px] rounded-full border border-[#FFFFFF] bg-[#0062F7] shadow-[0_0_8px_rgba(61,115,186,0.8)]" />
+              {/* Connector Nodes */}
+              <div className="pointer-events-none absolute left-[22%] top-[104px] h-[12px] w-[12px] rounded-full border border-[#FFFFFF] bg-[#0062F7] shadow-[0_0_8px_rgba(61,115,186,0.8)]" />
 
-                <div className="pointer-events-none absolute left-[40.5%] top-[104px] h-[12px] w-[12px] rounded-full border border-[#FFFFFF] bg-[#0062F7] shadow-[0_0_8px_rgba(61,115,186,0.8)]" />
+              <div className="pointer-events-none absolute left-[40.5%] top-[104px] h-[12px] w-[12px] rounded-full border border-[#FFFFFF] bg-[#0062F7] shadow-[0_0_8px_rgba(61,115,186,0.8)]" />
 
-                <div className="pointer-events-none absolute left-[58.5%] top-[104px] h-[12px] w-[12px] rounded-full border border-[#FFFFFF] bg-[#0062F7] shadow-[0_0_8px_rgba(61,115,186,0.8)]" />
+              <div className="pointer-events-none absolute left-[58.5%] top-[104px] h-[12px] w-[12px] rounded-full border border-[#FFFFFF] bg-[#0062F7] shadow-[0_0_8px_rgba(61,115,186,0.8)]" />
 
-                <div className="pointer-events-none absolute left-[77.5%] top-[104px] h-[12px] w-[12px] rounded-full border border-[#FFFFFF] bg-[#0062F7] shadow-[0_0_8px_rgba(61,115,186,0.8)]" />
-                {/* Methodology Steps */}
-                <div className="relative grid grid-cols-5">
-                  {mobileMethodology.map((step, index) => (
-                    <AnimatedCard
-                      delay={index * 0.2}
-                      key={step.number}
-                      className="relative flex flex-col items-center text-center"
-                    >
-                      {/* Number */}
-                      <span className="mb-3 text-[22px] font-medium text-white/55">
-                        {step.number}
-                      </span>
+              <div className="pointer-events-none absolute left-[77.5%] top-[104px] h-[12px] w-[12px] rounded-full border border-[#FFFFFF] bg-[#0062F7] shadow-[0_0_8px_rgba(61,115,186,0.8)]" />
+              {/* Methodology Steps */}
+              <div className="relative grid grid-cols-5">
+                {mobileMethodology.map((step, index) => (
+                  <AnimatedCard
+                    delay={index * 0.2}
+                    key={step.number}
+                    className="relative flex flex-col items-center text-center"
+                  >
+                    {/* Number */}
+                    <span className="mb-3 text-[22px] font-medium text-white/55">
+                      {step.number}
+                    </span>
 
-                      {/* Circle */}
-                      <div className="relative z-10 flex h-[90px] w-[90px] items-center justify-center rounded-full border border-[#929BFF8F] to-[#3B9E6A] bg-[#14142A]">
-                        <Icon
-                          icon={step.icon}
-                          className="text-[34px] text-white"
-                        />
-                      </div>
+                    {/* Circle */}
+                    <div className="relative z-10 flex h-[90px] w-[90px] items-center justify-center rounded-full border border-[#929BFF8F] to-[#3B9E6A] bg-[#14142A]">
+                      <Icon
+                        icon={step.icon}
+                        className="text-[34px] text-white"
+                      />
+                    </div>
 
-                      {/* Title */}
-                      <h3 className="mt-7 text-lg font-medium text-white">
-                        {step.title}
-                      </h3>
+                    {/* Title */}
+                    <h3 className="mt-7 text-lg font-medium text-white">
+                      {step.title}
+                    </h3>
 
-                      {/* Subtitle */}
-                      <p className="mt-2 min-h-[44px] max-w-[180px] text-sm font-medium leading-5 text-[#15B3A4]">
-                        {step.subtitle}
-                      </p>
+                    {/* Subtitle */}
+                    <p className="mt-2 min-h-[44px] max-w-[180px] text-sm font-medium leading-5 text-[#15B3A4]">
+                      {step.subtitle}
+                    </p>
 
-                      {/* Small Divider */}
-                      <div className="mt-3 h-[2px] w-[44px] bg-[#455F6DB5]" />
+                    {/* Small Divider */}
+                    <div className="mt-3 h-[2px] w-[44px] bg-[#455F6DB5]" />
 
-                      {/* Description */}
-                      <p className="mt-5 max-w-[190px] text-xs leading-5 text-[#D1D1D1]">
-                        {step.description}
-                      </p>
-                      {index !== mobileMethodology.length - 1 && (
-                        <div className="absolute right-0 top-[205px] h-[165px] w-px bg-[#14283D]" />
-                      )}
-                    </AnimatedCard>
-                  ))}
-                </div>
+                    {/* Description */}
+                    <p className="mt-5 max-w-[190px] text-xs leading-5 text-[#D1D1D1]">
+                      {step.description}
+                    </p>
+                    {index !== mobileMethodology.length - 1 && (
+                      <div className="absolute right-0 top-[205px] h-[165px] w-px bg-[#14283D]" />
+                    )}
+                  </AnimatedCard>
+                ))}
               </div>
-            </Animation>
-
-            <div className="px-6 pb-14 pt-5 sm:px-10 lg:hidden">
-             
-                <div className="space-y-10">
-                  {mobileMethodology.map((step, index) => (
-                    <AnimatedCard key={step.number} delay={index * 0.1} className="relative flex gap-4">
-                      {/* Vertical Line */}
-                      {index !== mobileMethodology.length - 1 && (
-                        <div className="absolute left-[23px] top-[55px] h-[calc(100%+20px)] w-px bg-[#39457D]" />
-                      )}
-
-                      {/* Number + Icon */}
-                      <div className="relative z-10 shrink-0">
-                        <span className="block text-center text-xs font-medium text-white/50">
-                          {step.number}
-                        </span>
-
-                        <div className="mt-2 flex h-[48px] w-[48px] items-center justify-center rounded-full border border-[#52639C] bg-[#17132C]">
-                          <Icon
-                            icon={step.icon}
-                            className="text-[21px] text-white"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Content */}
-                      <div className="pt-5">
-                        <h3 className="text-base font-medium text-white">
-                          {step.title}
-                        </h3>
-
-                        <p className="mt-1 text-sm font-medium text-[#00C5C4]">
-                          {step.subtitle}
-                        </p>
-
-                        <div className="mt-3 h-[2px] w-[40px] bg-[#46526A]" />
-
-                        <p className="mt-3 text-sm leading-6 text-white/65">
-                          {step.description}
-                        </p>
-                      </div>
-                    </AnimatedCard>
-                  ))}
-                </div>
-           
             </div>
-          </div>
-        </section>
-      
+          </Animation>
 
-     
-        <FAQSection
-          title={
-            <>
-              Frequently Asked Questions -
-              <br />
-              Mobile Application Security
-            </>
-          }
-          description="Everything you need to know about our mobile application security assessment."
-          faqs={mobileApplicationFAQs}
-        />
+          <div className="px-6 pb-14 pt-5 sm:px-10 lg:hidden">
+
+            <div className="space-y-10">
+              {mobileMethodology.map((step, index) => (
+                <AnimatedCard key={step.number} delay={index * 0.1} className="relative flex gap-4">
+                  {/* Vertical Line */}
+                  {index !== mobileMethodology.length - 1 && (
+                    <div className="absolute left-[23px] top-[55px] h-[calc(100%+20px)] w-px bg-[#39457D]" />
+                  )}
+
+                  {/* Number + Icon */}
+                  <div className="relative z-10 shrink-0">
+                    <span className="block text-center text-xs font-medium text-white/50">
+                      {step.number}
+                    </span>
+
+                    <div className="mt-2 flex h-[48px] w-[48px] items-center justify-center rounded-full border border-[#52639C] bg-[#17132C]">
+                      <Icon
+                        icon={step.icon}
+                        className="text-[21px] text-white"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="pt-5">
+                    <h3 className="text-base font-medium text-white">
+                      {step.title}
+                    </h3>
+
+                    <p className="mt-1 text-sm font-medium text-[#00C5C4]">
+                      {step.subtitle}
+                    </p>
+
+                    <div className="mt-3 h-[2px] w-[40px] bg-[#46526A]" />
+
+                    <p className="mt-3 text-sm leading-6 text-white/65">
+                      {step.description}
+                    </p>
+                  </div>
+                </AnimatedCard>
+              ))}
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <FAQSection
+        title={
+          <>
+            Frequently Asked Questions -
+            <br />
+            Mobile Application Security
+          </>
+        }
+        description="Everything you need to know about our mobile application security assessment."
+        faqs={mobileApplicationFAQs}
+      />
 
     </main>
   );

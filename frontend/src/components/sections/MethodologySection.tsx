@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import { Animation } from "../ui/Animation";
+import { Animation, AnimatedCard } from "../ui/Animation";
+
 
 /* -------------------------------------------------------------------------- */
 /*  DATA                                                                      */
@@ -372,10 +373,10 @@ function DesktopDiagram({
                 const isLeft = p.side === "left";
 
                 return (
-                    <div key={s.no}>
+                    <AnimatedCard key={s.no} delay={i * 0.2} className="absolute inset-0">
                         {/* icon bubble */}
                         <div
-                            className="absolute grid place-items-center rounded-full bg-[#0F4C818A] text-white"
+                            className="absolute grid place-items-center rounded-full bg-[#0F4C818A] text-white transition-transform duration-300 ease-out hover:scale-110"
                             style={{
                                 left: pctX(p.x),
                                 top: pctY(p.y),
@@ -440,7 +441,7 @@ function DesktopDiagram({
                                 {s.description}
                             </p>
                         </div>
-                    </div>
+                    </AnimatedCard>
                 );
             })}
         </div>

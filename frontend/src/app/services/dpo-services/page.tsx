@@ -1,7 +1,12 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import { Icon } from "@iconify/react";
-import { Animation, AnimatedCard } from "../../../components/ui/Animation";
+import {
+  Animation,
+  AnimatedCard,
+  GradientIcon,
+  LeftAnimation,
+  RightAnimation,
+} from "../../../components/ui/Animation";
 import heroBackground from "../../../assets/services/backgroundPattern.png";
 import privacySectionBackground from "../../../assets/services/your-privacyBackground.png";
 import FAQSection from "../../../components/sections/FAQSection";
@@ -83,7 +88,7 @@ const globalCards = [
   },
 ];
 
-const whoNeedsCiso = [
+const whoNeedsDpo = [
   {
     Icon: "boxicons:bank",
     heading: "Regulated Organizations",
@@ -222,14 +227,14 @@ const regulatoryCoverage = [
 ];
 
 const dpoLocations = [
-  { name: "Bangalore", icon: "reicon:city" },
-  { name: "Mumbai", icon: "game-icons:tower-bridge" },
-  { name: "Hyderabad", icon: "fluent:building-mosque-12-regular" },
-  { name: "Noida", icon: "icon-park-outline:city-one" },
-  { name: "Pune", icon: "icon-park-outline:city-gate" },
-  { name: "Delhi NCR", icon: "hugeicons:india-gate" },
-  { name: "Kolkata", icon: "game-icons:arch-bridge" },
-  { name: "Ahmedabad", icon: "streamline-plump:government-building-1" },
+  { name: "Bangalore", Icon: "reicon:city" },
+  { name: "Mumbai", Icon: "game-icons:tower-bridge" },
+  { name: "Hyderabad", Icon: "fluent:building-mosque-12-regular" },
+  { name: "Noida", Icon: "icon-park-outline:city-one" },
+  { name: "Pune", Icon: "icon-park-outline:city-gate" },
+  { name: "Delhi NCR", Icon: "hugeicons:india-gate" },
+  { name: "Kolkata", Icon: "game-icons:arch-bridge" },
+  { name: "Ahmedabad", Icon: "streamline-plump:government-building-1" },
 ];
 
 const globalDpoRegions = [
@@ -239,7 +244,7 @@ const globalDpoRegions = [
     icon: "mingcute:statue-of-liberty-line",
   },
   { code: "SG", name: "Singapore", icon: "hugeicons:twin-tower" },
-  { code: "AE", name: "UAE / Dubai", icon: "lucide:building-2" },
+  { code: "AE", name: "UAE / Dubai", icon: "hugeicons:cayan-tower" },
   { code: "AU", name: "Australia", icon: "mingcute:sydney-opera-house-line" },
   { code: "EU", name: "Europe", icon: "icon-park-outline:eiffel-tower" },
 ];
@@ -501,12 +506,8 @@ function page() {
             </Animation>
           </div>
 
-          <div className="flex-1 px-8 py-5 rounded-3xl bg-linear-to-r from-[#7B6FE860] to-[#7B6FE839] min-h-[800px]">
-            <form
-              action=""
-              className="space-y-5"
-              onSubmit={handleSubmit(submit)}
-            >
+          <div className="flex-1 px-8 py-5 rounded-3xl space-y-5 bg-linear-to-r from-[#7B6FE860] to-[#7B6FE839] min-h-[800px]">
+            <Animation>
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="flex flex-col w-full gap-3">
                   <label
@@ -519,15 +520,7 @@ function page() {
                     type="text"
                     placeholder="First name"
                     className="px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                    {...register("fullname", {
-                      required: "Fullname is required",
-                    })}
                   />
-                  {errors.fullname && (
-                    <p className="text-sm font-normal text-red-500">
-                      {errors.fullname.message}
-                    </p>
-                  )}
                 </div>
                 <div className="flex flex-col w-full gap-3">
                   <label
@@ -540,10 +533,11 @@ function page() {
                     type="text"
                     placeholder="Company name"
                     className="px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                    {...register("companyname")}
                   />
                 </div>
               </div>
+            </Animation>
+            <Animation>
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="flex flex-col w-full gap-3">
                   <label
@@ -556,13 +550,7 @@ function page() {
                     type="email"
                     placeholder="youremail@gmail.com"
                     className="px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                    {...register("email", { required: "Email is required" })}
                   />
-                  {errors.email && (
-                    <p className="text-sm font-normal text-red-500">
-                      {errors.email.message}
-                    </p>
-                  )}
                 </div>
                 <div className="flex flex-col w-full gap-3">
                   <label
@@ -575,17 +563,11 @@ function page() {
                     type="tel"
                     placeholder="+91 987-654-321"
                     className="px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                    {...register("phonenumber", {
-                      required: "Phone number is required",
-                    })}
                   />
-                  {errors.phonenumber && (
-                    <p className="text-sm font-normal text-red-500">
-                      {errors.phonenumber.message}
-                    </p>
-                  )}
                 </div>
               </div>
+            </Animation>
+            <Animation>
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="flex flex-col w-full gap-3">
                   <label
@@ -598,7 +580,6 @@ function page() {
                     name=""
                     id=""
                     className=" h-12 w-full px-3 rounded-[10px] cursor-pointer outline-none  text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                    {...register("location")}
                   >
                     <option value="">Select your loaction</option>
                     <option value="india">India</option>
@@ -615,7 +596,6 @@ function page() {
                     name=""
                     id=""
                     className="h-12 w-full px-2 rounded-[10px] cursor-pointer outline-none text-[#D1D1D1] bg-[#000C1C]"
-                    {...register("engagement")}
                   >
                     <option value="">Choose enagament type</option>
                     <option value="">Foundational DPO (Startup / SME)</option>
@@ -627,6 +607,8 @@ function page() {
                   </select>
                 </div>
               </div>
+            </Animation>
+            <Animation>
               <div className="flex flex-col gap-2">
                 <label
                   htmlFor=""
@@ -639,21 +621,33 @@ function page() {
                   name=""
                   id=""
                   className="px-3 py-3 w-full rounded-[10px] text-[#D1D1D1] bg-[#000C1C] border border-[#262D3D] outline-none"
-                  {...register("message")}
                   rows={5}
                 ></textarea>
               </div>
+            </Animation>
+            <Animation>
               <div className="">
-                <div className="flex flex-col gap-3">
-                  <p className="text-sm font-medium text-white">Captcha</p>
-                  <Turnstile
-                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                    onSuccess={(token) => setTurnstileToken(token)}
-                    onExpire={() => setTurnstileToken("")}
-                    onError={() => setTurnstileToken("")}
-                  />
+                <div className="flex items-center gap-3">
+                  <span className="text-sm leading-5 text-[#E7E7E7]">
+                    Captcha
+                  </span>
+
+                  <span className="flex h-[32px] min-w-[127px] items-center justify-center rounded-[5px] bg-[#0F66EA] px-5 text-[13px] font-medium tracking-wide text-white">
+                    ZRLD9Y
+                  </span>
                 </div>
+
+                <input
+                  id="captcha"
+                  name="captcha"
+                  type="text"
+                  placeholder="Enter the text shown above"
+                  required
+                  className="mt-3 px-3 py-3 w-full rounded-[10px] border border-[#262D3D] bg-[#000C1C]   text-[#D1D1D1] outline-none placeholder:text-[#858585] "
+                />
               </div>
+            </Animation>
+            <Animation>
               <div className="flex gap-3">
                 <input
                   type="checkbox"
@@ -667,16 +661,15 @@ function page() {
                   content requested.
                 </p>
               </div>
-              <button
-                type="submit"
-                className="text-base sm:text-lg font-medium flex items-center justify-center py-3 w-full rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] h-[54px]"
-              >
+            </Animation>
+            <Animation>
+              <button className="text-base sm:text-lg font-medium flex items-center justify-center py-3 w-full rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] h-[54px]">
                 Request Consultation{" "}
                 <span>
                   <Icon icon="akar-icons:arrow-right" className="text-lg" />
                 </span>{" "}
               </button>
-            </form>
+            </Animation>
           </div>
         </div>
       </section>
@@ -684,24 +677,26 @@ function page() {
       {/* Understanding DPO  */}
       <section className="w-full py-14 bg-[#060D1B]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="mx-auto lg:mx-0 space-y-4 text-center lg:text-left">
-            <p className="text-sm sm:text-base font-semibold uppercase text-[#0F66EA]">
-              UNDERSTANDING OUTSOURCED DPO
-            </p>
-            <h2 className="text-[#FEFEFE] max-w-[720px]">
-              Independent Privacy Oversight. Practical Business Support.
-            </h2>
-            <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[550px]">
-              An outsourced Data Protection Officer (DPO) provides specialist
-              privacy guidance, compliance oversight, and regulatory
-              coordination without requiring a full-time internal appointment.
-            </p>
-            <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[550px]">
-              ISECURION helps organisations manage privacy responsibilities
-              through structured governance, documented processes, and ongoing
-              advisory support.
-            </p>
-          </div>
+          <Animation>
+            <div className="mx-auto lg:mx-0 space-y-4 text-center lg:text-left">
+              <p className="text-sm sm:text-base font-semibold uppercase text-[#0F66EA]">
+                UNDERSTANDING OUTSOURCED DPO
+              </p>
+              <h2 className="text-[#FEFEFE] max-w-[720px]">
+                Independent Privacy Oversight. Practical Business Support.
+              </h2>
+              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[550px]">
+                An outsourced Data Protection Officer (DPO) provides specialist
+                privacy guidance, compliance oversight, and regulatory
+                coordination without requiring a full-time internal appointment.
+              </p>
+              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[550px]">
+                ISECURION helps organisations manage privacy responsibilities
+                through structured governance, documented processes, and ongoing
+                advisory support.
+              </p>
+            </div>
+          </Animation>
           <div className="mt-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
               {services.map((item, index) => (
@@ -729,177 +724,184 @@ function page() {
         </div>
       </section>
 
-      {/* WHO NEEDS A vCISO?  */}
+      {/* WHO NEEDS A DPO?  */}
       <section className="relative w-full py-14 overflow-hidden bg-[#060D1B]">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 -right-20 w-[300px] h-[300px] rounded-full blur-[100px] bg-[#FFFFFF33]" />
         </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="max-w-2xl space-y-4">
-            <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
-              WHO NEEDS AN OUTSOURCED DPO?
-            </p>
-            <h2 className="text-[#FFFFFF]">
-              Does your organisation need an Outsourced DPO?
-            </h2>
-            <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[600px]">
-              If you recognise any one of these situations, an Outsourced DPO
-              engagement will deliver immediate impact across privacy and
-              compliance.
-            </p>
-          </div>
-          <div className="mt-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {whoNeedsCiso.map((item, index) => (
-                <AnimatedCard
-                  delay={index * 0.15}
-                  key={index}
-                  className="relative flex flex-col justify-between p-5 space-y-4 rounded-lg bg-[#66666614] border border-[#0B15301F]"
-                >
-                  <div className="absolute left-0 w-[2.5px] h-[23px] rounded-tr-2xl rounded-br-2xl bg-[#0F66EA]"></div>
-                  <div className="flex items-center justify-between gap-10">
-                    <h3 className="text-base sm:text-lg font-medium text-[#FFFFFF]">
-                      {item.heading}
-                    </h3>
-                    <span>
-                      <Icon
-                        icon={item.Icon}
-                        className="w-[25px] h-[25px] text-[#0F66EA]"
-                      />
-                    </span>
-                  </div>
-                  <p className="text-[15px] font-normal leading-[24px] text-[#D1D1D1] max-w-[338px]">
-                    {item.description}
-                  </p>
-                </AnimatedCard>
-              ))}
+        <Animation>
+          <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10">
+            <div className="max-w-2xl space-y-4 text-center lg:text-left">
+              <p className="text-sm sm:text-base font-semibold text-[#0F66EA] ">
+                WHO NEEDS AN OUTSOURCED DPO?
+              </p>
+              <h2 className="text-[#FFFFFF]">
+                Does your organisation need an Outsourced DPO?
+              </h2>
+              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[600px]">
+                If you recognise any one of these situations, an Outsourced DPO
+                engagement will deliver immediate impact across privacy and
+                compliance.
+              </p>
+            </div>
+            <div className="mt-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {whoNeedsDpo.map((item, index) => (
+                  <AnimatedCard
+                    delay={index * 0.15}
+                    key={index}
+                    className="relative flex flex-col justify-between p-5 space-y-4 rounded-lg bg-[#66666614] border border-[#0B15301F]"
+                  >
+                    <div className="absolute left-0 w-[2.5px] h-[23px] rounded-tr-2xl rounded-br-2xl bg-[#0F66EA]"></div>
+                    <div className="flex items-center justify-between gap-10">
+                      <h3 className="text-base sm:text-lg font-medium text-[#FFFFFF]">
+                        {item.heading}
+                      </h3>
+                      <span>
+                        <Icon
+                          icon={item.Icon}
+                          className="w-[25px] h-[25px] text-[#0F66EA]"
+                        />
+                      </span>
+                    </div>
+                    <p className="text-[15px] font-normal leading-[24px] text-[#D1D1D1] max-w-[338px]">
+                      {item.description}
+                    </p>
+                  </AnimatedCard>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        </Animation>
       </section>
 
       {/* ISECURION OUTSOURCED DPO TEAM */}
       <section className="bg-[#060D1B] py-8 sm:py-10 lg:py-12">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 overflow-hidden lg:grid-cols-[44%_56%]">
-            {/* LEFT: STATISTICS */}
-            <div className="relative flex flex-col justify-center gap-8 border-l border-[#FFFFFF1A] bg-[#030707] px-7 py-10 sm:gap-10 sm:px-10 sm:py-12 lg:gap-8 lg:px-10 lg:py-10 xl:px-14">
-              {/* Vertical divider */}
-              <div className="absolute bottom-0 left-0 top-0 w-px bg-[#FFFFFF12]" />
+          <LeftAnimation>
+            <div className="grid grid-cols-1 overflow-hidden lg:grid-cols-[44%_56%]">
+              {/* LEFT: STATISTICS */}
 
-              {/* Statistic 1 */}
-              <div className="relative pl-5 sm:pl-7">
-                <span className="absolute left-[-7px] top-[5px] h-4 w-4 rounded-full border-2 border-[#D1D5DB] bg-[#030707]" />
+              <div className="relative flex flex-col justify-center gap-8 border-l border-[#FFFFFF1A] bg-[#030707] px-7 py-10 sm:gap-10 sm:px-10 sm:py-12 lg:gap-8 lg:px-10 lg:py-10 xl:px-14">
+                {/* Vertical divider */}
+                <div className="absolute bottom-0 left-0 top-0 w-px bg-[#FFFFFF12]" />
 
-                <h3 className="text-[28px] font-semibold leading-none tracking-[1px] text-[#0F66EA] sm:text-[30px] lg:text-[30px]">
-                  500+
-                </h3>
-                <h4 className="mt-3 text-sm font-semibold leading-5 text-white sm:text-[15px]">
-                  Clients Served Globally
-                </h4>
-                <p className="mt-2 max-w-[290px] text-[13px] leading-[21px] text-[#D1D1D1] sm:text-[13px] sm:leading-[22px]">
-                  From startups to Fortune 500s, we help organizations across
-                  industries secure what matters most.
-                </p>
+                {/* Statistic 1 */}
+                <div className="relative pl-5 sm:pl-7">
+                  <span className="absolute left-[-7px] top-[5px] h-4 w-4 rounded-full border-2 border-[#D1D5DB] bg-[#030707]" />
+
+                  <h3 className="text-[28px] font-semibold leading-none tracking-[1px] text-[#0F66EA] sm:text-[30px] lg:text-[30px]">
+                    500+
+                  </h3>
+                  <h4 className="mt-3 text-sm font-semibold leading-5 text-white sm:text-[15px]">
+                    Clients Served Globally
+                  </h4>
+                  <p className="mt-2 max-w-[290px] text-[13px] leading-[21px] text-[#D1D1D1] sm:text-[13px] sm:leading-[22px]">
+                    From startups to Fortune 500s, we help organizations across
+                    industries secure what matters most.
+                  </p>
+                </div>
+
+                {/* Statistic 2 */}
+                <div className="relative pl-5 sm:pl-7">
+                  <span className="absolute left-[-7px] top-[5px] h-4 w-4 rounded-full border-2 border-[#D1D5DB] bg-[#030707]" />
+
+                  <h3 className="text-[28px] font-semibold leading-none tracking-[1px] text-[#0F66EA] sm:text-[30px] lg:text-[30px]">
+                    10+
+                  </h3>
+                  <h4 className="mt-3 text-sm font-semibold leading-5 text-white sm:text-[15px]">
+                    Years of Experience
+                  </h4>
+                  <p className="mt-2 max-w-[290px] text-[13px] leading-[21px] text-[#D1D1D1] sm:text-[13px] sm:leading-[22px]">
+                    A decade of hands-on expertise in cybersecurity, risk and
+                    resilience.
+                  </p>
+                </div>
+
+                {/* Statistic 3 */}
+                <div className="relative pl-5 sm:pl-7">
+                  <span className="absolute left-[-7px] top-[5px] h-4 w-4 rounded-full border-2 border-[#D1D5DB] bg-[#030707]" />
+
+                  <h3 className="text-[28px] font-semibold leading-none tracking-[1px] text-[#0F66EA] sm:text-[30px] lg:text-[30px]">
+                    10+
+                  </h3>
+                  <h4 className="mt-3 text-sm font-semibold leading-5 text-white sm:text-[15px]">
+                    Privacy Frameworks
+                  </h4>
+                  <p className="mt-2 max-w-[280px] text-[13px] leading-[21px] text-[#D1D1D1] sm:text-[13px] sm:leading-[22px]">
+                    Aligned with global standards to help you meet today’s and
+                    tomorrow’s challenges.
+                  </p>
+                </div>
               </div>
 
-              {/* Statistic 2 */}
-              <div className="relative pl-5 sm:pl-7">
-                <span className="absolute left-[-7px] top-[5px] h-4 w-4 rounded-full border-2 border-[#D1D5DB] bg-[#030707]" />
+              {/* RIGHT: DPO TEAM CONTENT */}
+              <RightAnimation>
+                <div className="flex flex-col justify-center bg-[#003833] px-6 py-9 sm:px-9 sm:py-11 md:px-10 lg:px-8 lg:py-10 xl:px-8 2xl:px-10">
+                  <p className="text-[12px] sm:text-base font-semibold uppercase leading-5 text-[#0F66EA] ">
+                    ISECURION PRIVACY PRACTICE
+                  </p>
 
-                <h3 className="text-[28px] font-semibold leading-none tracking-[1px] text-[#0F66EA] sm:text-[30px] lg:text-[30px]">
-                  10+
-                </h3>
-                <h4 className="mt-3 text-sm font-semibold leading-5 text-white sm:text-[15px]">
-                  Years of Experience
-                </h4>
-                <p className="mt-2 max-w-[290px] text-[13px] leading-[21px] text-[#D1D1D1] sm:text-[13px] sm:leading-[22px]">
-                  A decade of hands-on expertise in cybersecurity, risk and
-                  resilience.
-                </p>
-              </div>
+                  <h2 className="mt-2 max-w-[520px] text-[24px] font-normal leading-[1.5] tracking-[-0.5px] text-white sm:text-[32px] md:text-[34px] lg:text-[30px] xl:text-[32px]">
+                    Meet the ISECURION Outsourced DPO Team
+                  </h2>
 
-              {/* Statistic 3 */}
-              <div className="relative pl-5 sm:pl-7">
-                <span className="absolute left-[-7px] top-[5px] h-4 w-4 rounded-full border-2 border-[#D1D5DB] bg-[#030707]" />
+                  <p className="mt-8 max-w-[505px] text-[14px] font-normal leading-[25px] text-[#D1D1D1] sm:text-[15px] sm:leading-[25px]">
+                    ISECURION&apos;s privacy practice is a dedicated team of
+                    certified data protection professionals, privacy
+                    lawyers-in-consult, and compliance specialists - built for
+                    India&apos;s DPDP Act and global privacy regimes alike.
+                  </p>
 
-                <h3 className="text-[28px] font-semibold leading-none tracking-[1px] text-[#0F66EA] sm:text-[30px] lg:text-[30px]">
-                  10+
-                </h3>
-                <h4 className="mt-3 text-sm font-semibold leading-5 text-white sm:text-[15px]">
-                  Privacy Frameworks
-                </h4>
-                <p className="mt-2 max-w-[280px] text-[13px] leading-[21px] text-[#D1D1D1] sm:text-[13px] sm:leading-[22px]">
-                  Aligned with global standards to help you meet today’s and
-                  tomorrow’s challenges.
-                </p>
-              </div>
+                  <p className="mt-6 max-w-[505px] text-[14px] font-normal leading-[25px] text-[#D1D1D1] sm:text-[15px] sm:leading-[25px]">
+                    With experience across BFSI, healthcare, IT/ITES,
+                    e-commerce, and regulated industries, the team delivers{" "}
+                    <span className="font-semibold text-white">
+                      privacy leadership from Day 1,
+                    </span>{" "}
+                    not after a lengthy ramp-up.
+                  </p>
+
+                  {/* Credentials */}
+                  <div className="mt-18 flex flex-wrap gap-2">
+                    <span className="inline-flex min-h-[29px] items-center gap-1.5 rounded-full border border-[#FFFFFF24] bg-[#FFFFFF12] px-3 py-1 text-[10px] font-medium leading-4 text-[#E0F2FE] sm:text-[11px]">
+                      <Icon
+                        icon="boxicons:certification-filled"
+                        className="shrink-0 text-[12px]"
+                      />
+                      CERT-In Empanelled
+                    </span>
+
+                    <span className="inline-flex min-h-[29px] items-center gap-1.5 rounded-full border border-[#FFFFFF24] bg-[#FFFFFF12] px-3 py-1 text-[10px] font-medium leading-4 text-[#E0F2FE] sm:text-[11px]">
+                      <Icon
+                        icon="fluent:ribbon-star-24-filled"
+                        className="shrink-0 text-[12px]"
+                      />
+                      ISO 27001:2022 Certified
+                    </span>
+                  </div>
+
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <span className="inline-flex min-h-[29px] items-center gap-1.5 rounded-full border border-[#FFFFFF24] bg-[#FFFFFF12] px-3 py-1 text-[10px] font-medium leading-4 text-[#E0F2FE] sm:text-[11px]">
+                      <Icon
+                        icon="bi:person-badge-fill"
+                        className="shrink-0 text-[12px]"
+                      />
+                      CIPP/E, CIPM, CDPO, ISO 27701 LI
+                    </span>
+
+                    <span className="inline-flex min-h-[29px] items-center gap-1.5 rounded-full border border-[#FFFFFF24] bg-[#FFFFFF12] px-3 py-1 text-[10px] font-medium leading-4 text-[#E0F2FE] sm:text-[11px]">
+                      <Icon
+                        icon="mdi:map-marker"
+                        className="shrink-0 text-[13px]"
+                      />
+                      Bengaluru &amp; Kolkata Offices
+                    </span>
+                  </div>
+                </div>
+              </RightAnimation>
             </div>
-
-            {/* RIGHT: DPO TEAM CONTENT */}
-            <div className="flex flex-col justify-center bg-[#003833] px-6 py-9 sm:px-9 sm:py-11 md:px-10 lg:px-8 lg:py-10 xl:px-8 2xl:px-10">
-              <p className="text-[12px] font-medium uppercase leading-5 text-[#0F66EA] sm:text-[13px]">
-                ISECURION PRIVACY PRACTICE
-              </p>
-
-              <h2 className="mt-2 max-w-[520px] text-[28px] font-normal leading-[1.5] tracking-[-0.5px] text-white sm:text-[32px] md:text-[34px] lg:text-[30px] xl:text-[32px]">
-                Meet the ISECURION Outsourced DPO Team
-              </h2>
-
-              <p className="mt-8 max-w-[505px] text-[14px] font-normal leading-[25px] text-[#D1D1D1] sm:text-[15px] sm:leading-[25px]">
-                ISECURION&apos;s privacy practice is a dedicated team of
-                certified data protection professionals, privacy
-                lawyers-in-consult, and compliance specialists - built for
-                India&apos;s DPDP Act and global privacy regimes alike.
-              </p>
-
-              <p className="mt-6 max-w-[505px] text-[14px] font-normal leading-[25px] text-[#D1D1D1] sm:text-[15px] sm:leading-[25px]">
-                With experience across BFSI, healthcare, IT/ITES, e-commerce,
-                and regulated industries, the team delivers{" "}
-                <span className="font-semibold text-white">
-                  privacy leadership from Day 1,
-                </span>{" "}
-                not after a lengthy ramp-up.
-              </p>
-
-              {/* Credentials */}
-              <div className="mt-18 flex flex-wrap gap-2">
-                <span className="inline-flex min-h-[29px] items-center gap-1.5 rounded-full border border-[#FFFFFF24] bg-[#FFFFFF12] px-3 py-1 text-[10px] font-medium leading-4 text-[#E0F2FE] sm:text-[11px]">
-                  <Icon
-                    icon="boxicons:certification-filled"
-                    className="shrink-0 text-[12px]"
-                  />
-                  CERT-In Empanelled
-                </span>
-
-                <span className="inline-flex min-h-[29px] items-center gap-1.5 rounded-full border border-[#FFFFFF24] bg-[#FFFFFF12] px-3 py-1 text-[10px] font-medium leading-4 text-[#E0F2FE] sm:text-[11px]">
-                  <Icon
-                    icon="fluent:ribbon-star-24-filled"
-                    className="shrink-0 text-[12px]"
-                  />
-                  ISO 27001:2022 Certified
-                </span>
-              </div>
-
-              <div className="mt-3 flex flex-wrap gap-2">
-                <span className="inline-flex min-h-[29px] items-center gap-1.5 rounded-full border border-[#FFFFFF24] bg-[#FFFFFF12] px-3 py-1 text-[10px] font-medium leading-4 text-[#E0F2FE] sm:text-[11px]">
-                  <Icon
-                    icon="bi:person-badge-fill"
-                    className="shrink-0 text-[12px]"
-                  />
-                  CIPP/E, CIPM, CDPO, ISO 27701 LI
-                </span>
-
-                <span className="inline-flex min-h-[29px] items-center gap-1.5 rounded-full border border-[#FFFFFF24] bg-[#FFFFFF12] px-3 py-1 text-[10px] font-medium leading-4 text-[#E0F2FE] sm:text-[11px]">
-                  <Icon
-                    icon="mdi:map-marker"
-                    className="shrink-0 text-[13px]"
-                  />
-                  Bengaluru &amp; Kolkata Offices
-                </span>
-              </div>
-            </div>
-          </div>
+          </LeftAnimation>
         </div>
       </section>
 
@@ -909,100 +911,106 @@ function page() {
           {/* Intro + Framework Cards */}
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.76fr)_minmax(0,1.24fr)] lg:items-start lg:gap-8 xl:gap-10">
             {/* Left: Intro */}
-            <div className="max-w-[480px]">
-              <p className="text-[12px] font-medium uppercase leading-5 text-[#0F66EA] sm:text-[13px]">
-                GLOBAL PRIVACY COVERAGE
-              </p>
+            <LeftAnimation>
+              <div className="lg:max-w-[480px] text-center lg:text-left">
+                <p className="text-[12px] sm:text-base font-semibold uppercase leading-5 text-[#0F66EA] ">
+                  GLOBAL PRIVACY COVERAGE
+                </p>
 
-              <p className="mt-2 text-[30px] leading-[1.5] tracking-[-0.5px] text-white sm:text-[32px] sm:leading-[1.35] lg:text-[34px] xl:text-[38px] max-w-[350px]">
-                One Coordinated Privacy Programme across multiple jurisdictions.
-              </p>
+                <h2 className="mt-2 leading-[1.5] tracking-[-0.5px] text-white sm:leading-[1.35] lg:max-w-[450px]">
+                  One Coordinated Privacy Programme across multiple
+                  jurisdictions.
+                </h2>
 
-              <p className="mt-4 text-[14px] font-normal leading-[23px] text-[#C6C9D0] sm:text-[15px] sm:leading-[25px]">
-                Navigate evolving data protection requirements with a structured
-                approach to privacy governance, risk assessment, documentation,
-                and compliance monitoring.
-              </p>
-            </div>
+                <p className="mt-4 text-[14px] font-normal leading-[23px] text-[#C6C9D0] sm:text-[15px] sm:leading-[25px]">
+                  Navigate evolving data protection requirements with a
+                  structured approach to privacy governance, risk assessment,
+                  documentation, and compliance monitoring.
+                </p>
+              </div>
+            </LeftAnimation>
 
             {/* Right: Regulatory Framework Cards */}
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-4 xl:gap-5">
-              {/* India Frameworks */}
-              <div className="flex min-w-0 flex-col rounded-[17px] border border-[#4C737029] bg-[#66666614] p-4 sm:p-[17px]">
-                <div className="flex items-center gap-2.5">
-                  <span className="shrink-0 text-[20px] leading-none">
-                    <Icon icon="emojione:flag-for-india" />
-                  </span>
-                  <h3 className="text-sm font-semibold leading-5 text-[#E6E8EF] sm:text-[14px]">
-                    India Regulatory Frameworks
-                  </h3>
-                </div>
-
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {[
-                    "RBI",
-                    "CERT-In",
-                    "DPDP Act",
-                    "IT Act",
-                    "SEBI",
-                    "IRDAI",
-                    "DPDP Rules",
-                  ].map((framework) => (
-                    <span
-                      key={framework}
-                      className="inline-flex min-h-[23px] items-center rounded-[4px] bg-[#42515059] px-2.5 py-1 text-[9px] font-normal leading-3 text-[#E2E5EB] sm:text-[10px]"
-                    >
-                      {framework}
+            <RightAnimation>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-4 xl:gap-5">
+                {/* India Frameworks */}
+                <div className="flex min-w-0 flex-col rounded-[17px] border border-[#4C737029] bg-[#66666614] p-4 sm:p-[17px]">
+                  <div className="flex items-center gap-2.5">
+                    <span className="shrink-0 text-[20px] leading-none">
+                      <Icon icon="emojione:flag-for-india" />
                     </span>
-                  ))}
+                    <h3 className="text-sm font-semibold leading-5 text-[#E6E8EF] sm:text-[14px]">
+                      India Regulatory Frameworks
+                    </h3>
+                  </div>
+
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {[
+                      "RBI",
+                      "CERT-In",
+                      "DPDP Act",
+                      "IT Act",
+                      "SEBI",
+                      "IRDAI",
+                      "DPDP Rules",
+                    ].map((framework) => (
+                      <span
+                        key={framework}
+                        className="inline-flex min-h-[23px] items-center rounded-[4px] bg-[#42515059] px-2.5 py-1 text-[9px] font-normal leading-3 text-[#E2E5EB] sm:text-[10px]"
+                      >
+                        {framework}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="my-4 h-px w-full bg-[#7590B833]" />
+
+                  <p className="text-sm font-normal text-[#AEB8CB] sm:text-[13px] sm:leading-6 max-w-[280px]">
+                    Privacy, cybersecurity, incident response, and
+                    sector-specific regulatory requirements across Indian
+                    organizations.
+                  </p>
                 </div>
 
-                <div className="my-4 h-px w-full bg-[#7590B833]" />
-
-                <p className="text-sm font-normal text-[#AEB8CB] sm:text-[13px] sm:leading-6 max-w-[280px]">
-                  Privacy, cybersecurity, incident response, and sector-specific
-                  regulatory requirements across Indian organizations.
-                </p>
-              </div>
-
-              {/* Global Frameworks */}
-              <div className="flex min-w-0 flex-col rounded-[17px] border border-[#FFFFFF0D] bg-[#101521] p-4 sm:p-[17px]">
-                <div className="flex items-center gap-2.5">
-                  <span className="shrink-0 text-[20px] leading-none">
-                    <Icon icon="fluent-emoji-flat:globe-showing-europe-africa" />
-                  </span>
-                  <h3 className="text-sm font-semibold leading-5 text-[#E6E8EF] sm:text-[14px]">
-                    Global Privacy Frameworks
-                  </h3>
-                </div>
-
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {[
-                    "GDPR",
-                    "UK GDPR",
-                    "UAE PDPL",
-                    "Saudi PDPL",
-                    "Singapore PDPA",
-                    "Australia Privacy Act",
-                    "CCPA/CPRA",
-                  ].map((framework) => (
-                    <span
-                      key={framework}
-                      className="inline-flex min-h-[23px] items-center rounded-[4px] bg-[#42515059] px-2.5 py-1 text-[10px] font-normal leading-3 text-[#E2E5EB] sm:text-[10px]"
-                    >
-                      {framework}
+                {/* Global Frameworks */}
+                <div className="flex min-w-0 flex-col rounded-[17px] border border-[#FFFFFF0D] bg-[#101521] p-4 sm:p-[17px]">
+                  <div className="flex items-center gap-2.5">
+                    <span className="shrink-0 text-[20px] leading-none">
+                      <Icon icon="fluent-emoji-flat:globe-showing-europe-africa" />
                     </span>
-                  ))}
+                    <h3 className="text-sm font-semibold leading-5 text-[#E6E8EF] sm:text-[14px]">
+                      Global Privacy Frameworks
+                    </h3>
+                  </div>
+
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {[
+                      "GDPR",
+                      "UK GDPR",
+                      "UAE PDPL",
+                      "Saudi PDPL",
+                      "Singapore PDPA",
+                      "Australia Privacy Act",
+                      "CCPA/CPRA",
+                    ].map((framework) => (
+                      <span
+                        key={framework}
+                        className="inline-flex min-h-[23px] items-center rounded-[4px] bg-[#42515059] px-2.5 py-1 text-[10px] font-normal leading-3 text-[#E2E5EB] sm:text-[10px]"
+                      >
+                        {framework}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="my-4 h-px w-full bg-[#7590B833]" />
+
+                  <p className="text-sm font-normal text-[#AEB8CB] sm:text-[13px] leading-6">
+                    Support privacy governance, accountability, data rights,
+                    breach response, and jurisdiction-specific requirements.
+                  </p>
                 </div>
-
-                <div className="my-4 h-px w-full bg-[#7590B833]" />
-
-                <p className="text-sm font-normal text-[#AEB8CB] sm:text-[13px] leading-6">
-                  Support privacy governance, accountability, data rights,
-                  breach response, and jurisdiction-specific requirements.
-                </p>
               </div>
-            </div>
+            </RightAnimation>
           </div>
 
           {/* Privacy Programme Capabilities */}
@@ -1122,11 +1130,11 @@ function page() {
           <div className="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-2 lg:gap-5 xl:gap-6">
             {/* LEFT PANEL: ENGAGEMENT MILESTONES */}
             <Animation>
-              <div className="h-full rounded-[9px] border border-[#FFFFFF0D] bg-[#0E1623] p-5 sm:p-6 lg:p-6 xl:p-[26px]">
+              <div className="h-full rounded-[9px] border border-[#FFFFFF0D] bg-[#0E1623] p-5 sm:p-6 lg:p-6 xl:p-[26px] ">
                 {/* Eyebrow */}
                 <div className="flex items-center gap-3">
                   <span className="h-[0.4px] w-8 shrink-0 bg-[#0F66EA]" />
-                  <p className="text-[11px] font-medium uppercase tracking-[2.5px] text-[#0F66EA] sm:text-[12px]">
+                  <p className="text-sm sm:text-base font-semibold uppercase tracking-[2.5px] text-[#0F66EA] sm:text-[12px] ">
                     ENGAGEMENT MILESTONES
                   </p>
                 </div>
@@ -1141,8 +1149,9 @@ function page() {
                   <div className="relative flex flex-col items-center">
                     <div className="absolute bottom-[35px] top-[21px] w-px bg-[#17416B]" />
 
-                    {engagementMilestones.map((item) => (
-                      <div
+                    {engagementMilestones.map((item, index) => (
+                      <AnimatedCard
+                        delay={index * 0.18}
                         key={item.number}
                         className="relative z-10 flex min-h-[75px] w-full flex-1 items-start justify-center"
                       >
@@ -1151,14 +1160,15 @@ function page() {
                             {item.number}
                           </span>
                         </div>
-                      </div>
+                      </AnimatedCard>
                     ))}
                   </div>
 
                   {/* Period and milestone content */}
                   <div className="flex min-w-0 flex-col">
                     {engagementMilestones.map((item, index) => (
-                      <div
+                      <AnimatedCard
+                        delay={index * 0.1}
                         key={item.number}
                         className={`grid min-h-[75px] grid-cols-[84px_minmax(0,1fr)] gap-x-3 sm:grid-cols-[84px_minmax(0,1fr)] sm:gap-x-4 ${
                           index !== engagementMilestones.length - 1
@@ -1181,7 +1191,7 @@ function page() {
                             {item.description}
                           </p>
                         </div>
-                      </div>
+                      </AnimatedCard>
                     ))}
                   </div>
                 </div>
@@ -1194,7 +1204,7 @@ function page() {
                 {/* Eyebrow */}
                 <div className="flex items-center gap-3">
                   <span className="h-[0.4px] w-8 shrink-0 bg-[#0F66EA]" />
-                  <p className="text-[11px] font-medium uppercase tracking-[2px] text-[#0F66EA] sm:text-[12px] sm:tracking-[2.3px]">
+                  <p className="text-sm sm:text-base font-semibold uppercase tracking-[2px] text-[#0F66EA] sm:text-[12px] sm:tracking-[2.3px]">
                     REGULATORY COVERAGE BY SECTOR &amp; REGION
                   </p>
                 </div>
@@ -1211,7 +1221,7 @@ function page() {
                 {/* Sector Cards */}
                 <div className="mt-6 flex flex-col gap-3.5">
                   {regulatoryCoverage.map((item) => (
-                    <div
+                    <AnimatedCard
                       key={item.title}
                       className="grid grid-cols-1 gap-3 rounded-[6px] border border-[#FFFFFF05] bg-gradient-to-r from-[#19243A] via-[#152F59] to-[#101D32] p-3.5 sm:grid-cols-[42px_minmax(0,1fr)] sm:items-center sm:gap-3.5 sm:p-3.5 md:grid-cols-[42px_minmax(0,1fr)_minmax(0,0.95fr)] md:gap-3 lg:grid-cols-[42px_minmax(0,1fr)] xl:grid-cols-[42px_minmax(0,1fr)_minmax(0,0.95fr)] xl:gap-3.5"
                     >
@@ -1239,7 +1249,7 @@ function page() {
                           {item.description}
                         </p>
                       </div>
-                    </div>
+                    </AnimatedCard>
                   ))}
                 </div>
               </div>
@@ -1257,23 +1267,26 @@ function page() {
           {/* TOP: INDIAN MARKETS */}
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10 xl:gap-12">
             {/* Intro */}
-            <div className="max-w-[470px]">
-              <h2 className="text-[28px] font-normal leading-[1.4] tracking-[-0.4px] text-white sm:text-[32px] sm:leading-[1.45] lg:text-[32px] xl:text-[34px]">
-                Outsourced DPO Services Across Key Markets
-              </h2>
+            <LeftAnimation>
+              <div className="lg:max-w-[470px] text-center lg:text-left">
+                <h2 className="text-[28px] font-normal leading-[1.4] tracking-[-0.4px] text-white sm:text-[32px] sm:leading-[1.45] lg:text-[32px] xl:text-[34px]">
+                  Outsourced DPO Services Across Key Markets
+                </h2>
 
-              <p className="mt-4 text-[14px] leading-[25px] text-[#C5C9D2] sm:text-[15px] sm:leading-[26px]">
-                ISECURION provides dedicated DPO services in every major Indian
-                business hub, with remote, hybrid, and on-site engagement models
-                available.
-              </p>
-            </div>
+                <p className="mt-4 text-[14px] leading-[25px] text-[#C5C9D2] sm:text-[15px] sm:leading-[26px]">
+                  ISECURION provides dedicated DPO services in every major
+                  Indian business hub, with remote, hybrid, and on-site
+                  engagement models available.
+                </p>
+              </div>
+            </LeftAnimation>
 
             {/* Indian Office Locations */}
             <div className="rounded-[24px] border border-[#596173]/70 bg-[#DADADA0A] p-4 sm:p-5 lg:p-5 xl:p-6">
               <div className="grid grid-cols-2 sm:grid-cols-4">
                 {dpoLocations.map((location, index) => (
-                  <div
+                  <AnimatedCard
+                    delay={index * 0.1}
                     key={location.name}
                     className={`flex min-w-0 flex-col items-center justify-center gap-3 px-2 py-5 sm:py-6 ${
                       index < 4
@@ -1287,16 +1300,12 @@ function page() {
                         : ""
                     } ${index >= 4 ? "sm:border-t sm:border-[#FFFFFF0D]" : ""}`}
                   >
-                    <Icon
-                      icon={location.icon}
-                      className="h-[34px] w-[34px] text-[#00CFEF]"
-                      aria-hidden="true"
-                    />
+                    <GradientIcon Icon={location.Icon} />
 
                     <span className="text-center text-[13px] font-normal leading-5 text-[#D1D3DB] sm:text-[15px]">
                       {location.name}
                     </span>
-                  </div>
+                  </AnimatedCard>
                 ))}
               </div>
             </div>
@@ -1306,28 +1315,31 @@ function page() {
           <div className="relative mt-8 overflow-hidden rounded-[18px] border border-[#52606C]/70 bg-gradient-to-r from-[#1D1E2AF]  to-[#122D2C] sm:mt-9 lg:mt-8">
             <div className="relative grid grid-cols-1 items-center gap-7 p-5 sm:p-6 lg:grid-cols-[minmax(230px,1.2fr)_minmax(0,3fr)] lg:gap-5 lg:p-6 xl:p-6">
               {/* Global Coverage Intro */}
-              <div className="min-w-0">
-                <p className="text-[15px] font-medium uppercase tracking-wide text-[#1680FF] sm:text-[17px]">
-                  GLOBAL COVERAGE
-                </p>
+              <Animation>
+                <div className="min-w-0">
+                  <p className="text-[15px] font-medium uppercase tracking-wide text-[#1680FF] sm:text-[17px]">
+                    GLOBAL COVERAGE
+                  </p>
 
-                <h3 className="mt-3 text-[21px] font-normal leading-[1.5] text-white sm:text-[23px]">
-                  Global reach.
-                  <br />
-                  Consistent standards.
-                </h3>
+                  <h3 className="mt-3 text-[21px] font-normal leading-[1.5] text-white sm:text-[23px]">
+                    Global reach.
+                    <br />
+                    Consistent standards.
+                  </h3>
 
-                <p className="mt-3 text-[14px] leading-[25px] text-[#C5C9D2] sm:text-[15px] sm:leading-[26px]">
-                  India-headquartered expertise.
-                  <br className="hidden sm:block" />
-                  Globally deployed. Locally compliant.
-                </p>
-              </div>
+                  <p className="mt-3 text-[14px] leading-[25px] text-[#C5C9D2] sm:text-[15px] sm:leading-[26px]">
+                    India-headquartered expertise.
+                    <br className="hidden sm:block" />
+                    Globally deployed. Locally compliant.
+                  </p>
+                </div>
+              </Animation>
 
               {/* Global Regions */}
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
                 {globalDpoRegions.map((region, index) => (
-                  <div
+                  <AnimatedCard
+                    delay={index * 0.1}
                     key={region.code}
                     className={`flex min-w-0 flex-col items-center justify-center px-2 py-5 text-center sm:px-3 lg:py-3 ${
                       index % 2 === 0 ? "border-r border-[#243849]" : ""
@@ -1347,8 +1359,8 @@ function page() {
                         : ""
                     } ${index === 4 ? "col-span-2 sm:col-span-1" : ""}`}
                   >
-                    <Icon
-                      icon={region.icon}
+                    <GradientIcon
+                      Icon={region.icon}
                       className="h-[43px] w-[43px] text-[#00D6E9] sm:h-[46px] sm:w-[46px]"
                       aria-hidden="true"
                     />
@@ -1362,7 +1374,7 @@ function page() {
                     <span className="mt-2 text-[12px] leading-5 text-[#C5C9D2] sm:text-[13px]">
                       {region.name}
                     </span>
-                  </div>
+                  </AnimatedCard>
                 ))}
               </div>
             </div>
@@ -1388,33 +1400,39 @@ function page() {
 
         <div className="relative mx-auto w-full max-w-7xl px-4 pt-12 sm:px-6 sm:pt-14 lg:px-8 lg:pt-[48px]">
           {/* Intro */}
-          <div className="max-w-[590px]">
-            <p className="text-[12px] font-medium uppercase leading-5 text-white sm:text-[13px]">
-              WHAT SETS ISECURION APART?
-            </p>
+          <Animation>
+            <div className="max-w-[590px]">
+              <p className="text-[12px] font-medium uppercase leading-5 text-white sm:text-[13px]">
+                WHAT SETS ISECURION APART?
+              </p>
 
-            <h2 className="mt-2 max-w-[570px] text-[30px] font-normal leading-[1.3] tracking-[-0.45px] text-white sm:text-[34px] sm:leading-[1.4] lg:text-[36px]">
-              Privacy Leadership that connects regulation, governance, and
-              execution.
-            </h2>
+              <h2 className="mt-2 max-w-[570px] text-[30px] font-normal leading-[1.3] tracking-[-0.45px] text-white sm:text-[34px] sm:leading-[1.4] lg:text-[36px]">
+                Privacy Leadership that connects regulation, governance, and
+                execution.
+              </h2>
 
-            <p className="mt-4 max-w-[560px] text-[14px] leading-[25px] text-[#D0D6E0] sm:text-[15px] sm:leading-[25px]">
-              ISECURION combines privacy expertise, security knowledge, and
-              practical implementation support to help organisations manage
-              their data protection responsibilities.
-            </p>
-          </div>
+              <p className="mt-4 max-w-[560px] text-[14px] leading-[25px] text-[#D0D6E0] sm:text-[15px] sm:leading-[25px]">
+                ISECURION combines privacy expertise, security knowledge, and
+                practical implementation support to help organisations manage
+                their data protection responsibilities.
+              </p>
+            </div>
+          </Animation>
 
           {/* Four feature cards */}
 
           <div className="relative z-10 mt-7 rounded-[17px] border bg-gradient-to-b from-[#202123AD] to-[#090B21] px-5 py-7 shadow-[0_3px_0_rgba(15,102,234,0.16)] sm:mt-8 sm:px-7 sm:py-8 lg:mt-[26px] lg:px-[30px] lg:pb-[50px] lg:pt-[48px]">
             <div className="grid grid-cols-1 gap-x-7 gap-y-8 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-4 lg:gap-x-7 lg:gap-y-0">
-              {privacyLeadershipFeatures.map((feature) => (
-                <article key={feature.title} className="min-w-0">
+              {privacyLeadershipFeatures.map((feature, index) => (
+                <AnimatedCard
+                  delay={index * 0.13}
+                  key={feature.title}
+                  className="min-w-0"
+                >
                   {/* Gradient-colored icon */}
                   <div className="relative mb-7 flex h-[22px] w-[30px] items-center">
-                    <Icon
-                      icon={feature.icon}
+                    <GradientIcon
+                      Icon={feature.icon}
                       className="relative z-10 h-[30px] w-[30px] text-[#00D9EF] drop-shadow-[1px_1px_0px_#0F66EA]"
                       aria-hidden="true"
                     />
@@ -1431,7 +1449,7 @@ function page() {
                   <p className="mt-3 text-sm leading-[22px] text-[#D1D1D1D6] sm:text-[14px] sm:leading-[22px] max-w-[220px]">
                     {feature.description}
                   </p>
-                </article>
+                </AnimatedCard>
               ))}
             </div>
           </div>
@@ -1441,23 +1459,26 @@ function page() {
       {/* OUTSOURCED DELIVERABLES  */}
       <section className="w-full py-14 bg-[#060D1B]">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-6 sm:px-10 gap-8 lg:gap-15">
-          <div className="w-full lg:w-[40%] space-y-4">
-            <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
-              OUTSOURCED DPO DELIVERABLES
-            </p>
-            <h2 className="font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF]">
-              Clear Privacy Deliverables. Measurable Compliance Progress.
-            </h2>
-            <p className="text-base sm:text-lg font-normal leading-[25px] md:leading-[31px] text-[#D1D1D1]">
-              Get practical privacy documentation, structured workflows, and
-              actionable reporting that help strengthen data protection and
-              improve compliance readiness.
-            </p>
+          <div className="w-full lg:w-[50%] space-y-4 text-center lg:text-left">
+            <LeftAnimation>
+              <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
+                OUTSOURCED DPO DELIVERABLES
+              </p>
+              <h2 className="font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF] lg:max-w-[490px]">
+                Clear Privacy Deliverables. Measurable Compliance Progress.
+              </h2>
+              <p className="text-base sm:text-lg font-normal leading-[25px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[509px]">
+                Get practical privacy documentation, structured workflows, and
+                actionable reporting that help strengthen data protection and
+                improve compliance readiness.
+              </p>
+            </LeftAnimation>
           </div>
+
           <div className="flex-1">
             <div className="relative mt-8">
               <div className="absolute top-0 bottom-0 border-l-[3px] border-[#152329] shadow-[inset_3px_0_4px_0_#FFFFFFCF]"></div>
-              <div className="space-y-8">
+              <div className="space-y-8 ">
                 {outsourcedDeliverables.map((item, index) => (
                   <AnimatedCard
                     key={index}

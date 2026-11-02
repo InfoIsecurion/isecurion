@@ -10,7 +10,7 @@ const locations = [
   {
     name: "Bangalore",
     address:
-      "45, Kanakapura Main Rd, Paramount Gardens, Talaghattapura, Bengaluru, Karnataka 560109",
+      "37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura,Bengaluru - 560109, Karnataka",
   },
   {
     name: "Kolkata",

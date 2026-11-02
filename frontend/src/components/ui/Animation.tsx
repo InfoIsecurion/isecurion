@@ -17,7 +17,7 @@ function Animation({ delay = 0, children }: AnimationProps) {
         delay,
         duration: 1.2,
       }}
-      viewport={{ once: true }}
+      viewport={{ once: false }}
     >
       {children}
     </motion.div>
@@ -84,7 +84,7 @@ function AnimatedCard({
         delay,
       }}
       viewport={{
-        once: true,
+        once: false,
         amount: 0.5,
       }}
       className={className}
@@ -109,7 +109,7 @@ function LeftAnimation({ children }: LeftAnimationProps) {
         ease: "easeOut",
       }}
       viewport={{
-        once: true,
+        once: false,
         amount: 0.3,
       }}
     >
@@ -134,7 +134,7 @@ function RightAnimation({ children, delay = 0 }: RightAnimationProps) {
         ease: "easeOut",
       }}
       viewport={{
-        once: true,
+        once: false,
         amount: 0.2,
       }}
     >
@@ -143,7 +143,7 @@ function RightAnimation({ children, delay = 0 }: RightAnimationProps) {
   );
 }
 
-import { Icon } from "@iconify/react";
+
 interface GradientIconProps {
   Icon?: string;
   className?: string;
@@ -151,18 +151,23 @@ interface GradientIconProps {
 
 function GradientIcon({
   Icon: iconName,
-  className = "w-8 h-8",
+  className = "h-10 w-10",
 }: GradientIconProps) {
+  if (!iconName) return null;
+
+  const iconUrl = `https://api.iconify.design/${iconName.replace(":", "/")}.svg`;
+
   return (
     <div
+      aria-hidden="true"
       className={className}
       style={{
         background: "linear-gradient(180deg, #0FEADB 0%, #0F66EA 100%)",
-        WebkitMaskImage: `url("https://api.iconify.design/${iconName}.svg")`,
+        WebkitMaskImage: `url("${iconUrl}")`,
         WebkitMaskRepeat: "no-repeat",
         WebkitMaskPosition: "center",
         WebkitMaskSize: "contain",
-        maskImage: `url("https://api.iconify.design/${iconName}.svg")`,
+        maskImage: `url("${iconUrl}")`,
         maskRepeat: "no-repeat",
         maskPosition: "center",
         maskSize: "contain",

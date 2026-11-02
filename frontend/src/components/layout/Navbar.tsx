@@ -51,18 +51,18 @@ const serviceDetails = {
         links: [
           {
             label: "Managed Security Services(MSSP)",
-            href: "/service/managed-security-services",
+            href: "/services/managed-security-services",
           },
           {
             label: "In-House SOC Service",
             href: "/services/inhouse-soc",
           },
-          { label: "Hybrid SOC Service", href: "/service/hybrid-soc-service" },
+          { label: "Hybrid SOC Service", href: "/services/hybrid-soc" },
           {
             label: "Incident Response & DFIR",
-            href: "/service/incident-response-dfir",
+            href: "/services/incident-response-dfir",
           },
-          { label: "Ransomware Negotiation", href: "/service/ransomware" },
+          { label: "Ransomware Negotiation", href: "/services/ransomware" },
         ],
       },
       {
@@ -70,11 +70,11 @@ const serviceDetails = {
         links: [
           {
             label: "DDoS Testing Services",
-            href: "/service/ddos-testing-service",
+            href: "/services/ddos-testing-service",
           },
           {
             label: "MCP Pentesting Services",
-            href: "/service/mcp-pentesting-service",
+            href: "/services/mcp-pentesting-service",
           },
         ],
       },
@@ -161,7 +161,7 @@ const serviceDetails = {
           },
           {
             label: "GDPR",
-            href: "/services/gdpr",
+            href: "/services/GDPR",
           },
           {
             label: "DPDP Compliance",
@@ -178,11 +178,11 @@ const serviceDetails = {
           },
           {
             label: "IRDA Information Security Audit",
-            href: "/services/irda",
+            href: "/services/IRDA-audit",
           },
           {
             label: "RBI Information Security Audit",
-            href: "/services/rbi",
+            href: "/services/RBI-security-audit",
           },
         ],
       },
@@ -205,7 +205,7 @@ const serviceDetails = {
           },
           {
             label: "SOC 2 Compliance",
-            href: "/services/soc2",
+            href: "/services/soc-2-compliance",
           },
           {
             label: "ISO 42001 (AIMS)",
@@ -234,11 +234,11 @@ const serviceDetails = {
           },
           {
             label: "CICRA Audit Services",
-            href: "/services/cicra-audit-service",
+            href: "/services/cicra-audit-services",
           },
           {
             label: "BSE/NSE Audit Services",
-            href: "/services/bse",
+            href: "/services/bse-nse-audit-services",
           },
         ],
       },
@@ -324,7 +324,7 @@ const company = [
       {
         name: "Contact Us",
         description: "Connect with our cybersecurity experts",
-        link: "/contact",
+        link: "/company/contact",
       },
     ],
   },
