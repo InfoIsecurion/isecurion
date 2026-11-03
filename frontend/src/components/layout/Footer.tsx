@@ -233,22 +233,24 @@ function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-2.5 text-[13px] text-white sm:flex-row sm:items-center sm:justify-between sm:px-10">
           {/* Left - Copyright */}
           <div className="flex flex-wrap items-center gap-3">
-            <p>Copyright ©2026 Isecurion</p>
+            <p>Copyright ©2026 <Link href="/" className="hover:text-[#0F66EA] hover:underline">
+              Isecurion
+            </Link></p>
             <span className="hidden text-[#D1D1D1] sm:block">|</span>
             <p>All Rights Reserved</p>
           </div>
 
           {/* Right - Policies */}
           <div className="flex flex-wrap items-center gap-3">
-            <Link href="" className="underline underline-offset-2">
+            <Link href="/privacy-policy" className="underline underline-offset-2 hover:text-[#0F66EA]">
               Privacy &amp; Policy
             </Link>
             <span className="text-[#D1D1D1]">|</span>
-            <Link href="" className="underline underline-offset-2">
+            <Link href="/disclaimer" className="underline underline-offset-2 hover:text-[#0F66EA]">
               Disclaimer
             </Link>
             <span className="text-[#D1D1D1]">|</span>
-            <Link href="" className="underline underline-offset-2">
+            <Link href="/terms-of-use" className="underline underline-offset-2 hover:text-[#0F66EA]">
               Terms of Use
             </Link>
           </div>

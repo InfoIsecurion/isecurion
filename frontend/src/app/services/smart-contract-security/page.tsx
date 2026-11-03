@@ -179,8 +179,8 @@ function SmartContractSecurity() {
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 flex">
           <Animation>
-            <div className="flex-1 space-y-4 text-center lg:text-left">
-              <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
+            <div className="flex-1 space-y-4 text-center md:text-left">
+              <p className="text-base font-semibold text-[#0F66EA]">
                 Smart Contract Security Audit
               </p>
               <h1 className="font-semibold leading-[32px] md:leading-[50px] lg:leading-[55px] text-[#FFFFFF] max-w-[600px]">
@@ -190,11 +190,11 @@ function SmartContractSecurity() {
                 ISECURION audits smart contracts to identify vulnerabilities, validate functionality,
                 and strengthen security across blockchain ecosystems.
               </p>
-              <button className="mt-8 text-[15px] font-medium px-4 py-3 flex items-center gap-2 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]">
-                Secure Your Smart Contract{" "}
+              <button className="mt-8 mx-auto md:mx-0 text-[15px] font-medium px-4 py-3 flex items-center justify-center gap-2 rounded-[10px] cursor-pointer text-[#31435C] bg-white">
+                Secure Your Smart Contract
                 <span>
                   <Icon icon="akar-icons:arrow-right" />
-                </span>{" "}
+                </span>
               </button>
             </div>
           </Animation>
@@ -231,11 +231,11 @@ function SmartContractSecurity() {
 
           {/* We Assess */}
           <Animation>
-            <div className="mt-5">
+            <div className="mt-5 text-center md:text-left">
               <p className="text-sm font-medium text-[#D1D1D1]">A security audit helps you:</p>
 
               <ul className="mt-4 space-y-2">
-                <li className="flex items-center gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -243,7 +243,7 @@ function SmartContractSecurity() {
                   Reduce Financial Risk
                 </li>
 
-                <li className="flex items-center gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -251,7 +251,7 @@ function SmartContractSecurity() {
                   Protect User Funds
                 </li>
 
-                <li className="flex items-center gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -259,7 +259,7 @@ function SmartContractSecurity() {
                   Build Trust
                 </li>
 
-                <li className="flex items-center gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -276,9 +276,9 @@ function SmartContractSecurity() {
             {/* HEADER SECTION */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               {/* LEFT HEADING */}
-              
-                <div className="lg:col-span-7 text-center md:text-left">
-                  <LeftAnimation>
+
+              <div className="lg:col-span-7 text-center md:text-left">
+                <LeftAnimation>
                   <p className="text-[13px] sm:text-[14px] font-semibold uppercase tracking-[0.2px] text-[#0F66EA]">
                     WHAT WE AUDIT
                   </p>
@@ -287,20 +287,20 @@ function SmartContractSecurity() {
                     Test every layer of your <br className="hidden sm:inline" />
                     smart contract.
                   </p>
-                  </LeftAnimation>
-                </div>
-              
+                </LeftAnimation>
+              </div>
+
 
               {/* RIGHT SUB-TEXT */}
-              
-                <div className="lg:col-span-5 lg:pt-9">
-                  <RightAnimation>
+
+              <div className="lg:col-span-5 lg:pt-9">
+                <RightAnimation>
                   <p className="text-[15px] sm:text-[16px] leading-[1.7] text-[#D1D1D1] max-w-[430px]">
                     We analyze your smart contracts from code to risk, ensuring they are secure, reliable, and ready for real-world use.
                   </p>
-                  </RightAnimation>
-                </div>
-              
+                </RightAnimation>
+              </div>
+
             </div>
 
 

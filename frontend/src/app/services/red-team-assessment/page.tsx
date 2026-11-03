@@ -327,7 +327,7 @@ export default function RedTeamAssessmentPage() {
       <section className="bg-[#050B1A]">
         <Animation>
           <div className="mx-auto max-w-7xl px-7 py-10 sm:px-10 lg:px-8 lg:py-14 xl:px-10 text-center md:text-left">
-            <h2 className="text-[30px] font-normal leading-[1.2]  text-white sm:text-[38px] lg:text-[40px]">
+            <h2 className="leading-[1.2]  text-white">
               What is Red Team Assessment?
             </h2>
             <p className="mt-7 text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] lg:text-[18px] max-w-[700px]">

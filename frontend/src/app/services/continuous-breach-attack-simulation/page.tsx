@@ -623,7 +623,7 @@ function page() {
                 DELIVERABLES
               </p>
 
-              <h2 className="mt-[10px] text-[30px] font-normal leading-[1.4] text-white sm:text-[36px] lg:text-[34px]">
+              <h2 className="mt-[10px] text-[24px] font-normal leading-[1.4] text-white sm:text-[36px] lg:text-[34px]">
                 From attack simulation to <br></br>actionable improvement.
               </h2>
 

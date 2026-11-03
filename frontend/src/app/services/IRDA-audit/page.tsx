@@ -388,7 +388,7 @@ function page() {
                         <Animation>
                             <div className="flex flex-col justify-center lg:py-2 text-center md:text-left">
                                 {/* Eyebrow */}
-                                <p className="text-[13px] sm:text-base font-semibold uppercase leading-7 text-[#7D70F0] text-center lg:text-left max-w-[410px]">
+                                <p className="text-[13px] sm:text-base font-semibold uppercase leading-7 text-[#7D70F0] text-center lg:text-left lg:max-w-[410px]">
                                     IRDAI COMPLIANCE • INSURANCE CYBERSECURITY • ISNP AUDIT
                                 </p>
 
@@ -409,7 +409,7 @@ function page() {
                                         "Digital Platform Security",
                                         "Audit Readiness & Reporting",
                                     ].map((item) => (
-                                        <li key={item} className="flex items-center lg:items-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]">
+                                        <li key={item} className="flex items-center justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]">
                                             <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#7D70F0]" />
                                             <span>{item}</span>
                                         </li>

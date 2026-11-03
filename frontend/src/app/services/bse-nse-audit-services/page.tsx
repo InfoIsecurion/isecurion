@@ -505,7 +505,7 @@ function page() {
                                         "Minimal Business Disruption",
                                         "Exchange-Ready Reports",
                                     ].map((item) => (
-                                        <li key={item} className="flex items-center lg:items-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]">
+                                        <li key={item} className="flex items-center justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]">
                                             <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#3B9E6A]" />
                                             <span>{item}</span>
                                         </li>
