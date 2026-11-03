@@ -306,8 +306,9 @@ export default function Home() {
             >
               Build for Trust <br /> Designed for Cyber Resilience.
             </h1>
+
             <p
-              className="text-base sm:text-lg font-medium  lg:max-w-lg leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] opacity-0 animate-hero-reveal"
+              className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-lg leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] opacity-0 animate-hero-reveal"
               style={{ animationDelay: "450ms" }}
             >
               Helping organizations anticipate threats, reduce cyber risk, and
@@ -482,21 +483,21 @@ export default function Home() {
             <p className="flex items-center justify-center lg:justify-start gap-2">
               <span className="block h-6 w-[2px] bg-[#0F66EA]"></span>
 
-              <span className="text-sm sm:text-base font-semibold text-center uppercase text-[#0F66EA] sectionheading tracking-[2px] text-center lg:text-left">
+              <span className="text-sm sm:text-base font-semibold text-center uppercase text-[#0F66EA]  tracking-[2px] lg:text-left">
                 WHY ORGANIZATIONS CHOOSE ISECURION
               </span>
             </p>
           </LeftAnimation>
           <div className="flex flex-col lg:flex-row items-center justify-between mt-6 gap-5">
             <LeftAnimation>
-              <h2 className="text-center lg:text-left font-medium  text-white">
+              <h2 className="text-center lg:text-left text-white">
                 Security is more than <br />
                 protection. <br /> It's the foundation of <br />
                 <span className="text-[#0F66EA]">confident business.</span>
               </h2>
             </LeftAnimation>
             <RightAnimation>
-              <p className="text-base sm:text-lg font-medium  lg:max-w-lg text-center lg:text-left leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+              <p className="text-base font-medium  lg:max-w-lg text-center lg:text-left leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
                 Organizations rely on applications, cloud infrastructure,
                 digital identities, and connected systems to operate. ISECURION
                 helps validate security continuously, reduce risk proactively,
@@ -523,7 +524,7 @@ export default function Home() {
                       </h3>
 
                       <div className="flex items-center gap-3 h-[70px] ">
-                        <p className=" transition-all duration-300 group-hover:hidden text-[11px] sm:text-sm font-medium text-[#ACACAC] max-w-[252px] ">
+                        <p className="transition-all duration-300 group-hover:hidden text-[11px] sm:text-sm font-medium text-[#ACACAC] max-w-[252px] ">
                           Uncover exploitable vulnerabilities before they become
                           business disruptions.
                         </p>
@@ -670,7 +671,7 @@ export default function Home() {
               </div>
               <div className="lg:max-w-[550px] space-y-2">
                 <RightAnimation>
-                  <p className="hidden lg:block  text-base font-semibold text-[#0F66EA] sectionheading tracking-[0.5px]">
+                  <p className="hidden lg:block  text-base font-semibold text-[#0F66EA]  tracking-[0.5px]">
                     OUR EXPERTISE
                   </p>
                   <p className="text-center lg:text-left font-medium leading-7 text-white">
@@ -766,7 +767,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 bg-[#070D1A] py-14">
           <div className="space-y-3 lg:max-w-xl flex flex-col items-center lg:items-start text-center lg:text-left">
             <Animation>
-              <p className="flex items-center gap-2 sectionheading">
+              <p className="flex items-center gap-2 ">
                 <span className="block h-6 w-[2px] bg-[#0F66EA]"></span>
 
                 <span className="text-sm sm:text-base font-semibold uppercase text-[#0F66EA] tracking-[1px]">

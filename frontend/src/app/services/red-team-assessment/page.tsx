@@ -1,6 +1,8 @@
 "use client";
 import { Icon } from "@iconify/react";
-
+import { Turnstile } from "@marsidev/react-turnstile";
+import { toast } from "react-toastify";
+import { useState } from "react";
 import attackSurfaceBackground from "../../../assets/services/attackSurfaceBackground.png";
 import redTeamHeroBackground from "../../../assets/services/Ellipse.png";
 import bookIcon from "../../../assets/services/icons/bookIcon.png";
@@ -16,6 +18,14 @@ import frame4 from "../../../assets/services/Frame4.png";
 import frame5 from "../../../assets/services/Frame5.png";
 import FAQSection from "../../../components/sections/FAQSection";
 import { Animation, LeftAnimation } from "../../../components/ui/Animation";
+import { redTeamAssessment } from "../../../services/api/contact";
+import { useForm } from "react-hook-form";
+
+interface ContactFormData {
+  email: string;
+  companyName: string;
+  assessment: string;
+}
 
 const redTeamAssessmentFAQs = [
   {
@@ -72,6 +82,35 @@ const redTeamAssessmentFAQs = [
 ];
 
 export default function RedTeamAssessmentPage() {
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const {
+    register,
+    reset,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactFormData>();
+
+  const submit = async (data: ContactFormData) => {
+    setLoading(true);
+    try {
+      if (!turnstileToken) {
+        toast.error("Please complete CAPTCHA verification");
+        return;
+      }
+      const response = await redTeamAssessment({ ...data, turnstileToken });
+      console.log(data);
+      if (response.status === 200) {
+        toast.success(response.message);
+      } else {
+        toast.error(response.message);
+      }
+    } catch (error) {
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <main className="min-h-screen bg-black text-white">
       {/* RED TEAM SECTION */}
@@ -169,7 +208,7 @@ export default function RedTeamAssessmentPage() {
                 </div>
 
                 {/* Form*/}
-                <form className="mt-8">
+                <form className="mt-8" onSubmit={handleSubmit(submit)}>
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div>
                       <label
@@ -184,8 +223,10 @@ export default function RedTeamAssessmentPage() {
                         name="workEmail"
                         type="email"
                         placeholder="youremail@gmail.com"
-                        required
                         className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        {...register("email", {
+                          required: "Email is required",
+                        })}
                       />
                     </div>
 
@@ -222,6 +263,9 @@ export default function RedTeamAssessmentPage() {
                         defaultValue=""
                         required
                         className="h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        {...register("assessment", {
+                          required: "Assessment is required",
+                        })}
                       >
                         <option value="" disabled>
                           Select Assessment Type
@@ -266,23 +310,15 @@ export default function RedTeamAssessmentPage() {
                   {/* Captcha */}
                   <div className="mt-7">
                     <div className="flex items-center gap-3">
-                      <span className="text-[13px] leading-5 text-[#E7E7E7]">
-                        Captcha
-                      </span>
+                      <p className="text-sm font-medium text-white">Captcha</p>
 
-                      <span className="flex h-[32px] min-w-[127px] items-center justify-center rounded-[5px] bg-[#E24B4A78] px-5 text-[13px] font-medium tracking-wide text-white">
-                        ZRLD9Y
-                      </span>
+                      <Turnstile
+                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                        onSuccess={(token) => setTurnstileToken(token)}
+                        onExpire={() => setTurnstileToken("")}
+                        onError={() => setTurnstileToken("")}
+                      />
                     </div>
-
-                    <input
-                      id="captcha"
-                      name="captcha"
-                      type="text"
-                      placeholder="Enter the text shown above"
-                      required
-                      className="mt-3 h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
-                    />
                   </div>
 
                   {/* Consent */}

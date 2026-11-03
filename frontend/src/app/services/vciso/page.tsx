@@ -11,6 +11,21 @@ import world from "../../../assets/services/world.svg";
 import Image from "next/image";
 import isecurionapartbackground from "../../../assets/services/isecurion-apart-background.png";
 import FAQSection from "../../../components/sections/FAQSection";
+import { Turnstile } from "@marsidev/react-turnstile";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { useState } from "react";
+import { vcsio } from "../../../services/api/contact";
+
+interface ContactFormData {
+  fullname: string;
+  companyname: string;
+  email: string;
+  phonenumber: string;
+  location: string;
+  engagement: string;
+  message: string;
+}
 
 const cisoServices = [
   {
@@ -231,25 +246,25 @@ const engagementMilestones = [
 ];
 const regulatoryCoverage = [
   {
-    Icon: "engagement-milestones",
+    Icon: "lucide:landmark",
     heading: "BFSI & FinTech",
     subheading: "RBI · CERT-In · DPDP",
     description: "Manage risk, ensure compliance and build customer trust.",
   },
   {
-    Icon: "engagement-milestones",
+    Icon: "lucide:route",
     heading: "SEBI-Regulated Entities",
     subheading: "CSCRF · Reporting",
     description: "Meet market regulations and protect investor  trust.",
   },
   {
-    Icon: "engagement-milestones",
+    Icon: "akar-icons:cloud",
     heading: "IT / SaaS",
     subheading: "ISO 27001 · SOC 2 · GDPR",
     description: "Secure your platforms and customer data.",
   },
   {
-    Icon: "engagement-milestones",
+    Icon: "lucide:rocket",
     heading: "Startups & High-Growth",
     subheading: "Security foundations",
     description: "Build a strong security foundation for scale.",
@@ -493,12 +508,33 @@ const vcisoFAQs = [
 ];
 
 function Vicso() {
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [loading, setLoading] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>();
+
+  const submit = async (data: ContactFormData) => {
+    console.log(data);
+    setLoading(true);
+    try {
+      const response = await vcsio(data);
+    } catch (error) {
+      toast.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="bg-[#060D1B]">
       {/* hero section  */}
-      <section className="relative overflow-hidden  py-14 flex items-center  bg-[#000000]">
-        <div className="absolute w-[650px] h-[650px] left-20 rounded-full blur-[200px] pointer-events-none bg-[#0F66EA80]"></div>
+      <section className="relative overflow-hidden   py-14 flex items-center  bg-[#000000]">
         <div className="relative max-w-7xl w-full mx-auto px-6 sm:px-10 flex flex-col lg:flex-row items-center gap-15">
+          <div className="absolute w-[650px] h-[650px] left-20 rounded-full blur-[200px] pointer-events-none bg-[#0F66EA80]"></div>
           <div className="flex-1">
             <div className="space-y-4 text-center lg:text-left">
               <p
@@ -558,159 +594,202 @@ function Vicso() {
               </button>
             </div>
           </div>
-          <div className="flex-1  px-7 py-5 rounded-3xl space-y-5 bg-linear-to-r from-[#7B6FE829] to-[#090B21]">
-            <div className="flex flex-col sm:flex-row gap-6">
-              <div className="flex flex-col w-full gap-3">
-                <label
-                  htmlFor=""
-                  className="text-[#FEFEFE] text-sm font-normal"
-                >
-                  First Name <span className="text-[#E42F23]">*</span>{" "}
-                </label>
-                <input
-                  type="text"
-                  placeholder="First name"
-                  className="px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                />
+          <div className="flex-1  px-7 py-5 rounded-3xl space-y-3 bg-linear-to-r from-[#7B6FE829] to-[#090B21]">
+            <form
+              action=""
+              className="space-y-3"
+              onSubmit={handleSubmit(submit)}
+            >
+              <div className="flex flex-col sm:flex-row gap-6">
+                <div className="flex flex-col w-full gap-3">
+                  <label
+                    htmlFor=""
+                    className="text-[#FEFEFE] text-sm font-normal"
+                  >
+                    Full Name <span className="text-[#E42F23]">*</span>{" "}
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="First name"
+                    className="px-3 py-2.5 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
+                    {...register("fullname", {
+                      required: "Full name is required",
+                    })}
+                  />
+                  {errors.fullname && (
+                    <p className="text-sm font-normal text-red-500">
+                      {errors.fullname.message}
+                    </p>
+                  )}
+                </div>
+                <div className="flex flex-col w-full gap-3">
+                  <label
+                    htmlFor=""
+                    className="text-[#FEFEFE] text-[15px] font-normal"
+                  >
+                    Company Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Company name"
+                    className="px-3 py-2.5 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
+                    {...register("companyname")}
+                  />
+                </div>
               </div>
-              <div className="flex flex-col w-full gap-3">
-                <label
-                  htmlFor=""
-                  className="text-[#FEFEFE] text-[15px] font-normal"
-                >
-                  Company Name <span className="text-[#E42F23]">*</span>{" "}
-                </label>
-                <input
-                  type="text"
-                  placeholder="Company name"
-                  className="px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                />
+              <div className="flex flex-col sm:flex-row gap-6">
+                <div className="flex flex-col w-full gap-3">
+                  <label
+                    htmlFor=""
+                    className="text-[#FEFEFE] text-[15px] font-medium"
+                  >
+                    Email <span className="text-[#E42F23]">*</span>{" "}
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="youremail@gmail.com"
+                    className="px-3 py-2.5 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
+                    {...register("email", { required: "Email is required" })}
+                  />
+                  {errors.email && (
+                    <p className="text-sm font-normal text-red-500">
+                      {errors.email.message}
+                    </p>
+                  )}
+                </div>
+                <div className="flex flex-col w-full gap-3">
+                  <label
+                    htmlFor=""
+                    className="text-[#FEFEFE] text-[15px] font-medium"
+                  >
+                    Phone Number <span className="text-[#E42F23]">*</span>{" "}
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="+91 987-654-321"
+                    className="px-3 py-2.5 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
+                    {...register("phonenumber", {
+                      required: "Phone number is required",
+                    })}
+                  />
+                  {errors.phonenumber && (
+                    <p className="text-sm font-normal text-red-500">
+                      {errors.phonenumber.message}
+                    </p>
+                  )}
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-6">
-              <div className="flex flex-col w-full gap-3">
+              <div className="flex flex-col sm:flex-row gap-6">
+                <div className="flex flex-col w-full gap-3">
+                  <label
+                    htmlFor=""
+                    className="text-[#FEFEFE] text-[15px] font-medium"
+                  >
+                    Location
+                  </label>
+                  <select
+                    name=""
+                    id=""
+                    className="py-3 w-full px-3 rounded-[10px] cursor-pointer outline-none  text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
+                    {...register("location")}
+                  >
+                    <option value="">Select your loaction</option>
+                    <option value="india">India</option>
+                  </select>
+                </div>
+                <div className="flex flex-col w-full gap-3">
+                  <label
+                    htmlFor=""
+                    className="text-[#FEFEFE] text-[15px] font-medium"
+                  >
+                    Engagement Type{" "}
+                    <span className="text-[#E42F23]">*</span>{" "}
+                  </label>
+                  <select
+                    name=""
+                    id=""
+                    className="py-3 w-full px-3 rounded-[10px] cursor-pointer outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
+                    {...register("engagement", {
+                      required: "Engagement type is required",
+                    })}
+                  >
+                    <option value="">Choose enagament type</option>
+                    <option value="foundational vciso(startup/sme)">
+                      Foundational vCISO (Startup / SME)
+                    </option>
+                    <option value="growth vciso(mid-market)">
+                      Growth vCISO (Mid-Market)
+                    </option>
+                    <option value="enterprise vciso">
+                      Enterprise vCISO (Continuous)
+                    </option>
+                    <option value="on-demand advisory/retailer">
+                      On-demand Advisory / Retainer
+                    </option>
+                    <option value="compliance vciso  (rbi/cert-in/dpdp/sebi)">
+                      Compliance vCISO (RBI / CERT-In / DPDP / SEBI)
+                    </option>
+                    <option value="compliance vciso(iso/27001/soc 2 /gdpr)">
+                      Compliance vCISO (ISO 27001 / SOC 2 / GDPR)
+                    </option>
+                  </select>
+                  {errors.engagement && (
+                    <p className="text-sm font-normal text-red-500">
+                      {errors.engagement.message}
+                    </p>
+                  )}
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
                 <label
                   htmlFor=""
                   className="text-[#FEFEFE] text-[15px] font-medium"
                 >
-                  Email <span className="text-[#E42F23]">*</span>{" "}
+                  How Can We Help?
                 </label>
-                <input
-                  type="email"
-                  placeholder="youremail@gmail.com"
-                  className="px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                />
-              </div>
-              <div className="flex flex-col w-full gap-3">
-                <label
-                  htmlFor=""
-                  className="text-[#FEFEFE] text-[15px] font-medium"
-                >
-                  Phone Number <span className="text-[#E42F23]">*</span>{" "}
-                </label>
-                <input
-                  type="tel"
-                  placeholder="+91 987-654-321"
-                  className="px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-6">
-              <div className="flex flex-col w-full gap-3">
-                <label
-                  htmlFor=""
-                  className="text-[#FEFEFE] text-[15px] font-medium"
-                >
-                  Location
-                </label>
-                <select
+                <textarea
+                  placeholder=" Brief requirement (optional)"
                   name=""
                   id=""
-                  className=" h-12 w-full px-3 rounded-[10px] cursor-pointer outline-none  text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                >
-                  <option value="">Select your loaction</option>
-                  <option value="india">India</option>
-                </select>
+                  className="px-3 py-3 w-full rounded-[10px] text-[#D1D1D1] bg-[#000C1C] border border-[#262D3D] outline-none"
+                  {...register("message")}
+                ></textarea>
               </div>
-              <div className="flex flex-col w-full gap-3">
-                <label
-                  htmlFor=""
-                  className="text-[#FEFEFE] text-[15px] font-medium"
-                >
-                  Engagement Type <span className="text-[#E42F23]">*</span>{" "}
-                </label>
-                <select
-                  name=""
-                  id=""
-                  className="h-12 w-full px-3 rounded-[10px] cursor-pointer outline-none text-[#D1D1D1] bg-[#000C1C]"
-                >
-                  <option value="">Choose enagament type</option>
-                  <option value="">Foundational vCISO (Startup / SME)</option>
-                  <option value="">Growth vCISO (Mid-Market)</option>
-                  <option value="">Enterprise vCISO (Continuous)</option>
-                  <option value="">On-demand Advisory / Retainer</option>
-                  <option value="">
-                    Compliance vCISO (RBI / CERT-In / DPDP / SEBI)
-                  </option>
-                  <option value="">
-                    Compliance vCISO (ISO 27001 / SOC 2 / GDPR)
-                  </option>
-                </select>
+              <div className="">
+                <div className="flex items-center gap-3">
+                  <p className="text-sm font-medium text-white">Captcha</p>
+
+                  <Turnstile
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                    onSuccess={(token) => setTurnstileToken(token)}
+                    onExpire={() => setTurnstileToken("")}
+                    onError={() => setTurnstileToken("")}
+                  />
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col gap-2">
-              <label
-                htmlFor=""
-                className="text-[#FEFEFE] text-[15px] font-medium"
+              <div className="flex gap-3">
+                <input
+                  type="checkbox"
+                  className="border border-[#D1D1D1] bg-none"
+                />
+                <p className="text-xs font-medium leading-[22px] text-[#D1D1D1]">
+                  By clicking submit below, you agree to our Terms of Use and
+                  Privacy Policy. Additionally, you consent to allow ISECURION
+                  Technology & Consulting Pvt. Ltd. to store and process the
+                  personal information submitted above to provide you the
+                  content requested.
+                </p>
+              </div>
+              <button
+                type="submit"
+                className="text-base sm:text-lg font-medium flex items-center justify-center py-3 w-full rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd]"
               >
-                How Can We Help?
-              </label>
-              <textarea
-                placeholder=" Brief requirement (optional)"
-                name=""
-                id=""
-                className="px-3 py-3 w-full rounded-[10px] text-[#D1D1D1] bg-[#000C1C] border border-[#262D3D] outline-none"
-              ></textarea>
-            </div>
-            <div className="">
-              <div className="flex items-center gap-3">
-                <span className="text-sm leading-5 text-[#E7E7E7]">
-                  Captcha
-                </span>
-
-                <span className="flex h-[32px] min-w-[127px] items-center justify-center rounded-[5px] bg-[#E24B4A78] px-5 text-[13px] font-medium tracking-wide text-white">
-                  ZRLD9Y
-                </span>
-              </div>
-
-              <input
-                id="captcha"
-                name="captcha"
-                type="text"
-                placeholder="Enter the text shown above"
-                required
-                className="mt-3 px-3 py-3 w-full rounded-[10px] border border-[#262D3D] bg-[#000C1C]   text-[#D1D1D1] outline-none placeholder:text-[#858585] "
-              />
-            </div>
-            <div className="flex gap-3">
-              <input
-                type="checkbox"
-                className="border border-[#D1D1D1] bg-none"
-              />
-              <p className="text-xs font-medium leading-[22px] text-[#D1D1D1]">
-                By clicking submit below, you agree to our Terms of Use and
-                Privacy Policy. Additionally, you consent to allow ISECURION
-                Technology & Consulting Pvt. Ltd. to store and process the
-                personal information submitted above to provide you the content
-                requested.
-              </p>
-            </div>
-            <button className="text-base sm:text-lg font-medium flex items-center justify-center py-3 w-full rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd]">
-              Request Consultation{" "}
-              <span>
-                <Icon icon="akar-icons:arrow-right" className="text-lg" />
-              </span>{" "}
-            </button>
+                Request Consultation{" "}
+                <span>
+                  <Icon icon="akar-icons:arrow-right" className="text-lg" />
+                </span>{" "}
+              </button>
+            </form>
           </div>
         </div>
       </section>
@@ -768,11 +847,11 @@ function Vicso() {
       </section>
 
       {/* WHO NEEDS A vCISO?  */}
-      <section className="relative w-full py-14 bg-[#060D1B] space-y-10">
+      <section className="relative w-full py-14 bg-[#060D1B] space-y-10 overflow-hidden">
         <div>
           <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10">
             <Animation>
-              <div className="max-w-2xl space-y-4">
+              <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left space-y-4">
                 <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
                   WHO NEEDS A vCISO?
                 </p>
@@ -816,17 +895,18 @@ function Vicso() {
           </div>
         </div>
       </section>
+
       {/* ISECURION vCISO PRACTICE  */}
-      <section className="relative bg-[#060D1B]">
+      <section className="relative bg-[#060D1B] overflow-hidden">
         <div className="absolute w-[700px] h-[400px] top-0 right-0 blur-[100px] rounded-2xl pointer-events-none bg-[#102F5F]"></div>
 
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row">
-          <div className="relative flex-1 bg-[#000000]  border-l-2 border-[#454545]">
+        <div className="max-w-7xl px-6 sm:px-10 mx-auto flex  flex-col-reverse lg:flex-row">
+          <div className="relative flex-1 border-l-2 border-[#454545] bg-[#000000]">
             <div className="absolute w-[600px] h-[300px] -right-40 top-0 blur-[300px]  bg-[#102F5F]"></div>
-            <div className="space-y-4">
+            <div className="space-y-4 py-5 px-5">
               {cisoStas.map((item, index) => (
                 <div key={index} className="flex items-start gap-4">
-                  <div className="w-[20px] h-[20px] rounded-full border-2 border-[#D1D1D1]"></div>
+                  <div className="w-[20px] h-[20px] rounded-full shrink-0 border-2 border-[#D1D1D1]"></div>
                   <div className="space-y-1">
                     <h3 className="text-3xl font-semibold text-[#0F66EA]">
                       {item.number}
@@ -834,7 +914,7 @@ function Vicso() {
                     <h3 className="text-base sm:text-lg font-semibold text-[#FFFFFF]">
                       {item.heading}
                     </h3>
-                    <p className="text-[15px] font-normal text-[#D1D1D1]">
+                    <p className="text-[15px] max-w-md font-normal text-[#D1D1D1]">
                       {item.description}
                     </p>
                   </div>
@@ -842,7 +922,7 @@ function Vicso() {
               ))}
             </div>
           </div>
-          <div className="flex-1 z-10 p-4 space-y-4 bg-[#003833]">
+          <div className="flex-1 z-10 p-4 space-y-4 text-center lg:text-left bg-[#003833]">
             <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
               ISECURION vCISO PRACTICE
             </p>
@@ -861,15 +941,55 @@ function Vicso() {
               </span>
               {""}, not after a 3-month ramp-up.
             </p>
+            <div className="flex gap-3 flex-wrap mt-5">
+              <div>
+                <p className="inline-flex px-3 py-1.5 gap-2 items-center text-[13px] rounded-[32px] text-[#E0F2FE] bg-[#FFFFFF1F] border border-[#FFFFFF33]">
+                  <span>
+                    <Icon
+                      icon="boxicons:certification-filled"
+                      className="shrink-0 "
+                    />
+                  </span>
+                  CERT-In Empanelled
+                </p>
+              </div>
+              <div>
+                <p className="inline-flex px-3 py-1.5 gap-2 items-center text-[13px] rounded-[32px] text-[#E0F2FE] bg-[#FFFFFF1F] border border-[#FFFFFF33]">
+                  <span>
+                    <Icon
+                      icon="fluent:ribbon-star-24-filled"
+                      className="shrink-0 "
+                    />
+                  </span>
+                  ISO 27001:2022 Certified
+                </p>
+              </div>
+              <div>
+                <p className="inline-flex px-3 py-1.5 gap-2 items-center text-[13px] rounded-[32px] text-[#E0F2FE] bg-[#FFFFFF1F] border border-[#FFFFFF33]">
+                  <span>
+                    <Icon icon="bi:person-badge-fill" className="shrink-0" />
+                  </span>
+                  CISSP, CISA, CISM, CEH
+                </p>
+              </div>
+              <div>
+                <p className="inline-flex px-3 py-1.5 gap-2 items-center text-[13px] rounded-[32px] text-[#E0F2FE] bg-[#FFFFFF1F] border border-[#FFFFFF33]">
+                  <span>
+                    <Icon icon="mdi:map-marker" className="shrink-0" />
+                  </span>
+                  Bengaluru & Kolkata Offices
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Regulatory & Compliance Expertise  */}
-      <section className="w-full py-14 bg-[#060D1B]">
+      <section className="w-full py-14 overflow-hidden bg-[#060D1B]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="flex">
-            <div className="w-full space-y-4 lg:w-[500px]">
+          <div className="flex flex-col xl:flex-row">
+            <div className="w-full space-y-4 lg:w-[500px] text-center lg:text-left">
               <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
                 Regulatory & Compliance Expertise
               </p>
@@ -885,8 +1005,8 @@ function Vicso() {
                 relevant to their industry and markets.
               </p>
             </div>
-            <div className="flex-2 flex gap-10">
-              <div className="h-[270px] p-4 space-y-4 rounded-[21px] border border-[#4C737029] bg-[#66666614]">
+            <div className="flex-2 flex flex-col sm:flex-row gap-10 mt-10 lg:mt-0">
+              <div className="h-auto md:h-[270px] p-4 space-y-4 rounded-[21px] border border-[#4C737029] bg-[#66666614]">
                 <h3 className="text-sm font-bold flex gap-4 text-[#E9E9ED]">
                   <span>
                     <Icon
@@ -914,7 +1034,7 @@ function Vicso() {
                   privacy, and cybersecurity governance requirements.
                 </p>
               </div>
-              <div className="h-[270px] p-4 space-y-4 rounded-[21px] border border-[#4C737029] bg-[#66666614]">
+              <div className="h-auto md:h-[270px] p-4 space-y-4 rounded-[21px] border border-[#4C737029] bg-[#66666614]">
                 <h3 className="text-sm font-bold flex gap-4 text-[#E9E9ED]">
                   <span>
                     <Icon
@@ -972,26 +1092,29 @@ function Vicso() {
       </section>
 
       {/* eNGAGEMENT LIFECYCLE  */}
-      <section className="w-full py-14">
+      <section className="w-full py-14 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="max-w-xl space-y-4">
-            <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
-              ENGAGEMENT LIFECYCLE
-            </p>
-            <h2 className="text-[#FFFFFF]">
-              How ISECURION delivers vCISO services
-            </h2>
-            <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
-              A structured, measurable, outcome-driven model that ensures
-              security becomes an enabler of business growth, across India and
-              globally.
-            </p>
-          </div>
+          <Animation>
+            <div className="max-w-xl space-y-4 text-center lg:text-left">
+              <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
+                ENGAGEMENT LIFECYCLE
+              </p>
+              <h2 className="text-[#FFFFFF]">
+                vCISO Services Across Key Markets
+              </h2>
+              <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+                ISECURION provides dedicated vCISO services in every major
+                Indian business hub, with remote, hybrid, and on-site engagement
+                models available.
+              </p>
+            </div>
+          </Animation>
           <div className="mt-10">
             <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 xl:grid-cols-5 gap-5">
               {engagementLifeCycle.map((item, index) => (
-                <div
+                <AnimatedCard
                   key={index}
+                  delay={index * 0.15}
                   className="w-[260px] space-y-4 flex flex-col justify-between"
                 >
                   <p className="text-base font-semibold flex items-center gap-2 text-[#0F66EA]">
@@ -1013,7 +1136,7 @@ function Vicso() {
                       {item.period}
                     </p>
                   </div>
-                </div>
+                </AnimatedCard>
               ))}
             </div>
           </div>
@@ -1081,11 +1204,14 @@ function Vicso() {
                   {regulatoryCoverage.map((item, index) => (
                     <div
                       key={index}
-                      className="flex justify-between px-7 py-2 rounded-[6px] border border-[#66666614] bg-linear-to-l from-[#181E2F] via-[#0F66EA12] from-[#181E2F]"
+                      className="flex flex-col md:flex-row gap-3 justify-between px-4 md:px-7 py-2 rounded-[6px] border border-[#66666614] bg-linear-to-l from-[#181E2F] via-[#0F66EA12] from-[#181E2F]"
                     >
                       <div className="flex gap-5">
-                        <div className="w-[48px] h-[48px] rounded-full bg-[#050D1C] border border-[#13304F]">
-                          <Icon icon="" />
+                        <div className="w-[48px] h-[48px] flex items-center justify-center rounded-full shrink-0 bg-[#050D1C] border border-[#13304F]">
+                          <Icon
+                            icon={item.Icon}
+                            className="text-lg text-[#22D3EE]"
+                          />
                         </div>
                         <div className="space-y-1">
                           <h3 className="text-sm font-medium text-[#FFFFFF]">
@@ -1109,8 +1235,9 @@ function Vicso() {
           </div>
         </div>
       </section>
+
       {/* vCISO Services Across Key Markets  */}
-      <section className="w-full py-14 relative bg-[#060D1B]">
+      <section className="w-full py-14 relative overflow-hidden bg-[#060D1B]">
         <div className="absolute inset-0 bg-center opacity-50 bg-cover pointer-events-none">
           <Image src={world} alt="world" />
         </div>
@@ -1118,10 +1245,9 @@ function Vicso() {
           <div className="flex gap-10 flex-col lg:flex-row">
             <div className="flex-1 space-y-4">
               <LeftAnimation>
-                <div className="space-y-4">
-                  <h2 className="font-medium leading-[38px] md:leading-[45px] xl:leading-[57px] text-[#FEFEFE]">
+                <div className="space-y-4 text-center lg:text-left">
+                  <h2 className="text-[#FEFEFE]">
                     vCISO Services Across Key Markets{" "}
-                    <span className="text-[#0F66EA]">tech hubs.</span>
                   </h2>
                   <p className="text-base md:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
                     ISECURION provides dedicated vCISO services in every major
@@ -1137,9 +1263,9 @@ function Vicso() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="flex-1 rounded-[26px] bg-[#DADADA0A] border border-gray-800"
+              className="flex-1 rounded-[26px] bg-[#DADADA0A] border border-gray-600"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-4  gap-y-6 w-full p-4 ">
+              <div className="grid grid-cols-1 sm:grid-cols-4  gap-y-6 w-full p-4">
                 {locations.map((item, index) => {
                   const isLastColumn = (index + 1) % 4 === 0;
                   const isLastRow = index >= locations.length - 4;
@@ -1209,7 +1335,7 @@ function Vicso() {
           style={{ backgroundImage: `url(${isecurionapartbackground.src})` }}
         >
           <div className="max-w-7xl mx-auto px-6 sm:px-10 h-full flex items-center justify-start">
-            <div className="space-y-4  max-w-xl">
+            <div className="space-y-4 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
               <p className="text-sm sm:text-base font-semibold uppercase text-[#C8912A]">
                 What Sets ISECURION Apart?
               </p>
@@ -1288,8 +1414,8 @@ function Vicso() {
 
       {/* VISIBLE DELIVERABLES  */}
       <section className="w-full py-14">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 flex gap-10">
-          <div className="flex-1 space-y-4">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col lg:flex-row gap-10">
+          <div className="flex-1 space-y-4 text-center lg:text-left">
             <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
               VISIBLE DELIVERABLES
             </p>
@@ -1338,15 +1464,55 @@ function Vicso() {
         </div>
       </section>
 
-      {/* faqs  */}
-      <section className="w-full py-14">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10"></div>
-      </section>
       <FAQSection
         title={<>Frequently Asked Questions - vCISO Services </>}
         description="Common questions from organisations in India and globally about Virtual CISO services, India compliance, and engagements."
         faqs={vcisoFAQs}
       />
+      {/* Ready to Strengthen Your Cybersecurity Posture?  */}
+      <section className="w-full py-8 rounded-tr-[42px] rounded-tl-[42px] bg-[#121828]">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 ">
+          <div className=" space-y-4">
+            <h2 className="font-semibold max-w-lg text-[#FFFFFF]">
+              Ready to Strengthen Your Cybersecurity Posture?
+            </h2>
+            <p className="text-base sm:text-lg max-w-2xl font-medium text-[#D1D1D1]">
+              Get expert vCISO services in India - Bangalore, Mumbai, Delhi,
+              Pune, Hyderabad - and globally across USA, Singapore, UAE, Europe,
+              and Australia.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <button className="text-base font-medium p-3 flex items-center gap-2 rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border border-[#FFFFFF1F] shadow-[inset_0_0_4px_#FFFFFF1F,0_4px_10px_#3263B199]">
+                Schedule Consultation{" "}
+                <span>
+                  <Icon
+                    icon="akar-icons:arrow-right"
+                    className="w-[25px] h-[25px]"
+                  />
+                </span>
+              </button>
+              <button className="text-base font-medium p-3 flex items-center rounded-[10px] text-[#FFFFFF] border border-[#FFFFFF29]">
+                <span>
+                  <Icon
+                    icon="flowbite:outgoing-call-outline"
+                    className="w-[20px] h-[20px]"
+                  />
+                </span>
+                Call India (Bangalore): +91- 8861201570
+              </button>
+              <button className="text-base font-medium p-3 gap-2 flex items-center rounded-[10px] text-[#FFFFFF] border border-[#FFFFFF29]">
+                <span>
+                  <Icon
+                    icon="eva:email-outline"
+                    className="w-[21px] h-[21px]"
+                  />
+                </span>
+                info@isecurion.com
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

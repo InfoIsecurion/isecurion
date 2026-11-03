@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;500&family=Inter:wght@400;500;600&family=Lato:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;500&family=Inter:wght@400;500;600&family=Lato:wght@400;500;600;700&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Inter&family=Lato&display=swap'); */
+
 @import "tailwindcss";
 
 @layer base {
@@ -25,6 +26,8 @@
     font-family: 'Lato'
 }
 
+.sectionDescription {}
+
 .container {
     @apply max-w-7xl mx-auto;
 }
@@ -33,15 +36,7 @@ html {
     scroll-behavior: smooth;
 }
 
-.cardheading {
-    font-size: 18px;
-    font-weight: 600;
-}
 
-.carddescription {
-    font-size: 16px;
-    font-weight: 500;
-}
 
 @keyframes marquee {
     from {
@@ -120,4 +115,19 @@ svg[style*="--icon-stroke"] {
 
 .animate-tcar03-scroll {
     animation: tcar03-scroll 24s linear infinite;
+}
+
+.sector-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0 !important;
+    border-radius: 999px;
+    background: #FFFFFF33;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sector-pagination .swiper-pagination-bullet-active {
+    background: #F9F4ED;
 }

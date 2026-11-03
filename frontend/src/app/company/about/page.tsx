@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import ceo from "../../../assets/about/ceo.png";
 import { motion } from "framer-motion";
-import { Animation} from "../../../components/ui/Animation";
+import { Animation } from "../../../components/ui/Animation";
 import hacker from "../../../assets/about/abouthacker.png";
 import herobackground from "../../../assets/about/abouthero.png";
 import TimelineAnimation from "../../../components/ui/TimelineAnimation";
@@ -96,13 +96,12 @@ const team = [
 
 function page() {
   return (
-    <div >
+    <div>
       {/* hero section  */}
       <div
         className="bg-cover bg-center py-16"
         style={{ backgroundImage: `url(${herobackground.src})` }}
       >
-
         <div className="mx-auto max-w-7xl text-[#FFFFFF] text-center px-6 sm:px-10">
           {/* Breadcrumb Animation */}
           <motion.div
@@ -141,7 +140,6 @@ function page() {
             Securing digital trust for a connected world.
           </motion.h1>
         </div>
-
       </div>
 
       {/* ABOUT Company */}
@@ -153,7 +151,7 @@ function page() {
           <Animation>
             <div className="space-y-3 flex flex-col items-center lg:items-start ">
               <div className="w-fit px-4 py-2 rounded-4xl  bg-[#161B2F] ">
-                <p className="text-sm font-medium flex items-center gap-2 sectionheading uppercase text-[#B4CAFD]">
+                <p className="text-sm font-medium flex items-center gap-2  uppercase text-[#B4CAFD]">
                   {" "}
                   <span>
                     <Icon
@@ -353,7 +351,6 @@ function page() {
       {/* our journey  */}
       <section className="relative  overflow-hidden bg-gradient-to-b from-[#000B23] to-[#092E70] py-14">
         <div className="mx-auto max-w-7xl px-6 sm:px-10">
-
           {/* Heading */}
           <Animation>
             <div className="relative flex items-center justify-center">
@@ -367,19 +364,14 @@ function page() {
             </div>
           </Animation>
 
-
           {/* Timeline Card */}
           <Animation>
             <div className="relative hidden lg:block mt-10 rounded-[35px] border border-[#52617A] bg-[#101B35] px-6 py-10 sm:px-10 lg:px-12">
-
               {/* Left Circle */}
-              <div className="absolute -left-[18px] top-1/4 z-20 h-14 w-14 rounded-full bg-gradient-to-b from-[#22D1EE] to-[#3D5AF1]">
-              </div>
-
+              <div className="absolute -left-[18px] top-1/4 z-20 h-14 w-14 rounded-full bg-gradient-to-b from-[#22D1EE] to-[#3D5AF1]"></div>
 
               {/* Horizontal Timeline Line */}
               <div className="absolute left-14 right-14 top-1/2 h-[2px] bg-[#2563D8]" />
-
 
               {/* Timeline Items */}
               <div
@@ -393,7 +385,6 @@ function page() {
                     key={item.id}
                     className="relative flex min-h-[380px] flex-col items-center"
                   >
-
                     {item.position === "bottom" ? (
                       <>
                         {/* Year - TOP */}
@@ -430,24 +421,17 @@ function page() {
                     <div className="absolute top-1/2 z-10 h-7 w-7 -translate-y-1/2 rounded-full border-[3.5px] border-[#55D6FF] bg-[#101B35]">
                       <div className="absolute inset-[3px] rounded-full bg-[#55D6FF]" />
                     </div>
-
                   </div>
                 ))}
               </div>
             </div>
             <div className="relative lg:hidden mt-10">
-
               {/* Vertical line */}
               <div className="absolute left-[15px] top-4 bottom-4 w-[2px] bg-[#2563D8]" />
 
               <div className="space-y-10">
-
                 {timelineData.map((item) => (
-                  <div
-                    key={item.id}
-                    className="relative flex gap-6"
-                  >
-
+                  <div key={item.id} className="relative flex gap-6">
                     {/* Timeline point */}
                     <div className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-[4px] border-[#55D6FF] bg-[#101B35]">
                       <div className="h-2 w-2 rounded-full bg-[#55D6FF]" />
@@ -455,7 +439,6 @@ function page() {
 
                     {/* Content */}
                     <div className="flex-1 pb-2">
-
                       <h4 className="text-xl font-semibold text-[#0F66EA]">
                         {item.year}
                       </h4>
@@ -463,16 +446,12 @@ function page() {
                       <p className="mt-2 text-sm font-medium leading-6 text-white">
                         {item.description}
                       </p>
-
                     </div>
-
                   </div>
                 ))}
-
               </div>
             </div>
           </Animation>
-
         </div>
       </section>
 

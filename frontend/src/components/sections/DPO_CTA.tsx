@@ -1,5 +1,5 @@
-import React from 'react'
-import { Icon } from '@iconify/react'
+import React from "react";
+import { Icon } from "@iconify/react";
 
 function DPO_CTA() {
   return (
@@ -41,4 +41,4 @@ function DPO_CTA() {
   )
 }
 
-export default DPO_CTA
+export default DPO_CTA;

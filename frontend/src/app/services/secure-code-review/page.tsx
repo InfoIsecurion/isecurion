@@ -129,7 +129,7 @@ function SecureCode() {
               initial={{ opacity: 0, y: 80 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15 }}
-              className="text-base sm:text-lg leading-7 md:leading-8 text-[#D9D9D9]"
+              className="text-base sm:text-lg font-medium leading-7 md:leading-8 text-[#D9D9D9]"
             >
               Identify vulnerabilities in source code early through automated
               analysis and expert-led manual review, helping development teams

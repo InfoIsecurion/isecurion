@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import approachBg from "../../../assets/services/red-team-approach.svg";
 import {
@@ -7,6 +8,17 @@ import {
   LeftAnimation,
 } from "../../../components/ui/Animation";
 import FAQSection from "../../../components/sections/FAQSection";
+import { Turnstile } from "@marsidev/react-turnstile";
+import { useForm } from "react-hook-form";
+import { aiAugamented } from "../../../services/api/contact";
+import { toast } from "react-toastify";
+
+interface ContactFormData {
+  email: string;
+  companyName: string;
+  simulation: string;
+  turnstileToken: string;
+}
 
 const cbsFAQs = [
   {
@@ -88,6 +100,34 @@ const governanceCards = [
 ];
 
 function page() {
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const {
+    register,
+    reset,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactFormData>();
+
+  const submit = async (data: ContactFormData) => {
+    console.log(data);
+    setLoading(true);
+    try {
+      const response = await aiAugamented(data);
+      if (response.status === 200) {
+        toast.success(response.message);
+        reset();
+      } else {
+        toast.error(response.message);
+      }
+    } catch (error) {
+      toast.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div>
       <section className="relative overflow-hidden bg-black text-white py-6 border-b border-white/5">
@@ -112,7 +152,7 @@ function page() {
 
               {/* DESCRIPTION */}
               <Animation>
-                <p className="mt-5 text-[14px] sm:text-[16px] leading-[1.7] text-[#D1D1D1] lg:max-w-[380px]">
+                <p className="mt-5 text-[14px] sm:text-[16px] font-medium leading-[1.7] text-[#D1D1D1] lg:max-w-[380px]">
                   ISECURION&apos;s CBAS continuously simulates real-world
                   attacks to identify gaps, validate defenses, and improve your
                   cybersecurity posture proactively.
@@ -138,136 +178,136 @@ function page() {
 
             {/* RIGHT COLUMN: REQUEST A BAS QUOTE FORM */}
             <div className="lg:col-span-6">
-              <Animation>
-                <div className="rounded-[20px] bg-[#202123] p-6 sm:p-8 shadow-2xl backdrop-blur-md">
-                  <p className="text-[18px] sm:text-[20px] font-semibold text-white leading-10">
-                    Request a BAS Quote
-                  </p>
-                  <p className="mt-1 text-[14px] text-[#D9D9D9]">
-                    Get a Quote for Continuous Security Validation.
-                  </p>
+              <div className="rounded-[20px] bg-[#202123] p-6 sm:p-8 shadow-2xl backdrop-blur-md">
+                <p className="text-[18px] sm:text-[20px] font-semibold text-white leading-10">
+                  Request a BAS Quote
+                </p>
+                <p className="mt-1 text-[14px] text-[#D9D9D9]">
+                  Get a Quote for Continuous Security Validation.
+                </p>
 
-                  <form className="mt-6 space-y-4.5">
-                    {/* WORK EMAIL & COMPANY NAME */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div>
-                        <label
-                          htmlFor="email"
-                          className="block text-[13px] text-[#FEFEFE] mb-1.5"
-                        >
-                          Work Email <span className="text-[#E24B4A]">*</span>
-                        </label>
-                        <input
-                          type="email"
-                          placeholder="youremail@gmail.com"
-                          className="w-full h-[46px] rounded-[8px] bg-[#110404] border border-[#262D3D] px-3.5 text-[14px] text-[#D1D1D1] placeholder-gray-500 "
-                          required
-                        />
-                      </div>
-
-                      <div>
-                        <label
-                          htmlFor="company-name"
-                          className="block text-[13px] text-[#FEFEFE] mb-1.5"
-                        >
-                          Company Name
-                        </label>
-                        <input
-                          id="company-name"
-                          type="text"
-                          placeholder="Company name"
-                          className="w-full h-[46px] rounded-[8px] bg-[#110404] border border-[#262D3D] px-3.5 text-[14px] text-[#D1D1D1] placeholder-gray-500 "
-                        />
-                      </div>
-                    </div>
-
-                    {/* SIMULATION TYPE DROPDOWN */}
+                <form
+                  className="mt-6 space-y-4.5"
+                  onSubmit={handleSubmit(submit)}
+                >
+                  {/* WORK EMAIL & COMPANY NAME */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label
-                        htmlFor="simulation-type"
-                        className="block text-[13px] text-[#FEFEFE] mb-1.5"
+                        htmlFor="email"
+                        className="block text-sm font-medium text-[#FEFEFE] mb-1.5"
                       >
-                        Simulation Type{" "}
-                        <span className="text-[#E24B4A]">*</span>
+                        Work Email <span className="text-[#E24B4A]">*</span>
                       </label>
-                      <div className="relative">
-                        <select
-                          className="w-full h-[46px] appearance-none rounded-[8px] bg-[#110404] border border-[#262D3D] px-3.5 text-[13px] text-[#D1D1D1]"
-                          required
-                        >
-                          <option value="">Select Simulation Type</option>
-                          <option value="external">
-                            External Attack Simulation
-                          </option>
-                          <option value="internal">
-                            Internal Threat Simulation
-                          </option>
-                          <option value="cloud">
-                            Cloud Security Simulation
-                          </option>
-                          <option value="full">Full Breach Simulation</option>
-                        </select>
-                        <Icon
-                          icon="lucide:chevron-down"
-                          className="absolute right-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"
-                        />
-                      </div>
+                      <input
+                        type="email"
+                        placeholder="youremail@gmail.com"
+                        className="text-sm font-normal px-3 py-3 w-full rounded-[10px] bg-[#110404] border border-[#262D3D]   text-[#D1D1D1] placeholder-gray-500 "
+                        {...register("email", {
+                          required: "Email is required",
+                        })}
+                      />
+                      {errors.email && (
+                        <p className="text-sm font-normal text-red-500">
+                          {errors.email.message}
+                        </p>
+                      )}
                     </div>
 
-                    {/* CAPTCHA */}
-                    <div className="mt-7">
-                      <div className="flex items-center gap-3">
-                        <span className="text-[13px] leading-5 text-[#E7E7E7]">
-                          Captcha
-                        </span>
-
-                        <span className="flex h-[32px] min-w-[127px] items-center justify-center rounded-[5px] bg-[#E24B4AA1] px-5 text-[13px] font-medium tracking-wide text-white">
-                          ZRLD9Y
-                        </span>
-                      </div>
-
-                      <input
-                        id="captcha"
-                        name="captcha"
-                        type="text"
-                        placeholder="Enter the text shown above"
-                        required
-                        className="mt-3 h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
-                      />
-                    </div>
-
-                    {/* TERMS & PRIVACY CHECKBOX */}
-                    <div className="flex items-start gap-2.5 pt-1">
-                      <input
-                        id="consent"
-                        name="consent"
-                        type="checkbox"
-                        required
-                        className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
-                      />
+                    <div>
                       <label
-                        htmlFor="terms"
-                        className="text-[11px] leading-relaxed text-[#D1D1D1] max-w-[490px]"
+                        htmlFor="company-name"
+                        className="block text-sm font-medium text-[#FEFEFE] mb-1.5"
                       >
-                        By clicking submit below, you agree to our Terms of Use
-                        and Privacy Policy. Additionally, you consent to allow
-                        ISECURION Technology &amp; Consulting Pvt. Ltd. to store
-                        and process the personal information submitted above to
-                        provide you the content requested.
+                        Company Name
                       </label>
+                      <input
+                        id="company-name"
+                        type="text"
+                        placeholder="Company name"
+                        className="text-sm font-normal px-3 py-3 w-full rounded-[10px] bg-[#110404] border border-[#262D3D]   text-[#D1D1D1] placeholder-gray-500"
+                      />
                     </div>
+                  </div>
 
-                    {/* SUBMIT BUTTON */}
-                    <button
-                      type="submit"
-                      className="w-full h-[48px] mt-2 inline-flex items-center justify-center gap-2 rounded-[8px] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-medium text-white border-[1.5px] border-[#00000000] transition-all duration-200 shadow-md shadow-[#0F66EA]/20"
+                  {/* SIMULATION TYPE DROPDOWN */}
+                  <div>
+                    <label
+                      htmlFor="simulation-type"
+                      className="block text-sm font-medium text-[#FEFEFE] mb-1.5"
                     >
-                      <span>Get Quote</span>
-                      <Icon icon="lucide:arrow-right" className="h-4 w-4" />
-                    </button>
-                  </form>
-                </div>
-              </Animation>
+                      Simulation Type <span className="text-[#E24B4A]">*</span>
+                    </label>
+                    <div className="relative">
+                      <select
+                        className="w-full text-sm font-normal px-3 py-3 appearance-none rounded-[8px] bg-[#110404] border border-[#262D3D]  text-[#D1D1D1]"
+                        {...register("simulation", {
+                          required: "Simulation is required",
+                        })}
+                      >
+                        <option value="">Select Simulation Type</option>
+                        <option value="external">
+                          External Attack Simulation
+                        </option>
+                        <option value="internal">
+                          Internal Threat Simulation
+                        </option>
+                        <option value="cloud">Cloud Security Simulation</option>
+                        <option value="full">Full Breach Simulation</option>
+                      </select>
+                      <Icon
+                        icon="lucide:chevron-down"
+                        className="absolute right-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"
+                      />
+                      {errors.simulation && (
+                        <p className="text-sm font-normal text-red-500">
+                          {errors.simulation.message}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* CAPTCHA */}
+                  <div className="mt-7">
+                    <Turnstile
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                      onSuccess={(token) => setTurnstileToken(token)}
+                      onExpire={() => setTurnstileToken("")}
+                      onError={() => setTurnstileToken("")}
+                    />
+                  </div>
+
+                  {/* TERMS & PRIVACY CHECKBOX */}
+                  <div className="flex items-start gap-2.5 pt-1">
+                    <input
+                      id="consent"
+                      name="consent"
+                      type="checkbox"
+                      required
+                      className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
+                    />
+                    <label
+                      htmlFor="terms"
+                      className="text-[11px] leading-relaxed text-[#D1D1D1] max-w-[490px]"
+                    >
+                      By clicking submit below, you agree to our Terms of Use
+                      and Privacy Policy. Additionally, you consent to allow
+                      ISECURION Technology &amp; Consulting Pvt. Ltd. to store
+                      and process the personal information submitted above to
+                      provide you the content requested.
+                    </label>
+                  </div>
+
+                  {/* SUBMIT BUTTON */}
+                  <button
+                    type="submit"
+                    className="w-full h-[48px] mt-2 inline-flex items-center justify-center gap-2 rounded-[8px] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-medium text-white border-[1.5px] border-[#00000000] transition-all duration-200 shadow-md shadow-[#0F66EA]/20"
+                  >
+                    <span>Get Quote</span>
+                    <Icon icon="lucide:arrow-right" className="h-4 w-4" />
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
