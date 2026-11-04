@@ -196,7 +196,7 @@ export default function RedTeamAssessmentPage() {
             </Animation>
 
             <Animation>
-              <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:h-[600px] lg:p-[30px] xl:p-[40px]">
+              <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:h-[550px] lg:p-[30px] xl:p-[40px]">
                 <div>
                   <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
                     Request a Red Team Quote

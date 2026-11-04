@@ -2,12 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import smartcontractsecurity from "../../../assets/services/SmartContractSecurity.png";
-import {
-  Animation,
-  AnimatedCard,
-  LeftAnimation,
-  RightAnimation,
-} from "../../../components/ui/Animation";
+import { Animation, AnimatedCard, LeftAnimation, RightAnimation } from "../../../components/ui/Animation";
 import MethodologySection from "../../../components/sections/MethodologySection";
 
 const cards = [
@@ -60,131 +55,119 @@ const auditSteps = [
     number: "01",
     title: "Smart Contract Code",
     description: "Review the Source.",
-    hasArrow: true,
+    hasArrow: true
   },
   {
     number: "02",
     title: "Functionality",
     description: "Validate the Logic.",
-    hasArrow: true,
+    hasArrow: true
   },
   {
     number: "03",
     title: "Vulnerability Analysis",
     description: "Find Security Gaps.",
-    hasArrow: true,
+    hasArrow: true
   },
   {
     number: "04",
     title: "Security Validation",
     description: "Test the Controls.",
-    hasArrow: true,
+    hasArrow: true
   },
   {
     number: "05",
     title: "Remediation",
     description: "Strengthen the Contract.",
-    hasArrow: false,
-  },
-];
+    hasArrow: false
+  }
+]
 
 const auditCards = [
   {
     icon: "lucide:shrink",
     title: "Contract & Transaction Logic",
-    description:
-      "Verify contract behavior and assess critical transaction operations.",
+    description: "Verify contract behavior and assess critical transaction operations."
   },
   {
     icon: "lucide:file-code-2",
     title: "Code Security",
-    description:
-      "Identify potential vulnerabilities, weaknesses, and insecure implementation patterns.",
+    description: "Identify potential vulnerabilities, weaknesses, and insecure implementation patterns."
   },
   {
     icon: "lucide:vault",
     title: "User Fund Protection",
-    description:
-      "Identify risks that could compromise user assets or unauthorized transactions.",
+    description: "Identify risks that could compromise user assets or unauthorized transactions."
   },
   {
     icon: "lucide:file-text",
     title: "Security Controls",
-    description:
-      "Evaluate protections and control mechanisms against potential attacks.",
-  },
-];
+    description: "Evaluate protections and control mechanisms against potential attacks."
+  }
+]
 
 const governanceCards = [
   {
     icon: "famicons:contract",
     title: "Contract & Transaction Logic",
-    description:
-      "Verify contract behavior and assess critical transaction operations.",
+    description: "Verify contract behavior and assess critical transaction operations.",
   },
   {
     icon: "boxicons:clipboard-code",
     title: "Code Security",
-    description:
-      "Identify potential vulnerabilities, weaknesses, and insecure implementation patterns.",
+    description: "Identify potential vulnerabilities, weaknesses, and insecure implementation patterns.",
   },
   {
     icon: "iconmind:fund-outline-regular",
     title: "User Fund Protection",
-    description:
-      "Identify risks that could compromise user assets or unauthorized transactions.",
+    description: "Identify risks that could compromise user assets or unauthorized transactions.",
   },
   {
     icon: "mingcute:file-security-line",
     title: "Security Controls",
-    description:
-      "Evaluate protections and control mechanisms against potential attacks.",
+    description: "Evaluate protections and control mechanisms against potential attacks.",
   },
 ];
 
 const smartContractSteps = [
   {
     title: "Understand & Scope",
-    description:
-      "Understand the business logic, contract purpose, architecture, and security requirements.",
-    icon: <Icon icon="fluent:search-16-filled" />,
+    description: "Understand the business logic, contract purpose, architecture, and security requirements.",
+    icon: <Icon icon="fluent:search-16-filled" />
   },
   {
     title: "Review the Code",
-    description:
-      "Perform detailed smart contract code review and peer review to identify implementation weaknesses.",
-    icon: <Icon icon="boxicons:code-alt" />,
+    description: "Perform detailed smart contract code review and peer review to identify implementation weaknesses.",
+    icon: <Icon icon="boxicons:code-alt" />
   },
   {
     title: "Analyze the Contract",
-    description:
-      "Combine static analysis, dynamic analysis, and gas analysis to identify potential vulnerabilities and inefficient logic.",
-    icon: <Icon icon="boxicons:vector-square" />,
+    description: "Combine static analysis, dynamic analysis, and gas analysis to identify potential vulnerabilities and inefficient logic.",
+    icon: <Icon icon="boxicons:vector-square" />
   },
   {
     title: "Validate Security Controls",
-    description:
-      "Assess permissions, access controls, token standards, and external dependencies for security gaps.",
-    icon: <Icon icon="boxicons:check-shield" />,
+    description: "Assess permissions, access controls, token standards, and external dependencies for security gaps.",
+    icon: <Icon icon="boxicons:check-shield" />
   },
   {
     title: "Audit & Document",
-    description:
-      "Review audit documentation, consolidate findings, and provide clear security recommendations.",
-    icon: <Icon icon="iconmind:compliance-outline-regular" />,
+    description: "Review audit documentation, consolidate findings, and provide clear security recommendations.",
+    icon: <Icon icon="iconmind:compliance-outline-regular" />
   },
   {
     title: "Monitor & Re-Audit",
-    description:
-      "Support continuous monitoring and re-audit contracts after significant code or functionality changes.",
-    icon: <Icon icon="iconmind:compliance-outline-regular" />,
+    description: "Support continuous monitoring and re-audit contracts after significant code or functionality changes.",
+    icon: <Icon icon="iconmind:compliance-outline-regular" />
   },
 ];
 
 function SmartContractSecurity() {
   return (
     <div>
+
       <section className="relative w-full min-h-[560px] py-14 flex items-center">
+
         <div className="absolute inset-0">
           <Image
             src={smartcontractsecurity}
@@ -201,13 +184,11 @@ function SmartContractSecurity() {
                 Smart Contract Security Audit
               </p>
               <h1 className="font-semibold leading-[32px] md:leading-[50px] lg:leading-[55px] text-[#FFFFFF] max-w-[600px]">
-                Secure your smart contracts before vulnerabilities become
-                financial risks.
+                Secure your smart contracts before vulnerabilities become financial risks.
               </h1>
               <p className="text-base sm:text-lg text-[#D9D9D9] max-w-[500px]">
-                ISECURION audits smart contracts to identify vulnerabilities,
-                validate functionality, and strengthen security across
-                blockchain ecosystems.
+                ISECURION audits smart contracts to identify vulnerabilities, validate functionality,
+                and strengthen security across blockchain ecosystems.
               </p>
               <button className="mt-8 mx-auto md:mx-0 text-[15px] font-medium px-4 py-3 flex items-center justify-center gap-2 rounded-[10px] cursor-pointer text-[#31435C] bg-white">
                 Secure Your Smart Contract
@@ -218,8 +199,10 @@ function SmartContractSecurity() {
             </div>
           </Animation>
 
+
           <div className="hidden lg:block flex-1"></div>
         </div>
+
       </section>
 
       <section className="bg-[#050B18] ">
@@ -241,7 +224,10 @@ function SmartContractSecurity() {
                 vulnerabilities go undetected.
               </p>
             </Animation>
+
+
           </div>
+
 
           {/* We Assess */}
           <Animation>
@@ -280,17 +266,16 @@ function SmartContractSecurity() {
                   />
                   Strengthen Compliance
                 </li>
+
               </ul>
             </div>
           </Animation>
 
           <div className="max-w-7xl mx-auto py-18 ">
+
             {/* HEADER SECTION */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
               {/* LEFT HEADING */}
-
-              <div className="lg:col-span-7 text-center md:text-left">
-                <LeftAnimation>
 
               <div className="lg:col-span-7 text-center md:text-left">
                 <LeftAnimation>
@@ -311,32 +296,25 @@ function SmartContractSecurity() {
               <div className="lg:col-span-5 lg:pt-9">
                 <RightAnimation>
                   <p className="text-[15px] sm:text-[16px] leading-[1.7] text-[#D1D1D1] max-w-[430px]">
-                    We analyze your smart contracts from code to risk, ensuring
-                    they are secure, reliable, and ready for real-world use.
+                    We analyze your smart contracts from code to risk, ensuring they are secure, reliable, and ready for real-world use.
                   </p>
                 </RightAnimation>
               </div>
 
             </div>
 
+
             {/* 5-STEP PROCESS GRID */}
             <Animation>
               <div className="mt-14 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6">
                 {auditSteps.map((step, index) => (
-                  <AnimatedCard
-                    key={index}
-                    delay={index * 0.2}
-                    className="flex flex-col justify-between h-full"
-                  >
+                  <AnimatedCard key={index} delay={index * 0.2} className="flex flex-col justify-between h-full">
                     <div>
                       {/* STEP NUMBER & ARROW */}
                       <div className="flex items-center gap-3 text-[#0F66EA] text-[18px] font-semibold">
                         <span>{step.number}</span>
                         {step.hasArrow && (
-                          <Icon
-                            icon="lucide:arrow-right"
-                            className="h-4 w-4 text-[#0F66EA]"
-                          />
+                          <Icon icon="lucide:arrow-right" className="h-4 w-4 text-[#0F66EA]" />
                         )}
                       </div>
 
@@ -358,11 +336,7 @@ function SmartContractSecurity() {
             <Animation>
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 {governanceCards.map((card, index) => (
-                  <AnimatedCard
-                    key={index}
-                    delay={index * 0.2}
-                    className="border-l border-[#0F66EA29] p-4 "
-                  >
+                  <AnimatedCard key={index} delay={index * 0.2} className="border-l border-[#0F66EA29] p-4 ">
                     {/* ICON BADGE */}
                     <div className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-[#8D8D8D57] text-gray-300">
                       <Icon icon={card.icon} className="h-4 w-4" />
@@ -409,19 +383,23 @@ function SmartContractSecurity() {
               </Animation>
             ))}
           </div>
+
         </div>
+
       </section>
+
 
       <MethodologySection
         title="Our Smart Contract Security Audit Methodology"
         steps={smartContractSteps}
         centerTitle={["Smart Contract ", "Security Audit"]}
-        tagline={[
-          "Review every layer.",
-          "Validate every contract.",
-          "Secure every transaction.",
-        ]}
+        tagline={["Review every layer.", "Validate every contract.", "Secure every transaction."]}
       />
+
+
+
+
+
     </div>
   );
 }
