@@ -1,13 +1,29 @@
-import React from 'react'
-import { Icon } from '@iconify/react'
-import { Animation, AnimatedCard, LeftAnimation, RightAnimation } from '../../../components/ui/Animation'
+"use client";
+import React, { useRef, useState } from "react";
+import { Icon } from "@iconify/react";
+import {
+  Animation,
+  AnimatedCard,
+  LeftAnimation,
+  RightAnimation,
+} from "../../../components/ui/Animation";
 import Image from "next/image";
 import Link from "next/link";
-import gridBackground from "../../../assets/services/Clip-path-group-top.png"
-import dashboardFrame from "../../../assets/services/mobileFrame.png"
-import dashboardImage from "../../../assets/services/view-report-(campaign dashboard).png"
+import gridBackground from "../../../assets/services/Clip-path-group-top.png";
+import dashboardFrame from "../../../assets/services/mobileFrame.png";
+import dashboardImage from "../../../assets/services/view-report-(campaign dashboard).png";
 import FAQSection from "../../../components/sections/FAQSection";
+import { useForm } from "react-hook-form";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { phishingSimulation } from "../../../services/api/contact";
+import { toast } from "react-toastify";
 
+interface ContactFormData {
+  email: string;
+  companyName: string;
+  simulation: string;
+  turnstileToken: string;
+}
 const services = [
   {
     heading: "Realistic Attack Scenarios",
@@ -292,7 +308,8 @@ const phishingFAQs = [
       "Mature, security-aware organisations typically target a click-through rate below 5%, tracked through continuous monthly simulation programs.",
   },
   {
-    question: "How is phishing simulation different from a real phishing attack?",
+    question:
+      "How is phishing simulation different from a real phishing attack?",
     answer:
       "It uses the same lure techniques as real attackers but runs under an agreed Rules of Engagement, with no data exfiltration, safe credential capture, opt-out lists for sensitive staff, and immediate containment of any accidental exposure.",
   },
@@ -313,7 +330,10 @@ function MetricChart({ type }: { type: string }) {
     const heights = [10, 19, 29, 40];
 
     return (
-      <div className="flex h-11 shrink-0 items-end gap-[4px]" aria-hidden="true">
+      <div
+        className="flex h-11 shrink-0 items-end gap-[4px]"
+        aria-hidden="true"
+      >
         {heights.map((height, index) => (
           <span
             key={height}
@@ -334,10 +354,11 @@ function MetricChart({ type }: { type: string }) {
   if (type === "ring-green" || type === "ring-blue") {
     return (
       <div
-        className={`h-[51px] w-[51px] shrink-0 rounded-full ${type === "ring-green"
-          ? "border-[5px] border-[#2DD4BF]"
-          : "border-[5px] border-[#3B82F6]"
-          }`}
+        className={`h-[51px] w-[51px] shrink-0 rounded-full ${
+          type === "ring-green"
+            ? "border-[5px] border-[#2DD4BF]"
+            : "border-[5px] border-[#3B82F6]"
+        }`}
         aria-hidden="true"
       />
     );
@@ -373,13 +394,53 @@ function MetricChart({ type }: { type: string }) {
   }
 
   return (
-    <div className="h-[6px] w-[125px] max-w-full overflow-hidden rounded-full bg-[#24265C]" aria-hidden="true">
+    <div
+      className="h-[6px] w-[125px] max-w-full overflow-hidden rounded-full bg-[#24265C]"
+      aria-hidden="true"
+    >
       <div className="h-full w-[36%] rounded-full bg-gradient-to-r from-[#9A4BEE] to-[#EC49AD]" />
     </div>
   );
 }
 
-function page() {
+function PhishingSimulation() {
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [loading, setLoading] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>();
+
+  const submit = async (data: ContactFormData) => {
+    setLoading(true);
+    try {
+      if (!turnstileToken) {
+        toast.error("Please complete CAPTCHA verification.");
+        return;
+      }
+      const response = await phishingSimulation({ ...data, turnstileToken });
+      if (response.status === 200) {
+        toast.success(response.message);
+        reset();
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
+      } else {
+        toast.error(response.message);
+      }
+    } catch (error) {
+      toast.error(
+        error.response?.data?.message ||
+          "Something went wrong. Please try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div>
       {/* hero section  */}
@@ -397,11 +458,15 @@ function page() {
                   Enterprise Phishing Simulation, Training & Security Awareness
                 </h1>
                 <p className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[450px]">
-                  Identify employee vulnerabilities, improve threat reporting, and reduce exposure to phishing, credential theft,
-                  and social engineering attacks through realistic, controlled phishing simulations.
+                  Identify employee vulnerabilities, improve threat reporting,
+                  and reduce exposure to phishing, credential theft, and social
+                  engineering attacks through realistic, controlled phishing
+                  simulations.
                 </p>
                 <p className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[460px]">
-                  Powered by Drosera, ISECURION's AI-driven platform helps organisations measure human risk and build stronger security awareness.
+                  Powered by Drosera, ISECURION's AI-driven platform helps
+                  organisations measure human risk and build stronger security
+                  awareness.
                 </p>
               </div>
             </Animation>
@@ -440,7 +505,6 @@ function page() {
                   />
                   Human Risk Analytics
                 </li>
-
               </ul>
             </Animation>
             <Animation>
@@ -471,75 +535,101 @@ function page() {
             </Animation>
             <div className="">
               <Animation>
-                <form className="mt-6 space-y-4.5" >
-
+                <form
+                  className="mt-6 space-y-4.5"
+                  onSubmit={handleSubmit(submit)}
+                >
                   {/* WORK EMAIL & COMPANY NAME */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="email" className="block text-[13px] text-[#FEFEFE] mb-1.5">
+                      <label
+                        htmlFor="email"
+                        className="block text-[13px] text-[#FEFEFE] mb-1.5"
+                      >
                         Work Email <span className="text-[#E24B4A]">*</span>
                       </label>
                       <input
                         type="email"
                         placeholder="youremail@gmail.com"
-                        className="w-full h-[46px] rounded-[8px] bg-[#110404] border border-[#262D3D] px-3.5 text-[14px] text-[#D1D1D1] placeholder-gray-500 "
-                        required
+                        className={`w-full h-[46px] rounded-[8px] outline-none bg-[#110404] border border-[#262D3D] px-3.5 text-[14px] text-[#D1D1D1] placeholder-gray-500 ${errors.email ? "border border-red-500" : ""}`}
+                        {...register("email", {
+                          required: "Email is required",
+                        })}
                       />
+                      {errors.email && (
+                        <p className="text-sm font-normal text-red-500">
+                          {errors.email.message}
+                        </p>
+                      )}
                     </div>
 
                     <div>
-                      <label htmlFor="company-name" className="block text-[13px] text-[#FEFEFE] mb-1.5">
+                      <label
+                        htmlFor="company-name"
+                        className="block text-[13px] text-[#FEFEFE] mb-1.5"
+                      >
                         Company Name
                       </label>
                       <input
-                        id='company-name'
+                        id="company-name"
                         type="text"
                         placeholder="Company name"
                         className="w-full h-[46px] rounded-[8px] bg-[#110404] border border-[#262D3D] px-3.5 text-[14px] text-[#D1D1D1] placeholder-gray-500 "
+                        {...register("companyName")}
                       />
                     </div>
                   </div>
 
                   {/* SIMULATION TYPE DROPDOWN */}
                   <div>
-                    <label htmlFor="simulation-type" className="block text-[13px] text-[#FEFEFE] mb-1.5">
+                    <label
+                      htmlFor="simulation-type"
+                      className="block text-[13px] text-[#FEFEFE] mb-1.5"
+                    >
                       Simulation Type <span className="text-[#E24B4A]">*</span>
                     </label>
                     <div className="relative">
                       <select
-                        className="w-full h-[46px] appearance-none rounded-[8px] bg-[#110404] border border-[#262D3D] px-3.5 text-[13px] text-[#D1D1D1]"
-                        required
+                        className={`w-full h-[46px] appearance-none rounded-[8px] bg-[#110404] border border-[#262D3D] outline-none px-3.5 text-[13px] text-[#D1D1D1]  ${errors.simulation ? "border border-red-500" : ""} `}
+                        {...register("simulation", {
+                          required: "Simulation is required",
+                        })}
                       >
-                        <option value="" >Select Simulation Type</option>
-                        <option value="external">Standard Phishing Simulation</option>
-                        <option value="internal">Targeted Spear-Phishing</option>
+                        <option value="">Select Simulation Type</option>
+                        <option value="external">
+                          Standard Phishing Simulation
+                        </option>
+                        <option value="internal">
+                          Targeted Spear-Phishing
+                        </option>
                         <option value="cloud">Vishing & Smishing Add-on</option>
-                        <option value="full">Continuous Phishing Program</option>
+                        <option value="full">
+                          Continuous Phishing Program
+                        </option>
                       </select>
-                      <Icon icon="lucide:chevron-down" className="absolute right-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
+                      <Icon
+                        icon="lucide:chevron-down"
+                        className="absolute right-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"
+                      />
+                      {errors.simulation && (
+                        <p className="text-sm font-normal text-red-500">
+                          {errors.simulation.message}
+                        </p>
+                      )}
                     </div>
                   </div>
 
                   {/* CAPTCHA */}
                   <div className="mt-7">
                     <div className="flex items-center gap-3">
-                      <span className="text-[13px] leading-5 text-[#E7E7E7]">
-                        Captcha
-                      </span>
-
-                      <span className="flex h-[32px] min-w-[127px] items-center justify-center rounded-[5px] bg-[#7D70F0BF] px-5 text-[13px] font-medium tracking-wide text-white">
-                        ZRLD9Y
-                      </span>
+                      <Turnstile
+                        ref={turnstileRef}
+                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                        onSuccess={(token) => setTurnstileToken(token)}
+                        onExpire={() => setTurnstileToken("")}
+                        onError={() => setTurnstileToken("")}
+                      />
                     </div>
-
-                    <input
-                      id="captcha"
-                      name="captcha"
-                      type="text"
-                      placeholder="Enter the text shown above"
-                      required
-                      className="mt-3 h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
-                    />
                   </div>
 
                   {/* TERMS & PRIVACY CHECKBOX */}
@@ -551,29 +641,34 @@ function page() {
                       required
                       className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
                     />
-                    <label htmlFor="terms" className="text-[11px] leading-relaxed text-[#D1D1D1] max-w-[490px]">
-                      By clicking submit below, you agree to our Terms of Use and Privacy Policy. Additionally, you consent to allow ISECURION Technology &amp; Consulting Pvt. Ltd. to store and process the personal information submitted above to provide you the content requested.
+                    <label
+                      htmlFor="terms"
+                      className="text-[11px] leading-relaxed text-[#D1D1D1] max-w-[490px]"
+                    >
+                      By clicking submit below, you agree to our Terms of Use
+                      and Privacy Policy. Additionally, you consent to allow
+                      ISECURION Technology &amp; Consulting Pvt. Ltd. to store
+                      and process the personal information submitted above to
+                      provide you the content requested.
                     </label>
                   </div>
 
                   {/* SUBMIT BUTTON */}
                   <button
                     type="submit"
-                    className="w-full h-[48px] mt-2 inline-flex items-center justify-center gap-2 rounded-[8px] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-medium text-white border-[1.5px] border-[#00000000] transition-all duration-200 shadow-md shadow-[#0F66EA]/20"
+                    className={`w-full h-[48px] mt-2 inline-flex items-center justify-center gap-2 rounded-[8px] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-medium text-white border-[1.5px] border-[#00000000] transition-all duration-200 shadow-md shadow-[#0F66EA]/20 ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
                   >
-                    <span>Get Quote</span>
+                    <span>{loading ? "getting" : "Get Quote"}</span>
                     <Icon icon="lucide:arrow-right" className="h-4 w-4" />
                   </button>
                 </form>
               </Animation>
             </div>
           </div>
-
         </div>
-
       </section>
 
-      <section className='bg-[#060D1B] pt-18 pb-10'>
+      <section className="bg-[#060D1B] pt-18 pb-10">
         <div
           aria-label="Key human risk metrics"
           className="marquee relative w-full overflow-hidden border-y border-[#FFFFFF1A] bg-[#070D2E] py-3"
@@ -627,12 +722,14 @@ function page() {
                 Turn Employee Awareness into Measurable Security.
               </h2>
               <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[550px]">
-                Phishing simulation is a controlled exercise that replicates real-world social engineering techniques to assess employee behaviour,
-                reporting habits, and security awareness.
+                Phishing simulation is a controlled exercise that replicates
+                real-world social engineering techniques to assess employee
+                behaviour, reporting habits, and security awareness.
               </p>
               <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[590px]">
-                ISECURION combines realistic attack scenarios with behavioural insights and targeted training to identify
-                weaknesses and strengthen your organisation's human security layer.
+                ISECURION combines realistic attack scenarios with behavioural
+                insights and targeted training to identify weaknesses and
+                strengthen your organisation's human security layer.
               </p>
             </div>
           </Animation>
@@ -648,7 +745,10 @@ function page() {
                     className="w-[48px] h-[48px] flex items-center justify-center rounded-xl"
                     style={{ backgroundColor: `${item.bgColor}` }}
                   >
-                    <Icon icon={item.Icon} className="text-2xl text-[#FFFFFF]" />
+                    <Icon
+                      icon={item.Icon}
+                      className="text-2xl text-[#FFFFFF]"
+                    />
                   </div>
                   <h3 className="text-base font-medium text-[#F5F0E8]">
                     {item.heading}
@@ -665,7 +765,10 @@ function page() {
 
       <section className="relative isolate bg-[#080B19]">
         {/* ================= BACKGROUND ================= */}
-        <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+        <div
+          className="pointer-events-none absolute inset-0 z-0"
+          aria-hidden="true"
+        >
           <div
             className="absolute inset-0 opacity-100 bg-no-repeat overflow-hidden"
             style={{
@@ -681,7 +784,6 @@ function page() {
         {/* ================= CONTENT ================= */}
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
           <div className="grid grid-cols-1 items-center gap-10 md:gap-12 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-8">
-
             {/* ---------- LEFT CONTENT ---------- */}
             <LeftAnimation>
               <div className="relative z-10 text-center lg:text-left ">
@@ -696,8 +798,8 @@ function page() {
                 <p className="mt-4 lg:max-w-[380px] text-[14px] leading-[25px] text-[#C7C9D3] sm:text-[15px] sm:leading-[25.5px] text-center lg:text-left">
                   Drosera is ISECURION&apos;s in-house phishing simulation and
                   human risk management platform, designed to help organisations
-                  run campaigns, analyse employee behaviour, and deliver targeted
-                  security awareness training.
+                  run campaigns, analyse employee behaviour, and deliver
+                  targeted security awareness training.
                 </p>
 
                 <ul className="mt-5 space-y-3 text-center lg:text-left">
@@ -715,13 +817,17 @@ function page() {
                   ))}
                 </ul>
 
-                <div className='text-center lg:text-left'>
+                <div className="text-center lg:text-left">
                   <Link
                     href="#"
                     className="mt-7 inline-flex min-h-[45px] items-center justify-center gap-2 rounded-[8px] border border-[#568CE0]/60 bg-gradient-to-b from-[#386CC0] to-[#20477E] px-5 py-3 text-[13px] font-medium text-white shadow-[0_4px_16px_rgba(15,102,234,0.15)] transition duration-300 hover:border-[#70A7FF] hover:from-[#437DD5] hover:to-[#285795] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F80FF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080B19]"
                   >
                     Explore Drosera
-                    <Icon icon="lucide:external-link" className="h-[15px] w-[15px]" aria-hidden="true" />
+                    <Icon
+                      icon="lucide:external-link"
+                      className="h-[15px] w-[15px]"
+                      aria-hidden="true"
+                    />
                   </Link>
                 </div>
               </div>
@@ -730,10 +836,8 @@ function page() {
             {/* ---------- RIGHT: DEVICE FRAME + DASHBOARD ---------- */}
             <Animation>
               <div className="relative min-w-0 mx-auto w-full max-w-[680px] lg:mx-0 lg:max-w-none">
-
                 {/* Wider than the column on lg+, so it runs off the right edge of the screen */}
                 <div className="relative w-full lg:ml-auto lg:w-[min(50rem,calc(100%_+_2rem_+_max(0px,(10vw_-_80rem)/2)))]">
-
                   {/* 1) FRAME at the bottom. It sets the size and includes the bezel. */}
                   <Image
                     src={dashboardFrame}
@@ -758,7 +862,6 @@ function page() {
                 </div>
               </div>
             </Animation>
-
           </div>
         </div>
       </section>
@@ -777,7 +880,9 @@ function page() {
                 Measure Your Human Attack Surface
               </h2>
               <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[647px]">
-                Simulate realistic social-engineering threats across people, roles, channels, and third parties to identify exposure and strengthen security awareness.
+                Simulate realistic social-engineering threats across people,
+                roles, channels, and third parties to identify exposure and
+                strengthen security awareness.
               </p>
             </div>
             <div className="mt-10">
@@ -825,7 +930,10 @@ function page() {
               </h2>
 
               <p className="max-w-[920px] text-[15px] font-normal leading-[25px] text-[#D1D1D1] sm:text-base sm:leading-[28px] lg:text-[18px] lg:leading-[31px]">
-                From threat modelling to targeted remediation, we execute controlled phishing campaigns that uncover vulnerabilities, measure employee risk, and strengthen your organisation’s security resilience.
+                From threat modelling to targeted remediation, we execute
+                controlled phishing campaigns that uncover vulnerabilities,
+                measure employee risk, and strengthen your organisation’s
+                security resilience.
               </p>
             </div>
           </Animation>
@@ -862,7 +970,6 @@ function page() {
                   <p className="mt-2 text-[14px] font-normal leading-[24px] text-[#C3C5CD] lg:text-[15px] lg:leading-[24px] max-w-[200px]">
                     {item.description}
                   </p>
-
                 </div>
               </AnimatedCard>
             ))}
@@ -884,7 +991,9 @@ function page() {
                 </h2>
 
                 <p className="mx-auto mt-[18px] max-w-[1040px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-lg">
-                  ISECURION combines threat-informed simulations, behavioural insights, and targeted remediation to help organisations improve employee resilience against social engineering.
+                  ISECURION combines threat-informed simulations, behavioural
+                  insights, and targeted remediation to help organisations
+                  improve employee resilience against social engineering.
                 </p>
               </div>
             </div>
@@ -903,7 +1012,8 @@ function page() {
                   </h3>
 
                   <p className="mt-[8px] lg:max-w-[255px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
-                    Our templates reflect active adversary campaigns and map to MITRE ATT&CK techniques for relevance and realism.
+                    Our templates reflect active adversary campaigns and map to
+                    MITRE ATT&CK techniques for relevance and realism.
                   </p>
                 </div>
               </div>
@@ -922,17 +1032,15 @@ function page() {
                   </h3>
 
                   <p className="mt-[8px] max-w-[255px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
-                    Reinforce safer employee decisions through targeted awareness and practical learning.
+                    Reinforce safer employee decisions through targeted
+                    awareness and practical learning.
                   </p>
                 </div>
               </div>
 
               <div className="relative min-h-[309px] bg-linear-to-b from-[#7D70F0] to-[#48408A] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[28px]">
                 <div className="text-white">
-                  <Icon
-                    icon="hugeicons:ai-chip"
-                    className="text-[36px]"
-                  />
+                  <Icon icon="hugeicons:ai-chip" className="text-[36px]" />
                 </div>
 
                 <div className="absolute bottom-[47px] left-[25px] right-[25px]">
@@ -941,7 +1049,9 @@ function page() {
                   </h3>
 
                   <p className="mt-[8px] lg:max-w-[275px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
-                    Powered by Drosera, our proprietary AI phishing simulation platform, not a third-party tool, so campaigns, data and reporting stay in one trusted stack.
+                    Powered by Drosera, our proprietary AI phishing simulation
+                    platform, not a third-party tool, so campaigns, data and
+                    reporting stay in one trusted stack.
                   </p>
                 </div>
               </div>
@@ -964,7 +1074,9 @@ function page() {
                 </h2>
 
                 <p className="mt-[18px] lg:max-w-[420px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px]">
-                  Combine proven expertise, industry experience, and compliance-driven security services to strengthen your organisation’s cyber resilience.
+                  Combine proven expertise, industry experience, and
+                  compliance-driven security services to strengthen your
+                  organisation’s cyber resilience.
                 </p>
               </LeftAnimation>
             </div>
@@ -981,7 +1093,9 @@ function page() {
                         Certified Security Team
                       </h3>
                       <p className="mt-[6px] max-w-[460px] text-[13px] sm:text-base font-normal leading-[1.8] text-[#D1D1D1]">
-                        OSCP, OSCE, CISSP-certified professionals and experienced security specialists delivering expert-led engagements.
+                        OSCP, OSCE, CISSP-certified professionals and
+                        experienced security specialists delivering expert-led
+                        engagements.
                       </p>
                     </div>
                   </div>
@@ -995,7 +1109,8 @@ function page() {
                         Enterprise Experience
                       </h3>
                       <p className="mt-[6px] max-w-[460px] text-[13px] sm:text-base font-normal leading-[1.8] text-[#D1D1D1]">
-                        Proven security programmes across BFSI, healthcare, SaaS, and critical infrastructure.
+                        Proven security programmes across BFSI, healthcare,
+                        SaaS, and critical infrastructure.
                       </p>
                     </div>
                   </div>
@@ -1009,7 +1124,8 @@ function page() {
                         Compliance-Aligned Delivery
                       </h3>
                       <p className="mt-[6px] max-w-[460px] text-[13px] sm:text-base font-normal leading-[1.8] text-[#D1D1D1]">
-                        Actionable findings and documentation aligned with ISO 27001, SOC 2, and relevant compliance frameworks.
+                        Actionable findings and documentation aligned with ISO
+                        27001, SOC 2, and relevant compliance frameworks.
                       </p>
                     </div>
                   </div>
@@ -1023,11 +1139,12 @@ function page() {
                         Long-Term Partnership
                       </h3>
                       <p className="mt-[6px] max-w-[460px] text-[13px] sm:text-base font-normal leading-[1.8] text-[#D1D1D1]">
-                        Continuous security improvement through ongoing assessments, proactive guidance, and measurable progress.
+                        Continuous security improvement through ongoing
+                        assessments, proactive guidance, and measurable
+                        progress.
                       </p>
                     </div>
                   </div>
-
                 </div>
               </div>
             </Animation>
@@ -1067,7 +1184,9 @@ function page() {
                       "min-w-0 px-5 py-6 sm:px-6 sm:py-7 lg:px-[25px] lg:py-[30px]",
                       index % 2 === 0 ? "sm:border-r sm:border-[#29274D]" : "",
                       index < 2 ? "sm:border-b sm:border-[#29274D]" : "",
-                      index < 3 ? "border-b border-[#29274D] sm:border-b-0" : "",
+                      index < 3
+                        ? "border-b border-[#29274D] sm:border-b-0"
+                        : "",
                       index >= 2 ? "sm:border-t sm:border-[#29274D]" : "",
                     ].join(" ")}
                   >
@@ -1116,7 +1235,7 @@ function page() {
                 <span className="text-[#0F66EA]">
                   explain <br />
                 </span>
-                <span className='text-transparent bg-clip-text bg-linear-to-r from-[#7D70F0] to-[#0F66EA]'>
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-[#7D70F0] to-[#0F66EA]">
                   your people.
                 </span>
               </h2>
@@ -1134,10 +1253,13 @@ function page() {
               <AnimatedCard
                 delay={index * 0.25}
                 key={metric.title}
-                className="flex min-h-[193px] min-w-0 flex-col rounded-[12px] border border-[#28254E]/80 bg-gradient-to-br from-[#141427]/95 via-[#10101C]/95 to-[#090B11] p-[17px] sm:p-[18px]">
+                className="flex min-h-[193px] min-w-0 flex-col rounded-[12px] border border-[#28254E]/80 bg-gradient-to-br from-[#141427]/95 via-[#10101C]/95 to-[#090B11] p-[17px] sm:p-[18px]"
+              >
                 {/* Icon and title */}
                 <div className="flex min-w-0 items-center gap-3">
-                  <div className={`flex h-[55px] w-[55px] shrink-0 items-center justify-center rounded-[15px] bg-gradient-to-br ${metric.gradient}`}>
+                  <div
+                    className={`flex h-[55px] w-[55px] shrink-0 items-center justify-center rounded-[15px] bg-gradient-to-br ${metric.gradient}`}
+                  >
                     <Icon
                       icon={metric.icon}
                       className="h-[27px] w-[27px] text-white"
@@ -1196,26 +1318,24 @@ function page() {
       {/* IMPLEMENTATION ROADMAP */}
       <section className="relative isolate overflow-hidden bg-[#070D1B] text-white">
         <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8 lg:py-[68px]">
-
           {/* Section heading */}
           <div className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2 md:items-start md:gap-10">
             <LeftAnimation>
-              <div className='text-center sm:text-left'>
+              <div className="text-center sm:text-left">
                 <p className="text-sm font-semibold uppercase tracking-[0.2px] text-[#7D70F0] sm:text-base">
                   IMPLEMENTATION ROADMAP
                 </p>
 
                 <h2 className="mt-2 max-w-[510px] text-[27px] font-normal leading-[1.5] tracking-[-0.4px] text-[#D1D1D1] sm:text-[30px] lg:text-[32px]">
-                  A Practical Path to better
-                  phishing resilience.
+                  A Practical Path to better phishing resilience.
                 </h2>
               </div>
             </LeftAnimation>
 
             <Animation>
               <p className="max-w-[400px] text-[15px] leading-[24px] text-[#C3C7D1] sm:text-[17px] sm:leading-[28px] md:ml-auto md:mt-5 text-center sm:text-left">
-                Typical timeline for enterprise engagements. Schedules are adjusted to
-                business cycles and regulatory windows.
+                Typical timeline for enterprise engagements. Schedules are
+                adjusted to business cycles and regulatory windows.
               </p>
             </Animation>
           </div>
@@ -1233,7 +1353,8 @@ function page() {
                   Scoping &amp; Approvals
                 </h3>
                 <p className="mt-4 text-[11px] leading-[18px] text-[#D1D1D1] sm:text-sm sm:leading-[22px] max-w-[240px]">
-                  Week 0 - 2: ROE, exclusions, stakeholder alignment and legal sign-off.
+                  Week 0 - 2: ROE, exclusions, stakeholder alignment and legal
+                  sign-off.
                 </p>
               </div>
             </AnimatedCard>
@@ -1249,8 +1370,8 @@ function page() {
                   Recon &amp; Pilot
                 </h3>
                 <p className="mt-4 text-[11px] leading-[18px] text-[#D1D1D1] sm:text-sm sm:leading-[22px]">
-                  Week 3 - 4: OSINT, pilot sends on Drosera, SOC validation and immediate
-                  micro-training for vulnerable cohorts.
+                  Week 3 - 4: OSINT, pilot sends on Drosera, SOC validation and
+                  immediate micro-training for vulnerable cohorts.
                 </p>
               </div>
             </AnimatedCard>
@@ -1266,7 +1387,8 @@ function page() {
                   Rollout
                 </h3>
                 <p className="mt-4 text-[11px] leading-[18px] text-[#D1D1D1] sm:text-sm sm:leading-[22px] max-w-[240px]">
-                  Week 5 - 10: Full roll-out with segmented campaigns and executive reporting.
+                  Week 5 - 10: Full roll-out with segmented campaigns and
+                  executive reporting.
                 </p>
               </div>
             </AnimatedCard>
@@ -1282,8 +1404,8 @@ function page() {
                   Continuous Improvement
                 </h3>
                 <p className="mt-4 text-[11px] leading-[18px] text-[#D1D1D1] sm:text-sm sm:leading-[22px]">
-                  Ongoing: Monthly micro-campaigns, quarterly SOW reviews and iterative
-                  playbooks.
+                  Ongoing: Monthly micro-campaigns, quarterly SOW reviews and
+                  iterative playbooks.
                 </p>
               </div>
             </AnimatedCard>
@@ -1302,11 +1424,8 @@ function page() {
         description="Find clear answers to common questions about our phishing simulations, campaign safety, reporting, and measurable security outcomes."
         faqs={phishingFAQs}
       />
-
-
-
     </div>
-  )
+  );
 }
 
-export default page;
+export default PhishingSimulation;

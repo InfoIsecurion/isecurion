@@ -1,12 +1,21 @@
 "use client";
 import { Icon } from "@iconify/react";
-import { Turnstile } from "@marsidev/react-turnstile";
-import React, { useState } from "react";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import React, { useRef, useState } from "react";
 import { toast } from "react-toastify";
 import { AnimatedCard } from "../../../components/ui/Animation";
 import Image from "next/image";
 import yes from "../../../assets/services/yes.svg";
 import FAQSection from "../../../components/sections/FAQSection";
+import { useForm } from "react-hook-form";
+import { aadharAudit } from "../../../services/api/contact";
+interface ContactFormData {
+  email: string;
+  companyname: string;
+  entity: string;
+  turstileToken: string;
+}
+
 const aadharAuditServices = [
   "UIDAI AUA/KUA Audit Support",
   "Aadhaar Data Protection",
@@ -391,6 +400,41 @@ const aadharFaqs = [
 function AadharAudit() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [loading, setLoading] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>();
+
+  const submit = async (data: ContactFormData) => {
+    setLoading(true);
+    console.log(data);
+    try {
+      if (!turnstileToken) {
+        toast.error("Please complete CAPTCHA verification.");
+        return;
+      }
+      const response = await aadharAudit({ ...data, turnstileToken });
+      if (response.status === 200) {
+        toast.success(response.message);
+        reset();
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
+      } else {
+        toast.error(response.message);
+      }
+    } catch (error) {
+      toast.error(
+        error.response?.data?.message ||
+          "Something went wrong. Please try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="bg-[#060D1B]">
@@ -442,7 +486,7 @@ function AadharAudit() {
                 Discuss your UIDAI audit requirements with our experts.
               </p>
             </div>
-            <form action="" className="mt-5 space-y-3">
+            <form className="mt-5 space-y-3" onSubmit={handleSubmit(submit)}>
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="w-full flex flex-col gap-2">
                   <label
@@ -454,8 +498,14 @@ function AadharAudit() {
                   <input
                     type="email"
                     placeholder="youremail@gmail.com"
-                    className="text-sm font-normal px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                    className={`text-sm font-normal px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1]  bg-[#0A0303] ${errors.email ? "border border-red-500" : "border-[1.14px] border-[#262D3D]"}`}
+                    {...register("email", { required: "Email is required" })}
                   />
+                  {errors.email && (
+                    <p className="text-sm font-normal text-red-500">
+                      {errors.email.message}
+                    </p>
+                  )}
                 </div>
                 <div className="w-full flex flex-col gap-2">
                   <label
@@ -467,8 +517,16 @@ function AadharAudit() {
                   <input
                     type="text"
                     placeholder="company name"
-                    className="text-sm font-normal px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                    className={`text-sm font-normal px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1]  bg-[#0A0303] ${errors.companyname ? "border border-red-500" : "border-[1.14px] border-[#262D3D]"}`}
+                    {...register("companyname", {
+                      required: "Company name is required",
+                    })}
                   />
+                  {errors.companyname && (
+                    <p className="text-sm font-normal text-red-500">
+                      {errors.companyname.message}
+                    </p>
+                  )}
                 </div>
               </div>
               <div className="flex flex-col gap-2">
@@ -481,7 +539,8 @@ function AadharAudit() {
                 <select
                   name=""
                   id=""
-                  className="text-sm font-normal px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                  className={`text-sm font-normal px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1]  bg-[#0A0303] ${errors.entity ? "border border-red-500" : "border-[1.14px] border-[#262D3D]"}`}
+                  {...register("entity", { required: "Entity is required" })}
                 >
                   <option value="">Select your Entity Type</option>
                   <option value="AUA (Authentication User Agency)">
@@ -501,11 +560,17 @@ function AadharAudit() {
                   <option value="Government Agency">Government Agency</option>
                   <option value="Other">Other</option>
                 </select>
+                {errors.entity && (
+                  <p className="text-sm font-normal text-red-500">
+                    {errors.entity.message}
+                  </p>
+                )}
               </div>
               <div className=" flex flex-col gap-2">
                 <p className="text-sm font-medium text-white">Captcha</p>
 
                 <Turnstile
+                  ref={turnstileRef}
                   siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                   onSuccess={(token) => setTurnstileToken(token)}
                   onExpire={() => setTurnstileToken("")}
@@ -761,31 +826,40 @@ function AadharAudit() {
             </div>
           </div>
           <div className="relative mt-10">
-            <div className="absolute top-0 bottom-0 left-1/2 w-[1px] -translate-x-1/2 bg-linear-to-b from-[#3B9E6A] to-[#263028]" />
-            <div className="relative flex flex-col gap-3 sm:gap-5">
+            {/* Timeline line */}
+            <div className="absolute top-0 bottom-0 left-[17px] w-[1px] bg-linear-to-b from-[#3B9E6A] to-[#263028] sm:left-1/2 sm:-translate-x-1/2" />
+
+            <div className="relative flex flex-col gap-5">
               {ourApproach.map((item, index) => {
                 const isLeft = index % 2 === 0;
+                const phase = String(index + 1).padStart(2, "0");
 
                 return (
                   <AnimatedCard
                     key={index}
                     delay={index * 0.15}
-                    className="relative grid min-h-[135px] grid-cols-2"
+                    className="relative grid min-h-[135px] grid-cols-[36px_minmax(0,1fr)] gap-x-4 sm:grid-cols-2"
                   >
-                    <div className="absolute left-1/2 top-1 text-[11.52px] font-normal -translate-x-1/2 z-10 flex h-[36px] w-[36px] items-center justify-center  ring-[0.5px]  ring-[#C6FF3D7D] text-[#3B9E6A] bg-[#0A0D0B] border border-[#3B9E6A]">
-                      {String(index + 1).padStart(2, "0")}
+                    {/* Number */}
+                    <div className="absolute left-0 top-1 z-10 flex h-[36px] w-[36px] items-center justify-center ring-[0.5px] ring-[#C6FF3D7D] text-[11.52px] font-normal text-[#3B9E6A] bg-[#0A0D0B] border border-[#3B9E6A] sm:left-1/2 sm:-translate-x-1/2">
+                      {phase}
                     </div>
 
+                    {/* Left card */}
                     <div
-                      className={`flex flex-col  ${isLeft ? "items-end pr-10 text-right" : ""}`}
+                      className={`col-start-2 flex flex-col ${
+                        isLeft
+                          ? "items-start pl-0 text-left sm:col-start-1 sm:items-end sm:pr-10 sm:text-right"
+                          : "hidden sm:col-start-1 sm:block sm:invisible"
+                      }`}
                     >
                       {isLeft && (
                         <div className="space-y-3">
-                          <p className="text-[15px] font-normal tracking-[2px] text-[#0FEADB]">
-                            Phase {String(index + 1).padStart(2, "0")}
+                          <p className="text-[15px] font-normal tracking-[2px] text-[#3B9E6A]">
+                            Phase {phase}
                           </p>
 
-                          <h3 className="text-base sm:text-lg  font-medium text-[#FFFFFF]">
+                          <h3 className="text-base sm:text-lg font-medium text-[#FFFFFF]">
                             {item.heading}
                           </h3>
 
@@ -798,12 +872,16 @@ function AadharAudit() {
 
                     {/* Right card */}
                     <div
-                      className={`flex flex-col justify-start ${!isLeft ? " items-start pl-10 text-left" : ""}`}
+                      className={`col-start-2 flex flex-col justify-start ${
+                        !isLeft
+                          ? "items-start pl-0 text-left sm:col-start-2 sm:pl-10"
+                          : "hidden sm:col-start-2 sm:block sm:invisible"
+                      }`}
                     >
                       {!isLeft && (
                         <div className="space-y-3">
-                          <p className="text-[15px] font-normal tracking-[2px] text-[#0FEADB]">
-                            Phase {String(index + 1).padStart(2, "0")}
+                          <p className="text-[15px] font-normal tracking-[2px] text-[#3B9E6A]">
+                            Phase {phase}
                           </p>
 
                           <h3 className="text-base sm:text-lg font-medium text-[#FFFFFF]">

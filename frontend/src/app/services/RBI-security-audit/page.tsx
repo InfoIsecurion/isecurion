@@ -1,6 +1,13 @@
-import React from 'react'
-import { Icon } from '@iconify/react'
-import { Animation, AnimatedCard, LeftAnimation, GradientIcon, RightAnimation } from '../../../components/ui/Animation'
+"use client";
+import React, { useRef, useState } from "react";
+import { Icon } from "@iconify/react";
+import {
+  Animation,
+  AnimatedCard,
+  LeftAnimation,
+  GradientIcon,
+  RightAnimation,
+} from "../../../components/ui/Animation";
 import FAQSection from "../../../components/sections/FAQSection";
 import RBI_CTA from '../../../components/sections/RBI_CTA';
 
@@ -428,15 +435,64 @@ const RBI_FAQs = [
             "Yes, mobile banking and payment applications are thoroughly assessed for security vulnerabilities, authentication mechanisms, data encryption, session management, and compliance with secure coding practices.",
     },
 ];
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { rbiAudit } from "../../../services/api/contact";
+
+interface ContactFormData {
+  email: string;
+  companyName: string;
+  organizationtype: string;
+  turnstileToken: string;
+}
 
 function page() {
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [loading, setLoading] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>();
+
+  const submit = async (data: ContactFormData) => {
+    console.log(data);
+    setLoading(true);
+    try {
+      if (!turnstileToken) {
+        toast.error("Please complete CAPTCHA verification.");
+        return;
+      }
+      const response = await rbiAudit({ ...data, turnstileToken });
+      if (response.status === 200) {
+        toast.success(response.message);
+        reset();
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
+      } else {
+        toast.error(response.message);
+      }
+    } catch (error) {
+      toast.error(
+        error.response?.data?.message ||
+          "Something went wrong. Please try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
     return (
         <div>
-            <section className="relative isolate overflow-hidden bg-black py-10 sm:py-12 lg:py-[55px]">
-                <div
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -left-[100px] top-[100px] z-0 h-[550px] w-[560px] rounded-full bg-[#3B9E6A]/28 blur-[140px] lg:left-[100px]"
-                />
+          <section className="relative isolate overflow-hidden bg-black py-10 sm:py-12 lg:py-[55px]">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-[100px] top-[100px] z-0 h-[550px] w-[560px] rounded-full bg-[#3B9E6A]/28 blur-[140px] lg:left-[100px]"
+        />
 
                 <div className="relative z-10 mx-auto w-full max-w-7xl mx-auto px-6 sm:px-10">
 
@@ -474,184 +530,194 @@ function page() {
                                     ))}
                                 </ul>
 
-                                {/* CTA */}
-                                <div className="mt-10 text-center lg:text-left">
-                                    <button
-                                        type="button"
-                                        className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3]"
-                                    >
-                                        Request Consultation{""}
-                                        <span className="ml-1.5 text-[17px] leading-none text-[#31435C]">
-                                            <Icon icon="mdi:arrow-right"></Icon>
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </Animation>
+                {/* CTA */}
+                <div className="mt-10 text-center lg:text-left">
+                  <button
+                    type="button"
+                    className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3]"
+                  >
+                    Request Consultation{""}
+                    <span className="ml-1.5 text-[17px] leading-none text-[#31435C]">
+                      <Icon icon="mdi:arrow-right"></Icon>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </Animation>
 
-                        <Animation>
-                            <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:p-[30px] xl:p-[40px]">
-                                <div>
-                                    <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
-                                        Request RBI IS Audit Consultation
-                                    </h2>
+            <Animation>
+              <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:p-[30px] xl:p-[40px]">
+                <div>
+                  <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
+                    Request RBI IS Audit Consultation
+                  </h2>
 
                                     <p className="mt-3 text-[14px] leading-[1.5] text-[#D9D9D9]">
                                         Discuss your RBI IS audit requirements with our experts.
                                     </p>
                                 </div>
 
-                                {/* Form*/}
-                                <form className="mt-8">
-                                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                                        <div>
-                                            <label
-                                                htmlFor="workEmail"
-                                                className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
-                                            >
-                                                Work Email{" "}<span className="text-[#E42F23]">*</span>
-                                            </label>
+                {/* Form*/}
+                <form className="mt-8" onSubmit={handleSubmit(submit)}>
+                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                    <div>
+                      <label
+                        htmlFor="workEmail"
+                        className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
+                      >
+                        Work Email <span className="text-[#E42F23]">*</span>
+                      </label>
 
-                                            <input
-                                                id="workEmail"
-                                                name="workEmail"
-                                                type="email"
-                                                placeholder="youremail@gmail.com"
-                                                required
-                                                className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
-                                            />
-                                        </div>
-
-                                        <div>
-                                            <label
-                                                htmlFor="companyName"
-                                                className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
-                                            >
-                                                Company Name
-                                            </label>
-
-                                            <input
-                                                id="companyName"
-                                                name="companyName"
-                                                type="text"
-                                                placeholder="Company name"
-                                                className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
-                                            />
-                                        </div>
-                                    </div>
-
-
-                                    <div className='mt-4'>
-                                        <label
-                                            htmlFor="assessmentType"
-                                            className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
-                                        >
-                                            Organization Type{" "}<span className="text-[#F04444]">*</span>
-                                        </label>
-
-                                        <div className="relative">
-                                            <select
-                                                id="target"
-                                                name="target"
-                                                defaultValue=""
-                                                required
-                                                aria-label='Select Industry Sector'
-                                                className="h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
-                                            >
-                                                <option selected>Select Organization Type</option>
-
-                                                <option>Scheduled Commercial Bank</option>
-                                                <option>Cooperative Bank / Urban Co-op</option>
-                                                <option>Non-Banking Financial Company (NBFC)</option>
-                                                <option>Small Finance Bank</option>
-                                                <option>Payment Bank</option>
-                                                <option>FinTech Company</option>
-                                                <option>Technology Vendor for Banking</option>
-                                                <option>Other Financial Institution</option>
-
-                                            </select>
-
-                                            <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#777]">
-                                                <svg
-                                                    width="14"
-                                                    height="8"
-                                                    viewBox="0 0 14 8"
-                                                    fill="none"
-                                                >
-                                                    <path
-                                                        d="M1 1L7 7L13 1"
-                                                        stroke="currentColor"
-                                                        strokeWidth="1.5"
-                                                        strokeLinecap="round"
-                                                        strokeLinejoin="round"
-                                                    />
-                                                </svg>
-                                            </span>
-                                        </div>
-                                    </div>
-
-
-                                    {/* Captcha */}
-                                    <div className="mt-7">
-                                        <div className="flex items-center gap-3">
-                                            <span className="text-[13px] leading-5 text-[#E7E7E7]">
-                                                Captcha
-                                            </span>
-
-                                            <span className="flex h-[32px] min-w-[127px] items-center justify-center rounded-[5px] bg-[#3B9E6AC9] px-5 text-[13px] font-medium tracking-wide text-white">
-                                                ZRLD9Y
-                                            </span>
-                                        </div>
-
-                                        <input
-                                            id="captcha"
-                                            name="captcha"
-                                            type="text"
-                                            placeholder="Enter the text shown above"
-                                            required
-                                            className="mt-3 h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
-                                        />
-                                    </div>
-
-                                    {/* Consent */}
-                                    <div className="mt-5 flex items-start gap-2.5">
-                                        <input
-                                            id="consent"
-                                            name="consent"
-                                            type="checkbox"
-                                            required
-                                            className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
-                                        />
-
-                                        <label
-                                            htmlFor="consent"
-                                            className="text-[10px] leading-[1.7] text-[#BDBDBD] sm:text-[11px]"
-                                        >
-                                            By clicking submit below, you agree to our Terms of Use
-                                            and Privacy Policy. Additionally, you consent to allow
-                                            ISECURION Technology & Consulting Pvt. Ltd. to store and
-                                            process the personal information submitted above to
-                                            provide you the content requested.
-                                        </label>
-                                    </div>
-
-                                    {/* Submit */}
-                                    <button
-                                        type="submit"
-                                        className="mt-8 flex h-[51px] w-full items-center justify-center rounded-[7px] border border-[#4D78C4] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(39,84,148,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#5282D3] hover:to-[#2B5CA0] active:translate-y-0"
-                                    >
-                                        Request RBI Audit Consultation{""}
-                                        <span className="ml-1.5 text-[18px] leading-none">
-                                            <Icon icon="mdi:arrow-right" />
-                                        </span>
-                                    </button>
-                                </form>
-                            </div>
-                        </Animation>
+                      <input
+                        id="workEmail"
+                        name="workEmail"
+                        type="email"
+                        placeholder="youremail@gmail.com"
+                        className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD] ${errors.email ? "border border-red-500" : ""}`}
+                        {...register("email", {
+                          required: "Email is required",
+                        })}
+                      />
+                      {errors.email && (
+                        <p className="text-sm font-normal text-red-500">
+                          {errors.email.message}
+                        </p>
+                      )}
                     </div>
 
-                </div>
-            </section>
+                    <div>
+                      <label
+                        htmlFor="companyName"
+                        className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
+                      >
+                        Company Name
+                      </label>
+
+                      <input
+                        id="companyName"
+                        name="companyName"
+                        type="text"
+                        placeholder="Company name"
+                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        {...register("companyName")}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="mt-4">
+                    <label
+                      htmlFor="assessmentType"
+                      className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
+                    >
+                      Organization Type{" "}
+                      <span className="text-[#F04444]">*</span>
+                    </label>
+
+                    <div className="relative">
+                      <select
+                        id="target"
+                        name="target"
+                        defaultValue=""
+                        aria-label="Select Industry Sector"
+                        className={`h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD] ${errors.organizationtype ? "border border-red-500" : ""}`}
+                        {...register("organizationtype", {
+                          required: "Organization type is required",
+                        })}
+                      >
+                        <option value="">Select Organization Type</option>
+
+                        <option value="Scheduled Commercial Bank">
+                          Scheduled Commercial Bank
+                        </option>
+                        <option value="Cooperative Bank / Urban Co-op">
+                          Cooperative Bank / Urban Co-op
+                        </option>
+                        <option value="Non-Banking Financial Company (NBFC)">
+                          Non-Banking Financial Company (NBFC)
+                        </option>
+                        <option value="Small Finance Bank">
+                          Small Finance Bank
+                        </option>
+                        <option value="Payment Bank">Payment Bank</option>
+                        <option value="FinTech Company">FinTech Company</option>
+                        <option value="Technology Vendor for Banking">
+                          Technology Vendor for Banking
+                        </option>
+                        <option value="Other Financial Institution">
+                          Other Financial Institution
+                        </option>
+                      </select>
+
+                      <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#777]">
+                        <svg
+                          width="14"
+                          height="8"
+                          viewBox="0 0 14 8"
+                          fill="none"
+                        >
+                          <path
+                            d="M1 1L7 7L13 1"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Captcha */}
+                  <div className="mt-7">
+                    <div className="flex items-center gap-3">
+                      <Turnstile
+                        ref={turnstileRef}
+                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                        onSuccess={(token) => setTurnstileToken(token)}
+                        onExpire={() => setTurnstileToken("")}
+                        onError={() => setTurnstileToken("")}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Consent */}
+                  <div className="mt-5 flex items-start gap-2.5">
+                    <input
+                      id="consent"
+                      name="consent"
+                      type="checkbox"
+                      required
+                      className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
+                    />
+
+                    <label
+                      htmlFor="consent"
+                      className="text-[10px] leading-[1.7] text-[#BDBDBD] sm:text-[11px]"
+                    >
+                      By clicking submit below, you agree to our Terms of Use
+                      and Privacy Policy. Additionally, you consent to allow
+                      ISECURION Technology & Consulting Pvt. Ltd. to store and
+                      process the personal information submitted above to
+                      provide you the content requested.
+                    </label>
+                  </div>
+
+                  {/* Submit */}
+                  <button
+                    type="submit"
+                    className={`mt-8 flex h-[51px] w-full items-center justify-center rounded-[7px] border border-[#4D78C4] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(39,84,148,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#5282D3] hover:to-[#2B5CA0] active:translate-y-0 ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                  >
+                    Request RBI Audit Consultation{""}
+                    <span className="ml-1.5 text-[18px] leading-none">
+                      <Icon icon="mdi:arrow-right" />
+                    </span>
+                  </button>
+                </form>
+              </div>
+            </Animation>
+          </div>
+        </div>
+      </section>
 
             <section className="relative border-t border-white/5 bg-[#07101D] pt-16 text-white sm:pt-18 lg:py-20">
                 <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -1076,7 +1142,7 @@ function page() {
             <RBI_CTA />
 
         </div>
-    )
+    );
 }
 
-export default page
+export default page;

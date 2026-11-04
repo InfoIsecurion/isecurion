@@ -868,31 +868,40 @@ function Iso27001() {
             </p>
           </div>
           <div className="relative mt-10">
-            <div className="absolute top-0 bottom-0 left-1/2 w-[1px] -translate-x-1/2 bg-linear-to-b from-[#0FEADB] to-[#263028]" />
-            <div className="relative flex flex-col gap-3 sm:gap-5">
+            {/* Timeline line */}
+            <div className="absolute top-0 bottom-0 left-[17px] w-[1px] bg-linear-to-b from-[#0FEADB] to-[#263028] sm:left-1/2 sm:-translate-x-1/2" />
+
+            <div className="relative flex flex-col gap-5">
               {methodology.map((item, index) => {
                 const isLeft = index % 2 === 0;
+                const phase = String(index + 1).padStart(2, "0");
 
                 return (
                   <AnimatedCard
                     key={index}
                     delay={index * 0.15}
-                    className="relative grid min-h-[135px] grid-cols-2"
+                    className="relative grid min-h-[135px] grid-cols-[36px_minmax(0,1fr)] gap-x-4 sm:grid-cols-2"
                   >
-                    <div className="absolute left-1/2 top-1 text-[11.52px] font-normal -translate-x-1/2 z-10 flex h-[36px] w-[36px] items-center justify-center  ring-[0.5px]  ring-[#C6FF3D7D] text-[#0FEADB] bg-[#0A0D0B] border border-[#0FEADB]">
-                      {String(index + 1).padStart(2, "0")}
+                    {/* Number */}
+                    <div className="absolute left-0 top-1 z-10 flex h-[36px] w-[36px] items-center justify-center ring-[0.5px] ring-[#C6FF3D7D] text-[11.52px] font-normal text-[#0FEADB] bg-[#0A0D0B] border border-[#0FEADB] sm:left-1/2 sm:-translate-x-1/2">
+                      {phase}
                     </div>
 
+                    {/* Left card */}
                     <div
-                      className={`flex flex-col  ${isLeft ? "items-end pr-10 text-right" : ""}`}
+                      className={`col-start-2 flex flex-col ${
+                        isLeft
+                          ? "items-start pl-0 text-left sm:col-start-1 sm:items-end sm:pr-10 sm:text-right"
+                          : "hidden sm:col-start-1 sm:block sm:invisible"
+                      }`}
                     >
                       {isLeft && (
                         <div className="space-y-3">
                           <p className="text-[15px] font-normal tracking-[2px] text-[#0FEADB]">
-                            Phase {String(index + 1).padStart(2, "0")}
+                            Phase {phase}
                           </p>
 
-                          <h3 className="text-base sm:text-lg  font-medium text-[#FFFFFF]">
+                          <h3 className="text-base sm:text-lg font-medium text-[#FFFFFF]">
                             {item.heading}
                           </h3>
 
@@ -905,12 +914,16 @@ function Iso27001() {
 
                     {/* Right card */}
                     <div
-                      className={`flex flex-col justify-start ${!isLeft ? " items-start pl-10 text-left" : ""}`}
+                      className={`col-start-2 flex flex-col justify-start ${
+                        !isLeft
+                          ? "items-start pl-0 text-left sm:col-start-2 sm:pl-10"
+                          : "hidden sm:col-start-2 sm:block sm:invisible"
+                      }`}
                     >
                       {!isLeft && (
                         <div className="space-y-3">
                           <p className="text-[15px] font-normal tracking-[2px] text-[#0FEADB]">
-                            Phase {String(index + 1).padStart(2, "0")}
+                            Phase {phase}
                           </p>
 
                           <h3 className="text-base sm:text-lg font-medium text-[#FFFFFF]">

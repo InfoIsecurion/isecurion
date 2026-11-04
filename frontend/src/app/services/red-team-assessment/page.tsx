@@ -244,6 +244,7 @@ export default function RedTeamAssessmentPage() {
                         type="text"
                         placeholder="Company name"
                         className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        {...register("companyName")}
                       />
                     </div>
                   </div>

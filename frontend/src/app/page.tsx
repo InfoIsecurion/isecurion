@@ -333,7 +333,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* STATS SECTION */}
       <section className="w-full  bg-[#01060E] shadow-[0_0_45px_rgba(15,102,234,0.20)]">
         {/* 7XL Stats Box */}

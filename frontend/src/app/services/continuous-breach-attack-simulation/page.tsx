@@ -10,7 +10,10 @@ import {
 import FAQSection from "../../../components/sections/FAQSection";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { useForm } from "react-hook-form";
-import { aiAugamented } from "../../../services/api/contact";
+import {
+  aiAugamented,
+  breachAttackSimulation,
+} from "../../../services/api/contact";
 import { toast } from "react-toastify";
 
 interface ContactFormData {
@@ -99,7 +102,7 @@ const governanceCards = [
   },
 ];
 
-function page() {
+function ContinuousBreachAttackSimulation() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -114,7 +117,10 @@ function page() {
     console.log(data);
     setLoading(true);
     try {
-      const response = await aiAugamented(data);
+      const response = await breachAttackSimulation({
+        ...data,
+        turnstileToken,
+      });
       if (response.status === 200) {
         toast.success(response.message);
         reset();
@@ -205,21 +211,22 @@ function page() {
                         />
                       </div>
 
-                      <div>
-                        <label
-                          htmlFor="company-name"
-                          className="block text-[13px] text-[#FEFEFE] mb-1.5"
-                        >
-                          Company Name
-                        </label>
-                        <input
-                          id="company-name"
-                          type="text"
-                          placeholder="Company name"
-                          className="w-full h-[46px] rounded-[8px] bg-[#110404] border border-[#262D3D] px-3.5 text-[14px] text-[#D1D1D1] placeholder-gray-500 "
-                        />
-                      </div>
+                    <div>
+                      <label
+                        htmlFor="company-name"
+                        className="block text-sm font-medium text-[#FEFEFE] mb-1.5"
+                      >
+                        Company Name
+                      </label>
+                      <input
+                        id="company-name"
+                        type="text"
+                        placeholder="Company name"
+                        className="text-sm font-normal px-3 py-3 w-full rounded-[10px] bg-[#110404] border border-[#262D3D]   text-[#D1D1D1] placeholder-gray-500"
+                        {...register("companyName")}
+                      />
                     </div>
+                  </div>
 
                     {/* SIMULATION TYPE DROPDOWN */}
                     <div>
@@ -884,4 +891,4 @@ function page() {
   );
 }
 
-export default page;
+export default ContinuousBreachAttackSimulation;
