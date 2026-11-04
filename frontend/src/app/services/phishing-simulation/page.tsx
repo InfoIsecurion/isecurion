@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import {
   Animation,
@@ -12,7 +13,17 @@ import gridBackground from "../../../assets/services/Clip-path-group-top.png";
 import dashboardFrame from "../../../assets/services/mobileFrame.png";
 import dashboardImage from "../../../assets/services/view-report-(campaign dashboard).png";
 import FAQSection from "../../../components/sections/FAQSection";
+import { useForm } from "react-hook-form";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { phishingSimulation } from "../../../services/api/contact";
+import { toast } from "react-toastify";
 
+interface ContactFormData {
+  email: string;
+  companyName: string;
+  simulation: string;
+  turnstileToken: string;
+}
 const services = [
   {
     heading: "Realistic Attack Scenarios",
@@ -392,7 +403,44 @@ function MetricChart({ type }: { type: string }) {
   );
 }
 
-function page() {
+function PhishingSimulation() {
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [loading, setLoading] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>();
+
+  const submit = async (data: ContactFormData) => {
+    setLoading(true);
+    try {
+      if (!turnstileToken) {
+        toast.error("Please complete CAPTCHA verification.");
+        return;
+      }
+      const response = await phishingSimulation({ ...data, turnstileToken });
+      if (response.status === 200) {
+        toast.success(response.message);
+        reset();
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
+      } else {
+        toast.error(response.message);
+      }
+    } catch (error) {
+      toast.error(
+        error.response?.data?.message ||
+          "Something went wrong. Please try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div>
       {/* hero section  */}
@@ -487,7 +535,10 @@ function page() {
             </Animation>
             <div className="">
               <Animation>
-                <form className="mt-6 space-y-4.5">
+                <form
+                  className="mt-6 space-y-4.5"
+                  onSubmit={handleSubmit(submit)}
+                >
                   {/* WORK EMAIL & COMPANY NAME */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -500,9 +551,16 @@ function page() {
                       <input
                         type="email"
                         placeholder="youremail@gmail.com"
-                        className="w-full h-[46px] rounded-[8px] bg-[#110404] border border-[#262D3D] px-3.5 text-[14px] text-[#D1D1D1] placeholder-gray-500 "
-                        required
+                        className={`w-full h-[46px] rounded-[8px] outline-none bg-[#110404] border border-[#262D3D] px-3.5 text-[14px] text-[#D1D1D1] placeholder-gray-500 ${errors.email ? "border border-red-500" : ""}`}
+                        {...register("email", {
+                          required: "Email is required",
+                        })}
                       />
+                      {errors.email && (
+                        <p className="text-sm font-normal text-red-500">
+                          {errors.email.message}
+                        </p>
+                      )}
                     </div>
 
                     <div>
@@ -517,6 +575,7 @@ function page() {
                         type="text"
                         placeholder="Company name"
                         className="w-full h-[46px] rounded-[8px] bg-[#110404] border border-[#262D3D] px-3.5 text-[14px] text-[#D1D1D1] placeholder-gray-500 "
+                        {...register("companyName")}
                       />
                     </div>
                   </div>
@@ -531,8 +590,10 @@ function page() {
                     </label>
                     <div className="relative">
                       <select
-                        className="w-full h-[46px] appearance-none rounded-[8px] bg-[#110404] border border-[#262D3D] px-3.5 text-[13px] text-[#D1D1D1]"
-                        required
+                        className={`w-full h-[46px] appearance-none rounded-[8px] bg-[#110404] border border-[#262D3D] outline-none px-3.5 text-[13px] text-[#D1D1D1]  ${errors.simulation ? "border border-red-500" : ""} `}
+                        {...register("simulation", {
+                          required: "Simulation is required",
+                        })}
                       >
                         <option value="">Select Simulation Type</option>
                         <option value="external">
@@ -550,29 +611,25 @@ function page() {
                         icon="lucide:chevron-down"
                         className="absolute right-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"
                       />
+                      {errors.simulation && (
+                        <p className="text-sm font-normal text-red-500">
+                          {errors.simulation.message}
+                        </p>
+                      )}
                     </div>
                   </div>
 
                   {/* CAPTCHA */}
                   <div className="mt-7">
                     <div className="flex items-center gap-3">
-                      <span className="text-[13px] leading-5 text-[#E7E7E7]">
-                        Captcha
-                      </span>
-
-                      <span className="flex h-[32px] min-w-[127px] items-center justify-center rounded-[5px] bg-[#7D70F0BF] px-5 text-[13px] font-medium tracking-wide text-white">
-                        ZRLD9Y
-                      </span>
+                      <Turnstile
+                        ref={turnstileRef}
+                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                        onSuccess={(token) => setTurnstileToken(token)}
+                        onExpire={() => setTurnstileToken("")}
+                        onError={() => setTurnstileToken("")}
+                      />
                     </div>
-
-                    <input
-                      id="captcha"
-                      name="captcha"
-                      type="text"
-                      placeholder="Enter the text shown above"
-                      required
-                      className="mt-3 h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
-                    />
                   </div>
 
                   {/* TERMS & PRIVACY CHECKBOX */}
@@ -599,9 +656,9 @@ function page() {
                   {/* SUBMIT BUTTON */}
                   <button
                     type="submit"
-                    className="w-full h-[48px] mt-2 inline-flex items-center justify-center gap-2 rounded-[8px] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-medium text-white border-[1.5px] border-[#00000000] transition-all duration-200 shadow-md shadow-[#0F66EA]/20"
+                    className={`w-full h-[48px] mt-2 inline-flex items-center justify-center gap-2 rounded-[8px] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-medium text-white border-[1.5px] border-[#00000000] transition-all duration-200 shadow-md shadow-[#0F66EA]/20 ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
                   >
-                    <span>Get Quote</span>
+                    <span>{loading ? "getting" : "Get Quote"}</span>
                     <Icon icon="lucide:arrow-right" className="h-4 w-4" />
                   </button>
                 </form>
@@ -1371,4 +1428,4 @@ function page() {
   );
 }
 
-export default page;
+export default PhishingSimulation;

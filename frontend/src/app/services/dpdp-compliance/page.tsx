@@ -17,10 +17,10 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import FAQSection from "../../../components/sections/FAQSection";
-import { Turnstile } from "@marsidev/react-turnstile";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { dpdp } from "../../../services/api/contact";
 
 interface ContactFormData {
@@ -594,6 +594,7 @@ const dpdpFaqs = [
 function DpdpCompliance() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [loading, setLoading] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const {
     register,
@@ -604,18 +605,26 @@ function DpdpCompliance() {
 
   const submit = async (data: ContactFormData) => {
     setLoading(true);
+    console.log(data);
     try {
       if (!turnstileToken) {
-        toast.error("Please complete CAPTCHA verification");
+        toast.error("Please complete CAPTCHA verification.");
         return;
       }
       const response = await dpdp({ ...data, turnstileToken });
       if (response.status === 200) {
         toast.success(response.message);
+        reset();
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
       } else {
         toast.error(response.message);
       }
     } catch (error) {
+      toast.error(
+        error.response?.data?.message ||
+          "Something went wrong. Please try again.",
+      );
     } finally {
       setLoading(false);
     }
@@ -692,9 +701,14 @@ function DpdpCompliance() {
                   <input
                     type="email"
                     placeholder="youremail@gmail.com"
-                    className="text-[15px] font-normal px-3 py-2.5 rounded-[10px] outline-none text-[#D1D1D1] bg-[#0A0303] border-[1.12px] border-[#262D3D]"
+                    className={`text-[15px] font-normal px-3 py-2.5 rounded-[10px] outline-none text-[#D1D1D1] bg-[#0A0303] ${errors.emai ? "border border-red-500" : "border-[1.12px] border-[#262D3D] "}`}
                     {...register("emai", { required: "Email is required" })}
                   />
+                  {errors.emai && (
+                    <p className="text-sm font-normal text-red-500">
+                      {errors.emai.message}
+                    </p>
+                  )}
                 </div>
                 <div className="w-full flex flex-col gap-2">
                   <label
@@ -742,6 +756,7 @@ function DpdpCompliance() {
               <div className="">
                 <div className="flex items-center gap-3">
                   <Turnstile
+                    ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                     onSuccess={(token) => setTurnstileToken(token)}
                     onExpire={() => setTurnstileToken("")}

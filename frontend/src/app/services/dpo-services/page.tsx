@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import {
   Animation,
@@ -12,7 +13,7 @@ import privacySectionBackground from "../../../assets/services/your-privacyBackg
 import FAQSection from "../../../components/sections/FAQSection";
 import DPO_CTA from "../../../components/sections/DPO_CTA";
 import { useForm } from "react-hook-form";
-import { Turnstile } from "@marsidev/react-turnstile";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { dpoServices } from "../../../services/api/contact";
 import { toast } from "react-toastify";
 
@@ -24,6 +25,7 @@ interface ContactFormData {
   location: string;
   engagement: string;
   message: string;
+  turnstileToken: string;
 }
 
 const services = [
@@ -399,9 +401,10 @@ const dpoFAQs = [
   },
 ];
 
-function page() {
+function DpoServices() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [loading, setLoading] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const {
     register,
@@ -418,13 +421,20 @@ function page() {
         toast.error("Please complete CAPTCHA verification");
         return;
       }
-      const response = await dpoServices(data);
+      const response = await dpoServices({ ...data, turnstileToken });
       if (response.status === 200) {
         toast.success(response.message);
+        reset();
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
       } else {
         toast.error(response.message);
       }
     } catch (error) {
+      toast.error(
+        error.response?.data?.message ||
+          "Something went wrong. Please try again.",
+      );
     } finally {
       setLoading(false);
     }
@@ -507,169 +517,227 @@ function page() {
           </div>
 
           <div className="flex-1 px-8 py-5 rounded-3xl space-y-5 bg-linear-to-r from-[#7B6FE860] to-[#7B6FE839] min-h-[800px]">
-            <Animation>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <div className="flex flex-col w-full gap-3">
-                  <label
-                    htmlFor=""
-                    className="text-[#FEFEFE] text-sm font-normal"
-                  >
-                    First Name <span className="text-[#E42F23]">*</span>{" "}
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="First name"
-                    className="px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                  />
+            <form
+              action=""
+              className="space-y-5"
+              onSubmit={handleSubmit(submit)}
+            >
+              <Animation>
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <div className="flex flex-col w-full gap-3">
+                    <label
+                      htmlFor=""
+                      className="text-[#FEFEFE] text-sm font-normal"
+                    >
+                      First Name <span className="text-[#E42F23]">*</span>{" "}
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="First name"
+                      className={`px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C] ${errors.fullname ? "border border-red-500" : ""}`}
+                      {...register("fullname", {
+                        required: "Full name is required",
+                      })}
+                    />
+                    {errors.fullname && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.fullname.message}
+                      </p>
+                    )}
+                  </div>
+                  <div className="flex flex-col w-full gap-3">
+                    <label
+                      htmlFor=""
+                      className="text-[#FEFEFE] text-[15px] font-normal"
+                    >
+                      Company Name
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Company name"
+                      className="px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
+                      {...register("companyname")}
+                    />
+                  </div>
                 </div>
-                <div className="flex flex-col w-full gap-3">
-                  <label
-                    htmlFor=""
-                    className="text-[#FEFEFE] text-[15px] font-normal"
-                  >
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Company name"
-                    className="px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                  />
+              </Animation>
+              <Animation>
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <div className="flex flex-col w-full gap-3">
+                    <label
+                      htmlFor=""
+                      className="text-[#FEFEFE] text-[15px] font-medium"
+                    >
+                      Email <span className="text-[#E42F23]">*</span>{" "}
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="youremail@gmail.com"
+                      className={`px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C] ${errors.email ? "border border-red-500" : ""}`}
+                      {...register("email", { required: "Email is required" })}
+                    />
+                    {errors.email && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.email.message}
+                      </p>
+                    )}
+                  </div>
+                  <div className="flex flex-col w-full gap-3">
+                    <label
+                      htmlFor=""
+                      className="text-[#FEFEFE] text-[15px] font-medium"
+                    >
+                      Phone Number{" "}
+                      <span className="text-[#E42F23]">*</span>{" "}
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="+91 987-654-321"
+                      className={`px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C] ${errors.phonenumber ? "border border-red-500" : ""}`}
+                      {...register("phonenumber", {
+                        required: "Phone number is required",
+                      })}
+                    />
+                    {errors.phonenumber && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.phonenumber.message}
+                      </p>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </Animation>
-            <Animation>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <div className="flex flex-col w-full gap-3">
+              </Animation>
+              <Animation>
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <div className="flex flex-col w-full gap-3">
+                    <label
+                      htmlFor=""
+                      className="text-[#FEFEFE] text-[15px] font-medium"
+                    >
+                      Location
+                    </label>
+                    <select
+                      name=""
+                      id=""
+                      className={`h-12 w-full px-3 rounded-[10px] cursor-pointer outline-none  text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]`}
+                      {...register("location")}
+                    >
+                      <option value="">Select your loaction</option>
+
+                      <optgroup label="India">
+                        <option value="India - Bangalore">
+                          India - Bangalore
+                        </option>
+                        <option value="India - Mumbai">India - Mumbai</option>
+                        <option value="India - Delhi NCR">
+                          India - Delhi NCR
+                        </option>
+                        <option value="India - Pune">India - Pune</option>
+                        <option value="India - Hyderabad">
+                          India - Hyderabad
+                        </option>
+                        <option value="India - Kolkata">India - Kolkata</option>
+                        <option value="India - Ahmedabad">
+                          India - Ahmedabad
+                        </option>
+                        <option value="India - Noida">India - Noida</option>
+                        <option value="India - Chennai">India - Chennai</option>
+                        <option value="India - Other">India - Other</option>
+                      </optgroup>
+
+                      <optgroup label="Global">
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Europe - Other">Europe - Other</option>
+                        <option value="GCC - UAE">GCC - UAE</option>
+                        <option value="GCC - Other">GCC - Other</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Other">Other</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div className="flex flex-col w-full gap-3 ">
+                    <label
+                      htmlFor=""
+                      className="text-[#FEFEFE] text-[15px] font-medium"
+                    >
+                      Engagement Type
+                    </label>
+                    <select
+                      name=""
+                      id=""
+                      className="h-12 w-full px-2 rounded-[10px] cursor-pointer outline-none text-[#D1D1D1] bg-[#000C1C]"
+                      {...register("engagement")}
+                    >
+                      <option value="">Choose enagament type</option>
+                      <option value="">Foundational DPO (Startup / SME)</option>
+                      <option value="">Growth DPO (Mid-Market)</option>
+                      <option value="">Enterprise DPO (Continuous)</option>
+                      <option value="">On-demand Advisory / Retainer</option>
+                      <option value="">DPDP Act DPO Appointment</option>
+                      <option value="">GDPR Article 37 DPO Appointment</option>
+                    </select>
+                  </div>
+                </div>
+              </Animation>
+              <Animation>
+                <div className="flex flex-col gap-2">
                   <label
                     htmlFor=""
                     className="text-[#FEFEFE] text-[15px] font-medium"
                   >
-                    Email <span className="text-[#E42F23]">*</span>{" "}
+                    How Can We Help?
                   </label>
-                  <input
-                    type="email"
-                    placeholder="youremail@gmail.com"
-                    className="px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                  />
-                </div>
-                <div className="flex flex-col w-full gap-3">
-                  <label
-                    htmlFor=""
-                    className="text-[#FEFEFE] text-[15px] font-medium"
-                  >
-                    Phone Number <span className="text-[#E42F23]">*</span>{" "}
-                  </label>
-                  <input
-                    type="tel"
-                    placeholder="+91 987-654-321"
-                    className="px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                  />
-                </div>
-              </div>
-            </Animation>
-            <Animation>
-              <div className="flex flex-col sm:flex-row gap-6">
-                <div className="flex flex-col w-full gap-3">
-                  <label
-                    htmlFor=""
-                    className="text-[#FEFEFE] text-[15px] font-medium"
-                  >
-                    Location
-                  </label>
-                  <select
+                  <textarea
+                    placeholder=" Brief requirement (optional)"
                     name=""
                     id=""
-                    className=" h-12 w-full px-3 rounded-[10px] cursor-pointer outline-none  text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                  >
-                    <option value="">Select your loaction</option>
-                    <option value="india">India</option>
-                  </select>
+                    className="px-3 py-3 w-full rounded-[10px] text-[#D1D1D1] bg-[#000C1C] border border-[#262D3D] outline-none"
+                    rows={5}
+                    {...register("message")}
+                  ></textarea>
                 </div>
-                <div className="flex flex-col w-full gap-3 ">
-                  <label
-                    htmlFor=""
-                    className="text-[#FEFEFE] text-[15px] font-medium"
-                  >
-                    Engagement Type
-                  </label>
-                  <select
-                    name=""
-                    id=""
-                    className="h-12 w-full px-2 rounded-[10px] cursor-pointer outline-none text-[#D1D1D1] bg-[#000C1C]"
-                  >
-                    <option value="">Choose enagament type</option>
-                    <option value="">Foundational DPO (Startup / SME)</option>
-                    <option value="">Growth DPO (Mid-Market)</option>
-                    <option value="">Enterprise DPO (Continuous)</option>
-                    <option value="">On-demand Advisory / Retainer</option>
-                    <option value="">DPDP Act DPO Appointment</option>
-                    <option value="">GDPR Article 37 DPO Appointment</option>
-                  </select>
+              </Animation>
+              <Animation>
+                <div className="">
+                  <div className="flex items-center gap-3">
+                    <Turnstile
+                      ref={turnstileRef}
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                      onSuccess={(token) => setTurnstileToken(token)}
+                      onExpire={() => setTurnstileToken("")}
+                      onError={() => setTurnstileToken("")}
+                    />
+                  </div>
                 </div>
-              </div>
-            </Animation>
-            <Animation>
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor=""
-                  className="text-[#FEFEFE] text-[15px] font-medium"
+              </Animation>
+              <Animation>
+                <div className="flex gap-3">
+                  <input
+                    type="checkbox"
+                    className="border border-[#D1D1D1] bg-none"
+                  />
+                  <p className="text-xs font-medium leading-[22px] text-[#D1D1D1]">
+                    By clicking submit below, you agree to our Terms of Use and
+                    Privacy Policy. Additionally, you consent to allow ISECURION
+                    Technology & Consulting Pvt. Ltd. to store and process the
+                    personal information submitted above to provide you the
+                    content requested.
+                  </p>
+                </div>
+              </Animation>
+              <Animation>
+                <button
+                  type="submit"
+                  className={`text-base sm:text-lg font-medium flex items-center justify-center py-3 w-full rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] h-[54px] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
                 >
-                  How Can We Help?
-                </label>
-                <textarea
-                  placeholder=" Brief requirement (optional)"
-                  name=""
-                  id=""
-                  className="px-3 py-3 w-full rounded-[10px] text-[#D1D1D1] bg-[#000C1C] border border-[#262D3D] outline-none"
-                  rows={5}
-                ></textarea>
-              </div>
-            </Animation>
-            <Animation>
-              <div className="">
-                <div className="flex items-center gap-3">
-                  <span className="text-sm leading-5 text-[#E7E7E7]">
-                    Captcha
-                  </span>
-
-                  <span className="flex h-[32px] min-w-[127px] items-center justify-center rounded-[5px] bg-[#0F66EA] px-5 text-[13px] font-medium tracking-wide text-white">
-                    ZRLD9Y
-                  </span>
-                </div>
-
-                <input
-                  id="captcha"
-                  name="captcha"
-                  type="text"
-                  placeholder="Enter the text shown above"
-                  required
-                  className="mt-3 px-3 py-3 w-full rounded-[10px] border border-[#262D3D] bg-[#000C1C]   text-[#D1D1D1] outline-none placeholder:text-[#858585] "
-                />
-              </div>
-            </Animation>
-            <Animation>
-              <div className="flex gap-3">
-                <input
-                  type="checkbox"
-                  className="border border-[#D1D1D1] bg-none"
-                />
-                <p className="text-xs font-medium leading-[22px] text-[#D1D1D1]">
-                  By clicking submit below, you agree to our Terms of Use and
-                  Privacy Policy. Additionally, you consent to allow ISECURION
-                  Technology & Consulting Pvt. Ltd. to store and process the
-                  personal information submitted above to provide you the
-                  content requested.
-                </p>
-              </div>
-            </Animation>
-            <Animation>
-              <button className="text-base sm:text-lg font-medium flex items-center justify-center py-3 w-full rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] h-[54px]">
-                Request Consultation{" "}
-                <span>
-                  <Icon icon="akar-icons:arrow-right" className="text-lg" />
-                </span>{" "}
-              </button>
-            </Animation>
+                  Request Consultation{" "}
+                  <span>
+                    <Icon icon="akar-icons:arrow-right" className="text-lg" />
+                  </span>{" "}
+                </button>
+              </Animation>
+            </form>
           </div>
         </div>
       </section>
@@ -1526,4 +1594,4 @@ function page() {
   );
 }
 
-export default page;
+export default DpoServices;

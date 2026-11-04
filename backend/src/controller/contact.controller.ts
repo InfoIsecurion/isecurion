@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { sendContactEmail } from '../services/emailService'
+import { verifyTurnstile } from '@/services/verifyTurnstile'
 
 interface ContactFormData {
   fullname: string
@@ -18,6 +19,89 @@ interface ContactFormData {
   turnstileToken: string
 }
 
+interface BreachAttackSimulation {
+  email: string
+  companyName: string
+  simulation: string
+  turnstileToken: string
+}
+
+interface RedTeam {
+  email: string
+  companyName: string
+  assessment: string
+}
+interface AiAugamentedRedTeam {
+  email: string
+  orgname: string
+  phonenumber: string
+  country: string
+  aifootprint: string
+  turnstileToken: string
+}
+
+interface PhishingSimulation {
+  email: string
+  companyName: string
+  simulation: string
+  turnstileToken: string
+}
+
+interface ManagedSecurityService {
+  email: string
+  companyName: string
+  primaryNeed: string
+  country: string
+  consent: boolean
+  turnstileToken: string
+}
+
+interface DpoServices {
+  fullname: string
+  companyname: string
+  email: string
+  phonenumber: string
+  location: string
+  engagement: string
+  message: string
+}
+
+interface AadharAudit {
+  email: string
+  companyname: string
+  entity: string
+  turstileToken: string
+}
+
+interface BseNse {
+  email: string
+  companyName: string
+  organizationtype: string
+  turnstileToken: string
+}
+
+interface CicraAudit {
+  email: string
+  companyName: string
+  industry: string
+  turnstileToken: string
+}
+
+interface RbiSecurityAudit {
+  email: string
+  companyName: string
+  organizationtype: string
+  turnstileToken: string
+}
+
+interface IrdaAudit {
+  email: string
+  companyName: string
+  organizationtype: string
+  turnstileToken: string
+}
+
+// main contact form
 export async function submitContactForm(request: NextRequest) {
   try {
     const body: unknown = await request.json()
@@ -40,85 +124,28 @@ export async function submitContactForm(request: NextRequest) {
       typeof email !== 'string' ||
       typeof company !== 'string' ||
       typeof phonenumber !== 'string' ||
-      typeof message !== 'string'
+      typeof message !== 'string' ||
+      typeof turnstileToken !== 'string'
     ) {
       return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
     }
-    // const fullname = typeof input.fullname === 'string' ? input.fullname.trim() : ''
-    // const email = typeof input.email === 'string' ? input.email.trim() : ''
-    // const company = typeof input.company === 'string' ? input.company.trim() : ''
-    // const message = typeof input.message === 'string' ? input.message.trim() : ''
-    // const turnstileToken =
-    //   typeof input.turnstileToken === 'string' ? input.turnstileToken.trim() : ''
 
-    // Required-field validation
-    const errors: Partial<Record<keyof ContactFormData, string>> = {}
-
-    if (!fullname) errors.fullname = 'Name is required.'
-    if (!email) errors.email = 'Email is required.'
-    if (!company) errors.company = 'Company is required.'
-    if (!message) errors.message = 'Message is required.'
-
-    // Field-length validation
-    if (fullname.length > 100) errors.fullname = 'Name must not exceed 100 characters.'
-    if (email.length > 254) errors.email = 'Email must not exceed 254 characters.'
-    if (company.length > 200) {
-      errors.company = 'Company must not exceed 200 characters.'
-    }
-    if (message.length > 5000) {
-      errors.message = 'Message must not exceed 5000 characters.'
-    }
-
-    // Email-format validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
     if (email && !emailPattern.test(email)) {
-      errors.email = 'Please enter a valid email address.'
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
     }
 
-    if (Object.keys(errors).length > 0) {
-      return NextResponse.json(
-        {
-          success: false,
-          message: 'Please correct the highlighted fields.',
-          errors,
-        },
-        { status: 400 },
-      )
-    }
-    if (!turnstileToken) {
+    if (!turnstileToken || !turnstileToken.trim()) {
       return NextResponse.json(
         { success: false, message: 'Please complete CAPTCHA verification.' },
         { status: 400 },
       )
     }
-    const secretKey = process.env.TURNSTILE_SECRET_KEY
 
-    if (!secretKey) {
-      throw new Error('Turnstile secret key is not configured.')
-    }
-    const verifyResponse = await fetch(
-      'https://challenges.cloudflare.com/turnstile/v0/siteverify',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-          secret: secretKey,
-          response: turnstileToken,
-        }),
-        cache: 'no-store',
-      },
-    )
+    const isVerified = await verifyTurnstile(turnstileToken)
 
-    if (!verifyResponse.ok) {
-      throw new Error('Cloudflare verification service unavailable.')
-    }
-
-    const verification = await verifyResponse.json()
-
-    if (!verification.success) {
+    if (!isVerified) {
       return NextResponse.json(
         {
           success: false,
@@ -128,12 +155,7 @@ export async function submitContactForm(request: NextRequest) {
       )
     }
 
-    const validatedData: ContactFormData = {
-      fullname,
-      email,
-      company,
-      message,
-    }
+    const validatedData: ContactFormData = { fullname, email, company, message }
 
     await sendContactEmail({
       email: validatedData.email,
@@ -173,76 +195,44 @@ export async function submitContactForm(request: NextRequest) {
   }
 }
 
-export async function aiAugamentedContactForm(request: NextRequest) {
+export async function breachAttackSimulation(request: NextRequest) {
   try {
     const body: unknown = await request.json()
-    console.log(body)
 
-    if (!body || typeof body !== 'object' || Array.isArray(body)) {
-      return NextResponse.json(
-        { success: false, message: 'Invalid request body.' },
-        { status: 400 },
-      )
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
     }
 
-    const input = body as Record<string, unknown>
+    const { email, companyName, simulation, turnstileToken } = body as Record<string, unknown>
 
-    const email = typeof input.email === 'string' ? input.email.trim() : ''
-    const orgname = typeof input.orgname === 'string' ? input.orgname.trim() : ''
-    const phonenumber = typeof input.phonenumber === 'string' ? input.phonenumber.trim() : ''
-    const country = typeof input.country === 'string' ? input.country.trim() : ''
-    const aifootprint = typeof input.aifootprint === 'string' ? input.aifootprint.trim() : ''
-    const turnstileToken =
-      typeof input.turnstileToken === 'string' ? input.turnstileToken.trim() : ''
+    if (!email || !simulation) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
 
-    if (!email || !orgname || !phonenumber || !country || !aifootprint) {
-      return NextResponse.json(
-        { success: false, message: 'Please fill in all required fields.' },
-        { status: 400 },
-      )
+    if (
+      typeof email !== 'string' ||
+      typeof companyName !== 'string' ||
+      typeof turnstileToken !== 'string'
+    ) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
     }
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-    if (!emailPattern.test(email)) {
-      return NextResponse.json(
-        { success: false, message: 'Please enter a valid email address.' },
-        { status: 400 },
-      )
+    if (email && !emailPattern.test(email)) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
     }
-    if (!turnstileToken) {
+
+    if (!turnstileToken || !turnstileToken.trim()) {
       return NextResponse.json(
         { success: false, message: 'Please complete CAPTCHA verification.' },
         { status: 400 },
       )
     }
-    const secretKey = process.env.TURNSTILE_SECRET_KEY
 
-    if (!secretKey) {
-      throw new Error('Turnstile secret key is not configured.')
-    }
-    const verifyResponse = await fetch(
-      'https://challenges.cloudflare.com/turnstile/v0/siteverify',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-          secret: secretKey,
-          response: turnstileToken,
-        }),
-        cache: 'no-store',
-      },
-    )
+    const isVerified = await verifyTurnstile(turnstileToken)
 
-    if (!verifyResponse.ok) {
-      throw new Error('Cloudflare verification service unavailable.')
-    }
-
-    const verification = await verifyResponse.json()
-
-    if (!verification.success) {
+    if (!isVerified) {
       return NextResponse.json(
         {
           success: false,
@@ -252,18 +242,22 @@ export async function aiAugamentedContactForm(request: NextRequest) {
       )
     }
 
-    const validatedData: ContactFormData = {
-      email,
-      orgname,
-      phonenumber,
-      country,
-      aifootprint,
-    }
+    const validatedData: BreachAttackSimulation = { email, companyName }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `Breach Attack Simulation`,
+      fields: {
+        Email: validatedData.email,
+        Company: validatedData.companyName,
+        Message: validatedData.simulation,
+      },
+    })
 
     return NextResponse.json(
       {
         success: true,
-        message: 'Your enquiry has been submitted successfully.',
+        message: 'Your message has been sent successfully.',
       },
       { status: 200 },
     )
@@ -275,12 +269,930 @@ export async function aiAugamentedContactForm(request: NextRequest) {
       )
     }
 
-    console.error('AI-Augmented contact form failed:', error)
+    console.error('Contact form submission failed:', error)
 
     return NextResponse.json(
       {
         success: false,
-        message: 'Unable to submit your enquiry. Please try again later.',
+        message: 'Unable to send your message. Please try again later.',
+      },
+      { status: 500 },
+    )
+  }
+}
+
+export async function redTeam(request: NextRequest) {
+  try {
+    const body: unknown = await request.json()
+
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const { email, companyName, assessment, turnstileToken } = body as Record<string, unknown>
+
+    console.log(email, companyName, assessment)
+
+    if (!email || !assessment) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (
+      typeof email !== 'string' ||
+      typeof companyName !== 'string' ||
+      typeof turnstileToken !== 'string'
+    ) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (email && !emailPattern.test(email)) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (!turnstileToken || !turnstileToken.trim()) {
+      return NextResponse.json(
+        { success: false, message: 'Please complete CAPTCHA verification.' },
+        { status: 400 },
+      )
+    }
+
+    const isVerified = await verifyTurnstile(turnstileToken)
+
+    if (!isVerified) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        },
+        { status: 400 },
+      )
+    }
+
+    const validatedData: RedTeam = { email, companyName, assessment }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `Breach Attack Simulation`,
+      fields: {
+        Email: validatedData.email,
+        Company: validatedData.companyName,
+        Message: validatedData.assessment,
+      },
+    })
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Your message has been sent successfully.',
+      },
+      { status: 200 },
+    )
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return NextResponse.json(
+        { success: false, message: 'Invalid request body.' },
+        { status: 400 },
+      )
+    }
+
+    console.error('Contact form submission failed:', error)
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Unable to send your message. Please try again later.',
+      },
+      { status: 500 },
+    )
+  }
+}
+
+export async function aiAugamentedRedTeam(request: NextRequest) {
+  try {
+    const body: unknown = await request.json()
+
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const { email, orgname, phonenumber, country, aifootprint, turnstileToken } = body as Record<
+      string,
+      unknown
+    >
+
+    if (!email || !orgname || !phonenumber || !country || !aifootprint) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (
+      typeof email !== 'string' ||
+      typeof orgname !== 'string' ||
+      typeof turnstileToken !== 'string' ||
+      typeof phonenumber !== 'string' ||
+      typeof country !== 'string' ||
+      typeof aifootprint !== 'string'
+    ) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (email && !emailPattern.test(email)) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (!turnstileToken || !turnstileToken.trim()) {
+      return NextResponse.json(
+        { success: false, message: 'Please complete CAPTCHA verification.' },
+        { status: 400 },
+      )
+    }
+
+    const isVerified = await verifyTurnstile(turnstileToken)
+
+    if (!isVerified) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        },
+        { status: 400 },
+      )
+    }
+
+    const validatedData: AiAugamentedRedTeam = { email, orgname, phonenumber, country, aifootprint }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `Ai Augamented Red Team`,
+      fields: {
+        Email: validatedData.email,
+        Company: validatedData.orgname,
+        Phonenumber: phonenumber,
+        Country: country,
+        Aifootprint: aifootprint,
+      },
+    })
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Your message has been sent successfully.',
+      },
+      { status: 200 },
+    )
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return NextResponse.json(
+        { success: false, message: 'Invalid request body.' },
+        { status: 400 },
+      )
+    }
+
+    console.error('Contact form submission failed:', error)
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Unable to send your message. Please try again later.',
+      },
+      { status: 500 },
+    )
+  }
+}
+
+// phishing simulation
+export async function phishingSimulation(request: NextRequest) {
+  try {
+    const body: unknown = await request.json()
+
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const { email, companyName, simulation, turnstileToken } = body as Record<string, unknown>
+
+    if (!email || !companyName || !simulation) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (
+      typeof email !== 'string' ||
+      typeof companyName !== 'string' ||
+      typeof turnstileToken !== 'string' ||
+      typeof simulation !== 'string'
+    ) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (email && !emailPattern.test(email)) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (!turnstileToken || !turnstileToken.trim()) {
+      return NextResponse.json(
+        { success: false, message: 'Please complete CAPTCHA verification.' },
+        { status: 400 },
+      )
+    }
+
+    const isVerified = await verifyTurnstile(turnstileToken)
+
+    if (!isVerified) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        },
+        { status: 400 },
+      )
+    }
+
+    const validatedData: PhishingSimulation = {
+      email,
+      companyName,
+      simulation,
+    }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `Phishing Simulation`,
+      fields: {
+        Email: validatedData.email,
+        Company: validatedData.companyName,
+        Simulation: validatedData.simulation,
+      },
+    })
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Your message has been sent successfully.',
+      },
+      { status: 200 },
+    )
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return NextResponse.json(
+        { success: false, message: 'Invalid request body.' },
+        { status: 400 },
+      )
+    }
+
+    console.error('Contact form submission failed:', error)
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Unable to send your message. Please try again later.',
+      },
+      { status: 500 },
+    )
+  }
+}
+
+// managed security service
+export async function managedSecurityService(request: NextRequest) {
+  try {
+    const body: unknown = await request.json()
+
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const { email, companyName, primaryNeed, country, turnstileToken } = body as Record<
+      string,
+      unknown
+    >
+
+    if (!email || !companyName || !primaryNeed || !country) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (
+      typeof email !== 'string' ||
+      typeof companyName !== 'string' ||
+      typeof turnstileToken !== 'string' ||
+      typeof country !== 'string' ||
+      typeof primaryNeed !== 'string'
+    ) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (email && !emailPattern.test(email)) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (!turnstileToken || !turnstileToken.trim()) {
+      return NextResponse.json(
+        { success: false, message: 'Please complete CAPTCHA verification.' },
+        { status: 400 },
+      )
+    }
+
+    const isVerified = await verifyTurnstile(turnstileToken)
+
+    if (!isVerified) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        },
+        { status: 400 },
+      )
+    }
+
+    const validatedData: ManagedSecurityService = {
+      email,
+      companyName,
+      primaryNeed,
+      country,
+    }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `Phishing Simulation`,
+      fields: {
+        Email: validatedData.email,
+        Company: validatedData.companyName,
+        Simulation: validatedData.primaryNeed,
+        Country: validatedData.country,
+      },
+    })
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Your message has been sent successfully.',
+      },
+      { status: 200 },
+    )
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return NextResponse.json(
+        { success: false, message: 'Invalid request body.' },
+        { status: 400 },
+      )
+    }
+
+    console.error('Contact form submission failed:', error)
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Unable to send your message. Please try again later.',
+      },
+      { status: 500 },
+    )
+  }
+}
+
+export async function dpoServices(request: NextRequest) {
+  try {
+    const body: unknown = await request.json()
+
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const {
+      fullname,
+      email,
+      companyname,
+      phonenumber,
+      location,
+      engagement,
+      message,
+      turnstileToken,
+    } = body as Record<string, unknown>
+
+    if (!fullname || !email || !companyname || !phonenumber) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (
+      typeof fullname !== 'string' ||
+      typeof email !== 'string' ||
+      typeof companyname !== 'string' ||
+      typeof turnstileToken !== 'string' ||
+      typeof phonenumber !== 'string' ||
+      typeof location !== 'string' ||
+      typeof engagement !== 'string' ||
+      typeof message !== 'string'
+    ) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (email && !emailPattern.test(email)) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (!turnstileToken || !turnstileToken.trim()) {
+      return NextResponse.json(
+        { success: false, message: 'Please complete CAPTCHA verification.' },
+        { status: 400 },
+      )
+    }
+
+    const isVerified = await verifyTurnstile(turnstileToken)
+
+    if (!isVerified) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        },
+        { status: 400 },
+      )
+    }
+
+    const validatedData: DpoServices = {
+      fullname,
+      companyname,
+      email,
+      phonenumber,
+      location,
+      engagement,
+      message,
+    }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `Dpo Services`,
+      fields: {
+        Fullname: validatedData.fullname,
+        Email: validatedData.email,
+        Company: validatedData.companyname,
+        Location: validatedData.location,
+        Engagement: validatedData.engagement,
+        Message: validatedData.message,
+      },
+    })
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Your message has been sent successfully.',
+      },
+      { status: 200 },
+    )
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return NextResponse.json(
+        { success: false, message: 'Invalid request body.' },
+        { status: 400 },
+      )
+    }
+
+    console.error('Contact form submission failed:', error)
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Unable to send your message. Please try again later.',
+      },
+      { status: 500 },
+    )
+  }
+}
+
+export async function aadharAudit(request: NextRequest) {
+  try {
+    const body: unknown = await request.json()
+
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const { email, companyname, entity, turnstileToken } = body as Record<string, unknown>
+
+    if (!email || !companyname || !entity) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (
+      typeof email !== 'string' ||
+      typeof companyname !== 'string' ||
+      typeof turnstileToken !== 'string' ||
+      typeof entity !== 'string'
+    ) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (email && !emailPattern.test(email)) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (!turnstileToken || !turnstileToken.trim()) {
+      return NextResponse.json(
+        { success: false, message: 'Please complete CAPTCHA verification.' },
+        { status: 400 },
+      )
+    }
+
+    const isVerified = await verifyTurnstile(turnstileToken)
+
+    if (!isVerified) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        },
+        { status: 400 },
+      )
+    }
+
+    const validatedData: AadharAudit = { email, companyname, entity }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `Dpo Services`,
+      fields: {
+        Email: validatedData.email,
+        Company: validatedData.companyname,
+        Entity: validatedData.entity,
+      },
+    })
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Your message has been sent successfully.',
+      },
+      { status: 200 },
+    )
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return NextResponse.json(
+        { success: false, message: 'Invalid request body.' },
+        { status: 400 },
+      )
+    }
+
+    console.error('Contact form submission failed:', error)
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Unable to send your message. Please try again later.',
+      },
+      { status: 500 },
+    )
+  }
+}
+
+export async function bseNseAudit(request: NextRequest) {
+  try {
+    const body: unknown = await request.json()
+
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const { email, companyName, organizationtype, turnstileToken } = body as Record<string, unknown>
+
+    if (!email || !organizationtype) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (
+      typeof email !== 'string' ||
+      typeof companyName !== 'string' ||
+      typeof turnstileToken !== 'string' ||
+      typeof organizationtype !== 'string'
+    ) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (email && !emailPattern.test(email)) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (!turnstileToken || !turnstileToken.trim()) {
+      return NextResponse.json(
+        { success: false, message: 'Please complete CAPTCHA verification.' },
+        { status: 400 },
+      )
+    }
+
+    const isVerified = await verifyTurnstile(turnstileToken)
+
+    if (!isVerified) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        },
+        { status: 400 },
+      )
+    }
+
+    const validatedData: BseNse = { email, companyName, organizationtype }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `Dpo Services`,
+      fields: {
+        Email: validatedData.email,
+        Company: validatedData.companyName,
+        Entity: validatedData.organizationtype,
+      },
+    })
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Your message has been sent successfully.',
+      },
+      { status: 200 },
+    )
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return NextResponse.json(
+        { success: false, message: 'Invalid request body.' },
+        { status: 400 },
+      )
+    }
+
+    console.error('Contact form submission failed:', error)
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Unable to send your message. Please try again later.',
+      },
+      { status: 500 },
+    )
+  }
+}
+
+export async function cicraAudit(request: NextRequest) {
+  try {
+    const body: unknown = await request.json()
+
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const { email, companyName, industry, turnstileToken } = body as Record<string, unknown>
+
+    if (!email || !industry || !turnstileToken) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (
+      typeof email !== 'string' ||
+      typeof companyName !== 'string' ||
+      typeof turnstileToken !== 'string' ||
+      typeof industry !== 'string'
+    ) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (email && !emailPattern.test(email)) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (!turnstileToken || !turnstileToken.trim()) {
+      return NextResponse.json(
+        { success: false, message: 'Please complete CAPTCHA verification.' },
+        { status: 400 },
+      )
+    }
+
+    const isVerified = await verifyTurnstile(turnstileToken)
+
+    if (!isVerified) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        },
+        { status: 400 },
+      )
+    }
+
+    const validatedData: CicraAudit = { email, companyName, industry, turnstileToken }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `Dpo Services`,
+      fields: {
+        Email: validatedData.email,
+        Company: validatedData.companyName,
+        Entity: validatedData.industry,
+      },
+    })
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Your message has been sent successfully.',
+      },
+      { status: 200 },
+    )
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return NextResponse.json(
+        { success: false, message: 'Invalid request body.' },
+        { status: 400 },
+      )
+    }
+
+    console.error('Contact form submission failed:', error)
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Unable to send your message. Please try again later.',
+      },
+      { status: 500 },
+    )
+  }
+}
+
+export async function rbiSecurityAudit(request: NextRequest) {
+  try {
+    const body: unknown = await request.json()
+
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const { email, companyName, organizationtype, turnstileToken } = body as Record<string, unknown>
+
+    if (!email || !organizationtype || !turnstileToken) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (
+      typeof email !== 'string' ||
+      typeof companyName !== 'string' ||
+      typeof turnstileToken !== 'string' ||
+      typeof organizationtype !== 'string'
+    ) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (email && !emailPattern.test(email)) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (!turnstileToken || !turnstileToken.trim()) {
+      return NextResponse.json(
+        { success: false, message: 'Please complete CAPTCHA verification.' },
+        { status: 400 },
+      )
+    }
+
+    const isVerified = await verifyTurnstile(turnstileToken)
+
+    if (!isVerified) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        },
+        { status: 400 },
+      )
+    }
+
+    const validatedData: RbiSecurityAudit = { email, companyName, organizationtype, turnstileToken }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `Dpo Services`,
+      fields: {
+        Email: validatedData.email,
+        Company: validatedData.companyName,
+        Entity: validatedData.organizationtype,
+      },
+    })
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Your message has been sent successfully.',
+      },
+      { status: 200 },
+    )
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return NextResponse.json(
+        { success: false, message: 'Invalid request body.' },
+        { status: 400 },
+      )
+    }
+
+    console.error('Contact form submission failed:', error)
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Unable to send your message. Please try again later.',
+      },
+      { status: 500 },
+    )
+  }
+}
+
+export async function irda(request: NextRequest) {
+  try {
+    const body: unknown = await request.json()
+
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const { email, companyName, organizationtype, turnstileToken } = body as Record<string, unknown>
+
+    if (!email || !organizationtype || !turnstileToken) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (
+      typeof email !== 'string' ||
+      typeof companyName !== 'string' ||
+      typeof turnstileToken !== 'string' ||
+      typeof organizationtype !== 'string'
+    ) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (email && !emailPattern.test(email)) {
+      return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (!turnstileToken || !turnstileToken.trim()) {
+      return NextResponse.json(
+        { success: false, message: 'Please complete CAPTCHA verification.' },
+        { status: 400 },
+      )
+    }
+
+    const isVerified = await verifyTurnstile(turnstileToken)
+
+    if (!isVerified) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        },
+        { status: 400 },
+      )
+    }
+
+    const validatedData: IrdaAudit = { email, companyName, organizationtype, turnstileToken }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `Dpo Services`,
+      fields: {
+        Email: validatedData.email,
+        Company: validatedData.companyName,
+        Entity: validatedData.organizationtype,
+      },
+    })
+
+    return NextResponse.json(
+      {
+        success: true,
+        message: 'Your message has been sent successfully.',
+      },
+      { status: 200 },
+    )
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return NextResponse.json(
+        { success: false, message: 'Invalid request body.' },
+        { status: 400 },
+      )
+    }
+
+    console.error('Contact form submission failed:', error)
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: 'Unable to send your message. Please try again later.',
       },
       { status: 500 },
     )
