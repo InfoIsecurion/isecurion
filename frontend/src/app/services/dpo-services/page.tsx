@@ -433,7 +433,7 @@ function DpoServices() {
   };
 
   return (
-    <div>
+    <div className="bg-black">
       {/* hero section  */}
       <section className="relative overflow-hidden min-h-[80vh] py-14 flex items-center  bg-[#000000]">
         <div className="absolute w-[650px] h-[650px] left-20 rounded-full blur-[200px] pointer-events-none bg-[#0F66EA80]"></div>
@@ -1519,12 +1519,12 @@ function DpoServices() {
       {/* OUTSOURCED DELIVERABLES  */}
       <section className="w-full py-14 bg-[#060D1B]">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-6 sm:px-10 gap-8 lg:gap-15">
-          <div className="w-full lg:w-[50%] space-y-4 text-center lg:text-left">
+          <div className="w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
             <LeftAnimation>
               <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
                 OUTSOURCED DPO DELIVERABLES
               </p>
-              <h2 className="font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF] lg:max-w-[490px]">
+              <h2 className="mt-4 font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF] lg:max-w-[490px]">
                 Clear Privacy Deliverables. Measurable Compliance Progress.
               </h2>
               <p className="text-base sm:text-lg font-normal leading-[25px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[509px]">

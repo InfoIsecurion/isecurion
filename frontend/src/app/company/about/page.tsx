@@ -9,6 +9,12 @@ import { Animation } from "../../../components/ui/Animation";
 import hacker from "../../../assets/about/abouthacker.png";
 import herobackground from "../../../assets/about/abouthero.png";
 import TimelineAnimation from "../../../components/ui/TimelineAnimation";
+import CEO from "../../../assets/about/Director.png"
+import HR from "../../../assets/about/HR.png"
+import productLead from "../../../assets/about/productLead.png"
+import salesHead from "../../../assets/about/salesHead.png"
+import complianceHead from "../../../assets/about/complianceHead.png"
+import productHead from "../../../assets/about/productHead.png"
 
 const data = [
   {
@@ -93,6 +99,48 @@ const team = [
       "Visionary leader with over 20 years of experience in cybersecurity, helping organizations strengthen resilience through strategic security consulting, innovation, and trusted leadership.",
   },
 ];
+
+const teamMembers = [
+  {
+    name: "SHIMANTA SEN",
+    role: "SALES HEAD",
+    image: salesHead,
+    linkedin: "https://www.linkedin.com/",
+  },
+  {
+    name: "DEBASHIS DEY",
+    role: "COMPLIANCE HEAD",
+    image: complianceHead,
+    linkedin: "https://www.linkedin.com/",
+  },
+  {
+    name: "CEPHAS JOSEPH",
+    role: "OFFENSIVE SECURITY & PRODUCT HEAD",
+    image: productHead,
+    linkedin: "https://www.linkedin.com/",
+  },
+  {
+    name: "MANJESH KUMAR LD",
+    role: "PRODUCT LEAD",
+    image: productLead,
+    linkedin: "https://www.linkedin.com/",
+  },
+  {
+    name: "DOLLY CHAUDHRANI",
+    role: "HR MANAGER",
+    image: HR,
+    linkedin: "https://www.linkedin.com/",
+  },
+];
+
+const director = {
+  name: "Manjunath NG",
+  role: "DIRECTOR & CEO",
+  image: "CEO",
+  description:
+    "Visionary leader with over 20 years of experience in cybersecurity, helping organizations strengthen resilience through strategic security consulting, innovation, and trusted leadership.",
+  linkedin: "https://www.linkedin.com/",
+};
 
 function page() {
   return (
@@ -455,58 +503,163 @@ function page() {
         </div>
       </section>
 
-      {/* our team  */}
-      <section className=" py-14 bg-[#070D1A]">
-        <div className="mx-auto max-w-7xl px-6 sm:px-10">
+      {/* OUR TEAM */}
+      <section className="w-full bg-[#070D1A] py-14 sm:py-16 lg:py-20">
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+
+          {/* SECTION HEADING */}
           <TimelineAnimation delay={0.3}>
-            <div className="flex flex-col items-center space-y-4">
-              <div className="w-fit px-4 py-2 rounded-4xl  bg-[#161B2F]">
-                <p className="text-sm font-medium flex items-center gap-2 sectionheading uppercase text-[#636977]">
-                  {" "}
-                  <span>
-                    <Icon
-                      icon="fa-solid:users"
-                      width={25}
-                      height={25}
-                      className="text-[#0F66EA]"
-                    />
-                  </span>{" "}
-                  our Team
+            <div className="mb-10 flex flex-col items-center space-y-3 text-center sm:mb-12">
+
+              <div className="flex w-fit items-center gap-2 rounded-full bg-[#161B2F] px-4 py-2">
+                <Icon icon="fa-solid:users" width={16} className="text-[#0F66EA]" />
+                <p className="text-xs font-medium uppercase tracking-wide text-[#AAB0C0]">
+                  Our Team
                 </p>
               </div>
-              <h2 className="font-medium text-white text-[32px] mt-3">
+
+              <h2 className="mt-2 text-[26px] font-medium leading-tight text-white sm:text-[32px] lg:text-[36px]">
                 The minds behind your security
               </h2>
-              <p className="text-[15px] leading-6 text-center max-w-2xl text-[#D1D1D1] mt-3">
-                A team of cybersecurity professionals united by passion,
-                expertise, and a commitment to protect what matters most.
+
+              <p className="max-w-2xl text-sm leading-6 text-[#D1D1D1] sm:text-[15px]">
+                A team of cybersecurity professionals united by passion, expertise,
+                and a commitment to protect what matters most.
               </p>
             </div>
           </TimelineAnimation>
 
-          <div className="w-full grid grid-cols-3 justify-items-center mt-10">
-            {team.map((item, index) => (
-              <div
-                key={index}
-                className="max-w-[350px] flex w-full flex-col  p-5 rounded-[22px] border border-[#E3EAF1]"
-              >
-                <div>
-                  <Image src={item.img} alt="" className="rounded-3xl" />
+          {/* FEATURED DIRECTOR CARD */}
+          <TimelineAnimation delay={0.4}>
+            <div className="mt-22 mb-8 rounded-[28px] border border-[#262D3D] p-3 sm:p-4 lg:mb-15">
+
+              <div className="grid grid-cols-1 items-center gap-5 sm:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] sm:gap-7 lg:gap-8">
+
+                {/* DIRECTOR IMAGE */}
+                <div className="overflow-hidden rounded-[18px] bg-white">
+                  <Image
+                    src={CEO.src}
+                    alt={director.name}
+                    width={600}
+                    height={480}
+                    className="h-[300px] w-full sm:h-[320px] lg:h-[330px]"
+                  />
                 </div>
-                <div className="mt-3">
-                  <h3 className="text-lg font-semibold text-[#100E0E]">
-                    {item.name}
-                  </h3>
-                  <p className="text-base font-medium text-[#636977]">
-                    {item.designation}
+
+                {/* DIRECTOR DETAILS */}
+                <div className="flex flex-col justify-center gap-3 px-1 pb-2 sm:px-0 sm:py-2">
+
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <h3 className="text-xl font-semibold text-white sm:text-[36px] lg:text-[40px]">
+                      {director.name}
+                    </h3>
+
+                    <span className="rounded-[8px] bg-white px-5 py-3 text-[15px] font-semibold text-[#0F66EA]">
+                      {director.role}
+                    </span>
+                  </div>
+
+                  <p className="mt-6 max-w-[500px] text-base sm:text-lg leading-[28px] text-[#D1D1D1]">
+                    {director.description}
                   </p>
+
+                  <a
+                    href={director.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${director.name} LinkedIn profile`}
+                    className="mt-4 flex h-10 w-10 items-center justify-center rounded-[10px] bg-[#152329] border border-[#666DCC] text-[#666DCC] transition-colors hover:bg-white hover:text-black"
+                  >
+                    <Icon icon="basil:linkedin-outline" width={24} />
+                  </a>
+
                 </div>
-                <hr className="border border-[#F1F1F1] my-3" />
-                <p className="text-base font-normal leading-7 text-[#787891]">
-                  {item.description}
-                </p>
               </div>
-            ))}
+            </div>
+          </TimelineAnimation>
+
+
+          {/* OTHER TEAM MEMBERS */}
+          <div className="mx-auto flex max-w-7xl flex-col gap-8">
+
+            {/* FIRST ROW - 3 CARDS */}
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {teamMembers.slice(0, 3).map((member, index) => (
+                <TimelineAnimation key={member.name} delay={0.5 + index * 0.1}>
+                  <div className="flex h-full flex-col items-center rounded-[22px] border border-[#262D3D] p-3 transition-colors duration-300 hover:border-[#344B7D]">
+
+                    <div className="relative w-full overflow-hidden rounded-[15px] bg-white">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        width={400}
+                        height={320}
+                        className="h-[250px] w-full object-cover object-top sm:h-[260px] lg:h-[270px] xl:h-[275px]"
+                      />
+
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${member.name} LinkedIn profile`}
+                        className="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-[10px] bg-[#101B3C] border border-[#666DCC] text-[#666DCC] hover:bg-white hover:text-black"
+                      >
+                        <Icon icon="basil:linkedin-outline" width={20} />
+                      </a>
+                    </div>
+
+                    <div className="flex flex-1 flex-col items-center justify-center gap-2 py-4 text-center">
+                      <h3 className="text-base sm:text-[19px] font-semibold text-[#0F66EA]">
+                        {member.name}
+                      </h3>
+                      <span className="rounded-[6px] bg-[#DADADA05] border border-[#6666666B] px-3 py-2 text-center text-[10px] font-semibold text-white">
+                        {member.role}
+                      </span>
+                    </div>
+                  </div>
+                </TimelineAnimation>
+              ))}
+            </div>
+
+            {/* SECOND ROW - 2 CENTERED CARDS */}
+            <div className="mx-auto grid w-full max-w-[800px] grid-cols-1 gap-10 sm:grid-cols-2">
+              {teamMembers.slice(3, 5).map((member, index) => (
+                <TimelineAnimation key={member.name} delay={0.8 + index * 0.1}>
+                  <div className="flex h-full flex-col items-center rounded-[22px] border border-[#262D3D] p-3 transition-colors duration-300 hover:border-[#344B7D]">
+
+                    <div className="relative w-full overflow-hidden rounded-[15px] bg-white">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        width={400}
+                        height={320}
+                        className="h-[250px] w-full object-cover object-top sm:h-[260px] lg:h-[270px] xl:h-[275px]"
+                      />
+
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${member.name} LinkedIn profile`}
+                        className="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-[10px] bg-[#101B3C] border border-[#666DCC] text-[#666DCC] hover:bg-white hover:text-black"
+                      >
+                        <Icon icon="basil:linkedin-outline" width={20} />
+                      </a>
+                    </div>
+
+                    <div className="flex flex-1 flex-col items-center justify-center gap-2 py-4 text-center">
+                      <h3 className="text-base sm:text-[19px] font-semibold text-[#0F66EA]">
+                        {member.name}
+                      </h3>
+                      <span className="rounded-[6px] bg-[#DADADA05] border border-[#6666666B] px-3 py-2 text-center text-[10px] font-semibold text-white">
+                        {member.role}
+                      </span>
+                    </div>
+                  </div>
+                </TimelineAnimation>
+              ))}
+            </div>
+
           </div>
         </div>
       </section>

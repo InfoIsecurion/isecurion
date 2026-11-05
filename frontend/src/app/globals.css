@@ -26,7 +26,11 @@
     font-family: 'Lato'
 }
 
-.sectionDescription {}
+@layer components {
+    .sectionDescription {
+        @apply text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[29px];
+    }
+}
 
 .container {
     @apply max-w-7xl mx-auto;

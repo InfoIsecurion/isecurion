@@ -17,7 +17,7 @@ function Animation({ delay = 0, children }: AnimationProps) {
         delay,
         duration: 1.2,
       }}
-      viewport={{ once: false }}
+      viewport={{ once: true }}
     >
       {children}
     </motion.div>
@@ -84,7 +84,7 @@ function AnimatedCard({
         delay,
       }}
       viewport={{
-        once: false,
+        once: true,
         amount: 0.5,
       }}
       className={className}
@@ -109,7 +109,7 @@ function LeftAnimation({ children }: LeftAnimationProps) {
         ease: "easeOut",
       }}
       viewport={{
-        once: false,
+        once: true,
         amount: 0.3,
       }}
     >
@@ -134,7 +134,7 @@ function RightAnimation({ children, delay = 0 }: RightAnimationProps) {
         ease: "easeOut",
       }}
       viewport={{
-        once: false,
+        once: true,
         amount: 0.2,
       }}
     >

@@ -487,7 +487,7 @@ function page() {
   };
 
     return (
-        <div>
+        <div className="bg-black">
           <section className="relative isolate overflow-hidden bg-black py-10 sm:py-12 lg:py-[55px]">
         <div
           aria-hidden="true"
@@ -978,9 +978,9 @@ function page() {
             <section className="w-full py-14 bg-[#060D1B]">
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-6 sm:px-10 gap-8 lg:gap-15">
 
-                    <div className="w-full lg:w-[50%] space-y-4 text-center lg:text-left">
+                    <div className="w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
                         <LeftAnimation>
-                            <p className="text-sm sm:text-base font-semibold text-[#3B9E6A]">
+                            <p className="mt-10 text-sm sm:text-base font-semibold text-[#3B9E6A]">
                                 WHAT YOU RECEIVE
                             </p>
                             <h2 className="mt-2 font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF] lg:max-w-[490px]">

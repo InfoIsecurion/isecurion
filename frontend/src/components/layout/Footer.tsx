@@ -50,11 +50,13 @@ function Footer() {
         <div className="mt-4 flex flex-col gap-10 lg:flex-row lg:gap-8">
           {/* LEFT - LOGO */}
           <div className="w-full lg:w-[27%]">
+            <Link href="/">
             <Image
               src={isecurion_logo}
               alt="Isecurion"
               className="h-[50px] w-[200px]"
             />
+            </Link>
 
             <p className="mt-5 max-w-xs text-sm leading-7 text-[#9AA4BA]">
               Building cyber resilience through intelligent security services,
@@ -66,16 +68,22 @@ function Footer() {
             </h4>
 
             <div className="mt-3 flex gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white">
-                <Icon icon="iconoir:facebook" width={18} />
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
+                <Link href="https://www.facebook.com/isecurion" target="_blank">
+                  <Icon icon="iconoir:facebook" width={18} />
+                </Link>
               </div>
 
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white">
-                <Icon icon="line-md:twitter" width={18} />
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
+                <Link href="https://twitter.com/isecurion" target="_blank">
+                  <Icon icon="line-md:twitter" width={18} />
+                </Link>
               </div>
 
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white">
-                <Icon icon="ri:linkedin-line" width={18} />
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
+                <Link href="https://www.linkedin.com/company/isecurion" target="_blank">
+                  <Icon icon="ri:linkedin-line" width={18} />
+                </Link>
               </div>
             </div>
           </div>
@@ -90,11 +98,11 @@ function Footer() {
                 </h4>
 
                 <ul className="space-y-3 text-sm text-[#BFBFBF]">
-                  <li>About</li>
-                  <li>Industries</li>
-                  <li>Case Studies</li>
-                  <li>Careers</li>
-                  <li>Contact</li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/company/about">About</Link></li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/company/industries">Industries</Link></li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/company/case-studies">Case Studies</Link></li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/company/careers">Careers</Link></li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/company/contact">Contact</Link></li>
                 </ul>
               </div>
 
@@ -105,11 +113,11 @@ function Footer() {
                 </h4>
 
                 <ul className="space-y-3 text-sm text-[#BFBFBF]">
-                  <li>VAPT</li>
-                  <li>Compliance Auditing</li>
-                  <li>VCISO Services</li>
-                  <li>DPDP Act Compliance</li>
-                  <li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/services/vapt">VAPT</Link></li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/services/compliance-auditing">Compliance Auditing</Link></li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/services/vciso">VCISO Services</Link></li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/services/dpdp-compliance">DPDP Act Compliance</Link></li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
                     Market SOC
                     <br />
                     (MSOC) Services
@@ -123,10 +131,10 @@ function Footer() {
                   Platforms
                 </h4>
 
-                <ul className="space-y-3 text-sm text-[#BFBFBF]">
-                  <li>Vulnytics</li>
-                  <li>Drosera Phishing</li>
-                  <li>LMS</li>
+                <ul className="space-y-3 text-sm text-[#BFBFBF] ">
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="https://vulnytics.isecurion.com/">Vulnytics</Link></li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="https://drosera.ai/">Drosera Phishing</Link></li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="https://lms.drosera.ai/">LMS</Link></li>
                 </ul>
               </div>
             </div>
@@ -143,7 +151,9 @@ function Footer() {
                 </div>
 
                 <span className="text-sm font-medium text-white">
-                  info@isecurion.com
+                  <Link href="mailto:info@isecurion.com" target="_blank">
+                    info@isecurion.com
+                  </Link>
                 </span>
               </div>
 
@@ -159,7 +169,9 @@ function Footer() {
                 </div>
 
                 <span className="text-sm font-medium text-white">
+                  <Link href="tel:+918861201570" target="_blank">
                   +91 88612 01570
+                  </Link>
                 </span>
               </div>
             </div>

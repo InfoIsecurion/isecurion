@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react'
 function CICRA_CTA() {
     return (
         <div>
-            <section className="bg-[#121828]">
+            <section className="bg-[#121828] rounded-tr-[42px] rounded-tl-[42px]">
                 <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
 
                     <div className="relative overflow-hidden rounded-t-[42px] bg-[#121828] pt-10">

@@ -160,7 +160,7 @@ function page() {
                   Web Application Security Assessment
                 </h1>
 
-                <p className="mt-4 max-w-[620px] text-base text-[#D9D9D9] sm:leading-8 sm:text-lg ">
+                <p className="mt-4 max-w-[610px] text-[#D9D9D9] sectionDescription">
                   Identify vulnerabilities, uncover real-world attack risks, and
                   protect your web applications with expert-led security
                   assessments.
@@ -186,12 +186,12 @@ function page() {
           <Animation>
           <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12 lg:py-16">
             {/* Heading */}
-            <h2 className="text-2xl font-normal leading-8 sm:leading-12 text-white sm:text-[34px] lg:text-[38px] text-center md:text-left">
+            <h2 className="leading-8 sm:leading-12 text-white">
               What is Web Application Security Assessment?
             </h2>
 
             {/* Introduction */}
-            <p className="mt-7 max-w-[540px] text:sm leading-6 text-[#D1D1D1] sm:text-base text-center md:text-left">
+            <p className="mt-7 max-w-[540px] text-[#D1D1D1] sectionDescription text-center md:text-left">
               Web Application Security Assessment is a systematic evaluation of
               a web application to identify, validate, and assess security
               vulnerabilities that attackers could exploit.
@@ -203,10 +203,10 @@ function page() {
               <div className="flex items-start gap-3">
                 <Icon
                   icon="boxicons:seal-check"
-                  className="mt-0.5 shrink-0 text-[15px] text-[#0F66EA]"
+                  className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
                 />
 
-                <p className="text-xs leading-5.5 text-[#D1D1D1] sm:text-sm max-w-[480px]">
+                <p className="text-[#D1D1D1] sectionDescription max-w-[590px]">
                   At ISECURION, we combine automated testing with expert-led
                   manual assessment to uncover security weaknesses that could be
                   exploited to gain unauthorized access, expose sensitive data,
@@ -219,10 +219,10 @@ function page() {
               <div className="flex items-start gap-3">
                 <Icon
                   icon="boxicons:seal-check"
-                  className="mt-0.5 shrink-0 text-[15px] text-[#0F66EA]"
+                  className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
                 />
 
-                <p className="text-xs leading-5.5 text-white/70 sm:text-sm max-w-[470px]">
+                <p className="text-[#D1D1D1] sectionDescription max-w-[550px]">
                   Our assessments help organizations identify exploitable risks,
                   strengthen application security, and build resilience against
                   evolving web-based threats.
@@ -262,7 +262,7 @@ function page() {
                     </h3>
 
                     {/* Description */}
-                    <p className="mt-3 max-w-[299px] text-sm leading-6 text-[#D1D1D1] sm:text-[14px] sm:leading-[23px]">
+                    <p className="mt-3 max-w-[299px] text-sm leading-6 text-[#D1D1D1] sm:text-[15px] sm:leading-[23px]">
                       {card.description}
                     </p>
                   </motion.div>

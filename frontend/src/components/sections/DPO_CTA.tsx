@@ -3,8 +3,8 @@ import { Icon } from "@iconify/react";
 
 function DPO_CTA() {
   return (
-    <section className="bg-[#121828]">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+    <section className="bg-[#121828] rounded-tr-[42px] rounded-tl-[42px]">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10 ">
 
         <div className="relative overflow-hidden rounded-t-[42px] bg-[#121828] pt-10">
 

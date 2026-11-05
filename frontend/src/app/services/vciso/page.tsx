@@ -1415,9 +1415,9 @@ function Vicso() {
       {/* VISIBLE DELIVERABLES  */}
       <section className="w-full py-14">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col lg:flex-row gap-10">
-          <div className="flex-1 space-y-4 text-center lg:text-left">
+          <div className="w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
             <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
-              VISIBLE DELIVERABLES
+              VCISO DELIVERABLES
             </p>
             <h2 className="text-[#FFFFFF]">
               Clear Deliverables. Measurable Security Progress.
