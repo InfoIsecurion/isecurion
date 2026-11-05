@@ -470,7 +470,7 @@ function PhishingSimulation() {
                 </p>
               </div>
             </Animation>
-            <Animation>
+            {/* <Animation>
               <ul className="mt-4 space-y-2">
                 <li className="flex items-center justify-center lg:justify-start gap-2 text-sm text-[#D1D1D1] sm:text-[14px]">
                   <Icon
@@ -508,7 +508,7 @@ function PhishingSimulation() {
                   Human Risk Analytics
                 </li>
               </ul>
-            </Animation>
+            </Animation> */}
             <Animation>
               <div className="mt-8 flex flex-col items-center gap-4 lg:flex-row lg:items-start lg:justify-start">
                 <button className="flex h-[54px] items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] shadow-lg transition-all duration-200 hover:bg-gray-100">

@@ -17,7 +17,7 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html className={` h-full `}>
+    <html className={`h-full`}>
       <head />
       <body className=" flex flex-col">
         <Navbar />

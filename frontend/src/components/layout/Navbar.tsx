@@ -58,26 +58,26 @@ const serviceDetails = {
             href: "/services/inhouse-soc",
           },
           { label: "Hybrid SOC Service", href: "/services/hybrid-soc" },
-          {
-            label: "Incident Response & DFIR",
-            href: "/services/incident-response-dfir",
-          },
-          { label: "Ransomware Negotiation", href: "/services/ransomware" },
+          // {
+          //   label: "Incident Response & DFIR",
+          //   href: "/services/incident-response-dfir",
+          // },
+          // { label: "Ransomware Negotiation", href: "/services/ransomware" },
         ],
       },
-      {
-        heading: "Adersarial & Resilience Testing",
-        links: [
-          {
-            label: "DDoS Testing Services",
-            href: "/services/ddos-testing-service",
-          },
-          {
-            label: "MCP Pentesting Services",
-            href: "/services/mcp-pentesting-service",
-          },
-        ],
-      },
+      // {
+      //   heading: "Adersarial & Resilience Testing",
+      //   links: [
+      //     {
+      //       label: "DDoS Testing Services",
+      //       href: "/services/ddos-testing-service",
+      //     },
+      //     {
+      //       label: "MCP Pentesting Services",
+      //       href: "/services/mcp-pentesting-service",
+      //     },
+      //   ],
+      // },
     ],
   },
 
@@ -96,7 +96,7 @@ const serviceDetails = {
             href: "/services/mobile-application-security",
           },
           { label: "Secure Code Review", href: "/services/secure-code-review" },
-          { label: "DevSecOps", href: "/services/devsecops" },
+          // { label: "DevSecOps", href: "/services/devsecops" },
         ],
       },
       {
@@ -136,10 +136,10 @@ const serviceDetails = {
             label: "Industrial Control System Security Assessment",
             href: "/services/industrial-control-systems-security-assessment",
           },
-          {
-            label: "Automotive Cybersecurity",
-            href: "/services/automotive-cybersecurity",
-          },
+          // {
+          //   label: "Automotive Cybersecurity",
+          //   href: "/services/automotive-cybersecurity",
+          // },
         ],
       },
     ],
@@ -155,13 +155,13 @@ const serviceDetails = {
             label: "DPO Services",
             href: "/services/dpo-services",
           },
-          {
-            label: "Data Localization Audit",
-            href: "/services/identity-access-review",
-          },
+          // {
+          //   label: "Data Localization Audit",
+          //   href: "/services/identity-access-review",
+          // },
           {
             label: "GDPR",
-            href: "/services/gdpr",
+            href: "/services/GDPR",
           },
           {
             label: "DPDP Compliance",
@@ -178,11 +178,11 @@ const serviceDetails = {
           },
           {
             label: "IRDA Information Security Audit",
-            href: "/services/irda-audit",
+            href: "/services/IRDA-audit",
           },
           {
             label: "RBI Information Security Audit",
-            href: "/services/rbi-security-audit",
+            href: "/services/RBI-security-audit",
           },
         ],
       },
@@ -207,31 +207,31 @@ const serviceDetails = {
             label: "SOC 2 Compliance",
             href: "/services/soc-2-compliance",
           },
-          {
-            label: "ISO 42001 (AIMS)",
-            href: "/services/iso42001",
-          },
-          {
-            label: "AI Compliance Package",
-            href: "/services/ai-compliance",
-          },
+          // {
+          //   label: "ISO 42001 (AIMS)",
+          //   href: "/services/iso42001",
+          // },
+          // {
+          //   label: "AI Compliance Package",
+          //   href: "/services/ai-compliance",
+          // },
         ],
       },
       {
         heading: "Regulatory & Industry",
         links: [
-          {
-            label: "CSCRF Audit",
-            href: "/services/csrf-audit",
-          },
-          {
-            label: "Market SOC Audit (MSOC)",
-            href: "/services/market-soc-audit",
-          },
-          {
-            label: "DORA Compliance",
-            href: "/services/dora-compliance",
-          },
+          // {
+          //   label: "CSCRF Audit",
+          //   href: "/services/csrf-audit",
+          // },
+          // {
+          //   label: "Market SOC Audit (MSOC)",
+          //   href: "/services/market-soc-audit",
+          // },
+          // {
+          //   label: "DORA Compliance",
+          //   href: "/services/dora-compliance",
+          // },
           {
             label: "CICRA Audit Services",
             href: "/services/cicra-audit-services",
@@ -301,26 +301,26 @@ const company = [
         description: "Who we are and our cybersecurity mission",
         link: "/company/about",
       },
-      {
-        name: "Careers",
-        description: "Build a safer digital future with us",
-        link: "/career",
-      },
+      // {
+      //   name: "Careers",
+      //   description: "Build a safer digital future with us",
+      //   link: "/career",
+      // },
     ],
   },
   {
     mainHeading: "RESOURCES",
     list: [
-      {
-        name: "Case Studies",
-        description: "Real-world security challenges and outcomes",
-        link: "/case-studies",
-      },
-      {
-        name: "Insights",
-        description: "Cybersecurity insights and research",
-        link: "/insights",
-      },
+      // {
+      //   name: "Case Studies",
+      //   description: "Real-world security challenges and outcomes",
+      //   link: "/case-studies",
+      // },
+      // {
+      //   name: "Insights",
+      //   description: "Cybersecurity insights and research",
+      //   link: "/insights",
+      // },
       {
         name: "Contact Us",
         description: "Connect with our cybersecurity experts",
@@ -432,10 +432,11 @@ function Navbar() {
                           type="button"
                           onMouseEnter={() => setActiveService(service.id)}
                           onFocus={() => setActiveService(service.id)}
-                          className={`flex w-full cursor-pointer items-center gap-3 rounded-br-2xl rounded-tr-2xl border-l-4 border-transparent p-3 text-left transition-all duration-200 ${activeService === service.id
+                          className={`flex w-full cursor-pointer items-center gap-3 rounded-br-2xl rounded-tr-2xl border-l-4 border-transparent p-3 text-left transition-all duration-200 ${
+                            activeService === service.id
                               ? "border-l-[#05B9EE] bg-[#E8F3FF]"
                               : "hover:border-l-[#05B9EE] hover:bg-[#E8F3FF]"
-                            }`}
+                          }`}
                         >
                           <span className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full bg-[#DCE9FA]">
                             <Icon
@@ -505,7 +506,7 @@ function Navbar() {
                               .filter(
                                 (section) =>
                                   section.heading ===
-                                  "CLOUD & INFRASTRUCTURE" ||
+                                    "CLOUD & INFRASTRUCTURE" ||
                                   section.heading === "CONNECTED & INDUSTRIAL",
                               )
                               .map((section) => (
@@ -628,7 +629,6 @@ function Navbar() {
                 <div className="flex flex-col items-center invisible absolute left-1/2 top-full z-50 mt-5 px-6 py-6 w-xl -translate-x-1/2 translate-y-2 rounded-xl bg-gradient-to-b from-[#F5F9FD] to-[#FFFFFF] opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                   <span className="invisible group-hover:visible absolute  -top-0.5   w-[100px] h-[5px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
                   <div>
-
                     <div className="grid grid-cols-2 gap-5">
                       {company.map((item, index) => (
                         <div key={index}>
@@ -656,7 +656,6 @@ function Navbar() {
                         </div>
                       ))}
                     </div>
-
                   </div>
                 </div>
               </li>
@@ -692,8 +691,9 @@ function Navbar() {
 
         {/* Mobile Navigation */}
         <div
-          className={`absolute left-0 right-0 top-[65px] z-50 overflow-hidden bg-[#020E1C] transition-all duration-300 lg:hidden ${isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
-            }`}
+          className={`absolute left-0 right-0 top-[65px] z-50 overflow-hidden bg-[#020E1C] transition-all duration-300 lg:hidden ${
+            isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+          }`}
         >
           <nav className="border-t border-white/10 px-6 py-6 sm:px-8">
             <ul className="flex flex-col gap-2 text-[15px] font-medium text-[#FFFFFF]">
@@ -713,17 +713,19 @@ function Navbar() {
                   Product
                   <Icon
                     icon="ant-design:caret-down-filled"
-                    className={`h-[14px] w-[14px] transition-transform duration-300 ${openDropdown === "product" ? "rotate-180" : ""
-                      }`}
+                    className={`h-[14px] w-[14px] transition-transform duration-300 ${
+                      openDropdown === "product" ? "rotate-180" : ""
+                    }`}
                   />
                 </button>
 
                 {/* Product Dropdown */}
                 <div
-                  className={`grid transition-all duration-300 ${openDropdown === "product"
+                  className={`grid transition-all duration-300 ${
+                    openDropdown === "product"
                       ? "grid-rows-[1fr] opacity-100"
                       : "grid-rows-[0fr] opacity-0"
-                    }`}
+                  }`}
                 >
                   <div className="overflow-hidden">
                     <div className="flex flex-col gap-3 py-1 pl-4">
@@ -763,16 +765,18 @@ function Navbar() {
                   Services
                   <Icon
                     icon="ant-design:caret-down-filled"
-                    className={`h-[14px] w-[14px] transition-transform duration-300 ${openDropdown === "services" ? "rotate-180" : ""
-                      }`}
+                    className={`h-[14px] w-[14px] transition-transform duration-300 ${
+                      openDropdown === "services" ? "rotate-180" : ""
+                    }`}
                   />
                 </button>
 
                 <div
-                  className={`grid transition-all duration-300 ${openDropdown === "services"
+                  className={`grid transition-all duration-300 ${
+                    openDropdown === "services"
                       ? "grid-rows-[1fr] opacity-100"
                       : "grid-rows-[0fr] opacity-0"
-                    }`}
+                  }`}
                 >
                   <div className="overflow-hidden">
                     <div className="flex flex-col items-start py-1 pl-14 space-y-1 ">

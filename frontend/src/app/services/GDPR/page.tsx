@@ -289,55 +289,6 @@ function page() {
               </div>
             </div>
           </Animation>
-  return (
-    <div>
-      <section className="relative w-full min-h-[560px] py-14 flex items-center">
-        <div className="absolute inset-0">
-          <Image
-            src={heroBackground}
-            alt="Smart contract security"
-            fill
-            className="object-cover"
-          />
-        </div>
-
-                <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 flex">
-                    <Animation>
-                        <div className="flex-1 space-y-4 text-center lg:text-left">
-                            <p className="text-sm sm:text-base font-semibold text-[#C8912A]">
-                                GDPR COMPLIANCE & PRIVACY AUDIT
-                            </p>
-                            <h1 className="font-semibold leading-[32px] md:leading-[50px] lg:leading-[55px] text-[#FFFFFF] max-w-[600px]">
-                                GDPR Compliance Audit & Readiness Services
-                            </h1>
-                            <p className="text-base sm:text-lg text-[#D9D9D9] max-w-[540px]">
-                                Identify privacy gaps, assess data protection risks, and establish practical controls to align your business with GDPR requirements.
-                            </p>
-                            <ul className="mt-8 grid grid-cols-1 gap-y-4 sm:grid-cols-2">
-                                {[
-                                    "GDPR Gap Assessment",
-                                    "Data Mapping & Privacy Reviews",
-                                    "Risk-Based Remediation",
-                                    "Ongoing Compliance Support",
-                                ].map((item) => (
-                                    <li key={item} className="flex items-start justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]">
-                                        <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#C8912A]" />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                            <div className="mt-8">
-                                <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg">
-                                    <span>Request GDPR Audit </span>
-                                    <Icon icon="lucide:arrow-right" className="h-4 w-4" />
-                                </button>
-                            </div>
-
-                        </div>
-                    </Animation>
-
-
-
 
           <div className="hidden lg:block flex-1"></div>
         </div>
