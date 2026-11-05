@@ -53,22 +53,29 @@ html {
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 .marquee-track {
-  animation: marquee 30s linear infinite;
+    animation: marquee 30s linear infinite;
 }
 
 /* pause when hovered */
 .marquee:hover .marquee-track {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }
 
 /* respect users who turn off motion */
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track { animation: none; }
+    .marquee-track {
+        animation: none;
+    }
 }
 
 

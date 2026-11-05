@@ -616,12 +616,12 @@ function AadharAudit() {
             <h2 className="text-[#FEFEFE]">
               Secure Your Aadhaar Ecosystem with Confidence
             </h2>
-            <p className="text-base sm:text-[17px] font-normal text-[#D1D1D1]">
+            <p className="sectionDescription text-[#D1D1D1]">
               Organizations involved in Aadhaar authentication and related
               services must protect sensitive identity information and maintain
               appropriate security controls across their systems and processes.
             </p>
-            <p className="text-base sm:text-[17px] font-normal text-[#D1D1D1]">
+            <p className="sectionDescription text-[#D1D1D1]">
               An Aadhaar / UIDAI audit evaluates the security, governance, and
               operational controls within the agreed assessment scope. It helps
               identify gaps, assess risks, and strengthen readiness for
@@ -672,7 +672,7 @@ function AadharAudit() {
             <h2 className="text-[#FFFFFF]">
               Aadhaar Audit Support Across the Identity Ecosystem
             </h2>
-            <p className="text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[28px] text-[#D1D1D1]">
+            <p className="sectionDescription text-[#D1D1D1]">
               Support security and compliance needs for organizations that use
               or provide Aadhaar-enabled services.
             </p>
@@ -718,7 +718,7 @@ function AadharAudit() {
             <h2 className="text-[#FFFFFF]">
               Build Trust Through Stronger Identity Security
             </h2>
-            <p className="text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[28px] text-[#D1D1D1]">
+            <p className="sectionDescription text-[#D1D1D1]">
               A structured audit helps organizations understand security risks
               across Aadhaar-related services and improve the safeguards that
               protect sensitive identity information.
@@ -761,7 +761,7 @@ function AadharAudit() {
             <h2 className="text-[#FFFFFF]">
               Comprehensive Aadhaar/UIDAI Audit Coverage
             </h2>
-            <p className="text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[28px] text-[#D1D1D1]">
+            <p className="sectionDescription text-[#D1D1D1]">
               End-to-end audit services covering all critical areas of UIDAI
               compliance.
             </p>
@@ -819,7 +819,7 @@ function AadharAudit() {
               <h2 className="w-full lg:w-[50%] text-[#FFFFFF]">
                 A Structured, Risk-Based Aadhaar Audit Process
               </h2>
-              <p className="w-full lg:w-[40%] text-base sm:text-[17px] leading-[26px] sm:leading-[28px] text-[#D1D1D1]">
+              <p className="w-full lg:w-[40%] sectionDescription text-[#D1D1D1]">
                 A clear assessment journey designed to identify gaps, validate
                 controls, and support practical security improvements.
               </p>
@@ -914,7 +914,7 @@ function AadharAudit() {
               <h2 className="text-[#FFFFFF]">
                 Audit Reports & Actionable Security Insights
               </h2>
-              <p className="text-base sm:text-[17px] font-normal text-[#D1D1D1]">
+              <p className="sectionDescription text-[#D1D1D1]">
                 Receive structured findings, compliance documentation, and
                 practical recommendations to support audit readiness and
                 security improvements.
@@ -960,7 +960,7 @@ function AadharAudit() {
             <h2 className="text-[#FFFFFF]">
               A Security-Focused Partner for Aadhaar Audit Readiness
             </h2>
-            <p className="text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[28px] text-[#D1D1D1]">
+            <p className="sectionDescription text-[#D1D1D1]">
               Combine cybersecurity assessment expertise with practical guidance
               to strengthen identity-related systems and processes.
             </p>

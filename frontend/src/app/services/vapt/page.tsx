@@ -603,7 +603,7 @@ function Vapt() {
 
       {/* What is VAPT? */}
       <section className="pb-14 w-full relative bg-[#060D1B]">
-        <div className="max-w-3xl mx-auto  py-7  relative bottom-10 sm:bottom-15 z-30 rounded-xl bg-[#01060E] shadow-md shadow-[#7D70F024]">
+        <div className="max-w-3xl mx-auto  py-7  relative bottom-10 sm:bottom-10 z-30 rounded-xl bg-[#01060E] shadow-md shadow-[#7D70F024]">
           <div className="grid grid-cols-3 items-center justify-around">
             {vapt.map((item, index) => (
               <div
@@ -627,7 +627,7 @@ function Vapt() {
           <Animation>
             <div className="text-center lg:text-left space-y-4">
               <h2 className="font-medium text-[#FEFEFE]">What is VAPT?</h2>
-              <p className=" text-base sm:text-lg font-normal max-w-[600px] mx-auto lg:mx-0 leading-[31px] text-[#D1D1D1]">
+              <p className="sectionDescription max-w-[600px] mx-auto lg:mx-0  text-[#D1D1D1]">
                 Vulnerability Assessment and Penetration Testing (VAPT) is a
                 comprehensive cybersecurity approach that helps organizations
                 identify, validate and remediate security weaknesses before
@@ -693,7 +693,7 @@ function Vapt() {
               {data.map((item, index) => (
                 <AnimatedCard
                   key={index}
-                  delay={index * 0.1}
+                  delay={index * 0.12}
                   className="space-y-10 rounded-xl p-5 bg-linear-to-b from-[#0A1119] to-[#17366E] border border-[#002C8C]"
                 >
                   <div className="h-12 w-12 rounded-full flex items-center justify-center shadow-xl  bg-[#012B6A]">
@@ -719,7 +719,7 @@ function Vapt() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           {/* heading  */}
           <Animation>
-            <div className="space-y-3">
+            <div className="space-y-3 flex flex-col items-center lg:items-start">
               <div className="rounded-4xl px-4 py-2 w-fit  bg-[#161B2F]">
                 <p className="text-sm font-medium flex items-center gap-2  uppercase text-[#B4CAFD]">
                   <span>
@@ -731,10 +731,10 @@ function Vapt() {
                   OUR SERVICES
                 </p>
               </div>
-              <h2 className="font-medium max-w-xl leading-[48px] text-[#FEFEFE]">
+              <h2 className=" max-w-xl text-center lg:text-left text-[#FEFEFE]">
                 End-to-End VAPT Penetration Testing Services
               </h2>
-              <p className="text-base sm:text-lg font-normal max-w-lg text-[#D1D1D1]">
+              <p className="sectionDescription max-w-lg text-center lg:text-left text-[#D1D1D1]">
                 End-to-end security testing across every layer of your
                 technology stack, from Bangalore to New York.
               </p>
@@ -746,7 +746,7 @@ function Vapt() {
                 {services.map((item, index) => (
                   <AnimatedCard
                     key={index}
-                    delay={index * 0.1}
+                    delay={index * 0.15}
                     className={` relative flex flex-col justify-between p-5 rounded-lg bg-[#000726] shadow-2xl shadow-[#8997BA26] ${index === 9 ? "w-full lg:col-span-3" : "col-span-1"}`}
                   >
                     <div className="absolute -top-8 right-0 w-13 h-13  flex flex-col items-center justify-center rounded-xl  border-[3px] border-[#B6D1F5] bg-[#3B9E6A]">
@@ -809,7 +809,7 @@ function Vapt() {
               <h2 className="font-medium text-[#FEFEFE]">
                 A proven methodology for finding what matters.
               </h2>
-              <p className="text-base sm:text-lg font-normal text-[#D1D1D1]">
+              <p className="sectionDescription text-[#D1D1D1]">
                 Our VAPT engagements combine structured reconnaissance,
                 technical validation and evidence-led remediation, aligned with
                 globally recognized frameworks.
@@ -890,19 +890,19 @@ function Vapt() {
           <div className="flex gap-10 flex-col lg:flex-row">
             <div className="flex-1 space-y-4">
               <LeftAnimation>
-                <div className="space-y-4">
-                  <h2 className="font-medium leading-[38px] md:leading-[45px] xl:leading-[57px] text-[#FEFEFE]">
+                <div className="space-y-4 text-center lg:text-left">
+                  <h2 className=" text-[#FEFEFE]">
                     VAPT expertise across India’s leading{" "}
                     <span className="text-[#0F66EA]">tech hubs.</span>
                   </h2>
-                  <p className="text-base md:text-lg font-normal leading-[25px] md:leading-[31px] text-[#D1D1D1]">
+                  <p className="sectionDescription text-[#D1D1D1]">
                     From local assessments to nationwide engagements, ISECURION
                     delivers on-ground and remote VAPT expertise across every
                     major Indian technology hub.
                   </p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8">
-                  <div className="flex gap-5 border-[#8F90AB38] border-r ">
+                  <div className="flex gap-5 border-[#8F90AB38] sm:border-r ">
                     <div className="h-[50px] w-[50px] flex items-center justify-center rounded-[10px] bg-[#1D1A37]">
                       <Icon
                         icon="fa7-solid:star-of-david"
@@ -913,7 +913,7 @@ function Vapt() {
                       On-ground expertise
                     </p>
                   </div>
-                  <div className="flex gap-5 border-[#8F90AB38] border-r">
+                  <div className="flex gap-5 border-[#8F90AB38] sm:border-r">
                     <div className="h-[50px] w-[50px] flex items-center justify-center rounded-[10px] bg-[#1D1A37]">
                       <Icon
                         icon="fa-solid:retweet"
@@ -982,14 +982,14 @@ function Vapt() {
           </div>
           {/* global coverage  */}
           <div className="flex flex-col lg:flex-row items-center py-10 px-6 sm:px-10 mt-10 rounded-[19px] gap-10  border border-gray-700 bg-linear-to-r from-[#1D1E2A]/19 to-[#0F66EA]/25">
-            <div className="w-full flex-1 space-y-4 ">
+            <div className="w-full flex-1 space-y-4 text-center lg:text-left">
               <p className="text-lg sm:text-xl font-medium text-[#0F66EA]">
                 GLOBAL COVERAGE
               </p>
               <h3 className="text-2xl font-medium leading-[35px] md:leading-[38px] text-[#FEFEFE]">
                 Global reach. Consistent standards.
               </h3>
-              <p className="text-base sm:text-lg font-normal max-w-sm leading-[28px] text-[#D1D1D1]">
+              <p className="sectionDescription text-[#D1D1D1]">
                 International-standard VAPT services delivered across key global
                 markets.
               </p>
@@ -1029,14 +1029,14 @@ function Vapt() {
           <div className="flex-1 ">
             <LeftAnimation>
               <div className="space-y-4 text-center lg:text-left">
-                <p className="text-sm font-medium text-[#E76A34]">
+                <p className="text-sm font-medium sectionheading text-[#E76A34]">
                   WHY CHOOSE ISECURION FOR VAPT
                 </p>
-                <h2 className="font-medium leading-[38px] md:leading-[45px] xl:leading-[57px] text-[#FEFEFE]">
+                <h2 className=" text-[#FEFEFE]">
                   See your security through an{" "}
                   <span className="text-[#E76A34]">attacker’s eye</span>
                 </h2>
-                <p className="text-base sm:text-lg leading-[25px] md:leading-[31px] text-[#D1D1D1]">
+                <p className="sectionDescription text-[#D1D1D1]">
                   We go beyond automated scans to uncover real-world
                   vulnerabilities, validate their impact, and help you build
                   stronger defenses.
@@ -1147,19 +1147,21 @@ function Vapt() {
                 />
               </div>
               <div className="space-y-2">
-                <p className="text-base sm:text-lg font-medium uppercase text-[#FFFFFF]">
-                  Who We Serve
-                </p>
-                <h2 className="text-2xl md:text-[24px] lg:text-[27px] leading-[40px] font-medium text-[#FEFEFE]">
-                  VAPT for every industry, <br />
-                  <span className="text-[#0F66EA]">every stage.</span>
-                </h2>
-                <p className="text-sm font-normal mt-3 max-w-md leading-[24px] text-[#D1D1D1]">
-                  VAPT is essential for organizations operating in India’s
-                  digital economy. From SaaS and FinTech to healthcare and
-                  manufacturing, it helps businesses strengthen security, meet
-                  compliance requirements, and build customer trust.
-                </p>
+                <div className="space-y-4 text-center lg:text-left">
+                  <p className="text-base sm:text-lg font-medium uppercase text-[#FFFFFF]">
+                    Who We Serve
+                  </p>
+                  <h2 className=" text-[#FEFEFE]">
+                    VAPT for every industry, <br />
+                    <span className="text-[#0F66EA]">every stage.</span>
+                  </h2>
+                  <p className="text-sm font-normal mt-3 max-w-md leading-[24px] text-[#D1D1D1]">
+                    VAPT is essential for organizations operating in India’s
+                    digital economy. From SaaS and FinTech to healthcare and
+                    manufacturing, it helps businesses strengthen security, meet
+                    compliance requirements, and build customer trust.
+                  </p>
+                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 mt-3">
                   {whoWeServe.map((item, index) => (
                     <AnimatedCard
@@ -1230,10 +1232,10 @@ function Vapt() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <Animation>
             <div className="max-w-2xl mx-auto lg:mx-0  space-y-4 text-center lg:text-left">
-              <h2 className="font-medium leading-[38px] md:leading-[45px] xl:leading-[57px] text-[#FEFEFE]">
+              <h2 className=" text-[#FEFEFE]">
                 VAPT Services in India - Everything You Need to Know
               </h2>
-              <p className="text-base sm:text-lg font-normal text-[#D1D1D1]">
+              <p className="sectionDescription text-[#D1D1D1]">
                 VAPT is essential for organizations operating in India's digital
                 economy. From SaaS and FinTech to healthcare and manufacturing,
                 it helps businesses strengthen security, meet compliance

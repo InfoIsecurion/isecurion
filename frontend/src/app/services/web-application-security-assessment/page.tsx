@@ -111,33 +111,39 @@ const webApplicationFAQs = [
 const webAssessmentSteps = [
   {
     title: "Discovery",
-    description: "Understand your application, business objectives, and key risk areas.",
-    icon: <Icon icon="fluent:search-16-filled" />
+    description:
+      "Understand your application, business objectives, and key risk areas.",
+    icon: <Icon icon="fluent:search-16-filled" />,
   },
   {
     title: "Threat Modeling",
-    description: "Identify potential threats and attack vectors based on application design and business logic.",
-    icon: <Icon icon="grommet-icons:document-threat" />
+    description:
+      "Identify potential threats and attack vectors based on application design and business logic.",
+    icon: <Icon icon="grommet-icons:document-threat" />,
   },
   {
     title: "Security Assessment",
-    description: "Evaluate critical areas such as authentication, authorization, input validation and business logic.",
-    icon: <Icon icon="iconmind:book-review-outline-regular" />
+    description:
+      "Evaluate critical areas such as authentication, authorization, input validation and business logic.",
+    icon: <Icon icon="iconmind:book-review-outline-regular" />,
   },
   {
     title: "Penetration Testing",
-    description: "Simulate real-world attacks to test your application's defenses and identify potential exploits.",
-    icon: <Icon icon="fe:target" />
+    description:
+      "Simulate real-world attacks to test your application's defenses and identify potential exploits.",
+    icon: <Icon icon="fe:target" />,
   },
   {
     title: "Remediation Guidance",
-    description: "Provide actionable remediation guidance to fix vulnerabilities, strengthen security, and support compliance.",
-    icon: <Icon icon="ic:outline-tips-and-updates" />
+    description:
+      "Provide actionable remediation guidance to fix vulnerabilities, strengthen security, and support compliance.",
+    icon: <Icon icon="ic:outline-tips-and-updates" />,
   },
   {
     title: "Reporting & Deliverables",
-    description: "Deliver a comprehensive report with prioritized findings and clear mitigation steps.",
-    icon: <Icon icon="pajamas:review-checkmark" />
+    description:
+      "Deliver a comprehensive report with prioritized findings and clear mitigation steps.",
+    icon: <Icon icon="pajamas:review-checkmark" />,
   },
 ];
 
@@ -181,9 +187,8 @@ function page() {
         </div>
       </section>
 
-     
-        <section className="bg-[#050C1A]">
-          <Animation>
+      <section className="bg-[#050C1A]">
+        <Animation>
           <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12 lg:py-16">
             {/* Heading */}
             <h2 className="leading-8 sm:leading-12 text-white">
@@ -270,64 +275,62 @@ function page() {
               ))}
             </div>
           </div>
-          </Animation>
-        </section>
-      
+        </Animation>
+      </section>
 
-      
-        <section className="">
-          <div className="relative overflow-hidden bg-[linear-gradient(110deg,#050B18_0%,#071321_48%,#06383C_90%)]">
-            <div className="pointer-events-none absolute right-0 top-0">
-              <Image src={methodologySettings} alt="" className="" />
+      <section className="">
+        <div className="relative overflow-hidden bg-[linear-gradient(110deg,#050B18_0%,#071321_48%,#06383C_90%)]">
+          <div className="pointer-events-none absolute right-0 top-0">
+            <Image src={methodologySettings} alt="" className="" />
+          </div>
+
+          <Animation>
+            {/* Methodology Heading */}
+            <div className="relative mx-auto max-w-7xl px-6 pt-16 text-center sm:px-10 lg:px-12 lg:pt-20">
+              <div className="pointer-events-none absolute right-0 top-0 h-[280px] w-[280px] rounded-full bg-cyan-500/10 blur-[100px]" />
+
+              <h2 className="relative text-3xl font-normal leading-tight text-white sm:text-4xl lg:text-[36px]">
+                Our Security Assessment Methodology
+              </h2>
+
+              <p className="relative mx-auto mt-5 max-w-[850px] text-sm leading-6 text-white/70 sm:text-base">
+                At ISECURION, we combine{" "}
+                <span className="font-medium text-white">
+                  OWASP-aligned testing
+                </span>
+                ,{" "}
+                <span className="font-medium text-white">automated tools</span>,
+                and{" "}
+                <span className="font-medium text-white">
+                  expert-led manual assessment
+                </span>{" "}
+                to uncover and validate web application security risks.
+              </p>
             </div>
+          </Animation>
 
-            <Animation>
-              {/* Methodology Heading */}
-              <div className="relative mx-auto max-w-7xl px-6 pt-16 text-center sm:px-10 lg:px-12 lg:pt-20">
-                <div className="pointer-events-none absolute right-0 top-0 h-[280px] w-[280px] rounded-full bg-cyan-500/10 blur-[100px]" />
-
-                <h2 className="relative text-3xl font-normal leading-tight text-white sm:text-4xl lg:text-[36px]">
-                  Our Security Assessment Methodology
-                </h2>
-
-                <p className="relative mx-auto mt-5 max-w-[850px] text-sm leading-6 text-white/70 sm:text-base">
-                  At ISECURION, we combine{" "}
-                  <span className="font-medium text-white">OWASP-aligned testing</span>,{" "}
-                  <span className="font-medium text-white">automated tools</span>, and{" "}
-                  <span className="font-medium text-white">expert-led manual assessment</span>{" "}
-                  to uncover and validate web application security risks.
-                </p>
-              </div>
-            </Animation>
-
-            <Animation>
+          <Animation>
             <MethodologySection
               embedded
               steps={webAssessmentSteps}
               centerTitle={["WEB APPLICATION", "SECURITY ASSESSMENT"]}
-              tagline={[
-                "A STRONGER",
-                "APPLICATION TOMORROW",
-              ]}
+              tagline={["A STRONGER", "APPLICATION TOMORROW"]}
             />
-            </Animation>
-          </div>
-        </section>
-    
+          </Animation>
+        </div>
+      </section>
 
-     
-        <FAQSection
-          title={
-            <>
-              Frequently Asked Questions - Web
-              <br className="hidden sm:block" />
-              Application Security Assessment
-            </>
-          }
-          description="Common questions from organizations across Bangalore, Mumbai, Hyderabad, Kolkata, Ahmedabad, Noida, and globally."
-          faqs={webApplicationFAQs}
-        />
-      
+      <FAQSection
+        title={
+          <>
+            Frequently Asked Questions - Web
+            <br className="hidden sm:block" />
+            Application Security Assessment
+          </>
+        }
+        description="Common questions from organizations across Bangalore, Mumbai, Hyderabad, Kolkata, Ahmedabad, Noida, and globally."
+        faqs={webApplicationFAQs}
+      />
     </main>
   );
 }

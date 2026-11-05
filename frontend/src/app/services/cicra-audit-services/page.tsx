@@ -611,12 +611,18 @@ function page() {
                       <select
                         id="target"
                         name="target"
+                        defaultValue=""
                         aria-label="Select Industry Sector"
-                        className={`h-[43px] w-full appearance-none rounded-[7px]  bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD] ${errors.industry ? "border border-red-500" : ""}`}
-                        {...register("industry")}
+                        className={`h-[43px] w-full appearance-none rounded-[7px] border ${
+                          errors.industry
+                            ? "border-red-500"
+                            : "border-[#29292C]"
+                        } bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]`}
+                        {...register("industry", {
+                          required: "Please select an industry sector.",
+                        })}
                       >
                         <option value="">Select Industry Sector</option>
-
                         <option value="Banking & Financial Services">
                           Banking & Financial Services
                         </option>
@@ -648,8 +654,8 @@ function page() {
                         <option value="Data Center / Cloud Provider">
                           Data Center / Cloud Provider
                         </option>
-                        <option value="Saas / IT Servoices Company">
-                          Saas / IT Servoices Company
+                        <option value="Saas / IT Services Company">
+                          Saas / IT Services Company
                         </option>
                         <option value="Telecom Operator / ISP">
                           Telecom Operator / ISP
@@ -658,9 +664,10 @@ function page() {
                           Other Critical Infrastructure
                         </option>
                       </select>
+
                       {errors.industry && (
                         <p className="text-sm font-normal text-red-500">
-                          {errors.email.message}
+                          {errors.industry.message}
                         </p>
                       )}
 

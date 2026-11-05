@@ -274,15 +274,15 @@ function ContinuousBreachAttackSimulation() {
                     </div>
                   </div>
 
-                  {/* CAPTCHA */}
-                  <div className="mt-7">
-                    <Turnstile
-                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                      onSuccess={(token) => setTurnstileToken(token)}
-                      onExpire={() => setTurnstileToken("")}
-                      onError={() => setTurnstileToken("")}
-                    />
-                  </div>
+                    {/* CAPTCHA */}
+                    <div className="mt-7">
+                      <Turnstile
+                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                        onSuccess={(token) => setTurnstileToken(token)}
+                        onExpire={() => setTurnstileToken("")}
+                        onError={() => setTurnstileToken("")}
+                      />
+                    </div>
 
                   {/* TERMS & PRIVACY CHECKBOX */}
                   <div className="flex items-start gap-2.5 pt-1">
@@ -314,6 +314,171 @@ function ContinuousBreachAttackSimulation() {
                     <Icon icon="lucide:arrow-right" className="h-4 w-4" />
                   </button>
                 </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#050B1A]">
+        <Animation>
+          <div className="mx-auto max-w-7xl px-7 py-10 sm:px-10 lg:px-8 lg:py-14 xl:px-10 text-center md:text-left">
+            <h2 className="text-[26px] font-normal leading-[1.4]  text-white sm:text-[36px] lg:text-[38px]">
+              What is Continuous Breach Attack Simulation?
+            </h2>
+            <p className="mt-7 font-medium leading-[1.8] text-[#D1D1D1] max-w-[700px]">
+              Continuous Breach Attack Simulation (CBAS) is an automated,
+              ongoing process that mimics cyber attackers using adversary
+              simulation techniques.
+            </p>
+            <p className="mt-10 text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] lg:text-[17px] max-w-[700px]">
+              It validates your security investments daily, tests real-world
+              attack scenarios, and provides actionable insights to strengthen
+              resilience.
+            </p>
+          </div>
+        </Animation>
+      </section>
+
+      <section className="bg-black px-0 relative overflow-hidden">
+        <div className="relative min-h-[671px] overflow-hidden">
+          {/* Background */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${approachBg.src || approachBg})` }}
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-[#0A1119]/[51%]" />
+
+          <div className="relative z-10 mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-16 lg:min-h-[671px] lg:px-[26px] lg:py-[58px] flex items-center">
+            {/* Fluid Responsive Grid Layout */}
+            <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Left Content */}
+
+              <div className="lg:col-span-6 flex flex-col justify-between space-y-6 text-center md:text-left">
+                <Animation>
+                  <div>
+                    <p className="text-[14px] sm:text-base font-semibold leading-[18px] text-[#E24B4A]">
+                      OUR APPROACH
+                    </p>
+
+                    <p className="mt-3 text-[34px] sm:text-[38px] lg:text-[40px] font-medium leading-[1.4] text-white max-w-[450px]">
+                      How We Validate Your Defenses?
+                    </p>
+                  </div>
+                </Animation>
+
+                <Animation>
+                  <p className="lg:mt-45 max-w-[350px] text-[14px] sm:text-[15px] font-normal leading-[1.72] text-[#D1D1D1]">
+                    A continuous, controlled approach to simulate real-world
+                    attack techniques, measure security control effectiveness,
+                    and identify gaps before attackers do.
+                  </p>
+                </Animation>
+              </div>
+
+              {/* 4 Cards Grid */}
+              <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-5 items-start">
+                {/* Card 01 */}
+                <Animation>
+                  <div className="relative flex flex-col justify-between min-h-[250px] w-full rounded-[7px] border border-white/[9%] bg-black/[51%] p-5">
+                    <div className="flex items-start justify-between">
+                      <Icon
+                        icon="mingcute:apple-intelligence-line"
+                        className="text-[25px] text-white"
+                      />
+                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
+                        01
+                      </span>
+                    </div>
+
+                    <div className="mt-8">
+                      <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
+                        Step 1: Threat Modeling
+                      </h3>
+                      <p className="max-w-[200px] mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1]">
+                        Define relevant attack scenarios using threat
+                        intelligence and MITRE ATT&CK.
+                      </p>
+                    </div>
+                  </div>
+                </Animation>
+
+                {/* Card 02 (Staggered offset) */}
+                <Animation>
+                  <div className="relative flex flex-col justify-between min-h-[250px] w-full rounded-[7px] border border-white/[9%] bg-black/[51%] p-5 lg:-translate-y-10">
+                    <div className="flex items-start justify-between">
+                      <Icon
+                        icon="icon-park-outline:target-one"
+                        className="text-[25px] text-white"
+                      />
+                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
+                        02
+                      </span>
+                    </div>
+
+                    <div className="mt-8">
+                      <h3 className="text-[14px] font-medium leading-[1.5] text-[#F5F0E8]">
+                        Step 2: Automated <br /> Simulation
+                      </h3>
+                      <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[200px]">
+                        Continuously execute controlled attack scenarios across
+                        your security environment.
+                      </p>
+                    </div>
+                  </div>
+                </Animation>
+
+                {/* Card 03 */}
+                <Animation>
+                  <div className="relative flex flex-col justify-between min-h-[250px] w-full rounded-[7px] border border-white/[9%] bg-black/[51%] p-5">
+                    <div className="flex items-start justify-between">
+                      <Icon
+                        icon="iconmind:goal-outline-bold"
+                        className="text-[25px] text-white"
+                      />
+                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
+                        03
+                      </span>
+                    </div>
+
+                    <div className="mt-8">
+                      <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
+                        Step 3: Gap Analysis
+                      </h3>
+                      <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[200px]">
+                        Identify detection gaps and validate the effectiveness
+                        of security controls.
+                      </p>
+                    </div>
+                  </div>
+                </Animation>
+
+                {/* Card 04 (Staggered offset) */}
+                <Animation>
+                  <div className="relative flex flex-col justify-between min-h-[250px] w-full rounded-[7px] border border-white/[9%] bg-black/[51%] p-5 lg:-translate-y-10">
+                    <div className="flex items-start justify-between">
+                      <Icon
+                        icon="iconmind:growth-chart-outline-bold"
+                        className="text-[25px] text-white"
+                      />
+                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
+                        04
+                      </span>
+                    </div>
+
+                    <div className="mt-8">
+                      <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
+                        Step 4: Reporting
+                      </h3>
+                      <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[200px]">
+                        Deliver clear findings, control insights, and
+                        prioritized recommendations.
+                      </p>
+                    </div>
+                  </div>
+                </Animation>
               </div>
             </div>
           </div>

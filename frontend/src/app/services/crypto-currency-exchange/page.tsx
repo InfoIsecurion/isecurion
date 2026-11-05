@@ -102,19 +102,6 @@ const securityBenefits = [
   },
 ];
 
-type Step = {
-  no: string;
-  title: string;
-  desc: string;
-  icon: string;
-  side: "left" | "right";
-  ix: number;
-  iy: number;
-  tx: number;
-  ty: number;
-  w: number;
-};
-
 const STEPS = [
   {
     no: "01",
@@ -177,29 +164,39 @@ function CryptoCurrencyExchange() {
           />
         </div>
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 flex">
-           <Animation>
-          <div className="flex-1 space-y-4 text-center lg:text-left">
-           
-            <p className="text-sm sm:text-base uppercase font-semibold text-[#0F66EA]">
-              Crypto Currency Exchange Security Assessment
-            </p>
-            <h1 className=" text-[#FFFFFF] max-w-[610px]">
-              Secure your crypto exchange against evolving cyber threats.
-            </h1>
-            <p className="text-base sm:text-lg font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D9D9D9] max-w-[510px]">
-              ISECURION assesses cryptocurrency exchanges across applications,
-              APIs, infrastructure, wallets, and business logic to identify
-              vulnerabilities before they can impact users, assets, or
-              operations.
-            </p>
-            <button className="text-[15px] font-medium px-4 py-3 flex items-center gap-2 rounded-[10px] mx-auto lg:mx-0 cursor-pointer text-[#31435C] bg-[#FFFFFF]">
-              Secure Your Exchange{" "}
-              <span>
-                <Icon icon="akar-icons:arrow-right" />
-              </span>{" "}
-            </button>
-            
-          </div>
+          <Animation>
+            <div className="flex-1 space-y-4 text-center lg:text-left">
+              <p
+                className="text-sm sm:text-base uppercase font-semibold sectionheading text-[#0F66EA] opacity-0 animate-hero-reveal"
+                style={{ animationDelay: "150ms" }}
+              >
+                Crypto Currency Exchange Security Assessment
+              </p>
+              <h1
+                className=" text-[#FFFFFF] max-w-[610px] mx-auto lg:mx-0 opacity-0 animate-hero-reveal"
+                style={{ animationDelay: "300ms" }}
+              >
+                Secure your crypto exchange against evolving cyber threats.
+              </h1>
+              <p
+                className="text-base sm:text-lg font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D9D9D9] lg:max-w-[510px] mx-auto lg:mx-0 opacity-0 animate-hero-reveal"
+                style={{ animationDelay: "450ms" }}
+              >
+                ISECURION assesses cryptocurrency exchanges across applications,
+                APIs, infrastructure, wallets, and business logic to identify
+                vulnerabilities before they can impact users, assets, or
+                operations.
+              </p>
+              <button
+                className="text-[15px] font-medium px-4 py-3 flex items-center gap-2 rounded-[10px] mx-auto lg:mx-0 cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
+                style={{ animationDelay: "600ms" }}
+              >
+                Secure Your Exchange{" "}
+                <span>
+                  <Icon icon="akar-icons:arrow-right" />
+                </span>{" "}
+              </button>
+            </div>
           </Animation>
           <div className="hidden lg:block flex-1"></div>
         </div>
@@ -210,13 +207,13 @@ function CryptoCurrencyExchange() {
           <div className="space-y-5">
             <Animation>
               <div className="space-y-4 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
-                <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
+                <p className="text-sm sm:text-base font-semibold sectionheading text-[#0F66EA] ">
                   WHY CRYPTO EXCHANGE SECURITY MATTERS
                 </p>
                 <h2 className="text-[#FEFEFE]">
                   Protect the platform. Protect the assets.
                 </h2>
-                <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+                <p className="sectionDescription text-[#D1D1D1]">
                   Cryptocurrency exchanges face evolving threats across their
                   perimeter, internal infrastructure, web applications, APIs,
                   and wallet systems. Regular penetration testing helps identify
@@ -258,7 +255,7 @@ function CryptoCurrencyExchange() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
             <LeftAnimation>
               <div className="w-full lg:w-[500px] text-center lg:text-left space-y-4">
-                <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
+                <p className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading">
                   WHAT WE TEST
                 </p>
                 <h2 className=" text-[#FEFEFE]">
@@ -268,7 +265,7 @@ function CryptoCurrencyExchange() {
             </LeftAnimation>
             <RightAnimation>
               <div className="w-full lg:w-[460px] text-center lg:text-left">
-                <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+                <p className="sectionDescription text-[#D1D1D1]">
                   We assess the technical, transactional, and business-logic
                   layers that protect digital assets, user accounts, and
                   exchange operations.
@@ -343,10 +340,10 @@ function CryptoCurrencyExchange() {
         <div className="mx-auto max-w-7xl px-6 sm:px-10">
           <Animation>
             <div className="space-y-4 text-center">
-              <h2 className="font-medium text-[#FEFEFE]">
+              <h2 className=" text-[#FEFEFE]">
                 Our Crypto Assessment Methodology
               </h2>
-              <p className="text-base sm:text-lg font-normal text-[#D1D1D1]">
+              <p className="sectionDescription text-[#D1D1D1]">
                 A structured approach to uncover, validate, and prioritize
                 security risks.
               </p>

@@ -5,16 +5,17 @@ import {
   Animation,
   GradientIcon,
   LeftAnimation,
+  RightAnimation,
 } from "../../../components/ui/Animation";
 import { motion } from "framer-motion";
 import world from "../../../assets/services/world.svg";
 import Image from "next/image";
 import isecurionapartbackground from "../../../assets/services/isecurion-apart-background.png";
 import FAQSection from "../../../components/sections/FAQSection";
-import { Turnstile } from "@marsidev/react-turnstile";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { vcsio } from "../../../services/api/contact";
 
 interface ContactFormData {
@@ -510,6 +511,8 @@ const vcisoFAQs = [
 function Vicso() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [loading, setLoading] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
+
   const {
     register,
     handleSubmit,
@@ -518,12 +521,26 @@ function Vicso() {
   } = useForm<ContactFormData>();
 
   const submit = async (data: ContactFormData) => {
-    console.log(data);
     setLoading(true);
     try {
-      const response = await vcsio(data);
+      if (!turnstileToken) {
+        toast.error("Please complete CAPTCHA verification.");
+        return;
+      }
+      const response = await vcsio({ ...data, turnstileToken });
+      if (response.status === 200) {
+        toast.success(response.message);
+        reset();
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
+      } else {
+        toast.error(response.message);
+      }
     } catch (error) {
-      toast.error(error);
+      toast.error(
+        error.response?.data?.message ||
+          "Something went wrong. Please try again.",
+      );
     } finally {
       setLoading(false);
     }
@@ -538,7 +555,7 @@ function Vicso() {
           <div className="flex-1">
             <div className="space-y-4 text-center lg:text-left">
               <p
-                className="text-sm sm:text-base font-semibold text-[#0F66EA] opacity-0 animate-hero-reveal"
+                className="text-sm sm:text-base font-semibold text-[#0F66EA] opacity-0 animate-hero-reveal sectionheading"
                 style={{ animationDelay: "150ms" }}
               >
                 VIRTUAL CISO SERVICES
@@ -601,7 +618,7 @@ function Vicso() {
               onSubmit={handleSubmit(submit)}
             >
               <div className="flex flex-col sm:flex-row gap-6">
-                <div className="flex flex-col w-full gap-3">
+                <div className="flex flex-col w-full gap-2">
                   <label
                     htmlFor=""
                     className="text-[#FEFEFE] text-sm font-normal"
@@ -611,7 +628,7 @@ function Vicso() {
                   <input
                     type="text"
                     placeholder="First name"
-                    className="px-3 py-2.5 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
+                    className="text-sm font-normal px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
                     {...register("fullname", {
                       required: "Full name is required",
                     })}
@@ -622,7 +639,7 @@ function Vicso() {
                     </p>
                   )}
                 </div>
-                <div className="flex flex-col w-full gap-3">
+                <div className="flex flex-col w-full gap-2">
                   <label
                     htmlFor=""
                     className="text-[#FEFEFE] text-[15px] font-normal"
@@ -632,13 +649,13 @@ function Vicso() {
                   <input
                     type="text"
                     placeholder="Company name"
-                    className="px-3 py-2.5 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
+                    className="text-sm font-normal px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
                     {...register("companyname")}
                   />
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-6">
-                <div className="flex flex-col w-full gap-3">
+                <div className="flex flex-col w-full gap-2">
                   <label
                     htmlFor=""
                     className="text-[#FEFEFE] text-[15px] font-medium"
@@ -648,7 +665,7 @@ function Vicso() {
                   <input
                     type="email"
                     placeholder="youremail@gmail.com"
-                    className="px-3 py-2.5 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
+                    className="text-sm font-normal px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
                     {...register("email", { required: "Email is required" })}
                   />
                   {errors.email && (
@@ -657,7 +674,7 @@ function Vicso() {
                     </p>
                   )}
                 </div>
-                <div className="flex flex-col w-full gap-3">
+                <div className="flex flex-col w-full gap-2">
                   <label
                     htmlFor=""
                     className="text-[#FEFEFE] text-[15px] font-medium"
@@ -667,7 +684,7 @@ function Vicso() {
                   <input
                     type="tel"
                     placeholder="+91 987-654-321"
-                    className="px-3 py-2.5 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
+                    className="text-sm font-normal px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
                     {...register("phonenumber", {
                       required: "Phone number is required",
                     })}
@@ -680,7 +697,7 @@ function Vicso() {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-6">
-                <div className="flex flex-col w-full gap-3">
+                <div className="flex flex-col w-full gap-2">
                   <label
                     htmlFor=""
                     className="text-[#FEFEFE] text-[15px] font-medium"
@@ -690,14 +707,14 @@ function Vicso() {
                   <select
                     name=""
                     id=""
-                    className="py-3 w-full px-3 rounded-[10px] cursor-pointer outline-none  text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
+                    className=" text-sm font-normal  py-3 w-full px-3 rounded-[10px] cursor-pointer outline-none  text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
                     {...register("location")}
                   >
                     <option value="">Select your loaction</option>
                     <option value="india">India</option>
                   </select>
                 </div>
-                <div className="flex flex-col w-full gap-3">
+                <div className="flex flex-col w-full gap-2">
                   <label
                     htmlFor=""
                     className="text-[#FEFEFE] text-[15px] font-medium"
@@ -708,7 +725,7 @@ function Vicso() {
                   <select
                     name=""
                     id=""
-                    className="py-3 w-full px-3 rounded-[10px] cursor-pointer outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
+                    className="  text-sm font-normal  py-3 w-full px-3 rounded-[10px] cursor-pointer outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
                     {...register("engagement", {
                       required: "Engagement type is required",
                     })}
@@ -751,21 +768,18 @@ function Vicso() {
                   placeholder=" Brief requirement (optional)"
                   name=""
                   id=""
-                  className="px-3 py-3 w-full rounded-[10px] text-[#D1D1D1] bg-[#000C1C] border border-[#262D3D] outline-none"
+                  className="text-sm font-normal px-3 py-3 w-full rounded-[10px] text-[#D1D1D1] bg-[#000C1C] border border-[#262D3D] outline-none"
                   {...register("message")}
                 ></textarea>
               </div>
-              <div className="">
-                <div className="flex items-center gap-3">
-                  <p className="text-sm font-medium text-white">Captcha</p>
-
-                  <Turnstile
-                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                    onSuccess={(token) => setTurnstileToken(token)}
-                    onExpire={() => setTurnstileToken("")}
-                    onError={() => setTurnstileToken("")}
-                  />
-                </div>
+              <div>
+                <Turnstile
+                  ref={turnstileRef}
+                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                  onSuccess={(token) => setTurnstileToken(token)}
+                  onExpire={() => setTurnstileToken("")}
+                  onError={() => setTurnstileToken("")}
+                />
               </div>
               <div className="flex gap-3">
                 <input
@@ -782,7 +796,7 @@ function Vicso() {
               </div>
               <button
                 type="submit"
-                className="text-base sm:text-lg font-medium flex items-center justify-center py-3 w-full rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd]"
+                className={`text-base sm:text-lg font-medium flex items-center justify-center gap-3 py-3 w-full rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
               >
                 Request Consultation{" "}
                 <span>
@@ -799,19 +813,19 @@ function Vicso() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <Animation>
             <div className="max-w-xl mx-auto lg:mx-0 space-y-4 text-center lg:text-left">
-              <p className="text-sm sm:text-base font-semibold uppercase text-[#0F66EA]">
+              <p className="text-sm sm:text-base font-semibold uppercase text-[#0F66EA] sectionheading">
                 Understanding vCISO
               </p>
               <h2 className="text-[#FEFEFE]">
                 Executive-level cybersecurity expertise, built around your
                 business.
               </h2>
-              <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+              <p className="sectionDescription text-[#D1D1D1]">
                 A Virtual Chief Information Security Officer (vCISO) provides
                 strategic and operational security leadership on a flexible,
                 outsourced basis.
               </p>
-              <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+              <p className="sectionDescription text-[#D1D1D1]">
                 From risk management and security policies to compliance and
                 incident readiness, ISECURION helps your teams build and
                 maintain a structured security programme without the cost of a
@@ -852,13 +866,13 @@ function Vicso() {
           <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10">
             <Animation>
               <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left space-y-4">
-                <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
+                <p className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading">
                   WHO NEEDS A vCISO?
                 </p>
                 <h2 className="text-[#FFFFFF]">
                   The right security leadership for your next stage of growth.
                 </h2>
-                <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+                <p className="sectionDescription text-[#D1D1D1]">
                   Whether you're scaling operations, preparing for an audit, or
                   strengthening accountability, a vCISO helps your organization
                   take a more structured approach to cybersecurity.
@@ -923,17 +937,17 @@ function Vicso() {
             </div>
           </div>
           <div className="flex-1 z-10 p-4 space-y-4 text-center lg:text-left bg-[#003833]">
-            <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
+            <p className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading">
               ISECURION vCISO PRACTICE
             </p>
             <h2 className="text-[#FFFFFF]">Meet the ISECURION vCISO Team</h2>
-            <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+            <p className="sectionDescription text-[#D1D1D1]">
               ISECURION's vCISO practice is a dedicated team of certified
               security leaders, governance experts, and regulatory compliance
               specialists - built specifically for India's complex regulatory
               landscape and global enterprise demands.
             </p>
-            <p className="text-base sm:text-lg font-normal mt-8 leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+            <p className="sectionDescription text-[#D1D1D1]">
               With deep experience across BFSI, healthcare, IT/ITES,
               manufacturing, and regulated industries, the team delivers{""}
               <span className="font-semibold">
@@ -989,80 +1003,84 @@ function Vicso() {
       <section className="w-full py-14 overflow-hidden bg-[#060D1B]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="flex flex-col xl:flex-row">
-            <div className="w-full space-y-4 lg:w-[500px] text-center lg:text-left">
-              <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
-                Regulatory & Compliance Expertise
-              </p>
-              <h2 className="text-[#FFFFFF]">
-                Navigate complex requirements with a{" "}
-                <span className="bg-clip-text text-transparent bg-linear-to-l from-[#0F66EA] to-[#FFFFFF]">
-                  coordinated security strategy .
-                </span>
-              </h2>
-              <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
-                ISECURION’s vCISO team helps organizations align security
-                governance and compliance activities with the frameworks
-                relevant to their industry and markets.
-              </p>
-            </div>
-            <div className="flex-2 flex flex-col sm:flex-row gap-10 mt-10 lg:mt-0">
-              <div className="h-auto md:h-[270px] p-4 space-y-4 rounded-[21px] border border-[#4C737029] bg-[#66666614]">
-                <h3 className="text-sm font-bold flex gap-4 text-[#E9E9ED]">
-                  <span>
-                    <Icon
-                      icon="emojione:flag-for-india"
-                      className="w-[28px] h-[28px]"
-                    />
+            <LeftAnimation>
+              <div className="w-full space-y-4 lg:w-[500px] text-center lg:text-left">
+                <p className="text-sm sm:text-base font-semibold uppercase text-[#0F66EA] sectionheading">
+                  Regulatory & Compliance Expertise
+                </p>
+                <h2 className="text-[#FFFFFF]">
+                  Navigate complex requirements with a{" "}
+                  <span className="bg-clip-text text-transparent bg-linear-to-l from-[#0F66EA] to-[#FFFFFF]">
+                    coordinated security strategy .
                   </span>
-                  <span>India Regulatory Frameworks</span>
-                </h3>
-                <div>
-                  <div className="flex flex-wrap gap-4">
-                    {indiaRegulatoryCiso.map((item, index) => (
-                      <div
-                        key={index}
-                        className="text-xs font-medium px-4 py-3 rounded-sm w-auto text-[#FFFFFF] bg-[#42515059]"
-                      >
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <hr className="border-[1.5px] border-[#7590B833] my-3" />
-                <p className="text-sm font-normal text-[#B7C5DC]">
-                  Support for applicable financial-sector, incident reporting,
-                  privacy, and cybersecurity governance requirements.
+                </h2>
+                <p className="sectionDescription text-[#D1D1D1]">
+                  ISECURION’s vCISO team helps organizations align security
+                  governance and compliance activities with the frameworks
+                  relevant to their industry and markets.
                 </p>
               </div>
-              <div className="h-auto md:h-[270px] p-4 space-y-4 rounded-[21px] border border-[#4C737029] bg-[#66666614]">
-                <h3 className="text-sm font-bold flex gap-4 text-[#E9E9ED]">
-                  <span>
-                    <Icon
-                      icon="fluent-emoji-flat:globe-showing-europe-africa"
-                      className="w-[28px] h-[28px]"
-                    />
-                  </span>
-                  <span>Global Security Standards</span>
-                </h3>
-                <div>
-                  <div className="flex flex-wrap gap-4">
-                    {globalSecurityStandards.map((item, index) => (
-                      <div
-                        key={index}
-                        className="text-xs font-medium px-4 py-3 rounded-sm  text-[#FFFFFF] bg-[#42515059]"
-                      >
-                        {item}
-                      </div>
-                    ))}
+            </LeftAnimation>
+            <RightAnimation>
+              <div className="flex-2 flex flex-col sm:flex-row gap-10 mt-10 lg:mt-0">
+                <div className="h-auto md:h-[270px] p-4 space-y-4 rounded-[21px] border border-[#4C737029] bg-[#66666614]">
+                  <h3 className="text-sm font-bold flex gap-4 text-[#E9E9ED]">
+                    <span>
+                      <Icon
+                        icon="emojione:flag-for-india"
+                        className="w-[28px] h-[28px]"
+                      />
+                    </span>
+                    <span>India Regulatory Frameworks</span>
+                  </h3>
+                  <div>
+                    <div className="flex flex-wrap gap-4">
+                      {indiaRegulatoryCiso.map((item, index) => (
+                        <div
+                          key={index}
+                          className="text-xs font-medium px-4 py-3 rounded-sm w-auto text-[#FFFFFF] bg-[#42515059]"
+                        >
+                          {item}
+                        </div>
+                      ))}
+                    </div>
                   </div>
+                  <hr className="border-[1.5px] border-[#7590B833] my-3" />
+                  <p className="text-sm font-normal text-[#B7C5DC]">
+                    Support for applicable financial-sector, incident reporting,
+                    privacy, and cybersecurity governance requirements.
+                  </p>
                 </div>
-                <hr className="border-[1.5px] border-[#7590B833] my-4" />
-                <p className="text-sm font-normal text-[#B7C5DC]">
-                  Support for security management systems, assurance
-                  requirements, and relevant privacy or industry standards.
-                </p>
+                <div className="h-auto md:h-[270px] p-4 space-y-4 rounded-[21px] border border-[#4C737029] bg-[#66666614]">
+                  <h3 className="text-sm font-bold flex gap-4 text-[#E9E9ED]">
+                    <span>
+                      <Icon
+                        icon="fluent-emoji-flat:globe-showing-europe-africa"
+                        className="w-[28px] h-[28px]"
+                      />
+                    </span>
+                    <span>Global Security Standards</span>
+                  </h3>
+                  <div>
+                    <div className="flex flex-wrap gap-4">
+                      {globalSecurityStandards.map((item, index) => (
+                        <div
+                          key={index}
+                          className="text-xs font-medium px-4 py-3 rounded-sm  text-[#FFFFFF] bg-[#42515059]"
+                        >
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <hr className="border-[1.5px] border-[#7590B833] my-4" />
+                  <p className="text-sm font-normal text-[#B7C5DC]">
+                    Support for security management systems, assurance
+                    requirements, and relevant privacy or industry standards.
+                  </p>
+                </div>
               </div>
-            </div>
+            </RightAnimation>
           </div>
           <div className="mt-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -1095,14 +1113,14 @@ function Vicso() {
       <section className="w-full py-14 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <Animation>
-            <div className="max-w-xl space-y-4 text-center lg:text-left">
-              <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
+            <div className="lg:max-w-xl space-y-4 text-center lg:text-left">
+              <p className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading">
                 ENGAGEMENT LIFECYCLE
               </p>
               <h2 className="text-[#FFFFFF]">
                 vCISO Services Across Key Markets
               </h2>
-              <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+              <p className="sectionDescription text-[#D1D1D1]">
                 ISECURION provides dedicated vCISO services in every major
                 Indian business hub, with remote, hybrid, and on-site engagement
                 models available.
@@ -1142,13 +1160,15 @@ function Vicso() {
           </div>
           <div className="mt-10 flex flex-col lg:flex-row gap-10">
             <div className="flex-1 p-6 rounded-lg border border-[#18242F] bg-[#0E1623]">
-              <h4 className="text-sm font-semibold flex items-center gap-3 uppercase tracking-[3px] text-[#0F66EA]">
-                <span className="w-[35px] h-[2px] bg-[#0F66EA]"></span>{" "}
-                Engagement milestones
-              </h4>
-              <h3 className="text-xl sm:text-2xl lg:text-[28px] font-medium text-[#FFFFFF]">
-                Key steps. Measurable outcomes.
-              </h3>
+              <div className="space-y-3 text-center lg:text-left">
+                <h4 className="text-sm font-semibold flex items-center justify-center lg:justify-start gap-3 uppercase tracking-[3px] text-[#0F66EA]">
+                  <span className="w-[35px] h-[2px] bg-[#0F66EA]"></span>{" "}
+                  Engagement milestones
+                </h4>
+                <h3 className="text-xl sm:text-2xl lg:text-[28px] font-medium text-[#FFFFFF]">
+                  Key steps. Measurable outcomes.
+                </h3>
+              </div>
               <div className="mt-8">
                 <div className="space-y-7 relative">
                   {engagementMilestones.map((item, index) => (
@@ -1188,17 +1208,19 @@ function Vicso() {
               </div>
             </div>
             <div className="flex-1 p-6 rounded-lg border border-[#18242F] bg-[#0E1623]">
-              <h4 className="text-sm font-semibold flex items-center gap-3 uppercase tracking-[3px] text-[#0F66EA]">
-                <span className="w-[35px] h-[2px] bg-[#0F66EA]"></span>{" "}
-                Regulatory coverage by industry
-              </h4>
-              <h3 className="text-xl sm:text-2xl lg:text-[28px] font-medium text-[#FFFFFF]">
-                Industry-aligned. Regulation-ready.
-              </h3>
-              <p className="text-sm sm:text-base font-normal leading-[31px] text-[#D1D1D1]">
-                Deep domain expertise and framework knowledge across key
-                sectors, so you stay compliant and future-ready.
-              </p>
+              <div className="space-y-3 text-center lg:text-left">
+                <h4 className="text-sm font-semibold flex items-center justify-center lg:justify-start gap-3 uppercase tracking-[3px] text-[#0F66EA]">
+                  <span className="w-[35px] h-[2px] bg-[#0F66EA]"></span>{" "}
+                  Regulatory coverage by industry
+                </h4>
+                <h3 className="text-xl sm:text-2xl lg:text-[28px] font-medium text-[#FFFFFF]">
+                  Industry-aligned. Regulation-ready.
+                </h3>
+                <p className="text-sm sm:text-base font-normal leading-[28px] text-[#D1D1D1]">
+                  Deep domain expertise and framework knowledge across key
+                  sectors, so you stay compliant and future-ready.
+                </p>
+              </div>
               <div className="mt-8">
                 <div className="space-y-7 ">
                   {regulatoryCoverage.map((item, index) => (
@@ -1249,7 +1271,7 @@ function Vicso() {
                   <h2 className="text-[#FEFEFE]">
                     vCISO Services Across Key Markets{" "}
                   </h2>
-                  <p className="text-base md:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+                  <p className="sectionDescription text-[#D1D1D1]">
                     ISECURION provides dedicated vCISO services in every major
                     Indian business hub, with remote, hybrid, and on-site
                     engagement models available.
@@ -1272,7 +1294,7 @@ function Vicso() {
                   return (
                     <div key={index}>
                       <div
-                        className={`space-y-3 p-3 flex flex-col items-center ${!isLastColumn ? "border-r border-[#242A3B]" : ""} `}
+                        className={`space-y-3 p-3 flex flex-col items-center ${!isLastColumn ? "sm:order-r border-[#242A3B]" : ""} `}
                       >
                         <GradientIcon Icon={item.Icon} />
 
@@ -1292,15 +1314,15 @@ function Vicso() {
           {/* global coverage  */}
           <div className="flex flex-col lg:flex-row items-center py-10 px-6 sm:px-10 mt-10 rounded-[19px] gap-10  border border-gray-700 bg-linear-to-r from-[#1D1E2A]/4 to-[#3B9E6A]/25">
             <div className="w-full flex-1 space-y-4 ">
-              <p className="text-lg sm:text-xl font-medium text-[#0F66EA]">
+              <p className="text-base sm:text-lg lg:text-xl font-medium text-center md:text-left text-[#0F66EA] sectionheading">
                 GLOBAL COVERAGE
               </p>
-              <h3 className="text-2xl font-medium leading-[35px] md:leading-[38px] text-[#FEFEFE]">
-                Global reach. Consistent standards.
+              <h3 className="text-xl md:text-2xl font-medium leading-[35px] md:leading-[38px] text-center md:text-left text-[#FEFEFE]">
+                Global reach. <br /> Consistent standards.
               </h3>
-              <p className="text-base sm:text-lg font-normal max-w-sm leading-[28px] text-[#D1D1D1]">
-                International-standard VAPT services delivered across key global
-                markets.
+              <p className="text-base sm:text-[17px] font-normal max-w-sm leading-[28px] text-center md:text-left text-[#D1D1D1]">
+                India-headquartered expertise. Globally deployed. Locally
+                compliant.
               </p>
             </div>
             <div className="w-full flex-2 ">
@@ -1309,7 +1331,7 @@ function Vicso() {
                   <AnimatedCard
                     key={index}
                     delay={index * 0.15}
-                    className={`w-[150px] flex flex-col items-center gap-3 px-3 ${index !== globalLocations.length - 1 ? "border-[#2B3756] border-r" : ""}`}
+                    className={`w-[150px] flex flex-col items-center gap-3 px-3 ${index !== globalLocations.length - 1 ? "border-[#2B3756] sm:border-r" : ""}`}
                   >
                     <GradientIcon Icon={item.Icon} />
 
@@ -1335,27 +1357,33 @@ function Vicso() {
           style={{ backgroundImage: `url(${isecurionapartbackground.src})` }}
         >
           <div className="max-w-7xl mx-auto px-6 sm:px-10 h-full flex items-center justify-start">
-            <div className="space-y-4 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-              <p className="text-sm sm:text-base font-semibold uppercase text-[#C8912A]">
-                What Sets ISECURION Apart?
-              </p>
-              <h2 className="text-[#FFFFFF]">
-                Connecting Security Strategy, Compliance & Execution
-              </h2>
-              <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
-                ISECURION combines strategic security leadership, regulatory
-                expertise, and practical execution to help organizations
-                strengthen security posture, manage risk, and meet evolving
-                compliance requirements.
-              </p>
-            </div>
+            <Animation>
+              <div className="space-y-4 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
+                <p className="text-sm sm:text-base font-semibold uppercase text-[#C8912A] sectionheading">
+                  What Sets ISECURION Apart?
+                </p>
+                <h2 className="text-[#FFFFFF]">
+                  Connecting Security Strategy, Compliance & Execution
+                </h2>
+                <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+                  ISECURION combines strategic security leadership, regulatory
+                  expertise, and practical execution to help organizations
+                  strengthen security posture, manage risk, and meet evolving
+                  compliance requirements.
+                </p>
+              </div>
+            </Animation>
           </div>
         </div>
         <div className="py-10">
           <div className="max-w-7xl mx-auto px-6 sm:px-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
               {isecurionApart.map((item, index) => (
-                <div key={index} className="space-y-2">
+                <AnimatedCard
+                  delay={index * 0.15}
+                  key={index}
+                  className="space-y-2"
+                >
                   <div className="relative">
                     <Icon
                       icon={item.Icon}
@@ -1369,14 +1397,14 @@ function Vicso() {
                   <p className="text-sm sm:text-base font-normal leading-[24px] text-[#D1D1D1D6]">
                     {item.description}
                   </p>
-                </div>
+                </AnimatedCard>
               ))}
             </div>
           </div>
         </div>
         <div className="w-full py-5 bg-[#08152899] border-t border-b border-[#13304F]">
-          <div className="max-w-7xl mx-auto px-6 sm:px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
-            <div>
+          <div className="max-w-7xl mx-auto px-6 sm:px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="space-y-2">
               <h3 className="text-lg sm:text-2xl lg:text-[30px] font-medium font-Montserrat text-[#FFFFFF]">
                 500+
               </h3>
@@ -1384,7 +1412,7 @@ function Vicso() {
                 Clients Served Globally
               </p>
             </div>
-            <div>
+            <div className="space-y-2">
               <h3 className="text-lg sm:text-2xl lg:text-[30px] font-medium font-Montserrat text-[#FFFFFF]">
                 1-2 wks
               </h3>
@@ -1392,7 +1420,7 @@ function Vicso() {
                 Rapid Deployment
               </p>
             </div>
-            <div>
+            <div className="space-y-2">
               <h3 className="text-lg sm:text-2xl lg:text-[30px] font-medium font-Montserrat text-[#FFFFFF]">
                 7
               </h3>
@@ -1400,7 +1428,7 @@ function Vicso() {
                 Global Markets
               </p>
             </div>
-            <div>
+            <div className="space-y-2">
               <h3 className="text-lg sm:text-2xl lg:text-[30px] font-medium font-Montserrat text-[#FFFFFF]">
                 0
               </h3>
@@ -1414,30 +1442,28 @@ function Vicso() {
 
       {/* VISIBLE DELIVERABLES  */}
       <section className="w-full py-14">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col lg:flex-row gap-10">
-          <div className="w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
-            <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
-              VCISO DELIVERABLES
-            </p>
-            <h2 className="text-[#FFFFFF]">
-              Clear Deliverables. Measurable Security Progress.
-            </h2>
-            <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
-              Get actionable security documentation, prioritized improvement
-              plans, and compliance insights that help turn strategic priorities
-              into measurable outcomes.
-            </p>
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col lg:flex-row gap-8 lg:gap-20">
+          <div className="w-full space-y-4 ">
+            <div className="space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left sticky top-24">
+              <p className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading">
+                VCISO DELIVERABLES
+              </p>
+              <h2 className="text-[#FFFFFF]">
+                Clear Deliverables. Measurable Security Progress.
+              </h2>
+              <p className="sectionDescription text-[#D1D1D1]">
+                Get actionable security documentation, prioritized improvement
+                plans, and compliance insights that help turn strategic
+                priorities into measurable outcomes.
+              </p>
+            </div>
           </div>
           <div className="flex-1">
             <div className="relative mt-8">
               <div className="absolute top-0 bottom-0 border-l-[3px] border-[#152329] shadow-[inset_13px_0_4px_0_#FFFFFFCF]"></div>
               <div className="space-y-8">
                 {deliverable.map((item, index) => (
-                  <AnimatedCard
-                    key={index}
-                    delay={index * 0.15}
-                    className="flex gap-10"
-                  >
+                  <div key={index} className="flex gap-10">
                     <div className="relative w-0">
                       <div className="absolute top-0 -left-[9px] w-[20px] h-[20px] rounded-full border border-[#FFFFFF] bg-[#0F66EA]" />
                     </div>
@@ -1456,7 +1482,7 @@ function Vicso() {
                         </p>
                       </div>
                     </div>
-                  </AnimatedCard>
+                  </div>
                 ))}
               </div>
             </div>
@@ -1472,17 +1498,17 @@ function Vicso() {
       {/* Ready to Strengthen Your Cybersecurity Posture?  */}
       <section className="w-full py-8 rounded-tr-[42px] rounded-tl-[42px] bg-[#121828]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 ">
-          <div className=" space-y-4">
-            <h2 className="font-semibold max-w-lg text-[#FFFFFF]">
+          <div className="space-y-4 text-center lg:text-left">
+            <h2 className="font-semibold lg:max-w-lg text-[#FFFFFF]">
               Ready to Strengthen Your Cybersecurity Posture?
             </h2>
-            <p className="text-base sm:text-lg max-w-2xl font-medium text-[#D1D1D1]">
+            <p className="text-base sm:text-[17px] lg:max-w-2xl font-medium text-[#D1D1D1]">
               Get expert vCISO services in India - Bangalore, Mumbai, Delhi,
               Pune, Hyderabad - and globally across USA, Singapore, UAE, Europe,
               and Australia.
             </p>
             <div className="flex flex-wrap gap-3">
-              <button className="text-base font-medium p-3 flex items-center gap-2 rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border border-[#FFFFFF1F] shadow-[inset_0_0_4px_#FFFFFF1F,0_4px_10px_#3263B199]">
+              <button className="text-base font-medium p-3 flex items-center gap-2 mx-auto lg:mx-0 rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border border-[#FFFFFF1F] shadow-[inset_0_0_4px_#FFFFFF1F,0_4px_10px_#3263B199]">
                 Schedule Consultation{" "}
                 <span>
                   <Icon
@@ -1491,7 +1517,7 @@ function Vicso() {
                   />
                 </span>
               </button>
-              <button className="text-base font-medium p-3 flex items-center rounded-[10px] text-[#FFFFFF] border border-[#FFFFFF29]">
+              <button className="text-base font-medium p-3 flex items-center rounded-[10px] mx-auto lg:mx-0 text-[#FFFFFF] border border-[#FFFFFF29]">
                 <span>
                   <Icon
                     icon="flowbite:outgoing-call-outline"
@@ -1500,7 +1526,7 @@ function Vicso() {
                 </span>
                 Call India (Bangalore): +91- 8861201570
               </button>
-              <button className="text-base font-medium p-3 gap-2 flex items-center rounded-[10px] text-[#FFFFFF] border border-[#FFFFFF29]">
+              <button className="text-base font-medium p-3 gap-2 flex items-center rounded-[10px] mx-auto lg:mx-0 text-[#FFFFFF] border border-[#FFFFFF29]">
                 <span>
                   <Icon
                     icon="eva:email-outline"

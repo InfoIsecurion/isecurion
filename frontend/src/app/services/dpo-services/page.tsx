@@ -1,7 +1,13 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { Icon } from "@iconify/react";
-import { Animation, AnimatedCard, GradientIcon, LeftAnimation, RightAnimation } from "../../../components/ui/Animation";
+import {
+  Animation,
+  AnimatedCard,
+  GradientIcon,
+  LeftAnimation,
+  RightAnimation,
+} from "../../../components/ui/Animation";
 import heroBackground from "../../../assets/services/backgroundPattern.png";
 import privacySectionBackground from "../../../assets/services/your-privacyBackground.png";
 import FAQSection from "../../../components/sections/FAQSection";
@@ -19,7 +25,6 @@ interface ContactFormData {
   location: string;
   engagement: string;
   message: string;
-  turnstileToken: string;
 }
 
 const services = [
@@ -85,42 +90,42 @@ const globalCards = [
 ];
 
 const whoNeedsDpo = [
-    {
-        Icon: "boxicons:bank",
-        heading: "Regulated Organizations",
-        description:
-            "Businesses operating under data protection laws or sector-specific regulatory requirements that need structured privacy oversight.",
-    },
-    {
-        Icon: "iconmind:compliance-outline-regular",
-        heading: "GDPR-Regulated Businesses",
-        description:
-            "Organisations whose processing activities meet the criteria for mandatory DPO appointment under GDPR.",
-    },
-    {
-        Icon: "healthicons:chart-cured-increasing-24px",
-        heading: "Startups & SaaS Companies",
-        description:
-            "Scaling businesses that need privacy governance to support enterprise customers, partnerships, and market expansion.",
-    },
-    {
-        Icon: "ri:global-line",
-        heading: "Businesses Handling Global Data",
-        description:
-            "Organisations processing personal data across multiple jurisdictions with overlapping privacy requirements.",
-    },
-    {
-        Icon: "material-symbols:vpn-key-alert-outline",
-        heading: "Organisations Facing Privacy Gaps",
-        description:
-            "Businesses with incomplete privacy documentation, unclear accountability, or gaps in data handling processes.",
-    },
-    {
-        Icon: "charm:shield-warning",
-        heading: "Businesses Facing Data Breaches",
-        description:
-            "Organisations seeking structured support for data breaches, privacy complaints, and remediation activities.",
-    },
+  {
+    Icon: "boxicons:bank",
+    heading: "Regulated Organizations",
+    description:
+      "Businesses operating under data protection laws or sector-specific regulatory requirements that need structured privacy oversight.",
+  },
+  {
+    Icon: "iconmind:compliance-outline-regular",
+    heading: "GDPR-Regulated Businesses",
+    description:
+      "Organisations whose processing activities meet the criteria for mandatory DPO appointment under GDPR.",
+  },
+  {
+    Icon: "healthicons:chart-cured-increasing-24px",
+    heading: "Startups & SaaS Companies",
+    description:
+      "Scaling businesses that need privacy governance to support enterprise customers, partnerships, and market expansion.",
+  },
+  {
+    Icon: "ri:global-line",
+    heading: "Businesses Handling Global Data",
+    description:
+      "Organisations processing personal data across multiple jurisdictions with overlapping privacy requirements.",
+  },
+  {
+    Icon: "material-symbols:vpn-key-alert-outline",
+    heading: "Organisations Facing Privacy Gaps",
+    description:
+      "Businesses with incomplete privacy documentation, unclear accountability, or gaps in data handling processes.",
+  },
+  {
+    Icon: "charm:shield-warning",
+    heading: "Businesses Facing Data Breaches",
+    description:
+      "Organisations seeking structured support for data breaches, privacy complaints, and remediation activities.",
+  },
 ];
 
 const engagementLifecycle = [
@@ -223,9 +228,7 @@ const regulatoryCoverage = [
 ];
 
 const dpoLocations = [
-  { name: "Bangalore",
-      Icon: "reicon:city" 
-    },
+  { name: "Bangalore", Icon: "reicon:city" },
   { name: "Mumbai", Icon: "game-icons:tower-bridge" },
   { name: "Hyderabad", Icon: "fluent:building-mosque-12-regular" },
   { name: "Noida", Icon: "icon-park-outline:city-one" },
@@ -236,11 +239,15 @@ const dpoLocations = [
 ];
 
 const globalDpoRegions = [
-    { code: "US", name: "United States", icon: "mingcute:statue-of-liberty-line" },
-    { code: "SG", name: "Singapore", icon: "hugeicons:twin-tower" },
-    { code: "AE", name: "UAE / Dubai", icon: "hugeicons:cayan-tower" },
-    { code: "AU", name: "Australia", icon: "mingcute:sydney-opera-house-line" },
-    { code: "EU", name: "Europe", icon: "icon-park-outline:eiffel-tower" },
+  {
+    code: "US",
+    name: "United States",
+    icon: "mingcute:statue-of-liberty-line",
+  },
+  { code: "SG", name: "Singapore", icon: "hugeicons:twin-tower" },
+  { code: "AE", name: "UAE / Dubai", icon: "hugeicons:cayan-tower" },
+  { code: "AU", name: "Australia", icon: "mingcute:sydney-opera-house-line" },
+  { code: "EU", name: "Europe", icon: "icon-park-outline:eiffel-tower" },
 ];
 
 const outsourcedDeliverables = [
@@ -393,7 +400,7 @@ const dpoFAQs = [
   },
 ];
 
-function DpoServices() {
+function page() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [loading, setLoading] = useState(false);
   const turnstileRef = useRef<TurnstileInstance>(null);
@@ -1586,4 +1593,4 @@ function DpoServices() {
   );
 }
 
-export default DpoServices;
+export default page;

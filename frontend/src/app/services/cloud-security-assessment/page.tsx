@@ -159,49 +159,41 @@ function CloudSecurity() {
     <div>
       {/* hero section  */}
       <section
-        className="bg-cover bg-center h-auto min-h-[424px] py-14 flex items-center justify-center"
+        className="bg-cover bg-center h-auto min-h-[450px] py-14 flex items-center justify-center"
         style={{ backgroundImage: `url(${cloudsecurity.src})` }}
       >
         <div className="max-w-7xl w-full mx-auto px-6 sm:px-10 space-y-7 flex flex-col items-center lg:items-start text-center lg:text-left">
-          <motion.h1
-            initial={{ opacity: 0, y: 80 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="font-semibold text-[#FFFFFF]"
+          <h1
+            className=" text-[#FFFFFF] opacity-0 animate-hero-reveal"
+            style={{ animationDelay: "150ms" }}
           >
             Cloud Security Assessment
-          </motion.h1>
+          </h1>
 
           <div className="space-y-1">
-            <motion.p
-              initial={{ opacity: 0, y: 80 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="text-base sm:text-lg font-medium  max-w-2xl leading-7 md:leading-8 text-[#D9D9D9]"
+            <p
+              className="sectionDescription  max-w-2xl  text-[#D9D9D9] opacity-0 animate-hero-reveal"
+              style={{ animationDelay: "300ms" }}
             >
               Cloud environments introduce new risks across infrastructure,
               identities, applications, data, and configurations.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 80 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="text-base sm:text-lg font-medium  max-w-2xl leading-7 md:leading-8 text-[#D9D9D9]"
+            </p>
+            <p
+              className="text-base sm:text-lg font-medium  max-w-2xl  text-[#D9D9D9] opacity-0 animate-hero-reveal"
+              style={{ animationDelay: "450ms" }}
             >
               ISECURION assesses your cloud environment to uncover
               vulnerabilities, misconfigurations, and security gaps before they
               become business risks.
-            </motion.p>
+            </p>
           </div>
-          <motion.button
-            initial={{ opacity: 0, y: 80 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15 }}
-            className="text-base font-medium flex items-center gap-3 px-4 py-4 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]"
+          <button
+            className="text-base font-medium flex items-center gap-3 px-4 py-4 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
+            style={{ animationDelay: "650ms" }}
           >
             Schedule My Cloud Security Consultation
             <Icon icon="akar-icons:arrow-right" className="text-xl" />
-          </motion.button>
+          </button>
         </div>
       </section>
 
@@ -212,16 +204,16 @@ function CloudSecurity() {
           <div className="space-y-4">
             <Animation>
               <div className="space-y-4 text-center lg:text-left">
-                <h2 className="font-medium text-[#FEFEFE]">
+                <h2 className=" text-[#FEFEFE]">
                   What Is Cloud Security Assessment?
                 </h2>
-                <p className="text-base sm:text-lg font-normal lg:max-w-lg leading-[25px] md:leading-[31px] text-[#D1D1D1]">
+                <p className="sectionDescription lg:max-w-lg  text-[#D1D1D1]">
                   A Cloud Security Assessment is a structured evaluation of your
                   cloud infrastructure, configurations, identities,
                   applications, and security controls to identify
                   vulnerabilities and compliance gaps.
                 </p>
-                <p className="text-base sm:text-lg font-normal lg:max-w-xl leading-[25px] md:leading-[31px] text-[#D1D1D1]">
+                <p className="sectionDescription lg:max-w-xl  text-[#D1D1D1]">
                   At ISECURION, we assess{" "}
                   <span className="font-semibold">
                     IaaS, PaaS, and SaaS environments
@@ -291,10 +283,10 @@ function CloudSecurity() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <Animation>
             <div className="text-center space-y-4">
-              <h2 className="font-medium text-[#FEFEFE]">
+              <h2 className=" text-[#FEFEFE]">
                 Our Cloud Security Methodology
               </h2>
-              <p className="text-base sm:text-lg max-w-2xl mx-auto leading-[25px] md:leading-[31px] text-[#D1D1D1]">
+              <p className="sectionDescription max-w-2xl mx-auto  text-[#D1D1D1]">
                 Our methodology combines architecture review, security testing,
                 configuration analysis, and expert-led assessment to identify
                 and prioritize cloud security risks.

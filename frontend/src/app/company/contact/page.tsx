@@ -1,14 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import LocationMap from "../../../components/ui/LocationMap";
 import leftBackground from "../../../assets/contact/left_background.png";
 import contactBg from "../../../assets/contact/Section.svg";
-import { Animation } from "../../../components/ui/Animation";
+import { AnimatedCard, Animation } from "../../../components/ui/Animation";
 import { contactForm } from "../../../services/api/contact";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { Turnstile } from "@marsidev/react-turnstile";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 
 interface ContactFormData {
   fullname: string;
@@ -103,6 +103,8 @@ const contactDots = [
 function Contact() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [loading, setLoading] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
+
   const {
     register,
     handleSubmit,
@@ -122,10 +124,16 @@ function Contact() {
       if (response.status === 200) {
         toast.success(response.message);
         reset();
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
       } else {
         toast.error(response.message);
       }
     } catch (error) {
+      toast.error(
+        error.response?.data?.message ||
+          "Something went wrong. Please try again.",
+      );
     } finally {
       setLoading(false);
     }
@@ -164,8 +172,11 @@ function Contact() {
             {/* left section  */}
             <div className="flex-1 space-y-4">
               <div className="space-y-4 flex flex-col  items-center lg:items-start">
-                <div className="w-fit px-4 py-1 rounded-4xl bg-[#161B2F]">
-                  <p className="text-sm font-medium flex items-center gap-2 text-[#B4CAFD]">
+                <div
+                  className="w-fit px-4 py-1 rounded-4xl bg-[#161B2F] opacity-0 animate-hero-reveal"
+                  style={{ animationDelay: "150ms" }}
+                >
+                  <p className="text-sm sm:text-base font-semibold flex items-center gap-2 sectionheading text-[#B4CAFD] ">
                     <span>
                       <Icon
                         icon="material-symbols:contact-support-rounded"
@@ -176,17 +187,26 @@ function Contact() {
                     CONTACT US
                   </p>
                 </div>
-                <h1 className="text-white text-center lg:text-left lg:leading-[56px]">
+                <h1
+                  className="text-white text-center lg:text-left opacity-0 animate-hero-reveal"
+                  style={{ animationDelay: "300ms" }}
+                >
                   We'd love to hear <br /> from you
                 </h1>
-                <p className="text-base sm:text-[18px] font-normal text-center lg:text-left leading-7 text-[#D1D1D1] max-w-[424px] leading-[31px]">
+                <p
+                  className="text-base sm:text-[18px] font-normal text-center lg:text-left leading-7 text-[#D1D1D1] max-w-[424px] leading-[31px] opacity-0 animate-hero-reveal"
+                  style={{ animationDelay: "450ms" }}
+                >
                   Have a question, feedback, or need help? Our team is here to
                   assist you. Whether you're a current customer or just
                   exploring ISECURION, we're happy to help.
                 </p>
               </div>
 
-              <div className="gap-5 mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
+              <div
+                className="gap-5 mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 opacity-0 animate-hero-reveal"
+                style={{ animationDelay: "600ms" }}
+              >
                 <div className="flex items-center gap-4 p-5 rounded-lg bg-[#0F66EA29]">
                   <div className="w-[45px] h-[45px] rounded-full flex items-center justify-center bg-[#002A69]">
                     <Icon
@@ -357,6 +377,7 @@ function Contact() {
                   <p className="text-sm font-medium text-white">Captcha</p>
 
                   <Turnstile
+                    ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                     onSuccess={(token) => setTurnstileToken(token)}
                     onExpire={() => setTurnstileToken("")}
@@ -396,10 +417,11 @@ function Contact() {
 
           {/* contact cards  */}
           <Animation>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 mt-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 mt-10">
               {enquiredata.map((item, index) => (
-                <div
+                <AnimatedCard
                   key={index}
+                  delay={index * 0.15}
                   className="flex flex-col justify-between space-y-5 p-5 rounded-[12px] bg-[#0F234A]"
                 >
                   <div className="flex items-center justify-center w-[47px] h-[47px] rounded-[10px] bg-[#002A69]">
@@ -411,7 +433,7 @@ function Contact() {
                     />
                   </div>
                   <div className="space-y-1">
-                    <h3 className="text-lg font-semibold text-white">
+                    <h3 className="text-base sm:text-lg font-semibold text-white">
                       {item.title}
                     </h3>
                     <p className="text-[15px] font-medium text-[#D1D1D1] max-w-[200px] mt-2">
@@ -424,7 +446,7 @@ function Contact() {
                       <Icon icon="at-icons:arrow-right" />
                     </span>
                   </button>
-                </div>
+                </AnimatedCard>
               ))}
             </div>
           </Animation>
