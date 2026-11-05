@@ -1,7 +1,7 @@
 import React from 'react'
 import { Animation, AnimatedCard, LeftAnimation, RightAnimation } from '../../../components/ui/Animation'
 import { Icon } from '@iconify/react'
-import heroBackground from '../../../assets/services/heroBackground-soc.svg'
+import heroBackground from '../../../assets/services/inhousescobackgroundImage.png'
 import Image from 'next/image'
 
 const hybridSocServices = [

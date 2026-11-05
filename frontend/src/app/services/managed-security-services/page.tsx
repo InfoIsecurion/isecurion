@@ -16,6 +16,7 @@ import { useForm } from "react-hook-form";
 import { managesSecurityService } from "../../../services/api/contact";
 import { toast } from "react-toastify";
 
+
 interface ContactFormData {
   email: string;
   companyName: string;
@@ -427,7 +428,7 @@ function ManagedSecurityServices() {
   };
 
   return (
-    <div>
+    <div className="bg-black">
       <section className="relative isolate overflow-hidden bg-black py-10 sm:py-12 lg:py-[55px]">
         <div
           aria-hidden="true"
@@ -1139,7 +1140,7 @@ function ManagedSecurityServices() {
       {/* DELIVERABLES  */}
       <section className="w-full py-14 bg-[#060D1B]">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-6 sm:px-10 gap-8 lg:gap-15">
-          <div className="w-full lg:w-[50%] space-y-4 text-center lg:text-left">
+          <div className="w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
             <LeftAnimation>
               <p className="text-sm sm:text-base font-semibold text-[#C8912A]">
                 DELIVERABLES

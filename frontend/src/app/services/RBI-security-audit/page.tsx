@@ -430,10 +430,59 @@ const RBI_FAQs = [
       "Yes, mobile banking and payment applications are thoroughly assessed for security vulnerabilities, authentication mechanisms, data encryption, session management, and compliance with secure coding practices.",
   },
 ];
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { rbiAudit } from "../../../services/api/contact";
+
+interface ContactFormData {
+  email: string;
+  companyName: string;
+  organizationtype: string;
+  turnstileToken: string;
+}
 
 function page() {
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [loading, setLoading] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>();
+
+  const submit = async (data: ContactFormData) => {
+    console.log(data);
+    setLoading(true);
+    try {
+      if (!turnstileToken) {
+        toast.error("Please complete CAPTCHA verification.");
+        return;
+      }
+      const response = await rbiAudit({ ...data, turnstileToken });
+      if (response.status === 200) {
+        toast.success(response.message);
+        reset();
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
+      } else {
+        toast.error(response.message);
+      }
+    } catch (error) {
+      toast.error(
+        error.response?.data?.message ||
+          "Something went wrong. Please try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div>
+    <div className="bg-black">
       <section className="relative isolate overflow-hidden bg-black py-10 sm:py-12 lg:py-[55px]">
         <div
           aria-hidden="true"
@@ -509,7 +558,7 @@ function page() {
                 </div>
 
                 {/* Form*/}
-                <form className="mt-8">
+                <form className="mt-8" onSubmit={handleSubmit(submit)}>
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div>
                       <label
@@ -524,9 +573,16 @@ function page() {
                         name="workEmail"
                         type="email"
                         placeholder="youremail@gmail.com"
-                        required
-                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD] ${errors.email ? "border border-red-500" : ""}`}
+                        {...register("email", {
+                          required: "Email is required",
+                        })}
                       />
+                      {errors.email && (
+                        <p className="text-sm font-normal text-red-500">
+                          {errors.email.message}
+                        </p>
+                      )}
                     </div>
 
                     <div>
@@ -543,6 +599,7 @@ function page() {
                         type="text"
                         placeholder="Company name"
                         className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        {...register("companyName")}
                       />
                     </div>
                   </div>
@@ -561,20 +618,34 @@ function page() {
                         id="target"
                         name="target"
                         defaultValue=""
-                        required
                         aria-label="Select Industry Sector"
-                        className="h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        className={`h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD] ${errors.organizationtype ? "border border-red-500" : ""}`}
+                        {...register("organizationtype", {
+                          required: "Organization type is required",
+                        })}
                       >
-                        <option selected>Select Organization Type</option>
+                        <option value="">Select Organization Type</option>
 
-                        <option>Scheduled Commercial Bank</option>
-                        <option>Cooperative Bank / Urban Co-op</option>
-                        <option>Non-Banking Financial Company (NBFC)</option>
-                        <option>Small Finance Bank</option>
-                        <option>Payment Bank</option>
-                        <option>FinTech Company</option>
-                        <option>Technology Vendor for Banking</option>
-                        <option>Other Financial Institution</option>
+                        <option value="Scheduled Commercial Bank">
+                          Scheduled Commercial Bank
+                        </option>
+                        <option value="Cooperative Bank / Urban Co-op">
+                          Cooperative Bank / Urban Co-op
+                        </option>
+                        <option value="Non-Banking Financial Company (NBFC)">
+                          Non-Banking Financial Company (NBFC)
+                        </option>
+                        <option value="Small Finance Bank">
+                          Small Finance Bank
+                        </option>
+                        <option value="Payment Bank">Payment Bank</option>
+                        <option value="FinTech Company">FinTech Company</option>
+                        <option value="Technology Vendor for Banking">
+                          Technology Vendor for Banking
+                        </option>
+                        <option value="Other Financial Institution">
+                          Other Financial Institution
+                        </option>
                       </select>
 
                       <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#777]">
@@ -599,23 +670,14 @@ function page() {
                   {/* Captcha */}
                   <div className="mt-7">
                     <div className="flex items-center gap-3">
-                      <span className="text-[13px] leading-5 text-[#E7E7E7]">
-                        Captcha
-                      </span>
-
-                      <span className="flex h-[32px] min-w-[127px] items-center justify-center rounded-[5px] bg-[#3B9E6AC9] px-5 text-[13px] font-medium tracking-wide text-white">
-                        ZRLD9Y
-                      </span>
+                      <Turnstile
+                        ref={turnstileRef}
+                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                        onSuccess={(token) => setTurnstileToken(token)}
+                        onExpire={() => setTurnstileToken("")}
+                        onError={() => setTurnstileToken("")}
+                      />
                     </div>
-
-                    <input
-                      id="captcha"
-                      name="captcha"
-                      type="text"
-                      placeholder="Enter the text shown above"
-                      required
-                      className="mt-3 h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
-                    />
                   </div>
 
                   {/* Consent */}
@@ -643,7 +705,7 @@ function page() {
                   {/* Submit */}
                   <button
                     type="submit"
-                    className="mt-8 flex h-[51px] w-full items-center justify-center rounded-[7px] border border-[#4D78C4] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(39,84,148,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#5282D3] hover:to-[#2B5CA0] active:translate-y-0"
+                    className={`mt-8 flex h-[51px] w-full items-center justify-center rounded-[7px] border border-[#4D78C4] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(39,84,148,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#5282D3] hover:to-[#2B5CA0] active:translate-y-0 ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
                   >
                     Request RBI Audit Consultation{""}
                     <span className="ml-1.5 text-[18px] leading-none">
@@ -919,9 +981,9 @@ function page() {
 
       <section className="w-full py-14 bg-[#060D1B]">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-6 sm:px-10 gap-8 lg:gap-15">
-          <div className="w-full lg:w-[50%] space-y-4 text-center lg:text-left">
+          <div className="w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
             <LeftAnimation>
-              <p className="text-sm sm:text-base font-semibold text-[#3B9E6A]">
+              <p className="mt-10 text-sm sm:text-base font-semibold text-[#3B9E6A]">
                 WHAT YOU RECEIVE
               </p>
               <h2 className="mt-2 font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF] lg:max-w-[490px]">

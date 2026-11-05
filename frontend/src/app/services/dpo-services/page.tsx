@@ -126,6 +126,42 @@ const whoNeedsDpo = [
     description:
       "Organisations seeking structured support for data breaches, privacy complaints, and remediation activities.",
   },
+  {
+    Icon: "boxicons:bank",
+    heading: "Regulated Organizations",
+    description:
+      "Businesses operating under data protection laws or sector-specific regulatory requirements that need structured privacy oversight.",
+  },
+  {
+    Icon: "iconmind:compliance-outline-regular",
+    heading: "GDPR-Regulated Businesses",
+    description:
+      "Organisations whose processing activities meet the criteria for mandatory DPO appointment under GDPR.",
+  },
+  {
+    Icon: "healthicons:chart-cured-increasing-24px",
+    heading: "Startups & SaaS Companies",
+    description:
+      "Scaling businesses that need privacy governance to support enterprise customers, partnerships, and market expansion.",
+  },
+  {
+    Icon: "ri:global-line",
+    heading: "Businesses Handling Global Data",
+    description:
+      "Organisations processing personal data across multiple jurisdictions with overlapping privacy requirements.",
+  },
+  {
+    Icon: "material-symbols:vpn-key-alert-outline",
+    heading: "Organisations Facing Privacy Gaps",
+    description:
+      "Businesses with incomplete privacy documentation, unclear accountability, or gaps in data handling processes.",
+  },
+  {
+    Icon: "charm:shield-warning",
+    heading: "Businesses Facing Data Breaches",
+    description:
+      "Organisations seeking structured support for data breaches, privacy complaints, and remediation activities.",
+  },
 ];
 
 const engagementLifecycle = [
@@ -229,6 +265,7 @@ const regulatoryCoverage = [
 
 const dpoLocations = [
   { name: "Bangalore", Icon: "reicon:city" },
+  { name: "Bangalore", Icon: "reicon:city" },
   { name: "Mumbai", Icon: "game-icons:tower-bridge" },
   { name: "Hyderabad", Icon: "fluent:building-mosque-12-regular" },
   { name: "Noida", Icon: "icon-park-outline:city-one" },
@@ -239,6 +276,15 @@ const dpoLocations = [
 ];
 
 const globalDpoRegions = [
+  {
+    code: "US",
+    name: "United States",
+    icon: "mingcute:statue-of-liberty-line",
+  },
+  { code: "SG", name: "Singapore", icon: "hugeicons:twin-tower" },
+  { code: "AE", name: "UAE / Dubai", icon: "hugeicons:cayan-tower" },
+  { code: "AU", name: "Australia", icon: "mingcute:sydney-opera-house-line" },
+  { code: "EU", name: "Europe", icon: "icon-park-outline:eiffel-tower" },
   {
     code: "US",
     name: "United States",
@@ -440,7 +486,7 @@ function page() {
   };
 
   return (
-    <div>
+    <div className="bg-black">
       {/* hero section  */}
       <section className="relative overflow-hidden min-h-[80vh] py-14 flex items-center  bg-[#000000]">
         <div className="absolute w-[650px] h-[650px] left-20 rounded-full blur-[200px] pointer-events-none bg-[#0F66EA80]"></div>
@@ -1526,12 +1572,12 @@ function page() {
       {/* OUTSOURCED DELIVERABLES  */}
       <section className="w-full py-14 bg-[#060D1B]">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-6 sm:px-10 gap-8 lg:gap-15">
-          <div className="w-full lg:w-[50%] space-y-4 text-center lg:text-left">
+          <div className="w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
             <LeftAnimation>
               <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
                 OUTSOURCED DPO DELIVERABLES
               </p>
-              <h2 className="font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF] lg:max-w-[490px]">
+              <h2 className="mt-4 font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF] lg:max-w-[490px]">
                 Clear Privacy Deliverables. Measurable Compliance Progress.
               </h2>
               <p className="text-base sm:text-lg font-normal leading-[25px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[509px]">

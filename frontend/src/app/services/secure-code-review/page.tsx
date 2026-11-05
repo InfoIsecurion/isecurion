@@ -272,7 +272,7 @@ function SecureCode() {
       {/* Secure Code Review Methodology  */}
       <section className="relative w-full py-14 overflow-hidden bg-[#060D1B]">
         <div className="absolute top-0 left-[10%] w-[80%] h-[400px] blur-3xl rounded-full pointer-events-none opacity-70 bg-[#FFA8262E]"></div>
-        <div className="max-w-7xl mx-auto px-6 sm:px-10">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 sm:py-8">
           {/* this is the heading  */}
           <Animation>
             <div className="space-y-4 text-center lg:text-left">
@@ -299,10 +299,10 @@ function SecureCode() {
                       ></Icon>
                     </span>
                   </p>
-                  <h3 className="text-sm sm:text-base font-medium text-[#F5F0E8]">
+                  <h3 className="text-sm sm:text-[17px] font-medium text-[#F5F0E8] max-w-[155px] leading-7">
                     {item.title}
                   </h3>
-                  <p className="text-[13px] font-normal leading-[22px] text-[#D1D1D1]">
+                  <p className="mt-4 text-[15px] font-normal leading-[22px] text-[#D1D1D1]">
                     {item.description}
                   </p>
                 </div>

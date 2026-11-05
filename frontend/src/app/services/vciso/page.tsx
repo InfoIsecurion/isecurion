@@ -1442,21 +1442,19 @@ function Vicso() {
 
       {/* VISIBLE DELIVERABLES  */}
       <section className="w-full py-14">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col lg:flex-row gap-8 lg:gap-20">
-          <div className="flex-1 space-y-4 ">
-            <div className="space-y-4 text-center lg:text-left sticky top-24">
-              <p className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading">
-                VISIBLE DELIVERABLES
-              </p>
-              <h2 className="text-[#FFFFFF]">
-                Clear Deliverables. Measurable Security Progress.
-              </h2>
-              <p className="sectionDescription text-[#D1D1D1]">
-                Get actionable security documentation, prioritized improvement
-                plans, and compliance insights that help turn strategic
-                priorities into measurable outcomes.
-              </p>
-            </div>
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col lg:flex-row gap-10">
+          <div className="w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
+            <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
+              VCISO DELIVERABLES
+            </p>
+            <h2 className="text-[#FFFFFF]">
+              Clear Deliverables. Measurable Security Progress.
+            </h2>
+            <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+              Get actionable security documentation, prioritized improvement
+              plans, and compliance insights that help turn strategic priorities
+              into measurable outcomes.
+            </p>
           </div>
           <div className="flex-1">
             <div className="relative mt-8">

@@ -525,7 +525,7 @@ function page() {
   };
 
   return (
-    <div>
+    <div className="bg-black">
       <section className="relative isolate overflow-hidden bg-black py-10 sm:py-12 lg:py-[55px]">
         <div
           aria-hidden="true"
@@ -554,22 +554,19 @@ function page() {
                   alignment with applicable SEBI and exchange requirements.
                 </p>
 
-                <ul className="mt-8 grid grid-cols gap-y-4">
-                  {[
-                    "SEBI Guidelines Aligned",
-                    "BSE/NSE Circular Compliant",
-                    "Minimal Business Disruption",
-                    "Exchange-Ready Reports",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-center lg:items-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]"
-                    >
-                      <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#3B9E6A]" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                                <ul className="mt-8 grid grid-cols gap-y-4">
+                                    {[
+                                        "SEBI Guidelines Aligned",
+                                        "BSE/NSE Circular Compliant",
+                                        "Minimal Business Disruption",
+                                        "Exchange-Ready Reports",
+                                    ].map((item) => (
+                                        <li key={item} className="flex items-center justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]">
+                                            <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#3B9E6A]" />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
 
                 {/* CTA */}
                 <div className="mt-10 text-center lg:text-left">
@@ -1172,9 +1169,9 @@ function page() {
 
       <section className="w-full py-14 bg-[#060D1B]">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-6 sm:px-10 gap-8 lg:gap-15">
-          <div className="w-full lg:w-[50%] space-y-4 text-center lg:text-left">
+          <div className="w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
             <LeftAnimation>
-              <p className="text-sm sm:text-base font-semibold text-[#3B9E6A]">
+              <p className="mt-10 text-sm sm:text-base font-semibold text-[#3B9E6A]">
                 WHAT SETS US APART
               </p>
               <h2 className="mt-2 font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF] lg:max-w-[490px]">

@@ -416,18 +416,15 @@ function Iso27001() {
               ISO 27001 Audit, Implementation & Certification
             </h1>
             <p
-              className="text-base sm:text-lg font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] opacity-0 animate-hero-reveal"
+              className="text-base sm:text-lg font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] opacity-0 animate-hero-reveal max-w-[440px]"
               style={{ animationDelay: "450ms" }}
             >
               Establish a robust Information Security Management System (ISMS)
               with expert guidance across risk assessment, security controls,
               documentation, internal audits, and certification readiness.
             </p>
-            <button
-              className="text-base font-medium flex items-center gap-2 px-3 py-4 mx-auto lg:mx-0 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
-              style={{ animationDelay: "600ms" }}
-            >
-              Book a Free Readiness Call{" "}
+            <button className="mt-8 mx-auto lg:mx-0 text-[15px] font-medium px-4 py-3 flex items-center justify-center gap-2 rounded-[10px] cursor-pointer text-[#31435C] bg-white">
+              Book a Free Readiness Call
               <span>
                 <Icon icon="akar-icons:arrow-right" />
               </span>
@@ -436,11 +433,11 @@ function Iso27001() {
               className="mt-6  opacity-0 animate-hero-reveal"
               style={{ animationDelay: "750ms" }}
             >
-              <ul className="space-y-2">
+              <ul className="space-y-2 ">
                 {iso27001Services.map((item, index) => (
                   <li
                     key={index}
-                    className="text-sm font-normal flex items-center gap-2 text-[#D1D1D1]"
+                    className="text-sm sm:text-base font-normal flex items-center gap-3 text-[#D1D1D1] justify-center lg:justify-start"
                   >
                     {" "}
                     <span className="w-2 h-2 inline-flex bg-[#0FEADB]"></span>
@@ -682,10 +679,10 @@ function Iso27001() {
                       className="w-[20px] h-[20px] text-[#FFFFFF]"
                     />
                   </div>
-                  <h3 className="text-base font-medium text-[#F5F0E8]">
+                  <h3 className="sectionDescription text-[#F5F0E8]">
                     {item.heading}
                   </h3>
-                  <p className="text-sm font-normal leading-[21px] text-[#D1D1D1D6]">
+                  <p className="text-sm sm:text-[15px] font-normal leading-[21px] text-[#D1D1D1D6]">
                     {item.description}
                   </p>
                 </AnimatedCard>
@@ -720,7 +717,7 @@ function Iso27001() {
                 <AnimatedCard
                   key={index}
                   delay={index * 0.15}
-                  className="relative p-4 space-y-3 rounded-lg bg-[#66666614] border-[0.99px] border-[#0B15301F]"
+                  className="relative px-5 pt-4 pb-8 space-y-3 rounded-lg bg-[#66666614] border-[0.99px] border-[#0B15301F]"
                 >
                   <div className="absolute left-0 w-[2px] h-[23px] rounded-tr-sm rounded-br-sm bg-[#0FEADB]"></div>
                   <div className="flex items-center justify-between">
@@ -734,7 +731,7 @@ function Iso27001() {
                       />
                     </span>
                   </div>
-                  <p className="text-[15px] font-normal text-[#D1D1D1]">
+                  <p className="mt-6 text-[15px] font-normal text-[#D1D1D1] max-w-[300px]">
                     {item.description}
                   </p>
                 </AnimatedCard>
@@ -781,7 +778,7 @@ function Iso27001() {
                     </h3>
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm font-normal leading-[23px] text-[#D1D1D1]">
+                    <p className="text-sm sm:text-[15px] font-normal leading-[23px] text-[#D1D1D1]">
                       {item.description}
                     </p>
                   </div>
@@ -960,20 +957,18 @@ function Iso27001() {
       {/* PROJECT DELIVERABLES  */}
       <section className="w-full py-14 ">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col lg:flex-row gap-10">
-          <div className="flex-1 space-y-4 ">
-            <div className="space-y-4 text-center lg:text-left sticky lg:top-24">
-              <p className="text-sm sm:text-base font-semibold text-[#0FEADB] sectionheading">
-                PROJECT DELIVERABLES
-              </p>
-              <h2 className="text-[#FFFFFF]">
-                Clear Documentation. Actionable Security Improvements.
-              </h2>
-              <p className="sectionDescription text-[#D1D1D1]">
-                Every engagement is designed to provide practical outputs your
-                team can use to implement, monitor, and maintain information
-                security controls.
-              </p>
-            </div>
+          <div className="flex-1 space-y-4 w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
+            <p className="text-sm sm:text-base font-semibold text-[#0FEADB]">
+              PROJECT DELIVERABLES
+            </p>
+            <h2 className="text-[#FFFFFF]">
+              Clear Documentation. Actionable Security Improvements.
+            </h2>
+            <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+              Every engagement is designed to provide practical outputs your
+              team can use to implement, monitor, and maintain information
+              security controls.
+            </p>
           </div>
           <div className="flex-1 px-5 border-l border-[#B1B1B114]">
             <div className="space-y-4">

@@ -461,7 +461,7 @@ function AadharAudit() {
                 {aadharAuditServices.map((service, index) => (
                   <li
                     key={index}
-                    className="text-sm font-normal flex items-center gap-3 text-[#D1D1D1]"
+                    className="text-sm sm:text-[15px] font-normal flex items-center gap-3 text-[#D1D1D1] justify-center lg:justify-start"
                   >
                     <span className="inline-block w-[6px] h-[6px] bg-[#3B9E6A]"></span>
                     {service}
@@ -469,7 +469,7 @@ function AadharAudit() {
                 ))}
               </ul>
             </div>
-            <button className="text-[15px] font-medium flex items-center px-3 py-3 mx-auto lg:mx-0 rounded-[10px] text-[#31435C] bg-[#FFFFFF]">
+            <button className="mt-9 text-[15px] font-medium flex items-center px-3 py-3 mx-auto lg:mx-0 rounded-[10px] text-[#31435C] bg-[#FFFFFF]">
               Request Audit Quote{" "}
               <span>
                 <Icon icon="akar-icons:arrow-right" />
@@ -683,7 +683,7 @@ function AadharAudit() {
                 <AnimatedCard
                   key={index}
                   delay={index * 0.12}
-                  className="relative flex flex-col justify-between px-6 py-5 space-y-3 rounded-lg bg-[#66666614]"
+                  className="relative flex flex-col justify-between px-6 pt-5 pb-8 space-y-3 rounded-lg bg-[#66666614]"
                 >
                   <div className="absolute left-0 h-[23px] w-[2px] rounded-tr-sm rounded-br-sm  bg-[#3B9E6A]"></div>
                   <div className="flex justify-between gap-4">
@@ -729,7 +729,7 @@ function AadharAudit() {
               {whyAadhaarAuditsMatter.map((audit, index) => (
                 <div
                   key={index}
-                  className={`p-4 ${index === 0 ? "bg-[#060D1B]" : index === 1 ? "bg-[#08142D]" : index === 2 || index === 3 ? "bg-linear-to-b from-[#3B9E6A] to-[#000000A6]" : index === 4 ? "bg-[#071126]" : "bg-[#060D1B]"}`}
+                  className={`px-8 pt-8 pb-10 ${index === 0 ? "bg-[#060D1B]" : index === 1 ? "bg-[#08142D]" : index === 2 || index === 3 ? "bg-linear-to-b from-[#3B9E6A] to-[#000000A6]" : index === 4 ? "bg-[#071126]" : "bg-[#060D1B]"}`}
                 >
                   <div>
                     <Icon
@@ -737,7 +737,7 @@ function AadharAudit() {
                       className="w-[30px] h-[30px] text-[#FFFFFF]"
                     />
                   </div>
-                  <h3 className="text-base sm:text-lg lg:text-xl font-medium mt-10 text-[#FFFFFF]">
+                  <h3 className="mt-25 text-base sm:text-lg lg:text-xl font-medium text-[#FFFFFF]">
                     {audit.heading}
                   </h3>
                   <p className="text-base font-normal mt-3 text-[#D1D1D1]">
@@ -780,7 +780,7 @@ function AadharAudit() {
                         <span className="inline-block w-[35px] h-[1px] bg-[#3B9E6A]"></span>{" "}
                         {service.heading}
                       </h3>
-                      <p className="text-base font-normal text-[#D1D1D1]">
+                      <p className="mt-6 text-base font-normal text-[#D1D1D1]">
                         {service.description}
                       </p>
                     </div>
@@ -788,7 +788,7 @@ function AadharAudit() {
                       <Icon icon={service.Icon} />
                     </div>
                   </div>
-                  <div className="mt-4 ml-3">
+                  <div className="mt-6 ml-3">
                     <ul className="list-disc space-y-2">
                       {service.list.map((item, listindex) => (
                         <li

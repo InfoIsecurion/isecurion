@@ -623,7 +623,7 @@ function DpdpCompliance() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong. Please try again.",
+        "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -849,7 +849,7 @@ function DpdpCompliance() {
                 <AnimatedCard
                   key={index}
                   delay={index * 0.12}
-                  className={`relative p-4 rounded-lg space-y-3 bg-[#66666614] ${index == 4 ? "lg:col-span-2" : ""}`}
+                  className={`relative px-5 pt-6 pb-10 rounded-lg space-y-3 bg-[#66666614] ${index == 4 ? "lg:col-span-2" : ""}`}
                 >
                   <div className="absolute left-0 w-[2px] h-[24px] rounded-tr-sm rounded-br-sm bg-[#3B9E6A]"></div>
                   <div className="flex justify-between">
@@ -863,7 +863,7 @@ function DpdpCompliance() {
                       />
                     </span>
                   </div>
-                  <p className="text-[15px] font-normal text-[#D1D1D1]">
+                  <p className="text-[15px] font-normal text-[#D1D1D1] ">
                     {item.description}
                   </p>
                 </AnimatedCard>
@@ -912,24 +912,26 @@ function DpdpCompliance() {
                     <h3 className="text-base sm:text-lg font-medium text-[#0F66EA]">
                       Security Safeguards Required
                     </h3>
-                    <p className="text-sm sm:text-base  font-normal text-[#D1D1D1]">
+                    <p className="mt-4 text-sm sm:text-base  font-normal text-[#D1D1D1]">
                       Implement essential technical controls to protect personal
                       data, prevent unauthorised access, and reduce security
                       vulnerabilities.
                     </p>
                   </div>
                 </div>
-                <div className="space-y-2 mt-5">
+                <div className="space-y-3 mt-5">
                   {securitySafeguards.map((item, index) => (
                     <p
                       key={index}
                       className="text-sm sm:text-base font-medium flex items-center gap-3 text-[#D9D9D9]"
                     >
-                      <span>
-                        <Icon
-                          icon="emojione:ballot-box-with-check"
-                          className="text-[#3B9E6A]"
-                        />
+                      <span className="flex h-[27px] w-[27px] shrink-0 items-center justify-center ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64">
+                          <path d="M0 0h64v64H0z" fill="none" />
+                          <path fill="#3B9E6A" d="M58.4 0L23.6 38.3l-10.1-7.7H7.9l15.7 25.5L64 0z" />
+                          <path fill="#1C2332" d="M53.9 56.1c0 .6-.5 1.1-1.1 1.1H7.9c-.6 0-1.1-.5-1.1-1.1V11.2c0-.6.5-1.1 1.1-1.1h30.7l6.1-6.7H2.2C1 3.4 0 4.4 0 5.6v56.1C0 63 1 64 2.2 64h56.1c1.2 0 2.2-1 2.2-2.2V18.1l-6.7 9.4c.1 0 .1 28.6.1 28.6" />
+                        </svg>
+
                       </span>{" "}
                       {item}
                     </p>
@@ -949,24 +951,24 @@ function DpdpCompliance() {
                     <h3 className="text-base sm:text-lg font-medium text-[#E24B4A]">
                       Breach Notification Obligations
                     </h3>
-                    <p className="text-sm sm:text-base  font-normal text-[#D1D1D1]">
-                      Implement essential technical controls to protect personal
-                      data, prevent unauthorised access, and reduce security
-                      vulnerabilities.
+                    <p className="mt-4 text-sm sm:text-base  font-normal text-[#D1D1D1]">
+                      Establish clear incident response procedures to detect, report, and manage personal data breaches in line with applicable DPDP requirements.
                     </p>
                   </div>
                 </div>
-                <div className="space-y-2 mt-5">
+                <div className="space-y-3 mt-5">
                   {breachNotification.map((item, index) => (
                     <p
                       key={index}
                       className="text-sm sm:text-base font-medium flex items-center gap-3 text-[#D9D9D9]"
                     >
-                      <span>
-                        <Icon
-                          icon="emojione:ballot-box-with-check"
-                          className="text-[#3B9E6A]"
-                        />
+                      <span className="flex h-[27px] w-[27px] shrink-0 items-center justify-center ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64">
+                          <path d="M0 0h64v64H0z" fill="none" />
+                          <path fill="#3B9E6A" d="M58.4 0L23.6 38.3l-10.1-7.7H7.9l15.7 25.5L64 0z" />
+                          <path fill="#1C2332" d="M53.9 56.1c0 .6-.5 1.1-1.1 1.1H7.9c-.6 0-1.1-.5-1.1-1.1V11.2c0-.6.5-1.1 1.1-1.1h30.7l6.1-6.7H2.2C1 3.4 0 4.4 0 5.6v56.1C0 63 1 64 2.2 64h56.1c1.2 0 2.2-1 2.2-2.2V18.1l-6.7 9.4c.1 0 .1 28.6.1 28.6" />
+                        </svg>
+
                       </span>{" "}
                       {item}
                     </p>
@@ -1031,7 +1033,7 @@ function DpdpCompliance() {
                   {securityControls.map((item, index) => (
                     <div
                       key={index}
-                      className="flex justify-between gap-6 border-b border-[#66666680] py-2"
+                      className="flex justify-between gap-6 border-b border-[#66666680] py-6"
                     >
                       <div className="flex w-[400px] shrink-0 items-start gap-5">
                         <div className="flex shrink-0 items-center gap-4">
@@ -1109,9 +1111,8 @@ function DpdpCompliance() {
                     <div key={heading} className="relative min-w-0 pb-1">
                       <div className="absolute -bottom-4 left-0 h-px w-[62px] bg-[#698099]" />
                       <p
-                        className={`text-base sm:text-lg font-medium text-[#D1D1D1]  ${
-                          index === 3 ? "uppercase" : ""
-                        }`}
+                        className={`text-base sm:text-lg font-medium text-[#D1D1D1]  ${index === 3 ? "uppercase" : ""
+                          }`}
                       >
                         {heading}
                       </p>
@@ -1123,7 +1124,7 @@ function DpdpCompliance() {
                 {frameworkComparasion.map((item, index) => (
                   <div
                     key={index}
-                    className="grid grid-cols-[200px_1fr_1fr_1fr] gap-4 border-b border-[#66666680] py-5"
+                    className="grid grid-cols-[200px_1fr_1fr_1fr] gap-4 border-b border-[#66666680] py-6"
                   >
                     <p className="text-base sm:text-lg font-semibold text-[#FFFFFF] ">
                       {item.aspect}
@@ -1318,7 +1319,7 @@ function DpdpCompliance() {
             </p>
           </div>
           <div className="mt-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
               {methodology.map((item, index) => (
                 <div
                   key={index}
@@ -1421,7 +1422,7 @@ function DpdpCompliance() {
                     icon={item.Icon}
                     className="w-[24px] h-[32px] text-[#FFFFFF]"
                   />
-                  <h3 className="text-base sm:text-lg font-medium mt-8 text-[#FFFFFF]">
+                  <h3 className="mt-18 text-base sm:text-lg font-medium mt-8 text-[#FFFFFF]">
                     {item.heading}
                   </h3>
                   <p className="text-sm sm:text-base font-normal mt-3 text-[#D1D1D1]">

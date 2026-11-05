@@ -306,7 +306,7 @@ const soc2FAQs = [
 
 function page() {
     return (
-        <div>
+        <div className="bg-black">
 
             <section className="relative isolate overflow-hidden bg-black py-10 sm:py-12 lg:py-[42px]">
                 <div

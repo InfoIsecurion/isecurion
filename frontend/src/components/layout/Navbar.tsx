@@ -161,7 +161,7 @@ const serviceDetails = {
           },
           {
             label: "GDPR",
-            href: "/services/GDPR",
+            href: "/services/gdpr",
           },
           {
             label: "DPDP Compliance",
@@ -178,11 +178,11 @@ const serviceDetails = {
           },
           {
             label: "IRDA Information Security Audit",
-            href: "/services/IRDA-audit",
+            href: "/services/irda-audit",
           },
           {
             label: "RBI Information Security Audit",
-            href: "/services/RBI-security-audit",
+            href: "/services/rbi-security-audit",
           },
         ],
       },
@@ -299,7 +299,7 @@ const company = [
       {
         name: "About Us",
         description: "Who we are and our cybersecurity mission",
-        link: "/about",
+        link: "/company/about",
       },
       {
         name: "Careers",
@@ -432,11 +432,10 @@ function Navbar() {
                           type="button"
                           onMouseEnter={() => setActiveService(service.id)}
                           onFocus={() => setActiveService(service.id)}
-                          className={`flex w-full cursor-pointer items-center gap-3 rounded-br-2xl rounded-tr-2xl border-l-4 border-transparent p-3 text-left transition-all duration-200 ${
-                            activeService === service.id
+                          className={`flex w-full cursor-pointer items-center gap-3 rounded-br-2xl rounded-tr-2xl border-l-4 border-transparent p-3 text-left transition-all duration-200 ${activeService === service.id
                               ? "border-l-[#05B9EE] bg-[#E8F3FF]"
                               : "hover:border-l-[#05B9EE] hover:bg-[#E8F3FF]"
-                          }`}
+                            }`}
                         >
                           <span className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full bg-[#DCE9FA]">
                             <Icon
@@ -506,7 +505,7 @@ function Navbar() {
                               .filter(
                                 (section) =>
                                   section.heading ===
-                                    "CLOUD & INFRASTRUCTURE" ||
+                                  "CLOUD & INFRASTRUCTURE" ||
                                   section.heading === "CONNECTED & INDUSTRIAL",
                               )
                               .map((section) => (
@@ -629,27 +628,35 @@ function Navbar() {
                 <div className="flex flex-col items-center invisible absolute left-1/2 top-full z-50 mt-5 px-6 py-6 w-xl -translate-x-1/2 translate-y-2 rounded-xl bg-gradient-to-b from-[#F5F9FD] to-[#FFFFFF] opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                   <span className="invisible group-hover:visible absolute  -top-0.5   w-[100px] h-[5px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
                   <div>
+
                     <div className="grid grid-cols-2 gap-5">
                       {company.map((item, index) => (
                         <div key={index}>
-                          <h4 className="text-sm font-medium  border-b pb-3 border-[#D8E3EF] text-[#29559D]">
+                          <h4 className="border-b border-[#D8E3EF] pb-3 text-sm font-medium text-[#29559D]">
                             {item.mainHeading}
                           </h4>
+
                           <div className="mt-5 space-y-4">
                             {item.list.map((listItem, listIndex) => (
-                              <div key={listIndex} className="space-y-1">
-                                <h5 className="text-sm font-semibold text-[#090B21]">
+                              <Link
+                                key={listIndex}
+                                href={listItem.link}
+                                className="block space-y-1 group/item"
+                              >
+                                <h5 className="text-sm font-semibold text-[#090B21] transition-colors group-hover/item:text-[#0F66EA]">
                                   {listItem.name}
                                 </h5>
+
                                 <p className="text-[13px] font-medium text-[#979797]">
                                   {listItem.description}
                                 </p>
-                              </div>
+                              </Link>
                             ))}
                           </div>
                         </div>
                       ))}
                     </div>
+
                   </div>
                 </div>
               </li>
@@ -685,9 +692,8 @@ function Navbar() {
 
         {/* Mobile Navigation */}
         <div
-          className={`absolute left-0 right-0 top-[65px] z-50 overflow-hidden bg-[#020E1C] transition-all duration-300 lg:hidden ${
-            isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
-          }`}
+          className={`absolute left-0 right-0 top-[65px] z-50 overflow-hidden bg-[#020E1C] transition-all duration-300 lg:hidden ${isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+            }`}
         >
           <nav className="border-t border-white/10 px-6 py-6 sm:px-8">
             <ul className="flex flex-col gap-2 text-[15px] font-medium text-[#FFFFFF]">
@@ -707,19 +713,17 @@ function Navbar() {
                   Product
                   <Icon
                     icon="ant-design:caret-down-filled"
-                    className={`h-[14px] w-[14px] transition-transform duration-300 ${
-                      openDropdown === "product" ? "rotate-180" : ""
-                    }`}
+                    className={`h-[14px] w-[14px] transition-transform duration-300 ${openDropdown === "product" ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 
                 {/* Product Dropdown */}
                 <div
-                  className={`grid transition-all duration-300 ${
-                    openDropdown === "product"
+                  className={`grid transition-all duration-300 ${openDropdown === "product"
                       ? "grid-rows-[1fr] opacity-100"
                       : "grid-rows-[0fr] opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="overflow-hidden">
                     <div className="flex flex-col gap-3 py-1 pl-4">
@@ -759,18 +763,16 @@ function Navbar() {
                   Services
                   <Icon
                     icon="ant-design:caret-down-filled"
-                    className={`h-[14px] w-[14px] transition-transform duration-300 ${
-                      openDropdown === "services" ? "rotate-180" : ""
-                    }`}
+                    className={`h-[14px] w-[14px] transition-transform duration-300 ${openDropdown === "services" ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 
                 <div
-                  className={`grid transition-all duration-300 ${
-                    openDropdown === "services"
+                  className={`grid transition-all duration-300 ${openDropdown === "services"
                       ? "grid-rows-[1fr] opacity-100"
                       : "grid-rows-[0fr] opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="overflow-hidden">
                     <div className="flex flex-col items-start py-1 pl-14 space-y-1 ">

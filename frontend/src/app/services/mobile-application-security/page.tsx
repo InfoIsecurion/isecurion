@@ -212,18 +212,18 @@ function page() {
           {/* Section Content */}
           <Animation>
             <div className="text-center md:text-left">
-              <h2 className="text-3xl font-normal leading-tight text-white sm:text-4xl lg:text-[40px]">
+              <h2 className="text-white">
                 What Is Mobile Application Security Assessment?
               </h2>
 
-              <p className="mt-6 max-w-[550px] text-sm leading-6.5 text-[#D1D1D1] sm:text-base ">
+              <p className="mt-6 max-w-[550px] text-[#D1D1D1] sectionDescription">
                 A Mobile Application Security Assessment is a structured
                 evaluation of mobile applications to identify vulnerabilities
                 across the application, device, communication, and backend API
                 layers.
               </p>
 
-              <p className="mt-4 max-w-[610px] text-sm leading-6.5 text-white/70 sm:text-base">
+              <p className="mt-4 max-w-[610px] text-[#D1D1D1] sectionDescription">
                 We combine{" "}
                 <span className="font-medium text-white">
                   OWASP MASVS/MSTG-aligned testing
@@ -245,10 +245,10 @@ function page() {
           {/* We Assess */}
           <Animation>
             <div className="mt-5">
-              <p className="text-sm font-medium text-white">We Assess</p>
+              <p className="text- sm:text-base font-medium text-white">We Assess</p>
 
               <ul className="mt-2.5 space-y-2">
-                <li className="flex items-center gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center gap-2 text-sm text-[#D1D1D1] sm:text-base">
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -256,7 +256,7 @@ function page() {
                   Mobile Application
                 </li>
 
-                <li className="flex items-center gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center gap-2 text-sm text-[#D1D1D1] sm:text-base">
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -264,7 +264,7 @@ function page() {
                   APIs &amp; Backend Services
                 </li>
 
-                <li className="flex items-center gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center gap-2 text-sm text-[#D1D1D1] sm:text-base">
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -272,7 +272,7 @@ function page() {
                   Authentication &amp; Authorization
                 </li>
 
-                <li className="flex items-center gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center gap-2 text-sm text-[#D1D1D1] sm:text-base">
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -280,7 +280,7 @@ function page() {
                   Data Storage &amp; Encryption
                 </li>
 
-                <li className="flex items-center gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center gap-2 text-sm text-[#D1D1D1] sm:text-base">
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -305,12 +305,12 @@ function page() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="mt-15 text-sm font-medium text-white sm:text-[16px]">
+                  <h3 className="mt-15 text-base font-medium text-white sm:text-lg">
                     {card.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-4 max-w-[260px] text-[11px] leading-5 text-[#D1D1D1] sm:text-[12px]">
+                  <p className="mt-4 max-w-[320px] text-[#D1D1D1] text-sm leading-6 sm:text-[15px] sm:leading-[24px]">
                     {card.description}
                   </p>
                 </div>
@@ -331,11 +331,11 @@ function page() {
           {/* Methodology Header */}
           <Animation>
             <div className="relative mx-auto max-w-7xl px-6 pb-8 pt-16 text-center sm:px-10 lg:px-12 lg:pt-20">
-              <h2 className="text-3xl font-normal leading-tight text-white sm:text-4xl lg:text-[36px]">
+              <h2 className="text-white font-semibold">
                 Our Mobile Security Methodology
               </h2>
 
-              <p className="mx-auto mt-5 max-w-[780px] text-sm leading-6 text-white/70 sm:text-base">
+              <p className="mx-auto mt-5 max-w-[780px] sectionDescription text-[#D1D1D1]">
                 Our methodology combines threat modeling, manual testing, and
                 targeted automation to deliver depth and accuracy.
               </p>
@@ -382,7 +382,7 @@ function page() {
                     </h3>
 
                     {/* Subtitle */}
-                    <p className="mt-2 min-h-[44px] max-w-[180px] text-sm font-medium leading-5 text-[#15B3A4]">
+                    <p className="mt-2 min-h-[44px] max-w-[180px] text-[15px] font-medium leading-5 text-[#15B3A4]">
                       {step.subtitle}
                     </p>
 
@@ -390,7 +390,7 @@ function page() {
                     <div className="mt-3 h-[2px] w-[44px] bg-[#455F6DB5]" />
 
                     {/* Description */}
-                    <p className="mt-5 max-w-[190px] text-xs leading-5 text-[#D1D1D1]">
+                    <p className="mt-5 max-w-[190px] text-sm leading-5 text-[#D1D1D1]">
                       {step.description}
                     </p>
                     {index !== mobileMethodology.length - 1 && (
