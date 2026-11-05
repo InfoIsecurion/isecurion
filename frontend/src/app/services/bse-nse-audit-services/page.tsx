@@ -532,7 +532,7 @@ function page() {
           className="pointer-events-none absolute -left-[100px] top-[100px] z-0 h-[550px] w-[560px] rounded-full bg-[#3B9E6A]/27 blur-[140px] lg:left-[100px]"
         />
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl mx-auto px-6 sm:px-10">
+        <div className="relative z-10 mx-auto w-full max-w-7xl  px-6 sm:px-10">
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.9fr_1.25fr] lg:gap-5 xl:gap-8">
             <Animation>
               <div className="flex flex-col justify-center lg:py-2 text-center md:text-left">

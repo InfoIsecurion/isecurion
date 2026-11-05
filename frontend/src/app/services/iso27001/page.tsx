@@ -12,8 +12,8 @@ import yes from "../../../assets/services/yes.svg";
 
 import FAQSection from "../../../components/sections/FAQSection";
 import { useForm } from "react-hook-form";
-import { Turnstile } from "@marsidev/react-turnstile";
-import { useState } from "react";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { useRef, useState } from "react";
 import { iso27001api } from "../../../services/api/contact";
 import { toast } from "react-toastify";
 
@@ -360,6 +360,7 @@ const iso27001faqs = [
 function Iso27001() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [loading, setLoading] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const {
     register,
@@ -378,10 +379,17 @@ function Iso27001() {
       const response = await iso27001api({ ...data, turnstileToken });
       if (response.status === 200) {
         toast.success(response.message);
+        reset();
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
       } else {
         toast.error(response.message);
       }
     } catch (error) {
+      toast.error(
+        error.response?.data?.message ||
+          "Something went wrong. Please try again.",
+      );
     } finally {
       setLoading(false);
     }
@@ -394,7 +402,7 @@ function Iso27001() {
         <div className="absolute left-30  w-[500px] h-[650px] rounded-full blur-[180px] bg-[#C8912A30]"></div>
         <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col lg:flex-row gap-10">
           {/* left  */}
-          <div className="flex-1 space-y-4 text-center lg:text-left">
+          <div className="flex-1 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start">
             <p
               className="text-sm sm:text-base font-semibold text-[#0FEADB] opacity-0 animate-hero-reveal"
               style={{ animationDelay: "150ms" }}
@@ -416,7 +424,7 @@ function Iso27001() {
               documentation, internal audits, and certification readiness.
             </p>
             <button
-              className="text-base font-medium flex items-center gap-2 px-3 py-4 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
+              className="text-base font-medium flex items-center gap-2 px-3 py-4 mx-auto lg:mx-0 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
               style={{ animationDelay: "600ms" }}
             >
               Book a Free Readiness Call{" "}
@@ -425,7 +433,7 @@ function Iso27001() {
               </span>
             </button>
             <div
-              className="mt-6 opacity-0 animate-hero-reveal"
+              className="mt-6  opacity-0 animate-hero-reveal"
               style={{ animationDelay: "750ms" }}
             >
               <ul className="space-y-2">
@@ -469,7 +477,7 @@ function Iso27001() {
                   <input
                     type="email"
                     placeholder="youremail@gmail.com"
-                    className="text-[15px] font-normal px-3 py-2.5 rounded-[10px] outline-none text-[#D1D1D1] bg-[#0A0303] border-[1.12px] border-[#262D3D]"
+                    className="text-sm font-normal px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] bg-[#0A0303] border-[1.12px] border-[#262D3D]"
                     {...register("email", { required: "Email is required" })}
                   />
                   {errors.email && (
@@ -488,7 +496,7 @@ function Iso27001() {
                   <input
                     type="text"
                     placeholder="Company name"
-                    className="text-[15px] font-normal px-3 py-2.5  rounded-[10px] outline-none text-[#D1D1D1] bg-[#0A0303] border-[1.12px] border-[#262D3D]"
+                    className="text-sm font-normal px-3 py-3  rounded-[10px] outline-none text-[#D1D1D1] bg-[#0A0303] border-[1.12px] border-[#262D3D]"
                     {...register("companyname")}
                   />
                 </div>
@@ -505,7 +513,7 @@ function Iso27001() {
                   <input
                     type="tel"
                     placeholder="Phone / WhatsApp Number"
-                    className="text-[15px] font-normal px-3 py-2.5 rounded-[10px] outline-none text-[#D1D1D1] bg-[#0A0303] border-[1.12px] border-[#262D3D]"
+                    className="text-sm font-normal px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] bg-[#0A0303] border-[1.12px] border-[#262D3D]"
                     {...register("phonenumber", {
                       required: "Phone number is required",
                     })}
@@ -526,7 +534,7 @@ function Iso27001() {
                   <select
                     name=""
                     id=""
-                    className="text-sm font-no py-3 w-full px-3 rounded-[10px] outline-none text-[#D1D1D1] bg-[#0A0303] border border-[#262D3D]"
+                    className="text-sm font-normal px-3 py-3 w-full  rounded-[10px] outline-none text-[#D1D1D1] bg-[#0A0303] border border-[#262D3D]"
                     {...register("scope", { required: "Scope is required" })}
                   >
                     <option value="">What's your Scope?</option>
@@ -558,7 +566,7 @@ function Iso27001() {
                 <select
                   name=""
                   id=""
-                  className="text-sm font-no py-3 w-full px-3  rounded-[10px] outline-none text-[#D1D1D1] bg-[#0A0303] border border-[#262D3D]"
+                  className="text-sm font-normal px-3 py-3 py-3 w-full   rounded-[10px] outline-none text-[#D1D1D1] bg-[#0A0303] border border-[#262D3D]"
                   {...register("industry", {
                     required: "Industry is required",
                   })}
@@ -585,9 +593,8 @@ function Iso27001() {
               {/* captcha  */}
               <div className="">
                 <div className="flex flex-col  gap-3">
-                  <p className="text-sm font-medium text-white">Captcha</p>
-
                   <Turnstile
+                    ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                     onSuccess={(token) => setTurnstileToken(token)}
                     onExpire={() => setTurnstileToken("")}
@@ -611,7 +618,7 @@ function Iso27001() {
               </div>
               <button
                 type="submit"
-                className="w-full text-sm sm:text-base font-semibold flex items-center justify-center py-2.5 gap-2 rounded-[10px] cursor-pointer text-[#FFFFFF] border-2 border-[#00000000] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]"
+                className={`w-full text-sm sm:text-base font-semibold flex items-center justify-center py-2.5 gap-2 rounded-[10px] cursor-pointer text-[#FFFFFF] border-2 border-[#00000000] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
               >
                 Get My Free Gap Snapshot{" "}
                 <span>
@@ -631,7 +638,7 @@ function Iso27001() {
             <div className="w-full lg:w-[40%]">
               <LeftAnimation>
                 <div className="space-y-4 text-center lg:text-left">
-                  <p className="text-sm sm:text-base font-semibold text-[#0FEADB]">
+                  <p className="text-sm sm:text-base font-semibold text-[#0FEADB] sectionheading">
                     UNDERSTANDING ISO 27001
                   </p>
                   <h2 className="text-[#FEFEFE]">
@@ -643,12 +650,12 @@ function Iso27001() {
             <div className="w-full lg:w-[50%] ">
               <RightAnimation>
                 <div className="space-y-4 text-center lg:text-left">
-                  <p className="text-sm sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+                  <p className="sectionDescription text-[#D1D1D1]">
                     ISO/IEC 27001:2022 is an internationally recognised standard
                     for establishing, implementing, maintaining, and continually
                     improving an Information Security Management System.
                   </p>
-                  <p className="text-sm sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+                  <p className="sectionDescription text-[#D1D1D1]">
                     It helps organisations identify security risks, protect
                     sensitive information, strengthen internal processes, and
                     demonstrate their commitment to information security to
@@ -693,14 +700,14 @@ function Iso27001() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           {/* heading  */}
           <Animation>
-            <div className="max-w-3xl space-y-4 text-center lg:text-left">
-              <p className="text-sm sm:text-base font-semibold text-[#0FEADB]">
+            <div className="lg:max-w-3xl space-y-4 text-center lg:text-left">
+              <p className="text-sm sm:text-base font-semibold text-[#0FEADB] sectionheading">
                 WHO NEEDS ISO 27001?
               </p>
               <h2 className="text-[#FFFFFF]">
                 Built for Businesses That Value Information Security
               </h2>
-              <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+              <p className="sectionDescription text-[#D1D1D1]">
                 Whether you're a growing startup or an established enterprise,
                 ISO 27001 helps build a structured security programme that
                 scales with your business.
@@ -744,13 +751,13 @@ function Iso27001() {
           <div className="flex-1 ">
             <LeftAnimation>
               <div className="space-y-4 text-center lg:text-left">
-                <p className="text-sm sm:text-base font-semibold text-[#0FEADB]">
+                <p className="text-sm sm:text-base font-semibold text-[#0FEADB] sectionheading">
                   WHY ISO 27001 MATTERS
                 </p>
                 <h2 className="text-[#FFFFFF]">
                   Turn Security Compliance into Business Confidence
                 </h2>
-                <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[30px] text-[#D1D1D1]">
+                <p className="sectionDescription text-[#D1D1D1]">
                   Whether you're a growing startup or an established enterprise,
                   ISO 27001 helps build a structured security programme that
                   scales with your business.
@@ -801,7 +808,7 @@ function Iso27001() {
           {/* Heading */}
           <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 pt-14">
             <div className="max-w-lg mx-auto lg:mx-0 space-y-4 text-center lg:text-left">
-              <p className="text-sm sm:text-base text-[#0FEADB]">
+              <p className="text-sm sm:text-base text-[#0FEADB] sectionheading">
                 SCOPE OF WORK
               </p>
 
@@ -855,18 +862,20 @@ function Iso27001() {
       {/* methodology  */}
       <section className="w-full py-14">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="max-w-4xl mx-auto text-center space-y-4">
-            <p className="text-sm sm:text-base font-semibold text-[#0FEADB]">
-              OUR METHODOLOGY
-            </p>
-            <h2 className="text-[#FFFFFF]">
-              A Structured Path to ISO 27001 Readiness
-            </h2>
-            <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
-              A phased approach that aligns security requirements with your
-              business priorities, resources, and operational environment.
-            </p>
-          </div>
+          <Animation>
+            <div className="max-w-4xl mx-auto text-center space-y-4">
+              <p className="text-sm sm:text-base font-semibold text-[#0FEADB] sectionheading">
+                OUR METHODOLOGY
+              </p>
+              <h2 className="text-[#FFFFFF]">
+                A Structured Path to ISO 27001 Readiness
+              </h2>
+              <p className="sectionDescription text-[#D1D1D1]">
+                A phased approach that aligns security requirements with your
+                business priorities, resources, and operational environment.
+              </p>
+            </div>
+          </Animation>
           <div className="relative mt-10">
             {/* Timeline line */}
             <div className="absolute top-0 bottom-0 left-[17px] w-[1px] bg-linear-to-b from-[#0FEADB] to-[#263028] sm:left-1/2 sm:-translate-x-1/2" />
@@ -952,17 +961,19 @@ function Iso27001() {
       <section className="w-full py-14 ">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col lg:flex-row gap-10">
           <div className="flex-1 space-y-4 ">
-            <p className="text-sm sm:text-base font-semibold text-[#0FEADB]">
-              PROJECT DELIVERABLES
-            </p>
-            <h2 className="text-[#FFFFFF]">
-              Clear Documentation. Actionable Security Improvements.
-            </h2>
-            <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
-              Every engagement is designed to provide practical outputs your
-              team can use to implement, monitor, and maintain information
-              security controls.
-            </p>
+            <div className="space-y-4 text-center lg:text-left sticky lg:top-24">
+              <p className="text-sm sm:text-base font-semibold text-[#0FEADB] sectionheading">
+                PROJECT DELIVERABLES
+              </p>
+              <h2 className="text-[#FFFFFF]">
+                Clear Documentation. Actionable Security Improvements.
+              </h2>
+              <p className="sectionDescription text-[#D1D1D1]">
+                Every engagement is designed to provide practical outputs your
+                team can use to implement, monitor, and maintain information
+                security controls.
+              </p>
+            </div>
           </div>
           <div className="flex-1 px-5 border-l border-[#B1B1B114]">
             <div className="space-y-4">
@@ -996,13 +1007,13 @@ function Iso27001() {
         <div className="absolute inset-0 bg-linear-to-b from-[#181E29]/90 to-[#090B211C]"></div>
         <div className="relative max-w-7xl mx-auto px-6 sm:px-10">
           <div className="max-w-2xl mx-auto text-center space-y-4">
-            <p className="text-sm sm:text-base font-semibold text-[#0FEADB]">
+            <p className="text-sm sm:text-base font-semibold text-[#0FEADB] sectionheading">
               SECURITY CONTROL COVERAGE
             </p>
             <h2 className="text-[#FFFFFF]">
               Strengthen the Controls That Protect Your Business
             </h2>
-            <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+            <p className="sectionDescription text-[#D1D1D1]">
               Explore the essential security controls that safeguard your
               information, systems, and business operations.
             </p>
@@ -1042,7 +1053,7 @@ function Iso27001() {
       />
       <section className="w-full py-10 rounded-tl-[42px] rounded-tr-[42px] bg-[#121828]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="max-w-2xl space-y-4 text-center lg:text-left">
+          <div className="lg:max-w-2xl space-y-4 text-center lg:text-left">
             <h2 className="font-semibold text-[#FFFFFF]">
               Get ISO 27001 Ready with ISECURION
             </h2>

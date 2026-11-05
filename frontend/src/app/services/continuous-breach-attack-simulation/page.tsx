@@ -158,7 +158,7 @@ function ContinuousBreachAttackSimulation() {
 
               {/* DESCRIPTION */}
               <Animation>
-                <p className="mt-5 text-[14px] sm:text-[16px] font-medium leading-[1.7] text-[#D1D1D1] lg:max-w-[380px]">
+                <p className="mt-5 text-[14px] sm:text-[16px] leading-[1.7] text-[#D1D1D1] lg:max-w-[380px]">
                   ISECURION&apos;s CBAS continuously simulates real-world
                   attacks to identify gaps, validate defenses, and improve your
                   cybersecurity posture proactively.
@@ -184,136 +184,288 @@ function ContinuousBreachAttackSimulation() {
 
             {/* RIGHT COLUMN: REQUEST A BAS QUOTE FORM */}
             <div className="lg:col-span-6">
-              <div className="rounded-[20px] bg-[#202123] p-6 sm:p-8 shadow-2xl backdrop-blur-md">
-                <p className="text-[18px] sm:text-[20px] font-semibold text-white leading-10">
-                  Request a BAS Quote
-                </p>
-                <p className="mt-1 text-[14px] text-[#D9D9D9]">
-                  Get a Quote for Continuous Security Validation.
-                </p>
+              <Animation>
+                <div className="rounded-[20px] bg-[#202123] p-6 sm:px-10 sm:py-14 shadow-2xl backdrop-blur-md">
+                  <p className="text-[18px] sm:text-[20px] font-semibold text-white leading-10">
+                    Request a BAS Quote
+                  </p>
+                  <p className="mt-1 text-[14px] text-[#D9D9D9]">
+                    Get a Quote for Continuous Security Validation.
+                  </p>
 
-                <form
-                  className="mt-6 space-y-4.5"
-                  onSubmit={handleSubmit(submit)}
-                >
-                  {/* WORK EMAIL & COMPANY NAME */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-[#FEFEFE] mb-1.5"
-                      >
-                        Work Email <span className="text-[#E24B4A]">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        placeholder="youremail@gmail.com"
-                        className="text-sm font-normal px-3 py-3 w-full rounded-[10px] bg-[#110404] border border-[#262D3D]   text-[#D1D1D1] placeholder-gray-500 "
-                        {...register("email", {
-                          required: "Email is required",
-                        })}
-                      />
-                      {errors.email && (
-                        <p className="text-sm font-normal text-red-500">
-                          {errors.email.message}
-                        </p>
-                      )}
+                  <form className="mt-6 space-y-4.5">
+                    {/* WORK EMAIL & COMPANY NAME */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label
+                          htmlFor="email"
+                          className="block text-[13px] text-[#FEFEFE] mb-1.5"
+                        >
+                          Work Email <span className="text-[#E24B4A]">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          placeholder="youremail@gmail.com"
+                          className="w-full h-[46px] rounded-[8px] bg-[#110404] border border-[#262D3D] px-3.5 text-[14px] text-[#D1D1D1] placeholder-gray-500 "
+                          required
+                        />
+                      </div>
+
+                      <div>
+                        <label
+                          htmlFor="company-name"
+                          className="block text-[13px] text-[#FEFEFE] mb-1.5"
+                        >
+                          Company Name
+                        </label>
+                        <input
+                          id="company-name"
+                          type="text"
+                          placeholder="Company name"
+                          className="w-full h-[46px] rounded-[8px] bg-[#110404] border border-[#262D3D] px-3.5 text-[14px] text-[#D1D1D1] placeholder-gray-500 "
+                        />
+                      </div>
                     </div>
 
+                    {/* SIMULATION TYPE DROPDOWN */}
                     <div>
                       <label
-                        htmlFor="company-name"
-                        className="block text-sm font-medium text-[#FEFEFE] mb-1.5"
+                        htmlFor="simulation-type"
+                        className="block text-[13px] text-[#FEFEFE] mb-1.5"
                       >
-                        Company Name
+                        Simulation Type{" "}
+                        <span className="text-[#E24B4A]">*</span>
                       </label>
-                      <input
-                        id="company-name"
-                        type="text"
-                        placeholder="Company name"
-                        className="text-sm font-normal px-3 py-3 w-full rounded-[10px] bg-[#110404] border border-[#262D3D]   text-[#D1D1D1] placeholder-gray-500"
-                        {...register("companyName")}
+                      <div className="relative">
+                        <select
+                          className="w-full h-[46px] appearance-none rounded-[8px] bg-[#110404] border border-[#262D3D] px-3.5 text-[13px] text-[#D1D1D1]"
+                          required
+                        >
+                          <option value="">Select Simulation Type</option>
+                          <option value="external">
+                            External Attack Simulation
+                          </option>
+                          <option value="internal">
+                            Internal Threat Simulation
+                          </option>
+                          <option value="cloud">
+                            Cloud Security Simulation
+                          </option>
+                          <option value="full">Full Breach Simulation</option>
+                        </select>
+                        <Icon
+                          icon="lucide:chevron-down"
+                          className="absolute right-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"
+                        />
+                      </div>
+                    </div>
+
+                    {/* CAPTCHA */}
+                    <div className="mt-7">
+                      <Turnstile
+                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                        onSuccess={(token) => setTurnstileToken(token)}
+                        onExpire={() => setTurnstileToken("")}
+                        onError={() => setTurnstileToken("")}
                       />
                     </div>
-                  </div>
 
-                  {/* SIMULATION TYPE DROPDOWN */}
+                    {/* TERMS & PRIVACY CHECKBOX */}
+                    <div className="flex items-start gap-2.5 pt-1">
+                      <input
+                        id="consent"
+                        name="consent"
+                        type="checkbox"
+                        required
+                        className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
+                      />
+                      <label
+                        htmlFor="terms"
+                        className="text-[11px] leading-relaxed text-[#D1D1D1] max-w-[490px]"
+                      >
+                        By clicking submit below, you agree to our Terms of Use
+                        and Privacy Policy. Additionally, you consent to allow
+                        ISECURION Technology &amp; Consulting Pvt. Ltd. to store
+                        and process the personal information submitted above to
+                        provide you the content requested.
+                      </label>
+                    </div>
+
+                    {/* SUBMIT BUTTON */}
+                    <button
+                      type="submit"
+                      className="w-full h-[48px] mt-2 inline-flex items-center justify-center gap-2 rounded-[8px] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-medium text-white border-[1.5px] border-[#00000000] transition-all duration-200 shadow-md shadow-[#0F66EA]/20"
+                    >
+                      <span>Get Quote</span>
+                      <Icon icon="lucide:arrow-right" className="h-4 w-4" />
+                    </button>
+                  </form>
+                </div>
+              </Animation>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#050B1A]">
+        <Animation>
+          <div className="mx-auto max-w-7xl px-7 py-10 sm:px-10 lg:px-8 lg:py-14 xl:px-10 text-center md:text-left">
+            <h2 className="text-[26px] font-normal leading-[1.4]  text-white sm:text-[36px] lg:text-[38px]">
+              What is Continuous Breach Attack Simulation?
+            </h2>
+            <p className="mt-7 font-medium leading-[1.8] text-[#D1D1D1] max-w-[700px]">
+              Continuous Breach Attack Simulation (CBAS) is an automated,
+              ongoing process that mimics cyber attackers using adversary
+              simulation techniques.
+            </p>
+            <p className="mt-10 text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] lg:text-[17px] max-w-[700px]">
+              It validates your security investments daily, tests real-world
+              attack scenarios, and provides actionable insights to strengthen
+              resilience.
+            </p>
+          </div>
+        </Animation>
+      </section>
+
+      <section className="bg-black px-0 relative overflow-hidden">
+        <div className="relative min-h-[671px] overflow-hidden">
+          {/* Background */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${approachBg.src || approachBg})` }}
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-[#0A1119]/[51%]" />
+
+          <div className="relative z-10 mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-16 lg:min-h-[671px] lg:px-[26px] lg:py-[58px] flex items-center">
+            {/* Fluid Responsive Grid Layout */}
+            <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Left Content */}
+
+              <div className="lg:col-span-6 flex flex-col justify-between space-y-6 text-center md:text-left">
+                <Animation>
                   <div>
-                    <label
-                      htmlFor="simulation-type"
-                      className="block text-sm font-medium text-[#FEFEFE] mb-1.5"
-                    >
-                      Simulation Type <span className="text-[#E24B4A]">*</span>
-                    </label>
-                    <div className="relative">
-                      <select
-                        className="w-full text-sm font-normal px-3 py-3 appearance-none rounded-[8px] bg-[#110404] border border-[#262D3D]  text-[#D1D1D1]"
-                        {...register("simulation", {
-                          required: "Simulation is required",
-                        })}
-                      >
-                        <option value="">Select Simulation Type</option>
-                        <option value="external">
-                          External Attack Simulation
-                        </option>
-                        <option value="internal">
-                          Internal Threat Simulation
-                        </option>
-                        <option value="cloud">Cloud Security Simulation</option>
-                        <option value="full">Full Breach Simulation</option>
-                      </select>
+                    <p className="text-[14px] sm:text-base font-semibold leading-[18px] text-[#E24B4A]">
+                      OUR APPROACH
+                    </p>
+
+                    <p className="mt-3 text-[34px] sm:text-[38px] lg:text-[40px] font-medium leading-[1.4] text-white max-w-[450px]">
+                      How We Validate Your Defenses?
+                    </p>
+                  </div>
+                </Animation>
+
+                <Animation>
+                  <p className="lg:mt-45 max-w-[350px] text-[14px] sm:text-[15px] font-normal leading-[1.72] text-[#D1D1D1]">
+                    A continuous, controlled approach to simulate real-world
+                    attack techniques, measure security control effectiveness,
+                    and identify gaps before attackers do.
+                  </p>
+                </Animation>
+              </div>
+
+              {/* 4 Cards Grid */}
+              <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-5 items-start">
+                {/* Card 01 */}
+                <Animation>
+                  <div className="relative flex flex-col justify-between min-h-[250px] w-full rounded-[7px] border border-white/[9%] bg-black/[51%] p-5">
+                    <div className="flex items-start justify-between">
                       <Icon
-                        icon="lucide:chevron-down"
-                        className="absolute right-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"
+                        icon="mingcute:apple-intelligence-line"
+                        className="text-[25px] text-white"
                       />
-                      {errors.simulation && (
-                        <p className="text-sm font-normal text-red-500">
-                          {errors.simulation.message}
-                        </p>
-                      )}
+                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
+                        01
+                      </span>
+                    </div>
+
+                    <div className="mt-8">
+                      <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
+                        Step 1: Threat Modeling
+                      </h3>
+                      <p className="max-w-[200px] mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1]">
+                        Define relevant attack scenarios using threat
+                        intelligence and MITRE ATT&CK.
+                      </p>
                     </div>
                   </div>
+                </Animation>
 
-                  {/* CAPTCHA */}
-                  <div className="mt-7">
-                    <Turnstile
-                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                      onSuccess={(token) => setTurnstileToken(token)}
-                      onExpire={() => setTurnstileToken("")}
-                      onError={() => setTurnstileToken("")}
-                    />
+                {/* Card 02 (Staggered offset) */}
+                <Animation>
+                  <div className="relative flex flex-col justify-between min-h-[250px] w-full rounded-[7px] border border-white/[9%] bg-black/[51%] p-5 lg:-translate-y-10">
+                    <div className="flex items-start justify-between">
+                      <Icon
+                        icon="icon-park-outline:target-one"
+                        className="text-[25px] text-white"
+                      />
+                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
+                        02
+                      </span>
+                    </div>
+
+                    <div className="mt-8">
+                      <h3 className="text-[14px] font-medium leading-[1.5] text-[#F5F0E8]">
+                        Step 2: Automated <br /> Simulation
+                      </h3>
+                      <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[200px]">
+                        Continuously execute controlled attack scenarios across
+                        your security environment.
+                      </p>
+                    </div>
                   </div>
+                </Animation>
 
-                  {/* TERMS & PRIVACY CHECKBOX */}
-                  <div className="flex items-start gap-2.5 pt-1">
-                    <input
-                      id="consent"
-                      name="consent"
-                      type="checkbox"
-                      required
-                      className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
-                    />
-                    <label
-                      htmlFor="terms"
-                      className="text-[11px] leading-relaxed text-[#D1D1D1] max-w-[490px]"
-                    >
-                      By clicking submit below, you agree to our Terms of Use
-                      and Privacy Policy. Additionally, you consent to allow
-                      ISECURION Technology &amp; Consulting Pvt. Ltd. to store
-                      and process the personal information submitted above to
-                      provide you the content requested.
-                    </label>
+                {/* Card 03 */}
+                <Animation>
+                  <div className="relative flex flex-col justify-between min-h-[250px] w-full rounded-[7px] border border-white/[9%] bg-black/[51%] p-5">
+                    <div className="flex items-start justify-between">
+                      <Icon
+                        icon="iconmind:goal-outline-bold"
+                        className="text-[25px] text-white"
+                      />
+                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
+                        03
+                      </span>
+                    </div>
+
+                    <div className="mt-8">
+                      <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
+                        Step 3: Gap Analysis
+                      </h3>
+                      <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[200px]">
+                        Identify detection gaps and validate the effectiveness
+                        of security controls.
+                      </p>
+                    </div>
                   </div>
+                </Animation>
 
-                  {/* SUBMIT BUTTON */}
-                  <button
-                    type="submit"
-                    className="w-full h-[48px] mt-2 inline-flex items-center justify-center gap-2 rounded-[8px] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-medium text-white border-[1.5px] border-[#00000000] transition-all duration-200 shadow-md shadow-[#0F66EA]/20"
-                  >
-                    <span>Get Quote</span>
-                    <Icon icon="lucide:arrow-right" className="h-4 w-4" />
-                  </button>
-                </form>
+                {/* Card 04 (Staggered offset) */}
+                <Animation>
+                  <div className="relative flex flex-col justify-between min-h-[250px] w-full rounded-[7px] border border-white/[9%] bg-black/[51%] p-5 lg:-translate-y-10">
+                    <div className="flex items-start justify-between">
+                      <Icon
+                        icon="iconmind:growth-chart-outline-bold"
+                        className="text-[25px] text-white"
+                      />
+                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
+                        04
+                      </span>
+                    </div>
+
+                    <div className="mt-8">
+                      <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
+                        Step 4: Reporting
+                      </h3>
+                      <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[200px]">
+                        Deliver clear findings, control insights, and
+                        prioritized recommendations.
+                      </p>
+                    </div>
+                  </div>
+                </Animation>
               </div>
             </div>
           </div>
@@ -670,7 +822,7 @@ function ContinuousBreachAttackSimulation() {
                 DELIVERABLES
               </p>
 
-              <h2 className="mt-[10px] text-[30px] font-normal leading-[1.4] text-white sm:text-[36px] lg:text-[34px]">
+              <h2 className="mt-[10px] text-[24px] font-normal leading-[1.4] text-white sm:text-[36px] lg:text-[34px]">
                 From attack simulation to <br></br>actionable improvement.
               </h2>
 

@@ -35,7 +35,7 @@ export default function FAQSection({
               {title}
             </h2>
 
-            <p className="mx-auto mt-3 max-w-[670px] text-sm leading-7 text-white/65 sm:text-base">
+            <p className="sectionDescription mx-auto mt-3 max-w-[670px] text-[#D1D1D1]">
               {description}
             </p>
           </div>

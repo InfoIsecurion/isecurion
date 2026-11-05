@@ -25,7 +25,6 @@ interface ContactFormData {
   location: string;
   engagement: string;
   message: string;
-  turnstileToken: string;
 }
 
 const services = [
@@ -401,7 +400,7 @@ const dpoFAQs = [
   },
 ];
 
-function DpoServices() {
+function page() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [loading, setLoading] = useState(false);
   const turnstileRef = useRef<TurnstileInstance>(null);
@@ -1594,4 +1593,4 @@ function DpoServices() {
   );
 }
 
-export default DpoServices;
+export default page;

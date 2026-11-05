@@ -191,10 +191,10 @@ function IndustriesWeSecure() {
               </div>
 
               <div className="lg:w-[45%]">
-                <p className="text-base font-medium text-[#0F66EA]">
+                <p className="text-sm sm:text-base font-semibold sectionheading text-[#0F66EA]">
                   INDUSTRIES WE SECURE
                 </p>
-                <p className="mt-2 text-base font-medium leading-7 text-[#D1D1D1]">
+                <p className="mt-2 sectionDescription text-[#D1D1D1]">
                   We understand the unique challenges of your industry and
                   deliver solutions that protect what matters most.
                 </p>

@@ -472,7 +472,7 @@ function PhishingSimulation() {
             </Animation>
             <Animation>
               <ul className="mt-4 space-y-2">
-                <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center justify-center lg:justify-start gap-2 text-sm text-[#D1D1D1] sm:text-[14px]">
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#7D70F0]"
@@ -481,7 +481,7 @@ function PhishingSimulation() {
                 </li>
 
                 <div className="flex flex-col lg:flex-row  gap-4">
-                  <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                  <li className="flex items-center justify-center lg:justify-start gap-2 text-sm text-[#D1D1D1] sm:text-[14px]">
                     <Icon
                       icon="boxicons:seal-check"
                       className="mt-0.5 shrink-0 text-[20px] text-[#7D70F0]"
@@ -489,7 +489,7 @@ function PhishingSimulation() {
                     Targeted Spear-Phishing
                   </li>
 
-                  <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                  <li className="flex items-center justify-center lg:justify-start gap-2 text-sm text-[#D1D1D1] sm:text-[14px]">
                     <Icon
                       icon="boxicons:seal-check"
                       className="mt-0.5 shrink-0 text-[20px] text-[#7D70F0]"
@@ -498,7 +498,7 @@ function PhishingSimulation() {
                   </li>
                 </div>
 
-                <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center justify-center lg:justify-start gap-2 text-sm text-[#D1D1D1] sm:text-[14px]">
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#7D70F0]"

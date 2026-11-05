@@ -295,7 +295,7 @@ export default function Home() {
         <div className="max-w-7xl w-full mx-auto px-6 sm:px-10">
           <div className="space-y-5 text-center lg:text-left">
             <p
-              className="text-sm sm:text-base font-semibold text-[#0F66EA] opacity-0 animate-hero-reveal"
+              className="text-sm sm:text-base font-semibold text-[#0F66EA] opacity-0 animate-hero-reveal sectionheading"
               style={{ animationDelay: "150ms" }}
             >
               SECURING MODERN ENTERPRISES
@@ -342,12 +342,12 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
               {/* Stat 1 */}
               <div className="relative px-0 py-6 md:px-8 lg:px-10 lg:py-0">
-                <div>
-                  <p className="text-base sm:text-xl lg:text-2xl font-semibold  text-[#0F66EA]">
+                <div className="flex flex-col justify-between gap-1">
+                  <p className="text-base sm:text-lg lg:text-xl font-semibold  text-[#0F66EA]">
                     1K+
                   </p>
 
-                  <p className="mt-1 text-base sm:text-lg font-medium leading-[28px] text-[#8E8E8E]">
+                  <p className="mt-1 text-base sm:text-lg font-medium leading-[28px]   h-[40px] text-[#8E8E8E]">
                     Security Engagements
                   </p>
 
@@ -362,12 +362,12 @@ export default function Home() {
                 {/* Desktop Divider */}
                 <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#4F5051] lg:block" />
 
-                <div>
-                  <p className="text-base sm:text-xl lg:text-2xl font-semibold  text-[#0F66EA]">
+                <div className="flex flex-col justify-between gap-1">
+                  <p className="text-base sm:text-lg lg:text-xl font-semibold text-[#0F66EA]">
                     20+
                   </p>
 
-                  <p className="mt-1 text-[18px] font-medium leading-[30px] text-[#999999]">
+                  <p className="mt-1  text-base sm:text-lg font-medium leading-[30px] h-[40px]  text-[#999999]">
                     Industry Verticals
                   </p>
 
@@ -382,12 +382,12 @@ export default function Home() {
                 {/* Desktop Divider */}
                 <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#4F5051] lg:block" />
 
-                <div>
-                  <p className="text-base sm:text-xl lg:text-2xl font-semibold  text-[#0F66EA]">
+                <div className="flex flex-col justify-between gap-2">
+                  <p className="text-base sm:text-lg lg:text-xl font-semibold  text-[#0F66EA]">
                     15+
                   </p>
 
-                  <p className="mt-1 text-[18px] font-medium leading-[30px] text-[#999999]">
+                  <p className="text-base sm:text-lg font-mediumleading-[30px] h-[40px]  text-[#999999]">
                     Years of Cybersecurity Excellence
                   </p>
 
@@ -402,12 +402,12 @@ export default function Home() {
                 {/* Desktop Divider */}
                 <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#4F5051] lg:block" />
 
-                <div>
-                  <p className="text-base sm:text-xl lg:text-2xl font-semibold  text-[#0F66EA]">
+                <div className="flex flex-col justify-between">
+                  <p className="text-base sm:text-lg lg:text-xl font-semibold  text-[#0F66EA]">
                     99%
                   </p>
 
-                  <p className="mt-1 text-[18px] font-medium leading-[30px] text-[#999999]">
+                  <p className="mt-1  text-base sm:text-lg font-medium leading-[30px]  h-[40px]  text-[#999999]">
                     Client Satisfaction
                   </p>
 
@@ -483,7 +483,7 @@ export default function Home() {
             <p className="flex items-center justify-center lg:justify-start gap-2">
               <span className="block h-6 w-[2px] bg-[#0F66EA]"></span>
 
-              <span className="text-sm sm:text-base font-semibold text-center uppercase text-[#0F66EA]  tracking-[2px] lg:text-left">
+              <span className="text-sm sm:text-base font-semibold text-center uppercase sectionheading text-[#0F66EA]  tracking-[2px] lg:text-left">
                 WHY ORGANIZATIONS CHOOSE ISECURION
               </span>
             </p>
@@ -497,7 +497,7 @@ export default function Home() {
               </h2>
             </LeftAnimation>
             <RightAnimation>
-              <p className="text-base font-medium  lg:max-w-lg text-center lg:text-left leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+              <p className="sectionDescription  lg:max-w-lg text-center lg:text-left  text-[#D1D1D1]">
                 Organizations rely on applications, cloud infrastructure,
                 digital identities, and connected systems to operate. ISECURION
                 helps validate security continuously, reduce risk proactively,
@@ -662,19 +662,19 @@ export default function Home() {
             <div className="flex flex-col lg:flex-row justify-between items-center gap-5">
               <div>
                 <LeftAnimation>
-                  <h2 className="text-2xl sm:text-4xl font-medium lg:max-w-md text-center lg:text-left text-white sm:leading-11">
+                  <h2 className="lg:max-w-md text-center lg:text-left text-white">
                     Capabilities that strengthen{" "}
                     <span className="text-[#0F66EA]">every layer</span> of your
                     organization.
                   </h2>
                 </LeftAnimation>
               </div>
-              <div className="lg:max-w-[550px] space-y-2">
+              <div className="lg:max-w-[550px] space-y-4">
                 <RightAnimation>
-                  <p className="hidden lg:block  text-base font-semibold text-[#0F66EA]  tracking-[0.5px]">
+                  <p className="hidden lg:block  text-base font-semibold text-[#0F66EA] sectionheading tracking-[0.5px]">
                     OUR EXPERTISE
                   </p>
-                  <p className="text-center lg:text-left font-medium leading-7 text-white">
+                  <p className="sectionDescription text-center lg:text-left  text-white">
                     A comprehensive portfolio of services and platforms built to
                     reduce risk, improve resilience, and enable secure growth.
                   </p>
@@ -770,7 +770,7 @@ export default function Home() {
               <p className="flex items-center gap-2 ">
                 <span className="block h-6 w-[2px] bg-[#0F66EA]"></span>
 
-                <span className="text-sm sm:text-base font-semibold uppercase text-[#0F66EA] tracking-[1px]">
+                <span className="text-sm sm:text-base font-semibold uppercase text-[#0F66EA] sectionheading tracking-[1px]">
                   OUR PLATFORMS
                 </span>
               </p>
@@ -782,7 +782,7 @@ export default function Home() {
               </h2>
             </Animation>
             <Animation>
-              <p className="text-base sm:text-lg font-medium  leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] ">
+              <p className="sectionDescription text-[#D1D1D1] ">
                 Purpose-built platforms that help organizations validate
                 security continuously, strengthen cyber resilience, and make
                 informed decisions.
@@ -1014,7 +1014,7 @@ export default function Home() {
               </div>
 
               <div>
-                <p className="text-center text-sm font-normal text-[#EBEBEB] sm:text-[22px]">
+                <p className="text-center text-base font-normal text-[#EBEBEB] sm:text-[22px]">
                   ISECURION helps organizations strengthen their security
                   posture with expert-led services, advanced technology, and a
                   relentless focus on results.
@@ -1148,11 +1148,11 @@ export default function Home() {
 
             {/* Right description */}
             <div className="flex-1 lg:max-w-[505px]">
-              <p className="text-sm sm:text-base font-semibold text-[#0F66EA] tracking-[0.2px]">
+              <p className="text-sm sm:text-base font-semibold sectionheading text-[#0F66EA] tracking-[0.2px]">
                 REAL-WORLD IMPACT
               </p>
 
-              <p className="mt-2 text-base sm:text-lg font-medium leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[500px]">
+              <p className="mt-2 sectionDescription text-[#D1D1D1] max-w-[500px]">
                 Explore how organizations strengthened cyber resilience,
                 mitigated critical risks, and achieved measurable security
                 outcomes with ISECURION.

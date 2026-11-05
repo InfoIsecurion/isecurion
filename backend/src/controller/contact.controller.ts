@@ -25,7 +25,6 @@ interface BreachAttackSimulation {
   simulation: string
   turnstileToken: string
 }
-
 interface RedTeam {
   email: string
   companyName: string
@@ -39,7 +38,6 @@ interface AiAugamentedRedTeam {
   aifootprint: string
   turnstileToken: string
 }
-
 interface PhishingSimulation {
   email: string
   companyName: string
@@ -55,7 +53,6 @@ interface ManagedSecurityService {
   consent: boolean
   turnstileToken: string
 }
-
 interface DpoServices {
   fullname: string
   companyname: string
@@ -86,19 +83,21 @@ interface CicraAudit {
   industry: string
   turnstileToken: string
 }
-
 interface RbiSecurityAudit {
   email: string
   companyName: string
   organizationtype: string
   turnstileToken: string
 }
-
 interface IrdaAudit {
   email: string
   companyName: string
   organizationtype: string
   turnstileToken: string
+}
+
+function containsHTML(value: string): boolean {
+  return /<[^>]*>/i.test(value)
 }
 
 // main contact form
@@ -130,6 +129,17 @@ export async function submitContactForm(request: NextRequest) {
       return NextResponse.json({ message: 'Invalid input' }, { status: 400 })
     }
 
+    const fields = [fullname, email, company, phonenumber, message]
+
+    if (fields.some((field) => containsHTML(field))) {
+      return NextResponse.json(
+        {
+          message: 'Invalid input',
+        },
+        { status: 400 },
+      )
+    }
+
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
     if (email && !emailPattern.test(email)) {
@@ -155,7 +165,7 @@ export async function submitContactForm(request: NextRequest) {
       )
     }
 
-    const validatedData: ContactFormData = { fullname, email, company, message }
+    const validatedData: ContactFormData = { fullname, email, company, message, turnstileToken }
 
     await sendContactEmail({
       email: validatedData.email,

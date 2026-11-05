@@ -274,7 +274,7 @@ function page() {
                 ].map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]"
+                    className="flex items-start justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]"
                   >
                     <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#C8912A]" />
                     <span>{item}</span>

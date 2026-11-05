@@ -196,7 +196,7 @@ export default function RedTeamAssessmentPage() {
             </Animation>
 
             <Animation>
-              <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:h-[600px] lg:p-[30px] xl:p-[40px]">
+              <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:h-[550px] lg:p-[30px] xl:p-[40px]">
                 <div>
                   <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
                     Request a Red Team Quote
@@ -364,7 +364,7 @@ export default function RedTeamAssessmentPage() {
       <section className="bg-[#050B1A]">
         <Animation>
           <div className="mx-auto max-w-7xl px-7 py-10 sm:px-10 lg:px-8 lg:py-14 xl:px-10 text-center md:text-left">
-            <h2 className="text-[30px] font-normal leading-[1.2]  text-white sm:text-[38px] lg:text-[40px]">
+            <h2 className="leading-[1.2]  text-white">
               What is Red Team Assessment?
             </h2>
             <p className="mt-7 text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] lg:text-[18px] max-w-[700px]">
