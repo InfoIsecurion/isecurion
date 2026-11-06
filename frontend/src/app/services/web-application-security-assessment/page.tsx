@@ -9,6 +9,7 @@ import FAQSection from "../../../components/sections/FAQSection";
 import { Animation } from "../../../components/ui/Animation";
 import { motion } from "framer-motion";
 import MethodologySection from "../../../components/sections/MethodologySection";
+import Link from "next/link";
 
 const assessmentCards = [
   {
@@ -171,16 +172,18 @@ function page() {
                   protect your web applications with expert-led security
                   assessments.
                 </p>
+                <Link href="/company/contact">
+                  <button
+                    type="button"
+                    className="mt-8 inline-flex h-[54px] items-center justify-center rounded-[10px] bg-white px-7 text-sm sm:text-[16px] font-medium text-[#31435C] transition hover:bg-gray-100"
+                  >
+                    Schedule a Consultation{""}
 
-                <button
-                  type="button"
-                  className="mt-8 inline-flex h-[54px] items-center justify-center rounded-[10px] bg-white px-7 text-sm sm:text-[16px] font-medium text-[#31435C] transition hover:bg-gray-100"
-                >
-                  Schedule a Consultation{""}
-                  <span className="ml-2">
-                    <Icon icon="mdi:arrow-right" width={20} />
-                  </span>
-                </button>
+                    <span className="ml-2">
+                      <Icon icon="mdi:arrow-right" width={20} />
+                    </span>
+                  </button>
+                </Link>
               </Animation>
             </div>
           </div>

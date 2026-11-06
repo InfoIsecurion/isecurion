@@ -130,7 +130,7 @@ const serviceDetails = {
         links: [
           {
             label: "IoT Security Testing",
-            href: "iot-security-testing",
+            href: "/services/iot-security-testing",
           },
           {
             label: "Industrial Control System Security Assessment",

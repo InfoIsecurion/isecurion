@@ -20,6 +20,7 @@
     "react-hook-form": "^7.91.0",
     "react-leaflet": "^5.0.0",
     "react-toastify": "^11.2.0",
+    "root": "github:marsidev/react-turnstile",
     "swiper": "^14.3.0"
   },
   "devDependencies": {

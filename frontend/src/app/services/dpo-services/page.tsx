@@ -16,6 +16,7 @@ import { useForm } from "react-hook-form";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { dpoServices } from "../../../services/api/contact";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 interface ContactFormData {
   fullname: string;
@@ -432,7 +433,7 @@ function page() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong. Please try again.",
+        "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -506,10 +507,12 @@ function page() {
             <Animation>
               <div className="flex flex-col sm:flex-row  justify-center lg:justify-start gap-4 mt-8">
                 <div className="mt-8 text-center">
-                  <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg">
+                  <Link href="/company/contact">
+                  <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg cursor-pointer">
                     <span>Request a DPO Consultation</span>
                     <Icon icon="lucide:arrow-right" className="h-4 w-4" />
                   </button>
+                  </Link>
                 </div>
               </div>
             </Animation>
@@ -729,6 +732,7 @@ function page() {
                 <button
                   type="submit"
                   className={`text-base sm:text-lg font-medium flex items-center justify-center py-3 w-full rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] h-[54px] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                  
                 >
                   Request Consultation{" "}
                   <span>
@@ -752,12 +756,12 @@ function page() {
               <h2 className="text-[#FEFEFE] max-w-[720px]">
                 Independent Privacy Oversight. Practical Business Support.
               </h2>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[550px]">
+              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[550px]">
                 An outsourced Data Protection Officer (DPO) provides specialist
                 privacy guidance, compliance oversight, and regulatory
                 coordination without requiring a full-time internal appointment.
               </p>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[550px]">
+              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[550px]">
                 ISECURION helps organisations manage privacy responsibilities
                 through structured governance, documented processes, and ongoing
                 advisory support.
@@ -1165,11 +1169,10 @@ function page() {
                   {/* Timeline Badge */}
                   <div className="mt-5 pt-0">
                     <span
-                      className={`inline-flex min-h-[30px] items-center justify-center whitespace-nowrap rounded-[6px] border px-3.5 py-1 text-[13px] font-medium leading-5 ${
-                        index === engagementLifecycle.length - 1
+                      className={`inline-flex min-h-[30px] items-center justify-center whitespace-nowrap rounded-[6px] border px-3.5 py-1 text-[13px] font-medium leading-5 ${index === engagementLifecycle.length - 1
                           ? "border-[#526F69] bg-[#A4FFCF38] text-white"
                           : "border-[#343B50] bg-[#514F6E40] text-white"
-                      }`}
+                        }`}
                     >
                       {
                         [
@@ -1190,29 +1193,32 @@ function page() {
       </section>
 
       {/* ENGAGEMENT MILESTONES & REGULATORY COVERAGE */}
-      <section className="relative w-full overflow-hidden bg-[#060D1B] py-10">
+      <section className="relative w-full overflow-hidden bg-[#060D1B] py-10 sm:py-12">
         <div className="pointer-events-none absolute bottom-0 left-1/4 h-32 w-64 rounded-full bg-[#0E1623] blur-3xl" />
 
         <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 items-stretch gap-5 lg:grid-cols-2 lg:gap-5 xl:gap-6">
+          <div className="grid grid-cols-1 items-stretch gap-5 md:grid-cols-2 md:gap-4 xl:gap-6">
+
             {/* LEFT PANEL: ENGAGEMENT MILESTONES */}
             <Animation>
-              <div className="h-full rounded-[9px] border border-[#FFFFFF0D] bg-[#0E1623] p-5 sm:p-6 lg:p-6 xl:p-[26px] ">
+              <div className="h-full rounded-[9px] border border-[#FFFFFF0D] bg-[#0E1623] p-4 sm:p-5 lg:p-5 xl:p-[26px]">
+
                 {/* Eyebrow */}
                 <div className="flex items-center gap-3">
-                  <span className="h-[0.4px] w-8 shrink-0 bg-[#0F66EA]" />
-                  <p className="text-sm sm:text-base font-semibold uppercase tracking-[2.5px] text-[#0F66EA] sm:text-[12px] ">
+                  <span className="h-px w-8 shrink-0 bg-[#0F66EA]" />
+                  <p className="text-[11px] font-semibold uppercase tracking-[2px] text-[#0F66EA] sm:text-xs sm:tracking-[2.5px]">
                     ENGAGEMENT MILESTONES
                   </p>
                 </div>
 
-                <h2 className="mt-5 text-[22px] font-medium leading-[1.35] tracking-[-0.4px] text-white sm:text-[25px] lg:text-[22px] xl:text-[24px]">
+                <h2 className="mt-5 text-[21px] font-medium leading-[1.35] tracking-[-0.4px] text-white sm:text-[23px] lg:text-[20px] xl:text-[24px]">
                   Key steps. Measurable privacy outcomes.
                 </h2>
 
                 {/* Timeline */}
-                <div className="mt-7 grid grid-cols-[46px_minmax(0,1fr)] gap-x-3 sm:grid-cols-[48px_minmax(0,1fr)] sm:gap-x-4">
-                  {/* Number circles and continuous vertical line */}
+                <div className="mt-7 grid grid-cols-[40px_minmax(0,1fr)] gap-x-3 sm:grid-cols-[44px_minmax(0,1fr)] sm:gap-x-4">
+
+                  {/* Number circles and vertical line */}
                   <div className="relative flex flex-col items-center">
                     <div className="absolute bottom-[35px] top-[21px] w-px bg-[#17416B]" />
 
@@ -1222,7 +1228,7 @@ function page() {
                         key={item.number}
                         className="relative z-10 flex min-h-[75px] w-full flex-1 items-start justify-center"
                       >
-                        <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full border border-[#5EB0EC] bg-[#050D1C] shadow-[inset_0_0_0_1px_#3B82F680,0_0_0_3px_#2E89E462]">
+                        <div className="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-full border border-[#5EB0EC] bg-[#050D1C] shadow-[inset_0_0_0_1px_#3B82F680,0_0_0_3px_#2E89E462] sm:h-[42px] sm:w-[42px]">
                           <span className="text-[12px] font-medium text-[#22D3EE]">
                             {item.number}
                           </span>
@@ -1237,24 +1243,23 @@ function page() {
                       <AnimatedCard
                         delay={index * 0.1}
                         key={item.number}
-                        className={`grid min-h-[75px] grid-cols-[84px_minmax(0,1fr)] gap-x-3 sm:grid-cols-[84px_minmax(0,1fr)] sm:gap-x-4 ${
-                          index !== engagementMilestones.length - 1
+                        className={`grid min-h-[75px] grid-cols-[68px_minmax(0,1fr)] gap-x-2 sm:grid-cols-[76px_minmax(0,1fr)] sm:gap-x-3 ${index !== engagementMilestones.length - 1
                             ? "border-b border-[#172338] pb-3"
                             : ""
-                        }`}
+                          }`}
                       >
                         <div className="pt-[30px]">
-                          <p className="text-[11px] font-medium leading-5 text-[#22D3EE] sm:text-[12px]">
+                          <p className="text-[12px] font-medium leading-5 text-[#22D3EE] sm:text-[13px]">
                             {item.period}
                           </p>
                         </div>
 
                         <div className="min-w-0 pt-4">
-                          <h3 className="text-[12px] font-medium leading-[20px] text-white sm:text-[13px] sm:leading-[21px]">
+                          <h3 className="text-[13px] font-medium leading-[19px] text-white sm:text-[14px] sm:leading-[21px]">
                             {item.title}
                           </h3>
 
-                          <p className="mt-1 text-[11px] font-normal leading-[18px] text-[#D1D1D1] sm:text-[12px] sm:leading-[18px] max-w-[344px]">
+                          <p className="mt-1 max-w-none text-[12px] font-normal leading-[17px] text-[#D1D1D1] sm:text-[14px] sm:leading-[18px]">
                             {item.description}
                           </p>
                         </div>
@@ -1267,22 +1272,23 @@ function page() {
 
             {/* RIGHT PANEL: REGULATORY COVERAGE */}
             <Animation>
-              <div className="h-full rounded-[9px] border border-[#FFFFFF0D] bg-[#101724] p-5 sm:p-6 lg:p-6 xl:p-[26px]">
+              <div className="h-full rounded-[9px] border border-[#FFFFFF0D] bg-[#101724] p-4 sm:p-5 lg:p-5 xl:p-[26px]">
+
                 {/* Eyebrow */}
                 <div className="flex items-center gap-3">
-                  <span className="h-[0.4px] w-8 shrink-0 bg-[#0F66EA]" />
-                  <p className="text-sm sm:text-base font-semibold uppercase tracking-[2px] text-[#0F66EA] sm:text-[12px] sm:tracking-[2.3px]">
+                  <span className="h-px w-8 shrink-0 bg-[#0F66EA]" />
+                  <p className="text-[11px] font-semibold uppercase tracking-[1.5px] text-[#0F66EA] sm:text-xs sm:tracking-[2px]">
                     REGULATORY COVERAGE BY SECTOR &amp; REGION
                   </p>
                 </div>
 
-                <h2 className="mt-5 text-[23px] font-normal leading-[1.35] tracking-[-0.4px] text-white sm:text-[27px] lg:text-[23px] xl:text-[25px]">
+                <h2 className="mt-5 text-[22px] font-normal leading-[1.35] tracking-[-0.4px] text-white sm:text-[25px] lg:text-[21px] xl:text-[25px]">
                   Industry-aligned. Privacy-ready.
                 </h2>
 
-                <p className="mt-3 text-[13px] font-normal leading-[23px] text-[#D1D1D1] sm:text-[14px] sm:leading-[26px] max-w-[500px]">
-                  ISECURION connects regulatory requirements with practical
-                  privacy governance and data protection processes.
+                <p className="mt-3 max-w-[500px] text-[12px] font-normal leading-[22px] text-[#D1D1D1] sm:text-[14px] sm:leading-[26px]">
+                  ISECURION connects regulatory requirements with practical privacy
+                  governance and data protection processes.
                 </p>
 
                 {/* Sector Cards */}
@@ -1290,10 +1296,11 @@ function page() {
                   {regulatoryCoverage.map((item) => (
                     <AnimatedCard
                       key={item.title}
-                      className="grid grid-cols-1 gap-3 rounded-[6px] border border-[#FFFFFF05] bg-gradient-to-r from-[#19243A] via-[#152F59] to-[#101D32] p-3.5 sm:grid-cols-[42px_minmax(0,1fr)] sm:items-center sm:gap-3.5 sm:p-3.5 md:grid-cols-[42px_minmax(0,1fr)_minmax(0,0.95fr)] md:gap-3 lg:grid-cols-[42px_minmax(0,1fr)] xl:grid-cols-[42px_minmax(0,1fr)_minmax(0,0.95fr)] xl:gap-3.5"
+                      className="grid grid-cols-[38px_minmax(0,1fr)] items-center gap-3 rounded-[6px] border border-[#FFFFFF05] bg-gradient-to-r from-[#19243A] via-[#152F59] to-[#101D32] p-3 sm:grid-cols-[42px_minmax(0,1fr)] sm:gap-3.5 sm:p-3.5 xl:grid-cols-[42px_minmax(0,1fr)_minmax(0,0.95fr)] xl:gap-3.5"
                     >
+
                       {/* Icon */}
-                      <div className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-[#050D1C] border-2 border-[#13304F]">
+                      <div className="flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-full border-2 border-[#13304F] bg-[#050D1C] sm:h-[42px] sm:w-[42px]">
                         <Icon
                           icon={item.icon}
                           className="text-[17px] text-[#00D9F5]"
@@ -1302,20 +1309,21 @@ function page() {
 
                       {/* Sector and Regulations */}
                       <div className="min-w-0 self-center">
-                        <h3 className="text-[12px] font-medium leading-[19px] text-white sm:text-[12px]">
+                        <h3 className="text-[13px] sm:text-[14px] font-medium leading-[19px] text-white sm:text-[12px]">
                           {item.title}
                         </h3>
-                        <p className="mt-0.5 text-[10px] font-normal leading-[17px] text-[#D1D1D1] sm:text-[10px]">
+                        <p className="mt-0.5 text-[12px] sm:text-[13px] font-normal leading-[17px] text-[#D1D1D1]">
                           {item.subtitle}
                         </p>
                       </div>
 
                       {/* Sector Description */}
-                      <div className="min-w-0 border-t border-[#929BFF94] pt-3 sm:pt-3 md:border-l md:border-t-0 md:pl-3 md:pt-0 lg:border-l-0 lg:border-t lg:pl-0 lg:pt-3 xl:border-l xl:border-t-0 xl:pl-3 xl:pt-0 max-w-[191px]">
-                        <p className="text-[10px] font-normal leading-[15px] text-[#9DB4CF] sm:text-[10px] sm:leading-[15px]">
+                     <div className="col-span-2 min-w-0 border-t border-[#929BFF94] pt-2.5 xl:col-span-1 xl:border-l xl:border-t-0 xl:pl-3 xl:pt-0">
+                        <p className="text-[12px] sm:text-[14px] font-normal leading-[19px] text-[#9DB4CF]">
                           {item.description}
                         </p>
                       </div>
+
                     </AnimatedCard>
                   ))}
                 </div>
@@ -1355,17 +1363,14 @@ function page() {
                   <AnimatedCard
                     delay={index * 0.1}
                     key={location.name}
-                    className={`flex min-w-0 flex-col items-center justify-center gap-3 px-2 py-5 sm:py-6 ${
-                      index < 4
+                    className={`flex min-w-0 flex-col items-center justify-center gap-3 px-2 py-5 sm:py-6 ${index < 4
                         ? "border-b border-[#FFFFFF0D] sm:border-b-0"
                         : ""
-                    } ${
-                      index % 4 !== 3 ? "sm:border-r sm:border-[#FFFFFF05]" : ""
-                    } ${
-                      index % 2 === 0
+                      } ${index % 4 !== 3 ? "sm:border-r sm:border-[#FFFFFF05]" : ""
+                      } ${index % 2 === 0
                         ? "border-r border-[#FFFFFF08] sm:border-r-0"
                         : ""
-                    } ${index >= 4 ? "sm:border-t sm:border-[#FFFFFF0D]" : ""}`}
+                      } ${index >= 4 ? "sm:border-t sm:border-[#FFFFFF0D]" : ""}`}
                   >
                     <GradientIcon Icon={location.Icon} />
 
@@ -1408,23 +1413,18 @@ function page() {
                   <AnimatedCard
                     delay={index * 0.1}
                     key={region.code}
-                    className={`flex min-w-0 flex-col items-center justify-center px-2 py-5 text-center sm:px-3 lg:py-3 ${
-                      index % 2 === 0 ? "border-r border-[#243849]" : ""
-                    } ${
-                      index === 1 || index === 3
+                    className={`flex min-w-0 flex-col items-center justify-center px-2 py-5 text-center sm:px-3 lg:py-3 ${index % 2 === 0 ? "border-r border-[#243849]" : ""
+                      } ${index === 1 || index === 3
                         ? "sm:border-r sm:border-[#243849]"
                         : ""
-                    } ${
-                      index < 3 ? "border-b border-[#243849] sm:border-b-0" : ""
-                    } ${
-                      index === 2
+                      } ${index < 3 ? "border-b border-[#243849] sm:border-b-0" : ""
+                      } ${index === 2
                         ? "sm:border-r sm:border-[#243849] lg:border-r lg:border-[#243849]"
                         : ""
-                    } ${
-                      index === 3
+                      } ${index === 3
                         ? "sm:border-r-0 lg:border-r lg:border-[#243849]"
                         : ""
-                    } ${index === 4 ? "col-span-2 sm:col-span-1" : ""}`}
+                      } ${index === 4 ? "col-span-2 sm:col-span-1" : ""}`}
                   >
                     <GradientIcon
                       Icon={region.icon}
@@ -1469,16 +1469,16 @@ function page() {
           {/* Intro */}
           <Animation>
             <div className="max-w-[590px]">
-              <p className="text-[12px] font-medium uppercase leading-5 text-white sm:text-[13px]">
+              <p className="text-[12px] font-semibold uppercase leading-5 text-white sm:text-base">
                 WHAT SETS ISECURION APART?
               </p>
 
-              <h2 className="mt-2 max-w-[570px] text-[30px] font-normal leading-[1.3] tracking-[-0.45px] text-white sm:text-[34px] sm:leading-[1.4] lg:text-[36px]">
+              <h2 className="mt-4 max-w-[570px] text-[30px] font-normal leading-[1.3] tracking-[-0.45px] text-white sm:text-[34px] sm:leading-[1.2] lg:text-[36px]">
                 Privacy Leadership that connects regulation, governance, and
                 execution.
               </h2>
 
-              <p className="mt-4 max-w-[560px] text-[14px] leading-[25px] text-[#D0D6E0] sm:text-[15px] sm:leading-[25px]">
+              <p className="mt-8 max-w-[560px] text-[#D0D6E0] sectionDescription">
                 ISECURION combines privacy expertise, security knowledge, and
                 practical implementation support to help organisations manage
                 their data protection responsibilities.

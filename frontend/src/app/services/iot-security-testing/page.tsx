@@ -1,7 +1,8 @@
 import React from "react";
-import { Animation, AnimatedCard } from "../../../components/ui/Animation";
+import WordReveal, { Animation, AnimatedCard } from "../../../components/ui/Animation";
 import IOTsecutityBg from "../../../assets/services/iot-security-bg.png";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 const testingSteps = [
   {
@@ -122,6 +123,7 @@ function page() {
               </p>
 
               <div className="mt-[30px] sm:mt-[34px]">
+                <Link href="/company/contact">
                 <button className="inline-flex h-[54px] items-center justify-center rounded-[9px] bg-white px-[20px] py-[14px] text-[13px] sm:text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-[#F3F5F8] sm:min-h-[54px] sm:px-[21px] lg:px-[20px]">
                   <span>Schedule My IoT Security Consultation</span>
 
@@ -129,6 +131,7 @@ function page() {
                     <Icon icon="mdi:arrow-right" width={20} />
                   </span>
                 </button>
+                </Link>
               </div>
             </div>
           </Animation>
@@ -138,8 +141,6 @@ function page() {
 
 
       {/* OVERVIEW & HOW WE TEST SECTION */}
-
-
       <section className="relative border-t border-white/5 bg-[#07101D] pt-16 text-white sm:pt-18 lg:py-20">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-10 lg:px-[26px]">
 
@@ -153,11 +154,12 @@ function page() {
                   OVERVIEW
                 </p>
 
-                <h2 className="mx-auto mt-4 max-w-[570px]text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] lg:mx-0 lg:text-[36px] xl:text-[40px]">
-                  What Is IoT Security Testing?
-                </h2>
+                <WordReveal text="What Is IoT Security Testing?" className="mx-auto mt-4 max-w-[570px]text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] lg:mx-0 lg:text-[36px] xl:text-[40px]">
+                </WordReveal>
 
-                <div className="mt-[22px] max-w-[530px] space-y-5 text-[15px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[16px]  lg:mx-0 lg:text-[16px] xl:text-[17px]">
+
+
+                <div className="mt-[22px] max-w-[530px] space-y-5  text-[#D1D1D1] lg:mx-0 sectionDescription">
                   <p>
                     IoT Security Testing is a structured assessment of connected
                     devices, communication protocols, applications, APIs,
@@ -175,7 +177,7 @@ function page() {
 
               {/* RIGHT COLUMN: HOW WE TEST THE IOT ATTACK SURFACE */}
               <div className="min-w-0">
-                <p className="mb-7 text-center text-[14px] font-medium uppercase leading-[18px] tracking-[0.2px] text-[#0F66EA] sm:text-[15px] md:text-left">
+                <p className="mb-7 text-center font-medium uppercase tracking-[0.2px] text-[#0F66EA] md:text-left sectionDescription">
                   HOW WE TEST THE IOT ATTACK SURFACE
                 </p>
 
@@ -195,7 +197,7 @@ function page() {
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#DADADA26] text-[#A0AEC0]">
                         <Icon
                           icon={step.icon}
-                          className="h-5 w-5 text-gray-300"
+                          className="h-6 w-6 text-gray-300"
                         />
                       </div>
 
@@ -206,11 +208,11 @@ function page() {
 
                       {/* TEXT CONTENT */}
                       <div className="min-w-0 pt-2">
-                        <h3 className="text-[15px] font-medium leading-tight text-white sm:text-base">
+                        <h3 className="text-[16px] font-medium leading-tight text-white sm:text-base">
                           {step.title}
                         </h3>
 
-                        <p className="mt-1 max-w-[360px] text-[13px] leading-relaxed text-[#94A3B8] sm:text-[14px]">
+                        <p className="mt-1 max-w-[360px] text-[13px] leading-relaxed text-[#94A3B8] sm:text-[15px]">
                           {step.description}
                         </p>
                       </div>
@@ -271,12 +273,9 @@ function page() {
               OUR METHODOLOGY
             </p>
 
-            <h2 className="mt-[16px] text-[32px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[38px] lg:text-[42px] text-center md:text-left">
-              From Discovery to IoT <br />
-              Resilience.
-            </h2>
+            <WordReveal text="From Discovery to IoT Resilience." className="mt-[16px] text-[32px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[38px] lg:text-[42px] text-center md:text-left" />
 
-            <p className="mt-[18px] text-[16px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[17px]">
+            <p className="text-[#D1D1D1] sectionDescription mt-4">
               A structured assessment that combines automated analysis,
               expert-led testing, remediation guidance, and validation across
               the connected ecosystem.
@@ -299,16 +298,16 @@ function page() {
                   <p className="mt-4 text-[16px] text-white max-w-[160px] leading-6">
                     Information Gathering & Planning
                   </p>
-                  <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[185px]">
+                  <p className="mt-3 text-sm leading-[1.6] text-[#D1D1D1] max-w-[185px]">
                     Define the IoT environment, devices, architecture,
                     communication protocols, applications & assessment scope.
                   </p>
                 </div>
                 <div className="mt-8 pt-4">
-                  <p className="text-[12px] font-semibold uppercase tracking-wider text-[#6B7C96]">
+                  <p className="text-sm font-semibold uppercase tracking-wider text-[#6B7C96]">
                     KEY FOCUS
                   </p>
-                  <ul className="mt-3 space-y-2 text-[12px] text-[#D1D1D1D6]">
+                  <ul className="mt-3 space-y-2 text-[14px] text-[#D1D1D1D6]">
                     <li className="flex items-center gap-2">
                       <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
                       <span>Device Inventory</span>
@@ -338,16 +337,16 @@ function page() {
                   <p className="mt-4 text-[16px] font-medium text-white max-w-[150px]">
                     Automated Security Analysis
                   </p>
-                  <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
+                  <p className="mt-3 text-[14px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
                     Identify exposed services, configuration weaknesses, known
                     vulnerabilities, insecure interfaces and attack-surface gaps.
                   </p>
                 </div>
                 <div className="mt-8 pt-4">
-                  <p className="text-[12px] font-semibold uppercase tracking-wider text-[#6B7C96]">
+                  <p className="text-[14px] font-semibold uppercase tracking-wider text-[#6B7C96]">
                     KEY FOCUS
                   </p>
-                  <ul className="mt-3 space-y-2 text-[12px] text-[#D1D1D1D6]">
+                  <ul className="mt-3 space-y-2 text-[14px] text-[#D1D1D1D6]">
                     <li className="flex items-center gap-2">
                       <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
                       <span>Device / Firmware</span>
@@ -377,16 +376,16 @@ function page() {
                   <p className="mt-4 text-[16px] font-medium text-white max-w-[150px]">
                     Expert-Led Penetration Testing
                   </p>
-                  <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
+                  <p className="mt-3 text-[14px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
                     Manually validate vulnerabilities across devices, firmware,
                     APIs, networks, authentication and communication layers.
                   </p>
                 </div>
                 <div className="mt-8 pt-4">
-                  <p className="text-[12px] font-semibold uppercase tracking-wider text-[#6B7C96]">
+                  <p className="text-[14px] font-semibold uppercase tracking-wider text-[#6B7C96]">
                     KEY FOCUS
                   </p>
-                  <ul className="mt-3 space-y-2 text-[12px] text-[#D1D1D1D6]">
+                  <ul className="mt-3 space-y-2 text-[14px] text-[#D1D1D1D6]">
                     <li className="flex items-center gap-2">
                       <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
                       <span>Exploitation</span>
@@ -416,16 +415,16 @@ function page() {
                   <p className="mt-4 text-[16px] text-white max-w-[150px]">
                     Reporting & Remediation
                   </p>
-                  <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
+                  <p className="mt-3 text-[14px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
                     Prioritize findings by severity and business impact with clear
                     remediation guidance for engineering and security teams.
                   </p>
                 </div>
                 <div className="mt-8 pt-4">
-                  <p className="text-[12px] font-semibold uppercase tracking-wider text-[#6B7C96]">
+                  <p className="text-[14px] font-semibold uppercase tracking-wider text-[#6B7C96]">
                     KEY FOCUS
                   </p>
-                  <ul className="mt-3 space-y-2 text-[12px] text-[#D1D1D1D6]">
+                  <ul className="mt-3 space-y-2 text-[14px] text-[#D1D1D1D6]">
                     <li className="flex items-center gap-2">
                       <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
                       <span>Detailed Report</span>
@@ -451,16 +450,16 @@ function page() {
                   <p className="mt-4 text-[16px]  text-white max-w-[100px]">
                     Verify and Close
                   </p>
-                  <p className="mt-3 text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[190px]">
+                  <p className="mt-3 text-[14px] leading-[1.6] text-[#D1D1D1] max-w-[190px]">
                     Reassess remediated vulnerabilities and confirm that
                     identified weaknesses have been effectively addressed.
                   </p>
                 </div>
                 <div className="mt-8 pt-4">
-                  <p className="text-[12px] font-semibold uppercase tracking-wider text-[#6B7C96]">
+                  <p className="text-sm font-semibold uppercase tracking-wider text-[#6B7C96]">
                     KEY FOCUS
                   </p>
-                  <ul className="mt-3 space-y-2 text-[12px] text-[#D1D1D1D6]">
+                  <ul className="mt-3 space-y-2 text-[14px] text-[#D1D1D1D6]">
                     <li className="flex items-center gap-2">
                       <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
                       <span>Revalidation</span>

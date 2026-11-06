@@ -10,6 +10,7 @@ import heroBackground from "../../../assets/services/GDPR_bg.svg";
 import Image from "next/image";
 import dots from "../../../assets/services/Dots.png";
 import FAQSection from "../../../components/sections/FAQSection";
+import Link from "next/link";
 
 const whatWeTest = [
   {
@@ -277,10 +278,12 @@ function page() {
                                 ))}
                             </ul>
                             <div className="mt-8">
-                                <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg">
+                              <Link href="/company/contact">
+                                <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg cursor-pointer">
                                     <span>Request GDPR Audit </span>
                                     <Icon icon="lucide:arrow-right" className="h-4 w-4" />
                                 </button>
+                                </Link>
                             </div>
 
                         </div>

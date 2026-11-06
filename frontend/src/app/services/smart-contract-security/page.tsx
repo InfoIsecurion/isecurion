@@ -9,6 +9,7 @@ import {
   RightAnimation,
 } from "../../../components/ui/Animation";
 import MethodologySection from "../../../components/sections/MethodologySection";
+import Link from "next/link";
 
 const cards = [
   {
@@ -211,13 +212,14 @@ function SmartContractSecurity() {
                 financial risks.
               </h1>
               <p
-                className="text-base sm:text-lg font-medium text-[#D9D9D9] md:max-w-[500px] opacity-0 animate-hero-reveal"
+                className="font-medium text-[#D9D9D9] md:max-w-[500px] opacity-0 animate-hero-reveal sectionDescription"
                 style={{ animationDelay: "450ms" }}
               >
                 ISECURION audits smart contracts to identify vulnerabilities,
                 validate functionality, and strengthen security across
                 blockchain ecosystems.
               </p>
+              <Link href="/company/contact">
               <button
                 className="mt-8 mx-auto md:mx-0 text-[15px] font-medium px-4 py-3 flex items-center justify-center gap-2 rounded-[10px] cursor-pointer text-[#31435C] bg-white opacity-0 animate-hero-reveal"
                 style={{ animationDelay: "600ms" }}
@@ -227,6 +229,7 @@ function SmartContractSecurity() {
                   <Icon icon="akar-icons:arrow-right" />
                 </span>
               </button>
+              </Link>
             </div>
           </Animation>
         </div>
@@ -256,12 +259,12 @@ function SmartContractSecurity() {
           {/* We Assess */}
           <Animation>
             <div className="mt-5 text-center md:text-left">
-              <p className="text-sm font-medium text-[#D1D1D1]">
+              <p className="text-sm sm:text-base font-medium text-[#D1D1D1]">
                 A security audit helps you:
               </p>
 
               <ul className="mt-4 space-y-2">
-                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[15px]">
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -269,7 +272,7 @@ function SmartContractSecurity() {
                   Reduce Financial Risk
                 </li>
 
-                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[15px]">
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -277,7 +280,7 @@ function SmartContractSecurity() {
                   Protect User Funds
                 </li>
 
-                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[15px]">
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -285,7 +288,7 @@ function SmartContractSecurity() {
                   Build Trust
                 </li>
 
-                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[15px]">
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -408,7 +411,7 @@ function SmartContractSecurity() {
                       {card.title}
                     </h3>
 
-                    <p className="mt-2 text-[12px] leading-relaxed text-[#D1D1D1] sm:text-[13px]">
+                    <p className="mt-4 text-[12px] leading-relaxed text-[#D1D1D1] sm:text-[14px]">
                       {card.description}
                     </p>
                   </div>

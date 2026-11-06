@@ -2,8 +2,9 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import icsBg from "../../../assets/services/ot-security-illustration-colorful.png";
 import { main } from "framer-motion/m";
-import { AnimatedCard, Animation } from "../../../components/ui/Animation";
+import WordReveal, { AnimatedCard, Animation } from "../../../components/ui/Animation";
 import MethodologySection from "../../../components/sections/MethodologySection";
+import Link from "next/link";
 
 const cards = [
   {
@@ -161,13 +162,14 @@ function page() {
               </h1>
 
               {/*DESCRIPTION */}
-              <p className="mt-[24px] max-w-[460px] text-[14px] font-normal leading-[1.75] text-[#D1D1D1] sm:text-[15px] lg:mt-[26px]  lg:text-[16px] lg:leading-[1.72]">
+              <p className="mt-[24px] max-w-[460px] text-[#D1D1D1] lg:mt-[26px] sectionDescription">
                 ISECURION helps identify, assess, and prioritize security risks
                 across critical industrial systems, networks, applications, and
                 infrastructure.
               </p>
 
               <div className="mt-[30px] sm:mt-[34px]">
+                <Link href="/company/contact">
                 <button className="inline-flex h-[54px] items-center justify-center rounded-[9px] bg-white px-[20px] py-[12px] text-[13px] sm:text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-[#F3F5F8] sm:min-h-[54px] sm:px-[21px] lg:px-[20px]">
                   <span>Schedule an ICS Assessment</span>
 
@@ -175,6 +177,7 @@ function page() {
                     <Icon icon="mdi:arrow-right" width={20} />
                   </span>
                 </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -190,11 +193,9 @@ function page() {
                 OVERVIEW
               </p>
 
-              <h2 className="mt-3 text-2xl font-normal leading-tight text-white sm:text-3xl lg:text-[32px]">
-                What Is ICS Security Assessment?
-              </h2>
-
-              <p className="mt-4 max-w-[580px] text-sm leading-relaxed text-[#D1D1D1] sm:text-[15px]">
+              <WordReveal text=" What Is ICS Security Assessment?" className="mt-3 text-2xl font-semibold text-white sm:text-3xl lg:text-[32px]"/>
+               
+              <p className="mt-4 max-w-[580px] text-[#D1D1D1] sectionDescription">
                 Modern ICS/SCADA environments are increasingly connected to
                 corporate networks and the Internet, creating new opportunities
                 for cyber threats. ISECURION assesses these environments to
@@ -207,12 +208,12 @@ function page() {
           {/* WE ASSESS LIST */}
           <Animation>
             <div className="mt-8">
-              <p className="text-[14px] font-medium text-white sm:text-[15px]">
+              <p className="text-[14px] font-medium text-white sm:text-[16px]">
                 We Assess
               </p>
 
               {/* Stacks to 1 column on mobile, expands to 2 columns on tablet/desktop */}
-              <ul className="mt-4 grid grid-cols-1 gap-x-10 gap-y-3 text-xs text-[#D1D1D1] sm:grid-cols-2 sm:text-[13px] lg:max-w-3xl">
+              <ul className="mt-4 grid grid-cols-1 gap-x-10 gap-y-3 text-sm sm:text-[15px] text-[#D1D1D1] sm:grid-cols-2 lg:max-w-3xl">
                 <li className="flex items-center gap-2.5">
                   <Icon
                     icon="boxicons:seal-check"
@@ -299,7 +300,7 @@ function page() {
                       {card.title}
                     </h3>
 
-                    <p className="mt-2 text-[12px] leading-relaxed text-[#D1D1D1] sm:text-[13px]">
+                    <p className="mt-3 text-[12px] leading-relaxed text-[#D1D1D1] sm:text-[14px]">
                       {card.description}
                     </p>
                   </div>
@@ -324,7 +325,7 @@ function page() {
               Test the Attack Path.
             </h2>
 
-            <p className="mt-[18px] text-[15px] font-normal leading-[1.7] text-[#D1D1D1] sm:text-[16px] max-w-[850px]">
+            <p className="mt-[18px] text-[#D1D1D1] max-w-[850px] sectionDescription">
               A dual-track methodology combining compliance assurance and
               controlled offensive testing for industrial control environments.
             </p>
@@ -336,11 +337,11 @@ function page() {
               <span className="text-[16px] font-semibold text-[#0F66EA]">
                 01
               </span>
-              <p className="text-[15px] font-normal uppercase text-white">
+              <p className="text-[15px] sm:text-base font-normal uppercase text-white">
                 COMPLIANCE &amp; SECURITY GOVERNANCE
               </p>
             </div>
-            <p className="mt-2 text-[14px] text-[#D1D1D1]">
+            <p className="mt-2 text-[14px] sm:text-base text-[#D1D1D1]">
               Ensure the right controls, policies and processes are in place.
             </p>
 
@@ -355,7 +356,7 @@ function page() {
                   >
                     {/* ICON BADGE */}
                     <div className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-[#8D8D8D57] text-gray-300">
-                      <Icon icon={card.icon} className="h-4 w-4" />
+                      <Icon icon={card.icon} className="h-5 w-5" />
                     </div>
 
                     {/* CARD TITLE */}
@@ -364,7 +365,7 @@ function page() {
                     </h4>
 
                     {/* BULLET LIST */}
-                    <ul className="mt-4 space-y-2 text-[13px] text-[#D1D1D1D6]">
+                    <ul className="mt-4 space-y-2 text-[14px] text-[#D1D1D1D6]">
                       {card.items.map((item, itemIdx) => (
                         <li key={itemIdx} className="flex items-start gap-2">
                           <span className="mt-[6px] h-[4px] w-[4px] shrink-0 rounded-full bg-[#94A3B8]" />
@@ -384,11 +385,11 @@ function page() {
               <span className="text-[16px] font-semibold text-[#0F66EA]">
                 02
               </span>
-              <p className="text-[15px] font-normal uppercase text-white">
+              <p className="text-[15px] sm:text-base font-normal uppercase text-white">
                 ICS VULNERABILITY ASSESSMENT &amp; PENETRATION TESTING
               </p>
             </div>
-            <p className="mt-2 text-[14px] text-[#D1D1D1]">
+            <p className="mt-2 text-[14px] sm:text-base text-[#D1D1D1]">
               Find and validate what can be exploited, before attackers do.
             </p>
           </div>

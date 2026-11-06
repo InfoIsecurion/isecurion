@@ -15,6 +15,7 @@ import {
   breachAttackSimulation,
 } from "../../../services/api/contact";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 interface ContactFormData {
   email: string;
@@ -142,7 +143,7 @@ function ContinuousBreachAttackSimulation() {
         <div className="relative overflow-hidden max-w-7xl mx-auto px-7 py-10 sm:px-10 lg:px-8 lg:py-10 xl:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
             {/* LEFT COLUMN: HERO CONTENT */}
-            <div className="lg:col-span-6 text-center md:text-left">
+            <div className="lg:col-span-6 text-center lg:text-left">
               {/* EYEBROW */}
               <p className="text-sm sm:text-base font-semibold tracking-[0.02em] uppercase text-[#E24B4A]">
                 CONTINUOUS BREACH ATTACK SIMULATION
@@ -167,11 +168,12 @@ function ContinuousBreachAttackSimulation() {
 
               {/* CTA BUTTON */}
               <Animation>
-                <div className="mt-8">
+                <div className="mt-8"><Link href="/company/contact">
                   <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg">
                     <span>Request Simulation</span>
                     <Icon icon="lucide:arrow-right" className="h-4 w-4" />
                   </button>
+                  </Link>
                 </div>
               </Animation>
 
@@ -322,7 +324,7 @@ function ContinuousBreachAttackSimulation() {
 
       <section className="bg-[#050B1A]">
         <Animation>
-          <div className="mx-auto max-w-7xl px-7 py-10 sm:px-10 lg:px-8 lg:py-14 xl:px-10 text-center md:text-left">
+          <div className="mx-auto max-w-7xl px-7 py-10 sm:px-10 lg:px-8 lg:py-14 xl:px-10 text-center lg:text-left">
             <h2 className="text-[26px] font-normal leading-[1.4]  text-white sm:text-[36px] lg:text-[38px]">
               What is Continuous Breach Attack Simulation?
             </h2>
@@ -356,186 +358,21 @@ function ContinuousBreachAttackSimulation() {
             <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Left Content */}
 
-              <div className="lg:col-span-6 flex flex-col justify-between space-y-6 text-center md:text-left">
+              <div className="lg:col-span-6 flex flex-col justify-between space-y-6 text-center lg:text-left">
                 <Animation>
                   <div>
                     <p className="text-[14px] sm:text-base font-semibold leading-[18px] text-[#E24B4A]">
                       OUR APPROACH
                     </p>
 
-                    <p className="mt-3 text-[34px] sm:text-[38px] lg:text-[40px] font-medium leading-[1.4] text-white max-w-[450px]">
+                    <p className="mt-3 text-[34px] sm:text-[38px] lg:text-[40px] font-medium leading-[1.4] text-white lg:max-w-[450px]">
                       How We Validate Your Defenses?
                     </p>
                   </div>
                 </Animation>
 
                 <Animation>
-                  <p className="lg:mt-45 max-w-[350px] text-[14px] sm:text-[15px] font-normal leading-[1.72] text-[#D1D1D1]">
-                    A continuous, controlled approach to simulate real-world
-                    attack techniques, measure security control effectiveness,
-                    and identify gaps before attackers do.
-                  </p>
-                </Animation>
-              </div>
-
-              {/* 4 Cards Grid */}
-              <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-5 items-start">
-                {/* Card 01 */}
-                <Animation>
-                  <div className="relative flex flex-col justify-between min-h-[250px] w-full rounded-[7px] border border-white/[9%] bg-black/[51%] p-5">
-                    <div className="flex items-start justify-between">
-                      <Icon
-                        icon="mingcute:apple-intelligence-line"
-                        className="text-[25px] text-white"
-                      />
-                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
-                        01
-                      </span>
-                    </div>
-
-                    <div className="mt-8">
-                      <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
-                        Step 1: Threat Modeling
-                      </h3>
-                      <p className="max-w-[200px] mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1]">
-                        Define relevant attack scenarios using threat
-                        intelligence and MITRE ATT&CK.
-                      </p>
-                    </div>
-                  </div>
-                </Animation>
-
-                {/* Card 02 (Staggered offset) */}
-                <Animation>
-                  <div className="relative flex flex-col justify-between min-h-[250px] w-full rounded-[7px] border border-white/[9%] bg-black/[51%] p-5 lg:-translate-y-10">
-                    <div className="flex items-start justify-between">
-                      <Icon
-                        icon="icon-park-outline:target-one"
-                        className="text-[25px] text-white"
-                      />
-                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
-                        02
-                      </span>
-                    </div>
-
-                    <div className="mt-8">
-                      <h3 className="text-[14px] font-medium leading-[1.5] text-[#F5F0E8]">
-                        Step 2: Automated <br /> Simulation
-                      </h3>
-                      <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[200px]">
-                        Continuously execute controlled attack scenarios across
-                        your security environment.
-                      </p>
-                    </div>
-                  </div>
-                </Animation>
-
-                {/* Card 03 */}
-                <Animation>
-                  <div className="relative flex flex-col justify-between min-h-[250px] w-full rounded-[7px] border border-white/[9%] bg-black/[51%] p-5">
-                    <div className="flex items-start justify-between">
-                      <Icon
-                        icon="iconmind:goal-outline-bold"
-                        className="text-[25px] text-white"
-                      />
-                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
-                        03
-                      </span>
-                    </div>
-
-                    <div className="mt-8">
-                      <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
-                        Step 3: Gap Analysis
-                      </h3>
-                      <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[200px]">
-                        Identify detection gaps and validate the effectiveness
-                        of security controls.
-                      </p>
-                    </div>
-                  </div>
-                </Animation>
-
-                {/* Card 04 (Staggered offset) */}
-                <Animation>
-                  <div className="relative flex flex-col justify-between min-h-[250px] w-full rounded-[7px] border border-white/[9%] bg-black/[51%] p-5 lg:-translate-y-10">
-                    <div className="flex items-start justify-between">
-                      <Icon
-                        icon="iconmind:growth-chart-outline-bold"
-                        className="text-[25px] text-white"
-                      />
-                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
-                        04
-                      </span>
-                    </div>
-
-                    <div className="mt-8">
-                      <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
-                        Step 4: Reporting
-                      </h3>
-                      <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[200px]">
-                        Deliver clear findings, control insights, and
-                        prioritized recommendations.
-                      </p>
-                    </div>
-                  </div>
-                </Animation>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#050B1A]">
-        <Animation>
-          <div className="mx-auto max-w-7xl px-7 py-10 sm:px-10 lg:px-8 lg:py-14 xl:px-10 text-center md:text-left">
-            <h2 className="text-[26px] font-normal leading-[1.4]  text-white sm:text-[36px] lg:text-[38px]">
-              What is Continuous Breach Attack Simulation?
-            </h2>
-            <p className="mt-7 font-medium leading-[1.8] text-[#D1D1D1] max-w-[700px]">
-              Continuous Breach Attack Simulation (CBAS) is an automated,
-              ongoing process that mimics cyber attackers using adversary
-              simulation techniques.
-            </p>
-            <p className="mt-10 text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] lg:text-[17px] max-w-[700px]">
-              It validates your security investments daily, tests real-world
-              attack scenarios, and provides actionable insights to strengthen
-              resilience.
-            </p>
-          </div>
-        </Animation>
-      </section>
-
-      <section className="bg-black px-0 relative overflow-hidden">
-        <div className="relative min-h-[671px] overflow-hidden">
-          {/* Background */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${approachBg.src || approachBg})` }}
-          />
-
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-[#0A1119]/[51%]" />
-
-          <div className="relative z-10 mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-16 lg:min-h-[671px] lg:px-[26px] lg:py-[58px] flex items-center">
-            {/* Fluid Responsive Grid Layout */}
-            <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              {/* Left Content */}
-
-              <div className="lg:col-span-6 flex flex-col justify-between space-y-6 text-center md:text-left">
-                <Animation>
-                  <div>
-                    <p className="text-[14px] sm:text-base font-semibold leading-[18px] text-[#E24B4A]">
-                      OUR APPROACH
-                    </p>
-
-                    <p className="mt-3 text-[34px] sm:text-[38px] lg:text-[40px] font-medium leading-[1.4] text-white max-w-[450px]">
-                      How We Validate Your Defenses?
-                    </p>
-                  </div>
-                </Animation>
-
-                <Animation>
-                  <p className="lg:mt-45 max-w-[350px] text-[14px] sm:text-[15px] font-normal leading-[1.72] text-[#D1D1D1]">
+                  <p className="lg:mt-45 lg:max-w-[350px] text-[14px] sm:text-[15px] font-normal leading-[1.72] text-[#D1D1D1]">
                     A continuous, controlled approach to simulate real-world
                     attack techniques, measure security control effectiveness,
                     and identify gaps before attackers do.
@@ -741,17 +578,17 @@ function ContinuousBreachAttackSimulation() {
       <section className="bg-[#050B18] px-0">
         <div className="mx-auto max-w-7xl  px-6 py-[60px] sm:px-10 sm:py-[70px] lg:px-[26px] lg:py-[77px]">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-            <div className="pb-[50px] lg:pr-[70px] lg:pb-0 text-center md:text-left">
+            <div className="pb-[50px] lg:pr-[70px] lg:pb-0 text-center lg:text-left">
               <LeftAnimation>
                 <p className="text-[13px] sm:text-base font-semibold uppercase leading-[0.2px] text-[#E24B4A]">
                   WHY CHOOSE US?
                 </p>
 
-                <p className="mt-[17px] max-w-[400px] text-[32px] font-medium leading-[1.42] text-white sm:text-[36px] lg:text-[40px]">
+                <p className="mt-[17px] lg:max-w-[400px] text-[32px] font-medium leading-[1.42] text-white sm:text-[36px] lg:text-[40px]">
                   Why Organizations trust ISECURION
                 </p>
 
-                <p className="mt-[18px] max-w-[420px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px]">
+                <p className="mt-[18px] lg:max-w-[420px] text-[#D1D1D1] sectionDescription">
                   Certified expertise, proven experience, and globally
                   recognized security practices built to deliver continuous
                   security validation.
@@ -763,14 +600,14 @@ function ContinuousBreachAttackSimulation() {
               <div className="border-t border-[#B1B1B114] pt-[45px] lg:border-l lg:border-t-0 lg:pl-[32px] lg:pt-0">
                 <div className="space-y-[20px]">
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
-                    <span className="text-[13px] font-medium leading-[1.5] text-[#E24B4A]">
+                    <span className="text-[13px] sm:text-[14px] font-medium leading-[1.5] text-[#E24B4A]">
                       01
                     </span>
                     <div>
-                      <h3 className="text-[15px] font-medium leading-[1.5] text-white">
+                      <h3 className="text-[15px] sm:text-base font-medium leading-[1.5] text-white">
                         Certified Experts
                       </h3>
-                      <p className="mt-[6px] max-w-[400px] text-[13px] font-normal leading-[1.8] text-[#D1D1D1]">
+                      <p className="mt-[6px] max-w-[400px] text-[13px] sm:text-sm font-normal leading-[1.8] text-[#D1D1D1]">
                         Team with OSCP, CEH, CISSP certifications & hands-on
                         experience.
                       </p>
@@ -778,14 +615,14 @@ function ContinuousBreachAttackSimulation() {
                   </div>
 
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
-                    <span className="text-[13px] font-medium leading-[1.5] text-[#E24B4A]">
+                    <span className="text-[13px] sm:text-sm font-medium leading-[1.5] text-[#E24B4A]">
                       02
                     </span>
                     <div>
-                      <h3 className="text-[15px] font-medium leading-[1.5] text-white">
+                      <h3 className="text-[15px] sm:text-base font-medium leading-[1.5] text-white">
                         Proven Experience
                       </h3>
-                      <p className="mt-[6px] max-w-[400px] text-[13px] font-normal leading-[1.8] text-[#D1D1D1]">
+                      <p className="mt-[6px] max-w-[400px] text-[13px] sm:text-sm font-normal leading-[1.8] text-[#D1D1D1]">
                         Hundreds of breach simulations across BFSI, SaaS, and
                         healthcare.
                       </p>
@@ -793,14 +630,14 @@ function ContinuousBreachAttackSimulation() {
                   </div>
 
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
-                    <span className="text-[13px] font-medium leading-[1.5] text-[#E24B4A]">
+                    <span className="text-[13px] sm:text-sm font-medium leading-[1.5] text-[#E24B4A]">
                       03
                     </span>
                     <div>
-                      <h3 className="text-[15px] font-medium leading-[1.5] text-white">
+                      <h3 className="text-[15px] sm:text-base font-medium leading-[1.5] text-white">
                         Trusted Partnership
                       </h3>
-                      <p className="mt-[6px] max-w-[350px] text-[13px] font-normal leading-[1.8] text-[#D1D1D1]">
+                      <p className="mt-[6px] max-w-[350px] text-[13px] sm:text-sm font-normal leading-[1.8] text-[#D1D1D1]">
                         Long-term client engagement with continuous guidance &
                         remediation.
                       </p>
@@ -808,14 +645,14 @@ function ContinuousBreachAttackSimulation() {
                   </div>
 
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
-                    <span className="text-[13px] font-medium leading-[1.5] text-[#E24B4A]">
+                    <span className="text-[13px] sm:text-sm font-medium leading-[1.5] text-[#E24B4A]">
                       04
                     </span>
                     <div>
-                      <h3 className="text-[15px] font-medium leading-[1.5] text-white">
+                      <h3 className="text-[15px] sm:text-base font-medium leading-[1.5] text-white">
                         Global Standards
                       </h3>
-                      <p className="mt-[6px] max-w-[380px] text-[13px] font-normal leading-[1.8] text-[#D1D1D1]">
+                      <p className="mt-[6px] max-w-[380px] text-[13px] sm:text-sm font-normal leading-[1.8] text-[#D1D1D1]">
                         Aligned with MITRE ATT&CK, NIST CSF, and ISO 27001.
                       </p>
                     </div>
@@ -839,7 +676,7 @@ function ContinuousBreachAttackSimulation() {
                 From attack simulation to <br></br>actionable improvement.
               </h2>
 
-              <p className="mx-auto mt-[18px] max-w-[750px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px]">
+              <p className="mx-auto mt-[18px] max-w-[750px] text-[#D1D1D1] sectionDescription">
                 Get clear, actionable outcomes from every simulation, from
                 leadership-level risk visibility to technical remediation and
                 team readiness.
@@ -857,15 +694,15 @@ function ContinuousBreachAttackSimulation() {
                 >
                   {/* ICON BADGE */}
                   <div className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-[#8D8D8D57] text-gray-300">
-                    <Icon icon={card.icon} className="h-4 w-4" />
+                    <Icon icon={card.icon} className="h-6 w-6" />
                   </div>
 
                   {/* CARD TITLE */}
-                  <h4 className="mt-5 text-[15px] text-[#F5F0E8]">
+                  <h4 className="mt-5 text-[15px] sm:text-base text-[#F5F0E8]">
                     {card.title}
                   </h4>
 
-                  <p className="mt-4 text-[12px] text-[#D1D1D1D6] max-w-[240px] leading-6">
+                  <p className="mt-4 text-[12px] sm:text-sm text-[#D1D1D1D6] max-w-[240px] leading-6">
                     {card.description}
                   </p>
                 </AnimatedCard>

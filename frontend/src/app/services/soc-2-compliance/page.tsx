@@ -6,6 +6,7 @@ import heroBackground from "../../../assets/services/backgroundPattern.png"
 import FAQSection from "../../../components/sections/FAQSection";
 import SOC2_CTA from '../../../components/sections/SOC2_CTA'
 
+
 const trustServices = [
     {
         title: "Security",
@@ -342,15 +343,17 @@ function page() {
 
                                 {/* CTA */}
                                 <div className="mt-6 text-center lg:text-left">
-                                    <button
-                                        type="button"
-                                        className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3]"
-                                    >
-                                        Book a Free Readiness Call{""}
-                                        <span className="ml-1.5 text-[17px] leading-none text-[#31435C]">
-                                            <Icon icon="mdi:arrow-right"></Icon>
-                                        </span>
-                                    </button>
+                                    <Link href="/company/contact">
+                                        <button
+                                            type="button"
+                                            className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3] cursor-pointer"
+                                        >
+                                            Book a Free Readiness Call{""}
+                                            <span className="ml-1.5 text-[17px] leading-none text-[#31435C]">
+                                                <Icon icon="mdi:arrow-right"></Icon>
+                                            </span>
+                                        </button>
+                                    </Link>
                                 </div>
 
                                 {/* ==================== STATS ==================== */}
@@ -893,11 +896,15 @@ function page() {
                                 <p className="mt-[18px] lg:max-w-[420px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px]">
                                     Build customer trust, accelerate enterprise sales, strengthen governance, and align security with key compliance frameworks.
                                 </p>
+                                
+                                <Link href="/services/iso27001">
+                                    <p className="cursor-pointer mt-8 inline-flex items-center gap-1 text-sm font-medium text-[#0F66EA] underline underline-offset-4">
 
-                                <p className="cursor-pointer mt-8 inline-flex items-center gap-1 text-sm font-medium text-[#0F66EA] underline underline-offset-4">
-                                    Explore ISO 27001 + SOC 2 bundle
-                                    <Icon icon="mdi:arrow-right" className="text-lg" />
-                                </p>
+                                        Explore ISO 27001 + SOC 2 bundle
+                                        <Icon icon="mdi:arrow-right" className="text-lg" />
+
+                                    </p>
+                                </Link>
                             </LeftAnimation>
                         </div>
 

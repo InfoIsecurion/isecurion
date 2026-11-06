@@ -51,11 +51,11 @@ function Footer() {
           {/* LEFT - LOGO */}
           <div className="w-full lg:w-[27%]">
             <Link href="/">
-            <Image
-              src={isecurion_logo}
-              alt="Isecurion"
-              className="h-[50px] w-[200px]"
-            />
+              <Image
+                src={isecurion_logo}
+                alt="Isecurion"
+                className="h-[50px] w-[200px]"
+              />
             </Link>
 
             <p className="mt-5 max-w-xs text-sm leading-7 text-[#9AA4BA]">
@@ -68,23 +68,23 @@ function Footer() {
             </h4>
 
             <div className="mt-3 flex gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
-                <Link href="https://www.facebook.com/isecurion" target="_blank">
+              <Link href="https://www.facebook.com/isecurion" target="_blank">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
                   <Icon icon="iconoir:facebook" width={18} />
-                </Link>
-              </div>
+                </div>
+              </Link>
 
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
-                <Link href="https://twitter.com/isecurion" target="_blank">
+              <Link href="https://twitter.com/isecurion" target="_blank">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
                   <Icon icon="line-md:twitter" width={18} />
-                </Link>
-              </div>
+                </div>
+              </Link>
 
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
-                <Link href="https://www.linkedin.com/company/isecurion" target="_blank">
+              <Link href="https://www.linkedin.com/company/isecurion" target="_blank">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
                   <Icon icon="ri:linkedin-line" width={18} />
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
           </div>
 
@@ -170,7 +170,7 @@ function Footer() {
 
                 <span className="text-sm font-medium text-white">
                   <Link href="tel:+918861201570" target="_blank">
-                  +91 88612 01570
+                    +91 88612 01570
                   </Link>
                 </span>
               </div>
@@ -202,9 +202,8 @@ function Footer() {
                       />
 
                       <span
-                        className={`transition-colors duration-300 ${
-                          isActive ? "text-white" : "text-[#BFBFBF]"
-                        }`}
+                        className={`transition-colors duration-300 ${isActive ? "text-white" : "text-[#BFBFBF]"
+                          }`}
                       >
                         {location.name}
                         {location.name === "Bangalore" && " (HQ)"}
@@ -213,11 +212,10 @@ function Footer() {
 
                     {/* Address Dropdown */}
                     <div
-                      className={`grid transition-all duration-500 ease-in-out ${
-                        isActive
+                      className={`grid transition-all duration-500 ease-in-out ${isActive
                           ? "grid-rows-[1fr] opacity-100"
                           : "grid-rows-[0fr] opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="overflow-hidden">
                         <p className="ml-5 pt-2 leading-5 text-[#BFBFBF] max-w-[250px]">

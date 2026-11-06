@@ -7,6 +7,7 @@ import indegence from "../assets/home/client/indegence.png";
 import allianz from "../assets/home/client/allianz.png";
 import shellinfo from "../assets/home/client/shellinfo.png";
 import bosch from "../assets/home/client/Bosch_logo.png";
+import Link from "next/link";
 
 import indentifyrisk from "../assets/home/indentifyrisk.jpg";
 import continuousvalidation from "../assets/home/continuousvalidattion.png";
@@ -321,7 +322,7 @@ export default function Home() {
             style={{ animationDelay: "600ms" }}
           >
             <button className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1]">
-              Schedule a Consultation{" "}
+              <Link href="/company/contact">Schedule a Consultation{" "}</Link>
               <span>
                 <Icon icon="mdi:arrow-right" width={20} />
               </span>

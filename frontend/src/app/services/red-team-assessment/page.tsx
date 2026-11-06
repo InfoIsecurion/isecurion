@@ -17,9 +17,10 @@ import frame3 from "../../../assets/services/Frame3.png";
 import frame4 from "../../../assets/services/Frame4.png";
 import frame5 from "../../../assets/services/Frame5.png";
 import FAQSection from "../../../components/sections/FAQSection";
-import { Animation, LeftAnimation } from "../../../components/ui/Animation";
+import { Animation, LeftAnimation, WordReveal } from "../../../components/ui/Animation";
 import { redTeamAssessment } from "../../../services/api/contact";
 import { useForm } from "react-hook-form";
+import Link from "next/link";
 
 interface ContactFormData {
   email: string;
@@ -115,14 +116,10 @@ export default function RedTeamAssessmentPage() {
     <main className="min-h-screen bg-black text-white">
       {/* RED TEAM SECTION */}
 
-      <section className="mx-auto max-w-7xl bg-black">
+      <section className="mx-auto max-w-7xl bg-black overflow-hidden">
+
         <div className="relative overflow-hidden px-7 py-10 sm:px-10 lg:px-8 lg:py-10 xl:px-10">
-          <img
-            src={redTeamHeroBackground.src}
-            alt=""
-            aria-hidden="true"
-            className="pointer-events-none absolute left-[-300px] top-[-210px] z-0 w-[760px] max-w-none opacity-98 sm:left-[-280px] sm:top-[-210px] sm:w-[800px] lg:left-[-300px] lg:top-[-230px] lg:w-[830px] xl:left-0 xl:top-[20px] xl:w-[860px]"
-          />
+          <div className="absolute w-[650px] h-[650px] left-[-50px] rounded-full blur-[200px] pointer-events-none bg-[#EF44444A]"></div>
 
           <div className="relative z-10 grid grid-cols-1 gap-12 lg:grid-cols-[500px_minmax(0,0.9fr)] lg:items-center lg:gap-8">
             <Animation>
@@ -146,15 +143,18 @@ export default function RedTeamAssessmentPage() {
 
                 {/* CTA */}
                 <div className="mt-6 text-center lg:text-left">
+                  <Link href="/company/contact">
                   <button
                     type="button"
                     className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3]"
                   >
                     Request Assessment{""}
+                    
                     <span className="ml-1.5 text-[17px] leading-none text-[#31435C]">
                       <Icon icon="mdi:arrow-right"></Icon>
                     </span>
                   </button>
+                  </Link>
                 </div>
 
                 {/* ==================== STATS ==================== */}
@@ -196,7 +196,7 @@ export default function RedTeamAssessmentPage() {
             </Animation>
 
             <Animation>
-              <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:h-[550px] lg:p-[30px] xl:p-[40px]">
+              <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:h-[580px] lg:p-[25px] xl:p-[30px]">
                 <div>
                   <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
                     Request a Red Team Quote
@@ -364,15 +364,19 @@ export default function RedTeamAssessmentPage() {
       <section className="bg-[#050B1A]">
         <Animation>
           <div className="mx-auto max-w-7xl px-7 py-10 sm:px-10 lg:px-8 lg:py-14 xl:px-10 text-center md:text-left">
-            <h2 className="leading-[1.2]  text-white">
+            {/* <h2 className="leading-[1.2]  text-white text-center lg:text-left">
               What is Red Team Assessment?
-            </h2>
-            <p className="mt-7 text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] lg:text-[18px] max-w-[700px]">
+            </h2> */}
+            <WordReveal
+              text="What is Red Team Assessment?"
+              className="leading-[1.2]  text-white text-center lg:text-left"
+            />
+            <p className="mt-7 text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] lg:text-[18px] max-w-[700px] text-center lg:text-left">
               Red Team assessments are goal-oriented attack simulations designed
               to test how well your people, processes, and technology can
               withstand a targeted attack.
             </p>
-            <p className="mt-10 text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] lg:text-[18px] max-w-[700px]">
+            <p className="mt-10 text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] lg:text-[18px] max-w-[700px] text-center lg:text-left">
               Unlike traditional penetration testing, Red Team exercises mirror
               real adversary tactics to achieve objectives such as data
               exfiltration, system compromise, or physical access.
@@ -390,9 +394,9 @@ export default function RedTeamAssessmentPage() {
           {/* ==================== HEADER ==================== */}
           <div className="relative z-10 mx-auto max-w-[1050px] text-center">
             {/* Heading */}
-            <h2 className="text-[32px] font-normal leading-[1.2] tracking-[-0.02em] text-white sm:text-[40px] lg:text-[44px]">
-              Red Team Assessment Objectives
-            </h2>
+            <WordReveal text="Red Team Assessment Objectives"
+              className="text-[32px] font-normal leading-[1.2] tracking-[-0.02em] text-white sm:text-[40px] lg:text-[44px]">
+            </WordReveal>
 
             {/* Description */}
             <p className="mx-auto mt-7  text-[15px] font-normal leading-[1.8] text-[#C7C7CB] sm:text-[16px] lg:text-[20px]">
@@ -414,7 +418,7 @@ export default function RedTeamAssessmentPage() {
                 <div className="relative z-10">
                   <Icon
                     icon="fa-solid:shield-alt"
-                    className="text-[20px] text-[#D83C43]"
+                    className="text-[22px] text-[#D83C43]"
                   />
                 </div>
 
@@ -550,26 +554,26 @@ export default function RedTeamAssessmentPage() {
           {/* Content */}
           <Animation>
             <div className="mx-auto max-w-7xl overflow-hidden relative z-10 flex min-h-[385px] items-center px-7 py-14 sm:min-h-[410px] sm:px-10 sm:py-16 lg:min-h-[385px] lg:px-7 lg:py-12 xl:px-7">
-              <div className="max-w-[430px] text-center md:text-left">
+              <div className="lg:max-w-[430px] text-center lg:text-left">
                 {/* Eyebrow */}
-                <p className="text-[13px] sm:text-base font-semibold uppercase text-[#E24B4A] sm:text-[15px]">
+                <p className="text-sm sm:text-base font-semibold uppercase text-[#E24B4A] sm:text-base text-center lg:text-left">
                   What We Assess
                 </p>
 
                 {/* Heading */}
-                <h2 className="mt-4 text-[32px] font-normal leading-[1.5] tracking-[-0.02em] text-white sm:text-[40px] lg:text-[38px] xl:text-[40px]">
+                <h2 className="mt-4 font-normal leading-[1.5] tracking-[-0.02em] text-white text-center lg:text-left">
                   The Attack Surface,{""}
                   <span className="block text-[#E24B4A]">Fully Tested.</span>
                 </h2>
 
                 {/* Description */}
-                <div className="mt-6 space-y-4 text-[15px] leading-[1.8] text-[#D1D1D1] sm:text-[17px] lg:text-[16px]">
-                  <p>
+                <div className="mt-6 space-y-4 text-[15px] leading-[1.8] text-[#D1D1D1] sm:text-[17px] lg:text-[16px] text-center lg:text-left">
+                  <p className="sectionDescription">
                     Key activities carried out during the Red Team Assessment to
                     evaluate your security posture.
                   </p>
 
-                  <p>
+                  <p className="sectionDescription">
                     From technical systems to people, wireless, and physical
                     environments.
                     <br className="hidden sm:block" />
@@ -601,7 +605,7 @@ export default function RedTeamAssessmentPage() {
                   Open Source Intelligence
                 </h3>
 
-                <p className="mt-3 max-w-[170px] text-[12px] leading-[1.8] text-[#D1D1D1D6] ">
+                <p className="mt-3 max-w-[180px] text-[12px] sm:text-[14px] leading-[1.8] text-[#D1D1D1D6] ">
                   Gather intelligence from publicly available sources to map
                   your exposure.
                 </p>
@@ -622,7 +626,7 @@ export default function RedTeamAssessmentPage() {
                   Network Attacks
                 </h3>
 
-                <p className="mt-3 max-w-[190px] text-[12px] leading-[1.8] text-[#D1D1D1D6] ">
+                <p className="mt-3 max-w-[240px] text-[12px] sm:text-[13px] leading-[1.8] text-[#D1D1D1D6] ">
                   Simulated external and internal attacks to uncover weaknesses
                   in your infrastructure.
                 </p>
@@ -643,7 +647,7 @@ export default function RedTeamAssessmentPage() {
                   Wireless & Endpoint
                 </h3>
 
-                <p className="mt-3 max-w-[160px] text-[12px] leading-[1.8] text-[#D1D1D1D6] ">
+                <p className="mt-3 max-w-[180px] text-[12px] sm:text-[13px] leading-[1.8] text-[#D1D1D1D6] ">
                   Assess Wi-Fi, removable media, & endpoint security for bypass
                   opportunities.
                 </p>
@@ -664,7 +668,7 @@ export default function RedTeamAssessmentPage() {
                   Covert Techniques
                 </h3>
 
-                <p className="mt-3 max-w-[180px] text-[12px] leading-[1.8] text-[#D1D1D1D6] ">
+                <p className="mt-3 max-w-[180px] text-[12px] sm:text-[13px] leading-[1.8] text-[#D1D1D1D6] ">
                   Use stealth methods to simulate insider and persistent
                   threats.
                 </p>
@@ -685,7 +689,7 @@ export default function RedTeamAssessmentPage() {
                   Physical Security
                 </h3>
 
-                <p className="mt-3 max-w-[160px] text-[12px] leading-[1.8] text-[#D1D1D1D6] ">
+                <p className="mt-3 max-w-[180px] text-[12px] sm:text-[13px] leading-[1.8] text-[#D1D1D1D6] ">
                   Test resilience of on-site controls like tailgating and rogue
                   device detection.
                 </p>
@@ -715,12 +719,12 @@ export default function RedTeamAssessmentPage() {
               <div className="relative min-h-[555px]">
                 {/* Left content */}
                 <Animation>
-                  <div className="absolute left-0 top-0 w-[500px]">
-                    <p className="text-[15px] sm:text-base font-semibold leading-[18px] text-[#E24B4A]">
+                  <div className="absolute left-0 top-0 w-[500px] text-center lg:text-left">
+                    <p className="text-[15px] sm:text-base font-semibold leading-[18px] text-[#E24B4A] text-center lg:text-left">
                       OUR APPROACH
                     </p>
 
-                    <h2 className="mt-[12px] max-w-[500px] text-[40px] font-normal leading-[1.5] text-white">
+                    <h2 className="mt-[12px] lg:max-w-[500px] text-[40px] font-normal leading-[1.5] text-white text-center lg:text-left">
                       From Intelligence to
                       <br />
                       Objective
@@ -728,7 +732,7 @@ export default function RedTeamAssessmentPage() {
                       Achievement
                     </h2>
 
-                    <p className="absolute left-0 top-[392px] max-w-[382px] text-[16px] font-normal leading-[1.72] text-[#D1D1D1]">
+                    <p className="absolute left-0 top-[392px] lg:max-w-[382px] sectionDescription text-center lg:text-left">
                       A structured, adversary-driven methodology designed to
                       simulate real-world attacks, uncover attack paths, and
                       strengthen your organizations ability to detect, respond,
@@ -1191,18 +1195,18 @@ export default function RedTeamAssessmentPage() {
       <section className="bg-[#050B18] px-0">
         <div className="mx-auto max-w-7xl  px-6 py-[60px] sm:px-10 sm:py-[70px] lg:px-[26px] lg:py-[77px]">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
-            <div className="pb-[50px] lg:pr-[70px] lg:pb-0 text-center md:text-left">
+            <div className="pb-[50px] lg:pr-[70px] lg:pb-0 text-center lg:text-left">
               <LeftAnimation>
-                <p className="text-[13px] sm:text-base font-semibold uppercase leading-[0.2px] text-[#E24B4A]">
+                <p className="text-[13px] sm:text-base font-semibold uppercase leading-[0.2px] text-[#E24B4A] text-center lg:text-left">
                   WHY CHOOSE US?
                 </p>
 
-                <h2 className="mt-[17px] max-w-[400px] text-[32px] font-normal leading-[1.42] text-white sm:text-[36px] lg:text-[34px]">
+                <h2 className="mt-[17px] lg:max-w-[400px] text-[32px] font-normal leading-[1.42] text-white sm:text-[36px] lg:text-[34px] text-center lg:text-left">
                   Trusted{" "}
                   <span className="text-[#E24B4A]">Red Team Experts</span>
                 </h2>
 
-                <p className="mt-[18px] max-w-[420px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px]">
+                <p className="mt-[18px] lg:max-w-[420px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] text-center lg:text-left">
                   ISECURION is a trusted partner for organizations looking to
                   strengthen their defenses through real-world adversary
                   simulations.
@@ -1306,9 +1310,8 @@ export default function RedTeamAssessmentPage() {
               DELIVERABLES
             </p>
 
-            <h2 className="mt-4 text-[34px] font-normal leading-[1.15] text-white sm:text-[42px] lg:text-[40px]">
-              The Outcome of Every Engagement
-            </h2>
+            <WordReveal text="The Outcome of Every Engagement" 
+              className="mt-4 text-[34px] font-normal leading-[1.15] text-white sm:text-[42px] lg:text-[40px]" />
 
             <p className="mx-auto mt-7 max-w-[900px] text-[16px] font-normal leading-[1.7] text-[#D1D1D1] sm:text-[14px] lg:text-[18px]">
               Clear attack paths, validated findings, and actionable

@@ -17,6 +17,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useRef, useState } from "react";
 import { vcsio } from "../../../services/api/contact";
+import Link from "next/link";
 
 interface ContactFormData {
   fullname: string;
@@ -1440,30 +1441,32 @@ function Vicso() {
         </div>
       </section>
 
-      {/* VISIBLE DELIVERABLES  */}
+      {/* VCISO DELIVERABLES  */}
       <section className="w-full py-14">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col lg:flex-row gap-8 lg:gap-20">
-          <div className="w-full space-y-4 ">
-            <div className="space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left sticky top-24">
-              <p className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading">
-                VCISO DELIVERABLES
-              </p>
-              <h2 className="text-[#FFFFFF]">
-                Clear Deliverables. Measurable Security Progress.
-              </h2>
-              <p className="sectionDescription text-[#D1D1D1]">
-                Get actionable security documentation, prioritized improvement
-                plans, and compliance insights that help turn strategic
-                priorities into measurable outcomes.
-              </p>
-            </div>
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col lg:flex-row gap-10">
+          <div className="w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
+            <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
+              VCISO DELIVERABLES
+            </p>
+            <h2 className="text-[#FFFFFF]">
+              Clear Deliverables. Measurable Security Progress.
+            </h2>
+            <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
+              Get actionable security documentation, prioritized improvement
+              plans, and compliance insights that help turn strategic priorities
+              into measurable outcomes.
+            </p>
           </div>
           <div className="flex-1">
             <div className="relative mt-8">
               <div className="absolute top-0 bottom-0 border-l-[3px] border-[#152329] shadow-[inset_13px_0_4px_0_#FFFFFFCF]"></div>
               <div className="space-y-8">
                 {deliverable.map((item, index) => (
-                  <div key={index} className="flex gap-10">
+                  <AnimatedCard
+                    key={index}
+                    delay={index * 0.15}
+                    className="flex gap-10"
+                  >
                     <div className="relative w-0">
                       <div className="absolute top-0 -left-[9px] w-[20px] h-[20px] rounded-full border border-[#FFFFFF] bg-[#0F66EA]" />
                     </div>
@@ -1482,7 +1485,7 @@ function Vicso() {
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </AnimatedCard>
                 ))}
               </div>
             </div>
@@ -1533,7 +1536,9 @@ function Vicso() {
                     className="w-[21px] h-[21px]"
                   />
                 </span>
-                info@isecurion.com
+                <Link href="mailto:info@isecurion.com" target="_blank">
+                    info@isecurion.com
+                  </Link>
               </button>
             </div>
           </div>
