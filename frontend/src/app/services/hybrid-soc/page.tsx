@@ -3,6 +3,7 @@ import { Animation, AnimatedCard, LeftAnimation, RightAnimation } from '../../..
 import { Icon } from '@iconify/react'
 import heroBackground from '../../../assets/services/inhousescobackgroundImage.png'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const hybridSocServices = [
     {
@@ -95,10 +96,12 @@ function page() {
                                 ))}
                             </ul>
                             <div className="mt-8">
+                                <Link href="/company/contact">
                                 <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg">
                                     <span>Strengthen Your SOC </span>
                                     <Icon icon="lucide:arrow-right" className="h-4 w-4" />
                                 </button>
+                                </Link>
                             </div>
 
                         </div>

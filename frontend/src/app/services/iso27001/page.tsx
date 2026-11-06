@@ -16,6 +16,7 @@ import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useRef, useState } from "react";
 import { iso27001api } from "../../../services/api/contact";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 interface ContactFormData {
   email: string;
@@ -423,6 +424,7 @@ function Iso27001() {
               with expert guidance across risk assessment, security controls,
               documentation, internal audits, and certification readiness.
             </p>
+            <Link href="/company/contact">
             <button
               className="text-base font-medium flex items-center gap-2 px-3 py-4 mx-auto lg:mx-0 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
               style={{ animationDelay: "600ms" }}
@@ -432,6 +434,7 @@ function Iso27001() {
                 <Icon icon="akar-icons:arrow-right" />
               </span>
             </button>
+            </Link>
             <div
               className="mt-6  opacity-0 animate-hero-reveal"
               style={{ animationDelay: "750ms" }}
@@ -1060,18 +1063,22 @@ function Iso27001() {
               timeline, effort estimate and indicative cost, all in one call.
             </p>
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              <Link href="/company/contact">
               <button className="text-base font-medium flex items-center gap-2 px-4 py-3 rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]">
                 Book a Free Call{" "}
                 <span>
                   <Icon icon="akar-icons:arrow-right" />
                 </span>
               </button>
+              </Link>
+              <Link href="tel:+918861201570" target="_blank">
               <button className="text-base font-medium flex items-center gap-2 px-4 py-3 rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF29]">
                 <span>
                   <Icon icon="flowbite:outgoing-call-outline" />
                 </span>
                 Call India (Bangalore): +91- 8861201570
               </button>
+              </Link>
             </div>
           </div>
         </div>

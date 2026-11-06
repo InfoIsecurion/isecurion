@@ -601,15 +601,17 @@ function Vicso() {
               className="flex flex-col sm:flex-row  justify-center lg:justify-start gap-4 mt-8 opacity-0 animate-hero-reveal"
               style={{ animationDelay: "750ms" }}
             >
+              <Link href="/company/contact"> 
               <button className="text-[15px] font-medium px-4 py-4 flex items-center gap-2 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]">
                 Request a vCISO Consultation{" "}
                 <span>
                   <Icon icon="akar-icons:arrow-right" className="text-lg" />
                 </span>
               </button>
-              <button className="text-[15px] font-medium px-4 py-4  rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF29]">
+              </Link>
+              {/* <button className="text-[15px] font-medium px-4 py-4  rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF29]">
                 View Scope of Work{" "}
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="flex-1  px-7 py-5 rounded-3xl space-y-3 bg-linear-to-r from-[#7B6FE829] to-[#090B21]">
@@ -1511,6 +1513,7 @@ function Vicso() {
               and Australia.
             </p>
             <div className="flex flex-wrap gap-3">
+              <Link href="/company/contact">
               <button className="text-base font-medium p-3 flex items-center gap-2 mx-auto lg:mx-0 rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border border-[#FFFFFF1F] shadow-[inset_0_0_4px_#FFFFFF1F,0_4px_10px_#3263B199]">
                 Schedule Consultation{" "}
                 <span>
@@ -1520,7 +1523,9 @@ function Vicso() {
                   />
                 </span>
               </button>
-              <button className="text-base font-medium p-3 flex items-center rounded-[10px] mx-auto lg:mx-0 text-[#FFFFFF] border border-[#FFFFFF29]">
+              </Link>
+               <Link href="tel:+918861201570" target="_blank">
+              <button className="text-base font-medium p-3 flex items-center rounded-[10px] mx-auto lg:mx-0 text-[#FFFFFF] border border-[#FFFFFF29] cursor-pointer">
                 <span>
                   <Icon
                     icon="flowbite:outgoing-call-outline"
@@ -1529,17 +1534,20 @@ function Vicso() {
                 </span>
                 Call India (Bangalore): +91- 8861201570
               </button>
-              <button className="text-base font-medium p-3 gap-2 flex items-center rounded-[10px] mx-auto lg:mx-0 text-[#FFFFFF] border border-[#FFFFFF29]">
+              </Link>
+              <Link href="mailto:info@isecurion.com" target="_blank">
+              <button className="text-base font-medium p-3 gap-2 flex items-center rounded-[10px] mx-auto lg:mx-0 text-[#FFFFFF] border border-[#FFFFFF29] cursor-pointer">
                 <span>
                   <Icon
                     icon="eva:email-outline"
                     className="w-[21px] h-[21px]"
                   />
                 </span>
-                <Link href="mailto:info@isecurion.com" target="_blank">
+                
                     info@isecurion.com
-                  </Link>
+                  
               </button>
+              </Link>
             </div>
           </div>
         </div>

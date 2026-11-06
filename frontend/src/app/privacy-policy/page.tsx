@@ -1,6 +1,7 @@
 import React from 'react'
 import Background from "../../assets/services/BreakerSlide.svg"
 import Image from "next/image"
+import Link from 'next/link'
 
 function page() {
     return (
@@ -356,14 +357,10 @@ function page() {
                                 </p>
 
                                 <p>ISECURION Technology & Consulting Pvt. Ltd.</p>
-                                <p className="mt-14">General Enquiries <br/> Email:  <span className="text-[#0F66EA]"> info@isecurion.com</span></p>
-                                <p className="mt-14">Privacy Requests and Grievances<br/> Email:  <span className="text-[#0F66EA]"> privacy@isecurion.com</span> <br/> Phone: <span className="text-[#0F66EA]"> +91 88612 01570</span></p>
-                                <p className="mt-14">By using this site you agree to our <span className="text-[#0F66EA]">Terms of Use</span></p>
-                                
-
-
-
-                            
+                                <p className="mt-14">General Enquiries <br/> Email:  <Link href="mailto:info@isecurion.com" target="_blank"><span className="text-[#0F66EA]"> info@isecurion.com</span></Link></p>
+                                <p className="mt-14">Privacy Requests and Grievances<br/> Email:  <span className="text-[#0F66EA]"> privacy@isecurion.com</span> <br/> Phone: <Link href="tel:+918861201570" target="_blank"><span className="text-[#0F66EA]"> +91 88612 01570</span></Link></p>
+                                <p className="mt-14">By using this site you agree to our <Link href="terms-of-use"><span className="text-[#0F66EA]">Terms of Use</span></Link></p>
+                                  
                             </div>
                         </div>
 

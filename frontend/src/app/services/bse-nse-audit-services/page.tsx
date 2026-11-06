@@ -15,6 +15,7 @@ import { useForm } from "react-hook-form";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { bseNseAudit, phishingSimulation } from "../../../services/api/contact";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 interface ContactFormData {
   email: string;
@@ -517,7 +518,7 @@ function page() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong. Please try again.",
+        "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -554,31 +555,33 @@ function page() {
                   alignment with applicable SEBI and exchange requirements.
                 </p>
 
-                                <ul className="mt-8 grid grid-cols gap-y-4">
-                                    {[
-                                        "SEBI Guidelines Aligned",
-                                        "BSE/NSE Circular Compliant",
-                                        "Minimal Business Disruption",
-                                        "Exchange-Ready Reports",
-                                    ].map((item) => (
-                                        <li key={item} className="flex items-center justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]">
-                                            <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#3B9E6A]" />
-                                            <span>{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                <ul className="mt-8 grid grid-cols gap-y-4">
+                  {[
+                    "SEBI Guidelines Aligned",
+                    "BSE/NSE Circular Compliant",
+                    "Minimal Business Disruption",
+                    "Exchange-Ready Reports",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]">
+                      <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#3B9E6A]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
 
                 {/* CTA */}
                 <div className="mt-10 text-center lg:text-left">
-                  <button
-                    type="button"
-                    className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3]"
-                  >
-                    Request Free Consultation{""}
-                    <span className="ml-1.5 text-[17px] leading-none text-[#31435C]">
-                      <Icon icon="mdi:arrow-right"></Icon>
-                    </span>
-                  </button>
+                  <Link href="/company/contact">
+                    <button
+                      type="button"
+                      className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3]"
+                    >
+                      Request Free Consultation{""}
+                      <span className="ml-1.5 text-[17px] leading-none text-[#31435C]">
+                        <Icon icon="mdi:arrow-right"></Icon>
+                      </span>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </Animation>
@@ -872,9 +875,8 @@ function page() {
                   <AnimatedCard
                     delay={index * 0.13}
                     key={index}
-                    className={`relative flex flex-col justify-between p-5 space-y-4 rounded-lg bg-[#66666614] border border-[#0B15301F] py-8  ${
-                      index === 7 ? "lg:col-span-2" : ""
-                    }`}
+                    className={`relative flex flex-col justify-between p-5 space-y-4 rounded-lg bg-[#66666614] border border-[#0B15301F] py-8  ${index === 7 ? "lg:col-span-2" : ""
+                      }`}
                   >
                     <div className="absolute left-0 w-[2.5px] h-[23px] rounded-tr-2xl rounded-br-2xl bg-[#3B9E6A]"></div>
                     <div className="flex items-center justify-between gap-8">
@@ -1056,11 +1058,10 @@ function page() {
                   {/* Left content */}
 
                   <div
-                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${
-                      item.side === "left"
+                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${item.side === "left"
                         ? "sm:pr-7 sm:text-right lg:pr-8"
                         : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
-                    }`}
+                      }`}
                   >
                     {item.side === "left" && (
                       <>
@@ -1085,11 +1086,10 @@ function page() {
                   {/* Right content */}
 
                   <div
-                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${
-                      item.side === "right"
+                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${item.side === "right"
                         ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
                         : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
-                    }`}
+                      }`}
                   >
                     {item.side === "right" && (
                       <>

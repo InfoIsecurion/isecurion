@@ -8,6 +8,7 @@ import {
   LeftAnimation,
   RightAnimation,
 } from "../../../components/ui/Animation";
+import Link from "next/link";
 
 const cryptoKeyFocusArea = [
   "Reduce Security Risks",
@@ -187,6 +188,7 @@ function CryptoCurrencyExchange() {
                 vulnerabilities before they can impact users, assets, or
                 operations.
               </p>
+              <Link href="/company/contact">
               <button
                 className="text-[15px] font-medium px-4 py-3 flex items-center gap-2 rounded-[10px] mx-auto lg:mx-0 cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
                 style={{ animationDelay: "600ms" }}
@@ -196,6 +198,7 @@ function CryptoCurrencyExchange() {
                   <Icon icon="akar-icons:arrow-right" />
                 </span>{" "}
               </button>
+              </Link>
             </div>
           </Animation>
           <div className="hidden lg:block flex-1"></div>

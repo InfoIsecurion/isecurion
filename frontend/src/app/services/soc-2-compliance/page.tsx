@@ -896,7 +896,7 @@ function page() {
                                 <p className="mt-[18px] lg:max-w-[420px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px]">
                                     Build customer trust, accelerate enterprise sales, strengthen governance, and align security with key compliance frameworks.
                                 </p>
-                                
+
                                 <Link href="/services/iso27001">
                                     <p className="cursor-pointer mt-8 inline-flex items-center gap-1 text-sm font-medium text-[#0F66EA] underline underline-offset-4">
 

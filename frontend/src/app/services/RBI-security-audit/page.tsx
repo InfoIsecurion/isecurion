@@ -10,6 +10,7 @@ import {
 } from "../../../components/ui/Animation";
 import FAQSection from "../../../components/sections/FAQSection";
 import RBI_CTA from '../../../components/sections/RBI_CTA';
+import Link from "next/link";
 
 const objectives = [
   {
@@ -532,6 +533,7 @@ function page() {
 
                 {/* CTA */}
                 <div className="mt-10 text-center lg:text-left">
+                  <Link href="/company/contact">
                   <button
                     type="button"
                     className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3]"
@@ -541,6 +543,7 @@ function page() {
                       <Icon icon="mdi:arrow-right"></Icon>
                     </span>
                   </button>
+                  </Link>
                 </div>
               </div>
             </Animation>

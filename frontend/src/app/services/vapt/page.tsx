@@ -17,6 +17,7 @@ import Link from "next/link";
 import FAQSection from "../../../components/sections/FAQSection";
 import VAPT_CTA from "../../../components/sections/VAPT_CTA";
 
+
 const vapt = [
   {
     no: "500+",
@@ -584,18 +585,22 @@ function Vapt() {
           {/* BUTTONS CONTAINER */}
           <Animation>
             <div className="relative flex flex-wrap gap-4 items-center justify-center ">
+              <Link href="#services">
               <button className="flex items-center gap-2.5 px-6 py-3.5 rounded-lg cursor-pointer text-base font-semibold text-white border-2 border-[#3263B1] bg-gradient-to-r from-[#29559D] to-[#1C3D70]">
                 Explore VAPT Services{""}
                 <span>
                   <Icon icon="ep:right" className="text-lg" />
                 </span>
               </button>
+              </Link>
+              <Link href="/company/contact">
               <button className="flex items-center gap-2.5 px-6 py-3.5 rounded-[10px] cursor-pointer text-base font-semibold text-[#31435C] border border-[#FFFFFF29] bg-[#FFFFFF]  transition duration-200">
                 Request a Consultation{""}
                 <span>
                   <Icon icon="ep:right" className="text-lg" />
                 </span>
               </button>
+              </Link>
             </div>
           </Animation>
         </div>
@@ -681,12 +686,17 @@ function Vapt() {
                   expert-led penetration testing.
                 </p>
               </div>
-              <button className="flex gap-2 text-[16px] font-semibold w-fit z-20 py-3 px-4 items-center justify-center rounded-lg cursor-pointer bg-gradient-to-r text-white  from-[#29559D] to-[#1C3D70] border-2 border-[#3263B1] ">
+
+              <Link href="#methodology">
+              <button className="flex gap-2 text-[16px] font-semibold w-fit z-20 py-3 px-4 items-center justify-center rounded-lg cursor-pointer bg-gradient-to-r text-white  from-[#29559D] to-[#1C3D70] border-2 border-[#3263B1] "
+              >
                 Explore Our Methodology
                 <span>
                   <Icon icon="ep:right" width={20} />{" "}
                 </span>
               </button>
+              </Link>
+              
             </div>
             {/* second  */}
             <div className="flex-2  grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -715,7 +725,7 @@ function Vapt() {
       </section>
 
       {/* our services  */}
-      <section className="w-full py-14 bg-[#060607]">
+      <section id="services" className="w-full py-14 bg-[#060607]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           {/* heading  */}
           <Animation>
@@ -799,7 +809,7 @@ function Vapt() {
       </section>
 
       {/* A proven methodology for finding what matters.  */}
-      <section className="w-full py-14 relative bg-[#060D1B] overflow-hidden">
+      <section id="methodology" className="w-full py-14 relative bg-[#060D1B] overflow-hidden">
         <div className="w-[200px] h-[200px] absolute -top-10 right-0 opacity-8">
           <Image src={settingImage} alt="setting" />
         </div>
@@ -1215,12 +1225,14 @@ function Vapt() {
                     </AnimatedCard>
                   ))}
                 </div>
+                <Link href="/services/soc-2-compliance">
                 <p className="text-sm font-medium flex items-center gap-3 justify-center  mt-4 text-[#0F66EA]">
                   Explore SOC 2 + VAPT bundled services {""}
                   <span>
                     <Icon icon="akar-icons:arrow-right" />
                   </span>
                 </p>
+                </Link>
               </div>
             </div>
           </div>

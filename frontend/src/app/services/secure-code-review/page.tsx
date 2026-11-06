@@ -9,6 +9,7 @@ import {
   Animation,
   AnimatedCard,
 } from "../../../components/ui/Animation";
+import Link from "next/link";
 
 const securecodelist = [
   "Application Source Code",
@@ -143,6 +144,7 @@ function SecureCode() {
             >
               Secure SDLC · SAST · Manual Code Review · Vulnerability Analysis
             </motion.p>
+            <Link href="/company/contact">
             <motion.button
               initial={{ opacity: 0, y: 80 }}
               animate={{ opacity: 1, y: 0 }}
@@ -154,6 +156,7 @@ function SecureCode() {
                 <Icon icon="akar-icons:arrow-right" className="text-xl" />
               </span>
             </motion.button>
+            </Link>
           </div>
           <div className="flex-1">
             <Image src={securecode} alt="secure code" />

@@ -12,6 +12,7 @@ import { aiAugamented } from "../../../services/api/contact";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
+import Link from "next/link";
 
 interface ContactFormData {
   email: string;
@@ -412,12 +413,14 @@ function AiAugamentedRedTeam() {
               LLM Security · AI Agents · AI Supply Chain · Deepfake Vishing
             </p>
             <div className="flex gap-4">
+              <Link href="/company/contact">
               <button className="text-[15px] font-medium px-4 py-3 flex items-center gap-3 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]">
                 Get AI Red Team Quote{" "}
                 <span>
                   <Icon icon="akar-icons:arrow-right" />
                 </span>
               </button>
+              </Link>
               <button className="text-[15px] font-medium px-4 py-3 flex items-center gap-3 rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF]/16">
                 <span>
                   <Icon icon="flowbite:outgoing-call-outline" />

@@ -14,6 +14,7 @@ import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { irda } from "../../../services/api/contact";
+import Link from "next/link";
 
 interface ContactFormData {
   email: string;
@@ -418,7 +419,7 @@ function page() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong. Please try again.",
+        "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -433,17 +434,17 @@ function page() {
           className="pointer-events-none absolute -left-[100px] top-[100px] z-0 h-[550px] w-[560px] rounded-full bg-[#7D70F0]/28 blur-[140px] lg:left-[100px]"
         />
 
-                <div className="relative z-10 mx-auto w-full max-w-7xl mx-auto px-6 sm:px-10">
+        <div className="relative z-10 mx-auto w-full max-w-7xl mx-auto px-6 sm:px-10">
 
-                    <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.9fr_1.25fr] lg:gap-5 xl:gap-8">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.9fr_1.25fr] lg:gap-5 xl:gap-8">
 
 
-                        <Animation>
-                            <div className="flex flex-col justify-center lg:py-2 text-center md:text-left">
-                                {/* Eyebrow */}
-                                <p className="text-[13px] sm:text-base font-semibold uppercase leading-7 text-[#7D70F0] text-center lg:text-left lg:max-w-[410px]">
-                                    IRDAI COMPLIANCE • INSURANCE CYBERSECURITY • ISNP AUDIT
-                                </p>
+            <Animation>
+              <div className="flex flex-col justify-center lg:py-2 text-center md:text-left">
+                {/* Eyebrow */}
+                <p className="text-[13px] sm:text-base font-semibold uppercase leading-7 text-[#7D70F0] text-center lg:text-left lg:max-w-[410px]">
+                  IRDAI COMPLIANCE • INSURANCE CYBERSECURITY • ISNP AUDIT
+                </p>
 
                 {/* Heading */}
                 <h1 className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left">
@@ -458,22 +459,23 @@ function page() {
                   operational resilience across your insurance platforms.
                 </p>
 
-                                <ul className="mt-8 grid grid-cols gap-y-4">
-                                    {[
-                                        "IRDAI Regulatory Alignment",
-                                        "Policyholder Data Protection",
-                                        "Digital Platform Security",
-                                        "Audit Readiness & Reporting",
-                                    ].map((item) => (
-                                        <li key={item} className="flex items-center justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]">
-                                            <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#7D70F0]" />
-                                            <span>{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                <ul className="mt-8 grid grid-cols gap-y-4">
+                  {[
+                    "IRDAI Regulatory Alignment",
+                    "Policyholder Data Protection",
+                    "Digital Platform Security",
+                    "Audit Readiness & Reporting",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]">
+                      <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#7D70F0]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
 
                 {/* CTA */}
                 <div className="mt-10 text-center lg:text-left">
+                  <Link href="/company/contact">
                   <button
                     type="button"
                     className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3]"
@@ -483,6 +485,7 @@ function page() {
                       <Icon icon="mdi:arrow-right"></Icon>
                     </span>
                   </button>
+                  </Link>
                 </div>
               </div>
             </Animation>
@@ -769,9 +772,8 @@ function page() {
                   <AnimatedCard
                     delay={index * 0.13}
                     key={index}
-                    className={`relative flex flex-col justify-between p-5 space-y-4 rounded-lg bg-[#66666614] border border-[#0B15301F] py-8  ${
-                      index === 7 ? "lg:col-span-2" : ""
-                    }`}
+                    className={`relative flex flex-col justify-between p-5 space-y-4 rounded-lg bg-[#66666614] border border-[#0B15301F] py-8  ${index === 7 ? "lg:col-span-2" : ""
+                      }`}
                   >
                     <div className="absolute left-0 w-[2.5px] h-[23px] rounded-tr-2xl rounded-br-2xl bg-[#7D70F0]"></div>
                     <div className="flex items-center justify-between gap-8">
@@ -1102,11 +1104,10 @@ function page() {
                   {/* Left content */}
 
                   <div
-                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${
-                      item.side === "left"
+                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${item.side === "left"
                         ? "sm:pr-7 sm:text-right lg:pr-8"
                         : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
-                    }`}
+                      }`}
                   >
                     {item.side === "left" && (
                       <>
@@ -1131,11 +1132,10 @@ function page() {
                   {/* Right content */}
 
                   <div
-                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${
-                      item.side === "right"
+                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${item.side === "right"
                         ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
                         : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
-                    }`}
+                      }`}
                   >
                     {item.side === "right" && (
                       <>
