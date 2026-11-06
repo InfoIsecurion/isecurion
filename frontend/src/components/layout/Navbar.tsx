@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
@@ -336,11 +336,27 @@ function Navbar() {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  // const closeMenu = () => {
+  //   setIsOpen(false);
+  //   setOpenDropdown(null);
+  // };
+
+  type DesktopMenu = "products" | "services" | "company" | null;
+
+  // inside Navbar()
+  const [desktopMenu, setDesktopMenu] = useState<DesktopMenu>(null);
+
   const closeMenu = () => {
     setIsOpen(false);
+    setOpenDropdown(null);
+    setDesktopMenu(null); // closes desktop dropdowns too
   };
 
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const panelClass = (key: Exclude<DesktopMenu, null>) =>
+    desktopMenu === key
+      ? "visible translate-y-0 opacity-100"
+      : "invisible translate-y-2 opacity-0 pointer-events-none";
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[#000C1C]">
@@ -368,7 +384,7 @@ function Navbar() {
                 <span className="invisible group-hover:visible absolute left-0 top-[30px] w-[45px] h-[3px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
               </li>
               {/* this is the product link  */}
-              <li className="relative group">
+              <li className="relative">
                 <Link
                   href=""
                   className="text-base font-normal flex items-center gap-1 text-white"
@@ -485,6 +501,7 @@ function Navbar() {
                                       <li key={service.href}>
                                         <Link
                                           href={service.href}
+                                          onClick={closeMenu}
                                           className="flex items-start justify-between gap-2 py-1 text-sm text-[#415675]"
                                         >
                                           <span>{service.label}</span>
@@ -690,27 +707,35 @@ function Navbar() {
         </div>
 
         {/* Mobile Navigation */}
+        {/* Mobile Navigation */}
         <div
-          className={`absolute left-0 right-0 top-[65px] z-50 overflow-hidden bg-[#020E1C] transition-all duration-300 lg:hidden ${
-            isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+          className={`absolute left-0 right-0 top-[65px] z-50 overflow-y-auto bg-[#020E1C] transition-all duration-300 lg:hidden ${
+            isOpen
+              ? "max-h-[calc(100dvh-65px)] opacity-100"
+              : "max-h-0 opacity-0"
           }`}
         >
           <nav className="border-t border-white/10 px-6 py-6 sm:px-8">
-            <ul className="flex flex-col gap-2 text-[15px] font-medium text-[#FFFFFF]">
-              <Link href="/" onClick={closeMenu}>
-                Home
-              </Link>
-              <div className="relative">
+            <ul className="flex flex-col gap-5 text-[15px] font-medium text-white">
+              {/* HOME */}
+              <li>
+                <Link href="/" onClick={closeMenu}>
+                  Home
+                </Link>
+              </li>
+
+              {/* PRODUCTS */}
+              <li>
                 <button
                   type="button"
-                  className="flex items-center gap-1"
+                  className="flex w-full items-center gap-1"
                   onClick={() =>
                     setOpenDropdown(
                       openDropdown === "product" ? null : "product",
                     )
                   }
                 >
-                  Product
+                  Products
                   <Icon
                     icon="ant-design:caret-down-filled"
                     className={`h-[14px] w-[14px] transition-transform duration-300 ${
@@ -719,7 +744,6 @@ function Navbar() {
                   />
                 </button>
 
-                {/* Product Dropdown */}
                 <div
                   className={`grid transition-all duration-300 ${
                     openDropdown === "product"
@@ -728,34 +752,34 @@ function Navbar() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="flex flex-col gap-3 py-1 pl-4">
-                      <Link href="/" onClick={closeMenu} className="space-y-1">
-                        <h3 className="text-sm font-semibold">Vulnytics</h3>
-                        <p className="text-[11px] font-medium">
-                          Vulnerability intelligence and security risk
-                          visibility
-                        </p>
-                      </Link>
-                      <Link href="/" onClick={closeMenu} className="space-y-1">
-                        <h3 className="text-sm font-semibold">Drosera</h3>
-                        <p className="text-[11px] font-medium">
-                          Phishing simulations and human risk management
-                        </p>
-                      </Link>
-                      <Link href="/" onClick={closeMenu} className="space-y-1">
-                        <h3 className="text-sm font-semibold">LMS</h3>
-                        <p className="text-[11px] font-medium">
-                          Security awareness training and employee learning
-                        </p>
-                      </Link>
+                    <div className="flex flex-col gap-4 py-4 pl-4">
+                      {product.map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={closeMenu}
+                          className="space-y-1"
+                        >
+                          <h3 className="text-sm font-semibold text-white">
+                            {item.name}
+                          </h3>
+                          <p className="text-[12px] font-normal text-gray-400">
+                            {item.description}
+                          </p>
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="relative">
+              </li>
+
+              {/* SERVICES */}
+              <li>
                 <button
                   type="button"
-                  className="flex items-center gap-1"
+                  className="flex w-full items-center gap-1"
                   onClick={() =>
                     setOpenDropdown(
                       openDropdown === "services" ? null : "services",
@@ -779,38 +803,140 @@ function Navbar() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="flex flex-col items-start py-1 pl-14 space-y-1 ">
-                      {serviceCategories.map((item, index) => (
-                        <button key={index}>
-                          <h4>{item.title}</h4>
-                          <p>{item.description}</p>
-                        </button>
+                    <div className="flex flex-col gap-3 py-4 pl-4">
+                      {/* SERVICE CATEGORIES */}
+                      {serviceCategories.map((item) => (
+                        <div key={item.id}>
+                          <button
+                            type="button"
+                            onClick={() => setActiveService(item.id)}
+                            className={`flex w-full items-center gap-3 rounded-lg p-2 text-left transition-colors ${
+                              activeService === item.id
+                                ? "bg-[#102C49]"
+                                : "hover:bg-[#102C49]"
+                            }`}
+                          >
+                            <Icon
+                              icon={item.icon}
+                              className="shrink-0 text-xl text-[#05B9EE]"
+                            />
+
+                            <span>
+                              <span className="block text-sm font-semibold text-white">
+                                {item.title}
+                              </span>
+                              <span className="block text-xs font-normal text-gray-400">
+                                {item.description}
+                              </span>
+                            </span>
+                          </button>
+                        </div>
+                      ))}
+
+                      {/* SELECTED CATEGORY SERVICES */}
+                      <div className="mt-2 border-l border-[#05B9EE]/50 pl-4">
+                        <h4 className="mb-3 text-sm font-semibold text-[#05B9EE]">
+                          {
+                            serviceCategories.find(
+                              (item) => item.id === activeService,
+                            )?.title
+                          }
+                        </h4>
+
+                        <div className="flex flex-col gap-4">
+                          {serviceDetails[activeService].sections.map(
+                            (section) => (
+                              <div key={section.heading}>
+                                <h5 className="mb-2 text-[11px] font-semibold tracking-wider text-[#7590B8]">
+                                  {section.heading}
+                                </h5>
+
+                                <div className="flex flex-col gap-3">
+                                  {section.links.map((service) => (
+                                    <Link
+                                      key={service.href}
+                                      href={service.href}
+                                      onClick={closeMenu}
+                                      className="flex items-center justify-between gap-2 text-[13px] font-normal text-gray-300 transition-colors hover:text-[#05B9EE]"
+                                    >
+                                      <span>{service.label}</span>
+                                      <Icon
+                                        icon="akar-icons:chevron-right-small"
+                                        className="shrink-0 text-lg text-[#7590B8]"
+                                      />
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            ),
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              {/* COMPANY */}
+              <li>
+                <button
+                  type="button"
+                  className="flex w-full items-center gap-1"
+                  onClick={() =>
+                    setOpenDropdown(
+                      openDropdown === "company" ? null : "company",
+                    )
+                  }
+                >
+                  Company
+                  <Icon
+                    icon="ant-design:caret-down-filled"
+                    className={`h-[14px] w-[14px] transition-transform duration-300 ${
+                      openDropdown === "company" ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                <div
+                  className={`grid transition-all duration-300 ${
+                    openDropdown === "company"
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="grid grid-cols-2 gap-5 py-4 pl-4">
+                      {company.map((item) => (
+                        <div key={item.mainHeading}>
+                          <h4 className="border-b border-white/10 pb-2 text-xs font-semibold text-[#05B9EE]">
+                            {item.mainHeading}
+                          </h4>
+
+                          <div className="mt-3 flex flex-col gap-4">
+                            {item.list.map((listItem) => (
+                              <Link
+                                key={listItem.link}
+                                href={listItem.link}
+                                onClick={closeMenu}
+                                className="space-y-1"
+                              >
+                                <h5 className="text-sm font-semibold text-white">
+                                  {listItem.name}
+                                </h5>
+                                <p className="text-[11px] font-normal text-gray-400">
+                                  {listItem.description}
+                                </p>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
                       ))}
                     </div>
                   </div>
                 </div>
-              </div>
-              <Link href="" className="flex items-center gap-1">
-                Company{" "}
-                <span className="transition-transform duration-300 group-hover:rotate-180">
-                  <Icon
-                    icon="ant-design:caret-down-filled"
-                    className="h-[14px] w-[14px]"
-                  />
-                </span>{" "}
-              </Link>
-              {/* {navItems.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    href={item.href}
-                    onClick={closeMenu}
-                    className="block py-1 text-[15px] font-medium text-white transition-opacity hover:opacity-75"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))} */}
+              </li>
 
+              {/* CONTACT */}
               <li className="pt-2">
                 <Link
                   href="/company/contact"

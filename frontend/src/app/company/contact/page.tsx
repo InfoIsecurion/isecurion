@@ -389,7 +389,7 @@ function Contact() {
                   <input
                     type="checkbox"
                     required
-                    className="appearance-auto not-checked:appearance-none w-4 h-4 rounded-sm cursor-pointer  text-white border-[1.4px] border-[#D1D1D1] bg-[#000C1C] "
+                    className="appearance-auto not-checked:appearance-none w-4 h-4 rounded-sm cursor-pointer shrink-0 text-white border-[1.4px] border-[#D1D1D1] bg-[#000C1C] "
                   />
 
                   <p className="text-[11px] font-medium text-[#D1D1D1] max-w-[500px]">
@@ -416,7 +416,7 @@ function Contact() {
           </div>
 
           {/* contact cards  */}
-          <Animation>
+          {/* <Animation>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 mt-10">
               {enquiredata.map((item, index) => (
                 <AnimatedCard
@@ -449,7 +449,7 @@ function Contact() {
                 </AnimatedCard>
               ))}
             </div>
-          </Animation>
+          </Animation> */}
         </div>
       </section>
 
