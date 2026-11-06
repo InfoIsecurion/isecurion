@@ -400,7 +400,7 @@ function AiAugamentedRedTeam() {
   return (
     <div className="bg-[#060D1B]">
       {/* this is the hero section  */}
-      <section className="relative py-10  2xl:py-25 min-h-[calc(100dvh-110px)] 2xl:min-h-[80vh] flex items-center overflow-hidden bg-[#000000]">
+      <section className="relative py-14  min-h-[calc(100dvh-110px)] 2xl:min-h-[70vh] flex items-center overflow-hidden bg-[#000000]">
         <div className="absolute top-0 left-30 w-[650px] h-[600px] blur-[140px] rounded-full pointer-events-none opacity-80 bg-[#E24B4A]/30 "></div>
         <div className="max-w-7xl mx-auto px-6 sm:px-10 flex gap-8 sm:gap-15 flex-col lg:flex-row">
           {/* left  */}

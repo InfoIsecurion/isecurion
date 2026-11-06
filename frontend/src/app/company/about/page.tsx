@@ -105,31 +105,31 @@ const teamMembers = [
     name: "SHIMANTA SEN",
     role: "SALES HEAD",
     image: salesHead,
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/shimanta-sen-81aa66250/",
   },
   {
     name: "DEBASHIS DEY",
     role: "COMPLIANCE HEAD",
     image: complianceHead,
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/debadey/",
   },
   {
     name: "CEPHAS JOSEPH",
     role: "OFFENSIVE SECURITY & PRODUCT HEAD",
     image: productHead,
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/cephasjoe/",
   },
   {
     name: "MANJESH KUMAR LD",
     role: "PRODUCT LEAD",
     image: productLead,
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/manjesh-kumar-62992b205/",
   },
   {
     name: "DOLLY CHAUDHRANI",
     role: "HR MANAGER",
     image: HR,
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/dolly-rangnani/",
   },
 ];
 
@@ -139,7 +139,7 @@ const director = {
   image: "CEO",
   description:
     "Visionary leader with over 20 years of experience in cybersecurity, helping organizations strengthen resilience through strategic security consulting, innovation, and trusted leadership.",
-  linkedin: "https://www.linkedin.com/",
+  linkedin: "https://www.linkedin.com/in/manjunath-n-g-18a97b13/",
 };
 
 function page() {
@@ -504,7 +504,7 @@ function page() {
       </section>
 
       {/* OUR TEAM */}
-      <section className="w-full bg-[#070D1A] py-14 sm:py-16 lg:py-20">
+      <section className="w-full bg-[#070D1A] py-14 sm:py-16 lg:py-20 overflow-hidden">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
 
           {/* SECTION HEADING */}
@@ -559,7 +559,7 @@ function page() {
                     </span>
                   </div>
 
-                  <p className="mt-6 max-w-[500px] text-base sm:text-lg leading-[28px] text-[#D1D1D1]">
+                  <p className="mt-6 max-w-[500px] text-base sm:text-[17px] leading-[28px] text-[#D1D1D1]">
                     {director.description}
                   </p>
 

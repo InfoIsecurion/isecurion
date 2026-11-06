@@ -130,7 +130,7 @@ const serviceDetails = {
         links: [
           {
             label: "IoT Security Testing",
-            href: "iot-security-testing",
+            href: "/services/iot-security-testing",
           },
           {
             label: "Industrial Control System Security Assessment",
@@ -161,7 +161,7 @@ const serviceDetails = {
           // },
           {
             label: "GDPR",
-            href: "/services/GDPR",
+            href: "/services/gdpr",
           },
           {
             label: "DPDP Compliance",
@@ -178,7 +178,7 @@ const serviceDetails = {
           },
           {
             label: "IRDA Information Security Audit",
-            href: "/services/IRDA-audit",
+            href: "/services/irda-audit",
           },
           {
             label: "RBI Information Security Audit",

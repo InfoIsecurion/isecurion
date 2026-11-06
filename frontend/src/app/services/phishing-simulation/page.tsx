@@ -480,8 +480,6 @@ function PhishingSimulation() {
                   AI-Powered Phishing Campaigns
                 </li>
 
-                <div className="flex flex-col lg:flex-row  gap-4">
-                  <li className="flex items-center justify-center lg:justify-start gap-2 text-sm text-[#D1D1D1] sm:text-[14px]">
                 <div className='flex flex-col lg:flex-row  gap-4'>
                   <li className="flex items-center justify-center lg:justify-start gap-2 text-sm text-[#D1D1D1] sm:text-[14px]">
                     <Icon
@@ -511,14 +509,18 @@ function PhishingSimulation() {
             </Animation> */}
             <Animation>
               <div className="mt-8 flex flex-col items-center gap-4 lg:flex-row lg:items-start lg:justify-start">
-                <button className="flex h-[54px] items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] shadow-lg transition-all duration-200 hover:bg-gray-100">
-                  <span>Request Simulation</span>
-                  <Icon icon="lucide:arrow-right" className="h-4 w-4" />
-                </button>
+                <Link href="/comapany/contact">
+                  <button className="flex h-[54px] items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] shadow-lg transition-all duration-200 hover:bg-gray-100 cursor-pointer">
+                    <span>Request Simulation</span>
+                    <Icon icon="lucide:arrow-right" className="h-4 w-4" />
+                  </button>
+                </Link>
 
-                <button className="flex h-[54px] items-center justify-center gap-2.5 rounded-lg border-2 border-[#3263B1] bg-gradient-to-r from-[#29559D] to-[#1C3D70] px-6 py-3.5 text-base font-semibold text-white">
-                  Explore Drosera
-                </button>
+                <Link href="https://simulate.drosera.ai/">
+                  <button className="flex h-[54px] items-center justify-center gap-2.5 rounded-lg border-2 border-[#3263B1] bg-gradient-to-r from-[#29559D] to-[#1C3D70] px-6 py-3.5 text-base font-semibold text-white cursor-pointer">
+                    Explore Drosera
+                  </button>
+                </Link>
               </div>
             </Animation>
           </div>
@@ -821,7 +823,7 @@ function PhishingSimulation() {
 
                 <div className="text-center lg:text-left">
                   <Link
-                    href="#"
+                    href="https://simulate.drosera.ai/"
                     className="mt-7 inline-flex min-h-[45px] items-center justify-center gap-2 rounded-[8px] border border-[#568CE0]/60 bg-gradient-to-b from-[#386CC0] to-[#20477E] px-5 py-3 text-[13px] font-medium text-white shadow-[0_4px_16px_rgba(15,102,234,0.15)] transition duration-300 hover:border-[#70A7FF] hover:from-[#437DD5] hover:to-[#285795] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F80FF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080B19]"
                   >
                     Explore Drosera

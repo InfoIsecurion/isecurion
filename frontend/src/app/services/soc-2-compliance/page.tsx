@@ -545,7 +545,6 @@ function page() {
                       <select
                         id="target"
                         name="target"
-                        defaultValue=""
                         required
                         className="h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
                       >

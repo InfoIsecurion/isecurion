@@ -755,6 +755,7 @@ function DpdpCompliance() {
               {/* captcha  */}
               <div className="">
                 <div className="flex items-center gap-3">
+                 
                   <Turnstile
                     ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}

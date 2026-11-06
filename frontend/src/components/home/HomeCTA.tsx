@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 function HomeCTA() {
   return (
@@ -20,12 +21,16 @@ function HomeCTA() {
 
             <div className="flex flex-col gap-3 py-3 sm:flex-row">
               <button className="flex gap-2 cursor-pointer items-center justify-center rounded-lg bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] px-5 py-3 text-base font-medium text-white">
+                <Link href="/company/contact">
                 Schedule a Consultation 
+                </Link>
                 <span><Icon icon="ep:right" width={20}/> </span>
               </button>
 
               <button className="flex cursor-pointer items-center justify-center rounded-lg border border-[#D8E4EF] bg-white px-5 py-3 text-base font-medium text-[#31435C]">
-                Talk to an Expert
+                <Link href="tel:+918861201570" target="_blank">
+                  Talk to an Expert
+                  </Link>
               </button>
             </div>
           </div>

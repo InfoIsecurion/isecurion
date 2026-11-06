@@ -423,8 +423,12 @@ function Iso27001() {
               with expert guidance across risk assessment, security controls,
               documentation, internal audits, and certification readiness.
             </p>
-            <button className="mt-8 mx-auto lg:mx-0 text-[15px] font-medium px-4 py-3 flex items-center justify-center gap-2 rounded-[10px] cursor-pointer text-[#31435C] bg-white">
-              Book a Free Readiness Call
+
+            <button
+              className="text-base font-medium flex items-center gap-2 px-3 py-4 mx-auto lg:mx-0 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
+              style={{ animationDelay: "600ms" }}
+            >
+              Book a Free Readiness Call{" "}
               <span>
                 <Icon icon="akar-icons:arrow-right" />
               </span>
@@ -957,18 +961,20 @@ function Iso27001() {
       {/* PROJECT DELIVERABLES  */}
       <section className="w-full py-14 ">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col lg:flex-row gap-10">
-          <div className="flex-1 space-y-4 w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
-            <p className="text-sm sm:text-base font-semibold text-[#0FEADB]">
-              PROJECT DELIVERABLES
-            </p>
-            <h2 className="text-[#FFFFFF]">
-              Clear Documentation. Actionable Security Improvements.
-            </h2>
-            <p className="text-base sm:text-lg font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1]">
-              Every engagement is designed to provide practical outputs your
-              team can use to implement, monitor, and maintain information
-              security controls.
-            </p>
+          <div className="flex-1 space-y-4 ">
+            <div className="space-y-4 text-center lg:text-left sticky lg:top-24">
+              <p className="text-sm sm:text-base font-semibold text-[#0FEADB] sectionheading">
+                PROJECT DELIVERABLES
+              </p>
+              <h2 className="text-[#FFFFFF]">
+                Clear Documentation. Actionable Security Improvements.
+              </h2>
+              <p className="sectionDescription text-[#D1D1D1]">
+                Every engagement is designed to provide practical outputs your
+                team can use to implement, monitor, and maintain information
+                security controls.
+              </p>
+            </div>
           </div>
           <div className="flex-1 px-5 border-l border-[#B1B1B114]">
             <div className="space-y-4">

@@ -68,26 +68,26 @@ function Footer() {
             </h4>
 
             <div className="mt-3 flex gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
-                <Link href="https://www.facebook.com/isecurion" target="_blank">
+              <Link href="https://www.facebook.com/isecurion" target="_blank">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
                   <Icon icon="iconoir:facebook" width={18} />
-                </Link>
-              </div>
+                </div>
+              </Link>
 
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
-                <Link href="https://twitter.com/isecurion" target="_blank">
+              <Link href="https://twitter.com/isecurion" target="_blank">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
                   <Icon icon="line-md:twitter" width={18} />
-                </Link>
-              </div>
+                </div>
+              </Link>
 
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
-                <Link
-                  href="https://www.linkedin.com/company/isecurion"
-                  target="_blank"
-                >
+              <Link
+                href="https://www.linkedin.com/company/isecurion"
+                target="_blank"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
                   <Icon icon="ri:linkedin-line" width={18} />
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
           </div>
 

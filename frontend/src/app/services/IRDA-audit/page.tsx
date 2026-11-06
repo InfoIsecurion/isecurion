@@ -828,11 +828,7 @@ function page() {
                   aria-hidden="true"
                 />
 
-                <div className="pt-25">
-                  <h3 className="text-base font-medium leading-7 text-white sm:text-lg max-w-[230px]">
-                    {domain.title}
-                  </h3>
-
+                <div className="relative z-10 mx-auto w-full max-w-7xl mx-auto px-6 sm:px-10">
                   <p className="mt-5 max-w-[330px] text-sm leading-[20px] text-[#D1D1D1] sm:text-base sm:leading-[25px]">
                     {domain.description}
                   </p>
