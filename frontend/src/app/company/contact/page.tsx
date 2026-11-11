@@ -4,7 +4,12 @@ import { Icon } from "@iconify/react";
 import LocationMap from "../../../components/ui/LocationMap";
 import leftBackground from "../../../assets/contact/left_background.png";
 import contactBg from "../../../assets/contact/Section.svg";
-import { AnimatedCard, Animation } from "../../../components/ui/Animation";
+import {
+  AnimatedCard,
+  Animation,
+  LeftAnimation,
+  RightAnimation,
+} from "../../../components/ui/Animation";
 import { contactForm } from "../../../services/api/contact";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -53,7 +58,7 @@ const locations = [
   {
     id: 1,
     city: "Bangalore",
-    area: "45, Kanakapura Main Rd, Paramount Gardens, Talaghattapura, Bengaluru, Karnataka 560109",
+    area: "37, Judicial Layout 2nd Phase,Kanakapura Main Rd,Thalaghattaapura,Bengaluru - 560109, Karnataka",
     icon: "material-symbols:star-rounded",
   },
   {
@@ -194,7 +199,7 @@ function Contact() {
                   We'd love to hear <br /> from you
                 </h1>
                 <p
-                  className="text-base sm:text-[18px] font-normal text-center lg:text-left leading-7 text-[#D1D1D1] max-w-[424px] leading-[31px] opacity-0 animate-hero-reveal"
+                  className="text-base sm:text-[18px] font-normal text-center lg:text-left  text-[#D1D1D1] max-w-[424px] leading-[31px] opacity-0 animate-hero-reveal"
                   style={{ animationDelay: "450ms" }}
                 >
                   Have a question, feedback, or need help? Our team is here to
@@ -235,7 +240,7 @@ function Contact() {
                       Call / Whatsapp
                     </p>
                     <p className="text-sm font-medium text-[#D1D1D1]">
-                      8861201570 (Mon-Fri, 10:00 AM - 7:00 PM)
+                      +91 8861201570 (Mon-Fri, 10:00 AM - 7:00 PM)
                     </p>
                   </div>
                 </div>
@@ -251,8 +256,8 @@ function Contact() {
                       Head Office
                     </p>
                     <p className="text-sm font-medium text-[#D1D1D1] max-w-[323px]">
-                      45, Kanakapura Main Rd, Paramount Gardens, Talaghattapura,
-                      Bengaluru, Karnataka 560109
+                      37, Judicial Layout 2nd Phase, Kanakapura Main Rd,
+                      Thalaghattaapura, Bengaluru - 560109, Karnataka
                     </p>
                   </div>
                 </div>
@@ -402,7 +407,7 @@ function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className={`flex w-full items-center justify-center gap-2 rounded-[10px] border-[2px] border-[#3263B1] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] py-3 text-base font-semibold text-white cursor-pointer ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                  className={`flex w-full items-center justify-center gap-2 rounded-[10px] border-[2px] border-[#3263B1] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] py-3 text-base font-semibold text-white ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
                 >
                   <span>{loading ? "Sending..." : "Send Message"}</span>
 
@@ -454,21 +459,17 @@ function Contact() {
       </section>
 
       <section className=" bg-[#070D1A]">
-        <Animation>
-          <div className="mx-auto max-w-7xl px-6 py-14 sm:px-10 flex items-stretch gap-10 flex-col lg:flex-row">
-            <div className="flex-1 rounded-[10px] p-7 bg-[#151F4A] relative overflow-hidden">
-              {/* <Image
-              src={global}
-              alt=""
-              className="absolute  h-full w-full object-contain z-0"
-            /> */}
-
-              <Animation>
+        <div className="mx-auto max-w-7xl px-6 py-14 sm:px-10 flex items-stretch gap-10 flex-col lg:flex-row overflow-hidden">
+          <div className="flex-1">
+            <LeftAnimation>
+              <div className=" rounded-[10px] p-7 bg-[#151F4A] relative overflow-hidden">
                 <div
                   className="relative z-10 bg-no-repeat bg-right"
                   style={{ backgroundImage: `url(${leftBackground.src})` }}
                 >
-                  <h2 className="text-white text-2xl">Global Presence</h2>
+                  <h2 className="text-white text-lg sm:text-2xl">
+                    Global Presence
+                  </h2>
 
                   <p className="text-base font-medium text-[#EBEBEB] mt-2 max-w-[350px]">
                     Headquartered in Bangalore, serving clients across India and
@@ -530,14 +531,16 @@ function Contact() {
                     </div>
                   </div>
                 </div>
-              </Animation>
-            </div>
-
-            <div className="flex-1">
-              <LocationMap />
-            </div>
+              </div>
+            </LeftAnimation>
           </div>
-        </Animation>
+
+          <div className="flex-1">
+            <RightAnimation>
+              <LocationMap />
+            </RightAnimation>
+          </div>
+        </div>
       </section>
     </div>
   );

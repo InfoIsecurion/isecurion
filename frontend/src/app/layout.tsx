@@ -5,7 +5,8 @@ import type { ReactNode } from "react";
 import Footer from "../components/layout/Footer";
 import type { Metadata } from "next";
 import { ToastContainer } from "react-toastify";
-
+import "lenis/dist/lenis.css";
+import SmoothScroll from "../components/ui/SmoothScroll";
 export const metadata: Metadata = {
   title: "ISECURION | CERT-IN Empanelled",
   description: "ISECURION Technology & Consulting Pvt Ltd",
@@ -21,7 +22,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body className=" flex flex-col">
         <Navbar />
-        {children}
+        {/* {children} */}
+        <SmoothScroll>{children}</SmoothScroll>
         <Footer />
         <ToastContainer position="top-right" autoClose={1000} />
       </body>

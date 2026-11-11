@@ -182,7 +182,7 @@ const serviceDetails = {
           },
           {
             label: "RBI Information Security Audit",
-            href: "/services/RBI-security-audit",
+            href: "/services/rbi-security-audit",
           },
         ],
       },
@@ -283,7 +283,7 @@ const product = [
   {
     name: "Drosera",
     description: "Phishing simulations and human risk management",
-    href: "https://simulate.drosera.ai/",
+    href: "https://drosera.ai/",
   },
   {
     name: "LMS",
@@ -353,11 +353,6 @@ function Navbar() {
     setDesktopMenu(null); // closes desktop dropdowns too
   };
 
-  const panelClass = (key: Exclude<DesktopMenu, null>) =>
-    desktopMenu === key
-      ? "visible translate-y-0 opacity-100"
-      : "invisible translate-y-2 opacity-0 pointer-events-none";
-
   return (
     <header className="sticky top-0 z-50 w-full bg-[#000C1C]">
       <div className="">
@@ -384,9 +379,10 @@ function Navbar() {
                 <span className="invisible group-hover:visible absolute left-0 top-[30px] w-[45px] h-[3px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
               </li>
               {/* this is the product link  */}
-              <li className="relative">
+              <li className="relative group">
                 <Link
                   href=""
+                  onClick={closeMenu}
                   className="text-base font-normal flex items-center gap-1 text-white"
                 >
                   Products{" "}
@@ -423,7 +419,11 @@ function Navbar() {
                 </div>
               </li>
               {/* this is the service link  */}
-              <li className="list-none group">
+              <li
+                className="list-none"
+                onMouseEnter={() => setDesktopMenu("services")}
+                onMouseLeave={() => setDesktopMenu(null)}
+              >
                 <Link
                   href=""
                   className="flex items-center gap-1 text-[15px] font-medium text-white"
@@ -437,7 +437,13 @@ function Navbar() {
                   </span>
                 </Link>
 
-                <div className="flex flex-col invisible fixed top-full z-50 mt-5 w-[calc(100vw-2rem)] max-w-6xl -translate-x-1/2 translate-y-2 rounded-xl bg-gradient-to-b from-[#F5F9FD] to-[#FFFFFF] opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                <div
+                  className={`flex flex-col fixed top-full z-50 mt-5 w-[calc(100vw-2rem)] max-w-6xl -translate-x-1/2 rounded-xl bg-gradient-to-b from-[#F5F9FD] to-[#FFFFFF] shadow-xl transition-all duration-200 ${
+                    desktopMenu === "services"
+                      ? "visible translate-y-0 opacity-100"
+                      : "invisible translate-y-2 opacity-0"
+                  }`}
+                >
                   <span className="invisible group-hover:visible absolute left-140  -top-0.5   w-[100px] h-[5px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
                   <div className="flex gap-5">
                     {/* LEFT */}
@@ -498,7 +504,10 @@ function Navbar() {
 
                                   <ul className="space-y-2">
                                     {section.links.map((service) => (
-                                      <li key={service.href}>
+                                      <li
+                                        className="list-none"
+                                        key={service.href}
+                                      >
                                         <Link
                                           href={service.href}
                                           onClick={closeMenu}
@@ -541,6 +550,7 @@ function Navbar() {
                                       <li key={service.href}>
                                         <Link
                                           href={service.href}
+                                          onClick={closeMenu}
                                           className="flex items-start justify-between gap-2 py-1 text-sm text-[#415675]"
                                         >
                                           <span>{service.label}</span>
@@ -575,6 +585,7 @@ function Navbar() {
                                       <li key={service.href}>
                                         <Link
                                           href={service.href}
+                                          onClick={closeMenu}
                                           className="flex items-start justify-between gap-2 py-1 text-sm text-[#415675]"
                                         >
                                           <span>{service.label}</span>
@@ -609,6 +620,7 @@ function Navbar() {
                                     <li key={service.href}>
                                       <Link
                                         href={service.href}
+                                        onClick={closeMenu}
                                         className=" flex items-center justify-between gap-2 rounded-md py-1 text-sm text-[#415675]"
                                       >
                                         <span>{service.label}</span>
@@ -630,7 +642,11 @@ function Navbar() {
                 </div>
               </li>
               {/* this is the company  */}
-              <li className="relative group">
+              <li
+                className="relative"
+                onMouseEnter={() => setDesktopMenu("company")}
+                onMouseLeave={() => setDesktopMenu(null)}
+              >
                 <Link
                   href=""
                   className="text-[15px] font-medium flex items-center gap-1 text-white"
@@ -643,7 +659,13 @@ function Navbar() {
                     />
                   </span>
                 </Link>
-                <div className="flex flex-col items-center invisible absolute left-1/2 top-full z-50 mt-5 px-6 py-6 w-xl -translate-x-1/2 translate-y-2 rounded-xl bg-gradient-to-b from-[#F5F9FD] to-[#FFFFFF] opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                <div
+                  className={`flex flex-col items-center absolute left-1/2 top-full z-50 mt-5 px-6 py-6 w-xl -translate-x-1/2 rounded-xl bg-gradient-to-b from-[#F5F9FD] to-[#FFFFFF] transition-all duration-200 ${
+                    desktopMenu === "company"
+                      ? "visible translate-y-0 opacity-100"
+                      : "invisible translate-y-2 opacity-0"
+                  }`}
+                >
                   <span className="invisible group-hover:visible absolute  -top-0.5   w-[100px] h-[5px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
                   <div>
                     <div className="grid grid-cols-2 gap-5">
@@ -657,6 +679,7 @@ function Navbar() {
                             {item.list.map((listItem, listIndex) => (
                               <Link
                                 key={listIndex}
+                                onClick={closeMenu}
                                 href={listItem.link}
                                 className="block space-y-1 group/item"
                               >

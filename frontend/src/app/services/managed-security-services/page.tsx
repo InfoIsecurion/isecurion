@@ -16,7 +16,6 @@ import { useForm } from "react-hook-form";
 import { managesSecurityService } from "../../../services/api/contact";
 import { toast } from "react-toastify";
 
-
 interface ContactFormData {
   email: string;
   companyName: string;
@@ -436,253 +435,58 @@ function ManagedSecurityServices() {
         />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.9fr_1.25fr] lg:gap-5 xl:gap-8">
-            <Animation>
-              <div className="flex flex-col justify-center lg:py-2 text-center md:text-left">
-                {/* Eyebrow */}
-                <p className="text-[13px] sm:text-base font-semibold uppercase leading-none text-[#C8912A] text-center lg:text-left">
-                  MANAGED SECURITY SERVICES
-                </p>
+          <div className="flex flex-col justify-center lg:py-2 text-center">
+            {/* Eyebrow */}
+            <p
+              className="text-[13px] sm:text-base font-semibold uppercase leading-none text-[#C8912A] text-center opacity-0 animate-hero-reveal"
+              style={{ animationDelay: "150ms" }}
+            >
+              MANAGED SECURITY SERVICES
+            </p>
 
-                {/* Heading */}
-                <h1 className="mt-5 lg:max-w-[470px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left">
-                  Managed Security Services (MSSP) - 24/7 SOC & Threat Defense
-                </h1>
+            {/* Heading */}
+            <h1
+              className="mt-5 lg:max-w-[700px] mx-auto font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center opacity-0 animate-hero-reveal"
+              style={{ animationDelay: "300ms" }}
+            >
+              Managed Security Services (MSSP) - 24/7 SOC & Threat Defense
+            </h1>
 
-                {/* Description */}
-                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left">
-                  ISECURION delivers enterprise-grade Managed Security Services
-                  to organizations across India, USA, UK, UAE, GCC, Singapore,
-                  and Australia.
-                </p>
+            {/* Description */}
+            <p
+              className="mt-4 lg:max-w-[800px] mx-auto text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center opacity-0 animate-hero-reveal"
+              style={{ animationDelay: "450ms" }}
+            >
+              ISECURION delivers enterprise-grade Managed Security Services to
+              organizations across India, USA, UK, UAE, GCC, Singapore, and
+              Australia.
+            </p>
 
-                <p className="mt-4 lg:max-w-[410px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left">
-                  From 24/7 SOC monitoring and AI-driven threat detection to
-                  incident response, vulnerability management, and compliance
-                  reporting, we protect your digital infrastructure around the
-                  clock.
-                </p>
+            <p
+              className="mt-4 lg:max-w-[800px] mx-auto text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center opacity-0 animate-hero-reveal"
+              style={{ animationDelay: "600ms" }}
+            >
+              From 24/7 SOC monitoring and AI-driven threat detection to
+              incident response, vulnerability management, and compliance
+              reporting, we protect your digital infrastructure around the
+              clock.
+            </p>
 
-                {/* CTA */}
-                <div className="mt-10 text-center lg:text-left">
-                  <button
-                    type="button"
-                    className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3]"
-                  >
-                    Book Free Consultation {""}
-                    <span className="ml-1.5 text-[17px] leading-none text-[#31435C]">
-                      <Icon icon="mdi:arrow-right"></Icon>
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </Animation>
-
-            <Animation>
-              <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:p-[30px] xl:p-[40px]">
-                <div>
-                  <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
-                    Request a Free MSSP Assessment
-                  </h2>
-
-                  <p className="mt-3 text-[14px] leading-[1.5] text-[#D9D9D9]">
-                    Get a free security assessment and tailored MSSP proposal.
-                  </p>
-                </div>
-
-                {/* Form*/}
-                <form className="mt-8" onSubmit={handleSubmit(submit)}>
-                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                    <div>
-                      <label
-                        htmlFor="workEmail"
-                        className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
-                      >
-                        Work Email <span className="text-[#E42F23]">*</span>
-                      </label>
-
-                      <input
-                        id="workEmail"
-                        name="workEmail"
-                        type="email"
-                        placeholder="youremail@gmail.com"
-                        className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585]  ${errors.email ? "border border-red-500" : ""}`}
-                        {...register("email", {
-                          required: "Email is required",
-                          pattern: {
-                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                            message: "Please enter a valid email address",
-                          },
-                        })}
-                      />
-                      {errors.email && (
-                        <p className="text-sm font-normal text-red-500">
-                          {errors.email.message}
-                        </p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="companyName"
-                        className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
-                      >
-                        Company Name
-                      </label>
-
-                      <input
-                        id="companyName"
-                        name="companyName"
-                        type="text"
-                        placeholder="Company name"
-                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
-                        {...register("companyName")}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 mt-5">
-                    <div>
-                      <label
-                        htmlFor="assessmentType"
-                        className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
-                      >
-                        Primary Need <span className="text-[#F04444]">*</span>
-                      </label>
-
-                      <div className="relative">
-                        <select
-                          id="target"
-                          name="target"
-                          defaultValue=""
-                          className={`h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD] ${errors.primaryNeed ? "border border-red-500" : ""}`}
-                          {...register("primaryNeed", {
-                            required: "Primary need is required",
-                          })}
-                        >
-                          <option value="">Select Your Primary Need</option>
-                          <option value="24/7 SOC Monitoring">
-                            24/7 SOC Monitoring
-                          </option>
-                          <option value="Threat Detection & Incident Response">
-                            Threat Detection & Incident Response
-                          </option>
-                          <option value="Vulnerability & Risk Management">
-                            Vulnerability & Risk Management{" "}
-                          </option>
-                          <option value="Compliance Reporting (ISO 27001 /SOC 2 / GDPR)">
-                            Compliance Reporting (ISO 27001 /SOC 2 / GDPR){" "}
-                          </option>
-                          <option value="Cloud Security Monitoring (AWS /Azure / GCP)">
-                            Cloud Security Monitoring (AWS /Azure / GCP)
-                          </option>
-                          <option value="Full MSSP Engagement">
-                            Full MSSP Engagement
-                          </option>
-                          <option value="Other">Other</option>
-                        </select>
-                        {errors.primaryNeed && (
-                          <p className="text-sm font-normal text-red-500">
-                            {errors.primaryNeed.message}
-                          </p>
-                        )}
-
-                        <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#777]">
-                          <svg
-                            width="14"
-                            height="8"
-                            viewBox="0 0 14 8"
-                            fill="none"
-                          >
-                            <path
-                              d="M1 1L7 7L13 1"
-                              stroke="currentColor"
-                              strokeWidth="1.5"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        </span>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="region"
-                        className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
-                      >
-                        Region <span className="text-[#E42F23]">*</span>
-                      </label>
-
-                      <input
-                        id="region"
-                        name="region"
-                        type="text"
-                        placeholder="Country / Region"
-                        className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD] ${errors.country ? "border border-red-500" : ""}`}
-                        {...register("country", {
-                          required: "Region is required",
-                        })}
-                      />
-                      {errors.companyName && (
-                        <p className="text-sm font-normal text-red-500">
-                          {errors.country.message}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Captcha */}
-                  <div className="mt-7">
-                    <div className="flex items-center gap-3">
-                      <Turnstile
-                        ref={turnstileRef}
-                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                        onSuccess={(token) => setTurnstileToken(token)}
-                        onExpire={() => setTurnstileToken("")}
-                        onError={() => setTurnstileToken("")}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Consent */}
-                  <div className="mt-5 flex items-start gap-2.5">
-                    <input
-                      id="consent"
-                      name="consent"
-                      type="checkbox"
-                      required
-                      className={`mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] `}
-                      {...register("consent", {
-                        required: "Please accept the consent to continue.",
-                      })}
-                    />
-
-                    <label
-                      htmlFor="consent"
-                      className="text-[10px] leading-[1.7] text-[#BDBDBD] sm:text-[11px]"
-                    >
-                      By clicking submit below, you agree to our Terms of Use
-                      and Privacy Policy. Additionally, you consent to allow
-                      ISECURION Technology & Consulting Pvt. Ltd. to store and
-                      process the personal information submitted above to
-                      provide you the content requested.
-                    </label>
-                  </div>
-
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    className="mt-8 flex h-[51px] w-full items-center justify-center rounded-[7px] border border-[#4D78C4] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(39,84,148,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#5282D3] hover:to-[#2B5CA0] active:translate-y-0"
-                  >
-                    Get My Free Assessment{""}
-                    <span className="ml-1.5 text-[18px] leading-none">
-                      <Icon icon="mdi:arrow-right" />
-                    </span>
-                  </button>
-                </form>
-              </div>
-            </Animation>
+            {/* CTA */}
+            <div
+              className="mt-10 opacity-0 animate-hero-reveal"
+              style={{ animationDelay: "600ms" }}
+            >
+              <Link
+                href="/company/contact"
+                className="inline-flex h-[45px] text-[15px] font-semibold items-center justify-center rounded-lg bg-white px-5  text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3]"
+              >
+                Book Free Consultation {""}
+                <span className="ml-1.5 text-[17px] leading-none text-[#31435C]">
+                  <Icon icon="mdi:arrow-right"></Icon>
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

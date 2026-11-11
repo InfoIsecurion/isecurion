@@ -56,21 +56,6 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
-  hidden: {
-    opacity: 0,
-    y: 100,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut" as const,
-    },
-  },
-};
-
 const capabilities = [
   {
     icon: "si:shield-line",
@@ -111,6 +96,7 @@ const ourExpertise = [
     descriptionColor: "text-[#D1D1D1]",
     headingColor: "text-[#E24B4A]",
     listColor: "text-[#A8A8A8]",
+    link: "services/continuous-breach-attack-simulation",
   },
   {
     Icon: "lucide:monitor-cog",
@@ -125,6 +111,7 @@ const ourExpertise = [
     descriptionColor: "text-[#D1D1D1]",
     headingColor: "text-[#0F66EA]",
     listColor: "text-[#A8A8A8]",
+    link: "services/managed-security-services",
   },
   {
     Icon: "gridicons:cloud-outline",
@@ -144,6 +131,7 @@ const ourExpertise = [
     descriptionColor: "text-[#D1D1D1]",
     headingColor: "text-[#0F66EA]",
     listColor: "text-[#A8A8A8]",
+    link: "services/cloud-security-assessment",
   },
   {
     Icon: "charm:notes-tick",
@@ -158,6 +146,7 @@ const ourExpertise = [
     descriptionColor: "text-[#D1D1D1]",
     headingColor: "text-[#0F66EA]",
     listColor: "text-[#A8A8A8]",
+    link: "services/iso27001",
   },
   {
     Icon: "lucide:users-round",
@@ -177,6 +166,7 @@ const ourExpertise = [
     descriptionColor: "text-[#D1D1D1]",
     headingColor: "text-[#0F66EA]",
     listColor: "text-[#A8A8A8]",
+    link: "services/vciso",
   },
   {
     Icon: "material-symbols:warning-outline-rounded",
@@ -196,6 +186,7 @@ const ourExpertise = [
     descriptionColor: "text-[#D1D1D1]",
     headingColor: "text-[#E24B4A]",
     listColor: "text-[#A8A8A8]",
+    link: "services/phishing-simulation",
   },
 ];
 
@@ -291,7 +282,7 @@ const impactCards = [
 
 export default function Home() {
   return (
-    <div className="w-full bg-[#01070E]">
+    <div className="w-full bg-[#060D1B]">
       {/* this is the hero section  */}
       <section
         className="w-full xl:h-[80vh] 2xl:h-[70vh] flex items-center py-14 bg-cover bg-center"
@@ -331,7 +322,15 @@ export default function Home() {
                 <Icon icon="mdi:arrow-right" width={20} />
               </span>
             </button>
-            <button className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29]">
+            <button
+              onClick={() =>
+                document.getElementById("services")?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                })
+              }
+              className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29]"
+            >
               <span></span>
               Explore services ›
             </button>
@@ -661,7 +660,8 @@ export default function Home() {
       </div>
 
       {/* Capabilities  */}
-      <div className="bg-[#070D1A] overflow-hidden">
+
+      <div className="bg-[#070D1A] overflow-hidden" id="services">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 bg-[#070D1A] py-10">
           <Animation>
             <div className="flex flex-col lg:flex-row justify-between items-center gap-5">
@@ -674,32 +674,28 @@ export default function Home() {
                   </h2>
                 </LeftAnimation>
               </div>
-              <div className="lg:max-w-[550px] space-y-4">
+              <div className="lg:max-w-[550px]">
                 <RightAnimation>
-                  <p className="hidden lg:block  text-base font-semibold text-[#0F66EA] sectionheading tracking-[0.5px]">
-                    OUR EXPERTISE
-                  </p>
-                  <p className="sectionDescription text-center lg:text-left  text-white">
-                    A comprehensive portfolio of services and platforms built to
-                    reduce risk, improve resilience, and enable secure growth.
-                  </p>
+                  <div className="space-y-4">
+                    <p className="hidden lg:block  text-base font-semibold text-[#0F66EA] sectionheading tracking-[0.5px]">
+                      OUR EXPERTISE
+                    </p>
+                    <p className="sectionDescription text-center lg:text-left  text-white">
+                      A comprehensive portfolio of services and platforms built
+                      to reduce risk, improve resilience, and enable secure
+                      growth.
+                    </p>
+                  </div>
                 </RightAnimation>
               </div>
             </div>
           </Animation>
 
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 mt-10"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-          >
+          <motion.div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 mt-10">
             {ourExpertise.map((item, index) => (
-              <AnimatedCard key={index} delay={index * 0.12}>
+              <AnimatedCard key={index} delay={index * 0.1}>
                 <div
                   key={index}
-                  // variants={cardVariants}
                   className="relative z-10 overflow-hidden flex flex-col justify-between rounded-[14px] p-5 cursor-pointer group transition-all duration-500"
                   style={{ backgroundColor: item.bgColor }}
                 >
@@ -754,12 +750,15 @@ export default function Home() {
                     </ul>
                   </div>
 
-                  <button className="relative z-10 mt-5 flex cursor-pointer items-center text-[15px] font-medium text-[#0F66EA] transition-colors duration-300 group-hover:text-white">
+                  <Link
+                    href={item.link}
+                    className="relative z-10 mt-5 flex cursor-pointer items-center text-[15px] font-medium text-[#0F66EA] transition-colors duration-300 group-hover:text-white"
+                  >
                     View Services{""}
                     <span className="ml-1">
                       <Icon icon="solar:arrow-right-bold" />
                     </span>
-                  </button>
+                  </Link>
                 </div>
               </AnimatedCard>
             ))}
