@@ -468,7 +468,7 @@ function ManagedSecurityServices() {
                   <Link href="/company/contact">
                   <button
                     type="button"
-                    className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3]"
+                    className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3] cursor-pointer"
                   >
                     Book Free Consultation {""}
                     <span className="ml-1.5 text-[17px] leading-none text-[#31435C]">
