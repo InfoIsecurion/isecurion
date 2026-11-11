@@ -516,7 +516,7 @@ function PhishingSimulation() {
                   </button>
                 </Link>
 
-                <Link href="https://simulate.drosera.ai/">
+                <Link href="https://drosera.ai/">
                   <button className="flex h-[54px] items-center justify-center gap-2.5 rounded-lg border-2 border-[#3263B1] bg-gradient-to-r from-[#29559D] to-[#1C3D70] px-6 py-3.5 text-base font-semibold text-white cursor-pointer">
                     Explore Drosera
                   </button>
@@ -538,7 +538,7 @@ function PhishingSimulation() {
               </div>
             </Animation>
             <div className="">
-              <Animation>
+          
                 <form
                   className="mt-6 space-y-4.5"
                   onSubmit={handleSubmit(submit)}
@@ -599,7 +599,7 @@ function PhishingSimulation() {
                           required: "Simulation is required",
                         })}
                       >
-                        <option value="">Select Simulation Type</option>
+                        <option value="" disabled>Select Simulation Type</option>
                         <option value="external">
                           Standard Phishing Simulation
                         </option>
@@ -666,7 +666,7 @@ function PhishingSimulation() {
                     <Icon icon="lucide:arrow-right" className="h-4 w-4" />
                   </button>
                 </form>
-              </Animation>
+            
             </div>
           </div>
         </div>

@@ -16,7 +16,8 @@ import FAQSection from "../../../components/sections/FAQSection";
 import { aiAugamented } from "../../../services/api/contact";
 import { toast } from "react-toastify";
 import { useRef, useState } from "react";
-import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
+import Link from "next/link";
 
 interface ContactFormData {
   email: string;
@@ -425,13 +426,16 @@ function AiAugamentedRedTeam() {
             <p className="text-base sm:text-lg text-[#0F66EA]">
               LLM Security · AI Agents · AI Supply Chain · Deepfake Vishing
             </p>
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4">
+            <div className="flex gap-4">
+              <Link href="/company/contact">
               <button className="text-[15px] font-medium px-4 py-3 flex items-center gap-3 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]">
                 Get AI Red Team Quote{" "}
                 <span>
                   <Icon icon="akar-icons:arrow-right" />
                 </span>
               </button>
+              </Link>
+              <Link href="tel:+918861201570" target="_blank">
               <button className="text-[15px] font-medium px-4 py-3 flex items-center gap-3 rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF]/16">
                 <span>
                   <Icon icon="flowbite:outgoing-call-outline" />
@@ -439,6 +443,7 @@ function AiAugamentedRedTeam() {
                 {""}
                 Talk to Us
               </button>
+              </Link>
             </div>
           </div>
           {/* right  */}

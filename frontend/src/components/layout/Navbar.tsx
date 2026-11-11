@@ -354,7 +354,7 @@ function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#000C1C]">
+    <header className="sticky top-0 z-50 w-full bg-black">
       <div className="">
         <div className="relative mx-auto w-full max-w-7xl flex h-[65px]  items-center justify-between px-6 sm:px-8 lg:px-10">
           {/* Logo */}
@@ -362,10 +362,10 @@ function Navbar() {
             <Image
               src={isecurionLogo}
               alt="Isecurion"
-              width={135}
-              height={20}
+              width={145}
+              height={30}
               priority
-              className="h-auto w-[130px] sm:w-[145px] lg:w-[150px]"
+              className="h-auto w-[150px] sm:w-[185px] lg:w-[200px]"
             />
           </Link>
 

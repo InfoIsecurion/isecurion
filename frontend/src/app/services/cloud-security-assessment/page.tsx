@@ -6,6 +6,7 @@ import cloudsecurity from "../../../assets/services/cloudsecurity.png";
 import settings from "../../../assets/services/settingImage.png";
 import { Animation, AnimatedCard } from "../../../components/ui/Animation";
 import FAQSection from "../../../components/sections/FAQSection";
+import Link from "next/link";
 
 const weAssess = [
   "Cloud Architecture",
@@ -187,6 +188,7 @@ function CloudSecurity() {
               become business risks.
             </p>
           </div>
+          <Link href="/company/contact">
           <button
             className="text-base font-medium flex items-center gap-3 px-4 py-4 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
             style={{ animationDelay: "650ms" }}
@@ -194,6 +196,7 @@ function CloudSecurity() {
             Schedule My Cloud Security Consultation
             <Icon icon="akar-icons:arrow-right" className="text-xl" />
           </button>
+          </Link>
         </div>
       </section>
 

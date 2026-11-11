@@ -9,6 +9,7 @@ import yes from "../../../assets/services/yes.svg";
 import FAQSection from "../../../components/sections/FAQSection";
 import { useForm } from "react-hook-form";
 import { aadharAudit } from "../../../services/api/contact";
+import Link from "next/link";
 interface ContactFormData {
   email: string;
   companyname: string;
@@ -469,12 +470,14 @@ function AadharAudit() {
                 ))}
               </ul>
             </div>
+            <Link href="/comapny/contact">
             <button className="mt-9 text-[15px] font-medium flex items-center px-3 py-3 mx-auto lg:mx-0 rounded-[10px] text-[#31435C] bg-[#FFFFFF]">
               Request Audit Quote{" "}
               <span>
                 <Icon icon="akar-icons:arrow-right" />
               </span>
             </button>
+            </Link>
           </div>
           {/* right  */}
           <div className="flex-1 px-6 py-6 rounded-[23px] bg-[#202123]">
@@ -1012,6 +1015,7 @@ function AadharAudit() {
               services that ensure security, compliance, and operational
               resilience.
             </p>
+            <Link href="/comapany/contact">
             <button className="mx-auto lg:mx-0 text-sm sm:text-[15px] font-medium flex items-center gap-3 px-4 py-4 rounded-[10px] text-[#FFFFFF] border-2 border-[#3263B199] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]">
               Schedule UIDAI Audit Consultation{" "}
               <span>
@@ -1021,6 +1025,7 @@ function AadharAudit() {
                 />
               </span>
             </button>
+            </Link>
           </div>
         </div>
       </section>

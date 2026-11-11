@@ -22,6 +22,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useRef, useState } from "react";
 import { dpdp } from "../../../services/api/contact";
+import Link from "next/link";
 
 interface ContactFormData {
   emai: string;
@@ -97,7 +98,7 @@ const securityControls = [
     isecurionService: (
       <>
         {" "}
-        <span className="underline text-[#0F66EA]">VAPT Services</span>{" "}
+        <Link href="/services/vapt"><span className="underline text-[#0F66EA]">VAPT Services</span>{" "}</Link>
       </>
     ),
   },
@@ -165,7 +166,7 @@ const securityControls = [
       <>
         {" "}
         {""}
-        <span className="underline text-[#0F66EA]">Secure Code Review</span>
+        <Link href="/services/secure-code-review"><span className="underline text-[#0F66EA]">Secure Code Review</span></Link>
       </>
     ),
   },
@@ -668,15 +669,17 @@ function DpdpCompliance() {
               hardening data systems, and meeting DPDP's technical obligations -
               before enforcement hits.
             </p>
-            <button
-              className="mx-auto lg:mx-0 flex items-center px-4 py-3 mt-5 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
-              style={{ animationDelay: "650ms" }}
-            >
-              Get a Free Gap Assessment{" "}
-              <span>
-                <Icon icon="akar-icons:arrow-right" />
-              </span>
-            </button>
+            <Link href="/company/contact">
+              <button
+                className="mx-auto lg:mx-0 flex items-center px-4 py-3 mt-5 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
+                style={{ animationDelay: "650ms" }}
+              >
+                Get a Free Gap Assessment{" "}
+                <span>
+                  <Icon icon="akar-icons:arrow-right" />
+                </span>
+              </button>
+            </Link>
           </div>
           {/* right  */}
           <div className="w-full lg:flex-1  px-10 py-8 rounded-[23px] bg-[#202123]">
@@ -755,7 +758,7 @@ function DpdpCompliance() {
               {/* captcha  */}
               <div className="">
                 <div className="flex items-center gap-3">
-                 
+
                   <Turnstile
                     ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
@@ -1503,7 +1506,7 @@ function DpdpCompliance() {
         description="Find clear answers to common questions about DPDP requirements, cybersecurity controls, penalties, compliance timelines, and how ISECURION can help."
         faqs={dpdpFaqs}
       />
-      <section className="py-10 rounded-tl-[42px] rounded-tr-[42px] bg-[#121828]">
+      <section className="py-10 rounded-tl-[42px] rounded-tr-[42px] bg-[#000000]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="max-w-3xl mx-auto lg:mx-0 text-center lg:text-left space-y-4">
             <h2 className="font-semibold text-[#FFFFFF]">
@@ -1515,15 +1518,19 @@ function DpdpCompliance() {
               Book a free gap assessment call today.
             </p>
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5">
-              <button className="text-base font-medium flex items-center gap-3 px-4 py-3 rounded-[10px] cursor-pointer ring-2 ring-[#29559D] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]">
-                Book a Free Call{" "}
-                <span>
-                  <Icon icon="akar-icons:arrow-right" />
-                </span>
-              </button>
-              <button className="text-base font-medium px-4 py-3 rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF29]">
-                View VAPT Services
-              </button>
+              <Link href="/company/contact">
+                <button className="text-base font-medium flex items-center gap-3 px-4 py-3 rounded-[10px] cursor-pointer ring-2 ring-[#29559D] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]">
+                  Book a Free Call{" "}
+                  <span>
+                    <Icon icon="akar-icons:arrow-right" />
+                  </span>
+                </button>
+              </Link>
+              <Link href="/services/vapt">
+                <button className="text-base font-medium px-4 py-3 rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF29]">
+                  View VAPT Services
+                </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -58,7 +58,7 @@ const locations = [
   {
     id: 1,
     city: "Bangalore",
-    area: "37, Judicial Layout 2nd Phase,Kanakapura Main Rd,Thalaghattaapura,Bengaluru - 560109, Karnataka",
+    area: "37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura,Bengaluru - 560109, Karnataka",
     icon: "material-symbols:star-rounded",
   },
   {
@@ -255,9 +255,9 @@ function Contact() {
                     <p className="text-sm font-medium text-white">
                       Head Office
                     </p>
-                    <p className="text-sm font-medium text-[#D1D1D1] max-w-[323px]">
+                    <p className="text-sm font-medium text-[#D1D1D1] max-w-[355px]">
                       37, Judicial Layout 2nd Phase, Kanakapura Main Rd,
-                      Thalaghattaapura, Bengaluru - 560109, Karnataka
+                      Thalaghattaapura,Bengaluru - 560109, Karnataka
                     </p>
                   </div>
                 </div>

@@ -34,7 +34,7 @@ import cism from "../assets/home/auditorcertifications/cism.png";
 import cissp from "../assets/home/auditorcertifications/cissp.svg";
 import cisa from "../assets/home/auditorcertifications/cisa.svg";
 import crest from "../assets/home/auditorcertifications/crest.svg";
-import {
+import WordReveal, {
   AnimatedCard,
   Animation,
   LeftAnimation,
@@ -290,50 +290,49 @@ export default function Home() {
       >
         <div className="max-w-7xl w-full mx-auto px-6 sm:px-10">
           <div className="space-y-5 text-center lg:text-left">
-            <p
-              className="text-sm sm:text-base font-semibold text-[#0F66EA] opacity-0 animate-hero-reveal sectionheading"
-              style={{ animationDelay: "150ms" }}
-            >
-              SECURING MODERN ENTERPRISES
-            </p>
-            <h1
-              className="text-transparent bg-clip-text bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2] opacity-0 animate-hero-reveal"
-              style={{ animationDelay: "300ms" }}
-            >
-              Build for Trust <br /> Designed for Cyber Resilience.
+            <Animation>
+              <p className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading">
+                SECURING MODERN ENTERPRISES
+              </p>
+            </Animation>
+
+            <h1 className="text-transparent bg-clip-text bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2]">
+              <WordReveal as="span" text="Build for Trust" className="inline" />
+              <br />
+              <WordReveal
+                as="span"
+                text="Designed for Cyber Resilience."
+                className="inline"
+              />
             </h1>
 
-            <p
-              className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-lg leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] opacity-0 animate-hero-reveal"
-              style={{ animationDelay: "450ms" }}
-            >
-              Helping organizations anticipate threats, reduce cyber risk, and
-              build lasting resilience through expert cybersecurity consulting,
-              continuous validation, and intelligent security platforms.
-            </p>
+            <Animation>
+              <p className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-lg leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE]">
+                Helping organizations anticipate threats, reduce cyber risk, and
+                build lasting resilience through expert cybersecurity
+                consulting, continuous validation, and intelligent security
+                platforms.
+              </p>
+            </Animation>
           </div>
           <div
             className="flex flex-col justify-center lg:justify-start sm:flex-row gap-3 py-4 opacity-0 animate-hero-reveal"
             style={{ animationDelay: "600ms" }}
           >
-            <button className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1]">
-              <Link href="/company/contact">Schedule a Consultation </Link>
-              <span>
-                <Icon icon="mdi:arrow-right" width={20} />
-              </span>
-            </button>
-            <button
-              onClick={() =>
-                document.getElementById("services")?.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                })
-              }
-              className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29]"
-            >
-              <span></span>
-              Explore services ›
-            </button>
+            <Animation>
+              <button className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1]">
+                <Link href="/company/contact">Schedule a Consultation </Link>
+                <span>
+                  <Icon icon="mdi:arrow-right" width={20} />
+                </span>
+              </button>
+            </Animation>
+            <Animation>
+              <button className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29]">
+                <span></span>
+                Explore services ›
+              </button>
+            </Animation>
           </div>
         </div>
       </section>
@@ -843,12 +842,14 @@ export default function Home() {
                       <span>Seamless Integrations</span>
                     </li>
                   </ul>
-                  <button className="flex items-center gap-1 text-sm font-medium cursor-pointer text-[#3B9E6A]">
-                    Learn More{" "}
-                    <span>
-                      <Icon icon="ep:right" />
-                    </span>
-                  </button>
+                  <Link href="https://vulnytics.isecurion.com/" target="_blank">
+                    <button className="flex items-center gap-1 text-sm font-medium cursor-pointer text-[#3B9E6A]">
+                      Learn More{" "}
+                      <span>
+                        <Icon icon="ep:right" />
+                      </span>
+                    </button>
+                  </Link>
                 </div>
                 <div className="flex-1 group">
                   <div className="bg-linear-to-b from-[#0B241B] to-[#2A8A67] max-h-[500px] rounded-4xl overflow-hidden">
@@ -910,12 +911,14 @@ export default function Home() {
                       <span>Advanced Reporting</span>
                     </li>
                   </ul>
-                  <button className="flex items-center gap-1 text-sm font-medium cursor-pointer text-[#7D70F0]">
-                    Learn More{" "}
-                    <span>
-                      <Icon icon="ep:right" />
-                    </span>
-                  </button>
+                  <Link href="https://drosera.ai/" target="_blank">
+                    <button className="flex items-center gap-1 text-sm font-medium cursor-pointer text-[#7D70F0]">
+                      Learn More{" "}
+                      <span>
+                        <Icon icon="ep:right" />
+                      </span>
+                    </button>
+                  </Link>
                 </div>
                 <div className="flex-1 group">
                   <div className="bg-linear-to-b from-[#6F6C9066] to-[#8B5CF680] max-h-[500px] rounded-4xl overflow-hidden">
@@ -975,12 +978,14 @@ export default function Home() {
                       <span>Mobile Learning</span>
                     </li>
                   </ul>
-                  <button className="flex items-center gap-1 text-sm font-medium cursor-pointer text-[#38BDF8]">
-                    Learn More{" "}
-                    <span>
-                      <Icon icon="ep:right" />
-                    </span>
-                  </button>
+                  <Link href="https://lms.drosera.ai/" target="_blank">
+                    <button className="flex items-center gap-1 text-sm font-medium cursor-pointer text-[#38BDF8]">
+                      Learn More{" "}
+                      <span>
+                        <Icon icon="ep:right" />
+                      </span>
+                    </button>
+                  </Link>
                 </div>
                 <div className="flex-1 group">
                   <div className="bg-linear-to-b from-[#38BDF866] to-[#38BDF833] max-h-[500px] rounded-4xl overflow-hidden">

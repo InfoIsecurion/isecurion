@@ -124,7 +124,7 @@ function page() {
 
               <div className="mt-[30px] sm:mt-[34px]">
                 <Link href="/company/contact">
-                <button className="inline-flex h-[54px] items-center justify-center rounded-[9px] bg-white px-[20px] py-[14px] text-[13px] sm:text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-[#F3F5F8] sm:min-h-[54px] sm:px-[21px] lg:px-[20px]">
+                <button className="inline-flex h-[54px] items-center justify-center rounded-[9px] bg-white px-[20px] py-[14px] text-[13px] sm:text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-[#F3F5F8] sm:min-h-[54px] sm:px-[21px] lg:px-[20px] cursor-pointer">
                   <span>Schedule My IoT Security Consultation</span>
 
                   <span className="ml-[8px] text-[20px]">

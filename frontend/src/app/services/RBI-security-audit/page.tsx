@@ -9,7 +9,8 @@ import {
   RightAnimation,
 } from "../../../components/ui/Animation";
 import FAQSection from "../../../components/sections/FAQSection";
-import RBI_CTA from "../../../components/sections/RBI_CTA";
+import RBI_CTA from '../../../components/sections/RBI_CTA';
+import Link from "next/link";
 
 const objectives = [
   {
@@ -483,7 +484,7 @@ function page() {
   };
 
   return (
-    <div className="bg-black">
+    <div className="bg-[#050B18]">
       <section className="relative isolate overflow-hidden bg-black py-10 sm:py-12 lg:py-[55px]">
         <div
           aria-hidden="true"
@@ -533,6 +534,7 @@ function page() {
 
                 {/* CTA */}
                 <div className="mt-10 text-center lg:text-left">
+                  <Link href="/company/contact">
                   <button
                     type="button"
                     className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3]"
@@ -542,11 +544,11 @@ function page() {
                       <Icon icon="mdi:arrow-right"></Icon>
                     </span>
                   </button>
+                  </Link>
                 </div>
               </div>
             </Animation>
 
-            <Animation>
               <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:p-[30px] xl:p-[40px]">
                 <div>
                   <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
@@ -574,7 +576,7 @@ function page() {
                         name="workEmail"
                         type="email"
                         placeholder="youremail@gmail.com"
-                        className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD] ${errors.email ? "border border-red-500" : ""}`}
+                        className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] ${errors.email ? "border border-red-500" : ""}`}
                         {...register("email", {
                           required: "Email is required",
                         })}
@@ -599,7 +601,7 @@ function page() {
                         name="companyName"
                         type="text"
                         placeholder="Company name"
-                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] "
                         {...register("companyName")}
                       />
                     </div>
@@ -620,7 +622,7 @@ function page() {
                         name="target"
                         defaultValue=""
                         aria-label="Select Industry Sector"
-                        className={`h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD] ${errors.organizationtype ? "border border-red-500" : ""}`}
+                        className={`h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none ${errors.organizationtype ? "border border-red-500" : ""}`}
                         {...register("organizationtype", {
                           required: "Organization type is required",
                         })}
@@ -715,7 +717,6 @@ function page() {
                   </button>
                 </form>
               </div>
-            </Animation>
           </div>
         </div>
       </section>

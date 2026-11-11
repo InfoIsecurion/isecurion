@@ -11,14 +11,6 @@ interface ContactFormData {
   message: string
   turnstileToken: string
 }
-interface ContactFormData {
-  email: string
-  orgname: string
-  phonenumber: string
-  country: string
-  aifootprint: string
-  turnstileToken: string
-}
 
 interface BreachAttackSimulation {
   email: string

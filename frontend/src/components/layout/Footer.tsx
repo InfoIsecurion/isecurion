@@ -43,7 +43,7 @@ function Footer() {
   const [activeLocation, setActiveLocation] = useState("Bangalore");
 
   return (
-    <footer className="relative overflow-hidden bg-[#121828]">
+    <footer className="relative overflow-hidden bg-[#000000]">
       {/* MAIN FOOTER CONTAINER */}
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-10 sm:px-8 lg:px-10">
         {/* FOOTER CONTENT */}
@@ -54,7 +54,7 @@ function Footer() {
               <Image
                 src={isecurion_logo}
                 alt="Isecurion"
-                className="h-[50px] w-[200px]"
+                className="h-[80px] w-[280px]"
               />
             </Link>
 
@@ -69,13 +69,13 @@ function Footer() {
 
             <div className="mt-3 flex gap-3">
               <Link href="https://www.facebook.com/isecurion" target="_blank">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#FFFFFF0D] text-white hover:bg-white hover:text-[black]">
                   <Icon icon="iconoir:facebook" width={18} />
                 </div>
               </Link>
 
               <Link href="https://twitter.com/isecurion" target="_blank">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#FFFFFF0D] text-white hover:bg-white hover:text-[black]">
                   <Icon icon="line-md:twitter" width={18} />
                 </div>
               </Link>
@@ -84,7 +84,7 @@ function Footer() {
                 href="https://www.linkedin.com/company/isecurion"
                 target="_blank"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#FFFFFF0D] text-white hover:bg-white hover:text-[black]">
                   <Icon icon="ri:linkedin-line" width={18} />
                 </div>
               </Link>

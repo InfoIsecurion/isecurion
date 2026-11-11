@@ -427,7 +427,7 @@ function ManagedSecurityServices() {
   };
 
   return (
-    <div className="bg-black">
+    <div className="bg-[#050B18]">
       <section className="relative isolate overflow-hidden bg-black py-10 sm:py-12 lg:py-[55px]">
         <div
           aria-hidden="true"

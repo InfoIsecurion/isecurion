@@ -500,3 +500,38 @@ export const cicraAudit = async (data) => {
     };
   }
 };
+
+export const socCompliance = async (data) => {
+  try {
+    const response = await fetch(`${API_URL}/api/soc-compliance`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      return {
+        status: response.status,
+        message: result.message || "Failed to submit contact form.",
+        errors: result.errors,
+      };
+    }
+    return {
+      status: response.status,
+      success: true,
+      message:
+        result.message ||
+        "Thank you for contacting ISECURION! Our team will get back to you soon.",
+    };
+  } catch (error: unknown) {
+    return {
+      status: 500,
+      message:
+        error instanceof Error ? error.message : "Internal server error.",
+    };
+  }
+};
