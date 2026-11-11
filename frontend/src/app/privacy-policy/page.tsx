@@ -2,6 +2,7 @@ import React from 'react'
 import Background from "../../assets/services/BreakerSlide.svg"
 import Image from "next/image"
 import Link from 'next/link'
+import { Animation } from '../../components/ui/Animation'
 
 function PrivacyPolicy() {
   return (

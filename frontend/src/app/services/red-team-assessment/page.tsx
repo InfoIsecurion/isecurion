@@ -195,7 +195,7 @@ export default function RedTeamAssessmentPage() {
               </div>
             </Animation>
 
-            <Animation>
+            
               <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:h-[580px] lg:p-[25px] xl:p-[30px]">
                 <div>
                   <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
@@ -223,7 +223,7 @@ export default function RedTeamAssessmentPage() {
                         name="workEmail"
                         type="email"
                         placeholder="youremail@gmail.com"
-                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585]"
                         {...register("email", {
                           required: "Email is required",
                         })}
@@ -243,7 +243,7 @@ export default function RedTeamAssessmentPage() {
                         name="companyName"
                         type="text"
                         placeholder="Company name"
-                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585]"
                         {...register("companyName")}
                       />
                     </div>
@@ -263,7 +263,7 @@ export default function RedTeamAssessmentPage() {
                         name="assessmentType"
                         defaultValue=""
                         required
-                        className="h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        className="h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none "
                         {...register("assessment", {
                           required: "Assessment is required",
                         })}
@@ -273,20 +273,13 @@ export default function RedTeamAssessmentPage() {
                         </option>
 
                         <option value="external">
-                          External Red Team Assessment
+                          External Attack Simulation
                         </option>
 
                         <option value="internal">
-                          Internal Red Team Assessment
+                          Internal Red Team
                         </option>
 
-                        <option value="web">
-                          Web Application Red Team Assessment
-                        </option>
-
-                        <option value="mobile">
-                          Mobile Application Red Team Assessment
-                        </option>
                       </select>
 
                       <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#777]">
@@ -356,7 +349,7 @@ export default function RedTeamAssessmentPage() {
                   </button>
                 </form>
               </div>
-            </Animation>
+        
           </div>
         </div>
       </section>

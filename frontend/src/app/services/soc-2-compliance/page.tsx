@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useRef, useState } from "react";
 import {
   Animation,
   AnimatedCard,
@@ -11,6 +12,20 @@ import Link from "next/link";
 import heroBackground from "../../../assets/services/backgroundPattern.png";
 import FAQSection from "../../../components/sections/FAQSection";
 import SOC2_CTA from "../../../components/sections/SOC2_CTA";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { socCompliance } from "../../../services/api/contact";
+
+interface ContactFormData {
+  email: string;
+  companyname: string;
+  phonenumber: string;
+  country: string;
+  target: string;
+  turnstileToken: string;
+}
+
 
 const trustServices = [
   {
@@ -315,9 +330,43 @@ const soc2FAQs = [
   },
 ];
 
-function page() {
+function SocCompliance() {
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [loading, setLoading] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
+
+  const {
+    handleSubmit,
+    reset,
+    register,
+    formState: { errors },
+  } = useForm<ContactFormData>();
+
+  // this is the api calling
+  const submit = async (data: ContactFormData) => {
+    setLoading(true);
+    try {
+      const response = await socCompliance({ ...data, turnstileToken });
+      if (response.status === 200) {
+        toast.success(response.message);
+        reset();
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
+      } else {
+        toast.error(response.message);
+      }
+    } catch (error) {
+      toast.error(
+        error.response?.data?.message ||
+        "Something went wrong. Please try again.",
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div className="bg-black">
+    <div className="bg-[#050B18]">
       <section className="relative isolate overflow-hidden bg-black py-10 sm:py-12 lg:py-[42px]">
         <div
           aria-hidden="true"
@@ -416,7 +465,7 @@ function page() {
                 </div>
 
                 {/* Form*/}
-                <form className="mt-8">
+                <form className="mt-8" onSubmit={handleSubmit(submit)}>
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div>
                       <label
@@ -432,24 +481,35 @@ function page() {
                         type="email"
                         placeholder="youremail@gmail.com"
                         required
-                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] ${errors.email ? "border border-red-500" : "border-[1.14px] border-[#262D3D] "}`}
+                        {...register("email", {
+                          required: "Email is required",
+                        })}
                       />
+
+                      {errors.email && (
+                        <p className="text-sm font-normal  text-red-500">
+                          {errors.email.message}
+                        </p>
+                      )}
+
                     </div>
 
                     <div>
                       <label
-                        htmlFor="companyName"
+                        htmlFor="companyname"
                         className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
                       >
                         Company Name
                       </label>
 
                       <input
-                        id="companyName"
-                        name="companyName"
+                        id="companyname"
+                        name="companyname"
                         type="text"
                         placeholder="Company name"
-                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585]"
+                        {...register("companyname")}
                       />
                     </div>
                   </div>
@@ -457,25 +517,37 @@ function page() {
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 mt-5">
                     <div>
                       <label
-                        htmlFor="workEmail"
+                        htmlFor="phone"
                         className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
                       >
                         Phone Number <span className="text-[#E42F23]">*</span>
                       </label>
 
                       <input
-                        id="workEmail"
-                        name="workEmail"
-                        type="email"
+                        id="phone"
+                        name="phone"
+                        type="tel"
                         placeholder="Phone / WhatsApp Number "
                         required
-                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] ${errors.phonenumber ? "border border-red-500" : "border-[1.14px] border-[#262D3D] "}`}
+                        {...register("phonenumber", {
+                          required: "Phone number is required",
+                          pattern: {
+                            value: /^[0-9]+$/,
+                            message: "Only numbers are allowed",
+                          },
+                        })}
                       />
+                      {errors.phonenumber && (
+                        <p className="text-sm font-normal text-red-500">
+                          {errors.phonenumber.message}
+                        </p>
+                      )}
                     </div>
 
                     <div>
                       <label
-                        htmlFor="target"
+                        htmlFor="country"
                         className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
                       >
                         Region <span className="text-[#F04444]">*</span>
@@ -483,12 +555,15 @@ function page() {
 
                       <div className="relative">
                         <select
-                          id="target"
-                          name="target"
+                          id="country"
+                          name="country"
                           required
-                          className="h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                          className={`h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none ${errors.country ? "border border-red-500" : "border-[1.14px] border-[#262D3D] "}`}
+                          {...register("country", {
+                            required: "Country is required",
+                          })}
                         >
-                          <option value="">Your City / Country</option>
+                          <option value="" disabled>Your City / Country</option>
 
                           <optgroup label="India">
                             <option value="Bangalore">Bangalore</option>
@@ -530,6 +605,11 @@ function page() {
                           </svg>
                         </span>
                       </div>
+                      {errors.country && (
+                        <p className="text-sm font-normal text-red-500">
+                          {errors.country.message}
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -546,15 +626,17 @@ function page() {
                         id="target"
                         name="target"
                         required
-                        className="h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        className={`h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none ${errors.target ? "border border-red-500" : "border-[1.14px] border-[#262D3D] "}`}
+                        {...register("target", {
+                        required: "Target is required",
+                      })}
                       >
                         <option value="" disabled>
                           What's your target?
                         </option>
 
-                        <option value="external">SOC 2 Type |</option>
-
-                        <option value="internal">SOC 2 Type ||</option>
+                        <option value="external">SOC 2 Type I</option>
+                        <option value="internal">SOC 2 Type II</option>
 
                         <option value="web">Not sure yet</option>
                       </select>
@@ -576,6 +658,11 @@ function page() {
                         </svg>
                       </span>
                     </div>
+                    {errors.target && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.target.message}
+                      </p>
+                    )}
                   </div>
 
                   {/* Captcha */}
@@ -585,19 +672,17 @@ function page() {
                         Captcha
                       </span>
 
-                      <span className="flex h-[32px] min-w-[127px] items-center justify-center rounded-[5px] bg-[#0F66EAB5] px-5 text-[13px] font-medium tracking-wide text-white">
-                        ZRLD9Y
-                      </span>
+                      <div className="mt-7">
+                        <Turnstile
+                          ref={turnstileRef}
+                          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                          onSuccess={(token) => setTurnstileToken(token)}
+                          onExpire={() => setTurnstileToken("")}
+                          onError={() => setTurnstileToken("")}
+                        />
+                      </div>
                     </div>
 
-                    <input
-                      id="captcha"
-                      name="captcha"
-                      type="text"
-                      placeholder="Enter the text shown above"
-                      required
-                      className="mt-3 h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
-                    />
                   </div>
 
                   {/* Consent */}
@@ -744,17 +829,14 @@ function page() {
                   <AnimatedCard
                     delay={index * 0.1}
                     key={location.name}
-                    className={`flex min-w-0 flex-col items-center justify-center gap-3 px-2 py-5 sm:py-6 ${
-                      index < 4
-                        ? "border-b border-[#FFFFFF0D] sm:border-b-0"
-                        : ""
-                    } ${
-                      index % 4 !== 3 ? "sm:border-r sm:border-[#FFFFFF05]" : ""
-                    } ${
-                      index % 2 === 0
+                    className={`flex min-w-0 flex-col items-center justify-center gap-3 px-2 py-5 sm:py-6 ${index < 4
+                      ? "border-b border-[#FFFFFF0D] sm:border-b-0"
+                      : ""
+                      } ${index % 4 !== 3 ? "sm:border-r sm:border-[#FFFFFF05]" : ""
+                      } ${index % 2 === 0
                         ? "border-r border-[#FFFFFF08] sm:border-r-0"
                         : ""
-                    } ${index >= 4 ? "sm:border-t sm:border-[#FFFFFF0D]" : ""}`}
+                      } ${index >= 4 ? "sm:border-t sm:border-[#FFFFFF0D]" : ""}`}
                   >
                     <GradientIcon Icon={location.Icon} />
 
@@ -796,23 +878,18 @@ function page() {
                   <AnimatedCard
                     delay={index * 0.1}
                     key={region.code}
-                    className={`flex min-w-0 flex-col items-center justify-center px-2 py-5 text-center sm:px-3 lg:py-3 ${
-                      index % 2 === 0 ? "border-r border-[#243849]" : ""
-                    } ${
-                      index === 1 || index === 3
+                    className={`flex min-w-0 flex-col items-center justify-center px-2 py-5 text-center sm:px-3 lg:py-3 ${index % 2 === 0 ? "border-r border-[#243849]" : ""
+                      } ${index === 1 || index === 3
                         ? "sm:border-r sm:border-[#243849]"
                         : ""
-                    } ${
-                      index < 3 ? "border-b border-[#243849] sm:border-b-0" : ""
-                    } ${
-                      index === 2
+                      } ${index < 3 ? "border-b border-[#243849] sm:border-b-0" : ""
+                      } ${index === 2
                         ? "sm:border-r sm:border-[#243849] lg:border-r lg:border-[#243849]"
                         : ""
-                    } ${
-                      index === 3
+                      } ${index === 3
                         ? "sm:border-r-0 lg:border-r lg:border-[#243849]"
                         : ""
-                    } ${index === 4 ? "col-span-2 sm:col-span-1" : ""}`}
+                      } ${index === 4 ? "col-span-2 sm:col-span-1" : ""}`}
                   >
                     <GradientIcon
                       Icon={region.icon}
@@ -901,20 +978,20 @@ function page() {
                   Why SOC 2 Matters for Your Business?
                 </h2>
 
-                                <p className="mt-[18px] lg:max-w-[420px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px]">
-                                    Build customer trust, accelerate enterprise sales, strengthen governance, and align security with key compliance frameworks.
-                                </p>
+                <p className="mt-[18px] lg:max-w-[420px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px]">
+                  Build customer trust, accelerate enterprise sales, strengthen governance, and align security with key compliance frameworks.
+                </p>
 
-                                <Link href="/services/iso27001">
-                                    <p className="cursor-pointer mt-8 inline-flex items-center gap-1 text-sm font-medium text-[#0F66EA] underline underline-offset-4">
+                <Link href="/services/iso27001">
+                  <p className="cursor-pointer mt-8 inline-flex items-center gap-1 text-sm font-medium text-[#0F66EA] underline underline-offset-4">
 
-                                        Explore ISO 27001 + SOC 2 bundle
-                                        <Icon icon="mdi:arrow-right" className="text-lg" />
+                    Explore ISO 27001 + SOC 2 bundle
+                    <Icon icon="mdi:arrow-right" className="text-lg" />
 
-                                    </p>
-                                </Link>
-                            </LeftAnimation>
-                        </div>
+                  </p>
+                </Link>
+              </LeftAnimation>
+            </div>
 
             <Animation>
               <div className="border-t border-[#B1B1B114] pt-[45px] lg:border-l lg:border-t-0 lg:pl-[32px] lg:pt-0">
@@ -1066,11 +1143,10 @@ function page() {
                   {/* Left content */}
 
                   <div
-                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${
-                      item.side === "left"
-                        ? "sm:pr-7 sm:text-right lg:pr-8"
-                        : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
-                    }`}
+                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${item.side === "left"
+                      ? "sm:pr-7 sm:text-right lg:pr-8"
+                      : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
+                      }`}
                   >
                     {item.side === "left" && (
                       <>
@@ -1095,11 +1171,10 @@ function page() {
                   {/* Right content */}
 
                   <div
-                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${
-                      item.side === "right"
-                        ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
-                        : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
-                    }`}
+                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${item.side === "right"
+                      ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
+                      : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
+                      }`}
                   >
                     {item.side === "right" && (
                       <>
@@ -1296,4 +1371,4 @@ function page() {
   );
 }
 
-export default page;
+export default SocCompliance;

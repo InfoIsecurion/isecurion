@@ -441,7 +441,7 @@ function page() {
   };
 
   return (
-    <div className="bg-black">
+    <div className="bg-[#050B18]">
       {/* hero section  */}
       <section className="relative overflow-hidden min-h-[80vh] py-14 flex items-center  bg-[#000000]">
         <div className="absolute w-[650px] h-[650px] left-20 rounded-full blur-[200px] pointer-events-none bg-[#0F66EA80]"></div>
@@ -524,7 +524,7 @@ function page() {
               className="space-y-5"
               onSubmit={handleSubmit(submit)}
             >
-              <Animation>
+              
                 <div className="flex flex-col sm:flex-row gap-6">
                   <div className="flex flex-col w-full gap-3">
                     <label
@@ -562,8 +562,8 @@ function page() {
                     />
                   </div>
                 </div>
-              </Animation>
-              <Animation>
+           
+            
                 <div className="flex flex-col sm:flex-row gap-6">
                   <div className="flex flex-col w-full gap-3">
                     <label
@@ -607,8 +607,8 @@ function page() {
                     )}
                   </div>
                 </div>
-              </Animation>
-              <Animation>
+            
+       
                 <div className="flex flex-col sm:flex-row gap-6">
                   <div className="flex flex-col w-full gap-3">
                     <label
@@ -623,7 +623,7 @@ function page() {
                       className={`h-12 w-full px-3 rounded-[10px] cursor-pointer outline-none  text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]`}
                       {...register("location")}
                     >
-                      <option value="">Select your loaction</option>
+                      <option value="" disabled>Select your loaction</option>
 
                       <optgroup label="India">
                         <option value="India - Bangalore">
@@ -671,7 +671,7 @@ function page() {
                       className="h-12 w-full px-2 rounded-[10px] cursor-pointer outline-none text-[#D1D1D1] bg-[#000C1C]"
                       {...register("engagement")}
                     >
-                      <option value="">Choose enagament type</option>
+                      <option value="" disabled>Choose enagament type</option>
                       <option value="">Foundational DPO (Startup / SME)</option>
                       <option value="">Growth DPO (Mid-Market)</option>
                       <option value="">Enterprise DPO (Continuous)</option>
@@ -681,8 +681,8 @@ function page() {
                     </select>
                   </div>
                 </div>
-              </Animation>
-              <Animation>
+             
+        
                 <div className="flex flex-col gap-2">
                   <label
                     htmlFor=""
@@ -699,8 +699,8 @@ function page() {
                     {...register("message")}
                   ></textarea>
                 </div>
-              </Animation>
-              <Animation>
+         
+           
                 <div className="">
                   <div className="flex items-center gap-3">
                     <Turnstile
@@ -712,8 +712,8 @@ function page() {
                     />
                   </div>
                 </div>
-              </Animation>
-              <Animation>
+             
+              
                 <div className="flex gap-3">
                   <input
                     type="checkbox"
@@ -727,8 +727,8 @@ function page() {
                     content requested.
                   </p>
                 </div>
-              </Animation>
-              <Animation>
+            
+             
                 <button
                   type="submit"
                   className={`text-base sm:text-lg font-medium flex items-center justify-center py-3 w-full rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] h-[54px] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
@@ -738,7 +738,7 @@ function page() {
                     <Icon icon="akar-icons:arrow-right" className="text-lg" />
                   </span>{" "}
                 </button>
-              </Animation>
+             
             </form>
           </div>
         </div>

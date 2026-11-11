@@ -176,14 +176,22 @@ function GradientIcon({
   );
 }
 
+
 interface WordRevealProps {
   text: string;
   className?: string;
+  as?: "h2" | "span";
 }
 
-export default function WordReveal({ text, className = "" }: WordRevealProps) {
+export default function WordReveal({
+  text,
+  className = "",
+  as = "h2",
+}: WordRevealProps) {
+  const MotionTag = as === "span" ? motion.span : motion.h2;
+
   return (
-    <motion.h2
+    <MotionTag
       className={className}
       initial="hidden"
       whileInView="visible"
@@ -215,9 +223,10 @@ export default function WordReveal({ text, className = "" }: WordRevealProps) {
           {word}
         </motion.span>
       ))}
-    </motion.h2>
+    </MotionTag>
   );
 }
+
 
 export {
   Animation,

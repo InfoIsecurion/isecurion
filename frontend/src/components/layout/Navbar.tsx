@@ -182,7 +182,7 @@ const serviceDetails = {
           },
           {
             label: "RBI Information Security Audit",
-            href: "/services/RBI-security-audit",
+            href: "/services/rbi-security-audit",
           },
         ],
       },
@@ -359,7 +359,7 @@ function Navbar() {
       : "invisible translate-y-2 opacity-0 pointer-events-none";
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#000C1C]">
+    <header className="sticky top-0 z-50 w-full bg-black">
       <div className="">
         <div className="relative mx-auto w-full max-w-7xl flex h-[65px]  items-center justify-between px-6 sm:px-8 lg:px-10">
           {/* Logo */}
@@ -367,10 +367,10 @@ function Navbar() {
             <Image
               src={isecurionLogo}
               alt="Isecurion"
-              width={135}
-              height={20}
+              width={145}
+              height={30}
               priority
-              className="h-auto w-[130px] sm:w-[145px] lg:w-[150px]"
+              className="h-auto w-[150px] sm:w-[185px] lg:w-[200px]"
             />
           </Link>
 
@@ -384,7 +384,7 @@ function Navbar() {
                 <span className="invisible group-hover:visible absolute left-0 top-[30px] w-[45px] h-[3px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
               </li>
               {/* this is the product link  */}
-              <li className="relative">
+              <li className="relative group">
                 <Link
                   href=""
                   className="text-base font-normal flex items-center gap-1 text-white"

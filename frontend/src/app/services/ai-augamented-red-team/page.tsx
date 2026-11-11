@@ -15,8 +15,8 @@ import FAQSection from "../../../components/sections/FAQSection";
 
 import { aiAugamented } from "../../../services/api/contact";
 import { toast } from "react-toastify";
-import { useState } from "react";
-import { Turnstile } from "@marsidev/react-turnstile";
+import { useRef, useState } from "react";
+import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
 import Link from "next/link";
 
 interface ContactFormData {

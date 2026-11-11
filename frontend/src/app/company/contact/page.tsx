@@ -53,7 +53,7 @@ const locations = [
   {
     id: 1,
     city: "Bangalore",
-    area: "45, Kanakapura Main Rd, Paramount Gardens, Talaghattapura, Bengaluru, Karnataka 560109",
+    area: "37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura,Bengaluru - 560109, Karnataka",
     icon: "material-symbols:star-rounded",
   },
   {
@@ -250,9 +250,8 @@ function Contact() {
                     <p className="text-sm font-medium text-white">
                       Head Office
                     </p>
-                    <p className="text-sm font-medium text-[#D1D1D1] max-w-[323px]">
-                      45, Kanakapura Main Rd, Paramount Gardens, Talaghattapura,
-                      Bengaluru, Karnataka 560109
+                    <p className="text-sm font-medium text-[#D1D1D1] max-w-[355px]">
+                      37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura,Bengaluru - 560109, Karnataka
                     </p>
                   </div>
                 </div>

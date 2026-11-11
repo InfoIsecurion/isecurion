@@ -6,6 +6,7 @@ import {
   Animation,
   AnimatedCard,
   LeftAnimation,
+  WordReveal
 } from "../../../components/ui/Animation";
 import FAQSection from "../../../components/sections/FAQSection";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
@@ -266,15 +267,15 @@ function ContinuousBreachAttackSimulation() {
                           required: "Simulation is required",
                         })}
                       >
-                        <option value="">Select Simulation Type</option>
+                        <option value="" disabled>Select Simulation Type</option>
                         <option value="external">
-                          External Attack Simulation
+                          External Simulation
                         </option>
                         <option value="internal">
-                          Internal Threat Simulation
+                          Internal Simulation
                         </option>
-                        <option value="cloud">Cloud Security Simulation</option>
-                        <option value="full">Full Breach Simulation</option>
+                        <option value="cloud">Hybrid Approach</option>
+                        
                       </select>
                       <Icon
                         icon="lucide:chevron-down"
@@ -339,10 +340,9 @@ function ContinuousBreachAttackSimulation() {
       <section className="bg-[#050B1A]">
         <Animation>
           <div className="mx-auto max-w-7xl px-7 py-10 sm:px-10 lg:px-8 lg:py-14 xl:px-10 text-center lg:text-left">
-            <h2 className="text-[26px] font-normal leading-[1.4]  text-white sm:text-[36px] lg:text-[38px]">
-              What is Continuous Breach Attack Simulation?
-            </h2>
-            <p className="sectionDescription text-[#D1D1D1] lg:max-w-[700px]">
+            <WordReveal text="What is Continuous Breach Attack Simulation?" className="text-[26px] font-normal leading-[1.4]  text-white sm:text-[36px] lg:text-[38px]">
+            </WordReveal>
+            <p className="mt-4 sectionDescription text-[#D1D1D1] lg:max-w-[700px]">
               Continuous Breach Attack Simulation (CBAS) is an automated,
               ongoing process that mimics cyber attackers using adversary
               simulation techniques.

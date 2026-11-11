@@ -5,10 +5,10 @@ import Link from 'next/link'
 function IRDIA_CTA() {
     return (
         <div>
-            <section className="bg-[#121828] rounded-tr-[42px] rounded-tl-[42px]">
+            <section className="bg-[#000000] rounded-tr-[42px] rounded-tl-[42px]">
                 <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
 
-                    <div className="relative overflow-hidden rounded-t-[42px] bg-[#121828] pt-10">
+                    <div className="relative overflow-hidden rounded-t-[42px] pt-10">
 
                         <div className="relative z-10 space-y-5">
                             <h3 className="max-w-[500px] font-semibold text-white lg:leading-[45px] sm:text-[32px]">

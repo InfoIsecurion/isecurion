@@ -428,7 +428,7 @@ function ManagedSecurityServices() {
   };
 
   return (
-    <div className="bg-black">
+    <div className="bg-[#050B18]">
       <section className="relative isolate overflow-hidden bg-black py-10 sm:py-12 lg:py-[55px]">
         <div
           aria-hidden="true"
@@ -480,7 +480,7 @@ function ManagedSecurityServices() {
               </div>
             </Animation>
 
-            <Animation>
+          
               <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:p-[30px] xl:p-[40px]">
                 <div>
                   <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
@@ -537,7 +537,7 @@ function ManagedSecurityServices() {
                         name="companyName"
                         type="text"
                         placeholder="Company name"
-                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD]"
+                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] "
                         {...register("companyName")}
                       />
                     </div>
@@ -557,12 +557,12 @@ function ManagedSecurityServices() {
                           id="target"
                           name="target"
                           defaultValue=""
-                          className={`h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD] ${errors.primaryNeed ? "border border-red-500" : ""}`}
+                          className={`h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none ${errors.primaryNeed ? "border border-red-500" : ""}`}
                           {...register("primaryNeed", {
                             required: "Primary need is required",
                           })}
                         >
-                          <option value="">Select Your Primary Need</option>
+                          <option value="" disabled>Select Your Primary Need</option>
                           <option value="24/7 SOC Monitoring">
                             24/7 SOC Monitoring
                           </option>
@@ -621,7 +621,7 @@ function ManagedSecurityServices() {
                         name="region"
                         type="text"
                         placeholder="Country / Region"
-                        className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] focus:border-[#4A6EAD] focus:ring-1 focus:ring-[#4A6EAD] ${errors.country ? "border border-red-500" : ""}`}
+                        className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] ${errors.country ? "border border-red-500" : ""}`}
                         {...register("country", {
                           required: "Region is required",
                         })}
@@ -684,7 +684,7 @@ function ManagedSecurityServices() {
                   </button>
                 </form>
               </div>
-            </Animation>
+  
           </div>
         </div>
       </section>

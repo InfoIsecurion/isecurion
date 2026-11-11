@@ -2,7 +2,7 @@
 
 export default function Location() {
   const address =
-    "ISECURION Technology & Consulting Pvt Ltd, 2nd Floor, 670 6th Main Road, Opp. Elita Promenade, RBI Layout, JP Nagar 7th Phase, Bengaluru, Karnataka 560078";
+    "ISECURION Technology & Consulting Pvt Ltd, 37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura,Bengaluru - 560109, Karnataka";
 
   const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`;
 
