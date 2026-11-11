@@ -80,7 +80,10 @@ function Footer() {
                 </div>
               </Link>
 
-              <Link href="https://www.linkedin.com/company/isecurion" target="_blank">
+              <Link
+                href="https://www.linkedin.com/company/isecurion"
+                target="_blank"
+              >
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1E2433] text-white hover:bg-white hover:text-[black]">
                   <Icon icon="ri:linkedin-line" width={18} />
                 </div>
@@ -93,48 +96,70 @@ function Footer() {
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
               {/* Company */}
               <div>
-                <h4 className="mb-5 text-sm text-white">
-                  Company
-                </h4>
+                <h4 className="mb-5 text-sm text-white">Company</h4>
 
                 <ul className="space-y-3 text-sm text-[#BFBFBF]">
-                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/company/about">About</Link></li>
-                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/company/industries">Industries</Link></li>
-                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/company/case-studies">Case Studies</Link></li>
-                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/company/careers">Careers</Link></li>
-                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/company/contact">Contact</Link></li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="/company/about">About</Link>
+                  </li>
+                  {/* <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/company/industries">Industries</Link></li> */}
+                  {/* <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="/company/case-studies">Case Studies</Link>
+                  </li> */}
+                  {/* <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="/company/careers">Careers</Link>
+                  </li> */}
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="/company/contact">Contact</Link>
+                  </li>
                 </ul>
               </div>
 
               {/* Capabilities */}
               <div>
-                <h4 className="mb-5 text-sm text-white">
-                  Capabilities
-                </h4>
+                <h4 className="mb-5 text-sm text-white">Capabilities</h4>
 
                 <ul className="space-y-3 text-sm text-[#BFBFBF]">
-                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/services/vapt">VAPT</Link></li>
-                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/services/compliance-auditing">Compliance Auditing</Link></li>
-                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/services/vciso">VCISO Services</Link></li>
-                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="/services/dpdp-compliance">DPDP Act Compliance</Link></li>
                   <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="/services/vapt">VAPT</Link>
+                  </li>
+                  {/* <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="/services/compliance-auditing">
+                      Compliance Auditing
+                    </Link>
+                  </li> */}
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="/services/vciso">VCISO Services</Link>
+                  </li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="/services/dpdp-compliance">
+                      DPDP Act Compliance
+                    </Link>
+                  </li>
+                  {/* <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
                     Market SOC
                     <br />
                     (MSOC) Services
-                  </li>
+                  </li> */}
                 </ul>
               </div>
 
               {/* Platforms */}
               <div>
-                <h4 className="mb-5 text-sm text-white">
-                  Platforms
-                </h4>
+                <h4 className="mb-5 text-sm text-white">Platforms</h4>
 
                 <ul className="space-y-3 text-sm text-[#BFBFBF] ">
-                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="https://vulnytics.isecurion.com/">Vulnytics</Link></li>
-                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="https://drosera.ai/">Drosera Phishing</Link></li>
-                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline"><Link href="https://lms.drosera.ai/">LMS</Link></li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="https://vulnytics.isecurion.com/">
+                      Vulnytics
+                    </Link>
+                  </li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="https://drosera.ai/">Drosera Phishing</Link>
+                  </li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="https://lms.drosera.ai/">LMS</Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -179,9 +204,7 @@ function Footer() {
 
           {/* RIGHT - GLOBAL PRESENCE */}
           <div className="w-full lg:flex-1">
-            <h4 className="mb-5 text-sm text-white">
-              Global Presence
-            </h4>
+            <h4 className="mb-5 text-sm text-white">Global Presence</h4>
 
             <div className="space-y-3 text-sm text-[#BFBFBF]">
               {locations.map((location) => {
@@ -202,8 +225,9 @@ function Footer() {
                       />
 
                       <span
-                        className={`transition-colors duration-300 ${isActive ? "text-white" : "text-[#BFBFBF]"
-                          }`}
+                        className={`transition-colors duration-300 ${
+                          isActive ? "text-white" : "text-[#BFBFBF]"
+                        }`}
                       >
                         {location.name}
                         {location.name === "Bangalore" && " (HQ)"}
@@ -212,10 +236,11 @@ function Footer() {
 
                     {/* Address Dropdown */}
                     <div
-                      className={`grid transition-all duration-500 ease-in-out ${isActive
+                      className={`grid transition-all duration-500 ease-in-out ${
+                        isActive
                           ? "grid-rows-[1fr] opacity-100"
                           : "grid-rows-[0fr] opacity-0"
-                        }`}
+                      }`}
                     >
                       <div className="overflow-hidden">
                         <p className="ml-5 pt-2 leading-5 text-[#BFBFBF] max-w-[250px]">
@@ -243,24 +268,36 @@ function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-2.5 text-[13px] text-white sm:flex-row sm:items-center sm:justify-between sm:px-10">
           {/* Left - Copyright */}
           <div className="flex flex-wrap items-center gap-3">
-            <p>Copyright ©2026 <Link href="/" className="hover:text-[#0F66EA] hover:underline">
-              Isecurion
-            </Link></p>
+            <p>
+              Copyright ©2026{" "}
+              <Link href="/" className="hover:text-[#0F66EA] hover:underline">
+                Isecurion
+              </Link>
+            </p>
             <span className="hidden text-[#D1D1D1] sm:block">|</span>
             <p>All Rights Reserved</p>
           </div>
 
           {/* Right - Policies */}
           <div className="flex flex-wrap items-center gap-3">
-            <Link href="/privacy-policy" className="underline underline-offset-2 hover:text-[#0F66EA]">
+            <Link
+              href="/privacy-policy"
+              className="underline underline-offset-2 hover:text-[#0F66EA]"
+            >
               Privacy &amp; Policy
             </Link>
             <span className="text-[#D1D1D1]">|</span>
-            <Link href="/disclaimer" className="underline underline-offset-2 hover:text-[#0F66EA]">
+            <Link
+              href="/disclaimer"
+              className="underline underline-offset-2 hover:text-[#0F66EA]"
+            >
               Disclaimer
             </Link>
             <span className="text-[#D1D1D1]">|</span>
-            <Link href="/terms-of-use" className="underline underline-offset-2 hover:text-[#0F66EA]">
+            <Link
+              href="/terms-of-use"
+              className="underline underline-offset-2 hover:text-[#0F66EA]"
+            >
               Terms of Use
             </Link>
           </div>

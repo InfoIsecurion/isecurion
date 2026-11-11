@@ -16,17 +16,20 @@ const objectives = [
   {
     icon: "iconmind:security-champion-outline-bold",
     title: "Protect Customer Trust",
-    description: "Financial data is sensitive. Ensuring its protection helps maintain confidence in your institution.",
+    description:
+      "Financial data is sensitive. Ensuring its protection helps maintain confidence in your institution.",
   },
   {
     icon: "akar-icons:bug",
     title: "Mitigate Operational Risk",
-    description: "Identify and address vulnerabilities that could disrupt operations.",
+    description:
+      "Identify and address vulnerabilities that could disrupt operations.",
   },
   {
     icon: "hugeicons:legal-01",
     title: "Regulatory Compliance",
-    description: "Avoid penalties, adverse regulatory observations, and reputational damage.",
+    description:
+      "Avoid penalties, adverse regulatory observations, and reputational damage.",
   },
   {
     icon: "grommet-icons:shield-security",
@@ -36,7 +39,8 @@ const objectives = [
   {
     icon: "fa7-regular:handshake-alt",
     title: "Stakeholder Confidence",
-    description: "Demonstrate to regulators, investors, and customers that cybersecurity is a priority.",
+    description:
+      "Demonstrate to regulators, investors, and customers that cybersecurity is a priority.",
   },
 ];
 
@@ -106,16 +110,14 @@ const ourServices = [
     description:
       "Review user roles, privileged account management, multi-factor authentication, and segregation of duties.",
     icon: "famicons:finger-print",
-    background:
-      "bg-gradient-to-b from-[#3B9E6A] to-[#000000A6]",
+    background: "bg-gradient-to-b from-[#3B9E6A] to-[#000000A6]",
   },
   {
     title: "Data Security & Encryption",
     description:
       "Validate encryption of data at rest, in transit, and backups.",
     icon: "iconmind:broken-access-outline-bold",
-    background:
-      "bg-[#071126]",
+    background: "bg-[#071126]",
   },
   {
     title: "Incident Response & Monitoring",
@@ -129,16 +131,14 @@ const ourServices = [
     description:
       "Ensure documented and tested recovery plans for uninterrupted services.",
     icon: "lucide:briefcase-business",
-    background:
-      "bg-[#080D1B]",
+    background: "bg-[#080D1B]",
   },
   {
     title: "Third-Party & Vendor Risk Management",
     description:
       "Evaluate vendor compliance and contractual security obligations.",
     icon: "fa7-regular:handshake-alt",
-    background:
-      "bg-[#08142D]",
+    background: "bg-[#08142D]",
   },
   {
     title: "Regulatory Mapping",
@@ -293,12 +293,10 @@ const securityAreas = [
   },
   {
     heading: "ISO 27001 Alignment",
-    description:
-      "Controls mapped to international security best practices.",
+    description: "Controls mapped to international security best practices.",
     Icon: "charm:certificate",
     bgColor: "#7D70F0",
   },
-
 ];
 
 const services = [
@@ -314,8 +312,7 @@ const services = [
   },
   {
     title: "Actionable Recommendations",
-    description:
-      "Practical guidance, not just theoretical checklists.",
+    description: "Practical guidance, not just theoretical checklists.",
   },
   {
     title: "End-to-End Audit Support",
@@ -329,8 +326,7 @@ const services = [
   },
   {
     title: "Financial Sector Experience",
-    description:
-      "Extensive work with banks, NBFCs, and fintech platforms.",
+    description: "Extensive work with banks, NBFCs, and fintech platforms.",
   },
   {
     title: "Real-World Focus",
@@ -480,7 +476,7 @@ function page() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-        "Something went wrong. Please try again.",
+          "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -496,10 +492,7 @@ function page() {
         />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl mx-auto px-6 sm:px-10">
-
           <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.9fr_1.25fr] lg:gap-5 xl:gap-8">
-
-
             <Animation>
               <div className="flex flex-col justify-center lg:py-2 text-center md:text-left">
                 {/* Eyebrow */}
@@ -509,12 +502,17 @@ function page() {
 
                 {/* Heading */}
                 <h1 className="mt-5 lg:max-w-[450px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left">
-                  RBI Information Security (IS) Audit Services for Financial Institutions
+                  RBI Information Security (IS) Audit Services for Financial
+                  Institutions
                 </h1>
 
                 {/* Description */}
                 <p className="mt-4 lg:max-w-[400px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left">
-                  Strengthen your institution’s cybersecurity and regulatory readiness with a comprehensive RBI Information Security Audit. Evaluate IT controls, protect sensitive financial data, & improve resilience across banking and digital financial services.
+                  Strengthen your institution’s cybersecurity and regulatory
+                  readiness with a comprehensive RBI Information Security Audit.
+                  Evaluate IT controls, protect sensitive financial data, &
+                  improve resilience across banking and digital financial
+                  services.
                 </p>
 
                 <ul className="mt-8 grid grid-cols gap-y-4 ">
@@ -524,7 +522,10 @@ function page() {
                     "IT & Cybersecurity Assessment",
                     "Audit Readiness & Reporting",
                   ].map((item) => (
-                    <li key={item} className="flex items-center justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]">
+                    <li
+                      key={item}
+                      className="flex items-center justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]"
+                    >
                       <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#3B9E6A]" />
                       <span>{item}</span>
                     </li>
@@ -724,10 +725,8 @@ function page() {
 
       <section className="relative border-t border-white/5 bg-[#07101D] pt-16 text-white sm:pt-18 lg:py-20">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
-
           <Animation>
             <div className="grid grid-cols-1 items-start gap-10 md:gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 xl:gap-16">
-
               {/* LEFT COLUMN: OVERVIEW */}
               <div className="min-w-0">
                 <p className="text-center text-[14px] font-semibold uppercase leading-[18px] tracking-[0.2px] text-[#3B9E6A] sm:text-base lg:text-left">
@@ -740,11 +739,19 @@ function page() {
 
                 <div className="mx-auto mt-[22px] max-w-[525px] space-y-5 text-center text-[15px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[16px] lg:text-left lg:mx-0 lg:text-[16px] xl:text-[17px]">
                   <p>
-                    Digital banking, online payments, and financial technology services rely on interconnected systems that handle sensitive customer and financial information. Effective information security controls are essential to protect these systems from cyber threats and operational disruption.
+                    Digital banking, online payments, and financial technology
+                    services rely on interconnected systems that handle
+                    sensitive customer and financial information. Effective
+                    information security controls are essential to protect these
+                    systems from cyber threats and operational disruption.
                   </p>
 
                   <p className="max-w-[]">
-                    An RBI Information Security Audit assesses an organization’s information security governance, technical safeguards, and operational controls against applicable RBI requirements. It helps identify weaknesses, prioritize remediation, and strengthen audit readiness.
+                    An RBI Information Security Audit assesses an organization’s
+                    information security governance, technical safeguards, and
+                    operational controls against applicable RBI requirements. It
+                    helps identify weaknesses, prioritize remediation, and
+                    strengthen audit readiness.
                   </p>
                 </div>
               </div>
@@ -784,10 +791,8 @@ function page() {
                   ))}
                 </div>
               </div>
-
             </div>
           </Animation>
-
         </div>
       </section>
 
@@ -802,7 +807,8 @@ function page() {
                 RBI Audit Support Across the Financial Sector
               </h2>
               <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[750px]">
-                Support information security and compliance needs across banking, lending, payments, and digital financial services.
+                Support information security and compliance needs across
+                banking, lending, payments, and digital financial services.
               </p>
             </div>
             <div className="mt-10">
@@ -811,8 +817,9 @@ function page() {
                   <AnimatedCard
                     delay={index * 0.13}
                     key={index}
-                    className={`relative flex flex-col justify-between p-5 space-y-4 rounded-lg bg-[#66666614] border border-[#0B15301F] py-8  ${index === 7 ? "lg:col-span-2" : ""
-                      }`}
+                    className={`relative flex flex-col justify-between p-5 space-y-4 rounded-lg bg-[#66666614] border border-[#0B15301F] py-8  ${
+                      index === 7 ? "lg:col-span-2" : ""
+                    }`}
                   >
                     <div className="absolute left-0 w-[2.5px] h-[23px] rounded-tr-2xl rounded-br-2xl bg-[#3B9E6A]"></div>
                     <div className="flex items-center justify-between gap-8">
@@ -845,12 +852,11 @@ function page() {
               Our Services
             </p>
 
-            <h2 className="">
-              Comprehensive RBI IS Audit Framework
-            </h2>
+            <h2 className="">Comprehensive RBI IS Audit Framework</h2>
 
             <p className="mx-auto mt-4 text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px]">
-              Complete coverage of all critical areas ensuring regulatory compliance and cybersecurity excellence.
+              Complete coverage of all critical areas ensuring regulatory
+              compliance and cybersecurity excellence.
             </p>
           </div>
 
@@ -899,7 +905,8 @@ function page() {
             <RightAnimation>
               <div className="w-full text-center lg:text-left">
                 <p className="text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[560px]">
-                  A systematic assessment journey to evaluate controls, identify gaps, and support meaningful security improvements.
+                  A systematic assessment journey to evaluate controls, identify
+                  gaps, and support meaningful security improvements.
                 </p>
               </div>
             </RightAnimation>
@@ -909,7 +916,6 @@ function page() {
           <div className="relative mx-auto mt-10 max-w-5xl sm:mt-12 lg:mt-20">
             {/* Center line on tablet/desktop; left-side line on mobile */}
             <div className="absolute bottom-5 left-[14px] top-1 w-px bg-gradient-to-b from-[#3B9E6A] to-[#263028] sm:left-1/2 sm:-translate-x-1/2" />
-
 
             <div className="relative space-y-8 sm:space-y-8 lg:space-y-9">
               {Steps.map((item, index) => (
@@ -921,10 +927,11 @@ function page() {
                   {/* Left content */}
 
                   <div
-                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${item.side === "left"
-                      ? "sm:pr-7 sm:text-right lg:pr-8"
-                      : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
-                      }`}
+                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${
+                      item.side === "left"
+                        ? "sm:pr-7 sm:text-right lg:pr-8"
+                        : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
+                    }`}
                   >
                     {item.side === "left" && (
                       <>
@@ -941,7 +948,6 @@ function page() {
                     )}
                   </div>
 
-
                   {/* Number marker */}
                   <div className="absolute left-0 top-0 z-10 flex h-[30px] w-[30px] shrink-0 items-center justify-center border border-[#3B9E6A]/60 bg-[#0A0D0B] text-[11px] font-normal text-[#3B9E6A] sm:relative sm:col-start-2 sm:row-start-1 sm:mx-auto sm:h-[36px] sm:w-[36px]">
                     {item.number}
@@ -950,10 +956,11 @@ function page() {
                   {/* Right content */}
 
                   <div
-                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${item.side === "right"
-                      ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
-                      : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
-                      }`}
+                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${
+                      item.side === "right"
+                        ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
+                        : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
+                    }`}
                   >
                     {item.side === "right" && (
                       <>
@@ -969,18 +976,15 @@ function page() {
                       </>
                     )}
                   </div>
-
                 </AnimatedCard>
               ))}
             </div>
-
           </div>
         </div>
       </section>
 
       <section className="w-full py-14 bg-[#060D1B]">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-6 sm:px-10 gap-8 lg:gap-15">
-
           <div className="w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
             <LeftAnimation>
               <p className="mt-10 text-sm sm:text-base font-semibold text-[#3B9E6A]">
@@ -990,7 +994,9 @@ function page() {
                 Complete Audit Documentation & Actionable Insights
               </h2>
               <p className="mt-4 text-base sm:text-lg font-normal leading-[25px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[500px]">
-                Receive structured audit documentation to support regulatory readiness, management decisions, and continuous security improvement.
+                Receive structured audit documentation to support regulatory
+                readiness, management decisions, and continuous security
+                improvement.
               </p>
             </LeftAnimation>
           </div>
@@ -1013,9 +1019,7 @@ function page() {
                         </p>
                       </div>
                       <div className="space-y-1">
-                        <h3 className="text-lg text-[#FEFEFE]">
-                          {item.title}
-                        </h3>
+                        <h3 className="text-lg text-[#FEFEFE]">{item.title}</h3>
                         <p className="text-sm leading-[23px] text-[#D1D1D1] max-w-[400px]">
                           {item.description}
                         </p>
@@ -1046,7 +1050,8 @@ function page() {
             <RightAnimation>
               <div className="w-full text-center lg:text-left">
                 <p className="text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[560px]">
-                  Comprehensive security improvements across all critical banking infrastructure components.
+                  Comprehensive security improvements across all critical
+                  banking infrastructure components.
                 </p>
               </div>
             </RightAnimation>
@@ -1064,7 +1069,10 @@ function page() {
                       className="w-[45px] h-[45px] flex items-center justify-center rounded-xl"
                       style={{ backgroundColor: `${item.bgColor}` }}
                     >
-                      <Icon icon={item.Icon} className="text-xl text-[#FFFFFF]" />
+                      <Icon
+                        icon={item.Icon}
+                        className="text-xl text-[#FFFFFF]"
+                      />
                     </div>
                     <h3 className="mt-3 text-[15px] font-medium text-[#F5F0E8]">
                       {item.heading}
@@ -1077,14 +1085,12 @@ function page() {
               </div>
             </Animation>
           </div>
-
         </div>
       </section>
 
       <section className="relative bg-gradient-to-b from-[#1D3126] to-[#090B21]">
         <div className="mx-auto w-full max-w-7xl">
           <div className="px-5 py-9 sm:px-8 sm:py-11 lg:px-9 lg:py-[66px]">
-
             <div className="relative grid grid-cols-1 gap-9 lg:grid-cols-[0.9fr_1.9fr] lg:gap-12 xl:grid-cols-[0.95fr_2fr] xl:gap-[52px]">
               {/* LEFT CONTENT */}
               <LeftAnimation>
@@ -1098,7 +1104,8 @@ function page() {
                   </h2>
 
                   <p className="mt-6 lg:max-w-[300px] text-base leading-[1.5] text-[#D1D1D1] sm:text-[17px]">
-                    A trusted RBI IS Audit partner combining regulatory expertise with cybersecurity excellence.
+                    A trusted RBI IS Audit partner combining regulatory
+                    expertise with cybersecurity excellence.
                   </p>
                 </div>
               </LeftAnimation>
@@ -1143,7 +1150,6 @@ function page() {
         faqs={RBI_FAQs}
       />
       <RBI_CTA />
-
     </div>
   );
 }

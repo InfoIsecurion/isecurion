@@ -33,6 +33,7 @@ import mobile from "../assets/home/auditorcertifications/mobile.svg";
 import cism from "../assets/home/auditorcertifications/cism.png";
 import cissp from "../assets/home/auditorcertifications/cissp.svg";
 import cisa from "../assets/home/auditorcertifications/cisa.svg";
+import crest from "../assets/home/auditorcertifications/crest.svg";
 import {
   AnimatedCard,
   Animation,
@@ -220,6 +221,9 @@ const auditorCertificates = [
   {
     img: cisa,
   },
+  {
+    img: crest,
+  },
 ];
 
 const trustedCompanies = [
@@ -322,7 +326,7 @@ export default function Home() {
             style={{ animationDelay: "600ms" }}
           >
             <button className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1]">
-              <Link href="/company/contact">Schedule a Consultation{" "}</Link>
+              <Link href="/company/contact">Schedule a Consultation </Link>
               <span>
                 <Icon icon="mdi:arrow-right" width={20} />
               </span>
@@ -1118,13 +1122,13 @@ export default function Home() {
               Auditors Certifications
             </h3>
 
-            <div className="mt-8 grid grid-cols-2 items-center justify-items-center gap-6 sm:grid-cols-3 lg:grid-cols-7">
+            <div className="mt-8 grid grid-cols-2 items-center justify-items-center gap-3 sm:grid-cols-3 lg:grid-cols-8">
               {auditorCertificates.map((item, index) => (
                 <AnimatedCard key={index} delay={index * 0.15}>
                   <img
                     src={item.img.src}
                     alt=""
-                    className="h-[80px] w-[80px] object-contain"
+                    className="h-[100px] w-[90px] object-contain"
                   />
                 </AnimatedCard>
               ))}

@@ -433,7 +433,7 @@ function page() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-        "Something went wrong. Please try again.",
+          "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -508,10 +508,10 @@ function page() {
               <div className="flex flex-col sm:flex-row  justify-center lg:justify-start gap-4 mt-8">
                 <div className="mt-8 text-center">
                   <Link href="/company/contact">
-                  <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg cursor-pointer">
-                    <span>Request a DPO Consultation</span>
-                    <Icon icon="lucide:arrow-right" className="h-4 w-4" />
-                  </button>
+                    <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg cursor-pointer">
+                      <span>Request a DPO Consultation</span>
+                      <Icon icon="lucide:arrow-right" className="h-4 w-4" />
+                    </button>
                   </Link>
                 </div>
               </div>
@@ -732,7 +732,6 @@ function page() {
                 <button
                   type="submit"
                   className={`text-base sm:text-lg font-medium flex items-center justify-center py-3 w-full rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] h-[54px] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
-                  
                 >
                   Request Consultation{" "}
                   <span>
@@ -1169,10 +1168,11 @@ function page() {
                   {/* Timeline Badge */}
                   <div className="mt-5 pt-0">
                     <span
-                      className={`inline-flex min-h-[30px] items-center justify-center whitespace-nowrap rounded-[6px] border px-3.5 py-1 text-[13px] font-medium leading-5 ${index === engagementLifecycle.length - 1
+                      className={`inline-flex min-h-[30px] items-center justify-center whitespace-nowrap rounded-[6px] border px-3.5 py-1 text-[13px] font-medium leading-5 ${
+                        index === engagementLifecycle.length - 1
                           ? "border-[#526F69] bg-[#A4FFCF38] text-white"
                           : "border-[#343B50] bg-[#514F6E40] text-white"
-                        }`}
+                      }`}
                     >
                       {
                         [
@@ -1198,11 +1198,9 @@ function page() {
 
         <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 items-stretch gap-5 md:grid-cols-2 md:gap-4 xl:gap-6">
-
             {/* LEFT PANEL: ENGAGEMENT MILESTONES */}
             <Animation>
               <div className="h-full rounded-[9px] border border-[#FFFFFF0D] bg-[#0E1623] p-4 sm:p-5 lg:p-5 xl:p-[26px]">
-
                 {/* Eyebrow */}
                 <div className="flex items-center gap-3">
                   <span className="h-px w-8 shrink-0 bg-[#0F66EA]" />
@@ -1217,7 +1215,6 @@ function page() {
 
                 {/* Timeline */}
                 <div className="mt-7 grid grid-cols-[40px_minmax(0,1fr)] gap-x-3 sm:grid-cols-[44px_minmax(0,1fr)] sm:gap-x-4">
-
                   {/* Number circles and vertical line */}
                   <div className="relative flex flex-col items-center">
                     <div className="absolute bottom-[35px] top-[21px] w-px bg-[#17416B]" />
@@ -1243,10 +1240,11 @@ function page() {
                       <AnimatedCard
                         delay={index * 0.1}
                         key={item.number}
-                        className={`grid min-h-[75px] grid-cols-[68px_minmax(0,1fr)] gap-x-2 sm:grid-cols-[76px_minmax(0,1fr)] sm:gap-x-3 ${index !== engagementMilestones.length - 1
+                        className={`grid min-h-[75px] grid-cols-[68px_minmax(0,1fr)] gap-x-2 sm:grid-cols-[76px_minmax(0,1fr)] sm:gap-x-3 ${
+                          index !== engagementMilestones.length - 1
                             ? "border-b border-[#172338] pb-3"
                             : ""
-                          }`}
+                        }`}
                       >
                         <div className="pt-[30px]">
                           <p className="text-[12px] font-medium leading-5 text-[#22D3EE] sm:text-[13px]">
@@ -1273,7 +1271,6 @@ function page() {
             {/* RIGHT PANEL: REGULATORY COVERAGE */}
             <Animation>
               <div className="h-full rounded-[9px] border border-[#FFFFFF0D] bg-[#101724] p-4 sm:p-5 lg:p-5 xl:p-[26px]">
-
                 {/* Eyebrow */}
                 <div className="flex items-center gap-3">
                   <span className="h-px w-8 shrink-0 bg-[#0F66EA]" />
@@ -1287,8 +1284,8 @@ function page() {
                 </h2>
 
                 <p className="mt-3 max-w-[500px] text-[12px] font-normal leading-[22px] text-[#D1D1D1] sm:text-[14px] sm:leading-[26px]">
-                  ISECURION connects regulatory requirements with practical privacy
-                  governance and data protection processes.
+                  ISECURION connects regulatory requirements with practical
+                  privacy governance and data protection processes.
                 </p>
 
                 {/* Sector Cards */}
@@ -1298,7 +1295,6 @@ function page() {
                       key={item.title}
                       className="grid grid-cols-[38px_minmax(0,1fr)] items-center gap-3 rounded-[6px] border border-[#FFFFFF05] bg-gradient-to-r from-[#19243A] via-[#152F59] to-[#101D32] p-3 sm:grid-cols-[42px_minmax(0,1fr)] sm:gap-3.5 sm:p-3.5 xl:grid-cols-[42px_minmax(0,1fr)_minmax(0,0.95fr)] xl:gap-3.5"
                     >
-
                       {/* Icon */}
                       <div className="flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-full border-2 border-[#13304F] bg-[#050D1C] sm:h-[42px] sm:w-[42px]">
                         <Icon
@@ -1318,12 +1314,11 @@ function page() {
                       </div>
 
                       {/* Sector Description */}
-                     <div className="col-span-2 min-w-0 border-t border-[#929BFF94] pt-2.5 xl:col-span-1 xl:border-l xl:border-t-0 xl:pl-3 xl:pt-0">
+                      <div className="col-span-2 min-w-0 border-t border-[#929BFF94] pt-2.5 xl:col-span-1 xl:border-l xl:border-t-0 xl:pl-3 xl:pt-0">
                         <p className="text-[12px] sm:text-[14px] font-normal leading-[19px] text-[#9DB4CF]">
                           {item.description}
                         </p>
                       </div>
-
                     </AnimatedCard>
                   ))}
                 </div>
@@ -1363,14 +1358,17 @@ function page() {
                   <AnimatedCard
                     delay={index * 0.1}
                     key={location.name}
-                    className={`flex min-w-0 flex-col items-center justify-center gap-3 px-2 py-5 sm:py-6 ${index < 4
+                    className={`flex min-w-0 flex-col items-center justify-center gap-3 px-2 py-5 sm:py-6 ${
+                      index < 4
                         ? "border-b border-[#FFFFFF0D] sm:border-b-0"
                         : ""
-                      } ${index % 4 !== 3 ? "sm:border-r sm:border-[#FFFFFF05]" : ""
-                      } ${index % 2 === 0
+                    } ${
+                      index % 4 !== 3 ? "sm:border-r sm:border-[#FFFFFF05]" : ""
+                    } ${
+                      index % 2 === 0
                         ? "border-r border-[#FFFFFF08] sm:border-r-0"
                         : ""
-                      } ${index >= 4 ? "sm:border-t sm:border-[#FFFFFF0D]" : ""}`}
+                    } ${index >= 4 ? "sm:border-t sm:border-[#FFFFFF0D]" : ""}`}
                   >
                     <GradientIcon Icon={location.Icon} />
 
@@ -1413,18 +1411,23 @@ function page() {
                   <AnimatedCard
                     delay={index * 0.1}
                     key={region.code}
-                    className={`flex min-w-0 flex-col items-center justify-center px-2 py-5 text-center sm:px-3 lg:py-3 ${index % 2 === 0 ? "border-r border-[#243849]" : ""
-                      } ${index === 1 || index === 3
+                    className={`flex min-w-0 flex-col items-center justify-center px-2 py-5 text-center sm:px-3 lg:py-3 ${
+                      index % 2 === 0 ? "border-r border-[#243849]" : ""
+                    } ${
+                      index === 1 || index === 3
                         ? "sm:border-r sm:border-[#243849]"
                         : ""
-                      } ${index < 3 ? "border-b border-[#243849] sm:border-b-0" : ""
-                      } ${index === 2
+                    } ${
+                      index < 3 ? "border-b border-[#243849] sm:border-b-0" : ""
+                    } ${
+                      index === 2
                         ? "sm:border-r sm:border-[#243849] lg:border-r lg:border-[#243849]"
                         : ""
-                      } ${index === 3
+                    } ${
+                      index === 3
                         ? "sm:border-r-0 lg:border-r lg:border-[#243849]"
                         : ""
-                      } ${index === 4 ? "col-span-2 sm:col-span-1" : ""}`}
+                    } ${index === 4 ? "col-span-2 sm:col-span-1" : ""}`}
                   >
                     <GradientIcon
                       Icon={region.icon}

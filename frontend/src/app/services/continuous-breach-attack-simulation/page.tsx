@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import approachBg from "../../../assets/services/red-team-approach.svg";
 import {
@@ -8,7 +8,7 @@ import {
   LeftAnimation,
 } from "../../../components/ui/Animation";
 import FAQSection from "../../../components/sections/FAQSection";
-import { Turnstile } from "@marsidev/react-turnstile";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useForm } from "react-hook-form";
 import {
   aiAugamented,
@@ -106,6 +106,7 @@ const governanceCards = [
 function ContinuousBreachAttackSimulation() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [loading, setLoading] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const {
     register,
@@ -115,7 +116,6 @@ function ContinuousBreachAttackSimulation() {
   } = useForm<ContactFormData>();
 
   const submit = async (data: ContactFormData) => {
-    console.log(data);
     setLoading(true);
     try {
       const response = await breachAttackSimulation({
@@ -125,6 +125,8 @@ function ContinuousBreachAttackSimulation() {
       if (response.status === 200) {
         toast.success(response.message);
         reset();
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
       } else {
         toast.error(response.message);
       }
@@ -145,40 +147,50 @@ function ContinuousBreachAttackSimulation() {
             {/* LEFT COLUMN: HERO CONTENT */}
             <div className="lg:col-span-6 text-center lg:text-left">
               {/* EYEBROW */}
-              <p className="text-sm sm:text-base font-semibold tracking-[0.02em] uppercase text-[#E24B4A]">
+              <p
+                className="text-sm sm:text-base font-semibold tracking-[0.02em] uppercase text-[#E24B4A] opacity-0 animate-hero-reveal"
+                style={{ animationDelay: "150ms" }}
+              >
                 CONTINUOUS BREACH ATTACK SIMULATION
               </p>
 
               {/* HEADING */}
-              <Animation>
-                <h1 className="mt-4 font-semibold leading-[1.4] tracking-[-0.02em] text-white lg:max-w-[400px]">
-                  Continuously validate your defenses against real-world
-                  attacks.
-                </h1>
-              </Animation>
+
+              <h1
+                className="mt-4 font-semibold leading-[1.4] tracking-[-0.02em] text-white lg:max-w-[400px] opacity-0 animate-hero-reveal"
+                style={{ animationDelay: "300ms" }}
+              >
+                Continuously validate your defenses against real-world attacks.
+              </h1>
 
               {/* DESCRIPTION */}
-              <Animation>
-                <p className="mt-5 text-[14px] sm:text-[16px] font-medium leading-[1.7] text-[#D1D1D1] lg:max-w-[380px]">
-                  ISECURION&apos;s CBAS continuously simulates real-world
-                  attacks to identify gaps, validate defenses, and improve your
-                  cybersecurity posture proactively.
-                </p>
-              </Animation>
+
+              <p
+                className="mt-5 text-[14px] sm:text-[16px] font-medium leading-[1.7] text-[#D1D1D1] lg:max-w-[380px] opacity-0 animate-hero-reveal"
+                style={{ animationDelay: "450ms" }}
+              >
+                ISECURION&apos;s CBAS continuously simulates real-world attacks
+                to identify gaps, validate defenses, and improve your
+                cybersecurity posture proactively.
+              </p>
 
               {/* CTA BUTTON */}
               <Animation>
-                <div className="mt-8"><Link href="/company/contact">
-                  <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg cursor-pointer">
-                    <span>Request Simulation</span>
-                    <Icon icon="lucide:arrow-right" className="h-4 w-4" />
-                  </button>
+                <div className="mt-8">
+                  <Link href="/company/contact">
+                    <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg">
+                      <span>Request Simulation</span>
+                      <Icon icon="lucide:arrow-right" className="h-4 w-4" />
+                    </button>
                   </Link>
                 </div>
               </Animation>
 
               {/* FOOTER TAGLINE */}
-              <p className="mt-10 text-[13px] sm:text-[14px] lg:text-[16px] font-medium leading-7 text-[#0F66EA] lg:max-w-[360px]">
+              <p
+                className="mt-10 text-[13px] sm:text-[14px] lg:text-[16px] font-medium leading-7 text-[#0F66EA] lg:max-w-[360px] opacity-0 animate-hero-reveal"
+                style={{ animationDelay: "600ms" }}
+              >
                 Continuous Validation · Adversary Simulation · MITRE ATT&amp;CK
                 · Security Resilience
               </p>
@@ -190,7 +202,7 @@ function ContinuousBreachAttackSimulation() {
                 <p className="text-[18px] sm:text-[20px] font-semibold text-white leading-10">
                   Request a BAS Quote
                 </p>
-                <p className="mt-1 text-[14px] text-[#D9D9D9]">
+                <p className="mt-1 text-[14px] font-medium text-[#D9D9D9]">
                   Get a Quote for Continuous Security Validation.
                 </p>
 
@@ -210,7 +222,7 @@ function ContinuousBreachAttackSimulation() {
                       <input
                         type="email"
                         placeholder="youremail@gmail.com"
-                        className="text-sm font-normal px-3 py-3 w-full rounded-[10px] bg-[#110404] border border-[#262D3D]   text-[#D1D1D1] placeholder-gray-500 "
+                        className="text-sm font-normal px-3 py-3 w-full rounded-[10px] bg-[#110404] border border-[#262D3D]  outline-none text-[#D1D1D1] placeholder-gray-500 "
                         {...register("email", {
                           required: "Email is required",
                         })}
@@ -233,7 +245,7 @@ function ContinuousBreachAttackSimulation() {
                         id="company-name"
                         type="text"
                         placeholder="Company name"
-                        className="text-sm font-normal px-3 py-3 w-full rounded-[10px] bg-[#110404] border border-[#262D3D]   text-[#D1D1D1] placeholder-gray-500"
+                        className="text-sm font-normal px-3 py-3 w-full rounded-[10px] bg-[#110404] border border-[#262D3D] outline-none  text-[#D1D1D1] placeholder-gray-500"
                         {...register("companyName")}
                       />
                     </div>
@@ -249,7 +261,7 @@ function ContinuousBreachAttackSimulation() {
                     </label>
                     <div className="relative">
                       <select
-                        className="w-full text-sm font-normal px-3 py-3 appearance-none rounded-[8px] bg-[#110404] border border-[#262D3D]  text-[#D1D1D1]"
+                        className="w-full text-sm font-normal px-3 py-3 appearance-none rounded-[8px] outline-none bg-[#110404] border border-[#262D3D]  text-[#D1D1D1]"
                         {...register("simulation", {
                           required: "Simulation is required",
                         })}
@@ -276,15 +288,17 @@ function ContinuousBreachAttackSimulation() {
                     </div>
                   </div>
 
-                    {/* CAPTCHA */}
-                    <div className="mt-7">
-                      <Turnstile
-                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                        onSuccess={(token) => setTurnstileToken(token)}
-                        onExpire={() => setTurnstileToken("")}
-                        onError={() => setTurnstileToken("")}
-                      />
-                    </div>
+                  {/* CAPTCHA */}
+                  <div className="mt-7">
+                    <Turnstile
+                      ref={turnstileRef}
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                      onSuccess={(token) => setTurnstileToken(token)}
+                      onExpire={() => setTurnstileToken("")}
+                      onError={() => setTurnstileToken("")}
+                    />
+                  </div>
+                  {/* CAPTCHA */}
 
                   {/* TERMS & PRIVACY CHECKBOX */}
                   <div className="flex items-start gap-2.5 pt-1">
@@ -310,7 +324,7 @@ function ContinuousBreachAttackSimulation() {
                   {/* SUBMIT BUTTON */}
                   <button
                     type="submit"
-                    className="w-full h-[48px] mt-2 inline-flex items-center justify-center gap-2 rounded-[8px] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-medium text-white border-[1.5px] border-[#00000000] transition-all duration-200 shadow-md shadow-[#0F66EA]/20"
+                    className={`w-full h-[48px] mt-2 inline-flex items-center justify-center gap-2 rounded-[8px] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-medium text-white border-[1.5px] border-[#00000000] transition-all duration-200 shadow-md shadow-[#0F66EA]/20 ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
                   >
                     <span>Get Quote</span>
                     <Icon icon="lucide:arrow-right" className="h-4 w-4" />
@@ -328,12 +342,12 @@ function ContinuousBreachAttackSimulation() {
             <h2 className="text-[26px] font-normal leading-[1.4]  text-white sm:text-[36px] lg:text-[38px]">
               What is Continuous Breach Attack Simulation?
             </h2>
-            <p className="mt-7 font-medium leading-[1.8] text-[#D1D1D1] max-w-[700px]">
+            <p className="sectionDescription text-[#D1D1D1] lg:max-w-[700px]">
               Continuous Breach Attack Simulation (CBAS) is an automated,
               ongoing process that mimics cyber attackers using adversary
               simulation techniques.
             </p>
-            <p className="mt-10 text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] lg:text-[17px] max-w-[700px]">
+            <p className="mt-10 sectionDescription text-[#D1D1D1]  lg:max-w-[700px]">
               It validates your security investments daily, tests real-world
               attack scenarios, and provides actionable insights to strengthen
               resilience.
@@ -361,7 +375,7 @@ function ContinuousBreachAttackSimulation() {
               <div className="lg:col-span-6 flex flex-col justify-between space-y-6 text-center lg:text-left">
                 <Animation>
                   <div>
-                    <p className="text-[14px] sm:text-base font-semibold leading-[18px] text-[#E24B4A]">
+                    <p className="text-[14px] sm:text-base font-semibold leading-[18px] text-[#E24B4A] sectionheading">
                       OUR APPROACH
                     </p>
 
@@ -500,7 +514,7 @@ function ContinuousBreachAttackSimulation() {
                   Security validation that keeps evolving.
                 </p>
 
-                <p className="mx-auto mt-[18px] max-w-[700px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px]">
+                <p className="mx-auto mt-[18px] max-w-[700px]  text-[#D1D1D1] sectionDescription">
                   Continuous validation powered by real-world attack
                   intelligence, practical recommendations, and proactive
                   security improvement.
@@ -580,13 +594,13 @@ function ContinuousBreachAttackSimulation() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
             <div className="pb-[50px] lg:pr-[70px] lg:pb-0 text-center lg:text-left">
               <LeftAnimation>
-                <p className="text-[13px] sm:text-base font-semibold uppercase leading-[0.2px] text-[#E24B4A]">
+                <p className="text-sm sm:text-base font-semibold uppercase leading-[0.2px] sectionheading text-[#E24B4A]">
                   WHY CHOOSE US?
                 </p>
 
-                <p className="mt-[17px] lg:max-w-[400px] text-[32px] font-medium leading-[1.42] text-white sm:text-[36px] lg:text-[40px]">
+                <h2 className="mt-[17px] lg:max-w-[400px]  text-white ">
                   Why Organizations trust ISECURION
-                </p>
+                </h2>
 
                 <p className="mt-[18px] lg:max-w-[420px] text-[#D1D1D1] sectionDescription">
                   Certified expertise, proven experience, and globally
@@ -668,11 +682,11 @@ function ContinuousBreachAttackSimulation() {
         <div className="max-w-7xl mx-auto pt-4 pb-18 px-6 sm:px-10">
           <div className="px-6">
             <div className="text-center">
-              <p className="text-[13px] sm:text-base font-semibold uppercase  text-[#E24B4A]">
+              <p className="text-[13px] sm:text-base font-semibold uppercase sectionheading text-[#E24B4A]">
                 DELIVERABLES
               </p>
 
-              <h2 className="mt-[10px] text-[30px] font-normal leading-[1.4] text-white sm:text-[36px] lg:text-[34px]">
+              <h2 className="mt-[10px]  text-white ">
                 From attack simulation to <br></br>actionable improvement.
               </h2>
 
@@ -698,6 +712,7 @@ function ContinuousBreachAttackSimulation() {
                   </div>
 
                   {/* CARD TITLE */}
+
                   <h4 className="mt-5 text-[15px] sm:text-base text-[#F5F0E8]">
                     {card.title}
                   </h4>

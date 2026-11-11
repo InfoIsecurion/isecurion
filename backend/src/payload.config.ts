@@ -7,6 +7,11 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import {
+  breachAttackEndpoint,
+  contactEndpoint,
+  redTeamEndpoint,
+} from './app/api/contact/contact.endpoint'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -19,6 +24,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media],
+  endpoints: [contactEndpoint, breachAttackEndpoint, redTeamEndpoint],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -30,5 +36,5 @@ export default buildConfig({
   sharp,
   plugins: [],
 
-  cors: ['http://localhost:3000'],
+  cors: ['http://localhost:3000', 'http://localhost:3001'],
 })

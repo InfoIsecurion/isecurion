@@ -18,7 +18,6 @@ import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { phishingSimulation } from "../../../services/api/contact";
 import { toast } from "react-toastify";
 
-
 interface ContactFormData {
   email: string;
   companyName: string;
@@ -471,7 +470,7 @@ function PhishingSimulation() {
                 </p>
               </div>
             </Animation>
-            <Animation>
+            {/* <Animation>
               <ul className="mt-4 space-y-2">
                 <li className="flex items-center justify-center lg:justify-start gap-2 text-sm text-[#D1D1D1] sm:text-[14px]">
                   <Icon
@@ -507,20 +506,20 @@ function PhishingSimulation() {
                   Human Risk Analytics
                 </li>
               </ul>
-            </Animation>
+            </Animation> */}
             <Animation>
               <div className="mt-8 flex flex-col items-center gap-4 lg:flex-row lg:items-start lg:justify-start">
                 <Link href="/comapany/contact">
-                <button className="flex h-[54px] items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] shadow-lg transition-all duration-200 hover:bg-gray-100 cursor-pointer">
-                  <span>Request Simulation</span>
-                  <Icon icon="lucide:arrow-right" className="h-4 w-4" />
-                </button>
+                  <button className="flex h-[54px] items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] shadow-lg transition-all duration-200 hover:bg-gray-100 cursor-pointer">
+                    <span>Request Simulation</span>
+                    <Icon icon="lucide:arrow-right" className="h-4 w-4" />
+                  </button>
                 </Link>
 
                 <Link href="https://simulate.drosera.ai/">
-                <button className="flex h-[54px] items-center justify-center gap-2.5 rounded-lg border-2 border-[#3263B1] bg-gradient-to-r from-[#29559D] to-[#1C3D70] px-6 py-3.5 text-base font-semibold text-white cursor-pointer">
-                  Explore Drosera
-                </button>
+                  <button className="flex h-[54px] items-center justify-center gap-2.5 rounded-lg border-2 border-[#3263B1] bg-gradient-to-r from-[#29559D] to-[#1C3D70] px-6 py-3.5 text-base font-semibold text-white cursor-pointer">
+                    Explore Drosera
+                  </button>
                 </Link>
               </div>
             </Animation>

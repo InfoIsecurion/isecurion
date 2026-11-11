@@ -1,7 +1,12 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { Icon } from "@iconify/react";
-import { AnimatedCard, Animation } from "../../../components/ui/Animation";
+import {
+  AnimatedCard,
+  Animation,
+  LeftAnimation,
+  RightAnimation,
+} from "../../../components/ui/Animation";
 import aienvironment from "../../../assets/services/aienvironment.svg";
 import whatwereceivebackground from "../../../assets/services/whatwereceive.svg";
 import airedteaming from "../../../assets/services/ai-redteaming.png";
@@ -361,6 +366,8 @@ const aiRedTeamAssessmentFAQs = [
 function AiAugamentedRedTeam() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [loading, setLoading] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
+
   const {
     handleSubmit,
     reset,
@@ -375,10 +382,17 @@ function AiAugamentedRedTeam() {
       const response = await aiAugamented({ ...data, turnstileToken });
       if (response.status === 200) {
         toast.success(response.message);
+        reset();
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
       } else {
         toast.error(response.message);
       }
     } catch (error) {
+      toast.error(
+        error.response?.data?.message ||
+          "Something went wrong. Please try again.",
+      );
     } finally {
       setLoading(false);
     }
@@ -387,17 +401,17 @@ function AiAugamentedRedTeam() {
   return (
     <div className="bg-[#060D1B]">
       {/* this is the hero section  */}
-      <section className="relative py-10  2xl:py-25 min-h-[calc(100dvh-110px)] 2xl:min-h-[80vh] flex items-center overflow-hidden bg-[#000000]">
+      <section className="relative py-14  min-h-[calc(100dvh-110px)] 2xl:min-h-[70vh] flex items-center overflow-hidden bg-[#000000]">
         <div className="absolute top-0 left-30 w-[650px] h-[600px] blur-[140px] rounded-full pointer-events-none opacity-80 bg-[#E24B4A]/30 "></div>
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 flex gap-8 sm:gap-10 flex-col lg:flex-row">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 flex gap-8 sm:gap-15 flex-col lg:flex-row">
           {/* left  */}
-          <div className="w-full flex-1 space-y-4">
-            <p className="text-base font-semibold text-[#E24B4A]">
+          <div className="w-full lg:flex-1 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start">
+            <p className="text-base font-semibold sectionheading text-[#E24B4A]">
               AI-AUGMENTED RED TEAM
             </p>
             <h1 className=" text-[#FFFFFF]">AI-Augmented Red Team Services</h1>
 
-            <div>
+            <div className="text-center lg:text-left">
               <p className="text-base sm:text-[17px] font-medium leading-[26px] sm:leading-[28px]  text-[#D1D1D1]">
                 ISECURION’s AI-Augmented Red Team tests AI supply chains, LLMs,
                 agents, deepfake-driven social engineering, and AI-accelerated
@@ -433,7 +447,7 @@ function AiAugamentedRedTeam() {
             </div>
           </div>
           {/* right  */}
-          <div className="w-full flex-1 rounded-3xl  px-7 py-8 bg-[#202123]">
+          <div className="w-full lg:flex-1 rounded-3xl  px-7 py-8 bg-[#202123]">
             <div className="space-y-1">
               <h3 className="text-base sm:text-lg font-semibold text-[#FFFFFF]">
                 Request AI-Augmented Red Team Consultation
@@ -457,7 +471,7 @@ function AiAugamentedRedTeam() {
                     <input
                       type="email"
                       placeholder="youremail@gmail.com"
-                      className="text-sm font-normal px-3 py-3  rounded-[10px] outline-none text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                      className={`text-sm font-normal px-3 py-3  rounded-[10px] outline-none text-[#D1D1D1]  bg-[#0A0303] ${errors.email ? "border border-red-500" : "border-[1.14px] border-[#262D3D] "}`}
                       {...register("email", {
                         required: "Email is required",
                       })}
@@ -479,7 +493,7 @@ function AiAugamentedRedTeam() {
                     <input
                       type="text"
                       placeholder="Product name"
-                      className="text-sm font-normal px-3 py-3  rounded-[10px] outline-none text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                      className={`text-sm font-normal px-3 py-3  rounded-[10px] outline-none text-[#D1D1D1]  bg-[#0A0303] ${errors.orgname ? "border border-red-500" : "border-[1.14px] border-[#262D3D] "}`}
                       {...register("orgname", {
                         required: "Oraganization name is required",
                       })}
@@ -503,9 +517,13 @@ function AiAugamentedRedTeam() {
                     <input
                       type="tel"
                       placeholder="+91 987-654-321"
-                      className="text-sm font-normal px-3 py-3  rounded-[10px] outline-none text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                      className={`text-sm font-normal px-3 py-3  rounded-[10px] outline-none text-[#D1D1D1]  bg-[#0A0303] ${errors.phonenumber ? "border border-red-500" : "border-[1.14px] border-[#262D3D] "}`}
                       {...register("phonenumber", {
                         required: "Phone number is required",
+                        pattern: {
+                          value: /^[0-9]+$/,
+                          message: "Only numbers are allowed",
+                        },
                       })}
                     />
                     {errors.phonenumber && (
@@ -524,7 +542,7 @@ function AiAugamentedRedTeam() {
                     <select
                       name=""
                       id=""
-                      className="text-sm font-normal px-3 py-3 outline-none  rounded-[10px] text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                      className={`text-sm font-normal px-3 py-3  rounded-[10px] outline-none text-[#D1D1D1]  bg-[#0A0303] ${errors.country ? "border border-red-500" : "border-[1.14px] border-[#262D3D] "}`}
                       {...register("country", {
                         required: "Country is required",
                       })}
@@ -563,12 +581,12 @@ function AiAugamentedRedTeam() {
                     <select
                       name=""
                       id=""
-                      className="text-sm font-normal px-3 py-3 outline-none  rounded-[10px] text-[#D1D1D1] border-[1.14px] border-[#262D3D] bg-[#0A0303]"
+                      className={`text-sm font-normal px-3 py-3 w-full rounded-[10px] outline-none text-[#D1D1D1]  bg-[#0A0303] ${errors.aifootprint ? "border border-red-500" : "border-[1.14px] border-[#262D3D] "}`}
                       {...register("aifootprint", {
                         required: "Ai Foot print is required",
                       })}
                     >
-                      <option value="">Region / Country</option>
+                      <option value="">Select your AI Footprint</option>
 
                       <option value="United States">United States</option>
                       <option value="LLM-Powered Chatbot / Copilot">
@@ -601,6 +619,7 @@ function AiAugamentedRedTeam() {
                   <p className="text-sm font-medium text-white">Captcha</p>
 
                   <Turnstile
+                    ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                     onSuccess={(token) => setTurnstileToken(token)}
                     onExpire={() => setTurnstileToken("")}
@@ -623,7 +642,7 @@ function AiAugamentedRedTeam() {
                 </div>
                 <button
                   type="submit"
-                  className="flex items-center gap-3 w-full cursor-pointer px-4 py-3 justify-center rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]"
+                  className={`flex items-center gap-3 w-full px-4 py-3 justify-center rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
                 >
                   Get My AI Red Team Quote{" "}
                   <span>
@@ -639,46 +658,49 @@ function AiAugamentedRedTeam() {
       {/* AI has Changed the Attack Surface.  */}
       <section className="w-full py-14 bg-[#060D1B]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col lg:flex-row justify-between gap-10">
-          <div className="lg:w-[500px] space-y-4 text-center lg:text-left ">
-            <p className="text-sm sm:text-base font-semibold text-[#E24B4A]">
-              WHY AI-AUGMENTED RED TEAMING MATTERS
-            </p>
-            <h2 className="font-medium text-[#FFFFFF]">
-              AI has Changed the Attack Surface.
-            </h2>
-            <div className="space-y-4 flex flex-col items-center lg:items-start">
-              <p className="text-base sm:text-lg font-normal leading-[25px] md:leading-[31px] text-[#D1D1D1]">
-                Traditional Red Teaming focuses on people, networks, identities,
-                and endpoints. AI introduces new attack paths across models,
-                datasets, prompts, agents, connected tools, and human workflows.
+          <LeftAnimation>
+            <div className="lg:w-[500px] space-y-4 text-center lg:text-left ">
+              <p className="text-sm sm:text-base font-semibold sectionheading text-[#E24B4A]">
+                WHY AI-AUGMENTED RED TEAMING MATTERS
               </p>
-              <p className="text-base sm:text-lg font-normal leading-[25px] md:leading-[31px] text-[#D1D1D1]">
-                AI-Augmented Red Teaming tests these pathways to determine how
-                AI can be targeted, manipulated, or weaponized, and whether your
-                existing controls can detect and stop the attack. {""}
-              </p>
-              <div className="mt-2 h-[3px] w-[104px] rounded-[3px] bg-[#E24B4A]"></div>
+              <h2 className=" text-[#FFFFFF]">
+                AI has Changed the Attack Surface.
+              </h2>
+              <div className="space-y-4 flex flex-col items-center lg:items-start">
+                <p className="sectionDescription text-[#D1D1D1]">
+                  Traditional Red Teaming focuses on people, networks,
+                  identities, and endpoints. AI introduces new attack paths
+                  across models, datasets, prompts, agents, connected tools, and
+                  human workflows.
+                </p>
+                <p className="sectionDescription text-[#D1D1D1]">
+                  AI-Augmented Red Teaming tests these pathways to determine how
+                  AI can be targeted, manipulated, or weaponized, and whether
+                  your existing controls can detect and stop the attack. {""}
+                </p>
+                <div className="mt-2 h-[3px] w-[104px] rounded-[3px] bg-[#E24B4A]"></div>
+              </div>
+              <div className="space-y-2 flex flex-col items-center lg:items-start">
+                <p className="text-base  font-medium flex items-center gap-2 mt-8 text-[#E24B4A]">
+                  TARGET{" "}
+                  <span>
+                    <Icon icon="akar-icons:arrow-right" />
+                  </span>{" "}
+                  MANIPULATE{" "}
+                  <span>
+                    <Icon icon="akar-icons:arrow-right" />
+                  </span>{" "}
+                  WEAPONIZE
+                </p>
+                <p className="text-base sm:text-lg text-[#D1D1D1]">
+                  Test the attack path. Validate the control. Strengthen the
+                  defense.
+                </p>
+              </div>
             </div>
-            <div className="space-y-2 flex flex-col items-center lg:items-start">
-              <p className="text-base sm:text-lg font-medium flex items-center gap-2 mt-8 text-[#E24B4A]">
-                TARGET{" "}
-                <span>
-                  <Icon icon="akar-icons:arrow-right" />
-                </span>{" "}
-                MANIPULATE{" "}
-                <span>
-                  <Icon icon="akar-icons:arrow-right" />
-                </span>{" "}
-                WEAPONIZE
-              </p>
-              <p className="text-base sm:text-lg text-[#D1D1D1]">
-                Test the attack path. Validate the control. Strengthen the
-                defense.
-              </p>
-            </div>
-          </div>
+          </LeftAnimation>
           <div className="lg:-[490px]">
-            <h3 className="text-sm sm:text-base font-semibold text-[#E24B4A]">
+            <h3 className="text-sm sm:text-base font-semibold sectionheading text-[#E24B4A]">
               WHY AI-AUGMENTED RED TEAM IS DIFFERENT
             </h3>
             <div className="space-y-10 mt-6">
@@ -686,13 +708,13 @@ function AiAugamentedRedTeam() {
                 <AnimatedCard key={index} className="flex gap-4">
                   <div className="w-[9px]  rounded-2xl bg-linear-to-r from-[#0F66EA] to-[#BFBFBF]"></div>
                   <div className="space-y-1">
-                    <h3 className="text-lg sm:text-xl font-medium text-[#FFFFFF]">
+                    <h3 className="text-base sm:text-lg  font-medium text-[#FFFFFF]">
                       {item.heading}
                     </h3>
-                    <p className="text-base sm:text-lg font-medium text-[#BFBFBF]">
+                    <p className="text-sm sm:text-base  font-medium text-[#BFBFBF]">
                       {item.subheading}
                     </p>
-                    <p className="text-sm sm:text-base font-medium max-w-md mt-3 leading-[28px] lg:leading-[30px] text-[#D1D1D1]">
+                    <p className="text-sm sm:text-base font-medium max-w-md mt-3 leading-[28px]  text-[#D1D1D1]">
                       {item.description}
                     </p>
                   </div>
@@ -708,21 +730,21 @@ function AiAugamentedRedTeam() {
           {/* heading  */}
 
           <Animation>
-            <div className="max-w-xl space-y-4">
-              <p className="text-sm sm:text-base font-semibold text-[#E24B4A]">
+            <div className="max-w-xl mx-auto lg:mx-0 space-y-4 text-center lg:text-left">
+              <p className="text-sm sm:text-base font-semibold sectionheading text-[#E24B4A]">
                 OUR CLIENTS
               </p>
-              <h2 className="font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF]">
+              <h2 className=" text-[#FFFFFF]">
                 Who Needs AI-Augmented Red Team Testing?
               </h2>
-              <p className="text-sm sm:text-lg font-normal leading-[25px] md:leading-[31px] text-[#D1D1D1]">
+              <p className="sectionDescription text-[#D1D1D1]">
                 AI-Augmented Red Teaming is designed for organizations where AI
                 connects to products, data, infrastructure, business processes,
                 or decision-making.
               </p>
             </div>
           </Animation>
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {redTeamTesting.map((item, index) => (
               <AnimatedCard
                 key={index}
@@ -749,27 +771,33 @@ function AiAugamentedRedTeam() {
       <section className="w-full py-14 bg-[#060D1B]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           {/* heading */}
-          <div className="flex gap-10 ">
-            <div className="w-[400px] space-y-4   justify-between">
-              <p className="text-sm sm:text-base font-semibold text-[#E24B4A]">
-                ENGAGEMENT STRUCTURE
-              </p>
-              <h2 className="font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF]">
-                Four Attack Paths. One AI Threat-Readiness View
-              </h2>
-              <p className="text-sm sm:text-base leading-[25px] md:leading-[31px] text-[#D1D1D1]">
-                Run one module or combine multiple attack paths based on your AI
-                environment and objectives.
-              </p>
+          <Animation>
+            <div className="flex flex-col lg:flex-row items-center gap-10 ">
+              <div className="w-full lg:w-[400px] space-y-4 text-center lg:text-left  justify-between">
+                <p className="text-sm sm:text-base font-semibold sectionheading text-[#E24B4A]">
+                  ENGAGEMENT STRUCTURE
+                </p>
+                <h2 className="font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF]">
+                  Four Attack Paths. One AI Threat-Readiness View
+                </h2>
+                <p className="sectionDescription text-[#D1D1D1]">
+                  Run one module or combine multiple attack paths based on your
+                  AI environment and objectives.
+                </p>
+              </div>
+              <div className=" flex-1  ">
+                <Image src={aienvironment} alt="Ai environment" />
+              </div>
             </div>
-            <div className=" flex-1  ">
-              <Image src={aienvironment} alt="Ai environment" />
-            </div>
-          </div>
+          </Animation>
           <div className="mt-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10">
               {enagement.map((item, index) => (
-                <div key={index} className="pl-4 border-l border-[#0F66EA29]">
+                <AnimatedCard
+                  key={index}
+                  delay={index * 0.15}
+                  className="pl-4 border-l border-[#0F66EA29]"
+                >
                   <p className="text-sm sm:text-base font-medium flex gap-3 text-[#F4F7FF]">
                     <span className="text-[#E24B4A]">{item.number}</span>{" "}
                     {item.moduleName}
@@ -800,7 +828,7 @@ function AiAugamentedRedTeam() {
                       {item.keyFocus}
                     </p>
                   </div>
-                </div>
+                </AnimatedCard>
               ))}
             </div>
           </div>
@@ -808,88 +836,90 @@ function AiAugamentedRedTeam() {
       </section>
 
       {/* From AI Supply Chain to Human Defense */}
-      <section className="w-full py-14 bg-[#060D1B]">
+      {/* <section className="w-full py-14 bg-[#060D1B]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
-          {/* heading  */}
-          <div className="flex justify-between">
-            <div className="w-[500px] space-y-4">
-              <p className="text-sm sm:text-base font-semibold text-[#E24B4A]">
+          <div className="flex flex-col lg:flex-row gap-6 justify-between">
+            <div className="lg:w-[500px] text-center lg:text-left space-y-4">
+              <p className="text-sm sm:text-base font-semibold sectionheading text-[#E24B4A]">
                 TESTING COVERAGE
               </p>
-              <h2 className="font-medium text-[#FFFFFF]">
+              <h2 className=" text-[#FFFFFF]">
                 From AI Supply Chain to Human Defense
               </h2>
             </div>
-            <p className="text-base sm:text-lg font-normal w-[400px] leading-[25px] md:leading-[31px] text-[#D1D1D1]">
+            <p className="lg:w-[500px] text-center lg:text-left sectionDescription text-[#D1D1D1]">
               End-to-end attack simulation and functional validation across the
               AI attack surface.
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FUNCTIONAL TESTING  */}
       <section className="w-full py-14 bg-[#060D1B]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="text-center">
-            <p className="text-sm sm:text-base font-semibold uppercase text-[#E24B4A]">
-              Functional Testing
-            </p>
-            <h2 className="font-medium max-w-2xl mx-auto text-3xl md:text-4xl leading-[40px] md:leading-[55px] text-white">
-              AI-Augmented Red Team Functional Testing - What We Validate
-            </h2>
-            <p className="text-base sm:text-lg font-normal max-w-4xl mx-auto leading-[25px] md:leading-[31px] text-[#D1D1D1]">
-              Attack simulation alone isn't enough, we validate whether your
-              controls, gates, and detection pipelines actually function as
-              designed.
-            </p>
-          </div>
+          <Animation>
+            <div className="text-center space-y-4">
+              <p className="text-sm sm:text-base font-semibold uppercase sectionheading text-[#E24B4A]">
+                Functional Testing
+              </p>
+              <h2 className=" max-w-2xl mx-auto  text-white">
+                AI-Augmented Red Team Functional Testing - What We Validate
+              </h2>
+              <p className="sectionDescription max-w-3xl mx-auto text-[#D1D1D1]">
+                Attack simulation alone isn't enough, we validate whether your
+                controls, gates, and detection pipelines actually function as
+                designed.
+              </p>
+            </div>
+          </Animation>
 
           <div className="w-full overflow-x-auto mt-10">
-            <div className="min-w-[900px] flex flex-col border border-white/10 bg-[#030816] ">
-              {/* Header */}
-              <div className="grid grid-cols-[1.6fr_3.2fr_2.4fr_0.8fr] ">
-                {[
-                  "Functional Flow",
-                  "What We Test",
-                  "Security Checks",
-                  "Included",
-                ].map((title, i) => (
+            <Animation>
+              <div className="min-w-[900px] flex flex-col border border-white/10 bg-[#030816] ">
+                {/* Header */}
+                <div className="grid grid-cols-[1.6fr_3.2fr_2.4fr_0.8fr] ">
+                  {[
+                    "Functional Flow",
+                    "What We Test",
+                    "Security Checks",
+                    "Included",
+                  ].map((title, i) => (
+                    <div
+                      key={title}
+                      className={`bg-[#071329] border border-white/20 px-4 py-3 text-[13px] font-medium text-[#E5E5E5] ${
+                        i === 3 ? "text-center" : ""
+                      }`}
+                    >
+                      {title}
+                    </div>
+                  ))}
+                </div>
+
+                {securityChecks.map((item, index) => (
                   <div
-                    key={title}
-                    className={`bg-[#071329] border border-white/20 px-4 py-3 text-[13px] font-medium text-[#E5E5E5] ${
-                      i === 3 ? "text-center" : ""
-                    }`}
+                    key={index}
+                    className="grid grid-cols-[1.6fr_3.2fr_2.4fr_0.8fr] "
                   >
-                    {title}
+                    <div className="flex items-center bg-[#1F5555] border border-[#3B82B6]/60 px-4 py-3 text-[13px] font-semibold leading-snug text-white">
+                      {item.flow}
+                    </div>
+
+                    <div className="flex items-center bg-[#F5EAD5] px-4 py-3 text-[13px] leading-snug text-[#1A1A1A]">
+                      {item.test}
+                    </div>
+
+                    <div className="flex items-center bg-[#F5EAD5] px-4 py-3 text-[13px] leading-snug text-[#1A1A1A]">
+                      {item.security}
+                    </div>
+
+                    <div className="flex items-center justify-center bg-[#00001A] border border-white/10 text-white">
+                      <Icon icon="material-symbols:check" className="text-xl" />
+                    </div>
                   </div>
                 ))}
               </div>
-
-              {/* Rows */}
-              {securityChecks.map((item, index) => (
-                <div
-                  key={index}
-                  className="grid grid-cols-[1.6fr_3.2fr_2.4fr_0.8fr] "
-                >
-                  <div className="flex items-center bg-[#1F5555] border border-[#3B82B6]/60 px-4 py-3 text-[13px] font-semibold leading-snug text-white">
-                    {item.flow}
-                  </div>
-
-                  <div className="flex items-center bg-[#F5EAD5] px-4 py-3 text-[13px] leading-snug text-[#1A1A1A]">
-                    {item.test}
-                  </div>
-
-                  <div className="flex items-center bg-[#F5EAD5] px-4 py-3 text-[13px] leading-snug text-[#1A1A1A]">
-                    {item.security}
-                  </div>
-
-                  <div className="flex items-center justify-center bg-[#00001A] border border-white/10 text-white">
-                    <Icon icon="material-symbols:check" className="text-xl" />
-                  </div>
-                </div>
-              ))}
-            </div>
+            </Animation>
           </div>
         </div>
       </section>
@@ -897,17 +927,22 @@ function AiAugamentedRedTeam() {
       {/* OUR APPROACH  */}
       <section className="w-full py-14 bg-[#060D1B]">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-6 sm:px-10 gap-8 lg:gap-15">
-          <div className="w-full lg:w-[40%] space-y-4">
-            <p className="text-sm sm:text-base font-semibold text-[#E24B4A]">
-              OUR APPROACH
-            </p>
-            <h2 className="font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF]">
-              Proven AI-Augmented Red Team Methodology
-            </h2>
-            <p className="text-base sm:text-lg font-normal leading-[25px] md:leading-[31px] text-[#D1D1D1]">
-              A structured process applied consistently across all four modules,
-              adapted to your region's legal and regulatory context.
-            </p>
+          <div className="w-full lg:w-[40%] ">
+            <LeftAnimation>
+              <div className="space-y-4 text-center lg:text-left">
+                <p className="text-sm sm:text-base font-semibold sectionheading text-[#E24B4A]">
+                  OUR APPROACH
+                </p>
+                <h2 className=" text-[#FFFFFF]">
+                  Proven AI-Augmented Red Team Methodology
+                </h2>
+                <p className="sectionDescription text-[#D1D1D1]">
+                  A structured process applied consistently across all four
+                  modules, adapted to your region's legal and regulatory
+                  context.
+                </p>
+              </div>
+            </LeftAnimation>
           </div>
           <div className="flex-1">
             <div className="relative mt-8">
@@ -953,13 +988,13 @@ function AiAugamentedRedTeam() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 relative z-10">
           {/* heading  */}
           <div className="max-w-2xl mx-auto text-center space-y-4">
-            <p className="text-sm sm:text-base font-semibold text-[#E24B4A]">
+            <p className="text-sm sm:text-base font-semibold sectionheading text-[#E24B4A]">
               WHAT YOU RECEIVE
             </p>
             <h2 className="font-medium text-[#FFFFFF]">
               Complete AI-Augmented Red Team Deliverables
             </h2>
-            <p className="text-base sm:text-lg font-normal text-[#D1D1D1]">
+            <p className="sectionDescription text-[#D1D1D1]">
               Technical depth for your engineering team, and a clear narrative
               for your board, in your local currency and time zone.
             </p>
@@ -999,18 +1034,23 @@ function AiAugamentedRedTeam() {
 
           <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 h-[400px]">
             <div className="flex">
-              <div className="flex-2" />
-              <div className="flex-1">
-                <p className="text-sm sm:text-base font-semibold uppercase text-[#E24B4A]">
-                  Our Differentiators
-                </p>
-                <h2 className="font-medium max-w-sm text-3xl md:text-4xl leading-[40px] md:leading-[50px] text-white">
-                  Built for the AI Attack Surface
-                </h2>
-                <p className="text-base sm:text-lg font-normal leading-[25px] md:leading-[31px] max-w-sm text-[#D1D1D1]">
-                  AI-focused offensive security backed by specialist expertise,
-                  functional validation, and a global delivery model.
-                </p>
+              <div className="flex-2 hidden lg:block" />
+              <div className="flex-1 ">
+                <RightAnimation>
+                  <div className="text-center lg:text-left space-y-4">
+                    <p className="text-sm sm:text-base font-semibold uppercase sectionheading text-[#E24B4A]">
+                      Our Differentiators
+                    </p>
+                    <h2 className=" max-w-sm mx-auto lg:mx-0 text-white">
+                      Built for the AI Attack Surface
+                    </h2>
+                    <p className="sectionDescription lg:max-w-sm text-[#D1D1D1]">
+                      AI-focused offensive security backed by specialist
+                      expertise, functional validation, and a global delivery
+                      model.
+                    </p>
+                  </div>
+                </RightAnimation>
               </div>
             </div>
           </div>

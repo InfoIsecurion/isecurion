@@ -1,6 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { sendContactEmail } from '../services/emailService'
 import { verifyTurnstile } from '@/services/verifyTurnstile'
+import type { PayloadRequest } from 'payload'
 
 interface ContactFormData {
   fullname: string
@@ -101,7 +102,7 @@ function containsHTML(value: string): boolean {
 }
 
 // main contact form
-export async function submitContactForm(request: NextRequest) {
+export async function submitContactForm(request: any) {
   try {
     const body: unknown = await request.json()
 
@@ -205,7 +206,7 @@ export async function submitContactForm(request: NextRequest) {
   }
 }
 
-export async function breachAttackSimulation(request: NextRequest) {
+export async function breachAttackSimulation(request: PayloadRequest) {
   try {
     const body: unknown = await request.json()
 
@@ -291,7 +292,7 @@ export async function breachAttackSimulation(request: NextRequest) {
   }
 }
 
-export async function redTeam(request: NextRequest) {
+export async function redTeam(request: PayloadRequest) {
   try {
     const body: unknown = await request.json()
 
@@ -379,7 +380,7 @@ export async function redTeam(request: NextRequest) {
   }
 }
 
-export async function aiAugamentedRedTeam(request: NextRequest) {
+export async function aiAugamentedRedTeam(request: PayloadRequest) {
   try {
     const body: unknown = await request.json()
 
@@ -474,7 +475,7 @@ export async function aiAugamentedRedTeam(request: NextRequest) {
 }
 
 // phishing simulation
-export async function phishingSimulation(request: NextRequest) {
+export async function phishingSimulation(request: PayloadRequest) {
   try {
     const body: unknown = await request.json()
 
@@ -566,7 +567,7 @@ export async function phishingSimulation(request: NextRequest) {
 }
 
 // managed security service
-export async function managedSecurityService(request: NextRequest) {
+export async function managedSecurityService(request: PayloadRequest) {
   try {
     const body: unknown = await request.json()
 
@@ -663,7 +664,7 @@ export async function managedSecurityService(request: NextRequest) {
   }
 }
 
-export async function dpoServices(request: NextRequest) {
+export async function dpoServices(request: PayloadRequest) {
   try {
     const body: unknown = await request.json()
 
@@ -774,7 +775,7 @@ export async function dpoServices(request: NextRequest) {
   }
 }
 
-export async function aadharAudit(request: NextRequest) {
+export async function aadharAudit(request: PayloadRequest) {
   try {
     const body: unknown = await request.json()
 
@@ -861,7 +862,7 @@ export async function aadharAudit(request: NextRequest) {
   }
 }
 
-export async function bseNseAudit(request: NextRequest) {
+export async function bseNseAudit(request: PayloadRequest) {
   try {
     const body: unknown = await request.json()
 
@@ -948,7 +949,7 @@ export async function bseNseAudit(request: NextRequest) {
   }
 }
 
-export async function cicraAudit(request: NextRequest) {
+export async function cicraAudit(request: PayloadRequest) {
   try {
     const body: unknown = await request.json()
 
@@ -1035,7 +1036,7 @@ export async function cicraAudit(request: NextRequest) {
   }
 }
 
-export async function rbiSecurityAudit(request: NextRequest) {
+export async function rbiSecurityAudit(request: PayloadRequest) {
   try {
     const body: unknown = await request.json()
 
@@ -1122,7 +1123,7 @@ export async function rbiSecurityAudit(request: NextRequest) {
   }
 }
 
-export async function irda(request: NextRequest) {
+export async function irda(request: PayloadRequest) {
   try {
     const body: unknown = await request.json()
 

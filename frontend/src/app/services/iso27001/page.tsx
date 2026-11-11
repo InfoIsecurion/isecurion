@@ -901,10 +901,11 @@ function Iso27001() {
 
                     {/* Left card */}
                     <div
-                      className={`col-start-2 flex flex-col ${isLeft
+                      className={`col-start-2 flex flex-col ${
+                        isLeft
                           ? "items-start pl-0 text-left sm:col-start-1 sm:items-end sm:pr-10 sm:text-right"
                           : "hidden sm:col-start-1 sm:block sm:invisible"
-                        }`}
+                      }`}
                     >
                       {isLeft && (
                         <div className="space-y-3">
@@ -925,10 +926,11 @@ function Iso27001() {
 
                     {/* Right card */}
                     <div
-                      className={`col-start-2 flex flex-col justify-start ${!isLeft
+                      className={`col-start-2 flex flex-col justify-start ${
+                        !isLeft
                           ? "items-start pl-0 text-left sm:col-start-2 sm:pl-10"
                           : "hidden sm:col-start-2 sm:block sm:invisible"
-                        }`}
+                      }`}
                     >
                       {!isLeft && (
                         <div className="space-y-3">
