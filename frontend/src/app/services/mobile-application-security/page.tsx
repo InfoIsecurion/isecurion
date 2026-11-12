@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import FAQSection from "../../../components/sections/FAQSection";
 import methodologySettings from "../../../assets/services/methodologySettings.png";
-import { Animation, AnimatedCard } from "../../../components/ui/Animation";
+import WordReveal, { Animation, AnimatedCard } from "../../../components/ui/Animation";
 import Link from "next/link";
 
 const mobileAssessmentCards = [
@@ -185,7 +185,7 @@ function page() {
                   Mobile Application Security
                 </h1>
 
-                <p className="mt-5 max-w-[640px] text-base leading-8 text-[#D9D9D9] sm:text-lg">
+                <p className="mt-5 max-w-[640px] text-base leading-8 text-[#D9D9D9] sm:text-lg animate-hero-reveal" style={{ animationDelay: "400ms" }}>
                   ISECURION assesses iOS and Android applications across the
                   client, communication, and backend layers to identify
                   vulnerabilities before they can be exploited.
@@ -217,18 +217,17 @@ function page() {
           {/* Section Content */}
           <Animation>
             <div className="text-center md:text-left">
-              <h2 className="text-white">
-                What Is Mobile Application Security Assessment?
-              </h2>
+              <WordReveal text="What Is Mobile Application Security Assessment?" className="text-white">
+              </WordReveal>
 
-              <p className="mt-6 max-w-[550px] text-[#D1D1D1] sectionDescription">
+              <p className="mt-6 max-w-[550px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{animationDelay:"500ms"}}>
                 A Mobile Application Security Assessment is a structured
                 evaluation of mobile applications to identify vulnerabilities
                 across the application, device, communication, and backend API
                 layers.
               </p>
 
-              <p className="mt-4 max-w-[610px] text-[#D1D1D1] sectionDescription">
+              <p className="mt-4 max-w-[610px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{animationDelay:"650ms"}}>
                 We combine{" "}
                 <span className="font-medium text-white">
                   OWASP MASVS/MSTG-aligned testing
@@ -336,11 +335,11 @@ function page() {
           {/* Methodology Header */}
           <Animation>
             <div className="relative mx-auto max-w-7xl px-6 pb-8 pt-16 text-center sm:px-10 lg:px-12 lg:pt-20">
-              <h2 className="text-white font-semibold">
-                Our Mobile Security Methodology
-              </h2>
+              <WordReveal text="Our Mobile Security Methodology" className="text-white font-semibold">
+                
+              </WordReveal>
 
-              <p className="mx-auto mt-5 max-w-[780px] sectionDescription text-[#D1D1D1]">
+              <p className="mx-auto mt-5 max-w-[780px] sectionDescription text-[#D1D1D1] animate-hero-reveal" style={{animationDelay:"850ms"}}>
                 Our methodology combines threat modeling, manual testing, and
                 targeted automation to deliver depth and accuracy.
               </p>

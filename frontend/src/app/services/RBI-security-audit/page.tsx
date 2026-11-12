@@ -7,6 +7,7 @@ import {
   LeftAnimation,
   GradientIcon,
   RightAnimation,
+  WordReveal
 } from "../../../components/ui/Animation";
 import FAQSection from "../../../components/sections/FAQSection";
 import RBI_CTA from '../../../components/sections/RBI_CTA';
@@ -436,6 +437,7 @@ import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { rbiAudit } from "../../../services/api/contact";
+import { motion } from "framer-motion";
 
 interface ContactFormData {
   email: string;
@@ -476,7 +478,7 @@ function page() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong. Please try again.",
+        "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -501,13 +503,13 @@ function page() {
                 </p>
 
                 {/* Heading */}
-                <h1 className="mt-5 lg:max-w-[450px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left">
+                <h1 className="mt-5 lg:max-w-[450px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "700ms" }}>
                   RBI Information Security (IS) Audit Services for Financial
                   Institutions
                 </h1>
 
                 {/* Description */}
-                <p className="mt-4 lg:max-w-[400px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left">
+                <p className="mt-4 lg:max-w-[400px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "1000ms" }}>
                   Strengthen your institution’s cybersecurity and regulatory
                   readiness with a comprehensive RBI Information Security Audit.
                   Evaluate IT controls, protect sensitive financial data, &
@@ -521,19 +523,27 @@ function page() {
                     "Financial Data Protection",
                     "IT & Cybersecurity Assessment",
                     "Audit Readiness & Reporting",
-                  ].map((item) => (
-                    <li
+                  ].map((item, index) => (
+                    <motion.li
                       key={item}
+                      initial={{ opacity: 0, y: 18 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{
+                        duration: 0.6,
+                        delay: index * 0.12,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
                       className="flex items-center justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]"
                     >
                       <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#3B9E6A]" />
                       <span>{item}</span>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
 
                 {/* CTA */}
-                <div className="mt-10 text-center lg:text-left">
+                {/* <div className="mt-10 text-center lg:text-left">
                   <Link href="/company/contact">
                   <button
                     type="button"
@@ -545,178 +555,178 @@ function page() {
                     </span>
                   </button>
                   </Link>
-                </div>
+                </div> */}
               </div>
             </Animation>
 
-              <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:p-[30px] xl:p-[40px]">
-                <div>
-                  <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
-                    Request RBI IS Audit Consultation
-                  </h2>
+            <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:p-[30px] xl:p-[40px]">
+              <div>
+                <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
+                  Request RBI IS Audit Consultation
+                </h2>
 
-                  <p className="mt-3 text-[14px] leading-[1.5] text-[#D9D9D9]">
-                    Discuss your RBI IS audit requirements with our experts.
-                  </p>
-                </div>
+                <p className="mt-3 text-[14px] leading-[1.5] text-[#D9D9D9]">
+                  Discuss your RBI IS audit requirements with our experts.
+                </p>
+              </div>
 
-                {/* Form*/}
-                <form className="mt-8" onSubmit={handleSubmit(submit)}>
-                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                    <div>
-                      <label
-                        htmlFor="workEmail"
-                        className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
-                      >
-                        Work Email <span className="text-[#E42F23]">*</span>
-                      </label>
-
-                      <input
-                        id="workEmail"
-                        name="workEmail"
-                        type="email"
-                        placeholder="youremail@gmail.com"
-                        className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] ${errors.email ? "border border-red-500" : ""}`}
-                        {...register("email", {
-                          required: "Email is required",
-                        })}
-                      />
-                      {errors.email && (
-                        <p className="text-sm font-normal text-red-500">
-                          {errors.email.message}
-                        </p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="companyName"
-                        className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
-                      >
-                        Company Name
-                      </label>
-
-                      <input
-                        id="companyName"
-                        name="companyName"
-                        type="text"
-                        placeholder="Company name"
-                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] "
-                        {...register("companyName")}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="mt-4">
+              {/* Form*/}
+              <form className="mt-8" onSubmit={handleSubmit(submit)}>
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  <div>
                     <label
-                      htmlFor="assessmentType"
+                      htmlFor="workEmail"
                       className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
                     >
-                      Organization Type{" "}
-                      <span className="text-[#F04444]">*</span>
+                      Work Email <span className="text-[#E42F23]">*</span>
                     </label>
 
-                    <div className="relative">
-                      <select
-                        id="target"
-                        name="target"
-                        defaultValue=""
-                        aria-label="Select Industry Sector"
-                        className={`h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none ${errors.organizationtype ? "border border-red-500" : ""}`}
-                        {...register("organizationtype", {
-                          required: "Organization type is required",
-                        })}
-                      >
-                        <option value="">Select Organization Type</option>
-
-                        <option value="Scheduled Commercial Bank">
-                          Scheduled Commercial Bank
-                        </option>
-                        <option value="Cooperative Bank / Urban Co-op">
-                          Cooperative Bank / Urban Co-op
-                        </option>
-                        <option value="Non-Banking Financial Company (NBFC)">
-                          Non-Banking Financial Company (NBFC)
-                        </option>
-                        <option value="Small Finance Bank">
-                          Small Finance Bank
-                        </option>
-                        <option value="Payment Bank">Payment Bank</option>
-                        <option value="FinTech Company">FinTech Company</option>
-                        <option value="Technology Vendor for Banking">
-                          Technology Vendor for Banking
-                        </option>
-                        <option value="Other Financial Institution">
-                          Other Financial Institution
-                        </option>
-                      </select>
-
-                      <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#777]">
-                        <svg
-                          width="14"
-                          height="8"
-                          viewBox="0 0 14 8"
-                          fill="none"
-                        >
-                          <path
-                            d="M1 1L7 7L13 1"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Captcha */}
-                  <div className="mt-7">
-                    <div className="flex items-center gap-3">
-                      <Turnstile
-                        ref={turnstileRef}
-                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                        onSuccess={(token) => setTurnstileToken(token)}
-                        onExpire={() => setTurnstileToken("")}
-                        onError={() => setTurnstileToken("")}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Consent */}
-                  <div className="mt-5 flex items-start gap-2.5">
                     <input
-                      id="consent"
-                      name="consent"
-                      type="checkbox"
-                      required
-                      className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
+                      id="workEmail"
+                      name="workEmail"
+                      type="email"
+                      placeholder="youremail@gmail.com"
+                      className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] ${errors.email ? "border border-red-500" : ""}`}
+                      {...register("email", {
+                        required: "Email is required",
+                      })}
                     />
-
-                    <label
-                      htmlFor="consent"
-                      className="text-[10px] leading-[1.7] text-[#BDBDBD] sm:text-[11px]"
-                    >
-                      By clicking submit below, you agree to our Terms of Use
-                      and Privacy Policy. Additionally, you consent to allow
-                      ISECURION Technology & Consulting Pvt. Ltd. to store and
-                      process the personal information submitted above to
-                      provide you the content requested.
-                    </label>
+                    {errors.email && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.email.message}
+                      </p>
+                    )}
                   </div>
 
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    className={`mt-8 flex h-[51px] w-full items-center justify-center rounded-[7px] border border-[#4D78C4] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(39,84,148,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#5282D3] hover:to-[#2B5CA0] active:translate-y-0 ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                  <div>
+                    <label
+                      htmlFor="companyName"
+                      className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
+                    >
+                      Company Name
+                    </label>
+
+                    <input
+                      id="companyName"
+                      name="companyName"
+                      type="text"
+                      placeholder="Company name"
+                      className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] "
+                      {...register("companyName")}
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-4">
+                  <label
+                    htmlFor="assessmentType"
+                    className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
                   >
-                    Request RBI Audit Consultation{""}
-                    <span className="ml-1.5 text-[18px] leading-none">
-                      <Icon icon="mdi:arrow-right" />
+                    Organization Type{" "}
+                    <span className="text-[#F04444]">*</span>
+                  </label>
+
+                  <div className="relative">
+                    <select
+                      id="target"
+                      name="target"
+                      defaultValue=""
+                      aria-label="Select Industry Sector"
+                      className={`h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none ${errors.organizationtype ? "border border-red-500" : ""}`}
+                      {...register("organizationtype", {
+                        required: "Organization type is required",
+                      })}
+                    >
+                      <option value="">Select Organization Type</option>
+
+                      <option value="Scheduled Commercial Bank">
+                        Scheduled Commercial Bank
+                      </option>
+                      <option value="Cooperative Bank / Urban Co-op">
+                        Cooperative Bank / Urban Co-op
+                      </option>
+                      <option value="Non-Banking Financial Company (NBFC)">
+                        Non-Banking Financial Company (NBFC)
+                      </option>
+                      <option value="Small Finance Bank">
+                        Small Finance Bank
+                      </option>
+                      <option value="Payment Bank">Payment Bank</option>
+                      <option value="FinTech Company">FinTech Company</option>
+                      <option value="Technology Vendor for Banking">
+                        Technology Vendor for Banking
+                      </option>
+                      <option value="Other Financial Institution">
+                        Other Financial Institution
+                      </option>
+                    </select>
+
+                    <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#777]">
+                      <svg
+                        width="14"
+                        height="8"
+                        viewBox="0 0 14 8"
+                        fill="none"
+                      >
+                        <path
+                          d="M1 1L7 7L13 1"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
                     </span>
-                  </button>
-                </form>
-              </div>
+                  </div>
+                </div>
+
+                {/* Captcha */}
+                <div className="mt-7">
+                  <div className="flex items-center gap-3">
+                    <Turnstile
+                      ref={turnstileRef}
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                      onSuccess={(token) => setTurnstileToken(token)}
+                      onExpire={() => setTurnstileToken("")}
+                      onError={() => setTurnstileToken("")}
+                    />
+                  </div>
+                </div>
+
+                {/* Consent */}
+                <div className="mt-5 flex items-start gap-2.5">
+                  <input
+                    id="consent"
+                    name="consent"
+                    type="checkbox"
+                    required
+                    className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
+                  />
+
+                  <label
+                    htmlFor="consent"
+                    className="text-[10px] leading-[1.7] text-[#BDBDBD] sm:text-[11px]"
+                  >
+                    By clicking submit below, you agree to our Terms of Use
+                    and Privacy Policy. Additionally, you consent to allow
+                    ISECURION Technology & Consulting Pvt. Ltd. to store and
+                    process the personal information submitted above to
+                    provide you the content requested.
+                  </label>
+                </div>
+
+                {/* Submit */}
+                <button
+                  type="submit"
+                  className={`mt-8 flex h-[51px] w-full items-center justify-center rounded-[7px] border border-[#4D78C4] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(39,84,148,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#5282D3] hover:to-[#2B5CA0] active:translate-y-0 ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                >
+                  Request RBI Audit Consultation{""}
+                  <span className="ml-1.5 text-[18px] leading-none">
+                    <Icon icon="mdi:arrow-right" />
+                  </span>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -731,26 +741,30 @@ function page() {
                   UNDERSTANDING RBI IS AUDITS
                 </p>
 
-                <h2 className="mx-auto mt-4 max-w-[570px] text-center text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] lg:text-left lg:mx-0 lg:text-[36px] xl:text-[40px]">
-                  Secure India’s Digital Banking Landscape
-                </h2>
+                <WordReveal text="Secure India’s Digital Banking Landscape" className="mx-auto mt-4 max-w-[570px] text-center text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] lg:text-left lg:mx-0 lg:text-[36px] xl:text-[40px]">
+               
+                </WordReveal>
 
                 <div className="mx-auto mt-[22px] max-w-[525px] space-y-5 text-center text-[15px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[16px] lg:text-left lg:mx-0 lg:text-[16px] xl:text-[17px]">
-                  <p>
+                  <Animation>
+                  <p className="animate-hero-reveal" style={{animationDelay:"700ms"}}>
                     Digital banking, online payments, and financial technology
                     services rely on interconnected systems that handle
                     sensitive customer and financial information. Effective
                     information security controls are essential to protect these
                     systems from cyber threats and operational disruption.
                   </p>
-
-                  <p className="max-w-[]">
+                  </Animation>
+                    
+                  <Animation>
+                  <p className="animate-hero-reveal" style={{animationDelay:"800ms"}}>
                     An RBI Information Security Audit assesses an organization’s
                     information security governance, technical safeguards, and
                     operational controls against applicable RBI requirements. It
                     helps identify weaknesses, prioritize remediation, and
                     strengthen audit readiness.
                   </p>
+                  </Animation>
                 </div>
               </div>
 
@@ -801,13 +815,15 @@ function page() {
               <p className="text-sm sm:text-base font-semibold text-[#3B9E6A] ">
                 ORGANIZATIONS WE SUPPORT
               </p>
-              <h2 className="text-[#FFFFFF] max-w-[700px]">
-                RBI Audit Support Across the Financial Sector
-              </h2>
+              <WordReveal text="RBI Audit Support Across the Financial Sector" className="text-[#FFFFFF] max-w-[700px]">
+                
+              </WordReveal>
+              <Animation>
               <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[750px]">
                 Support information security and compliance needs across
                 banking, lending, payments, and digital financial services.
               </p>
+              </Animation>
             </div>
             <div className="mt-10">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -815,9 +831,8 @@ function page() {
                   <AnimatedCard
                     delay={index * 0.13}
                     key={index}
-                    className={`relative flex flex-col justify-between p-5 space-y-4 rounded-lg bg-[#66666614] border border-[#0B15301F] py-8  ${
-                      index === 7 ? "lg:col-span-2" : ""
-                    }`}
+                    className={`relative flex flex-col justify-between p-5 space-y-4 rounded-lg bg-[#66666614] border border-[#0B15301F] py-8  ${index === 7 ? "lg:col-span-2" : ""
+                      }`}
                   >
                     <div className="absolute left-0 w-[2.5px] h-[23px] rounded-tr-2xl rounded-br-2xl bg-[#3B9E6A]"></div>
                     <div className="flex items-center justify-between gap-8">
@@ -925,11 +940,10 @@ function page() {
                   {/* Left content */}
 
                   <div
-                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${
-                      item.side === "left"
+                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${item.side === "left"
                         ? "sm:pr-7 sm:text-right lg:pr-8"
                         : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
-                    }`}
+                      }`}
                   >
                     {item.side === "left" && (
                       <>
@@ -954,11 +968,10 @@ function page() {
                   {/* Right content */}
 
                   <div
-                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${
-                      item.side === "right"
+                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${item.side === "right"
                         ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
                         : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
-                    }`}
+                      }`}
                   >
                     {item.side === "right" && (
                       <>

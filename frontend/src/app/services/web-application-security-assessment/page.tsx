@@ -6,7 +6,7 @@ import methodologySettings from "../../../assets/services/methodologySettings.pn
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import FAQSection from "../../../components/sections/FAQSection";
-import { Animation } from "../../../components/ui/Animation";
+import WordReveal, { Animation } from "../../../components/ui/Animation";
 import { motion } from "framer-motion";
 import MethodologySection from "../../../components/sections/MethodologySection";
 import Link from "next/link";
@@ -167,7 +167,7 @@ function page() {
                   Web Application Security Assessment
                 </h1>
 
-                <p className="mt-4 max-w-[610px] text-[#D9D9D9] sectionDescription">
+                <p className="mt-4 max-w-[610px] text-[#D9D9D9] sectionDescription animate-hero-reveal" style={{ animationDelay: "650ms" }}>
                   Identify vulnerabilities, uncover real-world attack risks, and
                   protect your web applications with expert-led security
                   assessments.
@@ -194,49 +194,70 @@ function page() {
         <Animation>
           <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-12 lg:py-16">
             {/* Heading */}
-            <h2 className="leading-8 sm:leading-12 text-white">
-              What is Web Application Security Assessment?
-            </h2>
+            <WordReveal text="What is Web Application Security Assessment?" className="leading-8 sm:leading-12 text-white">
+
+            </WordReveal>
 
             {/* Introduction */}
-            <p className="mt-7 max-w-[540px] text-[#D1D1D1] sectionDescription text-center md:text-left">
+            <p className="mt-7 max-w-[540px] text-[#D1D1D1] sectionDescription text-center md:text-left animate-hero-reveal" style={{ animationDelay: "400ms" }}>
               Web Application Security Assessment is a systematic evaluation of
               a web application to identify, validate, and assess security
               vulnerabilities that attackers could exploit.
             </p>
 
+
             {/* Information Points */}
             <div className="mt-5 max-w-[720px] space-y-4">
-              {/* Point 1 */}
-              <div className="flex items-start gap-3">
-                <Icon
-                  icon="boxicons:seal-check"
-                  className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
-                />
-
-                <p className="text-[#D1D1D1] sectionDescription max-w-[590px]">
+              {[
+                <>
                   At ISECURION, we combine automated testing with expert-led
                   manual assessment to uncover security weaknesses that could be
                   exploited to gain unauthorized access, expose sensitive data,
                   manipulate application functionality, or disrupt critical
                   services.
-                </p>
-              </div>
-
-              {/* Point 2 */}
-              <div className="flex items-start gap-3">
-                <Icon
-                  icon="boxicons:seal-check"
-                  className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
-                />
-
-                <p className="text-[#D1D1D1] sectionDescription max-w-[550px]">
+                </>,
+                <>
                   Our assessments help organizations identify exploitable risks,
                   strengthen application security, and build resilience against
                   evolving web-based threats.
-                </p>
-              </div>
+                </>,
+              ].map((point, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -35 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{
+                    duration: 1.5,
+                    delay: index * 0.25,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="flex items-start gap-3"
+                >
+                  <motion.div
+                    initial={{ scale: 0, rotate: -30 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: index * 0.25 + 0.2,
+                      ease: "backOut",
+                    }}
+                    className="mt-0.5 shrink-0"
+                  >
+                    <Icon
+                      icon="boxicons:seal-check"
+                      className="text-[20px] text-[#0F66EA]"
+                    />
+                  </motion.div>
+
+                  <p className="text-[#D1D1D1] sectionDescription">
+                    {point}
+                  </p>
+                </motion.div>
+              ))}
             </div>
+
 
             <Animation>
               <div className="mt-10 flex justify-center sm:mt-12 lg:mt-14">
@@ -292,11 +313,10 @@ function page() {
             <div className="relative mx-auto max-w-7xl px-6 pt-16 text-center sm:px-10 lg:px-12 lg:pt-20">
               <div className="pointer-events-none absolute right-0 top-0 h-[280px] w-[280px] rounded-full bg-cyan-500/10 blur-[100px]" />
 
-              <h2 className="relative text-3xl font-normal leading-tight text-white sm:text-4xl lg:text-[36px]">
-                Our Security Assessment Methodology
-              </h2>
+              <WordReveal text="Our Security Assessment Methodology" className="relative text-3xl font-normal leading-tight text-white sm:text-4xl lg:text-[36px]">
+              </WordReveal>
 
-              <p className="relative mx-auto mt-5 max-w-[850px] text-sm leading-6 text-white/70 sm:text-base">
+              <p className="relative mx-auto mt-5 max-w-[850px] text-sm leading-6 text-white/70 sm:text-base animate-hero-reveal" style={{ animationDelay: "600ms" }}>
                 At ISECURION, we combine{" "}
                 <span className="font-medium text-white">
                   OWASP-aligned testing

@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
-import {
+import WordReveal, {
   Animation,
   AnimatedCard,
   LeftAnimation,
@@ -383,26 +383,26 @@ function SocCompliance() {
                 </p>
 
                 {/* Heading */}
-                <h1 className="mt-5 lg:max-w-[430px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left">
+                <h1 className="mt-5 lg:max-w-[430px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{animationDelay:"550ms"}}>
                   SOC 2 Compliance Audit & Readiness Services in India
                 </h1>
 
                 {/* Description */}
-                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left">
+                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{animationDelay:"650ms"}}>
                   Trusted by SaaS, FinTech, and cloud companies across
                   Bangalore, Mumbai, Hyderabad, Chennai, Pune, Kolkata, and
                   Kochi - and globally in USA, UK, UAE, Australia, and
                   Singapore.
                 </p>
 
-                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left">
+                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{animationDelay:"750ms"}}>
                   ISECURION takes you end-to-end from scoping and gap analysis
                   to evidence readiness and CPA auditor coordination. 100% audit
                   success rate. 250+ engagements.
                 </p>
 
                 {/* CTA */}
-                <div className="mt-6 text-center lg:text-left">
+                {/* <div className="mt-6 text-center lg:text-left">
                   <button
                     type="button"
                     className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3]"
@@ -412,12 +412,12 @@ function SocCompliance() {
                       <Icon icon="mdi:arrow-right"></Icon>
                     </span>
                   </button>
-                </div>
+                </div> */}
 
                 {/* ==================== STATS ==================== */}
                 <div className="mt-9 grid lg:max-w-[380px] grid-cols-3 lg:grid-cols-2 gap-x-10 gap-y-6 text-center lg:text-left">
                   {/* 150+ */}
-                  <div>
+                  <div className="animate-hero-reveal" style={{animationDelay:"1050ms"}}>
                     <p className="text-[21px] font-semibold leading-none text-[#0F66EA] sm:text-[22px]">
                       250+
                     </p>
@@ -428,7 +428,7 @@ function SocCompliance() {
                   </div>
 
                   {/* 30+ */}
-                  <div>
+                  <div className="animate-hero-reveal" style={{animationDelay:"1200ms"}}>
                     <p className="text-[21px] font-semibold leading-none text-[#0F66EA] sm:text-[22px]">
                       40+
                     </p>
@@ -439,7 +439,7 @@ function SocCompliance() {
                   </div>
 
                   {/* 100% */}
-                  <div>
+                  <div className="animate-hero-reveal" style={{animationDelay:"1300ms"}}>
                     <p className="text-[21px] font-semibold leading-none text-[#0F66EA] sm:text-[22px]">
                       100%
                     </p>
@@ -735,25 +735,28 @@ function SocCompliance() {
                   What Is SOC 2?
                 </p>
 
-                <h2 className="mx-auto mt-4 lg:max-w-[600px] text-center text-[28px] font-medium leading-[1.35] tracking-[-0.02em] text-white sm:text-[34px] lg:mx-0 lg:text-left lg:text-[40px] lg:leading-[1.4]">
-                  What is SOC 2? A Complete Guide for Indian &amp; Global
-                  Companies
-                </h2>
+                <WordReveal text="What is SOC 2? A Complete Guide for Indian &amp; Global Companies" className="mx-auto mt-4 lg:max-w-[600px] text-center text-[28px] font-medium leading-[1.35] tracking-[-0.02em] text-white sm:text-[34px] lg:mx-0 lg:text-left lg:text-[40px] lg:leading-[1.4]">
+                  
+                </WordReveal>
 
                 <div className="mx-auto mt-[22px] lg:max-w-[530px] space-y-5 text-center text-[15px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[16px] lg:text-left lg:mx-0 lg:text-[17px]">
+                  <Animation>
                   <p>
                     SOC 2 (System and Organization Controls 2) is an attestation
                     by an independent CPA firm evaluating how well a service
                     organization designs and operates controls aligned to the
                     AICPA Trust Services Criteria (TSC).
                   </p>
+                  </Animation>
 
+                  <Animation delay={0.5}>
                   <p>
                     It is the globally accepted security standard demanded by
                     enterprise customers in the USA, UK, UAE, Australia, and
                     Singapore, and increasingly by Indian enterprises in
                     Bangalore, Mumbai, and Hyderabad.
                   </p>
+                  </Animation>
                 </div>
               </div>
 
@@ -810,9 +813,9 @@ function SocCompliance() {
             {/* Intro */}
             <LeftAnimation>
               <div className="lg:max-w-[440px] text-center lg:text-left">
-                <h2 className="text-[28px] font-normal leading-[1.4] tracking-[-0.4px] text-white sm:text-[32px] sm:leading-[1.45] lg:text-[32px] xl:text-[34px]">
-                  SOC 2 Compliance Services Across India
-                </h2>
+                <WordReveal text="SOC 2 Compliance Services Across India" className="text-[28px] font-normal leading-[1.4] tracking-[-0.4px] text-white sm:text-[32px] sm:leading-[1.45] lg:text-[32px] xl:text-[34px]">
+                  
+                </WordReveal>
 
                 <p className="mt-4 text-[14px] leading-[25px] text-[#C5C9D2] sm:text-[15px] sm:leading-[26px]">
                   From Bangalore's SaaS startups to Mumbai's FinTech firms,
@@ -925,14 +928,16 @@ function SocCompliance() {
               <p className="text-sm sm:text-base font-semibold text-[#0F66EA] ">
                 INDUSTRIES WE SERVE
               </p>
-              <h2 className="text-[#FFFFFF] max-w-[700px]">
-                Built for Modern Tech Teams in India & Globally
-              </h2>
+              <WordReveal text="Built for Modern Tech Teams in India & Globally" className="text-[#FFFFFF] max-w-[700px]">
+                
+              </WordReveal>
+              <Animation>
               <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[780px]">
                 Support your SOC 2 journey with security assessments and audit
                 readiness tailored to your industry, technology stack, and
                 enterprise requirements.
               </p>
+              </Animation>
             </div>
             <div className="mt-10">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -974,9 +979,9 @@ function SocCompliance() {
                   BUSINESS VALUE
                 </p>
 
-                <h2 className="mt-8 lg:max-w-[450px] font-medium leading-[1.42] text-white">
-                  Why SOC 2 Matters for Your Business?
-                </h2>
+                <WordReveal text="Why SOC 2 Matters for Your Business?" className="mt-8 lg:max-w-[450px] font-medium leading-[1.42] text-white">
+                  
+                </WordReveal>
 
                 <p className="mt-[18px] lg:max-w-[420px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px]">
                   Build customer trust, accelerate enterprise sales, strengthen governance, and align security with key compliance frameworks.
@@ -996,6 +1001,7 @@ function SocCompliance() {
             <Animation>
               <div className="border-t border-[#B1B1B114] pt-[45px] lg:border-l lg:border-t-0 lg:pl-[32px] lg:pt-0">
                 <div className="space-y-[20px]">
+                  <AnimatedCard delay={0.2}>
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
                     <span className="text-[15px] font-medium leading-[1.5] text-[#0F66EA]">
                       01
@@ -1009,7 +1015,9 @@ function SocCompliance() {
                       </p>
                     </div>
                   </div>
+                  </AnimatedCard>
 
+                  <AnimatedCard delay={0.4}>
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
                     <span className="text-[15px] font-medium leading-[1.5] text-[#0F66EA]">
                       02
@@ -1023,7 +1031,9 @@ function SocCompliance() {
                       </p>
                     </div>
                   </div>
+                  </AnimatedCard>
 
+                  <AnimatedCard delay={0.6}>
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
                     <span className="text-[15px] font-medium leading-[1.5] text-[#0F66EA]">
                       03
@@ -1037,7 +1047,9 @@ function SocCompliance() {
                       </p>
                     </div>
                   </div>
+                  </AnimatedCard>
 
+                  <AnimatedCard delay={0.8}>
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
                     <span className="text-[15px] font-medium leading-[1.5] text-[#0F66EA]">
                       04
@@ -1051,6 +1063,7 @@ function SocCompliance() {
                       </p>
                     </div>
                   </div>
+                  </AnimatedCard>
                 </div>
               </div>
             </Animation>
@@ -1118,9 +1131,9 @@ function SocCompliance() {
               OUR METHODOLOGY
             </p>
 
-            <h2 className="mx-auto mt-3 max-w-[840px] leading-[1.3] text-[#FEFEFE]">
-              Our 5-Phase SOC 2 Compliance Journey
-            </h2>
+            <WordReveal text="Our 5-Phase SOC 2 Compliance Journey" className="mx-auto mt-3 max-w-[840px] leading-[1.3] text-[#FEFEFE]">
+              
+            </WordReveal>
 
             <p className="mx-auto mt-3 max-w-4xl text-xs font-normal leading-[19px] text-[#D1D1D1] sm:text-[17px] sm:leading-[28px]">
               Battle-tested methodology used across 250+ engagements in India
@@ -1276,9 +1289,9 @@ function SocCompliance() {
               SECURITY CONTROL AREAS
             </p>
 
-            <h2 className="font-medium leading-tight tracking-tight text-white">
-              Core Security Domains for SOC 2 Compliance
-            </h2>
+            <WordReveal  text="Core Security Domains for SOC 2 Compliance" className="font-medium leading-tight tracking-tight text-white">
+             
+            </WordReveal>
 
             <p className="mx-auto mt-4 max-w-[780px] text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px]">
               Address critical security risks with robust controls across
@@ -1320,9 +1333,9 @@ function SocCompliance() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <Animation>
             <div className="max-w-5xl mx-auto lg:mx-0  space-y-4 text-center lg:text-left">
-              <h2 className="font-medium leading-[38px] md:leading-[45px] xl:leading-[57px] text-[#FEFEFE] max-w-[650px]">
-                SOC 2 Compliance in India - Everything You Need to Know
-              </h2>
+              <WordReveal text="SOC 2 Compliance in India - Everything You Need to Know" className="font-medium leading-[38px] md:leading-[45px] xl:leading-[57px] text-[#FEFEFE] max-w-[650px]">
+                
+              </WordReveal>
               <p className="text-base sm:text-lg font-normal text-[#D1D1D1] leading-8">
                 SOC 2 compliance has become the de-facto security standard for
                 B2B software companies selling into global markets. Whether you

@@ -1,5 +1,5 @@
 import React from "react";
-import {
+import WordReveal, {
   Animation,
   AnimatedCard,
   LeftAnimation,
@@ -258,10 +258,10 @@ function page() {
               <p className="text-sm sm:text-base font-semibold text-[#C8912A]">
                 GDPR COMPLIANCE & PRIVACY AUDIT
               </p>
-              <h1 className="font-semibold leading-[32px] md:leading-[50px] lg:leading-[55px] text-[#FFFFFF] max-w-[600px]">
+              <h1 className="font-semibold leading-[32px] md:leading-[50px] lg:leading-[55px] text-[#FFFFFF] max-w-[600px] animate-hero-reveal" style={{animationDelay:"500ms"}}>
                 GDPR Compliance Audit & Readiness Services
               </h1>
-              <p className="text-base sm:text-lg text-[#D9D9D9] max-w-[540px]">
+              <p className="text-base sm:text-lg text-[#D9D9D9] max-w-[540px] animate-hero-reveal" style={{animationDelay:"700ms"}}>
                 Identify privacy gaps, assess data protection risks, and
                 establish practical controls to align your business with GDPR
                 requirements.
@@ -275,14 +275,15 @@ function page() {
                 ].map((item) => (
                   <li
                     key={item}
-                    className="flex items-start justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]"
+                    className="flex items-start justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1] animate-hero-reveal"
+                    style={{animationDelay:"900ms"}}
                   >
                     <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#C8912A]" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-8">
+              <div className="mt-8 animate-hero-reveal" style={{animationDelay:"800ms"}}>
                 <Link href="/company/contact">
                   <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg cursor-pointer">
                     <span>Request GDPR Audit </span>
@@ -313,14 +314,14 @@ function page() {
             </LeftAnimation>
             <RightAnimation>
               <div className="w-full lg:mt-15 text-center lg:text-left">
-                <p className="text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[550px]">
+                <p className="text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[550px] animate-hero-reveal" style={{animationDelay:"500ms"}}>
                   The General Data Protection Regulation (GDPR) governs how
                   organisations collect, process, store, and share personal data
                   within its scope. It can also apply to organisations outside
                   the EU that offer goods or services to individuals in the EU
                   or monitor their behaviour.
                 </p>
-                <p className="mt-6 text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[550px]">
+                <p className="mt-6 text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[550px] animate-hero-reveal" style={{animationDelay:"800ms"}}>
                   ISECURION helps organisations assess privacy practices,
                   identify compliance gaps, strengthen data protection controls,
                   and build a structured approach to GDPR readiness.
@@ -346,10 +347,10 @@ function page() {
                         className="text-xl text-[#FFFFFF]"
                       />
                     </div>
-                    <h3 className="mt-3 text-base font-medium text-[#F5F0E8]">
+                    <h3 className="mt-3 text-base font-medium text-[#F5F0E8] animate-hero-reveal" style={{animationDelay:"700ms"}}>
                       {item.heading}
                     </h3>
-                    <p className="text-sm font-normal leading-[22px] text-[#D1D1D1D6]">
+                    <p className="text-sm font-normal leading-[22px] text-[#D1D1D1D6] animate-hero-reveal" style={{animationDelay:"900ms"}}>
                       {item.description}
                     </p>
                   </div>
@@ -367,10 +368,10 @@ function page() {
               <p className="text-sm sm:text-base font-semibold text-[#C8912A] uppercase">
                 Who Needs a GDPR Audit?
               </p>
-              <h2 className="text-[#FFFFFF] lg:max-w-[561px]">
-                Does Your Business Fall Within GDPR’s Scope?
-              </h2>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[847px]">
+              <WordReveal text="Does Your Business Fall Within GDPR’s Scope?" className="text-[#FFFFFF] lg:max-w-[561px]">
+                
+              </WordReveal>
+              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[847px] animate-hero-reveal" style={{animationDelay:"600ms"}}>
                 GDPR may apply to organisations based outside the EU when their
                 processing activities fall within its territorial scope.
               </p>
@@ -419,11 +420,11 @@ function page() {
               BENEFITS OF A GDPR COMPLIANCE AUDIT
             </p>
 
-            <h2 className="mt-3 text-2xl font-medium leading-tight text-[#FEFEFE] sm:text-3xl md:text-4xl lg:text-[38px] lg:leading-[1.3]">
-              The Value of a GDPR Compliance Audit
-            </h2>
+            <WordReveal text="The Value of a GDPR Compliance Audit" className="mt-3 text-2xl font-medium leading-tight text-[#FEFEFE] sm:text-3xl md:text-4xl lg:text-[38px] lg:leading-[1.3]">
+              
+            </WordReveal>
 
-            <p className="mx-auto mt-5 max-w-3xl text-sm font-normal leading-6 text-[#D1D1D1] sm:text-base sm:leading-7">
+            <p className="mx-auto mt-5 max-w-3xl text-sm font-normal leading-6 text-[#D1D1D1] sm:text-base sm:leading-7 animate-hero-reveal" style={{animationDelay:"700ms"}}>
               Discover how GDPR compliance helps protect personal data,
               strengthen data governance, reduce regulatory risks, and build
               customer confidence.
@@ -440,11 +441,11 @@ function page() {
               >
                 <div className="mb-3 h-[7px] w-[50px] rounded-full bg-gradient-to-r from-[#C8912A] to-[#6D758F]" />
 
-                <h3 className="text-base font-medium leading-6 text-[#FEFEFE] sm:text-lg">
+                <h3 className="text-base font-medium leading-6 text-[#FEFEFE] sm:text-lg animate-hero-reveal" style={{animationDelay:"600ms"}}>
                   {item.title}
                 </h3>
 
-                <p className="mt-2 text-sm font-normal leading-[23px] text-[#D1D1D1] sm:text-base sm:leading-[24px] max-w-[315px]">
+                <p className="mt-2 text-sm font-normal leading-[23px] text-[#D1D1D1] sm:text-base sm:leading-[24px] max-w-[315px] animate-hero-reveal" style={{animationDelay:"700ms"}}>
                   {item.description}
                 </p>
               </AnimatedCard>
@@ -461,11 +462,11 @@ function page() {
               COMPLIANCE JOURNEY
             </p>
 
-            <h2 className="mx-auto mt-3 max-w-[840px] leading-[1.3] text-[#FEFEFE]">
-              Our GDPR Audit Methodology — Practical &amp; Actionable
-            </h2>
+            <WordReveal text="Our GDPR Audit Methodology — Practical &amp; Actionable" className="mx-auto mt-3 max-w-[840px] leading-[1.3] text-[#FEFEFE]">
+              
+            </WordReveal>
 
-            <p className="mx-auto mt-3 max-w-4xl text-xs font-normal leading-[19px] text-[#D1D1D1] sm:text-[17px] sm:leading-[28px]">
+            <p className="mx-auto mt-3 max-w-4xl text-xs font-normal leading-[19px] text-[#D1D1D1] sm:text-[17px] sm:leading-[28px] animate-hero-reveal" style={{animationDelay:"700ms"}}>
               ISECURION follows an evidence-based approach to assess GDPR
               compliance, identify gaps, implement improvements, and support
               ongoing privacy management.

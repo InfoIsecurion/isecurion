@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { Icon } from "@iconify/react";
 import icsBg from "../../../assets/services/ot-security-illustration-colorful.png";
@@ -5,6 +6,7 @@ import { main } from "framer-motion/m";
 import WordReveal, { AnimatedCard, Animation } from "../../../components/ui/Animation";
 import MethodologySection from "../../../components/sections/MethodologySection";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const cards = [
   {
@@ -157,26 +159,26 @@ function page() {
               </p>
 
               {/* HEADING */}
-              <h1 className="mt-[18px] max-w-[570px] font-semibold leading-[1.4] tracking-[-0.02em] text-white lg:mt-[22px] lg:leading-[1.4]">
+              <h1 className="mt-[18px] max-w-[570px] font-semibold leading-[1.4] tracking-[-0.02em] text-white lg:mt-[22px] lg:leading-[1.4] animate-hero-reveal" style={{ animationDelay: "650ms" }}>
                 Secure your ICS/SCADA before vulnerabilities impact operations.
               </h1>
 
               {/*DESCRIPTION */}
-              <p className="mt-[24px] max-w-[460px] text-[#D1D1D1] lg:mt-[26px] sectionDescription">
+              <p className="mt-[24px] max-w-[460px] text-[#D1D1D1] lg:mt-[26px] sectionDescription animate-hero-reveal" style={{ animationDelay: "800ms" }}>
                 ISECURION helps identify, assess, and prioritize security risks
                 across critical industrial systems, networks, applications, and
                 infrastructure.
               </p>
 
-              <div className="mt-[30px] sm:mt-[34px]">
+              <div className="mt-[30px] sm:mt-[34px] animate-hero-reveal" style={{ animationDelay: "1080ms" }}>
                 <Link href="/company/contact">
-                <button className="inline-flex h-[54px] items-center justify-center rounded-[9px] bg-white px-[20px] py-[12px] text-[13px] sm:text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-[#F3F5F8] sm:min-h-[54px] sm:px-[21px] lg:px-[20px] cursor-pointer">
-                  <span>Schedule an ICS Assessment</span>
+                  <button className="inline-flex h-[54px] items-center justify-center rounded-[9px] bg-white px-[20px] py-[12px] text-[13px] sm:text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-[#F3F5F8] sm:min-h-[54px] sm:px-[21px] lg:px-[20px] cursor-pointer">
+                    <span>Schedule an ICS Assessment</span>
 
-                  <span className="ml-[8px] text-[20px]">
-                    <Icon icon="mdi:arrow-right" width={20} />
-                  </span>
-                </button>
+                    <span className="ml-[8px] text-[20px]">
+                      <Icon icon="mdi:arrow-right" width={20} />
+                    </span>
+                  </button>
                 </Link>
               </div>
             </div>
@@ -193,9 +195,9 @@ function page() {
                 OVERVIEW
               </p>
 
-              <WordReveal text=" What Is ICS Security Assessment?" className="mt-3 text-2xl font-semibold text-white sm:text-3xl lg:text-[32px]"/>
-               
-              <p className="mt-4 max-w-[580px] text-[#D1D1D1] sectionDescription">
+              <WordReveal text=" What Is ICS Security Assessment?" className="mt-3 text-2xl font-semibold text-white sm:text-3xl lg:text-[32px]" />
+
+              <p className="mt-4 max-w-[580px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{ animationDelay: "850ms" }}>
                 Modern ICS/SCADA environments are increasingly connected to
                 corporate networks and the Internet, creating new opportunities
                 for cyber threats. ISECURION assesses these environments to
@@ -213,70 +215,36 @@ function page() {
               </p>
 
               {/* Stacks to 1 column on mobile, expands to 2 columns on tablet/desktop */}
-              <ul className="mt-4 grid grid-cols-1 gap-x-10 gap-y-3 text-sm sm:text-[15px] text-[#D1D1D1] sm:grid-cols-2 lg:max-w-3xl">
-                <li className="flex items-center gap-2.5">
-                  <Icon
-                    icon="boxicons:seal-check"
-                    className="shrink-0 text-[18px] text-[#0F66EA]"
-                  />
-                  <span>ICS network architecture</span>
-                </li>
-
-                <li className="flex items-center gap-2.5">
-                  <Icon
-                    icon="boxicons:seal-check"
-                    className="shrink-0 text-[18px] text-[#0F66EA]"
-                  />
-                  <span>Identity & access management</span>
-                </li>
-
-                <li className="flex items-center gap-2.5">
-                  <Icon
-                    icon="boxicons:seal-check"
-                    className="shrink-0 text-[18px] text-[#0F66EA]"
-                  />
-                  <span>PLCs, RTUs, HMIs & Historians</span>
-                </li>
-
-                <li className="flex items-center gap-2.5">
-                  <Icon
-                    icon="boxicons:seal-check"
-                    className="shrink-0 text-[18px] text-[#0F66EA]"
-                  />
-                  <span>Endpoint and malware protection</span>
-                </li>
-
-                <li className="flex items-center gap-2.5">
-                  <Icon
-                    icon="boxicons:seal-check"
-                    className="shrink-0 text-[18px] text-[#0F66EA]"
-                  />
-                  <span>SCADA applications</span>
-                </li>
-
-                <li className="flex items-center gap-2.5">
-                  <Icon
-                    icon="boxicons:seal-check"
-                    className="shrink-0 text-[18px] text-[#0F66EA]"
-                  />
-                  <span>Firewalls, routers & switches</span>
-                </li>
-
-                <li className="flex items-center gap-2.5">
-                  <Icon
-                    icon="boxicons:seal-check"
-                    className="shrink-0 text-[18px] text-[#0F66EA]"
-                  />
-                  <span>Network ports, protocols & services</span>
-                </li>
-
-                <li className="flex items-center gap-2.5">
-                  <Icon
-                    icon="boxicons:seal-check"
-                    className="shrink-0 text-[18px] text-[#0F66EA]"
-                  />
-                  <span>Wireless access controls</span>
-                </li>
+              <ul className="mt-4 grid grid-cols-1 gap-x-10 gap-y-3 text-sm text-[#D1D1D1] sm:grid-cols-2 sm:text-[15px] lg:max-w-3xl">
+                {[
+                  "ICS network architecture",
+                  "Identity & access management",
+                  "PLCs, RTUs, HMIs & Historians",
+                  "Endpoint and malware protection",
+                  "SCADA applications",
+                  "Firewalls, routers & switches",
+                  "Network ports, protocols & services",
+                  "Wireless access controls",
+                ].map((item, index) => (
+                  <motion.li
+                    key={item}
+                    initial={{ opacity: 0, y: 18 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{
+                      duration: 0.6,
+                      delay: index * 0.12,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="flex items-center gap-2.5"
+                  >
+                    <Icon
+                      icon="boxicons:seal-check"
+                      className="shrink-0 text-[18px] text-[#0F66EA]"
+                    />
+                    <span>{item}</span>
+                  </motion.li>
+                ))}
               </ul>
             </div>
           </Animation>
@@ -321,11 +289,11 @@ function page() {
             </p>
 
             <h2 className="mt-[16px] text-[28px] font-medium leading-[1.4] tracking-[-0.02em] text-white sm:text-[32px] lg:text-[38px]">
-              Audit the Control. <br />
-              Test the Attack Path.
+              <WordReveal as="span" text="Audit the Control."></WordReveal> <br />
+              <WordReveal as="span" text="Test the Attack Path."></WordReveal>
             </h2>
 
-            <p className="mt-[18px] text-[#D1D1D1] max-w-[850px] sectionDescription">
+            <p className="mt-[18px] text-[#D1D1D1] max-w-[850px] sectionDescription animate-hero-reveal" style={{ animationDelay: "600ms" }}>
               A dual-track methodology combining compliance assurance and
               controlled offensive testing for industrial control environments.
             </p>

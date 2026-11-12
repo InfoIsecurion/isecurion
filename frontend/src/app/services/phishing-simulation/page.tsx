@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { Icon } from "@iconify/react";
-import {
+import WordReveal, {
   Animation,
   AnimatedCard,
   LeftAnimation,
@@ -17,6 +17,7 @@ import { useForm } from "react-hook-form";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { phishingSimulation } from "../../../services/api/contact";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 
 interface ContactFormData {
   email: string;
@@ -354,11 +355,10 @@ function MetricChart({ type }: { type: string }) {
   if (type === "ring-green" || type === "ring-blue") {
     return (
       <div
-        className={`h-[51px] w-[51px] shrink-0 rounded-full ${
-          type === "ring-green"
+        className={`h-[51px] w-[51px] shrink-0 rounded-full ${type === "ring-green"
             ? "border-[5px] border-[#2DD4BF]"
             : "border-[5px] border-[#3B82F6]"
-        }`}
+          }`}
         aria-hidden="true"
       />
     );
@@ -434,7 +434,7 @@ function PhishingSimulation() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong. Please try again.",
+        "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -454,16 +454,16 @@ function PhishingSimulation() {
                 <p className="text-sm sm:text-base font-semibold text-[#7D70F0]">
                   PHISHING SIMULATION & HUMAN RISK MANAGEMENT
                 </p>
-                <h1 className="text-[#FFFFFF] lg:max-w-[450px]">
+                <h1 className="text-[#FFFFFF] lg:max-w-[450px] animate-hero-reveal" style={{ animationDelay: "550px" }}>
                   Enterprise Phishing Simulation, Training & Security Awareness
                 </h1>
-                <p className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[450px]">
+                <p className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[450px] animate-hero-reveal" style={{ animationDelay: "700ms" }}>
                   Identify employee vulnerabilities, improve threat reporting,
                   and reduce exposure to phishing, credential theft, and social
                   engineering attacks through realistic, controlled phishing
                   simulations.
                 </p>
-                <p className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[460px]">
+                <p className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[460px] animate-hero-reveal" style={{ animationDelay: "950ms" }}>
                   Powered by Drosera, ISECURION's AI-driven platform helps
                   organisations measure human risk and build stronger security
                   awareness.
@@ -508,13 +508,13 @@ function PhishingSimulation() {
               </ul>
             </Animation> */}
             <Animation>
-              <div className="mt-8 flex flex-col items-center gap-4 lg:flex-row lg:items-start lg:justify-start">
-                <Link href="/comapany/contact">
+              <div className="mt-8 flex flex-col items-center gap-4 lg:flex-row lg:items-start lg:justify-start animate-hero-reveal" style={{ animationDelay: "1000ms" }}>
+                {/* <Link href="/comapany/contact">
                   <button className="flex h-[54px] items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] shadow-lg transition-all duration-200 hover:bg-gray-100 cursor-pointer">
                     <span>Request Simulation</span>
                     <Icon icon="lucide:arrow-right" className="h-4 w-4" />
                   </button>
-                </Link>
+                </Link> */}
 
                 <Link href="https://drosera.ai/">
                   <button className="flex h-[54px] items-center justify-center gap-2.5 rounded-lg border-2 border-[#3263B1] bg-gradient-to-r from-[#29559D] to-[#1C3D70] px-6 py-3.5 text-base font-semibold text-white cursor-pointer">
@@ -527,7 +527,7 @@ function PhishingSimulation() {
 
           {/* right  */}
           <div className="w-full flex-1 rounded-3xl  px-8 py-10 bg-[#202123]">
-            <Animation>
+     
               <div className="space-y-1">
                 <h3 className="text-[22px] font-semibold text-[#FFFFFF]">
                   Request a Phishing Simulation Quote
@@ -536,137 +536,137 @@ function PhishingSimulation() {
                   Get a Tailored Phishing Simulation Plan for Your Organisation.
                 </p>
               </div>
-            </Animation>
+         
             <div className="">
-          
-                <form
-                  className="mt-6 space-y-4.5"
-                  onSubmit={handleSubmit(submit)}
-                >
-                  {/* WORK EMAIL & COMPANY NAME */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-[13px] text-[#FEFEFE] mb-1.5"
-                      >
-                        Work Email <span className="text-[#E24B4A]">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        placeholder="youremail@gmail.com"
-                        className={`w-full h-[46px] rounded-[8px] outline-none bg-[#110404] border border-[#262D3D] px-3.5 text-[14px] text-[#D1D1D1] placeholder-gray-500 ${errors.email ? "border border-red-500" : ""}`}
-                        {...register("email", {
-                          required: "Email is required",
-                        })}
-                      />
-                      {errors.email && (
-                        <p className="text-sm font-normal text-red-500">
-                          {errors.email.message}
-                        </p>
-                      )}
-                    </div>
 
-                    <div>
-                      <label
-                        htmlFor="company-name"
-                        className="block text-[13px] text-[#FEFEFE] mb-1.5"
-                      >
-                        Company Name
-                      </label>
-                      <input
-                        id="company-name"
-                        type="text"
-                        placeholder="Company name"
-                        className="w-full h-[46px] rounded-[8px] bg-[#110404] border border-[#262D3D] px-3.5 text-[14px] text-[#D1D1D1] placeholder-gray-500 "
-                        {...register("companyName")}
-                      />
-                    </div>
-                  </div>
-
-                  {/* SIMULATION TYPE DROPDOWN */}
+              <form
+                className="mt-6 space-y-4.5"
+                onSubmit={handleSubmit(submit)}
+              >
+                {/* WORK EMAIL & COMPANY NAME */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label
-                      htmlFor="simulation-type"
+                      htmlFor="email"
                       className="block text-[13px] text-[#FEFEFE] mb-1.5"
                     >
-                      Simulation Type <span className="text-[#E24B4A]">*</span>
+                      Work Email <span className="text-[#E24B4A]">*</span>
                     </label>
-                    <div className="relative">
-                      <select
-                        className={`w-full h-[46px] appearance-none rounded-[8px] bg-[#110404] border border-[#262D3D] outline-none px-3.5 text-[13px] text-[#D1D1D1]  ${errors.simulation ? "border border-red-500" : ""} `}
-                        {...register("simulation", {
-                          required: "Simulation is required",
-                        })}
-                      >
-                        <option value="" disabled>Select Simulation Type</option>
-                        <option value="external">
-                          Standard Phishing Simulation
-                        </option>
-                        <option value="internal">
-                          Targeted Spear-Phishing
-                        </option>
-                        <option value="cloud">Vishing & Smishing Add-on</option>
-                        <option value="full">
-                          Continuous Phishing Program
-                        </option>
-                      </select>
-                      <Icon
-                        icon="lucide:chevron-down"
-                        className="absolute right-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"
-                      />
-                      {errors.simulation && (
-                        <p className="text-sm font-normal text-red-500">
-                          {errors.simulation.message}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* CAPTCHA */}
-                  <div className="mt-7">
-                    <div className="flex items-center gap-3">
-                      <Turnstile
-                        ref={turnstileRef}
-                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                        onSuccess={(token) => setTurnstileToken(token)}
-                        onExpire={() => setTurnstileToken("")}
-                        onError={() => setTurnstileToken("")}
-                      />
-                    </div>
-                  </div>
-
-                  {/* TERMS & PRIVACY CHECKBOX */}
-                  <div className="flex items-start gap-2.5 pt-1">
                     <input
-                      id="consent"
-                      name="consent"
-                      type="checkbox"
-                      required
-                      className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
+                      type="email"
+                      placeholder="youremail@gmail.com"
+                      className={`w-full h-[46px] rounded-[8px] outline-none bg-[#110404] border border-[#262D3D] px-3.5 text-[14px] text-[#D1D1D1] placeholder-gray-500 ${errors.email ? "border border-red-500" : ""}`}
+                      {...register("email", {
+                        required: "Email is required",
+                      })}
                     />
-                    <label
-                      htmlFor="terms"
-                      className="text-[11px] leading-relaxed text-[#D1D1D1] max-w-[490px]"
-                    >
-                      By clicking submit below, you agree to our Terms of Use
-                      and Privacy Policy. Additionally, you consent to allow
-                      ISECURION Technology &amp; Consulting Pvt. Ltd. to store
-                      and process the personal information submitted above to
-                      provide you the content requested.
-                    </label>
+                    {errors.email && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.email.message}
+                      </p>
+                    )}
                   </div>
 
-                  {/* SUBMIT BUTTON */}
-                  <button
-                    type="submit"
-                    className={`w-full h-[48px] mt-2 inline-flex items-center justify-center gap-2 rounded-[8px] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-medium text-white border-[1.5px] border-[#00000000] transition-all duration-200 shadow-md shadow-[#0F66EA]/20 ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                  <div>
+                    <label
+                      htmlFor="company-name"
+                      className="block text-[13px] text-[#FEFEFE] mb-1.5"
+                    >
+                      Company Name
+                    </label>
+                    <input
+                      id="company-name"
+                      type="text"
+                      placeholder="Company name"
+                      className="w-full h-[46px] rounded-[8px] bg-[#110404] border border-[#262D3D] px-3.5 text-[14px] text-[#D1D1D1] placeholder-gray-500 "
+                      {...register("companyName")}
+                    />
+                  </div>
+                </div>
+
+                {/* SIMULATION TYPE DROPDOWN */}
+                <div>
+                  <label
+                    htmlFor="simulation-type"
+                    className="block text-[13px] text-[#FEFEFE] mb-1.5"
                   >
-                    <span>{loading ? "getting" : "Get Quote"}</span>
-                    <Icon icon="lucide:arrow-right" className="h-4 w-4" />
-                  </button>
-                </form>
-            
+                    Simulation Type <span className="text-[#E24B4A]">*</span>
+                  </label>
+                  <div className="relative">
+                    <select
+                      className={`w-full h-[46px] appearance-none rounded-[8px] bg-[#110404] border border-[#262D3D] outline-none px-3.5 text-[13px] text-[#D1D1D1]  ${errors.simulation ? "border border-red-500" : ""} `}
+                      {...register("simulation", {
+                        required: "Simulation is required",
+                      })}
+                    >
+                      <option value="" disabled>Select Simulation Type</option>
+                      <option value="external">
+                        Standard Phishing Simulation
+                      </option>
+                      <option value="internal">
+                        Targeted Spear-Phishing
+                      </option>
+                      <option value="cloud">Vishing & Smishing Add-on</option>
+                      <option value="full">
+                        Continuous Phishing Program
+                      </option>
+                    </select>
+                    <Icon
+                      icon="lucide:chevron-down"
+                      className="absolute right-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none"
+                    />
+                    {errors.simulation && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.simulation.message}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {/* CAPTCHA */}
+                <div className="mt-7">
+                  <div className="flex items-center gap-3">
+                    <Turnstile
+                      ref={turnstileRef}
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                      onSuccess={(token) => setTurnstileToken(token)}
+                      onExpire={() => setTurnstileToken("")}
+                      onError={() => setTurnstileToken("")}
+                    />
+                  </div>
+                </div>
+
+                {/* TERMS & PRIVACY CHECKBOX */}
+                <div className="flex items-start gap-2.5 pt-1">
+                  <input
+                    id="consent"
+                    name="consent"
+                    type="checkbox"
+                    required
+                    className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
+                  />
+                  <label
+                    htmlFor="terms"
+                    className="text-[11px] leading-relaxed text-[#D1D1D1] max-w-[490px]"
+                  >
+                    By clicking submit below, you agree to our Terms of Use
+                    and Privacy Policy. Additionally, you consent to allow
+                    ISECURION Technology &amp; Consulting Pvt. Ltd. to store
+                    and process the personal information submitted above to
+                    provide you the content requested.
+                  </label>
+                </div>
+
+                {/* SUBMIT BUTTON */}
+                <button
+                  type="submit"
+                  className={`w-full h-[48px] mt-2 inline-flex items-center justify-center gap-2 rounded-[8px] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-medium text-white border-[1.5px] border-[#00000000] transition-all duration-200 shadow-md shadow-[#0F66EA]/20 ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                >
+                  <span>{loading ? "getting" : "Get Quote"}</span>
+                  <Icon icon="lucide:arrow-right" className="h-4 w-4" />
+                </button>
+              </form>
+
             </div>
           </div>
         </div>
@@ -722,15 +722,14 @@ function PhishingSimulation() {
               <p className="text-sm sm:text-base font-semibold uppercase text-[#7D70F0]">
                 UNDERSTANDING PHISHING SIMULATION
               </p>
-              <h2 className="text-[#FEFEFE] lg:max-w-[720px]">
-                Turn Employee Awareness into Measurable Security.
-              </h2>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[550px]">
+              <WordReveal text="Turn Employee Awareness into Measurable Security." className="text-[#FEFEFE] lg:max-w-[720px]">
+              </WordReveal>
+              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[550px] animate-hero-reveal" style={{ animationDelay: "600ms" }}>
                 Phishing simulation is a controlled exercise that replicates
                 real-world social engineering techniques to assess employee
                 behaviour, reporting habits, and security awareness.
               </p>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[590px]">
+              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[590px] animate-hero-reveal" style={{ animationDelay: "750ms" }}>
                 ISECURION combines realistic attack scenarios with behavioural
                 insights and targeted training to identify weaknesses and
                 strengthen your organisation's human security layer.
@@ -795,11 +794,11 @@ function PhishingSimulation() {
                   OUR TECHNOLOGY
                 </p>
 
-                <h2 className="mt-3 lg:max-w-[470px] leading-[1.48] tracking-[-0.45px] text-[#F7F7FB] sm:leading-[1.4] text-center lg:text-left">
-                  AI-Powered Simulations. Actionable Human Risk Insights.
-                </h2>
+                <WordReveal text="AI-Powered Simulations. Actionable Human Risk Insights." className="mt-3 lg:max-w-[470px] leading-[1.48] tracking-[-0.45px] text-[#F7F7FB] sm:leading-[1.4] text-center lg:text-left">
 
-                <p className="mt-4 lg:max-w-[380px] text-[14px] leading-[25px] text-[#C7C9D3] sm:text-[15px] sm:leading-[25.5px] text-center lg:text-left">
+                </WordReveal>
+
+                <p className="mt-4 lg:max-w-[380px] text-[14px] leading-[25px] text-[#C7C9D3] sm:text-[15px] sm:leading-[25.5px] text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "550ms" }}>
                   Drosera is ISECURION&apos;s in-house phishing simulation and
                   human risk management platform, designed to help organisations
                   run campaigns, analyse employee behaviour, and deliver
@@ -807,8 +806,17 @@ function PhishingSimulation() {
                 </p>
 
                 <ul className="mt-5 space-y-3 text-center lg:text-left">
-                  {simulationFeatures.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2.5 ">
+                  {simulationFeatures.map((feature, i) => (
+                    <motion.li
+                      key={feature}
+                      initial={{ opacity: 0, y: 18 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{
+                        duration: 0.6,
+                        delay: i * 0.12,
+                        ease: [0.22, 1, 0.36, 1],
+                      }} className="flex items-center gap-2.5 ">
                       <Icon
                         icon="lucide:badge-check"
                         className="mt-[2px] h-[16px] w-[16px] shrink-0 text-[#7D70F0]"
@@ -817,11 +825,11 @@ function PhishingSimulation() {
                       <span className="lg:max-w-[374px] text-[13px] font-medium leading-[21px] text-[#D5D6DF] sm:text-[14px] sm:leading-[22px]">
                         {feature}
                       </span>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
 
-                <div className="text-center lg:text-left">
+                <div className="text-center lg:text-left animate-hero-reveal" style={{animationDelay:"800ms"}}>
                   <Link
                     href="https://simulate.drosera.ai/"
                     className="mt-7 inline-flex min-h-[45px] items-center justify-center gap-2 rounded-[8px] border border-[#568CE0]/60 bg-gradient-to-b from-[#386CC0] to-[#20477E] px-5 py-3 text-[13px] font-medium text-white shadow-[0_4px_16px_rgba(15,102,234,0.15)] transition duration-300 hover:border-[#70A7FF] hover:from-[#437DD5] hover:to-[#285795] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F80FF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080B19]"
@@ -880,10 +888,10 @@ function PhishingSimulation() {
               <p className="text-sm sm:text-base font-semibold text-[#7D70F0]">
                 SCOPE OF WORK
               </p>
-              <h2 className="text-[#FFFFFF]">
-                Measure Your Human Attack Surface
-              </h2>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[647px]">
+              <WordReveal  text="Measure Your Human Attack Surface" className="text-[#FFFFFF]">
+               
+              </WordReveal>
+              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[647px] animate-hero-reveal" style={{animationDelay:"600ms"}}>
                 Simulate realistic social-engineering threats across people,
                 roles, channels, and third parties to identify exposure and
                 strengthen security awareness.
@@ -893,7 +901,7 @@ function PhishingSimulation() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {scopeOfWork.map((item, index) => (
                   <AnimatedCard
-                    delay={index * 0.15}
+                    delay={index * 0.2}
                     key={index}
                     className="relative flex flex-col justify-between p-5 space-y-4 rounded-lg bg-[#66666614] border border-[#0B15301F]"
                   >
@@ -929,11 +937,11 @@ function PhishingSimulation() {
                 Methodology
               </p>
 
-              <h2 className="lg:max-w-[630px] leading-[1.3] tracking-[-0.5px] text-white ">
-                A Structured Approach to Phishing Simulation
-              </h2>
+              <WordReveal text="A Structured Approach to Phishing Simulation" className="lg:max-w-[630px] leading-[1.3] tracking-[-0.5px] text-white ">
+                
+              </WordReveal>
 
-              <p className="max-w-[920px] text-[15px] font-normal leading-[25px] text-[#D1D1D1] sm:text-base sm:leading-[28px] lg:text-[18px] lg:leading-[31px]">
+              <p className="max-w-[920px] text-[15px] font-normal leading-[25px] text-[#D1D1D1] sm:text-base sm:leading-[28px] lg:text-[18px] lg:leading-[31px] animate-hero-reveal" style={{animationDelay:"700ms"}}>
                 From threat modelling to targeted remediation, we execute
                 controlled phishing campaigns that uncover vulnerabilities,
                 measure employee risk, and strengthen your organisation’s
@@ -947,7 +955,7 @@ function PhishingSimulation() {
             {engagementLifecycle.map((item, index) => (
               <AnimatedCard
                 key={item.number}
-                delay={index * 0.12}
+                delay={index * 0.2}
                 className="min-w-0"
               >
                 <div className="flex h-full flex-col items-start">
@@ -971,7 +979,7 @@ function PhishingSimulation() {
                   </h3>
 
                   {/* Stage Description */}
-                  <p className="mt-2 text-[14px] font-normal leading-[24px] text-[#C3C5CD] lg:text-[15px] lg:leading-[24px] max-w-[200px]">
+                  <p className="mt-2 text-[14px] font-normal leading-[24px] text-[#C3C5CD] lg:text-[15px] lg:leading-[24px] max-w-[200px] animate-hero-reveal" style={{animationDelay:"1150ms"}}>
                     {item.description}
                   </p>
                 </div>
@@ -991,10 +999,10 @@ function PhishingSimulation() {
                 </p>
 
                 <h2 className="mt-[10px] text-[30px] font-normal leading-[1.25] text-white sm:text-[36px] lg:text-[34px]">
-                  Human Risk Intelligence that goes <br /> beyond click rates.
+                  <WordReveal as="span" text="Human Risk Intelligence that goes "></WordReveal><br /> <WordReveal as="span" text="beyond click rates."></WordReveal>
                 </h2>
 
-                <p className="mx-auto mt-[18px] max-w-[1040px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-lg">
+                <p className="mx-auto mt-[18px] max-w-[1040px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-lg animate-hero-reveal" style={{animationDelay:"800ms"}}>
                   ISECURION combines threat-informed simulations, behavioural
                   insights, and targeted remediation to help organisations
                   improve employee resilience against social engineering.
@@ -1005,6 +1013,7 @@ function PhishingSimulation() {
 
           <Animation>
             <div className="mt-8 grid grid-cols-1 gap-0 px-4 pb-10 sm:grid-cols-2 sm:px-6 md:grid-cols-3 md:px-6 lg:mt-[46px] lg:px-16 lg:pb-16">
+              <AnimatedCard>
               <div className="relative min-h-[309px] bg-[#050B18] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[30px]">
                 <div className="text-white">
                   <Icon icon="boxicons:vector-square" className="text-[36px]" />
@@ -1021,7 +1030,9 @@ function PhishingSimulation() {
                   </p>
                 </div>
               </div>
+              </AnimatedCard>
 
+              <AnimatedCard delay={0.4}>
               <div className="relative min-h-[309px] bg-[#08142D] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[25px]">
                 <div className="text-white">
                   <Icon
@@ -1041,7 +1052,9 @@ function PhishingSimulation() {
                   </p>
                 </div>
               </div>
+              </AnimatedCard>
 
+              <AnimatedCard delay={0.8}>
               <div className="relative min-h-[309px] bg-linear-to-b from-[#7D70F0] to-[#48408A] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[28px]">
                 <div className="text-white">
                   <Icon icon="hugeicons:ai-chip" className="text-[36px]" />
@@ -1059,6 +1072,7 @@ function PhishingSimulation() {
                   </p>
                 </div>
               </div>
+              </AnimatedCard>
             </div>
           </Animation>
         </div>
@@ -1347,7 +1361,7 @@ function PhishingSimulation() {
           {/* Roadmap cards */}
           <div className="mt-8 grid grid-cols-1 overflow-hidden rounded-[18px] border border-[#FFFFFF1A] sm:mt-10 sm:grid-cols-2 lg:mt-[64px] lg:grid-cols-4">
             {/* Step 1 */}
-            <AnimatedCard className="flex min-h-[205px] flex-col bg-[#0F1424] px-5 py-6 sm:px-6 sm:py-7 lg:min-h-[228px] lg:px-6 lg:py-[26px]">
+            <AnimatedCard delay={0.1} className="flex min-h-[205px] flex-col bg-[#0F1424] px-5 py-6 sm:px-6 sm:py-7 lg:min-h-[228px] lg:px-6 lg:py-[26px]">
               <p className="text-[42px] font-bold leading-none tracking-[-1px] text-[#8B5CF6] sm:text-[50px]">
                 01
               </p>
@@ -1364,7 +1378,7 @@ function PhishingSimulation() {
             </AnimatedCard>
 
             {/* Step 2 */}
-            <AnimatedCard className="flex min-h-[205px] flex-col border-t border-[#252C3B] bg-[#0C2023] px-5 py-6 sm:border-l sm:px-6 sm:py-7 lg:min-h-[228px] lg:border-t-[11px] lg:border-t-[#202A32] lg:px-6 lg:py-[26px]">
+            <AnimatedCard delay={0.4} className="flex min-h-[205px] flex-col border-t border-[#252C3B] bg-[#0C2023] px-5 py-6 sm:border-l sm:px-6 sm:py-7 lg:min-h-[228px] lg:border-t-[11px] lg:border-t-[#202A32] lg:px-6 lg:py-[26px]">
               <p className="text-[42px] font-bold leading-none tracking-[-1px] text-[#3B82F6] sm:text-[50px]">
                 02
               </p>
@@ -1381,7 +1395,7 @@ function PhishingSimulation() {
             </AnimatedCard>
 
             {/* Step 3 */}
-            <AnimatedCard className="flex min-h-[205px] flex-col border-t border-[#252C3B] bg-[#0F1424] px-5 py-6 sm:px-6 sm:py-7 lg:min-h-[228px] lg:border-l lg:px-6 lg:py-[26px]">
+            <AnimatedCard delay={0.8} className="flex min-h-[205px] flex-col border-t border-[#252C3B] bg-[#0F1424] px-5 py-6 sm:px-6 sm:py-7 lg:min-h-[228px] lg:border-l lg:px-6 lg:py-[26px]">
               <p className="text-[42px] font-bold leading-none tracking-[-1px] text-[#2DD4BF] sm:text-[50px]">
                 03
               </p>
@@ -1398,7 +1412,7 @@ function PhishingSimulation() {
             </AnimatedCard>
 
             {/* Step 4 */}
-            <AnimatedCard className="flex min-h-[205px] flex-col border-t border-[#252C3B] bg-[#0C2023] px-5 py-6 sm:border-l sm:px-6 sm:py-7 lg:min-h-[228px] lg:border-t-[11px] lg:border-t-[#202A32] lg:px-6 lg:py-[26px]">
+            <AnimatedCard delay={1.1} className="flex min-h-[205px] flex-col border-t border-[#252C3B] bg-[#0C2023] px-5 py-6 sm:border-l sm:px-6 sm:py-7 lg:min-h-[228px] lg:border-t-[11px] lg:border-t-[#202A32] lg:px-6 lg:py-[26px]">
               <p className="text-[42px] font-bold leading-none tracking-[-1px] text-[#EC4899] sm:text-[50px]">
                 04
               </p>

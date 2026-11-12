@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
-import {
+import WordReveal, {
   Animation,
   AnimatedCard,
   LeftAnimation,
@@ -563,11 +563,10 @@ function ManagedSecurityServices() {
               <p className="text-sm sm:text-base font-semibold text-[#C8912A] ">
                 OUR SERVICES
               </p>
-              <h2 className="text-[#FFFFFF] max-w-[700px]">
-                Managed Security Services to Protect Every Layer of Your
-                Business
-              </h2>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[850px]">
+              <WordReveal text="Managed Security Services to Protect Every Layer of Your Business" className="text-[#FFFFFF] max-w-[700px]">
+                
+              </WordReveal>
+              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[850px] animate-hero-reveal" style={{animationDelay:"900ms"}}>
                 From continuous monitoring and threat hunting to compliance
                 management, our MSSP services cover every layer of your security
                 posture.
@@ -583,17 +582,17 @@ function ManagedSecurityServices() {
                   >
                     <div className="absolute left-0 w-[2.5px] h-[23px] rounded-tr-2xl rounded-br-2xl bg-[#C8912A]"></div>
                     <div className="flex items-center justify-between gap-8">
-                      <h3 className="text-base sm:text-lg font-medium text-[#FFFFFF]">
-                        {item.heading}
+                      <h3 className="text-base sm:text-lg font-medium text-[#FFFFFF] animate-hero-reveal" style={{animationDelay:"1000ms"}}>
+                        {item.heading} 
                       </h3>
-                      <span>
+                      <span className="animate-hero-reveal" style={{animationDelay:"800ms"}}>
                         <Icon
                           icon={item.Icon}
                           className="w-[25px] h-[25px] text-[#C8912A]"
                         />
                       </span>
                     </div>
-                    <p className="mt-4 text-[15px] font-normal leading-[24px] text-[#D1D1D1] max-w-[338px]">
+                    <p className="mt-4 text-[15px] font-normal leading-[24px] text-[#D1D1D1] max-w-[338px] animate-hero-reveal" style={{animationDelay:"1300ms"}}>
                       {item.description}
                     </p>
                   </AnimatedCard>
@@ -720,8 +719,10 @@ function ManagedSecurityServices() {
           </div>
 
           {/* REGION CARDS */}
+          <AnimatedCard delay={0.5}>
           <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
-            {globalRegions.map((region) => (
+            {globalRegions.map((region, i) => (
+             
               <article
                 key={region.code}
                 className="relative min-w-0 overflow-hidden rounded-[5px] border-b border-white/[0.06] bg-[#080F1E] p-4 pt-5 sm:p-5"
@@ -759,6 +760,7 @@ function ManagedSecurityServices() {
                   ))}
                 </div>
               </article>
+              
             ))}
 
             {/* GLOBAL CTA CARD */}
@@ -787,6 +789,7 @@ function ManagedSecurityServices() {
               </Link>
             </article>
           </div>
+          </AnimatedCard>
         </div>
       </section>
 
@@ -902,11 +905,11 @@ function ManagedSecurityServices() {
               Why Choose Us
             </p>
 
-            <h2 className="font-medium leading-tight tracking-tight text-white">
-              The ISECURION MSSP Advantage
-            </h2>
+            <WordReveal text="The ISECURION MSSP Advantage" className="font-medium leading-tight tracking-tight text-white">
+              
+            </WordReveal>
 
-            <p className="mx-auto mt-4 max-w-[780px] text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px]">
+            <p className="mx-auto mt-4 max-w-[780px] text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px] animate-hero-reveal" style={{animationDelay:"700ms"}}>
               What makes our MSSP program different from the rest - and why 100+
               enterprises across 10+ countries trust us.
             </p>

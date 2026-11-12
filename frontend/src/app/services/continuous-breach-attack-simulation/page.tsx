@@ -150,7 +150,7 @@ function ContinuousBreachAttackSimulation() {
               {/* EYEBROW */}
               <p
                 className="text-sm sm:text-base font-semibold tracking-[0.02em] uppercase text-[#E24B4A] opacity-0 animate-hero-reveal"
-                style={{ animationDelay: "150ms" }}
+                style={{ animationDelay: "450ms" }}
               >
                 CONTINUOUS BREACH ATTACK SIMULATION
               </p>
@@ -159,7 +159,7 @@ function ContinuousBreachAttackSimulation() {
 
               <h1
                 className="mt-4 font-semibold leading-[1.4] tracking-[-0.02em] text-white lg:max-w-[400px] opacity-0 animate-hero-reveal"
-                style={{ animationDelay: "300ms" }}
+                style={{ animationDelay: "800ms" }}
               >
                 Continuously validate your defenses against real-world attacks.
               </h1>
@@ -168,7 +168,7 @@ function ContinuousBreachAttackSimulation() {
 
               <p
                 className="mt-5 text-[14px] sm:text-[16px] font-medium leading-[1.7] text-[#D1D1D1] lg:max-w-[380px] opacity-0 animate-hero-reveal"
-                style={{ animationDelay: "450ms" }}
+                style={{ animationDelay: "950ms" }}
               >
                 ISECURION&apos;s CBAS continuously simulates real-world attacks
                 to identify gaps, validate defenses, and improve your
@@ -176,21 +176,21 @@ function ContinuousBreachAttackSimulation() {
               </p>
 
               {/* CTA BUTTON */}
-              <Animation>
-                <div className="mt-8">
+              
+                {/* <div className="mt-8 animate-hero-reveal" style={{animationDelay:"1050ms"}}>
                   <Link href="/company/contact">
                     <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg">
                       <span>Request Simulation</span>
                       <Icon icon="lucide:arrow-right" className="h-4 w-4" />
                     </button>
                   </Link>
-                </div>
-              </Animation>
+                </div> */}
+            
 
               {/* FOOTER TAGLINE */}
               <p
-                className="mt-10 text-[13px] sm:text-[14px] lg:text-[16px] font-medium leading-7 text-[#0F66EA] lg:max-w-[360px] opacity-0 animate-hero-reveal"
-                style={{ animationDelay: "600ms" }}
+                className="mt-6 text-[13px] sm:text-[14px] lg:text-[16px] font-medium leading-7 text-[#0F66EA] lg:max-w-[360px] opacity-0 animate-hero-reveal"
+                style={{ animationDelay: "1300ms" }}
               >
                 Continuous Validation · Adversary Simulation · MITRE ATT&amp;CK
                 · Security Resilience
@@ -342,12 +342,12 @@ function ContinuousBreachAttackSimulation() {
           <div className="mx-auto max-w-7xl px-7 py-10 sm:px-10 lg:px-8 lg:py-14 xl:px-10 text-center lg:text-left">
             <WordReveal text="What is Continuous Breach Attack Simulation?" className="text-[26px] font-normal leading-[1.4]  text-white sm:text-[36px] lg:text-[38px]">
             </WordReveal>
-            <p className="mt-4 sectionDescription text-[#D1D1D1] lg:max-w-[700px]">
+            <p className="mt-4 sectionDescription text-[#D1D1D1] lg:max-w-[700px] animate-hero-reveal" style={{animationDelay:"500ms"}}>
               Continuous Breach Attack Simulation (CBAS) is an automated,
               ongoing process that mimics cyber attackers using adversary
               simulation techniques.
             </p>
-            <p className="mt-10 sectionDescription text-[#D1D1D1]  lg:max-w-[700px]">
+            <p className="mt-10 sectionDescription text-[#D1D1D1]  lg:max-w-[700px] animate-hero-reveal" style={{animationDelay:"700ms"}}>
               It validates your security investments daily, tests real-world
               attack scenarios, and provides actionable insights to strengthen
               resilience.
@@ -379,9 +379,9 @@ function ContinuousBreachAttackSimulation() {
                       OUR APPROACH
                     </p>
 
-                    <p className="mt-3 text-[34px] sm:text-[38px] lg:text-[40px] font-medium leading-[1.4] text-white lg:max-w-[450px]">
-                      How We Validate Your Defenses?
-                    </p>
+                    <WordReveal text="How We Validate Your Defenses?" className="mt-3 text-[34px] sm:text-[38px] lg:text-[40px] font-medium leading-[1.4] text-white lg:max-w-[450px]">
+                      
+                    </WordReveal>
                   </div>
                 </Animation>
 
@@ -510,11 +510,11 @@ function ContinuousBreachAttackSimulation() {
                   WHAT SETS US APART
                 </p>
 
-                <p className="mt-[10px] text-[32px] font-medium leading-[1.25] text-white sm:text-[38px] lg:text-[40px]">
-                  Security validation that keeps evolving.
-                </p>
+                <WordReveal text="Security validation that keeps evolving." className="mt-[10px] text-[32px] font-medium leading-[1.25] text-white sm:text-[38px] lg:text-[40px]">
+                  
+                </WordReveal>
 
-                <p className="mx-auto mt-[18px] max-w-[700px]  text-[#D1D1D1] sectionDescription">
+                <p className="mx-auto mt-[18px] max-w-[700px]  text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{animationDelay:"500ms"}}>
                   Continuous validation powered by real-world attack
                   intelligence, practical recommendations, and proactive
                   security improvement.
@@ -524,7 +524,7 @@ function ContinuousBreachAttackSimulation() {
           </Animation>
 
           <div className="mt-[46px] grid grid-cols-1 sm:grid-cols-3 px-16 pb-16">
-            <Animation>
+            <AnimatedCard delay={0.2}>
               <div className="relative min-h-[309px] bg-[#050B18] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[30px]">
                 <div className="text-white">
                   <Icon icon="boxicons:vector-square" className="text-[36px]" />
@@ -541,9 +541,9 @@ function ContinuousBreachAttackSimulation() {
                   </p>
                 </div>
               </div>
-            </Animation>
+            </AnimatedCard>
 
-            <Animation>
+            <AnimatedCard delay={0.5}>
               <div className="relative min-h-[309px] bg-[#08142D] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[25px]">
                 <div className="text-white">
                   <Icon
@@ -562,9 +562,9 @@ function ContinuousBreachAttackSimulation() {
                   </p>
                 </div>
               </div>
-            </Animation>
+            </AnimatedCard>
 
-            <Animation>
+            <AnimatedCard delay={0.9}>
               <div className="relative min-h-[309px] bg-[#170404] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[28px]">
                 <div className="text-white">
                   <Icon
@@ -584,7 +584,7 @@ function ContinuousBreachAttackSimulation() {
                   </p>
                 </div>
               </div>
-            </Animation>
+            </AnimatedCard>
           </div>
         </div>
       </section>
@@ -687,10 +687,10 @@ function ContinuousBreachAttackSimulation() {
               </p>
 
               <h2 className="mt-[10px]  text-white ">
-                From attack simulation to <br></br>actionable improvement.
+                <WordReveal as="span" text="From attack simulation to"></WordReveal> <br></br><WordReveal as="span" text="actionable improvement."></WordReveal>
               </h2>
 
-              <p className="mx-auto mt-[18px] max-w-[750px] text-[#D1D1D1] sectionDescription">
+              <p className="mx-auto mt-[18px] max-w-[750px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{animationDelay:"800ms"}}>
                 Get clear, actionable outcomes from every simulation, from
                 leadership-level risk visibility to technical remediation and
                 team readiness.
