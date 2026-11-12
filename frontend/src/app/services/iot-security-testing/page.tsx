@@ -103,34 +103,34 @@ function page() {
               </p>
 
               {/* HEADING */}
-              <h1 className="mt-[18px] max-w-[570px]  font-semibold leading-[1.25] tracking-[-0.02em] text-white lg:mt-[22px] lg:leading-[1.4]">
+              <h1 className="mt-[18px] max-w-[570px]  font-semibold leading-[1.25] tracking-[-0.02em] text-white lg:mt-[22px] lg:leading-[1.4] animate-hero-reveal" style={{ animationDelay: "600ms" }}>
                 Protect Your
                 <br />
                 Connected Ecosystem
               </h1>
 
               {/* FIRST DESCRIPTION */}
-              <p className="mt-[24px] max-w-[550px] text-[15px] font-normal leading-[1.75] text-[#D1D1D1] sm:text-[17px] lg:mt-[26px] lg:max-w-[450px] lg:text-[17px] lg:leading-[1.72]">
+              <p className="mt-[24px] max-w-[550px] text-[15px] font-normal leading-[1.75] text-[#D1D1D1] sm:text-[17px] lg:mt-[26px] lg:max-w-[450px] lg:text-[17px] lg:leading-[1.72] animate-hero-reveal" style={{ animationDelay: "750ms" }}>
                 Identify vulnerabilities across your connected devices, networks,
                 and IoT infrastructure, before attackers do.
               </p>
 
               {/* SECOND DESCRIPTION */}
-              <p className="mt-[18px] max-w-[550px] text-[15px] font-normal leading-[1.75] text-[#D1D1D1] sm:text-[17px] lg:mt-[18px] lg:max-w-[450px] lg:text-[17px] lg:leading-[1.72]">
+              <p className="mt-[18px] max-w-[550px] text-[15px] font-normal leading-[1.75] text-[#D1D1D1] sm:text-[17px] lg:mt-[18px] lg:max-w-[450px] lg:text-[17px] lg:leading-[1.72] animate-hero-reveal" style={{ animationDelay: "850ms" }}>
                 ISECURION helps you secure your IoT environment with comprehensive
                 testing, risk analysis, and actionable insights for stronger,
                 safer operations.
               </p>
 
-              <div className="mt-[30px] sm:mt-[34px]">
+              <div className="mt-[30px] sm:mt-[34px] animate-hero-reveal" style={{animationDelay:"1050ms"}}>
                 <Link href="/company/contact">
-                <button className="inline-flex h-[54px] items-center justify-center rounded-[9px] bg-white px-[20px] py-[14px] text-[13px] sm:text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-[#F3F5F8] sm:min-h-[54px] sm:px-[21px] lg:px-[20px] cursor-pointer">
-                  <span>Schedule My IoT Security Consultation</span>
+                  <button className="inline-flex h-[54px] items-center justify-center rounded-[9px] bg-white px-[20px] py-[14px] text-[13px] sm:text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-[#F3F5F8] sm:min-h-[54px] sm:px-[21px] lg:px-[20px] cursor-pointer">
+                    <span>Schedule My IoT Security Consultation</span>
 
-                  <span className="ml-[8px] text-[20px]">
-                    <Icon icon="mdi:arrow-right" width={20} />
-                  </span>
-                </button>
+                    <span className="ml-[8px] text-[20px]">
+                      <Icon icon="mdi:arrow-right" width={20} />
+                    </span>
+                  </button>
                 </Link>
               </div>
             </div>
@@ -160,14 +160,14 @@ function page() {
 
 
                 <div className="mt-[22px] max-w-[530px] space-y-5  text-[#D1D1D1] lg:mx-0 sectionDescription">
-                  <p>
+                  <p className="animate-hero-reveal" style={{ animationDelay: "600ms" }}>
                     IoT Security Testing is a structured assessment of connected
                     devices, communication protocols, applications, APIs,
                     networks, and supporting infrastructure to identify
                     vulnerabilities before they can be exploited.
                   </p>
 
-                  <p>
+                  <p className="animate-hero-reveal" style={{ animationDelay: "750ms" }}>
                     ISECURION evaluates the complete IoT attack surface, from
                     device firmware and interfaces to cloud platforms, mobile
                     applications, and backend systems.
@@ -275,7 +275,7 @@ function page() {
 
             <WordReveal text="From Discovery to IoT Resilience." className="mt-[16px] text-[32px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[38px] lg:text-[42px] text-center md:text-left" />
 
-            <p className="text-[#D1D1D1] sectionDescription mt-4">
+            <p className="text-[#D1D1D1] sectionDescription mt-4 animate-hero-reveal" style={{ animationDelay: "600ms" }}>
               A structured assessment that combines automated analysis,
               expert-led testing, remediation guidance, and validation across
               the connected ecosystem.
@@ -286,195 +286,205 @@ function page() {
           <Animation>
             <div className="mt-14 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6">
               {/* STEP 01 */}
-              <div className="flex flex-col justify-between h-full">
-                <div>
-                  <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
-                    <span className="tracking-[3px]">01</span>
-                    <Icon
-                      icon="lucide:arrow-right"
-                      className="h-5 w-5 text-[#F5F0E8A1]"
-                    />
+              <AnimatedCard>
+                <div className="flex flex-col justify-between h-full">
+                  <div>
+                    <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
+                      <span className="tracking-[3px]">01</span>
+                      <Icon
+                        icon="lucide:arrow-right"
+                        className="h-5 w-5 text-[#F5F0E8A1]"
+                      />
+                    </div>
+                    <p className="mt-4 text-[16px] text-white max-w-[160px] leading-6">
+                      Information Gathering & Planning
+                    </p>
+                    <p className="mt-3 text-sm leading-[1.6] text-[#D1D1D1] max-w-[185px]">
+                      Define the IoT environment, devices, architecture,
+                      communication protocols, applications & assessment scope.
+                    </p>
                   </div>
-                  <p className="mt-4 text-[16px] text-white max-w-[160px] leading-6">
-                    Information Gathering & Planning
-                  </p>
-                  <p className="mt-3 text-sm leading-[1.6] text-[#D1D1D1] max-w-[185px]">
-                    Define the IoT environment, devices, architecture,
-                    communication protocols, applications & assessment scope.
-                  </p>
+                  <div className="mt-8 pt-4">
+                    <p className="text-sm font-semibold uppercase tracking-wider text-[#6B7C96]">
+                      KEY FOCUS
+                    </p>
+                    <ul className="mt-3 space-y-2 text-[14px] text-[#D1D1D1D6]">
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                        <span>Device Inventory</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                        <span>Architecture Mapping</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                        <span>Communication Protocols</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="mt-8 pt-4">
-                  <p className="text-sm font-semibold uppercase tracking-wider text-[#6B7C96]">
-                    KEY FOCUS
-                  </p>
-                  <ul className="mt-3 space-y-2 text-[14px] text-[#D1D1D1D6]">
-                    <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                      <span>Device Inventory</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                      <span>Architecture Mapping</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                      <span>Communication Protocols</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              </AnimatedCard>
 
               {/* STEP 02 */}
-              <div className="flex flex-col justify-between h-full">
-                <div>
-                  <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
-                    <span className="tracking-[3px]">02</span>
-                    <Icon
-                      icon="lucide:arrow-right"
-                      className="h-5 w-5 text-[#F5F0E8A1]"
-                    />
+              <AnimatedCard delay={0.2}>
+                <div className="flex flex-col justify-between h-full">
+                  <div>
+                    <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
+                      <span className="tracking-[3px]">02</span>
+                      <Icon
+                        icon="lucide:arrow-right"
+                        className="h-5 w-5 text-[#F5F0E8A1]"
+                      />
+                    </div>
+                    <p className="mt-4 text-[16px] font-medium text-white max-w-[150px]">
+                      Automated Security Analysis
+                    </p>
+                    <p className="mt-3 text-[14px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
+                      Identify exposed services, configuration weaknesses, known
+                      vulnerabilities, insecure interfaces and attack-surface gaps.
+                    </p>
                   </div>
-                  <p className="mt-4 text-[16px] font-medium text-white max-w-[150px]">
-                    Automated Security Analysis
-                  </p>
-                  <p className="mt-3 text-[14px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
-                    Identify exposed services, configuration weaknesses, known
-                    vulnerabilities, insecure interfaces and attack-surface gaps.
-                  </p>
+                  <div className="mt-8 pt-4">
+                    <p className="text-[14px] font-semibold uppercase tracking-wider text-[#6B7C96]">
+                      KEY FOCUS
+                    </p>
+                    <ul className="mt-3 space-y-2 text-[14px] text-[#D1D1D1D6]">
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                        <span>Device / Firmware</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                        <span>Network / APIs</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                        <span>Cloud / Apps</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="mt-8 pt-4">
-                  <p className="text-[14px] font-semibold uppercase tracking-wider text-[#6B7C96]">
-                    KEY FOCUS
-                  </p>
-                  <ul className="mt-3 space-y-2 text-[14px] text-[#D1D1D1D6]">
-                    <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                      <span>Device / Firmware</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                      <span>Network / APIs</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                      <span>Cloud / Apps</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              </AnimatedCard>
 
               {/* STEP 03 */}
-              <div className="flex flex-col justify-between h-full">
-                <div>
-                  <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
-                    <span className="tracking-[3px]">03</span>
-                    <Icon
-                      icon="lucide:arrow-right"
-                      className="h-5 w-5 text-[#F5F0E8A1]"
-                    />
+              <AnimatedCard delay={0.4}>
+                <div className="flex flex-col justify-between h-full">
+                  <div>
+                    <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
+                      <span className="tracking-[3px]">03</span>
+                      <Icon
+                        icon="lucide:arrow-right"
+                        className="h-5 w-5 text-[#F5F0E8A1]"
+                      />
+                    </div>
+                    <p className="mt-4 text-[16px] font-medium text-white max-w-[150px]">
+                      Expert-Led Penetration Testing
+                    </p>
+                    <p className="mt-3 text-[14px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
+                      Manually validate vulnerabilities across devices, firmware,
+                      APIs, networks, authentication and communication layers.
+                    </p>
                   </div>
-                  <p className="mt-4 text-[16px] font-medium text-white max-w-[150px]">
-                    Expert-Led Penetration Testing
-                  </p>
-                  <p className="mt-3 text-[14px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
-                    Manually validate vulnerabilities across devices, firmware,
-                    APIs, networks, authentication and communication layers.
-                  </p>
+                  <div className="mt-8 pt-4">
+                    <p className="text-[14px] font-semibold uppercase tracking-wider text-[#6B7C96]">
+                      KEY FOCUS
+                    </p>
+                    <ul className="mt-3 space-y-2 text-[14px] text-[#D1D1D1D6]">
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                        <span>Exploitation</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                        <span>Attack Paths</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                        <span>Business Impact</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="mt-8 pt-4">
-                  <p className="text-[14px] font-semibold uppercase tracking-wider text-[#6B7C96]">
-                    KEY FOCUS
-                  </p>
-                  <ul className="mt-3 space-y-2 text-[14px] text-[#D1D1D1D6]">
-                    <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                      <span>Exploitation</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                      <span>Attack Paths</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                      <span>Business Impact</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              </AnimatedCard>
 
               {/* STEP 04 */}
-              <div className="flex flex-col justify-between h-full">
-                <div>
-                  <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
-                    <span className="tracking-[3px]">04</span>
-                    <Icon
-                      icon="lucide:arrow-right"
-                      className="h-5 w-5 text-[#F5F0E8A1]"
-                    />
+              <AnimatedCard delay={0.6}>
+                <div className="flex flex-col justify-between h-full">
+                  <div>
+                    <div className="flex items-center gap-2 text-[#0F66EA] text-[16px] font-semibold">
+                      <span className="tracking-[3px]">04</span>
+                      <Icon
+                        icon="lucide:arrow-right"
+                        className="h-5 w-5 text-[#F5F0E8A1]"
+                      />
+                    </div>
+                    <p className="mt-4 text-[16px] text-white max-w-[150px]">
+                      Reporting & Remediation
+                    </p>
+                    <p className="mt-3 text-[14px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
+                      Prioritize findings by severity and business impact with clear
+                      remediation guidance for engineering and security teams.
+                    </p>
                   </div>
-                  <p className="mt-4 text-[16px] text-white max-w-[150px]">
-                    Reporting & Remediation
-                  </p>
-                  <p className="mt-3 text-[14px] leading-[1.6] text-[#D1D1D1] max-w-[180px]">
-                    Prioritize findings by severity and business impact with clear
-                    remediation guidance for engineering and security teams.
-                  </p>
+                  <div className="mt-8 pt-4">
+                    <p className="text-[14px] font-semibold uppercase tracking-wider text-[#6B7C96]">
+                      KEY FOCUS
+                    </p>
+                    <ul className="mt-3 space-y-2 text-[14px] text-[#D1D1D1D6]">
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                        <span>Detailed Report</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                        <span>Risk Prioritization</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                        <span>Remediation Guidance</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="mt-8 pt-4">
-                  <p className="text-[14px] font-semibold uppercase tracking-wider text-[#6B7C96]">
-                    KEY FOCUS
-                  </p>
-                  <ul className="mt-3 space-y-2 text-[14px] text-[#D1D1D1D6]">
-                    <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                      <span>Detailed Report</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                      <span>Risk Prioritization</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                      <span>Remediation Guidance</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              </AnimatedCard>
 
               {/* STEP 05 */}
-              <div className="flex flex-col justify-between h-full">
-                <div>
-                  <div className="flex items-center gap-2 text-[#0F66EA] text-[18px] font-semibold">
-                    <span className="tracking-[3px]">05</span>
+              <AnimatedCard delay={0.8}>
+                <div className="flex flex-col justify-between h-full">
+                  <div>
+                    <div className="flex items-center gap-2 text-[#0F66EA] text-[18px] font-semibold">
+                      <span className="tracking-[3px]">05</span>
+                    </div>
+                    <p className="mt-4 text-[16px]  text-white max-w-[100px]">
+                      Verify and Close
+                    </p>
+                    <p className="mt-3 text-[14px] leading-[1.6] text-[#D1D1D1] max-w-[190px]">
+                      Reassess remediated vulnerabilities and confirm that
+                      identified weaknesses have been effectively addressed.
+                    </p>
                   </div>
-                  <p className="mt-4 text-[16px]  text-white max-w-[100px]">
-                    Verify and Close
-                  </p>
-                  <p className="mt-3 text-[14px] leading-[1.6] text-[#D1D1D1] max-w-[190px]">
-                    Reassess remediated vulnerabilities and confirm that
-                    identified weaknesses have been effectively addressed.
-                  </p>
+                  <div className="mt-8 pt-4">
+                    <p className="text-sm font-semibold uppercase tracking-wider text-[#6B7C96]">
+                      KEY FOCUS
+                    </p>
+                    <ul className="mt-3 space-y-2 text-[14px] text-[#D1D1D1D6]">
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                        <span>Revalidation</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                        <span>Security Posture Check</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
+                        <span>Final Report</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div className="mt-8 pt-4">
-                  <p className="text-sm font-semibold uppercase tracking-wider text-[#6B7C96]">
-                    KEY FOCUS
-                  </p>
-                  <ul className="mt-3 space-y-2 text-[14px] text-[#D1D1D1D6]">
-                    <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                      <span>Revalidation</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                      <span>Security Posture Check</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-[#D1D1D1D6]" />
-                      <span>Final Report</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              </AnimatedCard>
             </div>
           </Animation>
         </div>

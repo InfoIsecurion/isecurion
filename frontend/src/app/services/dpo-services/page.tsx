@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { Icon } from "@iconify/react";
-import {
+import WordReveal, {
   Animation,
   AnimatedCard,
   GradientIcon,
@@ -453,16 +453,16 @@ function page() {
                 <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
                   OUTSOURCED DATA PROTECTION OFFICER
                 </p>
-                <h1 className="text-[#FFFFFF] lg:max-w-[440px]">
+                <h1 className="text-[#FFFFFF] lg:max-w-[440px] animate-hero-reveal" style={{animationDelay:"600ms"}}>
                   Expert Privacy Leadership. Without the Full-Time Overhead.
                 </h1>
-                <p className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[450px]">
+                <p className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[450px] animate-hero-reveal" style={{animationDelay:"800ms"}}>
                   Strengthen data protection, manage privacy obligations, and
                   build customer trust with outsourced DPO services tailored to
                   your organisation’s regulatory requirements and business
                   needs.
                 </p>
-                <p className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[460px]">
+                <p className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[460px] animate-hero-reveal" style={{animationDelay:"1000ms"}}>
                   ISECURION helps organisations establish privacy governance,
                   manage compliance responsibilities, and improve accountability
                   across the personal data lifecycle.
@@ -471,7 +471,7 @@ function page() {
             </Animation>
             <Animation>
               <ul className="mt-4 space-y-2 ">
-                <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal" style={{animationDelay:"1200ms"}}>
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -479,7 +479,7 @@ function page() {
                   Privacy Governance & Compliance
                 </li>
 
-                <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal" style={{animationDelay:"1400ms"}}>
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -487,7 +487,7 @@ function page() {
                   DPDP Act & GDPR Support
                 </li>
 
-                <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal" style={{animationDelay:"1500ms"}}>
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -495,7 +495,7 @@ function page() {
                   Data Subject Rights Management
                 </li>
 
-                <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal" style={{animationDelay:"1800ms"}}>
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -504,7 +504,7 @@ function page() {
                 </li>
               </ul>
             </Animation>
-            <Animation>
+            {/* <Animation>
               <div className="flex flex-col sm:flex-row  justify-center lg:justify-start gap-4 mt-8">
                 <div className="mt-8 text-center">
                   <Link href="/company/contact">
@@ -515,7 +515,7 @@ function page() {
                   </Link>
                 </div>
               </div>
-            </Animation>
+            </Animation> */}
           </div>
 
           <div className="flex-1 px-8 py-5 rounded-3xl space-y-5 bg-linear-to-r from-[#7B6FE860] to-[#7B6FE839] min-h-[800px]">
@@ -752,15 +752,15 @@ function page() {
               <p className="text-sm sm:text-base font-semibold uppercase text-[#0F66EA]">
                 UNDERSTANDING OUTSOURCED DPO
               </p>
-              <h2 className="text-[#FEFEFE] max-w-[720px]">
-                Independent Privacy Oversight. Practical Business Support.
-              </h2>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[550px]">
+              <WordReveal text="Independent Privacy Oversight. Practical Business Support." className="text-[#FEFEFE] max-w-[720px]">
+                
+              </WordReveal>
+              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[550px] animate-hero-reveal" style={{animationDelay:"1000ms"}}>
                 An outsourced Data Protection Officer (DPO) provides specialist
                 privacy guidance, compliance oversight, and regulatory
                 coordination without requiring a full-time internal appointment.
               </p>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[550px]">
+              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[550px] animate-hero-reveal" style={{animationDelay:"1200ms"}}>
                 ISECURION helps organisations manage privacy responsibilities
                 through structured governance, documented processes, and ongoing
                 advisory support.
@@ -772,7 +772,7 @@ function page() {
               {services.map((item, index) => (
                 <AnimatedCard
                   key={index}
-                  delay={index * 0.15}
+                  delay={index * 0.2}
                   className="space-y-3 pl-6 border-l border-[#0F66EA29]"
                 >
                   <div
@@ -805,9 +805,9 @@ function page() {
               <p className="text-sm sm:text-base font-semibold text-[#0F66EA] ">
                 WHO NEEDS AN OUTSOURCED DPO?
               </p>
-              <h2 className="text-[#FFFFFF]">
-                Does your organisation need an Outsourced DPO?
-              </h2>
+              <WordReveal text="Does your organisation need an Outsourced DPO?" className="text-[#FFFFFF]">
+                
+              </WordReveal>
               <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[600px]">
                 If you recognise any one of these situations, an Outsourced DPO
                 engagement will deliver immediate impact across privacy and
@@ -818,7 +818,7 @@ function page() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {whoNeedsDpo.map((item, index) => (
                   <AnimatedCard
-                    delay={index * 0.15}
+                    delay={index * 0.2}
                     key={index}
                     className="relative flex flex-col justify-between p-5 space-y-4 rounded-lg bg-[#66666614] border border-[#0B15301F]"
                   >
@@ -857,6 +857,7 @@ function page() {
                 <div className="absolute bottom-0 left-0 top-0 w-px bg-[#FFFFFF12]" />
 
                 {/* Statistic 1 */}
+                <AnimatedCard delay={0.3}>
                 <div className="relative pl-5 sm:pl-7">
                   <span className="absolute left-[-7px] top-[5px] h-4 w-4 rounded-full border-2 border-[#D1D5DB] bg-[#030707]" />
 
@@ -871,8 +872,10 @@ function page() {
                     industries secure what matters most.
                   </p>
                 </div>
+                </AnimatedCard>
 
                 {/* Statistic 2 */}
+                <AnimatedCard delay={0.4}>
                 <div className="relative pl-5 sm:pl-7">
                   <span className="absolute left-[-7px] top-[5px] h-4 w-4 rounded-full border-2 border-[#D1D5DB] bg-[#030707]" />
 
@@ -887,8 +890,10 @@ function page() {
                     resilience.
                   </p>
                 </div>
+                </AnimatedCard>
 
                 {/* Statistic 3 */}
+                <AnimatedCard delay={0.5}>
                 <div className="relative pl-5 sm:pl-7">
                   <span className="absolute left-[-7px] top-[5px] h-4 w-4 rounded-full border-2 border-[#D1D5DB] bg-[#030707]" />
 
@@ -903,6 +908,7 @@ function page() {
                     tomorrow’s challenges.
                   </p>
                 </div>
+                </AnimatedCard>
               </div>
 
               {/* RIGHT: DPO TEAM CONTENT */}
@@ -912,18 +918,18 @@ function page() {
                     ISECURION PRIVACY PRACTICE
                   </p>
 
-                  <h2 className="mt-2 max-w-[520px] text-[24px] font-normal leading-[1.5] tracking-[-0.5px] text-white sm:text-[32px] md:text-[34px] lg:text-[30px] xl:text-[32px]">
-                    Meet the ISECURION Outsourced DPO Team
-                  </h2>
+                  <WordReveal text="Meet the ISECURION Outsourced DPO Team" className="mt-2 max-w-[520px] text-[24px] font-normal leading-[1.5] tracking-[-0.5px] text-white sm:text-[32px] md:text-[34px] lg:text-[30px] xl:text-[32px]">
+                    
+                  </WordReveal>
 
-                  <p className="mt-8 max-w-[505px] text-[14px] font-normal leading-[25px] text-[#D1D1D1] sm:text-[15px] sm:leading-[25px]">
+                  <p className="mt-8 max-w-[505px] text-[14px] font-normal leading-[25px] text-[#D1D1D1] sm:text-[15px] sm:leading-[25px] animate-hero-reveal" style={{animationDelay:"1000ms"}}>
                     ISECURION&apos;s privacy practice is a dedicated team of
                     certified data protection professionals, privacy
                     lawyers-in-consult, and compliance specialists - built for
                     India&apos;s DPDP Act and global privacy regimes alike.
                   </p>
 
-                  <p className="mt-6 max-w-[505px] text-[14px] font-normal leading-[25px] text-[#D1D1D1] sm:text-[15px] sm:leading-[25px]">
+                  <p className="mt-6 max-w-[505px] text-[14px] font-normal leading-[25px] text-[#D1D1D1] sm:text-[15px] sm:leading-[25px] animate-hero-reveal" style={{animationDelay:"1200ms"}}>
                     With experience across BFSI, healthcare, IT/ITES,
                     e-commerce, and regulated industries, the team delivers{" "}
                     <span className="font-semibold text-white">
@@ -933,6 +939,7 @@ function page() {
                   </p>
 
                   {/* Credentials */}
+                  <AnimatedCard>
                   <div className="mt-18 flex flex-wrap gap-2">
                     <span className="inline-flex min-h-[29px] items-center gap-1.5 rounded-full border border-[#FFFFFF24] bg-[#FFFFFF12] px-3 py-1 text-[10px] font-medium leading-4 text-[#E0F2FE] sm:text-[11px]">
                       <Icon
@@ -950,7 +957,9 @@ function page() {
                       ISO 27001:2022 Certified
                     </span>
                   </div>
+                  </AnimatedCard>
 
+                  
                   <div className="mt-3 flex flex-wrap gap-2">
                     <span className="inline-flex min-h-[29px] items-center gap-1.5 rounded-full border border-[#FFFFFF24] bg-[#FFFFFF12] px-3 py-1 text-[10px] font-medium leading-4 text-[#E0F2FE] sm:text-[11px]">
                       <Icon
@@ -968,6 +977,7 @@ function page() {
                       Bengaluru &amp; Kolkata Offices
                     </span>
                   </div>
+                  
                 </div>
               </RightAnimation>
             </div>
@@ -1121,11 +1131,11 @@ function page() {
                 ENGAGEMENT LIFECYCLE
               </p>
 
-              <p className="max-w-[670px] text-[32px] font-medium leading-[1.3] tracking-[-0.5px] text-white sm:text-[36px] lg:text-[40px]">
-                How ISECURION delivers outsourced DPO services
-              </p>
+              <WordReveal text="How ISECURION delivers outsourced DPO services" className="max-w-[670px] text-[32px] font-medium leading-[1.3] tracking-[-0.5px] text-white sm:text-[36px] lg:text-[40px]">
+                
+              </WordReveal>
 
-              <p className="max-w-[819px] text-[15px] font-normal leading-[25px] text-[#D1D1D1] sm:text-base sm:leading-[28px] lg:text-[18px] lg:leading-[31px]">
+              <p className="max-w-[819px] text-[15px] font-normal leading-[25px] text-[#D1D1D1] sm:text-base sm:leading-[28px] lg:text-[18px] lg:leading-[31px] animate-hero-reveal" style={{animationDelay:"800ms"}}>
                 A practical engagement model that establishes privacy
                 foundations, operational workflows, and continuous oversight.
               </p>

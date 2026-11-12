@@ -5,7 +5,6 @@ import {
   redTeam,
   aiAugamentedRedTeam,
   phishingSimulation,
-  managedSecurityService,
   dpoServices,
   aadharAudit,
   bseNseAudit,
@@ -42,12 +41,6 @@ export const phishingSimulationEndpoint: Endpoint = {
   path: '/phishing-simulation',
   method: 'post',
   handler: phishingSimulation,
-}
-
-export const managedSecurityEndpoint: Endpoint = {
-  path: '/managed-security-service',
-  method: 'post',
-  handler: managedSecurityService,
 }
 
 export const dpoEndpoint: Endpoint = {

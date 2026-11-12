@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
-import {
+import WordReveal, {
   Animation,
   AnimatedCard,
   LeftAnimation,
@@ -488,12 +488,12 @@ function page() {
                 </p>
 
                 {/* Heading */}
-                <h1 className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left">
+                <h1 className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{animationDelay:"500ms"}}>
                   CICRA Audit Services for Critical Infrastructure Protection
                 </h1>
 
                 {/* Description */}
-                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left">
+                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{animationDelay:"750ms"}}>
                   ISECURION delivers industry-leading CICRA Audit Services in
                   India, helping organizations identify, assess, and mitigate
                   risks to their Critical Information Infrastructure (CII) and
@@ -501,7 +501,7 @@ function page() {
                 </p>
 
                 <ul className="mt-4 space-y-2">
-                  <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                  <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal" style={{animationDelay:"950ms"}}>
                     <Icon
                       icon="boxicons:seal-check"
                       className="mt-0.5 shrink-0 text-[20px] text-[#7D70F0]"
@@ -509,7 +509,7 @@ function page() {
                     Critical Infrastructure
                   </li>
 
-                  <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                  <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal" style={{animationDelay:"1050ms"}}>
                     <Icon
                       icon="boxicons:seal-check"
                       className="mt-0.5 shrink-0 text-[20px] text-[#7D70F0]"
@@ -517,7 +517,7 @@ function page() {
                     Risk-Based Assessment
                   </li>
 
-                  <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px]">
+                  <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal" style={{animationDelay:"1200ms"}}>
                     <Icon
                       icon="boxicons:seal-check"
                       className="mt-0.5 shrink-0 text-[20px] text-[#7D70F0]"
@@ -527,7 +527,7 @@ function page() {
                 </ul>
 
                 {/* CTA */}
-                <div className="mt-10 text-center lg:text-left">
+                {/* <div className="mt-10 text-center lg:text-left">
                   <Link href="/company/contact">
                   <button
                     type="button"
@@ -539,7 +539,7 @@ function page() {
                     </span>
                   </button>
                   </Link>
-                </div>
+                </div> */}
               </div>
             </Animation>
 
@@ -754,12 +754,12 @@ function page() {
                   UNDERSTANDING CICRA
                 </p>
 
-                <h2 className="mx-auto mt-4 max-w-[570px] text-center text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] md:text-left lg:mx-0 lg:text-[36px] xl:text-[40px]">
-                  Protect Your Critical Information Infrastructure
-                </h2>
+                <WordReveal  text="Protect Your Critical Information Infrastructure" className="mx-auto mt-4 max-w-[570px] text-center text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] md:text-left lg:mx-0 lg:text-[36px] xl:text-[40px]">
+                 
+                </WordReveal>
 
                 <div className="mx-auto mt-[22px] max-w-[530px] space-y-5 text-center text-[15px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[16px] md:text-left lg:mx-0 lg:text-[16px] xl:text-[17px]">
-                  <p>
+                  <p className="animate-hero-reveal" style={{animationDelay:"500ms"}}>
                     A CICRA (Critical Information & Cyber Risk Assessment) Audit
                     is a comprehensive evaluation of an organization's critical
                     systems and infrastructure, sensitive data assets and data
@@ -768,7 +768,7 @@ function page() {
                     incident response and business continuity readiness.
                   </p>
 
-                  <p>
+                  <p className="animate-hero-reveal" style={{animationDelay:"750ms"}}>
                     Unlike an audit focused solely on documentation, a
                     risk-based CICRA assessment considers how security gaps
                     could affect essential operations, data integrity, and
@@ -824,10 +824,10 @@ function page() {
               <p className="text-sm sm:text-base font-semibold text-[#7D70F0] ">
                 INDUSTRIES WE SERVE
               </p>
-              <h2 className="text-[#FFFFFF] max-w-[700px]">
-                CICRA Audits for High-Risk and Regulated Industries
-              </h2>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[850px]">
+              <WordReveal text="CICRA Audits for High-Risk and Regulated Industries" className="text-[#FFFFFF] max-w-[700px]">
+                
+              </WordReveal>
+              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[850px] animate-hero-reveal" style={{animationDelay:"800ms"}}>
                 ISECURION's CICRA Audit Services are tailored for organizations
                 operating in high-risk and regulated industries.
               </p>
@@ -874,10 +874,10 @@ function page() {
             </p>
 
             <h2 className="">
-              Understand the Risk Behind Your <br /> Critical Operations
+              <WordReveal as="span" text="Understand the Risk Behind Your"></WordReveal> <br /> <WordReveal as="span" text="Critical Operations"></WordReveal>
             </h2>
 
-            <p className="mx-auto mt-4 text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px]">
+            <p className="mx-auto mt-4 text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px] animate-hero-reveal" style={{animationDelay:"600ms"}}>
               A CICRA assessment gives leadership a clearer view of where cyber
               risk could directly affect business continuity.
             </p>
@@ -887,7 +887,7 @@ function page() {
           <div className="mt-18 grid grid-cols-1 gap-px overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
             {businessImpact.map((domain, i) => (
               <AnimatedCard
-                delay={i * 0.1}
+                delay={i * 0.2}
                 key={domain.title}
                 className={`flex min-h-[220px] flex-col ${domain.background} p-5 transition-colors duration-300 sm:min-h-[230px] sm:p-6 lg:min-h-[234px] lg:px-[30px] lg:pb-14 lg:pt-12`}
               >
@@ -931,11 +931,11 @@ function page() {
               ASSESSMENT COVERAGE
             </p>
 
-            <h2 className="mt-3 text-2xl font-medium leading-tight text-[#FEFEFE] sm:text-3xl md:text-4xl lg:text-[38px] lg:leading-[1.3]">
-              One Assessment Across Your Critical Security Landscape
-            </h2>
+            <WordReveal text="One Assessment Across Your Critical Security Landscape" className="mt-3 text-2xl font-medium leading-tight text-[#FEFEFE] sm:text-3xl md:text-4xl lg:text-[38px] lg:leading-[1.3]">
+              
+            </WordReveal>
 
-            <p className="mx-auto mt-5 max-w-3xl text-sm font-normal leading-6 text-[#D1D1D1] sm:text-base sm:leading-7">
+            <p className="mx-auto mt-5 max-w-3xl text-sm font-normal leading-6 text-[#D1D1D1] sm:text-base sm:leading-7 animate-hero-reveal" style={{animationDelay:"800ms"}}>
               A comprehensive assessment of the technical, governance, and
               operational controls protecting your critical environment.
             </p>

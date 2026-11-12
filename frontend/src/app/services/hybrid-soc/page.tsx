@@ -1,5 +1,5 @@
 import React from 'react'
-import { Animation, AnimatedCard, LeftAnimation, RightAnimation } from '../../../components/ui/Animation'
+import WordReveal, { Animation, AnimatedCard, LeftAnimation, RightAnimation } from '../../../components/ui/Animation'
 import { Icon } from '@iconify/react'
 import heroBackground from '../../../assets/services/inhousescobackgroundImage.png'
 import Image from 'next/image'
@@ -61,11 +61,13 @@ function page() {
         <div>
             <section className="relative w-full min-h-[560px] py-14 flex items-center">
 
-                <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-[#060D1B]">
                     <Image
                         src={heroBackground}
-                        alt="Smart contract security"
+                        alt="Hybrid SOC Services Background"
                         fill
+                        priority
+                        sizes="100vw"
                         className="object-cover"
                     />
                 </div>
@@ -79,7 +81,7 @@ function page() {
                             <h1 className="font-semibold leading-[32px] md:leading-[50px] lg:leading-[55px] text-[#FFFFFF] max-w-[630px]">
                                 Strengthen Your Security Operations with a Hybrid SOC
                             </h1>
-                            <p className="text-base sm:text-[17px] text-[#D9D9D9] max-w-[520px] leading-7">
+                            <p className="text-base sm:text-[17px] text-[#D9D9D9] max-w-[520px] leading-7 animate-hero-reveal" style={{ animationDelay: "450ms" }}>
                                 Combine your in-house security team with ISECURION’s cybersecurity expertise to improve threat visibility, strengthen incident response, and build scalable security operations tailored to your business.
                             </p>
                             <ul className="mt-8 grid grid-cols-1 gap-y-4 sm:grid-cols-2">
@@ -89,18 +91,18 @@ function page() {
                                     "Enhanced Threat Monitoring",
                                     "Scalable SOC Capabilities",
                                 ].map((item) => (
-                                    <li key={item} className="flex items-start justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]">
+                                    <li key={item} className="flex items-start justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1] animate-hero-reveal" style={{ animationDelay: "600ms" }}>
                                         <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#7D70F0]" />
                                         <span>{item}</span>
                                     </li>
                                 ))}
                             </ul>
-                            <div className="mt-8">
+                            <div className="mt-8 animate-hero-reveal" style={{animationDelay:"800ms"}}>
                                 <Link href="/company/contact">
-                                <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg cursor-pointer">
-                                    <span>Strengthen Your SOC </span>
-                                    <Icon icon="lucide:arrow-right" className="h-4 w-4" />
-                                </button>
+                                    <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg cursor-pointer">
+                                        <span>Strengthen Your SOC </span>
+                                        <Icon icon="lucide:arrow-right" className="h-4 w-4" />
+                                    </button>
                                 </Link>
                             </div>
 
@@ -126,10 +128,10 @@ function page() {
                             <p className="text-sm sm:text-base font-semibold text-[#7D70F0] ">
                                 HYBRID SOC SERVICES
                             </p>
-                            <h2 className="text-[#FFFFFF] max-w-[700px]">
-                                Integrated Security Operations for Stronger Threat Protection
-                            </h2>
-                            <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[870px]">
+                            <WordReveal text="Integrated Security Operations for Stronger Threat Protection" className="text-[#FFFFFF] max-w-[700px]">
+
+                            </WordReveal>
+                            <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[870px] opacity-0 animate-hero-reveal" style={{ animationDelay: "650ms" }}>
                                 Combine your internal security team with expert cybersecurity support to strengthen threat detection, streamline incident response, and improve security operations across your organization.
                             </p>
                         </div>

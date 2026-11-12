@@ -39,14 +39,6 @@ interface PhishingSimulation {
   turnstileToken: string
 }
 
-interface ManagedSecurityService {
-  email: string
-  companyName: string
-  primaryNeed: string
-  country: string
-  consent: boolean
-  turnstileToken: string
-}
 interface DpoServices {
   fullname: string
   companyname: string
@@ -61,7 +53,7 @@ interface AadharAudit {
   email: string
   companyname: string
   entity: string
-  turstileToken: string
+  turnstileToken: string
 }
 
 interface BseNse {
@@ -170,7 +162,7 @@ export async function submitContactForm(request: PayloadRequest) {
 
     await sendContactEmail({
       email: validatedData.email,
-      subject: `Website Enquiry welcome - ${validatedData.fullname}`,
+      subject: `New service- ${validatedData.fullname}`,
       fields: {
         Name: validatedData.fullname,
         Email: validatedData.email,
@@ -222,7 +214,8 @@ export async function breachAttackSimulation(request: PayloadRequest) {
     if (
       typeof email !== 'string' ||
       typeof companyName !== 'string' ||
-      typeof turnstileToken !== 'string'
+      typeof turnstileToken !== 'string' ||
+      typeof simulation !== 'string'
     ) {
       return Response.json({ message: 'Invalid input' }, { status: 400 })
     }
@@ -252,7 +245,7 @@ export async function breachAttackSimulation(request: PayloadRequest) {
       )
     }
 
-    const validatedData: BreachAttackSimulation = { email, companyName }
+    const validatedData: BreachAttackSimulation = { email, companyName, simulation, turnstileToken }
 
     await sendContactEmail({
       email: validatedData.email,
@@ -298,8 +291,6 @@ export async function redTeam(request: PayloadRequest) {
 
     const { email, companyName, assessment, turnstileToken } = body as Record<string, unknown>
 
-    console.log(email, companyName, assessment)
-
     if (!email || !assessment) {
       return Response.json({ message: 'Invalid input' }, { status: 400 })
     }
@@ -307,6 +298,7 @@ export async function redTeam(request: PayloadRequest) {
     if (
       typeof email !== 'string' ||
       typeof companyName !== 'string' ||
+      typeof assessment !== 'string' ||
       typeof turnstileToken !== 'string'
     ) {
       return Response.json({ message: 'Invalid input' }, { status: 400 })
@@ -426,7 +418,14 @@ export async function aiAugamentedRedTeam(request: PayloadRequest) {
       )
     }
 
-    const validatedData: AiAugamentedRedTeam = { email, orgname, phonenumber, country, aifootprint }
+    const validatedData: AiAugamentedRedTeam = {
+      email,
+      orgname,
+      phonenumber,
+      country,
+      aifootprint,
+      turnstileToken,
+    }
 
     await sendContactEmail({
       email: validatedData.email,
@@ -517,6 +516,7 @@ export async function phishingSimulation(request: PayloadRequest) {
       email,
       companyName,
       simulation,
+      turnstileToken,
     }
 
     await sendContactEmail({
@@ -554,99 +554,6 @@ export async function phishingSimulation(request: PayloadRequest) {
 }
 
 // managed security service
-export async function managedSecurityService(request: PayloadRequest) {
-  try {
-    const body: unknown = await request.json?.()
-
-    if (!body || typeof body !== 'object') {
-      return Response.json({ message: 'Invalid input' }, { status: 400 })
-    }
-
-    const { email, companyName, primaryNeed, country, turnstileToken } = body as Record<
-      string,
-      unknown
-    >
-
-    if (!email || !companyName || !primaryNeed || !country) {
-      return Response.json({ message: 'Invalid input' }, { status: 400 })
-    }
-
-    if (
-      typeof email !== 'string' ||
-      typeof companyName !== 'string' ||
-      typeof turnstileToken !== 'string' ||
-      typeof country !== 'string' ||
-      typeof primaryNeed !== 'string'
-    ) {
-      return Response.json({ message: 'Invalid input' }, { status: 400 })
-    }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-
-    if (email && !emailPattern.test(email)) {
-      return Response.json({ message: 'Invalid input' }, { status: 400 })
-    }
-
-    if (!turnstileToken || !turnstileToken.trim()) {
-      return Response.json(
-        { success: false, message: 'Please complete CAPTCHA verification.' },
-        { status: 400 },
-      )
-    }
-
-    const isVerified = await verifyTurnstile(turnstileToken)
-
-    if (!isVerified) {
-      return Response.json(
-        {
-          success: false,
-          message: 'CAPTCHA verification failed. Please try again.',
-        },
-        { status: 400 },
-      )
-    }
-
-    const validatedData: ManagedSecurityService = {
-      email,
-      companyName,
-      primaryNeed,
-      country,
-    }
-
-    await sendContactEmail({
-      email: validatedData.email,
-      subject: `Phishing Simulation`,
-      fields: {
-        Email: validatedData.email,
-        Company: validatedData.companyName,
-        Simulation: validatedData.primaryNeed,
-        Country: validatedData.country,
-      },
-    })
-
-    return Response.json(
-      {
-        success: true,
-        message: 'Your message has been sent successfully.',
-      },
-      { status: 200 },
-    )
-  } catch (error) {
-    if (error instanceof SyntaxError) {
-      return Response.json({ success: false, message: 'Invalid request body.' }, { status: 400 })
-    }
-
-    console.error('Contact form submission failed:', error)
-
-    return Response.json(
-      {
-        success: false,
-        message: 'Unable to send your message. Please try again later.',
-      },
-      { status: 500 },
-    )
-  }
-}
 
 export async function dpoServices(request: PayloadRequest) {
   try {
@@ -804,7 +711,7 @@ export async function aadharAudit(request: PayloadRequest) {
       )
     }
 
-    const validatedData: AadharAudit = { email, companyname, entity }
+    const validatedData: AadharAudit = { email, companyname, entity, turnstileToken }
 
     await sendContactEmail({
       email: validatedData.email,
@@ -888,7 +795,7 @@ export async function bseNseAudit(request: PayloadRequest) {
       )
     }
 
-    const validatedData: BseNse = { email, companyName, organizationtype }
+    const validatedData: BseNse = { email, companyName, organizationtype, turnstileToken }
 
     await sendContactEmail({
       email: validatedData.email,

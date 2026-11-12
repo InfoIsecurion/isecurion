@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
 import { Icon } from "@iconify/react";
-import {
+import WordReveal, {
   Animation,
   AnimatedCard,
   LeftAnimation,
@@ -15,6 +15,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { irda } from "../../../services/api/contact";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 interface ContactFormData {
   email: string;
@@ -444,12 +445,12 @@ function page() {
                 </p>
 
                 {/* Heading */}
-                <h1 className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left">
+                <h1 className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "600ms" }}>
                   IRDAI ISNP Audit Services for Digital Insurance Platforms
                 </h1>
 
                 {/* Description */}
-                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left">
+                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "850ms" }}>
                   Strengthen the security and compliance of your digital
                   insurance ecosystem with a structured IRDAI ISNP audit. Assess
                   cybersecurity controls, protect policyholder data, and improve
@@ -462,19 +463,28 @@ function page() {
                     "Policyholder Data Protection",
                     "Digital Platform Security",
                     "Audit Readiness & Reporting",
-                  ].map((item) => (
-                    <li
+                  ].map((item, index) => (
+                    <motion.li
                       key={item}
+                      initial={{ opacity: 0, y: 18 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{
+                        duration: 1.6,
+                        delay: index * 0.25,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                      
                       className="flex items-center justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]"
                     >
                       <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#7D70F0]" />
                       <span>{item}</span>
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
 
                 {/* CTA */}
-                <div className="mt-10 text-center lg:text-left">
+                {/* <div className="mt-10 text-center lg:text-left">
                   <Link href="/company/contact">
                   <button
                     type="button"
@@ -486,190 +496,190 @@ function page() {
                     </span>
                   </button>
                   </Link>
-                </div>
+                </div> */}
               </div>
             </Animation>
 
-              <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:p-[30px] xl:p-[40px]">
-                <div>
-                  <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
-                    Request IRDAI ISNP Audit Consultation
-                  </h2>
+            <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:p-[30px] xl:p-[40px]">
+              <div>
+                <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
+                  Request IRDAI ISNP Audit Consultation
+                </h2>
 
-                  <p className="mt-3 text-[14px] leading-[1.5] text-[#D9D9D9]">
-                    Discuss your IRDAI ISNP audit requirements with our experts.
-                  </p>
-                </div>
+                <p className="mt-3 text-[14px] leading-[1.5] text-[#D9D9D9]">
+                  Discuss your IRDAI ISNP audit requirements with our experts.
+                </p>
+              </div>
 
-                {/* Form*/}
-                <form className="mt-8" onSubmit={handleSubmit(submit)}>
-                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                    <div>
-                      <label
-                        htmlFor="workEmail"
-                        className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
-                      >
-                        Work Email <span className="text-[#E42F23]">*</span>
-                      </label>
-
-                      <input
-                        id="workEmail"
-                        name="workEmail"
-                        type="email"
-                        placeholder="youremail@gmail.com"
-                        className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] ${errors.email ? "border border-red-500" : ""}`}
-                        {...register("email", {
-                          required: "Email is required",
-                        })}
-                      />
-                      {errors.email && (
-                        <p className="text-sm font-normal text-red-500">
-                          {errors.email.message}
-                        </p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="companyName"
-                        className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
-                      >
-                        Company Name
-                      </label>
-
-                      <input
-                        id="companyName"
-                        name="companyName"
-                        type="text"
-                        placeholder="Company name"
-                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] "
-                        {...register("companyName")}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="mt-4">
+              {/* Form*/}
+              <form className="mt-8" onSubmit={handleSubmit(submit)}>
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  <div>
                     <label
-                      htmlFor="assessmentType"
+                      htmlFor="workEmail"
                       className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
                     >
-                      Organization Type{" "}
-                      <span className="text-[#F04444]">*</span>
+                      Work Email <span className="text-[#E42F23]">*</span>
                     </label>
 
-                    <div className="relative">
-                      <select
-                        id="target"
-                        name="target"
-                        defaultValue=""
-                        aria-label="Select Industry Sector"
-                        {...register("organizationtype", {
-                          required: "Organization type is required",
-                        })}
-                        className={`h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none  ${errors.organizationtype ? "border border-red-500" : ""}`}
-                      >
-                        <option value="">Select Organization Type</option>
-
-                        <option value="Life Insurance Company">
-                          Life Insurance Company
-                        </option>
-                        <option value="Non-Life Insurance Company">
-                          Non-Life Insurance Company
-                        </option>
-                        <option value="Health Insurance Company">
-                          Health Insurance Company
-                        </option>
-                        <option value="General Insurance Company">
-                          General Insurance Company
-                        </option>
-                        <option value="Insurance Aggregator/Marketplace">
-                          Insurance Aggregator/Marketplace
-                        </option>
-                        <option value="Third-Party Administrator(TPA)">
-                          Third-Party Administrator(TPA)
-                        </option>
-                        <option value="Technology Provider for Insurance">
-                          Technology Provider for Insurance
-                        </option>
-                        <option value="Policy Servicing Provider">
-                          Policy Servicing Provider
-                        </option>
-                        <option value="Other">Other</option>
-                      </select>
-                      {errors.organizationtype && (
-                        <p className="text-sm font-normal text-red-500">
-                          {errors.organizationtype.message}
-                        </p>
-                      )}
-
-                      <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#777]">
-                        <svg
-                          width="14"
-                          height="8"
-                          viewBox="0 0 14 8"
-                          fill="none"
-                        >
-                          <path
-                            d="M1 1L7 7L13 1"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Captcha */}
-                  <div className="mt-7">
-                    <div className="flex items-center gap-3">
-                      <Turnstile
-                        ref={turnstileRef}
-                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                        onSuccess={(token) => setTurnstileToken(token)}
-                        onExpire={() => setTurnstileToken("")}
-                        onError={() => setTurnstileToken("")}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Consent */}
-                  <div className="mt-5 flex items-start gap-2.5">
                     <input
-                      id="consent"
-                      name="consent"
-                      type="checkbox"
-                      required
-                      className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
+                      id="workEmail"
+                      name="workEmail"
+                      type="email"
+                      placeholder="youremail@gmail.com"
+                      className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] ${errors.email ? "border border-red-500" : ""}`}
+                      {...register("email", {
+                        required: "Email is required",
+                      })}
                     />
-
-                    <label
-                      htmlFor="consent"
-                      className="text-[10px] leading-[1.7] text-[#BDBDBD] sm:text-[11px]"
-                    >
-                      By clicking submit below, you agree to our Terms of Use
-                      and Privacy Policy. Additionally, you consent to allow
-                      ISECURION Technology & Consulting Pvt. Ltd. to store and
-                      process the personal information submitted above to
-                      provide you the content requested.
-                    </label>
+                    {errors.email && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.email.message}
+                      </p>
+                    )}
                   </div>
 
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    className={`mt-8 flex h-[51px] w-full items-center justify-center rounded-[7px] border border-[#4D78C4] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(39,84,148,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#5282D3] hover:to-[#2B5CA0] active:translate-y-0 ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                  <div>
+                    <label
+                      htmlFor="companyName"
+                      className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
+                    >
+                      Company Name
+                    </label>
+
+                    <input
+                      id="companyName"
+                      name="companyName"
+                      type="text"
+                      placeholder="Company name"
+                      className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] "
+                      {...register("companyName")}
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-4">
+                  <label
+                    htmlFor="assessmentType"
+                    className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
                   >
-                    {loading
-                      ? "Request sending"
-                      : "Request IRDAI Audit Consultation"}
-                    <span className="ml-1.5 text-[18px] leading-none">
-                      <Icon icon="mdi:arrow-right" />
+                    Organization Type{" "}
+                    <span className="text-[#F04444]">*</span>
+                  </label>
+
+                  <div className="relative">
+                    <select
+                      id="target"
+                      name="target"
+                      defaultValue=""
+                      aria-label="Select Industry Sector"
+                      {...register("organizationtype", {
+                        required: "Organization type is required",
+                      })}
+                      className={`h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none  ${errors.organizationtype ? "border border-red-500" : ""}`}
+                    >
+                      <option value="">Select Organization Type</option>
+
+                      <option value="Life Insurance Company">
+                        Life Insurance Company
+                      </option>
+                      <option value="Non-Life Insurance Company">
+                        Non-Life Insurance Company
+                      </option>
+                      <option value="Health Insurance Company">
+                        Health Insurance Company
+                      </option>
+                      <option value="General Insurance Company">
+                        General Insurance Company
+                      </option>
+                      <option value="Insurance Aggregator/Marketplace">
+                        Insurance Aggregator/Marketplace
+                      </option>
+                      <option value="Third-Party Administrator(TPA)">
+                        Third-Party Administrator(TPA)
+                      </option>
+                      <option value="Technology Provider for Insurance">
+                        Technology Provider for Insurance
+                      </option>
+                      <option value="Policy Servicing Provider">
+                        Policy Servicing Provider
+                      </option>
+                      <option value="Other">Other</option>
+                    </select>
+                    {errors.organizationtype && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.organizationtype.message}
+                      </p>
+                    )}
+
+                    <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#777]">
+                      <svg
+                        width="14"
+                        height="8"
+                        viewBox="0 0 14 8"
+                        fill="none"
+                      >
+                        <path
+                          d="M1 1L7 7L13 1"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
                     </span>
-                  </button>
-                </form>
-              </div>
+                  </div>
+                </div>
+
+                {/* Captcha */}
+                <div className="mt-7">
+                  <div className="flex items-center gap-3">
+                    <Turnstile
+                      ref={turnstileRef}
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                      onSuccess={(token) => setTurnstileToken(token)}
+                      onExpire={() => setTurnstileToken("")}
+                      onError={() => setTurnstileToken("")}
+                    />
+                  </div>
+                </div>
+
+                {/* Consent */}
+                <div className="mt-5 flex items-start gap-2.5">
+                  <input
+                    id="consent"
+                    name="consent"
+                    type="checkbox"
+                    required
+                    className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
+                  />
+
+                  <label
+                    htmlFor="consent"
+                    className="text-[10px] leading-[1.7] text-[#BDBDBD] sm:text-[11px]"
+                  >
+                    By clicking submit below, you agree to our Terms of Use
+                    and Privacy Policy. Additionally, you consent to allow
+                    ISECURION Technology & Consulting Pvt. Ltd. to store and
+                    process the personal information submitted above to
+                    provide you the content requested.
+                  </label>
+                </div>
+
+                {/* Submit */}
+                <button
+                  type="submit"
+                  className={`mt-8 flex h-[51px] w-full items-center justify-center rounded-[7px] border border-[#4D78C4] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(39,84,148,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#5282D3] hover:to-[#2B5CA0] active:translate-y-0 ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                >
+                  {loading
+                    ? "Request sending"
+                    : "Request IRDAI Audit Consultation"}
+                  <span className="ml-1.5 text-[18px] leading-none">
+                    <Icon icon="mdi:arrow-right" />
+                  </span>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -684,13 +694,12 @@ function page() {
                   UNDERSTANDING IRDAI ISNP AUDITS
                 </p>
 
-                <h2 className="mx-auto mt-4 max-w-[570px] text-center text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] lg:text-left lg:mx-0 lg:text-[36px] xl:text-[40px]">
-                  Protecting Policyholder Data in the Digital Insurance
-                  Ecosystem
-                </h2>
+                <WordReveal text="Protecting Policyholder Data in the Digital Insurance Ecosystem" className="mx-auto mt-4 max-w-[570px] text-center text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] lg:text-left lg:mx-0 lg:text-[36px] xl:text-[40px]">
+                  
+                </WordReveal>
 
                 <div className="mx-auto mt-[22px] max-w-[535px] space-y-5 text-center text-[15px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[16px] lg:text-left lg:mx-0 lg:text-[16px] xl:text-[17px]">
-                  <p>
+                  <p className="animate-hero-reveal" style={{animationDelay:"750ms"}}>
                     Digital insurance platforms support online policy issuance,
                     premium payments, claims processing, and customer servicing.
                     These interconnected systems handle sensitive policyholder
@@ -698,7 +707,7 @@ function page() {
                     controls.
                   </p>
 
-                  <p className="max-w-[]">
+                  <p className="animate-hero-reveal" style={{animationDelay:"1050ms"}}>
                     An IRDAI Information Security and Network Platform (ISNP)
                     audit evaluates relevant security controls, infrastructure,
                     applications, data protection practices, and operational
@@ -756,10 +765,9 @@ function page() {
               <p className="text-sm sm:text-base font-semibold text-[#7D70F0] ">
                 INSURANCE ECOSYSTEM COVERAGE
               </p>
-              <h2 className="text-[#FFFFFF] max-w-[700px]">
-                IRDAI Audit Support Across Insurance Organizations
-              </h2>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[750px]">
+              <WordReveal text="IRDAI Audit Support Across Insurance Organizations" className="text-[#FFFFFF] max-w-[700px]">
+              </WordReveal>
+              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[750px] animate-hero-reveal">
                 Support security and compliance needs across organizations
                 operating digital insurance services.
               </p>
@@ -805,10 +813,10 @@ function page() {
             </p>
 
             <h2 className="">
-              Comprehensive IRDAI ISNP Audit <br /> Framework
+              <WordReveal as="span" text="Comprehensive IRDAI ISNP Audit "></WordReveal><br /> <WordReveal as="span" text="Framework"></WordReveal> 
             </h2>
 
-            <p className="mx-auto mt-4 text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px]">
+            <p className="mx-auto mt-4 text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px] animate-hero-reveal" style={{animationDelay:"900ms"}}>
               Evaluate the technical, administrative, and operational controls
               supporting secure digital insurance operations.
             </p>
@@ -818,7 +826,7 @@ function page() {
           <div className="mt-18 grid grid-cols-1 gap-px overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
             {businessImpact.map((domain, i) => (
               <AnimatedCard
-                delay={i * 0.1}
+                delay={i * 0.2}
                 key={domain.title}
                 className={`flex min-h-[220px] flex-col ${domain.background} p-5 transition-colors duration-300 sm:min-h-[230px] sm:p-6 lg:min-h-[234px] lg:px-[30px] lg:pb-14 lg:pt-12`}
               >
@@ -828,7 +836,11 @@ function page() {
                   aria-hidden="true"
                 />
 
-                <div className="relative z-10 mx-auto w-full max-w-7xl mx-auto px-6 sm:px-10">
+                <div className="pt-25">
+                  <h3 className="text-base font-medium leading-7 text-white sm:text-lg max-w-[230px]">
+                    {domain.title}
+                  </h3>
+
                   <p className="mt-5 max-w-[330px] text-sm leading-[20px] text-[#D1D1D1] sm:text-base sm:leading-[25px]">
                     {domain.description}
                   </p>
@@ -878,8 +890,8 @@ function page() {
 
                   <div
                     className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${item.side === "left"
-                        ? "sm:pr-7 sm:text-right lg:pr-8"
-                        : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
+                      ? "sm:pr-7 sm:text-right lg:pr-8"
+                      : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
                       }`}
                   >
                     {item.side === "left" && (
@@ -906,8 +918,8 @@ function page() {
 
                   <div
                     className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${item.side === "right"
-                        ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
-                        : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
+                      ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
+                      : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
                       }`}
                   >
                     {item.side === "right" && (
@@ -990,9 +1002,9 @@ function page() {
                 <p className="mt-4 sm:mt-0 text-sm sm:text-base font-semibold text-[#7D70F0] uppercase">
                   SECURITY FOCUS AREAS
                 </p>
-                <h2 className=" text-[#FEFEFE] lg:max-w-[418px]">
-                  Strengthen the Controls Protecting Insurance Platforms
-                </h2>
+                <WordReveal text="Strengthen the Controls Protecting Insurance Platforms" className=" text-[#FEFEFE] lg:max-w-[418px]">
+                  
+                </WordReveal>
               </div>
             </LeftAnimation>
             <RightAnimation>
@@ -1006,7 +1018,7 @@ function page() {
           </div>
 
           <div className="mt-20">
-            <Animation>
+            <AnimatedCard delay={0.5}>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {securityAreas.map((item, index) => (
                   <div
@@ -1022,16 +1034,16 @@ function page() {
                         className="text-xl text-[#FFFFFF]"
                       />
                     </div>
-                    <h3 className="mt-3 text-[15px] font-medium text-[#F5F0E8]">
+                    <h3 className="mt-3 text-[15px] font-medium text-[#F5F0E8] animate-hero-reveal" style={{animationDelay:"600ms"}}>
                       {item.heading}
                     </h3>
-                    <p className="text-[13px] font-normal leading-[22px] text-[#D1D1D1D6] max-w-full">
+                    <p className="text-[13px] font-normal leading-[22px] text-[#D1D1D1D6] max-w-full animate-hero-reveal" style={{animationDelay:"1500px"}}>
                       {item.description}
                     </p>
                   </div>
                 ))}
               </div>
-            </Animation>
+            </AnimatedCard>
           </div>
         </div>
       </section>

@@ -290,22 +290,23 @@ export default function Home() {
       >
         <div className="max-w-7xl w-full mx-auto px-6 sm:px-10">
           <div className="space-y-5 text-center lg:text-left">
-            <p
-              className="text-sm sm:text-base font-semibold text-[#0F66EA] opacity-0 animate-hero-reveal sectionheading"
-              style={{ animationDelay: "150ms" }}
-            >
+            <p className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading animate-hero-reveal">
               SECURING MODERN ENTERPRISES
             </p>
-            <h1
-              className="text-transparent bg-clip-text bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2] opacity-0 animate-hero-reveal"
-              style={{ animationDelay: "300ms" }}
-            >
-              Build for Trust <br /> Designed for Cyber Resilience.
+
+            <h1 className="text-transparent bg-clip-text bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2]">
+              <WordReveal as="span" text="Build for Trust" className="inline" />
+              <br />
+              <WordReveal
+                as="span"
+                text="Designed for Cyber Resilience."
+                className="inline"
+              />
             </h1>
 
             <p
-              className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-lg leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] opacity-0 animate-hero-reveal"
-              style={{ animationDelay: "450ms" }}
+              className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-lg leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] animate-hero-reveal"
+              style={{ animationDelay: "1000ms" }}
             >
               Helping organizations anticipate threats, reduce cyber risk, and
               build lasting resilience through expert cybersecurity consulting,
@@ -316,23 +317,26 @@ export default function Home() {
             className="flex flex-col justify-center lg:justify-start sm:flex-row gap-3 py-4 opacity-0 animate-hero-reveal"
             style={{ animationDelay: "600ms" }}
           >
-            <button className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1]">
-              <Link href="/company/contact">Schedule a Consultation </Link>
-              <span>
-                <Icon icon="mdi:arrow-right" width={20} />
-              </span>
-            </button>
-            <button
-              onClick={() =>
-                document
-                  .getElementById("services")
-                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
-              }
-              className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29]"
-            >
-              <span></span>
-              Explore services ›
-            </button>
+            <Animation>
+              <button
+                className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1] animate-hero-reveal"
+                style={{ animationDelay: "1200ms" }}
+              >
+                <Link href="/company/contact">Schedule a Consultation </Link>
+                <span>
+                  <Icon icon="mdi:arrow-right" width={20} />
+                </span>
+              </button>
+            </Animation>
+            <Animation>
+              <button
+                className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29] animate-hero-reveal"
+                style={{ animationDelay: "1400ms" }}
+              >
+                <span></span>
+                Explore services ›
+              </button>
+            </Animation>
           </div>
         </div>
       </section>
@@ -344,83 +348,91 @@ export default function Home() {
           <div className="px-6 py-10 sm:px-10">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
               {/* Stat 1 */}
-              <div className="relative px-0 py-6 md:px-8 lg:px-10 lg:py-0">
-                <div className="flex flex-col justify-between gap-1">
-                  <p className="text-base sm:text-lg lg:text-xl font-semibold  text-[#0F66EA]">
-                    1K+
-                  </p>
+              <AnimatedCard>
+                <div className="relative px-0 py-6 md:px-8 lg:px-10 lg:py-0">
+                  <div className="flex flex-col justify-between gap-1">
+                    <p className="text-base sm:text-lg lg:text-xl font-semibold  text-[#0F66EA]">
+                      1K+
+                    </p>
 
-                  <p className="mt-1 text-base sm:text-lg font-medium leading-[28px]   h-[40px] text-[#8E8E8E]">
-                    Security Engagements
-                  </p>
+                    <p className="mt-1 text-base sm:text-lg font-medium leading-[28px]   h-[40px] text-[#8E8E8E]">
+                      Security Engagements
+                    </p>
 
-                  <p className="mt-2 text-sm sm:text-[16px] font-medium leading-[27px] text-[#FFFFFF]">
-                    Across industries worldwide
-                  </p>
+                    <p className="mt-2 text-sm sm:text-[16px] font-medium leading-[27px] text-[#FFFFFF]">
+                      Across industries worldwide
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </AnimatedCard>
 
               {/* Stat 2 */}
-              <div className="relative border-t border-[#4F5051] px-0 py-6 md:px-8 sm:border-t-0 lg:px-12 lg:py-0">
-                {/* Desktop Divider */}
-                <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#4F5051] lg:block" />
+              <AnimatedCard delay={0.5}>
+                <div className="relative border-t border-[#4F5051] px-0 py-6 md:px-8 sm:border-t-0 lg:px-12 lg:py-0">
+                  {/* Desktop Divider */}
+                  <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#4F5051] lg:block" />
 
-                <div className="flex flex-col justify-between gap-1">
-                  <p className="text-base sm:text-lg lg:text-xl font-semibold text-[#0F66EA]">
-                    20+
-                  </p>
+                  <div className="flex flex-col justify-between gap-1">
+                    <p className="text-base sm:text-lg lg:text-xl font-semibold text-[#0F66EA]">
+                      20+
+                    </p>
 
-                  <p className="mt-1  text-base sm:text-lg font-medium leading-[30px] h-[40px]  text-[#999999]">
-                    Industry Verticals
-                  </p>
+                    <p className="mt-1  text-base sm:text-lg font-medium leading-[30px] h-[40px]  text-[#999999]">
+                      Industry Verticals
+                    </p>
 
-                  <p className="mt-2 text-[16px] font-medium leading-[27px] text-white">
-                    Deep domain expertise
-                  </p>
+                    <p className="mt-2 text-[16px] font-medium leading-[27px] text-white">
+                      Deep domain expertise
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </AnimatedCard>
 
               {/* Stat 3 */}
-              <div className="relative border-t border-[#4F5051]  px-0 py-6 md:px-8 sm:border-t-0 lg:px-12 lg:py-0">
-                {/* Desktop Divider */}
-                <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#4F5051] lg:block" />
+              <AnimatedCard delay={0.8}>
+                <div className="relative border-t border-[#4F5051]  px-0 py-6 md:px-8 sm:border-t-0 lg:px-12 lg:py-0">
+                  {/* Desktop Divider */}
+                  <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#4F5051] lg:block" />
 
-                <div className="flex flex-col justify-between gap-2">
-                  <p className="text-base sm:text-lg lg:text-xl font-semibold  text-[#0F66EA]">
-                    15+
-                  </p>
+                  <div className="flex flex-col justify-between gap-2">
+                    <p className="text-base sm:text-lg lg:text-xl font-semibold  text-[#0F66EA]">
+                      15+
+                    </p>
 
-                  <p className="text-base sm:text-lg font-mediumleading-[30px] h-[40px]  text-[#999999]">
-                    Years of Cybersecurity Excellence
-                  </p>
+                    <p className="text-base sm:text-lg font-mediumleading-[30px] h-[40px]  text-[#999999]">
+                      Years of Cybersecurity Excellence
+                    </p>
 
-                  <p className="mt-2 text-[16px] font-medium leading-[27px] text-white">
-                    Proven track record
-                  </p>
+                    <p className="mt-2 text-[16px] font-medium leading-[27px] text-white">
+                      Proven track record
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </AnimatedCard>
 
               {/* Stat 4 */}
-              <div className="relative border-t border-[#4F5051]  px-0 py-6 md:border-t-0 md:px-8 lg:px-12 lg:py-0">
-                {/* Desktop Divider */}
-                <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#4F5051] lg:block" />
+              <AnimatedCard delay={1.2}>
+                <div className="relative border-t border-[#4F5051]  px-0 py-6 md:border-t-0 md:px-8 lg:px-12 lg:py-0">
+                  {/* Desktop Divider */}
+                  <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#4F5051] lg:block" />
 
-                <div className="flex flex-col justify-between">
-                  <p className="text-base sm:text-lg lg:text-xl font-semibold  text-[#0F66EA]">
-                    99%
-                  </p>
+                  <div className="flex flex-col justify-between">
+                    <p className="text-base sm:text-lg lg:text-xl font-semibold  text-[#0F66EA]">
+                      99%
+                    </p>
 
-                  <p className="mt-1  text-base sm:text-lg font-medium leading-[30px]  h-[40px]  text-[#999999]">
-                    Client Satisfaction
-                  </p>
+                    <p className="mt-1  text-base sm:text-lg font-medium leading-[30px]  h-[40px]  text-[#999999]">
+                      Client Satisfaction
+                    </p>
 
-                  <p className="mt-2 text-[16px] font-medium leading-[27px] text-white">
-                    Long-term partnerships
-                    <br />
-                    built on trust
-                  </p>
+                    <p className="mt-2 text-[16px] font-medium leading-[27px] text-white">
+                      Long-term partnerships
+                      <br />
+                      built on trust
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </AnimatedCard>
             </div>
           </div>
         </div>
@@ -430,13 +442,14 @@ export default function Home() {
       <div className="bg-[#060D1B]">
         <div className="mx-auto max-w-7xl  py-14">
           {/* Heading */}
-          <div className="px-6 sm:px-10 ">
-            <Animation>
-              <h2 className="text-center text-[20px] font-medium leading-[27px] tracking-[1.3px] text-[#7E93B4]">
-                TRUSTED BY LEADING ORGANIZATIONS
-              </h2>
-            </Animation>
-          </div>
+          <Animation>
+            <div className="px-6 sm:px-10 ">
+              <WordReveal
+                text="TRUSTED BY LEADING ORGANIZATIONS"
+                className="text-center text-[20px] font-medium leading-[27px] tracking-[1.3px] text-[#7E93B4] animate-hero-reveal"
+              ></WordReveal>
+            </div>
+          </Animation>
         </div>
         {/*logos */}
         <div className="pb-10 overflow-hidden">
@@ -1263,7 +1276,7 @@ export default function Home() {
           </Animation>
 
           {/* Bottom Impact Cards */}
-          <Animation>
+          <AnimatedCard>
             <div className="mt-4 grid grid-cols-1 gap-5 py-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
               {impactCards.map((card, index) => (
                 <div
@@ -1312,7 +1325,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </Animation>
+          </AnimatedCard>
         </div>
       </div>
       <HomeCTA />

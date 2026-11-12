@@ -17,7 +17,7 @@ import frame3 from "../../../assets/services/Frame3.png";
 import frame4 from "../../../assets/services/Frame4.png";
 import frame5 from "../../../assets/services/Frame5.png";
 import FAQSection from "../../../components/sections/FAQSection";
-import { Animation, LeftAnimation, WordReveal } from "../../../components/ui/Animation";
+import { AnimatedCard, Animation, LeftAnimation, WordReveal } from "../../../components/ui/Animation";
 import { redTeamAssessment } from "../../../services/api/contact";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
@@ -130,19 +130,19 @@ export default function RedTeamAssessmentPage() {
                 </p>
 
                 {/* Heading */}
-                <h1 className="mt-5 lg:max-w-[430px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left">
+                <h1 className="mt-5 lg:max-w-[430px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{animationDelay:"600ms"}}>
                   Red Team Assessment Services
                 </h1>
 
                 {/* Description */}
-                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left">
+                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{animationDelay:"800ms"}}>
                   Test your defenses against sophisticated attackers. ISECURION
                   helps identify gaps, simulate attacks, and improve security
                   posture across people, processes, and technology.
                 </p>
 
-                {/* CTA */}
-                <div className="mt-6 text-center lg:text-left">
+                {/* CTA
+                <div className="mt-6 text-center lg:text-left animate-hero-reveal" style={{animationDelay:"900ms"}}>
                   <Link href="/company/contact">
                   <button
                     type="button"
@@ -155,12 +155,12 @@ export default function RedTeamAssessmentPage() {
                     </span>
                   </button>
                   </Link>
-                </div>
+                </div> */}
 
                 {/* ==================== STATS ==================== */}
                 <div className="mt-9 grid lg:max-w-[380px] grid-cols-3 lg:grid-cols-2 gap-x-10 gap-y-6 text-center">
                   {/* 150+ */}
-                  <div>
+                  <div className="animate-hero-reveal" style={{animationDelay:"1100ms"}}>
                     <p className="text-[21px] font-semibold leading-none text-[#E24B4A] sm:text-[22px]">
                       150+
                     </p>
@@ -171,7 +171,7 @@ export default function RedTeamAssessmentPage() {
                   </div>
 
                   {/* 30+ */}
-                  <div>
+                  <div className="animate-hero-reveal" style={{animationDelay:"1300ms"}}>
                     <p className="text-[21px] font-semibold leading-none text-[#E24B4A] sm:text-[22px]">
                       30+
                     </p>
@@ -182,7 +182,7 @@ export default function RedTeamAssessmentPage() {
                   </div>
 
                   {/* 100% */}
-                  <div>
+                  <div className="animate-hero-reveal" style={{animationDelay:"1400ms"}}>
                     <p className="text-[21px] font-semibold leading-none text-[#E24B4A] sm:text-[22px]">
                       100%
                     </p>
@@ -392,7 +392,7 @@ export default function RedTeamAssessmentPage() {
             </WordReveal>
 
             {/* Description */}
-            <p className="mx-auto mt-7  text-[15px] font-normal leading-[1.8] text-[#C7C7CB] sm:text-[16px] lg:text-[20px]">
+            <p className="mx-auto mt-7  text-[15px] font-normal leading-[1.8] text-[#C7C7CB] sm:text-[16px] lg:text-[20px] animate-hero-reveal" style={{animationDelay:"800ms"}}>
               ISECURION proposes a Red Team Assessment Solution based on
               real-life attack scenarios to test security controls that could be
               bypassed by a threat actor.
@@ -403,7 +403,7 @@ export default function RedTeamAssessmentPage() {
           <Animation>
             <div className="relative z-10 mt-16 grid grid-cols-1 sm:grid-cols-2 lg:mt-[78px] lg:grid-cols-4">
               {/* ==================== OBJECTIVE 01 ==================== */}
-              <div className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6">
+              <div className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6 animate-hero-reveal" style={{animationDelay:"1000ms"}}>
                 {/* Vertical Divider */}
                 <div className="absolute left-0 top-0 hidden  w-[1.03px] bg-[#E24B4A2B] h-[167px] sm:block" />
 
@@ -434,7 +434,7 @@ export default function RedTeamAssessmentPage() {
               </div>
 
               {/* ==================== OBJECTIVE 02 ==================== */}
-              <div className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6">
+              <div className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6 animate-hero-reveal" style={{animationDelay:"1200ms"}}>
                 {/* Vertical Divider */}
                 <div className="absolute left-0 top-0 hidden w-[1.03px] bg-[#E24B4A2B] h-[167px] sm:block" />
 
@@ -465,7 +465,7 @@ export default function RedTeamAssessmentPage() {
               </div>
 
               {/* ==================== OBJECTIVE 03 ==================== */}
-              <div className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6">
+              <div className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6 animate-hero-reveal" style={{animationDelay:"1400ms"}}>
                 {/* Vertical Divider */}
                 <div className="absolute left-0 top-0 hidden w-[1.03px] bg-[#E24B4A2B] h-[167px] sm:block" />
 
@@ -496,7 +496,7 @@ export default function RedTeamAssessmentPage() {
               </div>
 
               {/* ==================== OBJECTIVE 04 ==================== */}
-              <div className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6">
+              <div className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6 animate-hero-reveal" style={{animationDelay:"1600ms"}}>
                 {/* Vertical Divider */}
                 <div className="absolute left-0 top-0 hidden w-[1.03px] bg-[#E24B4A2B] h-[167px] sm:block" />
 
@@ -554,19 +554,19 @@ export default function RedTeamAssessmentPage() {
                 </p>
 
                 {/* Heading */}
-                <h2 className="mt-4 font-normal leading-[1.5] tracking-[-0.02em] text-white text-center lg:text-left">
-                  The Attack Surface,{""}
-                  <span className="block text-[#E24B4A]">Fully Tested.</span>
+                <h2 className="mt-4 font-normal leading-[1.5] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{animationDelay:"500ms"}}>
+                  <WordReveal as="span" text="The Attack Surface,"></WordReveal>{""}
+                  <span className="block text-[#E24B4A]"><WordReveal as="span" text="Fully Tested."></WordReveal></span>
                 </h2>
 
                 {/* Description */}
                 <div className="mt-6 space-y-4 text-[15px] leading-[1.8] text-[#D1D1D1] sm:text-[17px] lg:text-[16px] text-center lg:text-left">
-                  <p className="sectionDescription">
+                  <p className="sectionDescription animate-hero-reveal" style={{animationDelay:"550ms"}}>
                     Key activities carried out during the Red Team Assessment to
                     evaluate your security posture.
                   </p>
 
-                  <p className="sectionDescription">
+                  <p className="sectionDescription animate-hero-reveal" style={{animationDelay:"680ms"}}>
                     From technical systems to people, wireless, and physical
                     environments.
                     <br className="hidden sm:block" />
@@ -584,6 +584,7 @@ export default function RedTeamAssessmentPage() {
           <div className="relative mx-auto max-w-7xl px-7 py-14 sm:px-10 sm:py-16 lg:px-7 lg:py-[76px] xl:px-8 items-center ">
             <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-10 lg:grid-cols-5 lg:gap-x-14 ">
               {/* ==================== OPEN SOURCE INTELLIGENCE ==================== */}
+              <AnimatedCard delay={0.2}>
               <div className="min-w-0">
                 <div className="relative h-[30px] w-[30px]">
                   <span className="absolute bottom-0 right-1 h-[18px] w-[18px] rounded-full bg-[#232930]" />
@@ -603,8 +604,10 @@ export default function RedTeamAssessmentPage() {
                   your exposure.
                 </p>
               </div>
+              </AnimatedCard>
 
               {/* ==================== NETWORK ATTACKS ==================== */}
+              <AnimatedCard delay={0.4}>
               <div className="min-w-0">
                 <div className="relative h-[30px] w-[30px]">
                   <span className="absolute bottom-0 right-1 h-[18px] w-[18px] rounded-full bg-[#232930]" />
@@ -624,8 +627,10 @@ export default function RedTeamAssessmentPage() {
                   in your infrastructure.
                 </p>
               </div>
+              </AnimatedCard>
 
               {/* ==================== WIRELESS & ENDPOINT ==================== */}
+              <AnimatedCard delay={0.6}>
               <div className="min-w-0">
                 <div className="relative h-[30px] w-[30px]">
                   <span className="absolute bottom-0 right-1 h-[18px] w-[18px] rounded-full bg-[#232930]" />
@@ -645,8 +650,10 @@ export default function RedTeamAssessmentPage() {
                   opportunities.
                 </p>
               </div>
+              </AnimatedCard>
 
               {/* ==================== COVERT TECHNIQUES ==================== */}
+              <AnimatedCard delay={0.8}>
               <div className="min-w-0">
                 <div className="relative h-[30px] w-[30px]">
                   <span className="absolute bottom-0 right-1 h-[18px] w-[18px] rounded-full bg-[#232930]" />
@@ -666,8 +673,10 @@ export default function RedTeamAssessmentPage() {
                   threats.
                 </p>
               </div>
+              </AnimatedCard>
 
               {/* ==================== PHYSICAL SECURITY ==================== */}
+              <AnimatedCard delay={1}>
               <div className="min-w-0">
                 <div className="relative h-[30px] w-[30px]">
                   <span className="absolute bottom-0 right-1 h-[18px] w-[18px] rounded-full bg-[#232930]" />
@@ -687,6 +696,7 @@ export default function RedTeamAssessmentPage() {
                   device detection.
                 </p>
               </div>
+              </AnimatedCard>
             </div>
 
             {/* Divider */}
@@ -1109,11 +1119,11 @@ export default function RedTeamAssessmentPage() {
                 </p>
 
                 <h2 className="mt-[10px] text-[30px] font-normal leading-[1.25] text-white sm:text-[36px] lg:text-[34px]">
-                  Built around the{" "}
-                  <span className="text-[#E24B4A]">Real Adversary</span>
+                  <WordReveal as="span" text="Built around the"></WordReveal>{" "}
+                  <span className="text-[#E24B4A]"><WordReveal as="span" text="Real Adversary"></WordReveal></span>
                 </h2>
 
-                <p className="mx-auto mt-[18px] max-w-[700px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px]">
+                <p className="mx-auto mt-[18px] max-w-[700px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] animate-hero-reveal" style={{animationDelay:"700ms"}}>
                   Beyond identifying vulnerabilities, we provide the
                   intelligence, validation, and guidance needed to strengthen
                   your defenses against real-world attack scenarios.
@@ -1124,6 +1134,7 @@ export default function RedTeamAssessmentPage() {
 
           <Animation>
             <div className="mt-[46px] grid grid-cols-1 sm:grid-cols-3 px-16 pb-16">
+              <AnimatedCard delay={0.4}>
               <div className="relative min-h-[309px] bg-[#050B18] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[30px]">
                 <div className="text-white">
                   <Icon icon="boxicons:vector-square" className="text-[36px]" />
@@ -1140,7 +1151,9 @@ export default function RedTeamAssessmentPage() {
                   </p>
                 </div>
               </div>
+              </AnimatedCard>
 
+              <AnimatedCard delay={0.8}>
               <div className="relative min-h-[309px] bg-[#08142D] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[25px]">
                 <div className="text-white">
                   <Icon
@@ -1160,7 +1173,9 @@ export default function RedTeamAssessmentPage() {
                   </p>
                 </div>
               </div>
+              </AnimatedCard>
 
+              <AnimatedCard delay={1}>
               <div className="relative min-h-[309px] bg-[#170404] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[28px]">
                 <div className="text-white">
                   <Icon
@@ -1180,6 +1195,7 @@ export default function RedTeamAssessmentPage() {
                   </p>
                 </div>
               </div>
+              </AnimatedCard>
             </div>
           </Animation>
         </div>
@@ -1322,6 +1338,7 @@ export default function RedTeamAssessmentPage() {
 
               <div className="relative z-10 grid grid-cols-5">
                 {/* 1. Executive Summary */}
+                <AnimatedCard delay={0.2}>
                 <div className="flex flex-col items-center text-center">
                   <div className="relative flex h-[136px] w-[136px] items-center justify-center">
                     {/* Hide connector behind the transparent center */}
@@ -1340,13 +1357,15 @@ export default function RedTeamAssessmentPage() {
                       Executive Summary
                     </h3>
 
-                    <p className="mx-auto mt-5 max-w-[220px] text-[16px] leading-[1.9] text-[#D1D1D1]">
+                    <p className="mx-auto mt-5 max-w-[220px] text-[16px] leading-[1.9] text-[#D1D1D1] animate-hero-reveal" style={{animationDelay:"1300ms"}}>
                       High-level findings for leadership with risk overview and
                       strategic recommendations.
                     </p>
                   </div>
                 </div>
+                </AnimatedCard>
 
+                <AnimatedCard delay={0.4}>
                 {/* 2. Technical Report */}
                 <div className="flex flex-col items-center text-center">
                   <div className="relative flex h-[136px] w-[136px] items-center justify-center">
@@ -1364,14 +1383,16 @@ export default function RedTeamAssessmentPage() {
                       Technical Report
                     </h3>
 
-                    <p className="mx-auto mt-5 max-w-[180px] text-[16px] leading-[1.9] text-[#D1D1D1]">
+                    <p className="mx-auto mt-5 max-w-[180px] text-[16px] leading-[1.9] text-[#D1D1D1] animate-hero-reveal" style={{animationDelay:"1300ms"}}>
                       Detailed attack paths, vulnerabilities discovered,
                       exploitation steps, and evidence.
                     </p>
                   </div>
                 </div>
+                </AnimatedCard>
 
                 {/* 3. Remediation Guidance */}
+                <AnimatedCard delay={0.6}>
                 <div className="flex flex-col items-center text-center">
                   <div className="relative flex h-[136px] w-[136px] items-center justify-center">
                     <div className="absolute z-10 h-[75px] w-[75px] rotate-45 bg-[#050B18]" />
@@ -1388,14 +1409,16 @@ export default function RedTeamAssessmentPage() {
                       Remediation Guidance
                     </h3>
 
-                    <p className="mx-auto mt-5 max-w-[200px] text-[16px] leading-[1.9] text-[#D1D1D1]">
+                    <p className="mx-auto mt-5 max-w-[200px] text-[16px] leading-[1.9] text-[#D1D1D1] animate-hero-reveal" style={{animationDelay:"1300ms"}}>
                       Actionable steps to mitigate risks, strengthen defenses,
                       &amp; improve security posture.
                     </p>
                   </div>
                 </div>
+                </AnimatedCard>
 
                 {/* 4. Defense Evaluation */}
+                <AnimatedCard delay={0.8}>
                 <div className="flex flex-col items-center text-center">
                   <div className="relative flex h-[136px] w-[206px] items-center justify-center">
                     <div className="absolute z-10 h-[75px] w-[75px] rotate-45 bg-[#050B18]" />
@@ -1412,13 +1435,15 @@ export default function RedTeamAssessmentPage() {
                       Defense Evaluation
                     </h3>
 
-                    <p className="mx-auto mt-5 max-w-[170px] text-[16px] leading-[1.9] text-[#D1D1D1]">
+                    <p className="mx-auto mt-5 max-w-[170px] text-[16px] leading-[1.9] text-[#D1D1D1] animate-hero-reveal" style={{animationDelay:"1300ms"}}>
                       Assessment of SOC, detection, and response capabilities.
                     </p>
                   </div>
                 </div>
+                </AnimatedCard>
 
                 {/* 5. Team Debrief */}
+                <AnimatedCard delay={1}>
                 <div className="flex flex-col items-center text-center">
                   <div className="relative flex h-[136px] w-[136px] items-center justify-center">
                     <div className="absolute z-10 h-[75px] w-[75px] rotate-45 bg-[#050B18]" />
@@ -1435,12 +1460,13 @@ export default function RedTeamAssessmentPage() {
                       Team Debrief
                     </h3>
 
-                    <p className="mx-auto mt-5 max-w-[200px] text-[17px] leading-[1.9] text-[#D1D1D1]">
+                    <p className="mx-auto mt-5 max-w-[200px] text-[17px] leading-[1.9] text-[#D1D1D1] animate-hero-reveal" style={{animationDelay:"1000ms"}}>
                       Interactive session with your security and IT teams to
                       review findings and recommendations.
                     </p>
                   </div>
                 </div>
+                </AnimatedCard>
               </div>
             </div>
           </Animation>

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import smartcontractsecurity from "../../../assets/services/SmartContractSecurity.png";
-import {
+import WordReveal, {
   Animation,
   AnimatedCard,
   LeftAnimation,
@@ -200,20 +200,20 @@ function SmartContractSecurity() {
             <div className="flex-1 space-y-4 text-center md:text-left">
               <p
                 className="text-sm sm:text-base font-semibold uppercase sectionheading text-[#0F66EA] opacity-0 animate-hero-reveal"
-                style={{ animationDelay: "150ms" }}
+                style={{ animationDelay: "300ms" }}
               >
                 Smart Contract Security Audit
               </p>
               <h1
                 className=" text-[#FFFFFF] md:max-w-[600px]  opacity-0 animate-hero-reveal"
-                style={{ animationDelay: "300ms" }}
+                style={{ animationDelay: "550ms" }}
               >
                 Secure your smart contracts before vulnerabilities become
                 financial risks.
               </h1>
               <p
                 className="font-medium text-[#D9D9D9] md:max-w-[500px] opacity-0 animate-hero-reveal sectionDescription"
-                style={{ animationDelay: "450ms" }}
+                style={{ animationDelay: "750ms" }}
               >
                 ISECURION audits smart contracts to identify vulnerabilities,
                 validate functionality, and strengthen security across
@@ -222,7 +222,7 @@ function SmartContractSecurity() {
               <Link href="/company/contact">
               <button
                 className="mt-8 mx-auto md:mx-0 text-[15px] font-medium px-4 py-3 flex items-center justify-center gap-2 rounded-[10px] cursor-pointer text-[#31435C] bg-white opacity-0 animate-hero-reveal"
-                style={{ animationDelay: "600ms" }}
+                style={{ animationDelay: "900ms" }}
               >
                 Secure Your Smart Contract
                 <span>
@@ -245,10 +245,10 @@ function SmartContractSecurity() {
                 WHY SMART CONTRACT SECURITY?
               </p>
               <h2 className="mt-3  text-white ">
-                Protect the code behind <br /> your digital assets.
+                <WordReveal as="span" text="Protect the code behind" ></WordReveal><br /><WordReveal as="span" text="your digital assets."></WordReveal> 
               </h2>
 
-              <p className="mt-6 md:max-w-[480px]  text-[#D1D1D1] sectionDescription">
+              <p className="mt-6 md:max-w-[480px]  text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{ animationDelay: "600ms" }}>
                 Smart contracts directly control critical blockchain operations
                 and can introduce significant financial and security risks when
                 vulnerabilities go undetected.
@@ -264,7 +264,7 @@ function SmartContractSecurity() {
               </p>
 
               <ul className="mt-4 space-y-2">
-                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[15px]">
+                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[15px] animate-hero-reveal" style={{animationDelay:"500ms"}}>
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -272,7 +272,7 @@ function SmartContractSecurity() {
                   Reduce Financial Risk
                 </li>
 
-                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[15px]">
+                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[15px] animate-hero-reveal" style={{animationDelay:"600ms"}}>
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -280,7 +280,7 @@ function SmartContractSecurity() {
                   Protect User Funds
                 </li>
 
-                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[15px]">
+                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[15px] animate-hero-reveal" style={{ animationDelay: "700ms" }}>
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -288,7 +288,7 @@ function SmartContractSecurity() {
                   Build Trust
                 </li>
 
-                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[15px]">
+                <li className="flex items-center justify-center md:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[15px] animate-hero-reveal" style={{animationDelay:"800ms"}}>
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
