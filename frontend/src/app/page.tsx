@@ -319,20 +319,23 @@ export default function Home() {
             className="flex flex-col justify-center lg:justify-start sm:flex-row gap-3 py-4 opacity-0 animate-hero-reveal"
             style={{ animationDelay: "600ms" }}
           >
-            <Animation>
-              <button className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1] animate-hero-reveal" style={{ animationDelay: "1200ms" }}>
-                <Link href="/company/contact">Schedule a Consultation </Link>
-                <span>
-                  <Icon icon="mdi:arrow-right" width={20} />
-                </span>
-              </button>
-            </Animation>
-            <Animation>
-              <button className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29] animate-hero-reveal" style={{ animationDelay: "1400ms" }}>
-                <span></span>
-                Explore services ›
-              </button>
-            </Animation>
+            <button className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1]">
+              <Link href="/company/contact">Schedule a Consultation </Link>
+              <span>
+                <Icon icon="mdi:arrow-right" width={20} />
+              </span>
+            </button>
+            <button
+              onClick={() =>
+                document
+                  .getElementById("services")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
+              }
+              className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29]"
+            >
+              <span></span>
+              Explore services ›
+            </button>
           </div>
         </div>
       </section>
@@ -542,7 +545,10 @@ export default function Home() {
                           business disruptions.
                         </p>
 
-                        <button className="ml-auto flex w-[40px] shrink-0 lg:shrink items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between">
+                        <Link
+                          href="services/phishing-simulation"
+                          className="ml-auto flex w-[40px] shrink-0 lg:shrink items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
+                        >
                           <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
                             Explore Risk Identification
                           </span>
@@ -551,7 +557,7 @@ export default function Home() {
                             icon="akar-icons:arrow-up-right"
                             className="shrink-0"
                           />
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -576,7 +582,10 @@ export default function Home() {
                           identities and infrastructure.
                         </p>
 
-                        <button className="ml-auto flex w-[40px] shrink-0 lg:shrink  items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between">
+                        <Link
+                          href="services/vapt"
+                          className="ml-auto flex w-[40px] shrink-0 lg:shrink  items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
+                        >
                           <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
                             Explore Continuous Validation
                           </span>
@@ -585,7 +594,7 @@ export default function Home() {
                             icon="akar-icons:arrow-up-right"
                             className="shrink-0"
                           />
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -614,7 +623,10 @@ export default function Home() {
                           measurable resilience.
                         </p>
 
-                        <button className="ml-auto flex w-[40px] items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between">
+                        <Link
+                          href="services/continuous-breach-attack-simulation"
+                          className="ml-auto flex w-[40px] items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
+                        >
                           <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
                             Explore Offensive Security
                           </span>
@@ -623,7 +635,7 @@ export default function Home() {
                             icon="akar-icons:arrow-up-right"
                             className="shrink-0"
                           />
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -648,7 +660,10 @@ export default function Home() {
                           customer trust and confidence.
                         </p>
 
-                        <button className="ml-auto flex w-[40px] shrink-0 lg:shrink items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between">
+                        <Link
+                          href="services/aadhar-audit"
+                          className="ml-auto flex w-[40px] shrink-0 lg:shrink items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
+                        >
                           <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
                             Explore Compliance & Trust
                           </span>
@@ -657,7 +672,7 @@ export default function Home() {
                             icon="akar-icons:arrow-up-right"
                             className="shrink-0"
                           />
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>

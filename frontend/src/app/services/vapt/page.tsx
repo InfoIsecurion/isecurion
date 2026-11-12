@@ -17,7 +17,6 @@ import Link from "next/link";
 import FAQSection from "../../../components/sections/FAQSection";
 import VAPT_CTA from "../../../components/sections/VAPT_CTA";
 
-
 const vapt = [
   {
     no: "500+",
@@ -586,20 +585,20 @@ function Vapt() {
           <Animation>
             <div className="relative flex flex-wrap gap-4 items-center justify-center ">
               <Link href="#services">
-              <button className="flex items-center gap-2.5 px-6 py-3.5 rounded-lg cursor-pointer text-base font-semibold text-white border-2 border-[#3263B1] bg-gradient-to-r from-[#29559D] to-[#1C3D70]">
-                Explore VAPT Services{""}
-                <span>
-                  <Icon icon="ep:right" className="text-lg" />
-                </span>
-              </button>
+                <button className="flex items-center gap-2.5 px-6 py-3.5 rounded-lg cursor-pointer text-base font-semibold text-white border-2 border-[#3263B1] bg-gradient-to-r from-[#29559D] to-[#1C3D70]">
+                  Explore VAPT Services{""}
+                  <span>
+                    <Icon icon="ep:right" className="text-lg" />
+                  </span>
+                </button>
               </Link>
               <Link href="/company/contact">
-              <button className="flex items-center gap-2.5 px-6 py-3.5 rounded-[10px] cursor-pointer text-base font-semibold text-[#31435C] border border-[#FFFFFF29] bg-[#FFFFFF]  transition duration-200">
-                Request a Consultation{""}
-                <span>
-                  <Icon icon="ep:right" className="text-lg" />
-                </span>
-              </button>
+                <button className="flex items-center gap-2.5 px-6 py-3.5 rounded-[10px] cursor-pointer text-base font-semibold text-[#31435C] border border-[#FFFFFF29] bg-[#FFFFFF]  transition duration-200">
+                  Request a Consultation{""}
+                  <span>
+                    <Icon icon="ep:right" className="text-lg" />
+                  </span>
+                </button>
               </Link>
             </div>
           </Animation>
@@ -687,16 +686,19 @@ function Vapt() {
                 </p>
               </div>
 
-              <Link href="#methodology">
-              <button className="flex gap-2 text-[16px] font-semibold w-fit z-20 py-3 px-4 items-center justify-center rounded-lg cursor-pointer bg-gradient-to-r text-white  from-[#29559D] to-[#1C3D70] border-2 border-[#3263B1] "
+              <button
+                onClick={() => {
+                  document
+                    .getElementById("methodology")
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                className="flex gap-2 text-[16px] font-semibold w-fit z-20 py-3 px-4 items-center justify-center rounded-lg cursor-pointer bg-gradient-to-r text-white  from-[#29559D] to-[#1C3D70] border-2 border-[#3263B1] "
               >
                 Explore Our Methodology
                 <span>
                   <Icon icon="ep:right" width={20} />{" "}
                 </span>
               </button>
-              </Link>
-              
             </div>
             {/* second  */}
             <div className="flex-2  grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -752,12 +754,12 @@ function Vapt() {
           </Animation>
           <Animation>
             <div className="mt-10">
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-5 gap-y-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-5 gap-y-12">
                 {services.map((item, index) => (
                   <AnimatedCard
                     key={index}
                     delay={index * 0.15}
-                    className={` relative flex flex-col justify-between p-5 rounded-lg bg-[#000726] shadow-2xl shadow-[#8997BA26] ${index === 9 ? "w-full lg:col-span-3" : "col-span-1"}`}
+                    className={`relative flex flex-col justify-between p-5 rounded-lg bg-[#000726] shadow-2xl shadow-[#8997BA26] ${index === 9 ? "w-full lg:col-span-3" : "col-span-1"}`}
                   >
                     <div className="absolute -top-8 right-0 w-13 h-13  flex flex-col items-center justify-center rounded-xl  border-[3px] border-[#B6D1F5] bg-[#3B9E6A]">
                       <Icon
@@ -793,7 +795,7 @@ function Vapt() {
                         <div className="flex justify-end items-end">
                           <Link
                             href="https://vulnytics.isecurion.com"
-                            className="text-[15px] font-medium px-3 py-3 rounded-[10px] cursor-pointer text-[#FFFFFF] border-2 border-[#0F66EA] bg-linear-to-r from-[#3263B1]  via-[#29559D] to-[#1C3D70]  shadow-[#0F66EA14]"
+                            className="text-[15px] font-medium px-3 py-3 rounded-[10px] cursor-pointer text-[#FFFFFF]  bg-gradient-to-r   from-[#29559D] to-[#1C3D70] border-2 border-[#3263B1] "
                           >
                             {item.product}
                           </Link>
@@ -809,7 +811,10 @@ function Vapt() {
       </section>
 
       {/* A proven methodology for finding what matters.  */}
-      <section id="methodology" className="w-full py-14 relative bg-[#060D1B] overflow-hidden">
+      <section
+        id="methodology"
+        className="w-full py-14 relative bg-[#060D1B] overflow-hidden"
+      >
         <div className="w-[200px] h-[200px] absolute -top-10 right-0 opacity-8">
           <Image src={settingImage} alt="setting" />
         </div>
@@ -858,15 +863,15 @@ function Vapt() {
                       </div>
                     )}
 
-                    {index !== steps.length - 1 && (
+                    {/* {index !== steps.length - 1 && (
                       <div className=" lg:hidden absolute top-[68px] bottom-[-20px] left-1/2 -translate-x-1/2 w-px bg-[#7D70F0]">
                         <div className=" absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#3B82F6] border border-[#A5B4FC]" />
                       </div>
-                    )}
+                    )} */}
                   </div>
 
                   <div
-                    className={`min-h-[300px] p-2 border-[#34405399] ${index !== steps.length - 1 ? "border-r" : ""}`}
+                    className={`min-h-[300px] p-2 sm:border-[#34405399] ${index !== steps.length - 1 ? "border-r" : ""}`}
                   >
                     <div className="h-[100px]  flex flex-col justify-between">
                       <h3 className=" text-base md:text-lg font-medium text-[#FEFEFE]">
@@ -958,14 +963,14 @@ function Vapt() {
               viewport={{ once: true }}
               className="flex-1 rounded-[26px] bg-[#1D1E2AB2] border border-gray-800"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-4 gap-y-6 w-full p-4 ">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-6 w-full p-4 ">
                 {locations.map((item, index) => {
                   const isLastColumn = (index + 1) % 4 === 0;
                   const isLastRow = index >= locations.length - 4;
                   return (
                     <div key={index}>
                       <div
-                        className={`space-y-3 p-3 flex flex-col items-center ${!isLastColumn ? "border-r border-[#242A3B]" : ""} `}
+                        className={`space-y-3 p-3 flex flex-col items-center ${!isLastColumn ? "sm:border-r border-[#242A3B]" : ""} `}
                       >
                         {/* <Icon
                           icon={item.Icon}
@@ -974,7 +979,7 @@ function Vapt() {
 
                         <GradientIcon Icon={item.Icon} />
 
-                        <h3 className="text-base md:text-lg font-normal text-[#D1D1D1]">
+                        <h3 className="text-sm md:text-base font-normal text-[#D1D1D1]">
                           {item.location}
                         </h3>
                         {!isLastRow && (
@@ -1005,12 +1010,12 @@ function Vapt() {
               </p>
             </div>
             <div className="w-full flex-2 ">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                 {globalLocations.map((item, index) => (
                   <AnimatedCard
                     key={index}
                     delay={index * 0.15}
-                    className={`w-[150px] flex flex-col items-center gap-3 px-3 ${index !== globalLocations.length - 1 ? "border-[#2B3756] border-r" : ""}`}
+                    className={`w-[150px] flex flex-col items-center gap-3 px-3 ${index !== globalLocations.length - 1 ? "border-[#2B3756] sm:border-r" : ""}`}
                   >
                     <GradientIcon Icon={item.Icon} />
 
@@ -1165,7 +1170,7 @@ function Vapt() {
                     VAPT for every industry, <br />
                     <span className="text-[#0F66EA]">every stage.</span>
                   </h2>
-                  <p className="text-sm font-normal mt-3 max-w-md leading-[24px] text-[#D1D1D1]">
+                  <p className="text-sm font-normal mt-3 lg:max-w-md leading-[24px] text-[#D1D1D1]">
                     VAPT is essential for organizations operating in India’s
                     digital economy. From SaaS and FinTech to healthcare and
                     manufacturing, it helps businesses strengthen security, meet
@@ -1226,12 +1231,12 @@ function Vapt() {
                   ))}
                 </div>
                 <Link href="/services/soc-2-compliance">
-                <p className="text-sm font-medium flex items-center gap-3 justify-center  mt-4 text-[#0F66EA]">
-                  Explore SOC 2 + VAPT bundled services {""}
-                  <span>
-                    <Icon icon="akar-icons:arrow-right" />
-                  </span>
-                </p>
+                  <p className="text-sm font-medium flex items-center gap-3 justify-center  mt-4 text-[#0F66EA]">
+                    Explore SOC 2 + VAPT bundled services {""}
+                    <span>
+                      <Icon icon="akar-icons:arrow-right" />
+                    </span>
+                  </p>
                 </Link>
               </div>
             </div>
