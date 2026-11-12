@@ -290,49 +290,49 @@ export default function Home() {
       >
         <div className="max-w-7xl w-full mx-auto px-6 sm:px-10">
           <div className="space-y-5 text-center lg:text-left">
-            <Animation>
-              <p className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading">
-                SECURING MODERN ENTERPRISES
-              </p>
-            </Animation>
-
-            <h1 className="text-transparent bg-clip-text bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2]">
-              <WordReveal as="span" text="Build for Trust" className="inline" />
-              <br />
-              <WordReveal
-                as="span"
-                text="Designed for Cyber Resilience."
-                className="inline"
-              />
+            <p
+              className="text-sm sm:text-base font-semibold text-[#0F66EA] opacity-0 animate-hero-reveal sectionheading"
+              style={{ animationDelay: "150ms" }}
+            >
+              SECURING MODERN ENTERPRISES
+            </p>
+            <h1
+              className="text-transparent bg-clip-text bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2] opacity-0 animate-hero-reveal"
+              style={{ animationDelay: "300ms" }}
+            >
+              Build for Trust <br /> Designed for Cyber Resilience.
             </h1>
 
-            <Animation>
-              <p className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-lg leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE]">
-                Helping organizations anticipate threats, reduce cyber risk, and
-                build lasting resilience through expert cybersecurity
-                consulting, continuous validation, and intelligent security
-                platforms.
-              </p>
-            </Animation>
+            <p
+              className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-lg leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] opacity-0 animate-hero-reveal"
+              style={{ animationDelay: "450ms" }}
+            >
+              Helping organizations anticipate threats, reduce cyber risk, and
+              build lasting resilience through expert cybersecurity consulting,
+              continuous validation, and intelligent security platforms.
+            </p>
           </div>
           <div
             className="flex flex-col justify-center lg:justify-start sm:flex-row gap-3 py-4 opacity-0 animate-hero-reveal"
             style={{ animationDelay: "600ms" }}
           >
-            <Animation>
-              <button className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1]">
-                <Link href="/company/contact">Schedule a Consultation </Link>
-                <span>
-                  <Icon icon="mdi:arrow-right" width={20} />
-                </span>
-              </button>
-            </Animation>
-            <Animation>
-              <button className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29]">
-                <span></span>
-                Explore services ›
-              </button>
-            </Animation>
+            <button className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1]">
+              <Link href="/company/contact">Schedule a Consultation </Link>
+              <span>
+                <Icon icon="mdi:arrow-right" width={20} />
+              </span>
+            </button>
+            <button
+              onClick={() =>
+                document
+                  .getElementById("services")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
+              }
+              className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29]"
+            >
+              <span></span>
+              Explore services ›
+            </button>
           </div>
         </div>
       </section>
@@ -532,7 +532,10 @@ export default function Home() {
                           business disruptions.
                         </p>
 
-                        <button className="ml-auto flex w-[40px] shrink-0 lg:shrink items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between">
+                        <Link
+                          href="services/phishing-simulation"
+                          className="ml-auto flex w-[40px] shrink-0 lg:shrink items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
+                        >
                           <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
                             Explore Risk Identification
                           </span>
@@ -541,7 +544,7 @@ export default function Home() {
                             icon="akar-icons:arrow-up-right"
                             className="shrink-0"
                           />
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -566,7 +569,10 @@ export default function Home() {
                           identities and infrastructure.
                         </p>
 
-                        <button className="ml-auto flex w-[40px] shrink-0 lg:shrink  items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between">
+                        <Link
+                          href="services/vapt"
+                          className="ml-auto flex w-[40px] shrink-0 lg:shrink  items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
+                        >
                           <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
                             Explore Continuous Validation
                           </span>
@@ -575,7 +581,7 @@ export default function Home() {
                             icon="akar-icons:arrow-up-right"
                             className="shrink-0"
                           />
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -604,7 +610,10 @@ export default function Home() {
                           measurable resilience.
                         </p>
 
-                        <button className="ml-auto flex w-[40px] items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between">
+                        <Link
+                          href="services/continuous-breach-attack-simulation"
+                          className="ml-auto flex w-[40px] items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
+                        >
                           <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
                             Explore Offensive Security
                           </span>
@@ -613,7 +622,7 @@ export default function Home() {
                             icon="akar-icons:arrow-up-right"
                             className="shrink-0"
                           />
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -638,7 +647,10 @@ export default function Home() {
                           customer trust and confidence.
                         </p>
 
-                        <button className="ml-auto flex w-[40px] shrink-0 lg:shrink items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between">
+                        <Link
+                          href="services/aadhar-audit"
+                          className="ml-auto flex w-[40px] shrink-0 lg:shrink items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
+                        >
                           <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
                             Explore Compliance & Trust
                           </span>
@@ -647,7 +659,7 @@ export default function Home() {
                             icon="akar-icons:arrow-up-right"
                             className="shrink-0"
                           />
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>

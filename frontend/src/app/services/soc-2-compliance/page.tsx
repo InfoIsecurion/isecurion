@@ -26,7 +26,6 @@ interface ContactFormData {
   turnstileToken: string;
 }
 
-
 const trustServices = [
   {
     title: "Security",
@@ -358,7 +357,7 @@ function SocCompliance() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-        "Something went wrong. Please try again.",
+          "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -402,7 +401,7 @@ function SocCompliance() {
                 </p>
 
                 {/* CTA */}
-                <div className="mt-6 text-center lg:text-left">
+                {/* <div className="mt-6 text-center lg:text-left">
                   <button
                     type="button"
                     className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3]"
@@ -412,7 +411,7 @@ function SocCompliance() {
                       <Icon icon="mdi:arrow-right"></Icon>
                     </span>
                   </button>
-                </div>
+                </div> */}
 
                 {/* ==================== STATS ==================== */}
                 <div className="mt-9 grid lg:max-w-[380px] grid-cols-3 lg:grid-cols-2 gap-x-10 gap-y-6 text-center lg:text-left">
@@ -492,7 +491,6 @@ function SocCompliance() {
                           {errors.email.message}
                         </p>
                       )}
-
                     </div>
 
                     <div>
@@ -563,7 +561,9 @@ function SocCompliance() {
                             required: "Country is required",
                           })}
                         >
-                          <option value="" disabled>Your City / Country</option>
+                          <option value="" disabled>
+                            Your City / Country
+                          </option>
 
                           <optgroup label="India">
                             <option value="Bangalore">Bangalore</option>
@@ -628,8 +628,8 @@ function SocCompliance() {
                         required
                         className={`h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none ${errors.target ? "border border-red-500" : "border-[1.14px] border-[#262D3D] "}`}
                         {...register("target", {
-                        required: "Target is required",
-                      })}
+                          required: "Target is required",
+                        })}
                       >
                         <option value="" disabled>
                           What's your target?
@@ -682,7 +682,6 @@ function SocCompliance() {
                         />
                       </div>
                     </div>
-
                   </div>
 
                   {/* Consent */}
@@ -829,14 +828,17 @@ function SocCompliance() {
                   <AnimatedCard
                     delay={index * 0.1}
                     key={location.name}
-                    className={`flex min-w-0 flex-col items-center justify-center gap-3 px-2 py-5 sm:py-6 ${index < 4
-                      ? "border-b border-[#FFFFFF0D] sm:border-b-0"
-                      : ""
-                      } ${index % 4 !== 3 ? "sm:border-r sm:border-[#FFFFFF05]" : ""
-                      } ${index % 2 === 0
+                    className={`flex min-w-0 flex-col items-center justify-center gap-3 px-2 py-5 sm:py-6 ${
+                      index < 4
+                        ? "border-b border-[#FFFFFF0D] sm:border-b-0"
+                        : ""
+                    } ${
+                      index % 4 !== 3 ? "sm:border-r sm:border-[#FFFFFF05]" : ""
+                    } ${
+                      index % 2 === 0
                         ? "border-r border-[#FFFFFF08] sm:border-r-0"
                         : ""
-                      } ${index >= 4 ? "sm:border-t sm:border-[#FFFFFF0D]" : ""}`}
+                    } ${index >= 4 ? "sm:border-t sm:border-[#FFFFFF0D]" : ""}`}
                   >
                     <GradientIcon Icon={location.Icon} />
 
@@ -878,18 +880,23 @@ function SocCompliance() {
                   <AnimatedCard
                     delay={index * 0.1}
                     key={region.code}
-                    className={`flex min-w-0 flex-col items-center justify-center px-2 py-5 text-center sm:px-3 lg:py-3 ${index % 2 === 0 ? "border-r border-[#243849]" : ""
-                      } ${index === 1 || index === 3
+                    className={`flex min-w-0 flex-col items-center justify-center px-2 py-5 text-center sm:px-3 lg:py-3 ${
+                      index % 2 === 0 ? "border-r border-[#243849]" : ""
+                    } ${
+                      index === 1 || index === 3
                         ? "sm:border-r sm:border-[#243849]"
                         : ""
-                      } ${index < 3 ? "border-b border-[#243849] sm:border-b-0" : ""
-                      } ${index === 2
+                    } ${
+                      index < 3 ? "border-b border-[#243849] sm:border-b-0" : ""
+                    } ${
+                      index === 2
                         ? "sm:border-r sm:border-[#243849] lg:border-r lg:border-[#243849]"
                         : ""
-                      } ${index === 3
+                    } ${
+                      index === 3
                         ? "sm:border-r-0 lg:border-r lg:border-[#243849]"
                         : ""
-                      } ${index === 4 ? "col-span-2 sm:col-span-1" : ""}`}
+                    } ${index === 4 ? "col-span-2 sm:col-span-1" : ""}`}
                   >
                     <GradientIcon
                       Icon={region.icon}
@@ -979,15 +986,14 @@ function SocCompliance() {
                 </h2>
 
                 <p className="mt-[18px] lg:max-w-[420px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px]">
-                  Build customer trust, accelerate enterprise sales, strengthen governance, and align security with key compliance frameworks.
+                  Build customer trust, accelerate enterprise sales, strengthen
+                  governance, and align security with key compliance frameworks.
                 </p>
 
                 <Link href="/services/iso27001">
                   <p className="cursor-pointer mt-8 inline-flex items-center gap-1 text-sm font-medium text-[#0F66EA] underline underline-offset-4">
-
                     Explore ISO 27001 + SOC 2 bundle
                     <Icon icon="mdi:arrow-right" className="text-lg" />
-
                   </p>
                 </Link>
               </LeftAnimation>
@@ -1143,10 +1149,11 @@ function SocCompliance() {
                   {/* Left content */}
 
                   <div
-                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${item.side === "left"
-                      ? "sm:pr-7 sm:text-right lg:pr-8"
-                      : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
-                      }`}
+                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${
+                      item.side === "left"
+                        ? "sm:pr-7 sm:text-right lg:pr-8"
+                        : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
+                    }`}
                   >
                     {item.side === "left" && (
                       <>
@@ -1171,10 +1178,11 @@ function SocCompliance() {
                   {/* Right content */}
 
                   <div
-                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${item.side === "right"
-                      ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
-                      : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
-                      }`}
+                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${
+                      item.side === "right"
+                        ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
+                        : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
+                    }`}
                   >
                     {item.side === "right" && (
                       <>

@@ -21,6 +21,7 @@ interface ContactFormData {
   email: string;
   phonenumber: string;
   message: string;
+  service: string;
   turnstileToken: string;
 }
 const enquiredata = [
@@ -105,7 +106,36 @@ const contactDots = [
   { left: "30%", top: "5%" },
 ];
 
+const services: Record<string, string[]> = {
+  "Application Security": [
+    "Web Application Security",
+    "Mobile Application Security",
+    "Secure Code Review",
+  ],
+  "Offensive Security": [
+    "Breach Attack Simulation",
+    "Phishing Simulation",
+    "Red Team Assessment",
+  ],
+  "Cyber Risk & Advisory": ["CISO / vCISO"],
+  "Compliance & Assurance": [
+    "ISO 27001",
+    "ISO 42001",
+    "SOC 2",
+    "DPDPA",
+    "GDPR",
+    "HIPAA",
+    "RBI Information Security Audit",
+    "SEBI",
+    "CERT-In",
+  ],
+};
+
 function Contact() {
+  const [isServiceOpen, setIsServiceOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedService, setSelectedService] = useState("");
+
   const [turnstileToken, setTurnstileToken] = useState("");
   const [loading, setLoading] = useState(false);
   const turnstileRef = useRef<TurnstileInstance>(null);
@@ -114,11 +144,13 @@ function Contact() {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
   } = useForm<ContactFormData>();
 
   // this is the api calling
   const submit = async (data: ContactFormData) => {
+    console.log(data);
     setLoading(true);
     try {
       if (!turnstileToken) {
@@ -348,19 +380,101 @@ function Contact() {
                     )}
                   </div>
                 </div>
-                <div className="flex">
-                  <div className="flex flex-col gap-2 w-full">
-                    <label
-                      htmlFor="service-intrested"
-                      className="text-sm font-medium text-white"
+                <div className="flex flex-col gap-2 w-full">
+                  <label className="text-sm font-medium text-white">
+                    Service Interested In
+                  </label>
+
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setIsServiceOpen(!isServiceOpen);
+                        setSelectedCategory("");
+                      }}
+                      className={`flex h-11 w-full items-center justify-between rounded-md border ${
+                        errors.service ? "border-red-500" : "border-[#262D3D]"
+                      } bg-transparent px-3 text-left text-sm text-white`}
                     >
-                      Service Interested In
-                    </label>
-                    <select className="text-sm font-normal px-4 py-3.5 w-full rounded-[10px] outline-none border-[1.14px] border-[#262D3D] text-[#D1D1D1]">
-                      <option value="Select an option">Select an option</option>
-                      <option value="1">1</option>
-                    </select>
+                      <span
+                        className={
+                          selectedService ? "text-white" : "text-gray-400"
+                        }
+                      >
+                        {selectedService || "Select a service"}
+                      </span>
+
+                      <Icon
+                        icon="mdi:chevron-down"
+                        className={`text-xl transition-transform ${
+                          isServiceOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    <input
+                      type="hidden"
+                      {...register("service", {
+                        required: "Please select a service",
+                      })}
+                    />
+
+                    {isServiceOpen && (
+                      <div className="absolute left-0 top-full z-50 mt-1  w-full overflow-y-auto rounded-md border border-[#262D3D] bg-[#000C1C] p-2 shadow-lg [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                        {Object.entries(services).map(([category, items]) => (
+                          <div key={category}>
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setSelectedCategory(
+                                  selectedCategory === category ? "" : category,
+                                )
+                              }
+                              className="flex w-full items-center justify-between py-2 text-left text-sm text-white"
+                            >
+                              <span>{category}</span>
+                              <Icon
+                                icon="mdi:chevron-down"
+                                className={`transition-transform ${
+                                  selectedCategory === category
+                                    ? "rotate-180"
+                                    : ""
+                                }`}
+                              />
+                            </button>
+
+                            {selectedCategory === category && (
+                              <div className="max-h-[150px] overflow-y-auto space-y-1 pl-3 pb-2">
+                                {items.map((service) => (
+                                  <button
+                                    key={service}
+                                    type="button"
+                                    onClick={() => {
+                                      setSelectedService(service);
+                                      setValue("service", service);
+                                      setIsServiceOpen(false);
+                                      setSelectedCategory("");
+                                    }}
+                                    className={`block w-full rounded px-3 py-1 text-left text-sm ${
+                                      selectedService === service
+                                        ? "bg-blue-600 text-white"
+                                        : "text-gray-300 hover:bg-white/10"
+                                    }`}
+                                  >
+                                    {service}
+                                  </button>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
+                  {errors.service && (
+                    <p className="text-xs text-red-500">
+                      {errors.service.message}
+                    </p>
+                  )}
                 </div>
                 <div className="flex">
                   <div className="flex flex-col gap-2 w-full">
@@ -371,7 +485,7 @@ function Contact() {
                       How Can We Help?{" "}
                     </label>
                     <textarea
-                      rows={5}
+                      rows={3}
                       className="text-sm font-normal px-4 py-2.5 w-full rounded-[10px] outline-none border-[1.14px] border-[#262D3D] text-[#D1D1D1]"
                       placeholder="Leave us a message..."
                       {...register("message")}

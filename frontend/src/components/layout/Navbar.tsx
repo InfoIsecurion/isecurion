@@ -730,7 +730,6 @@ function Navbar() {
         </div>
 
         {/* Mobile Navigation */}
-        {/* Mobile Navigation */}
         <div
           className={`absolute left-0 right-0 top-[65px] z-50 overflow-y-auto bg-[#020E1C] transition-all duration-300 lg:hidden ${
             isOpen
