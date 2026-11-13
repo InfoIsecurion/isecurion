@@ -601,14 +601,14 @@ function Vicso() {
               className="flex flex-col sm:flex-row  justify-center lg:justify-start gap-4 mt-8 opacity-0 animate-hero-reveal"
               style={{ animationDelay: "750ms" }}
             >
-              <Link href="/company/contact">
-                <button className="text-[15px] font-medium px-4 py-4 flex items-center gap-2 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]">
-                  Request a vCISO Consultation{" "}
-                  <span>
-                    <Icon icon="akar-icons:arrow-right" className="text-lg" />
-                  </span>
-                </button>
-              </Link>
+              {/* <Link href="/company/contact"> 
+              <button className="text-[15px] font-medium px-4 py-4 flex items-center gap-2 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]">
+                Request a vCISO Consultation{" "}
+                <span>
+                  <Icon icon="akar-icons:arrow-right" className="text-lg" />
+                </span>
+              </button>
+              </Link> */}
               {/* <button className="text-[15px] font-medium px-4 py-4  rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF29]">
                 View Scope of Work{" "}
               </button> */}
@@ -1527,7 +1527,7 @@ function Vicso() {
         faqs={vcisoFAQs}
       />
       {/* Ready to Strengthen Your Cybersecurity Posture?  */}
-      <section className="w-full py-8 rounded-tr-[42px] rounded-tl-[42px] bg-[#121828]">
+      <section className="w-full py-8 rounded-tr-[42px] rounded-tl-[42px] bg-black">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 ">
           <div className="space-y-4 text-center lg:text-left">
             <h2 className="font-semibold lg:max-w-lg text-[#FFFFFF]">

@@ -424,19 +424,19 @@ function Iso27001() {
               with expert guidance across risk assessment, security controls,
               documentation, internal audits, and certification readiness.
             </p>
-            <Link href="/company/contact">
-              <button
-                className="text-base font-medium flex items-center gap-2 px-3 py-4 mx-auto lg:mx-0 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
-                style={{ animationDelay: "600ms" }}
-              >
-                Book a Free Readiness Call{" "}
-                <span>
-                  <Icon icon="akar-icons:arrow-right" />
-                </span>
-              </button>
-            </Link>
+            {/* <Link href="/company/contact">
+            <button
+              className="text-base font-medium flex items-center gap-2 px-3 py-4 mx-auto lg:mx-0 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
+              style={{ animationDelay: "600ms" }}
+            >
+              Book a Free Readiness Call{" "}
+              <span>
+                <Icon icon="akar-icons:arrow-right" />
+              </span>
+            </button>
+            </Link> */}
             <div
-              className="mt-6  opacity-0 animate-hero-reveal"
+              className="opacity-0 animate-hero-reveal"
               style={{ animationDelay: "750ms" }}
             >
               <ul className="space-y-2 ">
@@ -1054,7 +1054,7 @@ function Iso27001() {
         description="Everything you need to know about ISO 27001 certification in India and globally."
         faqs={iso27001faqs}
       />
-      <section className="w-full py-10 rounded-tl-[42px] rounded-tr-[42px] bg-[#121828]">
+      <section className="w-full pt-10 rounded-tl-[42px] rounded-tr-[42px] bg-black">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="lg:max-w-2xl space-y-4 text-center lg:text-left">
             <h2 className="font-semibold text-[#FFFFFF]">

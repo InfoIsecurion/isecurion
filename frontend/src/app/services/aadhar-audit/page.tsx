@@ -3,13 +3,17 @@ import { Icon } from "@iconify/react";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import React, { useRef, useState } from "react";
 import { toast } from "react-toastify";
-import { AnimatedCard } from "../../../components/ui/Animation";
+import WordReveal, {
+  Animation,
+  AnimatedCard,
+} from "../../../components/ui/Animation";
 import Image from "next/image";
 import yes from "../../../assets/services/yes.svg";
 import FAQSection from "../../../components/sections/FAQSection";
 import { useForm } from "react-hook-form";
 import { aadharAudit } from "../../../services/api/contact";
 import Link from "next/link";
+import { motion } from "framer-motion";
 interface ContactFormData {
   email: string;
   companyname: string;
@@ -448,36 +452,53 @@ function AadharAudit() {
             <p className="text-sm sm:text-base font-semibold uppercase text-[#3B9E6A]">
               UIDAI Compliance Experts
             </p>
-            <h1 className="text-[#FFFFFF]">
+            <h1
+              className="text-[#FFFFFF] animate-hero-reveal"
+              style={{ animationDelay: "600ms" }}
+            >
               Aadhaar/UIDAI Audit Services for AUA, KUA, Sub-AUA & Face
               Authentication
             </h1>
-            <p className="text-base sm:text-lg font-medium leading-[28px] text-[#D1D1D1]">
+            <p
+              className="text-base sm:text-lg font-medium leading-[28px] text-[#D1D1D1] animate-hero-reveal"
+              style={{ animationDelay: "750ms" }}
+            >
               Strengthen the security and compliance of your Aadhaar-enabled
               systems with a structured audit of information security controls,
               data protection practices, and operational safeguards.
             </p>
             <div className="mx-auto lg:mx-0">
-              <ul className="space-y-2">
+              <ul
+                className="space-y-2 animate-hero-reveal"
+                style={{ animationDelay: "900ms" }}
+              >
                 {aadharAuditServices.map((service, index) => (
-                  <li
+                  <motion.li
                     key={index}
+                    initial={{ opacity: 0, y: 18 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{
+                      duration: 0.6,
+                      delay: index * 0.3,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
                     className="text-sm sm:text-[15px] font-normal flex items-center gap-3 text-[#D1D1D1] justify-center lg:justify-start"
                   >
                     <span className="inline-block w-[6px] h-[6px] bg-[#3B9E6A]"></span>
                     {service}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </div>
-            <Link href="/comapny/contact">
-              <button className="mt-9 text-[15px] font-medium flex items-center px-3 py-3 mx-auto lg:mx-0 rounded-[10px] text-[#31435C] bg-[#FFFFFF]">
-                Request Audit Quote{" "}
-                <span>
-                  <Icon icon="akar-icons:arrow-right" />
-                </span>
-              </button>
-            </Link>
+            {/* <Link href="/comapny/contact">
+            <button className="mt-9 text-[15px] font-medium flex items-center px-3 py-3 mx-auto lg:mx-0 rounded-[10px] text-[#31435C] bg-[#FFFFFF]">
+              Request Audit Quote{" "}
+              <span>
+                <Icon icon="akar-icons:arrow-right" />
+              </span>
+            </button>
+            </Link> */}
           </div>
           {/* right  */}
           <div className="flex-1 px-6 py-6 rounded-[23px] bg-[#202123]">
@@ -616,20 +637,26 @@ function AadharAudit() {
             <p className="text-sm sm:text-base font-semibold text-[#3B9E6A]">
               UNDERSTANDING AADHAAR AUDITS
             </p>
-            <h2 className="text-[#FEFEFE]">
-              Secure Your Aadhaar Ecosystem with Confidence
-            </h2>
-            <p className="sectionDescription text-[#D1D1D1]">
-              Organizations involved in Aadhaar authentication and related
-              services must protect sensitive identity information and maintain
-              appropriate security controls across their systems and processes.
-            </p>
-            <p className="sectionDescription text-[#D1D1D1]">
-              An Aadhaar / UIDAI audit evaluates the security, governance, and
-              operational controls within the agreed assessment scope. It helps
-              identify gaps, assess risks, and strengthen readiness for
-              applicable UIDAI requirements.
-            </p>
+            <WordReveal
+              text="Secure Your Aadhaar Ecosystem with Confidence"
+              className="text-[#FEFEFE]"
+            ></WordReveal>
+            <Animation>
+              <p className="sectionDescription text-[#D1D1D1]">
+                Organizations involved in Aadhaar authentication and related
+                services must protect sensitive identity information and
+                maintain appropriate security controls across their systems and
+                processes.
+              </p>
+            </Animation>
+            <Animation delay={0.5}>
+              <p className="sectionDescription text-[#D1D1D1]">
+                An Aadhaar / UIDAI audit evaluates the security, governance, and
+                operational controls within the agreed assessment scope. It
+                helps identify gaps, assess risks, and strengthen readiness for
+                applicable UIDAI requirements.
+              </p>
+            </Animation>
           </div>
           {/* right  */}
           <div className="w-full lg:w-[40%]">
@@ -672,13 +699,16 @@ function AadharAudit() {
             <p className="text-sm sm:text-base font-semibold text-[#3B9E6A]">
               ORGANIZATIONS WE SUPPORT
             </p>
-            <h2 className="text-[#FFFFFF]">
-              Aadhaar Audit Support Across the Identity Ecosystem
-            </h2>
-            <p className="sectionDescription text-[#D1D1D1]">
-              Support security and compliance needs for organizations that use
-              or provide Aadhaar-enabled services.
-            </p>
+            <WordReveal
+              text="Aadhaar Audit Support Across the Identity Ecosystem"
+              className="text-[#FFFFFF]"
+            ></WordReveal>
+            <Animation>
+              <p className="sectionDescription text-[#D1D1D1]">
+                Support security and compliance needs for organizations that use
+                or provide Aadhaar-enabled services.
+              </p>
+            </Animation>
           </div>
           <div className="mt-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-7">
@@ -718,19 +748,23 @@ function AadharAudit() {
             <p className="text-sm sm:text-base font-semibold text-[#3B9E6A]">
               WHY AADHAAR AUDITS MATTER
             </p>
-            <h2 className="text-[#FFFFFF]">
-              Build Trust Through Stronger Identity Security
-            </h2>
-            <p className="sectionDescription text-[#D1D1D1]">
-              A structured audit helps organizations understand security risks
-              across Aadhaar-related services and improve the safeguards that
-              protect sensitive identity information.
-            </p>
+            <WordReveal
+              text="Build Trust Through Stronger Identity Security"
+              className="text-[#FFFFFF]"
+            ></WordReveal>
+            <Animation>
+              <p className="sectionDescription text-[#D1D1D1]">
+                A structured audit helps organizations understand security risks
+                across Aadhaar-related services and improve the safeguards that
+                protect sensitive identity information.
+              </p>
+            </Animation>
           </div>
           <div className="mt-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               {whyAadhaarAuditsMatter.map((audit, index) => (
-                <div
+                <AnimatedCard
+                  delay={index * 0.2}
                   key={index}
                   className={`px-8 pt-8 pb-10 ${index === 0 ? "bg-[#060D1B]" : index === 1 ? "bg-[#08142D]" : index === 2 || index === 3 ? "bg-linear-to-b from-[#3B9E6A] to-[#000000A6]" : index === 4 ? "bg-[#071126]" : "bg-[#060D1B]"}`}
                 >
@@ -746,7 +780,7 @@ function AadharAudit() {
                   <p className="text-base font-normal mt-3 text-[#D1D1D1]">
                     {audit.description}
                   </p>
-                </div>
+                </AnimatedCard>
               ))}
             </div>
           </div>
@@ -761,9 +795,10 @@ function AadharAudit() {
             <p className="text-sm sm:text-base font-semibold uppercase text-[#3B9E6A]">
               Our Services
             </p>
-            <h2 className="text-[#FFFFFF]">
-              Comprehensive Aadhaar/UIDAI Audit Coverage
-            </h2>
+            <WordReveal
+              text="Comprehensive Aadhaar/UIDAI Audit Coverage"
+              className="text-[#FFFFFF]"
+            ></WordReveal>
             <p className="sectionDescription text-[#D1D1D1]">
               End-to-end audit services covering all critical areas of UIDAI
               compliance.
@@ -794,12 +829,20 @@ function AadharAudit() {
                   <div className="mt-6 ml-3">
                     <ul className="list-disc space-y-2">
                       {service.list.map((item, listindex) => (
-                        <li
+                        <motion.li
                           key={listindex}
+                          initial={{ opacity: 0, y: 18 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, amount: 0.3 }}
+                          transition={{
+                            duration: 0.6,
+                            delay: listindex * 0.3,
+                            ease: [0.22, 1, 0.36, 1],
+                          }}
                           className="text-[15px] font-normal text-[#D1D1D1]"
                         >
                           {item}
-                        </li>
+                        </motion.li>
                       ))}
                     </ul>
                   </div>
@@ -960,9 +1003,10 @@ function AadharAudit() {
             <p className="text-sm sm:text-base font-semibold text-[#3B9E6A]">
               OUR DIFFERENTIATORS
             </p>
-            <h2 className="text-[#FFFFFF]">
-              A Security-Focused Partner for Aadhaar Audit Readiness
-            </h2>
+            <WordReveal
+              text="A Security-Focused Partner for Aadhaar Audit Readiness"
+              className="text-[#FFFFFF]"
+            ></WordReveal>
             <p className="sectionDescription text-[#D1D1D1]">
               Combine cybersecurity assessment expertise with practical guidance
               to strengthen identity-related systems and processes.
@@ -1004,7 +1048,7 @@ function AadharAudit() {
         faqs={aadharFaqs}
       />
 
-      <section className="w-full py-14 rounded-tl-[42px] rounded-tr-[42px] bg-[#121828]">
+      <section className="w-full pt-14 rounded-tl-[42px] rounded-tr-[42px] bg-black">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="space-y-4 text-center lg:text-left">
             <h2 className="mx-0 lg:max-w-lg font-semibold text-[#FFFFFF]">
@@ -1015,8 +1059,8 @@ function AadharAudit() {
               services that ensure security, compliance, and operational
               resilience.
             </p>
-            <Link href="/comapany/contact">
-              <button className="mx-auto lg:mx-0 text-sm sm:text-[15px] font-medium flex items-center gap-3 px-4 py-4 rounded-[10px] text-[#FFFFFF] border-2 border-[#3263B199] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]">
+            <Link href="/company/contact">
+              <button className="mt-7 mx-auto lg:mx-0 text-sm sm:text-[15px] font-medium flex items-center gap-3 px-4 py-4 rounded-[10px] text-[#FFFFFF] border-2 border-[#3263B199] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] cursor-pointer">
                 Schedule UIDAI Audit Consultation{" "}
                 <span>
                   <Icon

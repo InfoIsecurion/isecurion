@@ -312,31 +312,37 @@ export default function Home() {
               build lasting resilience through expert cybersecurity consulting,
               continuous validation, and intelligent security platforms.
             </p>
+
+            <p
+              className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-lg leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] animate-hero-reveal"
+              style={{ animationDelay: "1000ms" }}
+            >
+              Helping organizations anticipate threats, reduce cyber risk, and
+              build lasting resilience through expert cybersecurity consulting,
+              continuous validation, and intelligent security platforms.
+            </p>
           </div>
           <div
             className="flex flex-col justify-center lg:justify-start sm:flex-row gap-3 py-4 opacity-0 animate-hero-reveal"
             style={{ animationDelay: "600ms" }}
           >
-            <Animation>
-              <button
-                className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1] animate-hero-reveal"
-                style={{ animationDelay: "1200ms" }}
-              >
-                <Link href="/company/contact">Schedule a Consultation </Link>
-                <span>
-                  <Icon icon="mdi:arrow-right" width={20} />
-                </span>
-              </button>
-            </Animation>
-            <Animation>
-              <button
-                className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29] animate-hero-reveal"
-                style={{ animationDelay: "1400ms" }}
-              >
-                <span></span>
-                Explore services ›
-              </button>
-            </Animation>
+            <button className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1]">
+              <Link href="/company/contact">Schedule a Consultation </Link>
+              <span>
+                <Icon icon="mdi:arrow-right" width={20} />
+              </span>
+            </button>
+            <button
+              onClick={() =>
+                document
+                  .getElementById("services")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
+              }
+              className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29]"
+            >
+              <span></span>
+              Explore services ›
+            </button>
           </div>
         </div>
       </section>
