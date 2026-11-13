@@ -419,7 +419,7 @@ function ManagedSecurityServices() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong. Please try again.",
+        "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -507,19 +507,23 @@ function ManagedSecurityServices() {
             </LeftAnimation>
             <RightAnimation>
               <div className="w-full lg:mt-15 text-center lg:text-left">
-                <p className="text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[640px]">
-                  A Managed Security Service Provider (MSSP) delivers continuous
-                  cybersecurity monitoring, threat detection, incident response,
-                  and compliance support - acting as a dedicated extension of
-                  your internal security team.
-                </p>
-                <p className="mt-6 text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[640px]">
-                  ISECURION's MSSP practice combines certified security
-                  analysts, advanced SIEM/XDR technology, and global threat
-                  intelligence to deliver measurable, SLA-backed security
-                  outcomes - whether your team is in Bengaluru, Dubai, London,
-                  or New York.
-                </p>
+                <Animation>
+                  <p className="text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[640px]">
+                    A Managed Security Service Provider (MSSP) delivers continuous
+                    cybersecurity monitoring, threat detection, incident response,
+                    and compliance support - acting as a dedicated extension of
+                    your internal security team.
+                  </p>
+                </Animation>
+                <Animation delay={0.5}>
+                  <p className="mt-6 text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[640px]">
+                    ISECURION's MSSP practice combines certified security
+                    analysts, advanced SIEM/XDR technology, and global threat
+                    intelligence to deliver measurable, SLA-backed security
+                    outcomes - whether your team is in Bengaluru, Dubai, London,
+                    or New York.
+                  </p>
+                </Animation>
               </div>
             </RightAnimation>
           </div>
@@ -564,35 +568,37 @@ function ManagedSecurityServices() {
                 OUR SERVICES
               </p>
               <WordReveal text="Managed Security Services to Protect Every Layer of Your Business" className="text-[#FFFFFF] max-w-[700px]">
-                
+
               </WordReveal>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[850px] animate-hero-reveal" style={{animationDelay:"900ms"}}>
-                From continuous monitoring and threat hunting to compliance
-                management, our MSSP services cover every layer of your security
-                posture.
-              </p>
+              <Animation>
+                <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[850px] animate-hero-reveal" style={{ animationDelay: "900ms" }}>
+                  From continuous monitoring and threat hunting to compliance
+                  management, our MSSP services cover every layer of your security
+                  posture.
+                </p>
+              </Animation>
             </div>
             <div className="mt-10">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {OurServices.map((item, index) => (
                   <AnimatedCard
-                    delay={index * 0.13}
+                    delay={index * 0.2}
                     key={index}
                     className={`relative flex flex-col justify-between p-5 space-y-4 rounded-lg bg-[#66666614] border border-[#0B15301F] py-8  }`}
                   >
                     <div className="absolute left-0 w-[2.5px] h-[23px] rounded-tr-2xl rounded-br-2xl bg-[#C8912A]"></div>
                     <div className="flex items-center justify-between gap-8">
-                      <h3 className="text-base sm:text-lg font-medium text-[#FFFFFF] animate-hero-reveal" style={{animationDelay:"1000ms"}}>
-                        {item.heading} 
+                      <h3 className="text-base sm:text-lg font-medium text-[#FFFFFF] animate-hero-reveal" style={{ animationDelay: "1000ms" }}>
+                        {item.heading}
                       </h3>
-                      <span className="animate-hero-reveal" style={{animationDelay:"800ms"}}>
+                      <span className="animate-hero-reveal" style={{ animationDelay: "800ms" }}>
                         <Icon
                           icon={item.Icon}
                           className="w-[25px] h-[25px] text-[#C8912A]"
                         />
                       </span>
                     </div>
-                    <p className="mt-4 text-[15px] font-normal leading-[24px] text-[#D1D1D1] max-w-[338px] animate-hero-reveal" style={{animationDelay:"1300ms"}}>
+                    <p className="mt-4 text-[15px] font-normal leading-[24px] text-[#D1D1D1] max-w-[338px] animate-hero-reveal" style={{ animationDelay: "1300ms" }}>
                       {item.description}
                     </p>
                   </AnimatedCard>
@@ -641,11 +647,10 @@ function ManagedSecurityServices() {
                   {/* Left content */}
 
                   <div
-                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${
-                      item.side === "left"
+                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${item.side === "left"
                         ? "sm:pr-7 sm:text-right lg:pr-8"
                         : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
-                    }`}
+                      }`}
                   >
                     {item.side === "left" && (
                       <>
@@ -670,11 +675,10 @@ function ManagedSecurityServices() {
                   {/* Right content */}
 
                   <div
-                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${
-                      item.side === "right"
+                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${item.side === "right"
                         ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
                         : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
-                    }`}
+                      }`}
                   >
                     {item.side === "right" && (
                       <>
@@ -720,75 +724,75 @@ function ManagedSecurityServices() {
 
           {/* REGION CARDS */}
           <AnimatedCard delay={0.5}>
-          <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
-            {globalRegions.map((region, i) => (
-             
-              <article
-                key={region.code}
-                className="relative min-w-0 overflow-hidden rounded-[5px] border-b border-white/[0.06] bg-[#080F1E] p-4 pt-5 sm:p-5"
-              >
-                {/* Colored top accent */}
-                <div
-                  className="absolute inset-x-0 top-0 h-[4px] rounded-t-[5px]"
-                  style={{ backgroundColor: region.color }}
-                />
+            <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+              {globalRegions.map((region, i) => (
 
-                <p
-                  className="text-[11px] font-medium uppercase tracking-[1px]"
-                  style={{ color: region.color }}
+                <article
+                  key={region.code}
+                  className="relative min-w-0 overflow-hidden rounded-[5px] border-b border-white/[0.06] bg-[#080F1E] p-4 pt-5 sm:p-5"
                 >
-                  {region.code}
-                </p>
+                  {/* Colored top accent */}
+                  <div
+                    className="absolute inset-x-0 top-0 h-[4px] rounded-t-[5px]"
+                    style={{ backgroundColor: region.color }}
+                  />
 
-                <h3 className="mt-3 text-base font-medium leading-5 text-[#F1F3F7] sm:text-lg">
-                  {region.title}
-                </h3>
+                  <p
+                    className="text-[11px] font-medium uppercase tracking-[1px]"
+                    style={{ color: region.color }}
+                  >
+                    {region.code}
+                  </p>
 
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {region.cities.map(([countryCode, city]) => (
-                    <span
-                      key={city}
-                      className="inline-flex min-h-[26px] items-center gap-1.5 rounded-[3px] bg-[#0D1B30] px-2.5 py-1 text-[11px] leading-4 text-[#F0F3F8] sm:px-3"
-                    >
-                      <Icon
-                        icon={`flagpack:${countryCode}`}
-                        className="h-[9px] w-[10px] shrink-0"
-                        aria-hidden="true"
-                      />
-                      <span>{city}</span>
-                    </span>
-                  ))}
+                  <h3 className="mt-3 text-base font-medium leading-5 text-[#F1F3F7] sm:text-lg">
+                    {region.title}
+                  </h3>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {region.cities.map(([countryCode, city]) => (
+                      <span
+                        key={city}
+                        className="inline-flex min-h-[26px] items-center gap-1.5 rounded-[3px] bg-[#0D1B30] px-2.5 py-1 text-[11px] leading-4 text-[#F0F3F8] sm:px-3"
+                      >
+                        <Icon
+                          icon={`flagpack:${countryCode}`}
+                          className="h-[9px] w-[10px] shrink-0"
+                          aria-hidden="true"
+                        />
+                        <span>{city}</span>
+                      </span>
+                    ))}
+                  </div>
+                </article>
+
+              ))}
+
+              {/* GLOBAL CTA CARD */}
+              <article className="flex min-w-0 flex-col justify-between rounded-[5px] border-t-[4px] border-white bg-gradient-to-b from-[#070707] to-[#000000] p-4 sm:p-5">
+                <div>
+                  <h3 className="text-base font-medium text-[#F1F1F1] sm:text-lg">
+                    Not in the list?
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-[22px] text-[#D1D1D1] sm:text-[15px] sm:leading-6">
+                    We serve clients globally. Get in touch to discuss coverage
+                    for your region.
+                  </p>
                 </div>
+
+                <Link
+                  href="/company/contact"
+                  className="mt-6 inline-flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-lg bg-white px-4 py-3 text-center text-xs font-medium text-[#17243A] transition-colors hover:bg-[#E9EDF5] sm:text-[13px]"
+                >
+                  Talk to Our Global Team
+                  <Icon
+                    icon="solar:arrow-right-linear"
+                    className="h-4 w-4"
+                    aria-hidden="true"
+                  />
+                </Link>
               </article>
-              
-            ))}
-
-            {/* GLOBAL CTA CARD */}
-            <article className="flex min-w-0 flex-col justify-between rounded-[5px] border-t-[4px] border-white bg-gradient-to-b from-[#070707] to-[#000000] p-4 sm:p-5">
-              <div>
-                <h3 className="text-base font-medium text-[#F1F1F1] sm:text-lg">
-                  Not in the list?
-                </h3>
-
-                <p className="mt-2 text-sm leading-[22px] text-[#D1D1D1] sm:text-[15px] sm:leading-6">
-                  We serve clients globally. Get in touch to discuss coverage
-                  for your region.
-                </p>
-              </div>
-
-              <Link
-                href="/company/contact"
-                className="mt-6 inline-flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-lg bg-white px-4 py-3 text-center text-xs font-medium text-[#17243A] transition-colors hover:bg-[#E9EDF5] sm:text-[13px]"
-              >
-                Talk to Our Global Team
-                <Icon
-                  icon="solar:arrow-right-linear"
-                  className="h-4 w-4"
-                  aria-hidden="true"
-                />
-              </Link>
-            </article>
-          </div>
+            </div>
           </AnimatedCard>
         </div>
       </section>
@@ -906,10 +910,10 @@ function ManagedSecurityServices() {
             </p>
 
             <WordReveal text="The ISECURION MSSP Advantage" className="font-medium leading-tight tracking-tight text-white">
-              
+
             </WordReveal>
 
-            <p className="mx-auto mt-4 max-w-[780px] text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px] animate-hero-reveal" style={{animationDelay:"700ms"}}>
+            <p className="mx-auto mt-4 max-w-[780px] text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px] animate-hero-reveal" style={{ animationDelay: "700ms" }}>
               What makes our MSSP program different from the rest - and why 100+
               enterprises across 10+ countries trust us.
             </p>

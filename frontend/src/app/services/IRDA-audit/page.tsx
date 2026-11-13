@@ -474,7 +474,7 @@ function page() {
                         delay: index * 0.25,
                         ease: [0.22, 1, 0.36, 1],
                       }}
-                      
+
                       className="flex items-center justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]"
                     >
                       <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#7D70F0]" />
@@ -631,11 +631,12 @@ function page() {
                   </div>
                 </div>
 
-                {/* Captcha */}
-                <div className="mt-7">
-                  <div className="flex items-center gap-3">
+                {/* CAPTCHA */}
+                <div className="flex min-h-[65px] items-center gap-3 mt-7">
+                  <p className="shrink-0 text-sm font-medium text-white">Captcha</p>
+
+                  <div className="min-h-[65px] flex items-center">
                     <Turnstile
-                      ref={turnstileRef}
                       siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                       onSuccess={(token) => setTurnstileToken(token)}
                       onExpire={() => setTurnstileToken("")}
@@ -643,7 +644,6 @@ function page() {
                     />
                   </div>
                 </div>
-
                 {/* Consent */}
                 <div className="mt-5 flex items-start gap-2.5">
                   <input
@@ -695,26 +695,30 @@ function page() {
                 </p>
 
                 <WordReveal text="Protecting Policyholder Data in the Digital Insurance Ecosystem" className="mx-auto mt-4 max-w-[570px] text-center text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] lg:text-left lg:mx-0 lg:text-[36px] xl:text-[40px]">
-                  
+
                 </WordReveal>
 
                 <div className="mx-auto mt-[22px] max-w-[535px] space-y-5 text-center text-[15px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[16px] lg:text-left lg:mx-0 lg:text-[16px] xl:text-[17px]">
-                  <p className="animate-hero-reveal" style={{animationDelay:"750ms"}}>
-                    Digital insurance platforms support online policy issuance,
-                    premium payments, claims processing, and customer servicing.
-                    These interconnected systems handle sensitive policyholder
-                    information and require effective security and operational
-                    controls.
-                  </p>
+                  <Animation>
+                    <p className="animate-hero-reveal" style={{ animationDelay: "750ms" }}>
+                      Digital insurance platforms support online policy issuance,
+                      premium payments, claims processing, and customer servicing.
+                      These interconnected systems handle sensitive policyholder
+                      information and require effective security and operational
+                      controls.
+                    </p>
+                  </Animation>
 
-                  <p className="animate-hero-reveal" style={{animationDelay:"1050ms"}}>
-                    An IRDAI Information Security and Network Platform (ISNP)
-                    audit evaluates relevant security controls, infrastructure,
-                    applications, data protection practices, and operational
-                    processes against applicable regulatory requirements. It
-                    helps organizations identify gaps, strengthen safeguards,
-                    and improve audit readiness.
-                  </p>
+                  <Animation delay={0.5}>
+                    <p className="animate-hero-reveal" style={{ animationDelay: "1050ms" }}>
+                      An IRDAI Information Security and Network Platform (ISNP)
+                      audit evaluates relevant security controls, infrastructure,
+                      applications, data protection practices, and operational
+                      processes against applicable regulatory requirements. It
+                      helps organizations identify gaps, strengthen safeguards,
+                      and improve audit readiness.
+                    </p>
+                  </Animation>
                 </div>
               </div>
 
@@ -813,10 +817,10 @@ function page() {
             </p>
 
             <h2 className="">
-              <WordReveal as="span" text="Comprehensive IRDAI ISNP Audit "></WordReveal><br /> <WordReveal as="span" text="Framework"></WordReveal> 
+              <WordReveal as="span" text="Comprehensive IRDAI ISNP Audit "></WordReveal><br /> <WordReveal as="span" text="Framework"></WordReveal>
             </h2>
 
-            <p className="mx-auto mt-4 text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px] animate-hero-reveal" style={{animationDelay:"900ms"}}>
+            <p className="mx-auto mt-4 text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px] animate-hero-reveal" style={{ animationDelay: "900ms" }}>
               Evaluate the technical, administrative, and operational controls
               supporting secure digital insurance operations.
             </p>
@@ -826,7 +830,7 @@ function page() {
           <div className="mt-18 grid grid-cols-1 gap-px overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
             {businessImpact.map((domain, i) => (
               <AnimatedCard
-                delay={i * 0.2}
+                delay={i * 0.12}
                 key={domain.title}
                 className={`flex min-h-[220px] flex-col ${domain.background} p-5 transition-colors duration-300 sm:min-h-[230px] sm:p-6 lg:min-h-[234px] lg:px-[30px] lg:pb-14 lg:pt-12`}
               >
@@ -1003,7 +1007,7 @@ function page() {
                   SECURITY FOCUS AREAS
                 </p>
                 <WordReveal text="Strengthen the Controls Protecting Insurance Platforms" className=" text-[#FEFEFE] lg:max-w-[418px]">
-                  
+
                 </WordReveal>
               </div>
             </LeftAnimation>
@@ -1034,10 +1038,10 @@ function page() {
                         className="text-xl text-[#FFFFFF]"
                       />
                     </div>
-                    <h3 className="mt-3 text-[15px] font-medium text-[#F5F0E8] animate-hero-reveal" style={{animationDelay:"600ms"}}>
+                    <h3 className="mt-3 text-[15px] font-medium text-[#F5F0E8] animate-hero-reveal" style={{ animationDelay: "600ms" }}>
                       {item.heading}
                     </h3>
-                    <p className="text-[13px] font-normal leading-[22px] text-[#D1D1D1D6] max-w-full animate-hero-reveal" style={{animationDelay:"1500px"}}>
+                    <p className="text-[13px] font-normal leading-[22px] text-[#D1D1D1D6] max-w-full animate-hero-reveal" style={{ animationDelay: "1500px" }}>
                       {item.description}
                     </p>
                   </div>

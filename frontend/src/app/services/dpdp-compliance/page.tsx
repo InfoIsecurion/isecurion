@@ -669,7 +669,7 @@ function DpdpCompliance() {
               hardening data systems, and meeting DPDP's technical obligations -
               before enforcement hits.
             </p>
-            <Link href="/company/contact">
+            {/* <Link href="/company/contact">
               <button
                 className="mx-auto lg:mx-0 flex items-center px-4 py-3 mt-5 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
                 style={{ animationDelay: "650ms" }}
@@ -679,7 +679,7 @@ function DpdpCompliance() {
                   <Icon icon="akar-icons:arrow-right" />
                 </span>
               </button>
-            </Link>
+            </Link> */}
           </div>
           {/* right  */}
           <div className="w-full lg:flex-1  px-10 py-8 rounded-[23px] bg-[#202123]">

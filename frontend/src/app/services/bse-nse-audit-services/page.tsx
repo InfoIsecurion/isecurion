@@ -544,12 +544,12 @@ function page() {
                 </p>
 
                 {/* Heading */}
-                <h1 className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "800ms" }}>
+                <h1 className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left">
                   BSE / NSE Audit Services for Capital Market Entities
                 </h1>
 
                 {/* Description */}
-                <p className="mt-4 lg:max-w-[410px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "1000ms" }}>
+                <p className="mt-4 lg:max-w-[410px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left">
                   Strengthen your regulatory compliance and cybersecurity
                   posture with comprehensive BSE/NSE audits. Assess IT
                   governance, security controls, and operational resilience in
@@ -738,11 +738,12 @@ function page() {
                   </div>
                 </div>
 
-                {/* Captcha */}
-                <div className="mt-7">
-                  <div className="flex items-center gap-3">
+                {/* CAPTCHA */}
+                <div className="flex min-h-[65px] items-center gap-3 mt-4">
+                  <p className="shrink-0 text-sm font-medium text-white">Captcha</p>
+
+                  <div className="min-h-[65px] flex items-center">
                     <Turnstile
-                      ref={turnstileRef}
                       siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                       onSuccess={(token) => setTurnstileToken(token)}
                       onExpire={() => setTurnstileToken("")}
@@ -972,15 +973,15 @@ function page() {
             </p>
 
             <WordReveal text="Comprehensive BSE / NSE Audit Coverage" className="mt-2 max-w-[650px] leading-[1.35] text-white ">
-              
+
             </WordReveal>
 
             <Animation>
-            <p className="mt-3 max-w-[780px] text-base leading-[1.8] text-[#D1D1D1] sm:text-[17px]">
-              From governance to operations, we assess the controls, processes
-              and systems that keep your exchange secure, resilient and
-              compliant.
-            </p>
+              <p className="mt-3 max-w-[780px] text-base leading-[1.8] text-[#D1D1D1] sm:text-[17px]">
+                From governance to operations, we assess the controls, processes
+                and systems that keep your exchange secure, resilient and
+                compliant.
+              </p>
             </Animation>
           </div>
 

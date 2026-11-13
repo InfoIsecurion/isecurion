@@ -289,17 +289,19 @@ function ContinuousBreachAttackSimulation() {
                     </div>
                   </div>
 
-                  {/* CAPTCHA */}
+                  {/* Captcha */}
                   <div className="mt-7">
-                    <Turnstile
-                      ref={turnstileRef}
-                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                      onSuccess={(token) => setTurnstileToken(token)}
-                      onExpire={() => setTurnstileToken("")}
-                      onError={() => setTurnstileToken("")}
-                    />
+                    <div className="flex items-center gap-3">
+                      <p className="text-sm font-medium text-white">Captcha</p>
+
+                      <Turnstile
+                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                        onSuccess={(token) => setTurnstileToken(token)}
+                        onExpire={() => setTurnstileToken("")}
+                        onError={() => setTurnstileToken("")}
+                      />
+                    </div>
                   </div>
-                  {/* CAPTCHA */}
 
                   {/* TERMS & PRIVACY CHECKBOX */}
                   <div className="flex items-start gap-2.5 pt-1">
@@ -342,16 +344,20 @@ function ContinuousBreachAttackSimulation() {
           <div className="mx-auto max-w-7xl px-7 py-10 sm:px-10 lg:px-8 lg:py-14 xl:px-10 text-center lg:text-left">
             <WordReveal text="What is Continuous Breach Attack Simulation?" className="text-[26px] font-normal leading-[1.4]  text-white sm:text-[36px] lg:text-[38px]">
             </WordReveal>
+            <Animation>
             <p className="mt-4 sectionDescription text-[#D1D1D1] lg:max-w-[700px] animate-hero-reveal" style={{animationDelay:"500ms"}}>
               Continuous Breach Attack Simulation (CBAS) is an automated,
               ongoing process that mimics cyber attackers using adversary
               simulation techniques.
             </p>
+            </Animation>
+            <Animation delay={0.5}>
             <p className="mt-10 sectionDescription text-[#D1D1D1]  lg:max-w-[700px] animate-hero-reveal" style={{animationDelay:"700ms"}}>
               It validates your security investments daily, tests real-world
               attack scenarios, and provides actionable insights to strengthen
               resilience.
             </p>
+            </Animation>
           </div>
         </Animation>
       </section>
@@ -385,7 +391,7 @@ function ContinuousBreachAttackSimulation() {
                   </div>
                 </Animation>
 
-                <Animation>
+                <Animation delay={0.5}>
                   <p className="lg:mt-45 lg:max-w-[350px] text-[14px] sm:text-[15px] font-normal leading-[1.72] text-[#D1D1D1]">
                     A continuous, controlled approach to simulate real-world
                     attack techniques, measure security control effectiveness,
@@ -613,6 +619,7 @@ function ContinuousBreachAttackSimulation() {
             <Animation>
               <div className="border-t border-[#B1B1B114] pt-[45px] lg:border-l lg:border-t-0 lg:pl-[32px] lg:pt-0">
                 <div className="space-y-[20px]">
+                  <AnimatedCard delay={0.2}>
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
                     <span className="text-[13px] sm:text-[14px] font-medium leading-[1.5] text-[#E24B4A]">
                       01
@@ -627,7 +634,9 @@ function ContinuousBreachAttackSimulation() {
                       </p>
                     </div>
                   </div>
+                  </AnimatedCard>
 
+                  <AnimatedCard delay={0.4}>    
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
                     <span className="text-[13px] sm:text-sm font-medium leading-[1.5] text-[#E24B4A]">
                       02
@@ -642,7 +651,9 @@ function ContinuousBreachAttackSimulation() {
                       </p>
                     </div>
                   </div>
+                  </AnimatedCard>
 
+                  <AnimatedCard delay={0.6}>
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
                     <span className="text-[13px] sm:text-sm font-medium leading-[1.5] text-[#E24B4A]">
                       03
@@ -657,7 +668,9 @@ function ContinuousBreachAttackSimulation() {
                       </p>
                     </div>
                   </div>
+                  </AnimatedCard>
 
+                  <AnimatedCard delay={0.8}>
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
                     <span className="text-[13px] sm:text-sm font-medium leading-[1.5] text-[#E24B4A]">
                       04
@@ -671,6 +684,7 @@ function ContinuousBreachAttackSimulation() {
                       </p>
                     </div>
                   </div>
+                  </AnimatedCard>
                 </div>
               </div>
             </Animation>
@@ -689,12 +703,13 @@ function ContinuousBreachAttackSimulation() {
               <h2 className="mt-[10px]  text-white ">
                 <WordReveal as="span" text="From attack simulation to"></WordReveal> <br></br><WordReveal as="span" text="actionable improvement."></WordReveal>
               </h2>
-
+              <Animation>
               <p className="mx-auto mt-[18px] max-w-[750px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{animationDelay:"800ms"}}>
                 Get clear, actionable outcomes from every simulation, from
                 leadership-level risk visibility to technical remediation and
                 team readiness.
               </p>
+              </Animation>
             </div>
           </div>
 

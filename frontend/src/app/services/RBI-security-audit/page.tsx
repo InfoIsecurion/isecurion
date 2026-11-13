@@ -680,11 +680,12 @@ function page() {
                   </div>
                 </div>
 
-                {/* Captcha */}
-                <div className="mt-7">
-                  <div className="flex items-center gap-3">
+                {/* CAPTCHA */}
+                <div className="flex min-h-[65px] items-center gap-3 mt-7">
+                  <p className="shrink-0 text-sm font-medium text-white">Captcha</p>
+
+                  <div className="min-h-[65px] flex items-center">
                     <Turnstile
-                      ref={turnstileRef}
                       siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                       onSuccess={(token) => setTurnstileToken(token)}
                       onExpire={() => setTurnstileToken("")}
@@ -742,28 +743,28 @@ function page() {
                 </p>
 
                 <WordReveal text="Secure India’s Digital Banking Landscape" className="mx-auto mt-4 max-w-[570px] text-center text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] lg:text-left lg:mx-0 lg:text-[36px] xl:text-[40px]">
-               
+
                 </WordReveal>
 
                 <div className="mx-auto mt-[22px] max-w-[525px] space-y-5 text-center text-[15px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[16px] lg:text-left lg:mx-0 lg:text-[16px] xl:text-[17px]">
                   <Animation>
-                  <p className="animate-hero-reveal" style={{animationDelay:"700ms"}}>
-                    Digital banking, online payments, and financial technology
-                    services rely on interconnected systems that handle
-                    sensitive customer and financial information. Effective
-                    information security controls are essential to protect these
-                    systems from cyber threats and operational disruption.
-                  </p>
+                    <p className="animate-hero-reveal" style={{ animationDelay: "700ms" }}>
+                      Digital banking, online payments, and financial technology
+                      services rely on interconnected systems that handle
+                      sensitive customer and financial information. Effective
+                      information security controls are essential to protect these
+                      systems from cyber threats and operational disruption.
+                    </p>
                   </Animation>
-                    
+
                   <Animation>
-                  <p className="animate-hero-reveal" style={{animationDelay:"800ms"}}>
-                    An RBI Information Security Audit assesses an organization’s
-                    information security governance, technical safeguards, and
-                    operational controls against applicable RBI requirements. It
-                    helps identify weaknesses, prioritize remediation, and
-                    strengthen audit readiness.
-                  </p>
+                    <p className="animate-hero-reveal" style={{ animationDelay: "800ms" }}>
+                      An RBI Information Security Audit assesses an organization’s
+                      information security governance, technical safeguards, and
+                      operational controls against applicable RBI requirements. It
+                      helps identify weaknesses, prioritize remediation, and
+                      strengthen audit readiness.
+                    </p>
                   </Animation>
                 </div>
               </div>
@@ -816,13 +817,13 @@ function page() {
                 ORGANIZATIONS WE SUPPORT
               </p>
               <WordReveal text="RBI Audit Support Across the Financial Sector" className="text-[#FFFFFF] max-w-[700px]">
-                
+
               </WordReveal>
               <Animation>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[750px]">
-                Support information security and compliance needs across
-                banking, lending, payments, and digital financial services.
-              </p>
+                <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[750px]">
+                  Support information security and compliance needs across
+                  banking, lending, payments, and digital financial services.
+                </p>
               </Animation>
             </div>
             <div className="mt-10">
@@ -865,19 +866,20 @@ function page() {
               Our Services
             </p>
 
-            <h2 className="">Comprehensive RBI IS Audit Framework</h2>
+            <WordReveal text="Comprehensive RBI IS Audit Framework"></WordReveal>
 
-            <p className="mx-auto mt-4 text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px]">
-              Complete coverage of all critical areas ensuring regulatory
-              compliance and cybersecurity excellence.
-            </p>
+              <p className="mx-auto mt-4 text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px]">
+                Complete coverage of all critical areas ensuring regulatory
+                compliance and cybersecurity excellence.
+              </p>
+   
           </div>
 
           {/* Security Domain Cards */}
           <div className="mt-18 grid grid-cols-1 gap-px overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
             {ourServices.map((domain, i) => (
               <AnimatedCard
-                delay={i * 0.1}
+                delay={i * 0.15}
                 key={domain.title}
                 className={`flex min-h-[220px] flex-col ${domain.background} p-5 transition-colors duration-300 sm:min-h-[230px] sm:p-6 lg:min-h-[234px] lg:px-[30px] lg:pb-14 lg:pt-12`}
               >
@@ -941,8 +943,8 @@ function page() {
 
                   <div
                     className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${item.side === "left"
-                        ? "sm:pr-7 sm:text-right lg:pr-8"
-                        : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
+                      ? "sm:pr-7 sm:text-right lg:pr-8"
+                      : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
                       }`}
                   >
                     {item.side === "left" && (
@@ -969,8 +971,8 @@ function page() {
 
                   <div
                     className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${item.side === "right"
-                        ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
-                        : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
+                      ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
+                      : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
                       }`}
                   >
                     {item.side === "right" && (

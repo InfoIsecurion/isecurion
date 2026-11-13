@@ -128,12 +128,15 @@ function IndustryCard({ item }) {
       />
 
       {/* Default Card Content */}
-      <div className="relative z-10 w-full min-w-[260px] translate-x-0 opacity-100 transition-all duration-1000 ease-out group-hover:-translate-x-6 group-hover:opacity-0">
-        <h3 className="text-2xl font-medium text-white mt-20">{item.title}</h3>
-        <p className="mt-4 text-base font-medium text-[#FFFFFFBF]">
-          {item.description}
-        </p>
-      </div>
+    <div className="relative z-10 w-full min-w-0 opacity-100 transition-all duration-1000 ease-out sm:group-hover:-translate-x-6 sm:group-hover:opacity-0">
+      <h3 className="mt-4 sm:mt-12 lg:mt-20 text-xl sm:text-2xl font-medium text-white break-words">
+        {item.title}
+      </h3>
+
+      <p className="mt-3 sm:mt-4 text-sm sm:text-base font-medium leading-6 text-[#FFFFFFBF]">
+        {item.description}
+      </p>
+    </div>
 
       {/* Hover Statistics Reveal (Appears smoothly after delay) */}
       <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center gap-10 sm:gap-16 translate-x-6 opacity-0 transition-all duration-2000 ease-out delay-100 group-hover:translate-x-0 group-hover:opacity-100">

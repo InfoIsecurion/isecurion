@@ -364,16 +364,20 @@ export default function RedTeamAssessmentPage() {
               text="What is Red Team Assessment?"
               className="leading-[1.2]  text-white text-center lg:text-left"
             />
+            <Animation>
             <p className="mt-7 text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] lg:text-[18px] max-w-[700px] text-center lg:text-left">
               Red Team assessments are goal-oriented attack simulations designed
               to test how well your people, processes, and technology can
               withstand a targeted attack.
             </p>
+            </Animation>
+            <Animation delay={0.5}>
             <p className="mt-10 text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] lg:text-[18px] max-w-[700px] text-center lg:text-left">
               Unlike traditional penetration testing, Red Team exercises mirror
               real adversary tactics to achieve objectives such as data
               exfiltration, system compromise, or physical access.
             </p>
+            </Animation>
           </div>
         </Animation>{" "}
       </section>
@@ -734,13 +738,14 @@ export default function RedTeamAssessmentPage() {
                       <br />
                       Achievement
                     </h2>
-
+               
                     <p className="absolute left-0 top-[392px] lg:max-w-[382px] sectionDescription text-center lg:text-left">
                       A structured, adversary-driven methodology designed to
                       simulate real-world attacks, uncover attack paths, and
                       strengthen your organizations ability to detect, respond,
                       and withstand them.
                     </p>
+                   
                   </div>
                 </Animation>
 
@@ -772,7 +777,7 @@ export default function RedTeamAssessmentPage() {
                 </Animation>
 
                 {/* Card 02 */}
-                <Animation>
+                <Animation delay={0.5}>
                   <div className="absolute left-[947px] top-0 h-[240px] w-[242px] rounded-[7px] border-[0.9px] border-white/[9%] bg-black/[51%] px-[20px] py-[20px]">
                     <div className="flex items-start justify-between">
                       <Icon
@@ -799,7 +804,7 @@ export default function RedTeamAssessmentPage() {
                 </Animation>
 
                 {/* Card 03 */}
-                <Animation>
+                <Animation delay={0.9}>
                   <div className="absolute left-[690px] top-[315px] h-[240px] w-[242px] rounded-[7px] border-[0.9px] border-white/[9%] bg-black/[50%] px-[20px] py-[20px]">
                     <div className="flex items-start justify-between">
                       <Icon
@@ -826,7 +831,7 @@ export default function RedTeamAssessmentPage() {
                 </Animation>
 
                 {/* Card 04 */}
-                <Animation>
+                <Animation delay={1.3}>
                   <div className="absolute left-[947px] top-[250px] h-[240px] w-[242px] rounded-[7px] border-[0.9px] border-white/[9%] bg-black/[51%] px-[20px] py-[20px]">
                     <div className="flex items-start justify-between">
                       <Icon
@@ -1226,6 +1231,7 @@ export default function RedTeamAssessmentPage() {
             <Animation>
               <div className="border-t border-[#B1B1B114] pt-[45px] lg:border-l lg:border-t-0 lg:pl-[32px] lg:pt-0">
                 <div className="space-y-[20px]">
+                  <AnimatedCard delay={0.2}>
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
                     <span className="text-[13px] font-medium leading-[1.5] text-[#E24B4A]">
                       01
@@ -1241,7 +1247,9 @@ export default function RedTeamAssessmentPage() {
                       </p>
                     </div>
                   </div>
+                  </AnimatedCard>
 
+                  <AnimatedCard delay={0.4}>
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
                     <span className="text-[13px] font-medium leading-[1.5] text-[#E24B4A]">
                       02
@@ -1257,7 +1265,9 @@ export default function RedTeamAssessmentPage() {
                       </p>
                     </div>
                   </div>
+                  </AnimatedCard>
 
+                  <AnimatedCard delay={0.6}>
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
                     <span className="text-[13px] font-medium leading-[1.5] text-[#E24B4A]">
                       03
@@ -1273,7 +1283,9 @@ export default function RedTeamAssessmentPage() {
                       </p>
                     </div>
                   </div>
+                  </AnimatedCard>
 
+                  <AnimatedCard delay={0.8}>
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
                     <span className="text-[13px] font-medium leading-[1.5] text-[#E24B4A]">
                       04
@@ -1288,7 +1300,9 @@ export default function RedTeamAssessmentPage() {
                       </p>
                     </div>
                   </div>
+                  </AnimatedCard>
 
+                  <AnimatedCard delay={0.9}>
                   <div className="grid grid-cols-[35px_1fr] gap-[14px]">
                     <span className="text-[13px] font-medium leading-[1.5] text-[#E24B4A]">
                       05
@@ -1304,6 +1318,7 @@ export default function RedTeamAssessmentPage() {
                       </p>
                     </div>
                   </div>
+                  </AnimatedCard>
                 </div>
               </div>
             </Animation>

@@ -220,13 +220,16 @@ function page() {
               <WordReveal text="What Is Mobile Application Security Assessment?" className="text-white">
               </WordReveal>
 
+              <Animation>
               <p className="mt-6 max-w-[550px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{animationDelay:"500ms"}}>
                 A Mobile Application Security Assessment is a structured
                 evaluation of mobile applications to identify vulnerabilities
                 across the application, device, communication, and backend API
                 layers.
               </p>
+              </Animation>
 
+              <Animation delay={0.5}>
               <p className="mt-4 max-w-[610px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{animationDelay:"650ms"}}>
                 We combine{" "}
                 <span className="font-medium text-white">
@@ -243,6 +246,7 @@ function page() {
                 to uncover weaknesses in application logic, authentication, data
                 protection, APIs, and mobile platform controls.
               </p>
+              </Animation>
             </div>
           </Animation>
 
@@ -338,11 +342,12 @@ function page() {
               <WordReveal text="Our Mobile Security Methodology" className="text-white font-semibold">
                 
               </WordReveal>
-
+              <Animation>
               <p className="mx-auto mt-5 max-w-[780px] sectionDescription text-[#D1D1D1] animate-hero-reveal" style={{animationDelay:"850ms"}}>
                 Our methodology combines threat modeling, manual testing, and
                 targeted automation to deliver depth and accuracy.
               </p>
+              </Animation>
             </div>
           </Animation>
 
