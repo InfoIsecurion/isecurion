@@ -739,7 +739,9 @@ function page() {
 
                 {/* CAPTCHA */}
                 <div className="flex min-h-[65px] items-center gap-3 mt-4">
-                  <p className="shrink-0 text-sm font-medium text-white">Captcha</p>
+                  <p className="shrink-0 text-sm font-medium text-white">
+                    Captcha
+                  </p>
 
                   <div className="min-h-[65px] flex items-center">
                     <Turnstile
@@ -976,6 +978,10 @@ function page() {
               Compliance & Assurance
             </p>
 
+            <WordReveal
+              text="Comprehensive BSE / NSE Audit Coverage"
+              className="mt-2 max-w-[650px] leading-[1.35] text-white "
+            ></WordReveal>
             <WordReveal
               text="Comprehensive BSE / NSE Audit Coverage"
               className="mt-2 max-w-[650px] leading-[1.35] text-white "

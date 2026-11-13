@@ -406,26 +406,38 @@ function AiAugamentedRedTeam() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 flex gap-8 sm:gap-15 flex-col lg:flex-row">
           {/* left  */}
           <div className="w-full lg:flex-1 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start">
-            <p className="text-base font-semibold sectionheading text-[#E24B4A] " >
+            <p className="text-base font-semibold sectionheading text-[#E24B4A] ">
               AI-AUGMENTED RED TEAM
             </p>
-            <h1 className=" text-[#FFFFFF] animate-hero-reveal" style={{animationDelay:"600ms"}}>
+            <h1
+              className=" text-[#FFFFFF] animate-hero-reveal"
+              style={{ animationDelay: "600ms" }}
+            >
               AI-Augmented Red Team Services
             </h1>
 
             <div className="text-center lg:text-left">
-              <p className="text-base sm:text-[17px] font-medium leading-[26px] sm:leading-[32px]  text-[#D1D1D1] animate-hero-reveal" style={{animationDelay:"750ms"}}>
+              <p
+                className="text-base sm:text-[17px] font-medium leading-[26px] sm:leading-[32px]  text-[#D1D1D1] animate-hero-reveal"
+                style={{ animationDelay: "750ms" }}
+              >
                 ISECURION’s AI-Augmented Red Team tests AI supply chains, LLMs,
                 agents, deepfake-driven social engineering, and AI-accelerated
                 reconnaissance.
               </p>
-              <p className="text-base sm:text-lg leading-7.5 md:leading-8 text-[#D1D1D1] animate-hero-reveal" style={{animationDelay:"950ms"}}>
+              <p
+                className="text-base sm:text-lg leading-7.5 md:leading-8 text-[#D1D1D1] animate-hero-reveal"
+                style={{ animationDelay: "950ms" }}
+              >
                 Delivered by CERT-In empanelled AI/ML security specialists
                 across global environments, remotely or on-site, as a standalone
                 engagement or VAPT/RTaaS add-on.
               </p>
             </div>
-            <p className="text-base sm:text-lg text-[#0F66EA] max-w-[450px] leading-8 animate-hero-reveal" style={{animationDelay:"1000ms"}}>
+            <p
+              className="text-base sm:text-lg text-[#0F66EA] max-w-[450px] leading-8 animate-hero-reveal"
+              style={{ animationDelay: "1000ms" }}
+            >
               LLM Security · AI Agents · AI Supply Chain · Deepfake Vishing
             </p>
             <div className="flex gap-4">
@@ -438,13 +450,16 @@ function AiAugamentedRedTeam() {
               </button>
               </Link> */}
               <Link href="tel:+918861201570" target="_blank">
-              <button className="mt-4 text-[15px] font-medium px-4 py-3 flex items-center gap-3 rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF]/16 animate-hero-reveal" style={{animationDelay:"1200ms"}}>
-                <span>
-                  <Icon icon="flowbite:outgoing-call-outline" />
-                </span>
-                {""}
-                Talk to Us
-              </button>
+                <button
+                  className="mt-4 text-[15px] font-medium px-4 py-3 flex items-center gap-3 rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF]/16 animate-hero-reveal"
+                  style={{ animationDelay: "1200ms" }}
+                >
+                  <span>
+                    <Icon icon="flowbite:outgoing-call-outline" />
+                  </span>
+                  {""}
+                  Talk to Us
+                </button>
               </Link>
             </div>
           </div>
@@ -663,9 +678,10 @@ function AiAugamentedRedTeam() {
               <p className="text-sm sm:text-base font-semibold sectionheading text-[#E24B4A]">
                 WHY AI-AUGMENTED RED TEAMING MATTERS
               </p>
-              <WordReveal text="AI has Changed the Attack Surface." className=" text-[#FFFFFF]">
-                
-              </WordReveal>
+              <WordReveal
+                text="AI has Changed the Attack Surface."
+                className=" text-[#FFFFFF]"
+              ></WordReveal>
               <div className="space-y-4 flex flex-col items-center lg:items-start">
                 <p className="sectionDescription text-[#D1D1D1]">
                   Traditional Red Teaming focuses on people, networks,
@@ -734,9 +750,10 @@ function AiAugamentedRedTeam() {
               <p className="text-sm sm:text-base font-semibold sectionheading text-[#E24B4A]">
                 OUR CLIENTS
               </p>
-              <WordReveal text="Who Needs AI-Augmented Red Team Testing?" className=" text-[#FFFFFF]">
-                
-              </WordReveal>
+              <WordReveal
+                text="Who Needs AI-Augmented Red Team Testing?"
+                className=" text-[#FFFFFF]"
+              ></WordReveal>
               <p className="sectionDescription text-[#D1D1D1]">
                 AI-Augmented Red Teaming is designed for organizations where AI
                 connects to products, data, infrastructure, business processes,
@@ -777,9 +794,10 @@ function AiAugamentedRedTeam() {
                 <p className="text-sm sm:text-base font-semibold sectionheading text-[#E24B4A]">
                   ENGAGEMENT STRUCTURE
                 </p>
-                <WordReveal text="Four Attack Paths. One AI Threat-Readiness View" className="font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF]">
-                  
-                </WordReveal>
+                <WordReveal
+                  text="Four Attack Paths. One AI Threat-Readiness View"
+                  className="font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF]"
+                ></WordReveal>
                 <p className="sectionDescription text-[#D1D1D1]">
                   Run one module or combine multiple attack paths based on your
                   AI environment and objectives.
@@ -863,9 +881,10 @@ function AiAugamentedRedTeam() {
               <p className="text-sm sm:text-base font-semibold uppercase sectionheading text-[#E24B4A]">
                 Functional Testing
               </p>
-              <WordReveal text="AI-Augmented Red Team Functional Testing - What We Validate" className=" max-w-2xl mx-auto  text-white">
-                
-              </WordReveal>
+              <WordReveal
+                text="AI-Augmented Red Team Functional Testing - What We Validate"
+                className=" max-w-2xl mx-auto  text-white"
+              ></WordReveal>
               <p className="sectionDescription max-w-3xl mx-auto text-[#D1D1D1]">
                 Attack simulation alone isn't enough, we validate whether your
                 controls, gates, and detection pipelines actually function as
@@ -991,9 +1010,10 @@ function AiAugamentedRedTeam() {
             <p className="text-sm sm:text-base font-semibold sectionheading text-[#E24B4A]">
               WHAT YOU RECEIVE
             </p>
-            <WordReveal text="Complete AI-Augmented Red Team Deliverables" className="font-medium text-[#FFFFFF]">
-              
-            </WordReveal>
+            <WordReveal
+              text="Complete AI-Augmented Red Team Deliverables"
+              className="font-medium text-[#FFFFFF]"
+            ></WordReveal>
             <p className="sectionDescription text-[#D1D1D1]">
               Technical depth for your engineering team, and a clear narrative
               for your board, in your local currency and time zone.

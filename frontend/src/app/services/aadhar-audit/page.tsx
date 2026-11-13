@@ -3,7 +3,10 @@ import { Icon } from "@iconify/react";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import React, { useRef, useState } from "react";
 import { toast } from "react-toastify";
-import WordReveal, { Animation, AnimatedCard } from "../../../components/ui/Animation";
+import WordReveal, {
+  Animation,
+  AnimatedCard,
+} from "../../../components/ui/Animation";
 import Image from "next/image";
 import yes from "../../../assets/services/yes.svg";
 import FAQSection from "../../../components/sections/FAQSection";
@@ -431,7 +434,7 @@ function AadharAudit() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-        "Something went wrong. Please try again.",
+          "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -449,17 +452,26 @@ function AadharAudit() {
             <p className="text-sm sm:text-base font-semibold uppercase text-[#3B9E6A]">
               UIDAI Compliance Experts
             </p>
-            <h1 className="text-[#FFFFFF] animate-hero-reveal" style={{ animationDelay: "600ms" }}>
+            <h1
+              className="text-[#FFFFFF] animate-hero-reveal"
+              style={{ animationDelay: "600ms" }}
+            >
               Aadhaar/UIDAI Audit Services for AUA, KUA, Sub-AUA & Face
               Authentication
             </h1>
-            <p className="text-base sm:text-lg font-medium leading-[28px] text-[#D1D1D1] animate-hero-reveal" style={{ animationDelay: "750ms" }}>
+            <p
+              className="text-base sm:text-lg font-medium leading-[28px] text-[#D1D1D1] animate-hero-reveal"
+              style={{ animationDelay: "750ms" }}
+            >
               Strengthen the security and compliance of your Aadhaar-enabled
               systems with a structured audit of information security controls,
               data protection practices, and operational safeguards.
             </p>
             <div className="mx-auto lg:mx-0">
-              <ul className="space-y-2 animate-hero-reveal" style={{ animationDelay: "900ms" }}>
+              <ul
+                className="space-y-2 animate-hero-reveal"
+                style={{ animationDelay: "900ms" }}
+              >
                 {aadharAuditServices.map((service, index) => (
                   <motion.li
                     key={index}
@@ -625,21 +637,23 @@ function AadharAudit() {
             <p className="text-sm sm:text-base font-semibold text-[#3B9E6A]">
               UNDERSTANDING AADHAAR AUDITS
             </p>
-            <WordReveal text="Secure Your Aadhaar Ecosystem with Confidence" className="text-[#FEFEFE]">
-
-            </WordReveal>
+            <WordReveal
+              text="Secure Your Aadhaar Ecosystem with Confidence"
+              className="text-[#FEFEFE]"
+            ></WordReveal>
             <Animation>
               <p className="sectionDescription text-[#D1D1D1]">
                 Organizations involved in Aadhaar authentication and related
-                services must protect sensitive identity information and maintain
-                appropriate security controls across their systems and processes.
+                services must protect sensitive identity information and
+                maintain appropriate security controls across their systems and
+                processes.
               </p>
             </Animation>
             <Animation delay={0.5}>
               <p className="sectionDescription text-[#D1D1D1]">
                 An Aadhaar / UIDAI audit evaluates the security, governance, and
-                operational controls within the agreed assessment scope. It helps
-                identify gaps, assess risks, and strengthen readiness for
+                operational controls within the agreed assessment scope. It
+                helps identify gaps, assess risks, and strengthen readiness for
                 applicable UIDAI requirements.
               </p>
             </Animation>
@@ -685,9 +699,10 @@ function AadharAudit() {
             <p className="text-sm sm:text-base font-semibold text-[#3B9E6A]">
               ORGANIZATIONS WE SUPPORT
             </p>
-            <WordReveal text="Aadhaar Audit Support Across the Identity Ecosystem" className="text-[#FFFFFF]">
-
-            </WordReveal>
+            <WordReveal
+              text="Aadhaar Audit Support Across the Identity Ecosystem"
+              className="text-[#FFFFFF]"
+            ></WordReveal>
             <Animation>
               <p className="sectionDescription text-[#D1D1D1]">
                 Support security and compliance needs for organizations that use
@@ -733,9 +748,10 @@ function AadharAudit() {
             <p className="text-sm sm:text-base font-semibold text-[#3B9E6A]">
               WHY AADHAAR AUDITS MATTER
             </p>
-            <WordReveal text="Build Trust Through Stronger Identity Security" className="text-[#FFFFFF]">
-
-            </WordReveal>
+            <WordReveal
+              text="Build Trust Through Stronger Identity Security"
+              className="text-[#FFFFFF]"
+            ></WordReveal>
             <Animation>
               <p className="sectionDescription text-[#D1D1D1]">
                 A structured audit helps organizations understand security risks
@@ -779,9 +795,10 @@ function AadharAudit() {
             <p className="text-sm sm:text-base font-semibold uppercase text-[#3B9E6A]">
               Our Services
             </p>
-            <WordReveal text="Comprehensive Aadhaar/UIDAI Audit Coverage" className="text-[#FFFFFF]">
-
-            </WordReveal>
+            <WordReveal
+              text="Comprehensive Aadhaar/UIDAI Audit Coverage"
+              className="text-[#FFFFFF]"
+            ></WordReveal>
             <p className="sectionDescription text-[#D1D1D1]">
               End-to-end audit services covering all critical areas of UIDAI
               compliance.
@@ -822,7 +839,6 @@ function AadharAudit() {
                             delay: listindex * 0.3,
                             ease: [0.22, 1, 0.36, 1],
                           }}
-
                           className="text-[15px] font-normal text-[#D1D1D1]"
                         >
                           {item}
@@ -877,10 +893,11 @@ function AadharAudit() {
 
                     {/* Left card */}
                     <div
-                      className={`col-start-2 flex flex-col ${isLeft
+                      className={`col-start-2 flex flex-col ${
+                        isLeft
                           ? "items-start pl-0 text-left sm:col-start-1 sm:items-end sm:pr-10 sm:text-right"
                           : "hidden sm:col-start-1 sm:block sm:invisible"
-                        }`}
+                      }`}
                     >
                       {isLeft && (
                         <div className="space-y-3">
@@ -901,10 +918,11 @@ function AadharAudit() {
 
                     {/* Right card */}
                     <div
-                      className={`col-start-2 flex flex-col justify-start ${!isLeft
+                      className={`col-start-2 flex flex-col justify-start ${
+                        !isLeft
                           ? "items-start pl-0 text-left sm:col-start-2 sm:pl-10"
                           : "hidden sm:col-start-2 sm:block sm:invisible"
-                        }`}
+                      }`}
                     >
                       {!isLeft && (
                         <div className="space-y-3">
@@ -985,9 +1003,10 @@ function AadharAudit() {
             <p className="text-sm sm:text-base font-semibold text-[#3B9E6A]">
               OUR DIFFERENTIATORS
             </p>
-            <WordReveal text="A Security-Focused Partner for Aadhaar Audit Readiness" className="text-[#FFFFFF]">
-                
-            </WordReveal>
+            <WordReveal
+              text="A Security-Focused Partner for Aadhaar Audit Readiness"
+              className="text-[#FFFFFF]"
+            ></WordReveal>
             <p className="sectionDescription text-[#D1D1D1]">
               Combine cybersecurity assessment expertise with practical guidance
               to strengthen identity-related systems and processes.

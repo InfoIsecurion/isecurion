@@ -312,6 +312,15 @@ export default function Home() {
               build lasting resilience through expert cybersecurity consulting,
               continuous validation, and intelligent security platforms.
             </p>
+
+            <p
+              className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-lg leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] animate-hero-reveal"
+              style={{ animationDelay: "1000ms" }}
+            >
+              Helping organizations anticipate threats, reduce cyber risk, and
+              build lasting resilience through expert cybersecurity consulting,
+              continuous validation, and intelligent security platforms.
+            </p>
           </div>
           <div
             className="flex flex-col justify-center lg:justify-start sm:flex-row gap-3 py-4 opacity-0 animate-hero-reveal"
