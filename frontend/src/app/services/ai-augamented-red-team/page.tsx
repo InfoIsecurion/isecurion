@@ -618,8 +618,6 @@ function AiAugamentedRedTeam() {
                   </div>
                 </div>
                 <div className="max-w-[300px] overflow-hidden flex flex-col gap-2">
-                  <p className="text-sm font-medium text-white">Captcha</p>
-
                   <Turnstile
                     ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}

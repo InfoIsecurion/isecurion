@@ -605,7 +605,7 @@ function AadharAudit() {
               </div>
               <button
                 type="submit"
-                className="w-full text-sm sm:text-base font-semibold flex items-center justify-center gap-3 px-3 py-3 rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]"
+                className={`w-full text-sm sm:text-base font-semibold flex items-center justify-center gap-3 px-3 py-3 rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]  ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
               >
                 Request UIDAI Audit{" "}
                 <span>

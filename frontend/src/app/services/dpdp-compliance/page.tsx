@@ -25,7 +25,7 @@ import { dpdp } from "../../../services/api/contact";
 import Link from "next/link";
 
 interface ContactFormData {
-  emai: string;
+  email: string;
   companyname: string;
   industry: string;
 }
@@ -98,7 +98,9 @@ const securityControls = [
     isecurionService: (
       <>
         {" "}
-        <Link href="/services/vapt"><span className="underline text-[#0F66EA]">VAPT Services</span>{" "}</Link>
+        <Link href="/services/vapt">
+          <span className="underline text-[#0F66EA]">VAPT Services</span>{" "}
+        </Link>
       </>
     ),
   },
@@ -166,7 +168,9 @@ const securityControls = [
       <>
         {" "}
         {""}
-        <Link href="/services/secure-code-review"><span className="underline text-[#0F66EA]">Secure Code Review</span></Link>
+        <Link href="/services/secure-code-review">
+          <span className="underline text-[#0F66EA]">Secure Code Review</span>
+        </Link>
       </>
     ),
   },
@@ -605,8 +609,9 @@ function DpdpCompliance() {
   } = useForm<ContactFormData>();
 
   const submit = async (data: ContactFormData) => {
-    setLoading(true);
+    console.log("this is executing the subit");
     console.log(data);
+    setLoading(true);
     try {
       if (!turnstileToken) {
         toast.error("Please complete CAPTCHA verification.");
@@ -624,7 +629,7 @@ function DpdpCompliance() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-        "Something went wrong. Please try again.",
+          "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -705,11 +710,11 @@ function DpdpCompliance() {
                     type="email"
                     placeholder="youremail@gmail.com"
                     className={`text-[15px] font-normal px-3 py-2.5 rounded-[10px] outline-none text-[#D1D1D1] bg-[#0A0303] ${errors.emai ? "border border-red-500" : "border-[1.12px] border-[#262D3D] "}`}
-                    {...register("emai", { required: "Email is required" })}
+                    {...register("email", { required: "Email is required" })}
                   />
-                  {errors.emai && (
+                  {errors.email && (
                     <p className="text-sm font-normal text-red-500">
-                      {errors.emai.message}
+                      {errors.email.message}
                     </p>
                   )}
                 </div>
@@ -746,19 +751,22 @@ function DpdpCompliance() {
                   })}
                 >
                   <option value="">Select Industry / Sector</option>
-                  <option value="">SaaS / Technology </option>
-                  <option value="">FinTech / BFSI</option>
-                  <option value="">Healthcare / HealthTech</option>
-                  <option value="">E-commerce / Retail</option>
-                  <option value="">IT Services / MSP</option>
-                  <option value="">Manufacturing</option>
-                  <option value="">Other</option>
+                  <option value="SaaS / Technology ">SaaS / Technology </option>
+                  <option value="FinTech / BFSI">FinTech / BFSI</option>
+                  <option value="Healthcare / HealthTech">
+                    Healthcare / HealthTech
+                  </option>
+                  <option value="E-commerce / Retail">
+                    E-commerce / Retail
+                  </option>
+                  <option value="IT Services / MSP">IT Services / MSP</option>
+                  <option value="Manufacturing">Manufacturing</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
               {/* captcha  */}
               <div className="">
                 <div className="flex items-center gap-3">
-
                   <Turnstile
                     ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
@@ -784,7 +792,7 @@ function DpdpCompliance() {
               </div>
               <button
                 type="submit"
-                className={`w-full text-base font-semibold flex items-center justify-center py-2.5 gap-2 rounded-[10px] cursor-pointer text-[#FFFFFF] border-2 border-[#00000000] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                className={`w-full text-base font-semibold flex items-center justify-center py-2.5 gap-2 rounded-[10px] text-[#FFFFFF] border-2 border-[#00000000] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
               >
                 Get My Free Gap Assessment{" "}
                 <span>
@@ -930,12 +938,22 @@ function DpdpCompliance() {
                       className="text-sm sm:text-base font-medium flex items-center gap-3 text-[#D9D9D9]"
                     >
                       <span className="flex h-[27px] w-[27px] shrink-0 items-center justify-center ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 64 64"
+                        >
                           <path d="M0 0h64v64H0z" fill="none" />
-                          <path fill="#3B9E6A" d="M58.4 0L23.6 38.3l-10.1-7.7H7.9l15.7 25.5L64 0z" />
-                          <path fill="#1C2332" d="M53.9 56.1c0 .6-.5 1.1-1.1 1.1H7.9c-.6 0-1.1-.5-1.1-1.1V11.2c0-.6.5-1.1 1.1-1.1h30.7l6.1-6.7H2.2C1 3.4 0 4.4 0 5.6v56.1C0 63 1 64 2.2 64h56.1c1.2 0 2.2-1 2.2-2.2V18.1l-6.7 9.4c.1 0 .1 28.6.1 28.6" />
+                          <path
+                            fill="#3B9E6A"
+                            d="M58.4 0L23.6 38.3l-10.1-7.7H7.9l15.7 25.5L64 0z"
+                          />
+                          <path
+                            fill="#1C2332"
+                            d="M53.9 56.1c0 .6-.5 1.1-1.1 1.1H7.9c-.6 0-1.1-.5-1.1-1.1V11.2c0-.6.5-1.1 1.1-1.1h30.7l6.1-6.7H2.2C1 3.4 0 4.4 0 5.6v56.1C0 63 1 64 2.2 64h56.1c1.2 0 2.2-1 2.2-2.2V18.1l-6.7 9.4c.1 0 .1 28.6.1 28.6"
+                          />
                         </svg>
-
                       </span>{" "}
                       {item}
                     </p>
@@ -956,7 +974,9 @@ function DpdpCompliance() {
                       Breach Notification Obligations
                     </h3>
                     <p className="mt-4 text-sm sm:text-base  font-normal text-[#D1D1D1]">
-                      Establish clear incident response procedures to detect, report, and manage personal data breaches in line with applicable DPDP requirements.
+                      Establish clear incident response procedures to detect,
+                      report, and manage personal data breaches in line with
+                      applicable DPDP requirements.
                     </p>
                   </div>
                 </div>
@@ -967,12 +987,22 @@ function DpdpCompliance() {
                       className="text-sm sm:text-base font-medium flex items-center gap-3 text-[#D9D9D9]"
                     >
                       <span className="flex h-[27px] w-[27px] shrink-0 items-center justify-center ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 64 64">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="1em"
+                          height="1em"
+                          viewBox="0 0 64 64"
+                        >
                           <path d="M0 0h64v64H0z" fill="none" />
-                          <path fill="#3B9E6A" d="M58.4 0L23.6 38.3l-10.1-7.7H7.9l15.7 25.5L64 0z" />
-                          <path fill="#1C2332" d="M53.9 56.1c0 .6-.5 1.1-1.1 1.1H7.9c-.6 0-1.1-.5-1.1-1.1V11.2c0-.6.5-1.1 1.1-1.1h30.7l6.1-6.7H2.2C1 3.4 0 4.4 0 5.6v56.1C0 63 1 64 2.2 64h56.1c1.2 0 2.2-1 2.2-2.2V18.1l-6.7 9.4c.1 0 .1 28.6.1 28.6" />
+                          <path
+                            fill="#3B9E6A"
+                            d="M58.4 0L23.6 38.3l-10.1-7.7H7.9l15.7 25.5L64 0z"
+                          />
+                          <path
+                            fill="#1C2332"
+                            d="M53.9 56.1c0 .6-.5 1.1-1.1 1.1H7.9c-.6 0-1.1-.5-1.1-1.1V11.2c0-.6.5-1.1 1.1-1.1h30.7l6.1-6.7H2.2C1 3.4 0 4.4 0 5.6v56.1C0 63 1 64 2.2 64h56.1c1.2 0 2.2-1 2.2-2.2V18.1l-6.7 9.4c.1 0 .1 28.6.1 28.6"
+                          />
                         </svg>
-
                       </span>{" "}
                       {item}
                     </p>
@@ -1115,8 +1145,9 @@ function DpdpCompliance() {
                     <div key={heading} className="relative min-w-0 pb-1">
                       <div className="absolute -bottom-4 left-0 h-px w-[62px] bg-[#698099]" />
                       <p
-                        className={`text-base sm:text-lg font-medium text-[#D1D1D1]  ${index === 3 ? "uppercase" : ""
-                          }`}
+                        className={`text-base sm:text-lg font-medium text-[#D1D1D1]  ${
+                          index === 3 ? "uppercase" : ""
+                        }`}
                       >
                         {heading}
                       </p>

@@ -239,7 +239,7 @@ export const dpoServices = async (data) => {
 
 export const dpdp = async (data) => {
   try {
-    const response = await fetch(`${API_URL}/api/dpo-services`, {
+    const response = await fetch(`${API_URL}/api/dpdp`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -272,7 +272,7 @@ export const dpdp = async (data) => {
 
 export const vcsio = async (data) => {
   try {
-    const response = await fetch(`${API_URL}/api/vciso-services`, {
+    const response = await fetch(`${API_URL}/api/vciso`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

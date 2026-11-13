@@ -382,19 +382,28 @@ function SocCompliance() {
                 </p>
 
                 {/* Heading */}
-                <h1 className="mt-5 lg:max-w-[430px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{animationDelay:"550ms"}}>
+                <h1
+                  className="mt-5 lg:max-w-[430px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal"
+                  style={{ animationDelay: "550ms" }}
+                >
                   SOC 2 Compliance Audit & Readiness Services in India
                 </h1>
 
                 {/* Description */}
-                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{animationDelay:"650ms"}}>
+                <p
+                  className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
+                  style={{ animationDelay: "650ms" }}
+                >
                   Trusted by SaaS, FinTech, and cloud companies across
                   Bangalore, Mumbai, Hyderabad, Chennai, Pune, Kolkata, and
                   Kochi - and globally in USA, UK, UAE, Australia, and
                   Singapore.
                 </p>
 
-                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{animationDelay:"750ms"}}>
+                <p
+                  className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
+                  style={{ animationDelay: "750ms" }}
+                >
                   ISECURION takes you end-to-end from scoping and gap analysis
                   to evidence readiness and CPA auditor coordination. 100% audit
                   success rate. 250+ engagements.
@@ -416,7 +425,10 @@ function SocCompliance() {
                 {/* ==================== STATS ==================== */}
                 <div className="mt-9 grid lg:max-w-[380px] grid-cols-3 lg:grid-cols-2 gap-x-10 gap-y-6 text-center lg:text-left">
                   {/* 150+ */}
-                  <div className="animate-hero-reveal" style={{animationDelay:"1050ms"}}>
+                  <div
+                    className="animate-hero-reveal"
+                    style={{ animationDelay: "1050ms" }}
+                  >
                     <p className="text-[21px] font-semibold leading-none text-[#0F66EA] sm:text-[22px]">
                       250+
                     </p>
@@ -427,7 +439,10 @@ function SocCompliance() {
                   </div>
 
                   {/* 30+ */}
-                  <div className="animate-hero-reveal" style={{animationDelay:"1200ms"}}>
+                  <div
+                    className="animate-hero-reveal"
+                    style={{ animationDelay: "1200ms" }}
+                  >
                     <p className="text-[21px] font-semibold leading-none text-[#0F66EA] sm:text-[22px]">
                       40+
                     </p>
@@ -438,7 +453,10 @@ function SocCompliance() {
                   </div>
 
                   {/* 100% */}
-                  <div className="animate-hero-reveal" style={{animationDelay:"1300ms"}}>
+                  <div
+                    className="animate-hero-reveal"
+                    style={{ animationDelay: "1300ms" }}
+                  >
                     <p className="text-[21px] font-semibold leading-none text-[#0F66EA] sm:text-[22px]">
                       100%
                     </p>
@@ -668,11 +686,7 @@ function SocCompliance() {
                   {/* Captcha */}
                   <div className="mt-7">
                     <div className="flex items-center gap-3">
-                      <span className="text-[13px] leading-5 text-[#E7E7E7]">
-                        Captcha
-                      </span>
-
-                      <div className="mt-7">
+                      <div className="">
                         <Turnstile
                           ref={turnstileRef}
                           siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
@@ -734,27 +748,28 @@ function SocCompliance() {
                   What Is SOC 2?
                 </p>
 
-                <WordReveal text="What is SOC 2? A Complete Guide for Indian &amp; Global Companies" className="mx-auto mt-4 lg:max-w-[600px] text-center text-[28px] font-medium leading-[1.35] tracking-[-0.02em] text-white sm:text-[34px] lg:mx-0 lg:text-left lg:text-[40px] lg:leading-[1.4]">
-                  
-                </WordReveal>
+                <WordReveal
+                  text="What is SOC 2? A Complete Guide for Indian &amp; Global Companies"
+                  className="mx-auto mt-4 lg:max-w-[600px] text-center text-[28px] font-medium leading-[1.35] tracking-[-0.02em] text-white sm:text-[34px] lg:mx-0 lg:text-left lg:text-[40px] lg:leading-[1.4]"
+                ></WordReveal>
 
                 <div className="mx-auto mt-[22px] lg:max-w-[530px] space-y-5 text-center text-[15px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[16px] lg:text-left lg:mx-0 lg:text-[17px]">
                   <Animation>
-                  <p>
-                    SOC 2 (System and Organization Controls 2) is an attestation
-                    by an independent CPA firm evaluating how well a service
-                    organization designs and operates controls aligned to the
-                    AICPA Trust Services Criteria (TSC).
-                  </p>
+                    <p>
+                      SOC 2 (System and Organization Controls 2) is an
+                      attestation by an independent CPA firm evaluating how well
+                      a service organization designs and operates controls
+                      aligned to the AICPA Trust Services Criteria (TSC).
+                    </p>
                   </Animation>
 
                   <Animation delay={0.5}>
-                  <p>
-                    It is the globally accepted security standard demanded by
-                    enterprise customers in the USA, UK, UAE, Australia, and
-                    Singapore, and increasingly by Indian enterprises in
-                    Bangalore, Mumbai, and Hyderabad.
-                  </p>
+                    <p>
+                      It is the globally accepted security standard demanded by
+                      enterprise customers in the USA, UK, UAE, Australia, and
+                      Singapore, and increasingly by Indian enterprises in
+                      Bangalore, Mumbai, and Hyderabad.
+                    </p>
                   </Animation>
                 </div>
               </div>
@@ -812,9 +827,10 @@ function SocCompliance() {
             {/* Intro */}
             <LeftAnimation>
               <div className="lg:max-w-[440px] text-center lg:text-left">
-                <WordReveal text="SOC 2 Compliance Services Across India" className="text-[28px] font-normal leading-[1.4] tracking-[-0.4px] text-white sm:text-[32px] sm:leading-[1.45] lg:text-[32px] xl:text-[34px]">
-                  
-                </WordReveal>
+                <WordReveal
+                  text="SOC 2 Compliance Services Across India"
+                  className="text-[28px] font-normal leading-[1.4] tracking-[-0.4px] text-white sm:text-[32px] sm:leading-[1.45] lg:text-[32px] xl:text-[34px]"
+                ></WordReveal>
 
                 <p className="mt-4 text-[14px] leading-[25px] text-[#C5C9D2] sm:text-[15px] sm:leading-[26px]">
                   From Bangalore's SaaS startups to Mumbai's FinTech firms,
@@ -935,15 +951,16 @@ function SocCompliance() {
               <p className="text-sm sm:text-base font-semibold text-[#0F66EA] ">
                 INDUSTRIES WE SERVE
               </p>
-              <WordReveal text="Built for Modern Tech Teams in India & Globally" className="text-[#FFFFFF] max-w-[700px]">
-                
-              </WordReveal>
+              <WordReveal
+                text="Built for Modern Tech Teams in India & Globally"
+                className="text-[#FFFFFF] max-w-[700px]"
+              ></WordReveal>
               <Animation>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[780px]">
-                Support your SOC 2 journey with security assessments and audit
-                readiness tailored to your industry, technology stack, and
-                enterprise requirements.
-              </p>
+                <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[780px]">
+                  Support your SOC 2 journey with security assessments and audit
+                  readiness tailored to your industry, technology stack, and
+                  enterprise requirements.
+                </p>
               </Animation>
             </div>
             <div className="mt-10">
@@ -986,9 +1003,10 @@ function SocCompliance() {
                   BUSINESS VALUE
                 </p>
 
-                <WordReveal text="Why SOC 2 Matters for Your Business?" className="mt-8 lg:max-w-[450px] font-medium leading-[1.42] text-white">
-                  
-                </WordReveal>
+                <WordReveal
+                  text="Why SOC 2 Matters for Your Business?"
+                  className="mt-8 lg:max-w-[450px] font-medium leading-[1.42] text-white"
+                ></WordReveal>
 
                 <p className="mt-[18px] lg:max-w-[420px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px]">
                   Build customer trust, accelerate enterprise sales, strengthen
@@ -1008,67 +1026,67 @@ function SocCompliance() {
               <div className="border-t border-[#B1B1B114] pt-[45px] lg:border-l lg:border-t-0 lg:pl-[32px] lg:pt-0">
                 <div className="space-y-[20px]">
                   <AnimatedCard delay={0.2}>
-                  <div className="grid grid-cols-[35px_1fr] gap-[14px]">
-                    <span className="text-[15px] font-medium leading-[1.5] text-[#0F66EA]">
-                      01
-                    </span>
-                    <div>
-                      <h3 className="text-[17px] font-medium leading-[1.5] text-white">
-                        Unlock US & UK Enterprise Deals
-                      </h3>
-                      <p className="mt-[6px] max-w-[400px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1]">
-                        Most Fortune 500 procurement teams require it.
-                      </p>
+                    <div className="grid grid-cols-[35px_1fr] gap-[14px]">
+                      <span className="text-[15px] font-medium leading-[1.5] text-[#0F66EA]">
+                        01
+                      </span>
+                      <div>
+                        <h3 className="text-[17px] font-medium leading-[1.5] text-white">
+                          Unlock US & UK Enterprise Deals
+                        </h3>
+                        <p className="mt-[6px] max-w-[400px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1]">
+                          Most Fortune 500 procurement teams require it.
+                        </p>
+                      </div>
                     </div>
-                  </div>
                   </AnimatedCard>
 
                   <AnimatedCard delay={0.4}>
-                  <div className="grid grid-cols-[35px_1fr] gap-[14px]">
-                    <span className="text-[15px] font-medium leading-[1.5] text-[#0F66EA]">
-                      02
-                    </span>
-                    <div>
-                      <h3 className="text-[17px] font-medium leading-[1.5] text-white">
-                        Investor & Board Confidence
-                      </h3>
-                      <p className="mt-[6px] max-w-[400px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1]">
-                        Demonstrates mature governance at Series A/B.
-                      </p>
+                    <div className="grid grid-cols-[35px_1fr] gap-[14px]">
+                      <span className="text-[15px] font-medium leading-[1.5] text-[#0F66EA]">
+                        02
+                      </span>
+                      <div>
+                        <h3 className="text-[17px] font-medium leading-[1.5] text-white">
+                          Investor & Board Confidence
+                        </h3>
+                        <p className="mt-[6px] max-w-[400px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1]">
+                          Demonstrates mature governance at Series A/B.
+                        </p>
+                      </div>
                     </div>
-                  </div>
                   </AnimatedCard>
 
                   <AnimatedCard delay={0.6}>
-                  <div className="grid grid-cols-[35px_1fr] gap-[14px]">
-                    <span className="text-[15px] font-medium leading-[1.5] text-[#0F66EA]">
-                      03
-                    </span>
-                    <div>
-                      <h3 className="text-[17px] font-medium leading-[1.5] text-white">
-                        Faster Sales Cycles
-                      </h3>
-                      <p className="mt-[6px] max-w-[350px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1]">
-                        Skip the security questionnaire bottleneck.
-                      </p>
+                    <div className="grid grid-cols-[35px_1fr] gap-[14px]">
+                      <span className="text-[15px] font-medium leading-[1.5] text-[#0F66EA]">
+                        03
+                      </span>
+                      <div>
+                        <h3 className="text-[17px] font-medium leading-[1.5] text-white">
+                          Faster Sales Cycles
+                        </h3>
+                        <p className="mt-[6px] max-w-[350px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1]">
+                          Skip the security questionnaire bottleneck.
+                        </p>
+                      </div>
                     </div>
-                  </div>
                   </AnimatedCard>
 
                   <AnimatedCard delay={0.8}>
-                  <div className="grid grid-cols-[35px_1fr] gap-[14px]">
-                    <span className="text-[15px] font-medium leading-[1.5] text-[#0F66EA]">
-                      04
-                    </span>
-                    <div>
-                      <h3 className="text-[17px] font-medium leading-[1.5] text-white">
-                        Multi-Framework Alignment
-                      </h3>
-                      <p className="mt-[6px] max-w-[380px] text-[13px] font-normal leading-[1.8] text-[#D1D1D1]">
-                        ISO 27001, GDPR, HIPAA, and DPDP synergies.
-                      </p>
+                    <div className="grid grid-cols-[35px_1fr] gap-[14px]">
+                      <span className="text-[15px] font-medium leading-[1.5] text-[#0F66EA]">
+                        04
+                      </span>
+                      <div>
+                        <h3 className="text-[17px] font-medium leading-[1.5] text-white">
+                          Multi-Framework Alignment
+                        </h3>
+                        <p className="mt-[6px] max-w-[380px] text-[13px] font-normal leading-[1.8] text-[#D1D1D1]">
+                          ISO 27001, GDPR, HIPAA, and DPDP synergies.
+                        </p>
+                      </div>
                     </div>
-                  </div>
                   </AnimatedCard>
                 </div>
               </div>
@@ -1137,9 +1155,10 @@ function SocCompliance() {
               OUR METHODOLOGY
             </p>
 
-            <WordReveal text="Our 5-Phase SOC 2 Compliance Journey" className="mx-auto mt-3 max-w-[840px] leading-[1.3] text-[#FEFEFE]">
-              
-            </WordReveal>
+            <WordReveal
+              text="Our 5-Phase SOC 2 Compliance Journey"
+              className="mx-auto mt-3 max-w-[840px] leading-[1.3] text-[#FEFEFE]"
+            ></WordReveal>
 
             <p className="mx-auto mt-3 max-w-4xl text-xs font-normal leading-[19px] text-[#D1D1D1] sm:text-[17px] sm:leading-[28px]">
               Battle-tested methodology used across 250+ engagements in India
@@ -1297,9 +1316,10 @@ function SocCompliance() {
               SECURITY CONTROL AREAS
             </p>
 
-            <WordReveal  text="Core Security Domains for SOC 2 Compliance" className="font-medium leading-tight tracking-tight text-white">
-             
-            </WordReveal>
+            <WordReveal
+              text="Core Security Domains for SOC 2 Compliance"
+              className="font-medium leading-tight tracking-tight text-white"
+            ></WordReveal>
 
             <p className="mx-auto mt-4 max-w-[780px] text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px]">
               Address critical security risks with robust controls across
@@ -1341,9 +1361,10 @@ function SocCompliance() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <Animation>
             <div className="max-w-5xl mx-auto lg:mx-0  space-y-4 text-center lg:text-left">
-              <WordReveal text="SOC 2 Compliance in India - Everything You Need to Know" className="font-medium leading-[38px] md:leading-[45px] xl:leading-[57px] text-[#FEFEFE] max-w-[650px]">
-                
-              </WordReveal>
+              <WordReveal
+                text="SOC 2 Compliance in India - Everything You Need to Know"
+                className="font-medium leading-[38px] md:leading-[45px] xl:leading-[57px] text-[#FEFEFE] max-w-[650px]"
+              ></WordReveal>
               <p className="text-base sm:text-lg font-normal text-[#D1D1D1] leading-8">
                 SOC 2 compliance has become the de-facto security standard for
                 B2B software companies selling into global markets. Whether you

@@ -290,11 +290,9 @@ export default function Home() {
       >
         <div className="max-w-7xl w-full mx-auto px-6 sm:px-10">
           <div className="space-y-5 text-center lg:text-left">
-
             <p className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading animate-hero-reveal">
               SECURING MODERN ENTERPRISES
             </p>
-
 
             <h1 className="text-transparent bg-clip-text bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2]">
               <WordReveal as="span" text="Build for Trust" className="inline" />
@@ -306,36 +304,39 @@ export default function Home() {
               />
             </h1>
 
-
-            <p className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-lg leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] animate-hero-reveal" style={{ animationDelay: "1000ms" }}>
+            <p
+              className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-lg leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] animate-hero-reveal"
+              style={{ animationDelay: "1000ms" }}
+            >
               Helping organizations anticipate threats, reduce cyber risk, and
-              build lasting resilience through expert cybersecurity
-              consulting, continuous validation, and intelligent security
-              platforms.
+              build lasting resilience through expert cybersecurity consulting,
+              continuous validation, and intelligent security platforms.
             </p>
-
           </div>
           <div
             className="flex flex-col justify-center lg:justify-start sm:flex-row gap-3 py-4 opacity-0 animate-hero-reveal"
             style={{ animationDelay: "600ms" }}
           >
-            <button className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1]">
-              <Link href="/company/contact">Schedule a Consultation </Link>
-              <span>
-                <Icon icon="mdi:arrow-right" width={20} />
-              </span>
-            </button>
-            <button
-              onClick={() =>
-                document
-                  .getElementById("services")
-                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
-              }
-              className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29]"
-            >
-              <span></span>
-              Explore services ›
-            </button>
+            <Animation>
+              <button
+                className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1] animate-hero-reveal"
+                style={{ animationDelay: "1200ms" }}
+              >
+                <Link href="/company/contact">Schedule a Consultation </Link>
+                <span>
+                  <Icon icon="mdi:arrow-right" width={20} />
+                </span>
+              </button>
+            </Animation>
+            <Animation>
+              <button
+                className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29] animate-hero-reveal"
+                style={{ animationDelay: "1400ms" }}
+              >
+                <span></span>
+                Explore services ›
+              </button>
+            </Animation>
           </div>
         </div>
       </section>
@@ -443,11 +444,10 @@ export default function Home() {
           {/* Heading */}
           <Animation>
             <div className="px-6 sm:px-10 ">
-
-              <WordReveal text="TRUSTED BY LEADING ORGANIZATIONS" className="text-center text-[20px] font-medium leading-[27px] tracking-[1.3px] text-[#7E93B4] animate-hero-reveal" >
-                
-              </WordReveal>
-
+              <WordReveal
+                text="TRUSTED BY LEADING ORGANIZATIONS"
+                className="text-center text-[20px] font-medium leading-[27px] tracking-[1.3px] text-[#7E93B4] animate-hero-reveal"
+              ></WordReveal>
             </div>
           </Animation>
         </div>
@@ -1078,8 +1078,9 @@ export default function Home() {
                 <AnimatedCard
                   key={index}
                   delay={index * 0.1}
-                  className={`mx-auto px-14 text-center ${index !== 4 ? "lg:border-r lg:border-[#888888]" : ""
-                    }`}
+                  className={`mx-auto px-14 text-center ${
+                    index !== 4 ? "lg:border-r lg:border-[#888888]" : ""
+                  }`}
                 >
                   <h3 className="text-[16px] font-normal text-white sm:text-3xl">
                     {item.value}
@@ -1297,16 +1298,18 @@ export default function Home() {
 
                   {/* Title */}
                   <h3
-                    className={`mt-4 max-w-[280px] text-[20px] font-medium leading-7 sm:text-[22px] sm:leading-8 lg:text-[24px] ${index === 0 ? "text-[#29263D]" : "text-white"
-                      }`}
+                    className={`mt-4 max-w-[280px] text-[20px] font-medium leading-7 sm:text-[22px] sm:leading-8 lg:text-[24px] ${
+                      index === 0 ? "text-[#29263D]" : "text-white"
+                    }`}
                   >
                     {card.title}
                   </h3>
 
                   {/* Description */}
                   <p
-                    className={`mt-5 max-w-[320px] pb-4 text-[14px] font-medium leading-6 sm:mt-6 sm:text-[15px] ${index === 0 ? "text-white" : "text-[#D1D1D1]"
-                      }`}
+                    className={`mt-5 max-w-[320px] pb-4 text-[14px] font-medium leading-6 sm:mt-6 sm:text-[15px] ${
+                      index === 0 ? "text-white" : "text-[#D1D1D1]"
+                    }`}
                   >
                     {card.description}
                   </p>

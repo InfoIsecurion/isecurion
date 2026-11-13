@@ -5,13 +5,15 @@ import {
   redTeam,
   aiAugamentedRedTeam,
   phishingSimulation,
-  managedSecurityService,
   dpoServices,
   aadharAudit,
   bseNseAudit,
   cicraAudit,
   rbiSecurityAudit,
   irda,
+  dpdp,
+  vciso,
+  iso27001,
 } from '@/controller/contact.controller'
 
 export const contactEndpoint: Endpoint = {
@@ -32,7 +34,7 @@ export const redTeamEndpoint: Endpoint = {
   handler: redTeam,
 }
 
-export const aiAugamented: Endpoint = {
+export const aiAugamentedEndpoint: Endpoint = {
   path: '/ai-augamented',
   method: 'post',
   handler: aiAugamentedRedTeam,
@@ -42,12 +44,6 @@ export const phishingSimulationEndpoint: Endpoint = {
   path: '/phishing-simulation',
   method: 'post',
   handler: phishingSimulation,
-}
-
-export const managedSecurityEndpoint: Endpoint = {
-  path: '/managed-security-service',
-  method: 'post',
-  handler: managedSecurityService,
 }
 
 export const dpoEndpoint: Endpoint = {
@@ -84,4 +80,22 @@ export const irdaEndpoint: Endpoint = {
   path: '/irda-audit',
   method: 'post',
   handler: irda,
+}
+
+export const dpdpEndpoint: Endpoint = {
+  path: '/dpdp',
+  method: 'post',
+  handler: dpdp,
+}
+
+export const vcisoEndpoint: Endpoint = {
+  path: '/vciso',
+  method: 'post',
+  handler: vciso,
+}
+
+export const iso27001Endpoint: Endpoint = {
+  path: '/iso27001',
+  method: 'post',
+  handler: iso27001,
 }
