@@ -428,21 +428,21 @@ function AiAugamentedRedTeam() {
             </p>
             <div className="flex gap-4">
               <Link href="/company/contact">
-              <button className="text-[15px] font-medium px-4 py-3 flex items-center gap-3 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]">
-                Get AI Red Team Quote{" "}
-                <span>
-                  <Icon icon="akar-icons:arrow-right" />
-                </span>
-              </button>
+                <button className="text-[15px] font-medium px-4 py-3 flex items-center gap-3 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]">
+                  Get AI Red Team Quote{" "}
+                  <span>
+                    <Icon icon="akar-icons:arrow-right" />
+                  </span>
+                </button>
               </Link>
               <Link href="tel:+918861201570" target="_blank">
-              <button className="text-[15px] font-medium px-4 py-3 flex items-center gap-3 rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF]/16">
-                <span>
-                  <Icon icon="flowbite:outgoing-call-outline" />
-                </span>
-                {""}
-                Talk to Us
-              </button>
+                <button className="text-[15px] font-medium px-4 py-3 flex items-center gap-3 rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF]/16">
+                  <span>
+                    <Icon icon="flowbite:outgoing-call-outline" />
+                  </span>
+                  {""}
+                  Talk to Us
+                </button>
               </Link>
             </div>
           </div>
@@ -616,8 +616,6 @@ function AiAugamentedRedTeam() {
                   </div>
                 </div>
                 <div className="max-w-[300px] overflow-hidden flex flex-col gap-2">
-                  <p className="text-sm font-medium text-white">Captcha</p>
-
                   <Turnstile
                     ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}

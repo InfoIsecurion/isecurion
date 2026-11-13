@@ -519,7 +519,7 @@ function page() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-        "Something went wrong. Please try again.",
+          "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -544,12 +544,18 @@ function page() {
                 </p>
 
                 {/* Heading */}
-                <h1 className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "800ms" }}>
+                <h1
+                  className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal"
+                  style={{ animationDelay: "800ms" }}
+                >
                   BSE / NSE Audit Services for Capital Market Entities
                 </h1>
 
                 {/* Description */}
-                <p className="mt-4 lg:max-w-[410px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "1000ms" }}>
+                <p
+                  className="mt-4 lg:max-w-[410px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
+                  style={{ animationDelay: "1000ms" }}
+                >
                   Strengthen your regulatory compliance and cybersecurity
                   posture with comprehensive BSE/NSE audits. Assess IT
                   governance, security controls, and operational resilience in
@@ -572,7 +578,9 @@ function page() {
                         duration: 0.6,
                         delay: index * 0.12,
                         ease: [0.22, 1, 0.36, 1],
-                      }} className="flex items-center justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]">
+                      }}
+                      className="flex items-center justify-center lg:justify-start gap-3 text-sm sm:text-base font-normal tracking-[0.04em] leading-4.5 text-[#D1D1D1]"
+                    >
                       <span className="mt-[5px] h-[6px] w-[6px] shrink-0 bg-[#3B9E6A]" />
                       <span>{item}</span>
                     </motion.li>
@@ -603,8 +611,7 @@ function page() {
                 </h2>
 
                 <p className="mt-3 text-[14px] leading-[1.5] text-[#D9D9D9]">
-                  Share your details to discuss your BSE/NSE audit
-                  requirements.
+                  Share your details to discuss your BSE/NSE audit requirements.
                 </p>
               </div>
 
@@ -660,8 +667,7 @@ function page() {
                     htmlFor="assessmentType"
                     className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
                   >
-                    Organization Type{" "}
-                    <span className="text-[#F04444]">*</span>
+                    Organization Type <span className="text-[#F04444]">*</span>
                   </label>
 
                   <div className="relative">
@@ -702,9 +708,7 @@ function page() {
                       <option value="Investment Advisor">
                         Investment Advisor
                       </option>
-                      <option value="Research Analyst">
-                        Research Analyst
-                      </option>
+                      <option value="Research Analyst">Research Analyst</option>
                       <option value="Market Infrastructure Institution">
                         Market Infrastructure Institution
                       </option>
@@ -720,12 +724,7 @@ function page() {
                     )}
 
                     <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#777]">
-                      <svg
-                        width="14"
-                        height="8"
-                        viewBox="0 0 14 8"
-                        fill="none"
-                      >
+                      <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
                         <path
                           d="M1 1L7 7L13 1"
                           stroke="currentColor"
@@ -765,18 +764,18 @@ function page() {
                     htmlFor="consent"
                     className="text-[10px] leading-[1.7] text-[#BDBDBD] sm:text-[11px]"
                   >
-                    By clicking submit below, you agree to our Terms of Use
-                    and Privacy Policy. Additionally, you consent to allow
-                    ISECURION Technology & Consulting Pvt. Ltd. to store and
-                    process the personal information submitted above to
-                    provide you the content requested.
+                    By clicking submit below, you agree to our Terms of Use and
+                    Privacy Policy. Additionally, you consent to allow ISECURION
+                    Technology & Consulting Pvt. Ltd. to store and process the
+                    personal information submitted above to provide you the
+                    content requested.
                   </label>
                 </div>
 
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="mt-8 flex h-[51px] w-full items-center justify-center rounded-[7px] border border-[#4D78C4] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(39,84,148,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#5282D3] hover:to-[#2B5CA0] active:translate-y-0"
+                  className={`mt-8 flex h-[51px] w-full items-center justify-center rounded-[7px] border border-[#4D78C4] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(39,84,148,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#5282D3] hover:to-[#2B5CA0] active:translate-y-0 ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
                 >
                   Request BSE / NSE Audit Consultation {""}
                   <span className="ml-1.5 text-[18px] leading-none">
@@ -799,16 +798,18 @@ function page() {
                   UNDERSTANDING BSE/NSE AUDITS
                 </p>
 
-                <WordReveal text="SEBI-Aligned IT & Cybersecurity Audits for Capital Market Entities" className="mx-auto mt-4 max-w-[570px] text-center text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] lg:text-left lg:mx-0 lg:text-[36px] xl:text-[40px]">
-
-                </WordReveal>
+                <WordReveal
+                  text="SEBI-Aligned IT & Cybersecurity Audits for Capital Market Entities"
+                  className="mx-auto mt-4 max-w-[570px] text-center text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] lg:text-left lg:mx-0 lg:text-[36px] xl:text-[40px]"
+                ></WordReveal>
 
                 <div className="mx-auto mt-[22px] max-w-[570px] space-y-5 text-center text-[15px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[16px] lg:text-left lg:mx-0 lg:text-[16px] xl:text-[17px]">
                   <Animation>
                     <p>
                       Organizations operating in India's capital markets must
                       address regulatory requirements relating to IT governance,
-                      cybersecurity, data protection, and operational resilience.
+                      cybersecurity, data protection, and operational
+                      resilience.
                     </p>
                   </Animation>
 
@@ -816,10 +817,10 @@ function page() {
                     <p>
                       ISECURION's BSE/NSE Audit Services help evaluate your IT
                       infrastructure, cybersecurity controls, governance
-                      practices, and operational processes against applicable SEBI
-                      guidelines and exchange requirements. Identify compliance
-                      gaps, strengthen security controls, and improve readiness
-                      for regulatory assessments.
+                      practices, and operational processes against applicable
+                      SEBI guidelines and exchange requirements. Identify
+                      compliance gaps, strengthen security controls, and improve
+                      readiness for regulatory assessments.
                     </p>
                   </Animation>
                 </div>
@@ -872,9 +873,10 @@ function page() {
               <p className="text-sm sm:text-base font-semibold text-[#3B9E6A] ">
                 INDUSTRIES WE SERVE
               </p>
-              <WordReveal text="BSE/NSE Audit Support Across Capital Market Entities" className="text-[#FFFFFF] max-w-[700px]">
-
-              </WordReveal>
+              <WordReveal
+                text="BSE/NSE Audit Support Across Capital Market Entities"
+                className="text-[#FFFFFF] max-w-[700px]"
+              ></WordReveal>
               <Animation>
                 <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[850px]">
                   Support regulatory and cybersecurity requirements across
@@ -888,8 +890,9 @@ function page() {
                   <AnimatedCard
                     delay={index * 0.2}
                     key={index}
-                    className={`relative flex flex-col justify-between p-5 space-y-4 rounded-lg bg-[#66666614] border border-[#0B15301F] py-8  ${index === 7 ? "lg:col-span-2" : ""
-                      }`}
+                    className={`relative flex flex-col justify-between p-5 space-y-4 rounded-lg bg-[#66666614] border border-[#0B15301F] py-8  ${
+                      index === 7 ? "lg:col-span-2" : ""
+                    }`}
                   >
                     <div className="absolute left-0 w-[2.5px] h-[23px] rounded-tr-2xl rounded-br-2xl bg-[#3B9E6A]"></div>
                     <div className="flex items-center justify-between gap-8">
@@ -922,9 +925,10 @@ function page() {
               WHY BSE/NSE AUDITS MATTER
             </p>
 
-            <WordReveal text="Mandatory Regulatory Assessment for Market Participants" className="mt-3 text-2xl font-medium leading-tight text-[#FEFEFE] sm:text-3xl md:text-4xl lg:text-[38px] lg:leading-[1.3] max-w-3xl">
-
-            </WordReveal>
+            <WordReveal
+              text="Mandatory Regulatory Assessment for Market Participants"
+              className="mt-3 text-2xl font-medium leading-tight text-[#FEFEFE] sm:text-3xl md:text-4xl lg:text-[38px] lg:leading-[1.3] max-w-3xl"
+            ></WordReveal>
             <Animation>
               <p className="mx-auto mt-5 max-w-4xl text-sm font-normal leading-6 text-[#D1D1D1] sm:text-base sm:leading-7">
                 A structured audit helps identify security weaknesses, improve
@@ -971,16 +975,17 @@ function page() {
               Compliance & Assurance
             </p>
 
-            <WordReveal text="Comprehensive BSE / NSE Audit Coverage" className="mt-2 max-w-[650px] leading-[1.35] text-white ">
-              
-            </WordReveal>
+            <WordReveal
+              text="Comprehensive BSE / NSE Audit Coverage"
+              className="mt-2 max-w-[650px] leading-[1.35] text-white "
+            ></WordReveal>
 
             <Animation>
-            <p className="mt-3 max-w-[780px] text-base leading-[1.8] text-[#D1D1D1] sm:text-[17px]">
-              From governance to operations, we assess the controls, processes
-              and systems that keep your exchange secure, resilient and
-              compliant.
-            </p>
+              <p className="mt-3 max-w-[780px] text-base leading-[1.8] text-[#D1D1D1] sm:text-[17px]">
+                From governance to operations, we assess the controls, processes
+                and systems that keep your exchange secure, resilient and
+                compliant.
+              </p>
             </Animation>
           </div>
 
@@ -1007,7 +1012,11 @@ function page() {
                 {/* CATEGORY ITEMS */}
                 <div className="space-y-4 sm:space-y-5">
                   {group.items.map((item, i) => (
-                    <AnimatedCard delay={i * 0.2} key={item.title} className="flex items-start gap-3">
+                    <AnimatedCard
+                      delay={i * 0.2}
+                      key={item.title}
+                      className="flex items-start gap-3"
+                    >
                       {/* ICON */}
                       <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-[12px] bg-[#182331] sm:h-12 sm:w-12">
                         <Icon
@@ -1074,10 +1083,11 @@ function page() {
                   {/* Left content */}
 
                   <div
-                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${item.side === "left"
-                      ? "sm:pr-7 sm:text-right lg:pr-8"
-                      : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
-                      }`}
+                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${
+                      item.side === "left"
+                        ? "sm:pr-7 sm:text-right lg:pr-8"
+                        : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
+                    }`}
                   >
                     {item.side === "left" && (
                       <>
@@ -1102,10 +1112,11 @@ function page() {
                   {/* Right content */}
 
                   <div
-                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${item.side === "right"
-                      ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
-                      : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
-                      }`}
+                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${
+                      item.side === "right"
+                        ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
+                        : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
+                    }`}
                   >
                     {item.side === "right" && (
                       <>

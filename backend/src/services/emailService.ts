@@ -41,10 +41,6 @@ export async function sendContactEmail(data: ContactEmailData): Promise<void> {
     to: receiver,
     replyTo: data.email,
     subject: data.subject,
-    text: [
-      'New contact form submission',
-      '',
-      ...Object.entries(data.fields).map(([key, value]) => `${key}: ${value}`),
-    ].join('\n'),
+    text: [...Object.entries(data.fields).map(([key, value]) => `${key}: ${value}`)].join('\n'),
   })
 }

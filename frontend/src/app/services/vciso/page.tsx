@@ -601,13 +601,13 @@ function Vicso() {
               className="flex flex-col sm:flex-row  justify-center lg:justify-start gap-4 mt-8 opacity-0 animate-hero-reveal"
               style={{ animationDelay: "750ms" }}
             >
-              <Link href="/company/contact"> 
-              <button className="text-[15px] font-medium px-4 py-4 flex items-center gap-2 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]">
-                Request a vCISO Consultation{" "}
-                <span>
-                  <Icon icon="akar-icons:arrow-right" className="text-lg" />
-                </span>
-              </button>
+              <Link href="/company/contact">
+                <button className="text-[15px] font-medium px-4 py-4 flex items-center gap-2 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]">
+                  Request a vCISO Consultation{" "}
+                  <span>
+                    <Icon icon="akar-icons:arrow-right" className="text-lg" />
+                  </span>
+                </button>
               </Link>
               {/* <button className="text-[15px] font-medium px-4 py-4  rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF29]">
                 View Scope of Work{" "}
@@ -714,7 +714,33 @@ function Vicso() {
                     {...register("location")}
                   >
                     <option value="">Select your loaction</option>
-                    <option value="india">India</option>
+                    <optgroup label="India">
+                      India
+                      <option value="India - Bangalore">
+                        India - Bangalore
+                      </option>
+                      <option value="India - Mumbai">India - Mumbai</option>
+                      <option value="India - Delhi NCR">
+                        India - Delhi NCR
+                      </option>
+                      <option value="India - Pune">India - Pune</option>
+                      <option value="India - Hyderabad">
+                        India - Hyderabad
+                      </option>
+                      <option value="India - Chennai">India - Chennai</option>
+                      <option value="India - Other">India - Other</option>
+                    </optgroup>
+                    <optgroup label="Global">
+                      <option value="USA">USA</option>
+                      <option value="Singapore">Singapore</option>
+                      <option value="UAE - Dubai">UAE - Dubai</option>
+                      <option value="UAE - Abu Dhabi">UAE - Abu Dhabi</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Europe - UK">Europe - UK</option>
+                      <option value="Europe - Other">Europe - Other</option>
+                      <option value="GCC - Other">GCC - Other</option>
+                      <option value="Other">Other</option>
+                    </optgroup>
                   </select>
                 </div>
                 <div className="flex flex-col w-full gap-2">
@@ -799,7 +825,7 @@ function Vicso() {
               </div>
               <button
                 type="submit"
-                className={`text-base sm:text-lg font-medium flex items-center justify-center gap-3 py-3 w-full rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                className={`text-base sm:text-lg font-medium flex items-center justify-center gap-3 py-3 w-full rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
               >
                 Request Consultation{" "}
                 <span>
@@ -1514,39 +1540,37 @@ function Vicso() {
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/company/contact">
-              <button className="text-base font-medium p-3 flex items-center gap-2 mx-auto lg:mx-0 rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border border-[#FFFFFF1F] shadow-[inset_0_0_4px_#FFFFFF1F,0_4px_10px_#3263B199]">
-                Schedule Consultation{" "}
-                <span>
-                  <Icon
-                    icon="akar-icons:arrow-right"
-                    className="w-[25px] h-[25px]"
-                  />
-                </span>
-              </button>
+                <button className="text-base font-medium p-3 flex items-center gap-2 mx-auto lg:mx-0 rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border border-[#FFFFFF1F] shadow-[inset_0_0_4px_#FFFFFF1F,0_4px_10px_#3263B199]">
+                  Schedule Consultation{" "}
+                  <span>
+                    <Icon
+                      icon="akar-icons:arrow-right"
+                      className="w-[25px] h-[25px]"
+                    />
+                  </span>
+                </button>
               </Link>
-               <Link href="tel:+918861201570" target="_blank">
-              <button className="text-base font-medium p-3 flex items-center rounded-[10px] mx-auto lg:mx-0 text-[#FFFFFF] border border-[#FFFFFF29] cursor-pointer">
-                <span>
-                  <Icon
-                    icon="flowbite:outgoing-call-outline"
-                    className="w-[20px] h-[20px]"
-                  />
-                </span>
-                Call India (Bangalore): +91- 8861201570
-              </button>
+              <Link href="tel:+918861201570" target="_blank">
+                <button className="text-base font-medium p-3 flex items-center rounded-[10px] mx-auto lg:mx-0 text-[#FFFFFF] border border-[#FFFFFF29] cursor-pointer">
+                  <span>
+                    <Icon
+                      icon="flowbite:outgoing-call-outline"
+                      className="w-[20px] h-[20px]"
+                    />
+                  </span>
+                  Call India (Bangalore): +91- 8861201570
+                </button>
               </Link>
               <Link href="mailto:info@isecurion.com" target="_blank">
-              <button className="text-base font-medium p-3 gap-2 flex items-center rounded-[10px] mx-auto lg:mx-0 text-[#FFFFFF] border border-[#FFFFFF29] cursor-pointer">
-                <span>
-                  <Icon
-                    icon="eva:email-outline"
-                    className="w-[21px] h-[21px]"
-                  />
-                </span>
-                
-                    info@isecurion.com
-                  
-              </button>
+                <button className="text-base font-medium p-3 gap-2 flex items-center rounded-[10px] mx-auto lg:mx-0 text-[#FFFFFF] border border-[#FFFFFF29] cursor-pointer">
+                  <span>
+                    <Icon
+                      icon="eva:email-outline"
+                      className="w-[21px] h-[21px]"
+                    />
+                  </span>
+                  info@isecurion.com
+                </button>
               </Link>
             </div>
           </div>

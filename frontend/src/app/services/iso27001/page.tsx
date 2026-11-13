@@ -425,15 +425,15 @@ function Iso27001() {
               documentation, internal audits, and certification readiness.
             </p>
             <Link href="/company/contact">
-            <button
-              className="text-base font-medium flex items-center gap-2 px-3 py-4 mx-auto lg:mx-0 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
-              style={{ animationDelay: "600ms" }}
-            >
-              Book a Free Readiness Call{" "}
-              <span>
-                <Icon icon="akar-icons:arrow-right" />
-              </span>
-            </button>
+              <button
+                className="text-base font-medium flex items-center gap-2 px-3 py-4 mx-auto lg:mx-0 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
+                style={{ animationDelay: "600ms" }}
+              >
+                Book a Free Readiness Call{" "}
+                <span>
+                  <Icon icon="akar-icons:arrow-right" />
+                </span>
+              </button>
             </Link>
             <div
               className="mt-6  opacity-0 animate-hero-reveal"
@@ -621,7 +621,7 @@ function Iso27001() {
               </div>
               <button
                 type="submit"
-                className={`w-full text-sm sm:text-base font-semibold flex items-center justify-center py-2.5 gap-2 rounded-[10px] cursor-pointer text-[#FFFFFF] border-2 border-[#00000000] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                className={`w-full text-sm sm:text-base font-semibold flex items-center justify-center py-2.5 gap-2 rounded-[10px]  text-[#FFFFFF] border-2 border-[#00000000] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
               >
                 Get My Free Gap Snapshot{" "}
                 <span>
@@ -1066,20 +1066,20 @@ function Iso27001() {
             </p>
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
               <Link href="/company/contact">
-              <button className="text-base font-medium flex items-center gap-2 px-4 py-3 rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]">
-                Book a Free Call{" "}
-                <span>
-                  <Icon icon="akar-icons:arrow-right" />
-                </span>
-              </button>
+                <button className="text-base font-medium flex items-center gap-2 px-4 py-3 rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]">
+                  Book a Free Call{" "}
+                  <span>
+                    <Icon icon="akar-icons:arrow-right" />
+                  </span>
+                </button>
               </Link>
               <Link href="tel:+918861201570" target="_blank">
-              <button className="text-base font-medium flex items-center gap-2 px-4 py-3 rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF29]">
-                <span>
-                  <Icon icon="flowbite:outgoing-call-outline" />
-                </span>
-                Call India (Bangalore): +91- 8861201570
-              </button>
+                <button className="text-base font-medium flex items-center gap-2 px-4 py-3 rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF29]">
+                  <span>
+                    <Icon icon="flowbite:outgoing-call-outline" />
+                  </span>
+                  Call India (Bangalore): +91- 8861201570
+                </button>
               </Link>
             </div>
           </div>

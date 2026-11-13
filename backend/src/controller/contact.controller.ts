@@ -56,6 +56,13 @@ interface AadharAudit {
   turnstileToken: string
 }
 
+interface Dpdp {
+  email: string
+  companyname: string
+  industry: string
+  turnstileToken: string
+}
+
 interface BseNse {
   email: string
   companyName: string
@@ -81,7 +88,25 @@ interface IrdaAudit {
   organizationtype: string
   turnstileToken: string
 }
+interface Vciso {
+  fullname: string
+  companyname: string
+  email: string
+  phonenumber: string
+  location: string
+  engagement: string
+  message: string
+  turnstileToken: string
+}
 
+interface Iso27001 {
+  email: string
+  companyname: string
+  phonenumber: string
+  scope: string
+  industry: string
+  turnstileToken: string
+}
 function containsHTML(value: string): boolean {
   return /<[^>]*>/i.test(value)
 }
@@ -291,7 +316,7 @@ export async function redTeam(request: PayloadRequest) {
 
     const { email, companyName, assessment, turnstileToken } = body as Record<string, unknown>
 
-    if (!email || !assessment) {
+    if (!email || !companyName || !assessment) {
       return Response.json({ message: 'Invalid input' }, { status: 400 })
     }
 
@@ -333,11 +358,11 @@ export async function redTeam(request: PayloadRequest) {
 
     await sendContactEmail({
       email: validatedData.email,
-      subject: `Breach Attack Simulation`,
+      subject: `Red Team`,
       fields: {
         Email: validatedData.email,
         Company: validatedData.companyName,
-        Message: validatedData.assessment,
+        Assessment: validatedData.assessment,
       },
     })
 
@@ -400,10 +425,7 @@ export async function aiAugamentedRedTeam(request: PayloadRequest) {
     }
 
     if (!turnstileToken || !turnstileToken.trim()) {
-      return Response.json(
-        { success: false, message: 'Please complete CAPTCHA verification.' },
-        { status: 400 },
-      )
+      return Response.json({ message: 'Please complete CAPTCHA verification.' }, { status: 400 })
     }
 
     const isVerified = await verifyTurnstile(turnstileToken)
@@ -411,7 +433,6 @@ export async function aiAugamentedRedTeam(request: PayloadRequest) {
     if (!isVerified) {
       return Response.json(
         {
-          success: false,
           message: 'CAPTCHA verification failed. Please try again.',
         },
         { status: 400 },
@@ -441,21 +462,19 @@ export async function aiAugamentedRedTeam(request: PayloadRequest) {
 
     return Response.json(
       {
-        success: true,
         message: 'Your message has been sent successfully.',
       },
       { status: 200 },
     )
   } catch (error) {
     if (error instanceof SyntaxError) {
-      return Response.json({ success: false, message: 'Invalid request body.' }, { status: 400 })
+      return Response.json({ message: 'Invalid request body.' }, { status: 400 })
     }
 
     console.error('Contact form submission failed:', error)
 
     return Response.json(
       {
-        success: false,
         message: 'Unable to send your message. Please try again later.',
       },
       { status: 500 },
@@ -558,6 +577,7 @@ export async function phishingSimulation(request: PayloadRequest) {
 export async function dpoServices(request: PayloadRequest) {
   try {
     const body: unknown = await request.json?.()
+    console.log(body, 'this is the body')
 
     if (!body || typeof body !== 'object') {
       return Response.json({ message: 'Invalid input' }, { status: 400 })
@@ -663,6 +683,96 @@ export async function dpoServices(request: PayloadRequest) {
   }
 }
 
+// this is for dpdp
+export async function dpdp(request: PayloadRequest) {
+  try {
+    const body: unknown = await request.json?.()
+
+    if (!body || typeof body !== 'object') {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const { email, companyname, industry, turnstileToken } = body as Record<string, unknown>
+
+    if (!email || !industry) {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (
+      typeof email !== 'string' ||
+      typeof companyname !== 'string' ||
+      typeof turnstileToken !== 'string' ||
+      typeof industry !== 'string'
+    ) {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (email && !emailPattern.test(email)) {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (!turnstileToken || !turnstileToken.trim()) {
+      return Response.json(
+        { success: false, message: 'Please complete CAPTCHA verification.' },
+        { status: 400 },
+      )
+    }
+
+    const isVerified = await verifyTurnstile(turnstileToken)
+
+    if (!isVerified) {
+      return Response.json(
+        {
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        },
+        { status: 400 },
+      )
+    }
+
+    const validatedData: Dpdp = {
+      email,
+      companyname,
+      industry,
+      turnstileToken,
+    }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `DPDP Service`,
+      fields: {
+        Email: validatedData.email,
+        Company: validatedData.companyname,
+        Simulation: validatedData.industry,
+      },
+    })
+
+    return Response.json(
+      {
+        success: true,
+        message: 'Your message has been sent successfully.',
+      },
+      { status: 200 },
+    )
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return Response.json({ success: false, message: 'Invalid request body.' }, { status: 400 })
+    }
+
+    console.error('Contact form submission failed:', error)
+
+    return Response.json(
+      {
+        success: false,
+        message: 'Unable to send your message. Please try again later.',
+      },
+      { status: 500 },
+    )
+  }
+}
+
 export async function aadharAudit(request: PayloadRequest) {
   try {
     const body: unknown = await request.json?.()
@@ -715,7 +825,7 @@ export async function aadharAudit(request: PayloadRequest) {
 
     await sendContactEmail({
       email: validatedData.email,
-      subject: `Dpo Services`,
+      subject: `Aadhar Audit`,
       fields: {
         Email: validatedData.email,
         Company: validatedData.companyname,
@@ -883,7 +993,7 @@ export async function cicraAudit(request: PayloadRequest) {
 
     await sendContactEmail({
       email: validatedData.email,
-      subject: `Dpo Services`,
+      subject: `RBI Security Audit`,
       fields: {
         Email: validatedData.email,
         Company: validatedData.companyName,
@@ -967,7 +1077,7 @@ export async function rbiSecurityAudit(request: PayloadRequest) {
 
     await sendContactEmail({
       email: validatedData.email,
-      subject: `Dpo Services`,
+      subject: `RBI Security Audit`,
       fields: {
         Email: validatedData.email,
         Company: validatedData.companyName,
@@ -1051,11 +1161,221 @@ export async function irda(request: PayloadRequest) {
 
     await sendContactEmail({
       email: validatedData.email,
-      subject: `Dpo Services`,
+      subject: `IRDA Audit`,
       fields: {
         Email: validatedData.email,
         Company: validatedData.companyName,
         Entity: validatedData.organizationtype,
+      },
+    })
+
+    return Response.json(
+      {
+        success: true,
+        message: 'Your message has been sent successfully.',
+      },
+      { status: 200 },
+    )
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return Response.json({ success: false, message: 'Invalid request body.' }, { status: 400 })
+    }
+
+    console.error('Contact form submission failed:', error)
+
+    return Response.json(
+      {
+        success: false,
+        message: 'Unable to send your message. Please try again later.',
+      },
+      { status: 500 },
+    )
+  }
+}
+
+export async function vciso(request: PayloadRequest) {
+  try {
+    const body: unknown = await request.json?.()
+
+    if (!body || typeof body !== 'object') {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const {
+      fullname,
+      email,
+      companyname,
+      phonenumber,
+      location,
+      engagement,
+      message,
+      turnstileToken,
+    } = body as Record<string, unknown>
+
+    if (!fullname || !email || !phonenumber || !engagement) {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (
+      typeof email !== 'string' ||
+      typeof companyname !== 'string' ||
+      typeof turnstileToken !== 'string' ||
+      typeof fullname !== 'string' ||
+      typeof location !== 'string' ||
+      typeof engagement !== 'string' ||
+      typeof message !== 'string' ||
+      typeof turnstileToken !== 'string' ||
+      typeof phonenumber !== 'string'
+    ) {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (email && !emailPattern.test(email)) {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (!turnstileToken || !turnstileToken.trim()) {
+      return Response.json(
+        { success: false, message: 'Please complete CAPTCHA verification.' },
+        { status: 400 },
+      )
+    }
+
+    const isVerified = await verifyTurnstile(turnstileToken)
+
+    if (!isVerified) {
+      return Response.json(
+        {
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        },
+        { status: 400 },
+      )
+    }
+
+    const validatedData: Vciso = {
+      fullname,
+      email,
+      companyname,
+      engagement,
+      phonenumber,
+      location,
+      message,
+      turnstileToken,
+    }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `Vciso service`,
+      fields: {
+        FullName: validatedData.fullname,
+        Email: validatedData.email,
+        Company: validatedData.companyname,
+        PhoneNumber: validatedData.phonenumber,
+        Engagement: validatedData.engagement,
+        location: validatedData.location,
+        message: validatedData.message,
+      },
+    })
+
+    return Response.json(
+      {
+        success: true,
+        message: 'Your message has been sent successfully.',
+      },
+      { status: 200 },
+    )
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return Response.json({ success: false, message: 'Invalid request body.' }, { status: 400 })
+    }
+
+    console.error('Contact form submission failed:', error)
+
+    return Response.json(
+      {
+        success: false,
+        message: 'Unable to send your message. Please try again later.',
+      },
+      { status: 500 },
+    )
+  }
+}
+
+export async function iso27001(request: PayloadRequest) {
+  try {
+    const body: unknown = await request.json?.()
+
+    if (!body || typeof body !== 'object') {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const { email, companyname, phonenumber, scope, industry, turnstileToken } = body as Record<
+      string,
+      unknown
+    >
+
+    if (!email || !phonenumber || !scope || !industry) {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (
+      typeof email !== 'string' ||
+      typeof companyname !== 'string' ||
+      typeof phonenumber !== 'string' ||
+      typeof scope !== 'string' ||
+      typeof industry !== 'string' ||
+      typeof turnstileToken !== 'string'
+    ) {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (email && !emailPattern.test(email)) {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (!turnstileToken || !turnstileToken.trim()) {
+      return Response.json(
+        { success: false, message: 'Please complete CAPTCHA verification.' },
+        { status: 400 },
+      )
+    }
+
+    const isVerified = await verifyTurnstile(turnstileToken)
+
+    if (!isVerified) {
+      return Response.json(
+        {
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        },
+        { status: 400 },
+      )
+    }
+
+    const validatedData: Iso27001 = {
+      email,
+      companyname,
+      phonenumber,
+      scope,
+      industry,
+
+      turnstileToken,
+    }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `ISO 27001 service`,
+      fields: {
+        Email: validatedData.email,
+        Company: validatedData.companyname,
+        PhoneNumber: validatedData.phonenumber,
+        Industry: validatedData.industry,
+        Scope: validatedData.scope,
       },
     })
 

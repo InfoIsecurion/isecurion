@@ -471,12 +471,12 @@ function AadharAudit() {
               </ul>
             </div>
             <Link href="/comapny/contact">
-            <button className="mt-9 text-[15px] font-medium flex items-center px-3 py-3 mx-auto lg:mx-0 rounded-[10px] text-[#31435C] bg-[#FFFFFF]">
-              Request Audit Quote{" "}
-              <span>
-                <Icon icon="akar-icons:arrow-right" />
-              </span>
-            </button>
+              <button className="mt-9 text-[15px] font-medium flex items-center px-3 py-3 mx-auto lg:mx-0 rounded-[10px] text-[#31435C] bg-[#FFFFFF]">
+                Request Audit Quote{" "}
+                <span>
+                  <Icon icon="akar-icons:arrow-right" />
+                </span>
+              </button>
             </Link>
           </div>
           {/* right  */}
@@ -596,7 +596,7 @@ function AadharAudit() {
               </div>
               <button
                 type="submit"
-                className="w-full text-sm sm:text-base font-semibold flex items-center justify-center gap-3 px-3 py-3 rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]"
+                className={`w-full text-sm sm:text-base font-semibold flex items-center justify-center gap-3 px-3 py-3 rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]  ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
               >
                 Request UIDAI Audit{" "}
                 <span>
@@ -1016,15 +1016,15 @@ function AadharAudit() {
               resilience.
             </p>
             <Link href="/comapany/contact">
-            <button className="mx-auto lg:mx-0 text-sm sm:text-[15px] font-medium flex items-center gap-3 px-4 py-4 rounded-[10px] text-[#FFFFFF] border-2 border-[#3263B199] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]">
-              Schedule UIDAI Audit Consultation{" "}
-              <span>
-                <Icon
-                  icon="akar-icons:arrow-right"
-                  className="w-[23px] h-[23px]"
-                />
-              </span>
-            </button>
+              <button className="mx-auto lg:mx-0 text-sm sm:text-[15px] font-medium flex items-center gap-3 px-4 py-4 rounded-[10px] text-[#FFFFFF] border-2 border-[#3263B199] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]">
+                Schedule UIDAI Audit Consultation{" "}
+                <span>
+                  <Icon
+                    icon="akar-icons:arrow-right"
+                    className="w-[23px] h-[23px]"
+                  />
+                </span>
+              </button>
             </Link>
           </div>
         </div>

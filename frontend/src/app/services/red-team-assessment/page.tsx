@@ -1,8 +1,8 @@
 "use client";
 import { Icon } from "@iconify/react";
-import { Turnstile } from "@marsidev/react-turnstile";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { toast } from "react-toastify";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import attackSurfaceBackground from "../../../assets/services/attackSurfaceBackground.png";
 import redTeamHeroBackground from "../../../assets/services/Ellipse.png";
 import bookIcon from "../../../assets/services/icons/bookIcon.png";
@@ -17,7 +17,12 @@ import frame3 from "../../../assets/services/Frame3.png";
 import frame4 from "../../../assets/services/Frame4.png";
 import frame5 from "../../../assets/services/Frame5.png";
 import FAQSection from "../../../components/sections/FAQSection";
-import { AnimatedCard, Animation, LeftAnimation, WordReveal } from "../../../components/ui/Animation";
+import {
+  AnimatedCard,
+  Animation,
+  LeftAnimation,
+  WordReveal,
+} from "../../../components/ui/Animation";
 import { redTeamAssessment } from "../../../services/api/contact";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
@@ -85,6 +90,7 @@ const redTeamAssessmentFAQs = [
 export default function RedTeamAssessmentPage() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [loading, setLoading] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const {
     register,
@@ -104,6 +110,10 @@ export default function RedTeamAssessmentPage() {
       console.log(data);
       if (response.status === 200) {
         toast.success(response.message);
+        reset();
+        setTurnstileToken("");
+        turnstileRef.current?.reset();
+        reset();
       } else {
         toast.error(response.message);
       }
@@ -117,7 +127,6 @@ export default function RedTeamAssessmentPage() {
       {/* RED TEAM SECTION */}
 
       <section className="mx-auto max-w-7xl bg-black overflow-hidden">
-
         <div className="relative overflow-hidden px-7 py-10 sm:px-10 lg:px-8 lg:py-10 xl:px-10">
           <div className="absolute w-[650px] h-[650px] left-[-50px] rounded-full blur-[200px] pointer-events-none bg-[#EF44444A]"></div>
 
@@ -130,12 +139,18 @@ export default function RedTeamAssessmentPage() {
                 </p>
 
                 {/* Heading */}
-                <h1 className="mt-5 lg:max-w-[430px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{animationDelay:"600ms"}}>
+                <h1
+                  className="mt-5 lg:max-w-[430px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal"
+                  style={{ animationDelay: "600ms" }}
+                >
                   Red Team Assessment Services
                 </h1>
 
                 {/* Description */}
-                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{animationDelay:"800ms"}}>
+                <p
+                  className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
+                  style={{ animationDelay: "800ms" }}
+                >
                   Test your defenses against sophisticated attackers. ISECURION
                   helps identify gaps, simulate attacks, and improve security
                   posture across people, processes, and technology.
@@ -160,7 +175,10 @@ export default function RedTeamAssessmentPage() {
                 {/* ==================== STATS ==================== */}
                 <div className="mt-9 grid lg:max-w-[380px] grid-cols-3 lg:grid-cols-2 gap-x-10 gap-y-6 text-center">
                   {/* 150+ */}
-                  <div className="animate-hero-reveal" style={{animationDelay:"1100ms"}}>
+                  <div
+                    className="animate-hero-reveal"
+                    style={{ animationDelay: "1100ms" }}
+                  >
                     <p className="text-[21px] font-semibold leading-none text-[#E24B4A] sm:text-[22px]">
                       150+
                     </p>
@@ -171,7 +189,10 @@ export default function RedTeamAssessmentPage() {
                   </div>
 
                   {/* 30+ */}
-                  <div className="animate-hero-reveal" style={{animationDelay:"1300ms"}}>
+                  <div
+                    className="animate-hero-reveal"
+                    style={{ animationDelay: "1300ms" }}
+                  >
                     <p className="text-[21px] font-semibold leading-none text-[#E24B4A] sm:text-[22px]">
                       30+
                     </p>
@@ -182,7 +203,10 @@ export default function RedTeamAssessmentPage() {
                   </div>
 
                   {/* 100% */}
-                  <div className="animate-hero-reveal" style={{animationDelay:"1400ms"}}>
+                  <div
+                    className="animate-hero-reveal"
+                    style={{ animationDelay: "1400ms" }}
+                  >
                     <p className="text-[21px] font-semibold leading-none text-[#E24B4A] sm:text-[22px]">
                       100%
                     </p>
@@ -195,161 +219,150 @@ export default function RedTeamAssessmentPage() {
               </div>
             </Animation>
 
-            
-              <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:h-[580px] lg:p-[25px] xl:p-[30px]">
-                <div>
-                  <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
-                    Request a Red Team Quote
-                  </h2>
+            <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:h-[580px] lg:p-[25px] xl:p-[30px]">
+              <div>
+                <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
+                  Request a Red Team Quote
+                </h2>
 
-                  <p className="mt-3 text-[14px] leading-[1.5] text-[#D9D9D9]">
-                    Get a customized assessment plan and timeline.
-                  </p>
-                </div>
+                <p className="mt-3 text-[14px] leading-[1.5] text-[#D9D9D9]">
+                  Get a customized assessment plan and timeline.
+                </p>
+              </div>
 
-                {/* Form*/}
-                <form className="mt-8" onSubmit={handleSubmit(submit)}>
-                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                    <div>
-                      <label
-                        htmlFor="workEmail"
-                        className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
-                      >
-                        Work Email <span className="text-[#E42F23]">*</span>
-                      </label>
-
-                      <input
-                        id="workEmail"
-                        name="workEmail"
-                        type="email"
-                        placeholder="youremail@gmail.com"
-                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585]"
-                        {...register("email", {
-                          required: "Email is required",
-                        })}
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="companyName"
-                        className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
-                      >
-                        Company Name
-                      </label>
-
-                      <input
-                        id="companyName"
-                        name="companyName"
-                        type="text"
-                        placeholder="Company name"
-                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585]"
-                        {...register("companyName")}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="mt-5">
+              {/* Form*/}
+              <form className="mt-8" onSubmit={handleSubmit(submit)}>
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  <div>
                     <label
-                      htmlFor="assessmentType"
+                      htmlFor="workEmail"
                       className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
                     >
-                      Assessment Type <span className="text-[#F04444]">*</span>
+                      Work Email <span className="text-[#E42F23]">*</span>
                     </label>
 
-                    <div className="relative">
-                      <select
-                        id="assessmentType"
-                        name="assessmentType"
-                        defaultValue=""
-                        required
-                        className="h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none "
-                        {...register("assessment", {
-                          required: "Assessment is required",
-                        })}
-                      >
-                        <option value="" disabled>
-                          Select Assessment Type
-                        </option>
-
-                        <option value="external">
-                          External Attack Simulation
-                        </option>
-
-                        <option value="internal">
-                          Internal Red Team
-                        </option>
-
-                      </select>
-
-                      <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#777]">
-                        <svg
-                          width="14"
-                          height="8"
-                          viewBox="0 0 14 8"
-                          fill="none"
-                        >
-                          <path
-                            d="M1 1L7 7L13 1"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Captcha */}
-                  <div className="mt-7">
-                    <div className="flex items-center gap-3">
-                      <p className="text-sm font-medium text-white">Captcha</p>
-
-                      <Turnstile
-                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                        onSuccess={(token) => setTurnstileToken(token)}
-                        onExpire={() => setTurnstileToken("")}
-                        onError={() => setTurnstileToken("")}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Consent */}
-                  <div className="mt-5 flex items-start gap-2.5">
                     <input
-                      id="consent"
-                      name="consent"
-                      type="checkbox"
-                      required
-                      className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
+                      id="workEmail"
+                      name="workEmail"
+                      type="email"
+                      placeholder="youremail@gmail.com"
+                      className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585]"
+                      {...register("email", {
+                        required: "Email is required",
+                      })}
                     />
-
-                    <label
-                      htmlFor="consent"
-                      className="text-[10px] leading-[1.7] text-[#BDBDBD] sm:text-[11px]"
-                    >
-                      By clicking submit below, you agree to our Terms of Use
-                      and Privacy Policy. Additionally, you consent to allow
-                      ISECURION Technology & Consulting Pvt. Ltd. to store and
-                      process the personal information submitted above to
-                      provide you the content requested.
-                    </label>
                   </div>
 
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    className="mt-8 flex h-[51px] w-full items-center justify-center rounded-[7px] border border-[#4D78C4] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(39,84,148,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#5282D3] hover:to-[#2B5CA0] active:translate-y-0 cursor-pointer"
+                  <div>
+                    <label
+                      htmlFor="companyName"
+                      className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
+                    >
+                      Company Name
+                    </label>
+
+                    <input
+                      id="companyName"
+                      name="companyName"
+                      type="text"
+                      placeholder="Company name"
+                      className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585]"
+                      {...register("companyName")}
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-5">
+                  <label
+                    htmlFor="assessmentType"
+                    className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
                   >
-                    Get Quote{""}
-                    <span className="ml-1.5 text-[18px] leading-none">
-                      <Icon icon="mdi:arrow-right" />
+                    Assessment Type <span className="text-[#F04444]">*</span>
+                  </label>
+
+                  <div className="relative">
+                    <select
+                      id="assessmentType"
+                      name="assessmentType"
+                      defaultValue=""
+                      required
+                      className="h-[43px] w-full appearance-none rounded-[7px] border border-[#29292C] bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none "
+                      {...register("assessment", {
+                        required: "Assessment is required",
+                      })}
+                    >
+                      <option value="" disabled>
+                        Select Assessment Type
+                      </option>
+
+                      <option value="external">
+                        External Attack Simulation
+                      </option>
+
+                      <option value="internal">Internal Red Team</option>
+                    </select>
+
+                    <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#777]">
+                      <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
+                        <path
+                          d="M1 1L7 7L13 1"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
                     </span>
-                  </button>
-                </form>
-              </div>
-        
+                  </div>
+                </div>
+
+                {/* Captcha */}
+                <div className="mt-7">
+                  <div className="flex items-center gap-3">
+                    <Turnstile
+                      ref={turnstileRef}
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                      onSuccess={(token) => setTurnstileToken(token)}
+                      onExpire={() => setTurnstileToken("")}
+                      onError={() => setTurnstileToken("")}
+                    />
+                  </div>
+                </div>
+
+                {/* Consent */}
+                <div className="mt-5 flex items-start gap-2.5">
+                  <input
+                    id="consent"
+                    name="consent"
+                    type="checkbox"
+                    required
+                    className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
+                  />
+
+                  <label
+                    htmlFor="consent"
+                    className="text-[10px] leading-[1.7] text-[#BDBDBD] sm:text-[11px]"
+                  >
+                    By clicking submit below, you agree to our Terms of Use and
+                    Privacy Policy. Additionally, you consent to allow ISECURION
+                    Technology & Consulting Pvt. Ltd. to store and process the
+                    personal information submitted above to provide you the
+                    content requested.
+                  </label>
+                </div>
+
+                {/* Submit */}
+                <button
+                  type="submit"
+                  className={`mt-8 flex h-[51px] w-full items-center justify-center rounded-[7px] border border-[#4D78C4] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(39,84,148,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#5282D3] hover:to-[#2B5CA0] active:translate-y-0 ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                >
+                  Get Quote{""}
+                  <span className="ml-1.5 text-[18px] leading-none">
+                    <Icon icon="mdi:arrow-right" />
+                  </span>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -387,12 +400,16 @@ export default function RedTeamAssessmentPage() {
           {/* ==================== HEADER ==================== */}
           <div className="relative z-10 mx-auto max-w-[1050px] text-center">
             {/* Heading */}
-            <WordReveal text="Red Team Assessment Objectives"
-              className="text-[32px] font-normal leading-[1.2] tracking-[-0.02em] text-white sm:text-[40px] lg:text-[44px]">
-            </WordReveal>
+            <WordReveal
+              text="Red Team Assessment Objectives"
+              className="text-[32px] font-normal leading-[1.2] tracking-[-0.02em] text-white sm:text-[40px] lg:text-[44px]"
+            ></WordReveal>
 
             {/* Description */}
-            <p className="mx-auto mt-7  text-[15px] font-normal leading-[1.8] text-[#C7C7CB] sm:text-[16px] lg:text-[20px] animate-hero-reveal" style={{animationDelay:"800ms"}}>
+            <p
+              className="mx-auto mt-7  text-[15px] font-normal leading-[1.8] text-[#C7C7CB] sm:text-[16px] lg:text-[20px] animate-hero-reveal"
+              style={{ animationDelay: "800ms" }}
+            >
               ISECURION proposes a Red Team Assessment Solution based on
               real-life attack scenarios to test security controls that could be
               bypassed by a threat actor.
@@ -403,7 +420,10 @@ export default function RedTeamAssessmentPage() {
           <Animation>
             <div className="relative z-10 mt-16 grid grid-cols-1 sm:grid-cols-2 lg:mt-[78px] lg:grid-cols-4">
               {/* ==================== OBJECTIVE 01 ==================== */}
-              <div className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6 animate-hero-reveal" style={{animationDelay:"1000ms"}}>
+              <div
+                className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6 animate-hero-reveal"
+                style={{ animationDelay: "1000ms" }}
+              >
                 {/* Vertical Divider */}
                 <div className="absolute left-0 top-0 hidden  w-[1.03px] bg-[#E24B4A2B] h-[167px] sm:block" />
 
@@ -434,7 +454,10 @@ export default function RedTeamAssessmentPage() {
               </div>
 
               {/* ==================== OBJECTIVE 02 ==================== */}
-              <div className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6 animate-hero-reveal" style={{animationDelay:"1200ms"}}>
+              <div
+                className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6 animate-hero-reveal"
+                style={{ animationDelay: "1200ms" }}
+              >
                 {/* Vertical Divider */}
                 <div className="absolute left-0 top-0 hidden w-[1.03px] bg-[#E24B4A2B] h-[167px] sm:block" />
 
@@ -465,7 +488,10 @@ export default function RedTeamAssessmentPage() {
               </div>
 
               {/* ==================== OBJECTIVE 03 ==================== */}
-              <div className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6 animate-hero-reveal" style={{animationDelay:"1400ms"}}>
+              <div
+                className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6 animate-hero-reveal"
+                style={{ animationDelay: "1400ms" }}
+              >
                 {/* Vertical Divider */}
                 <div className="absolute left-0 top-0 hidden w-[1.03px] bg-[#E24B4A2B] h-[167px] sm:block" />
 
@@ -496,7 +522,10 @@ export default function RedTeamAssessmentPage() {
               </div>
 
               {/* ==================== OBJECTIVE 04 ==================== */}
-              <div className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6 animate-hero-reveal" style={{animationDelay:"1600ms"}}>
+              <div
+                className="relative px-6 py-2 sm:px-7 lg:min-h-[188px] lg:px-6 xl:px-6 animate-hero-reveal"
+                style={{ animationDelay: "1600ms" }}
+              >
                 {/* Vertical Divider */}
                 <div className="absolute left-0 top-0 hidden w-[1.03px] bg-[#E24B4A2B] h-[167px] sm:block" />
 
@@ -554,19 +583,31 @@ export default function RedTeamAssessmentPage() {
                 </p>
 
                 {/* Heading */}
-                <h2 className="mt-4 font-normal leading-[1.5] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{animationDelay:"500ms"}}>
-                  <WordReveal as="span" text="The Attack Surface,"></WordReveal>{""}
-                  <span className="block text-[#E24B4A]"><WordReveal as="span" text="Fully Tested."></WordReveal></span>
+                <h2
+                  className="mt-4 font-normal leading-[1.5] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal"
+                  style={{ animationDelay: "500ms" }}
+                >
+                  <WordReveal as="span" text="The Attack Surface,"></WordReveal>
+                  {""}
+                  <span className="block text-[#E24B4A]">
+                    <WordReveal as="span" text="Fully Tested."></WordReveal>
+                  </span>
                 </h2>
 
                 {/* Description */}
                 <div className="mt-6 space-y-4 text-[15px] leading-[1.8] text-[#D1D1D1] sm:text-[17px] lg:text-[16px] text-center lg:text-left">
-                  <p className="sectionDescription animate-hero-reveal" style={{animationDelay:"550ms"}}>
+                  <p
+                    className="sectionDescription animate-hero-reveal"
+                    style={{ animationDelay: "550ms" }}
+                  >
                     Key activities carried out during the Red Team Assessment to
                     evaluate your security posture.
                   </p>
 
-                  <p className="sectionDescription animate-hero-reveal" style={{animationDelay:"680ms"}}>
+                  <p
+                    className="sectionDescription animate-hero-reveal"
+                    style={{ animationDelay: "680ms" }}
+                  >
                     From technical systems to people, wireless, and physical
                     environments.
                     <br className="hidden sm:block" />
@@ -585,117 +626,117 @@ export default function RedTeamAssessmentPage() {
             <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-10 lg:grid-cols-5 lg:gap-x-14 ">
               {/* ==================== OPEN SOURCE INTELLIGENCE ==================== */}
               <AnimatedCard delay={0.2}>
-              <div className="min-w-0">
-                <div className="relative h-[30px] w-[30px]">
-                  <span className="absolute bottom-0 right-1 h-[18px] w-[18px] rounded-full bg-[#232930]" />
-                  <img
-                    src={bookIcon.src}
-                    alt=""
-                    className="relative z-10 h-[22px] w-[22px]"
-                  />
+                <div className="min-w-0">
+                  <div className="relative h-[30px] w-[30px]">
+                    <span className="absolute bottom-0 right-1 h-[18px] w-[18px] rounded-full bg-[#232930]" />
+                    <img
+                      src={bookIcon.src}
+                      alt=""
+                      className="relative z-10 h-[22px] w-[22px]"
+                    />
+                  </div>
+
+                  <h3 className="mt-5 text-[14px] font-medium leading-[1.4] text-[#F5F0E8] sm:text-[16px]">
+                    Open Source Intelligence
+                  </h3>
+
+                  <p className="mt-3 max-w-[180px] text-[12px] sm:text-[14px] leading-[1.8] text-[#D1D1D1D6] ">
+                    Gather intelligence from publicly available sources to map
+                    your exposure.
+                  </p>
                 </div>
-
-                <h3 className="mt-5 text-[14px] font-medium leading-[1.4] text-[#F5F0E8] sm:text-[16px]">
-                  Open Source Intelligence
-                </h3>
-
-                <p className="mt-3 max-w-[180px] text-[12px] sm:text-[14px] leading-[1.8] text-[#D1D1D1D6] ">
-                  Gather intelligence from publicly available sources to map
-                  your exposure.
-                </p>
-              </div>
               </AnimatedCard>
 
               {/* ==================== NETWORK ATTACKS ==================== */}
               <AnimatedCard delay={0.4}>
-              <div className="min-w-0">
-                <div className="relative h-[30px] w-[30px]">
-                  <span className="absolute bottom-0 right-1 h-[18px] w-[18px] rounded-full bg-[#232930]" />
-                  <img
-                    src={networkIcon.src}
-                    alt=""
-                    className="relative z-10 h-[22px] w-[22px]"
-                  />
+                <div className="min-w-0">
+                  <div className="relative h-[30px] w-[30px]">
+                    <span className="absolute bottom-0 right-1 h-[18px] w-[18px] rounded-full bg-[#232930]" />
+                    <img
+                      src={networkIcon.src}
+                      alt=""
+                      className="relative z-10 h-[22px] w-[22px]"
+                    />
+                  </div>
+
+                  <h3 className="mt-5 text-[15px] font-medium leading-[1.4] text-[#F5F0E8] sm:text-[16px]">
+                    Network Attacks
+                  </h3>
+
+                  <p className="mt-3 max-w-[240px] text-[12px] sm:text-[13px] leading-[1.8] text-[#D1D1D1D6] ">
+                    Simulated external and internal attacks to uncover
+                    weaknesses in your infrastructure.
+                  </p>
                 </div>
-
-                <h3 className="mt-5 text-[15px] font-medium leading-[1.4] text-[#F5F0E8] sm:text-[16px]">
-                  Network Attacks
-                </h3>
-
-                <p className="mt-3 max-w-[240px] text-[12px] sm:text-[13px] leading-[1.8] text-[#D1D1D1D6] ">
-                  Simulated external and internal attacks to uncover weaknesses
-                  in your infrastructure.
-                </p>
-              </div>
               </AnimatedCard>
 
               {/* ==================== WIRELESS & ENDPOINT ==================== */}
               <AnimatedCard delay={0.6}>
-              <div className="min-w-0">
-                <div className="relative h-[30px] w-[30px]">
-                  <span className="absolute bottom-0 right-1 h-[18px] w-[18px] rounded-full bg-[#232930]" />
-                  <img
-                    src={wifiIcon.src}
-                    alt=""
-                    className="relative z-10 h-[22px] w-[22px]"
-                  />
+                <div className="min-w-0">
+                  <div className="relative h-[30px] w-[30px]">
+                    <span className="absolute bottom-0 right-1 h-[18px] w-[18px] rounded-full bg-[#232930]" />
+                    <img
+                      src={wifiIcon.src}
+                      alt=""
+                      className="relative z-10 h-[22px] w-[22px]"
+                    />
+                  </div>
+
+                  <h3 className="mt-5 text-[15px] font-medium leading-[1.4] text-[#F5F0E8] sm:text-[16px]">
+                    Wireless & Endpoint
+                  </h3>
+
+                  <p className="mt-3 max-w-[180px] text-[12px] sm:text-[13px] leading-[1.8] text-[#D1D1D1D6] ">
+                    Assess Wi-Fi, removable media, & endpoint security for
+                    bypass opportunities.
+                  </p>
                 </div>
-
-                <h3 className="mt-5 text-[15px] font-medium leading-[1.4] text-[#F5F0E8] sm:text-[16px]">
-                  Wireless & Endpoint
-                </h3>
-
-                <p className="mt-3 max-w-[180px] text-[12px] sm:text-[13px] leading-[1.8] text-[#D1D1D1D6] ">
-                  Assess Wi-Fi, removable media, & endpoint security for bypass
-                  opportunities.
-                </p>
-              </div>
               </AnimatedCard>
 
               {/* ==================== COVERT TECHNIQUES ==================== */}
               <AnimatedCard delay={0.8}>
-              <div className="min-w-0">
-                <div className="relative h-[30px] w-[30px]">
-                  <span className="absolute bottom-0 right-1 h-[18px] w-[18px] rounded-full bg-[#232930]" />
-                  <img
-                    src={solidShield.src}
-                    alt=""
-                    className="relative z-10 h-[22px] w-[22px]"
-                  />
+                <div className="min-w-0">
+                  <div className="relative h-[30px] w-[30px]">
+                    <span className="absolute bottom-0 right-1 h-[18px] w-[18px] rounded-full bg-[#232930]" />
+                    <img
+                      src={solidShield.src}
+                      alt=""
+                      className="relative z-10 h-[22px] w-[22px]"
+                    />
+                  </div>
+
+                  <h3 className="mt-5 text-[15px] font-medium leading-[1.4] text-[#F5F0E8] sm:text-[16px]">
+                    Covert Techniques
+                  </h3>
+
+                  <p className="mt-3 max-w-[180px] text-[12px] sm:text-[13px] leading-[1.8] text-[#D1D1D1D6] ">
+                    Use stealth methods to simulate insider and persistent
+                    threats.
+                  </p>
                 </div>
-
-                <h3 className="mt-5 text-[15px] font-medium leading-[1.4] text-[#F5F0E8] sm:text-[16px]">
-                  Covert Techniques
-                </h3>
-
-                <p className="mt-3 max-w-[180px] text-[12px] sm:text-[13px] leading-[1.8] text-[#D1D1D1D6] ">
-                  Use stealth methods to simulate insider and persistent
-                  threats.
-                </p>
-              </div>
               </AnimatedCard>
 
               {/* ==================== PHYSICAL SECURITY ==================== */}
               <AnimatedCard delay={1}>
-              <div className="min-w-0">
-                <div className="relative h-[30px] w-[30px]">
-                  <span className="absolute bottom-0 right-1 h-[18px] w-[18px] rounded-full bg-[#232930]" />
-                  <img
-                    src={guardIcon.src}
-                    alt=""
-                    className="relative z-10 h-[22px] w-[22px]"
-                  />
+                <div className="min-w-0">
+                  <div className="relative h-[30px] w-[30px]">
+                    <span className="absolute bottom-0 right-1 h-[18px] w-[18px] rounded-full bg-[#232930]" />
+                    <img
+                      src={guardIcon.src}
+                      alt=""
+                      className="relative z-10 h-[22px] w-[22px]"
+                    />
+                  </div>
+
+                  <h3 className="mt-5 text-[15px] font-medium leading-[1.4] text-[#F5F0E8] sm:text-[16px]">
+                    Physical Security
+                  </h3>
+
+                  <p className="mt-3 max-w-[180px] text-[12px] sm:text-[13px] leading-[1.8] text-[#D1D1D1D6] ">
+                    Test resilience of on-site controls like tailgating and
+                    rogue device detection.
+                  </p>
                 </div>
-
-                <h3 className="mt-5 text-[15px] font-medium leading-[1.4] text-[#F5F0E8] sm:text-[16px]">
-                  Physical Security
-                </h3>
-
-                <p className="mt-3 max-w-[180px] text-[12px] sm:text-[13px] leading-[1.8] text-[#D1D1D1D6] ">
-                  Test resilience of on-site controls like tailgating and rogue
-                  device detection.
-                </p>
-              </div>
               </AnimatedCard>
             </div>
 
@@ -1120,10 +1161,15 @@ export default function RedTeamAssessmentPage() {
 
                 <h2 className="mt-[10px] text-[30px] font-normal leading-[1.25] text-white sm:text-[36px] lg:text-[34px]">
                   <WordReveal as="span" text="Built around the"></WordReveal>{" "}
-                  <span className="text-[#E24B4A]"><WordReveal as="span" text="Real Adversary"></WordReveal></span>
+                  <span className="text-[#E24B4A]">
+                    <WordReveal as="span" text="Real Adversary"></WordReveal>
+                  </span>
                 </h2>
 
-                <p className="mx-auto mt-[18px] max-w-[700px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] animate-hero-reveal" style={{animationDelay:"700ms"}}>
+                <p
+                  className="mx-auto mt-[18px] max-w-[700px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[15px] animate-hero-reveal"
+                  style={{ animationDelay: "700ms" }}
+                >
                   Beyond identifying vulnerabilities, we provide the
                   intelligence, validation, and guidance needed to strengthen
                   your defenses against real-world attack scenarios.
@@ -1135,66 +1181,69 @@ export default function RedTeamAssessmentPage() {
           <Animation>
             <div className="mt-[46px] grid grid-cols-1 sm:grid-cols-3 px-16 pb-16">
               <AnimatedCard delay={0.4}>
-              <div className="relative min-h-[309px] bg-[#050B18] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[30px]">
-                <div className="text-white">
-                  <Icon icon="boxicons:vector-square" className="text-[36px]" />
-                </div>
+                <div className="relative min-h-[309px] bg-[#050B18] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[30px]">
+                  <div className="text-white">
+                    <Icon
+                      icon="boxicons:vector-square"
+                      className="text-[36px]"
+                    />
+                  </div>
 
-                <div className="absolute bottom-[62px] left-[25px] right-[30px]">
-                  <h3 className="max-w-[180px] text-[16px] font-medium leading-[1.55] text-white">
-                    Latest Threat <br /> Vectors
-                  </h3>
+                  <div className="absolute bottom-[62px] left-[25px] right-[30px]">
+                    <h3 className="max-w-[180px] text-[16px] font-medium leading-[1.55] text-white">
+                      Latest Threat <br /> Vectors
+                    </h3>
 
-                  <p className="mt-[8px] max-w-[255px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
-                    Insights into the newest adversary tactics, techniques, and
-                    procedures (TTPs).
-                  </p>
+                    <p className="mt-[8px] max-w-[255px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
+                      Insights into the newest adversary tactics, techniques,
+                      and procedures (TTPs).
+                    </p>
+                  </div>
                 </div>
-              </div>
               </AnimatedCard>
 
               <AnimatedCard delay={0.8}>
-              <div className="relative min-h-[309px] bg-[#08142D] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[25px]">
-                <div className="text-white">
-                  <Icon
-                    icon="majesticons:lightbulb-shine-line"
-                    className="text-[36px]"
-                  />
-                </div>
+                <div className="relative min-h-[309px] bg-[#08142D] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[25px]">
+                  <div className="text-white">
+                    <Icon
+                      icon="majesticons:lightbulb-shine-line"
+                      className="text-[36px]"
+                    />
+                  </div>
 
-                <div className="absolute bottom-[62px] left-[25px] right-[30px]">
-                  <h3 className="max-w-[180px] text-[16px] font-medium leading-[1.55] text-white">
-                    Attack-Driven <br /> Insight
-                  </h3>
+                  <div className="absolute bottom-[62px] left-[25px] right-[30px]">
+                    <h3 className="max-w-[180px] text-[16px] font-medium leading-[1.55] text-white">
+                      Attack-Driven <br /> Insight
+                    </h3>
 
-                  <p className="mt-[8px] max-w-[255px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
-                    Turn observed attack paths and weaknesses into clear,
-                    prioritized security improvements.
-                  </p>
+                    <p className="mt-[8px] max-w-[255px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
+                      Turn observed attack paths and weaknesses into clear,
+                      prioritized security improvements.
+                    </p>
+                  </div>
                 </div>
-              </div>
               </AnimatedCard>
 
               <AnimatedCard delay={1}>
-              <div className="relative min-h-[309px] bg-[#170404] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[28px]">
-                <div className="text-white">
-                  <Icon
-                    icon="iconmind:session-fixation-guard-outline-regular"
-                    className="text-[36px]"
-                  />
-                </div>
+                <div className="relative min-h-[309px] bg-[#170404] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[28px]">
+                  <div className="text-white">
+                    <Icon
+                      icon="iconmind:session-fixation-guard-outline-regular"
+                      className="text-[36px]"
+                    />
+                  </div>
 
-                <div className="absolute bottom-[62px] left-[25px] right-[25px]">
-                  <h3 className="max-w-[180px] text-[16px] font-medium leading-[1.55] text-white">
-                    Defense <br /> Validation
-                  </h3>
+                  <div className="absolute bottom-[62px] left-[25px] right-[25px]">
+                    <h3 className="max-w-[180px] text-[16px] font-medium leading-[1.55] text-white">
+                      Defense <br /> Validation
+                    </h3>
 
-                  <p className="mt-[8px] max-w-[255px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
-                    Measure how effectively your people, processes, and
-                    technology detect and withstand realistic attacks.
-                  </p>
+                    <p className="mt-[8px] max-w-[255px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
+                      Measure how effectively your people, processes, and
+                      technology detect and withstand realistic attacks.
+                    </p>
+                  </div>
                 </div>
-              </div>
               </AnimatedCard>
             </div>
           </Animation>
@@ -1319,8 +1368,10 @@ export default function RedTeamAssessmentPage() {
               DELIVERABLES
             </p>
 
-            <WordReveal text="The Outcome of Every Engagement" 
-              className="mt-4 text-[34px] font-normal leading-[1.15] text-white sm:text-[42px] lg:text-[40px]" />
+            <WordReveal
+              text="The Outcome of Every Engagement"
+              className="mt-4 text-[34px] font-normal leading-[1.15] text-white sm:text-[42px] lg:text-[40px]"
+            />
 
             <p className="mx-auto mt-7 max-w-[900px] text-[16px] font-normal leading-[1.7] text-[#D1D1D1] sm:text-[14px] lg:text-[18px]">
               Clear attack paths, validated findings, and actionable
@@ -1339,133 +1390,148 @@ export default function RedTeamAssessmentPage() {
               <div className="relative z-10 grid grid-cols-5">
                 {/* 1. Executive Summary */}
                 <AnimatedCard delay={0.2}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative flex h-[136px] w-[136px] items-center justify-center">
-                    {/* Hide connector behind the transparent center */}
-                    <div className="absolute z-10 h-[75px] w-[75px] rotate-45 bg-[#050B18] " />
+                  <div className="flex flex-col items-center text-center">
+                    <div className="relative flex h-[136px] w-[136px] items-center justify-center">
+                      {/* Hide connector behind the transparent center */}
+                      <div className="absolute z-10 h-[75px] w-[75px] rotate-45 bg-[#050B18] " />
 
-                    {/* Frame */}
-                    <img
-                      src={frame1.src}
-                      alt=""
-                      className="relative z-20 h-[136px] w-[136px]"
-                    />
+                      {/* Frame */}
+                      <img
+                        src={frame1.src}
+                        alt=""
+                        className="relative z-20 h-[136px] w-[136px]"
+                      />
+                    </div>
+
+                    <div className="mt-[48px] px-2">
+                      <h3 className="text-[18px] font-medium leading-[1.3] text-white">
+                        Executive Summary
+                      </h3>
+
+                      <p
+                        className="mx-auto mt-5 max-w-[220px] text-[16px] leading-[1.9] text-[#D1D1D1] animate-hero-reveal"
+                        style={{ animationDelay: "1300ms" }}
+                      >
+                        High-level findings for leadership with risk overview
+                        and strategic recommendations.
+                      </p>
+                    </div>
                   </div>
-
-                  <div className="mt-[48px] px-2">
-                    <h3 className="text-[18px] font-medium leading-[1.3] text-white">
-                      Executive Summary
-                    </h3>
-
-                    <p className="mx-auto mt-5 max-w-[220px] text-[16px] leading-[1.9] text-[#D1D1D1] animate-hero-reveal" style={{animationDelay:"1300ms"}}>
-                      High-level findings for leadership with risk overview and
-                      strategic recommendations.
-                    </p>
-                  </div>
-                </div>
                 </AnimatedCard>
 
                 <AnimatedCard delay={0.4}>
-                {/* 2. Technical Report */}
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative flex h-[136px] w-[136px] items-center justify-center">
-                    <div className="absolute z-10 h-[75px] w-[75px] rotate-45 bg-[#050B18]" />
+                  {/* 2. Technical Report */}
+                  <div className="flex flex-col items-center text-center">
+                    <div className="relative flex h-[136px] w-[136px] items-center justify-center">
+                      <div className="absolute z-10 h-[75px] w-[75px] rotate-45 bg-[#050B18]" />
 
-                    <img
-                      src={frame2.src}
-                      alt=""
-                      className="relative z-20 h-[136px] w-[136px]"
-                    />
+                      <img
+                        src={frame2.src}
+                        alt=""
+                        className="relative z-20 h-[136px] w-[136px]"
+                      />
+                    </div>
+
+                    <div className="mt-[48px] px-2">
+                      <h3 className="text-[18px] font-medium leading-[1.3] text-white">
+                        Technical Report
+                      </h3>
+
+                      <p
+                        className="mx-auto mt-5 max-w-[180px] text-[16px] leading-[1.9] text-[#D1D1D1] animate-hero-reveal"
+                        style={{ animationDelay: "1300ms" }}
+                      >
+                        Detailed attack paths, vulnerabilities discovered,
+                        exploitation steps, and evidence.
+                      </p>
+                    </div>
                   </div>
-
-                  <div className="mt-[48px] px-2">
-                    <h3 className="text-[18px] font-medium leading-[1.3] text-white">
-                      Technical Report
-                    </h3>
-
-                    <p className="mx-auto mt-5 max-w-[180px] text-[16px] leading-[1.9] text-[#D1D1D1] animate-hero-reveal" style={{animationDelay:"1300ms"}}>
-                      Detailed attack paths, vulnerabilities discovered,
-                      exploitation steps, and evidence.
-                    </p>
-                  </div>
-                </div>
                 </AnimatedCard>
 
                 {/* 3. Remediation Guidance */}
                 <AnimatedCard delay={0.6}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative flex h-[136px] w-[136px] items-center justify-center">
-                    <div className="absolute z-10 h-[75px] w-[75px] rotate-45 bg-[#050B18]" />
+                  <div className="flex flex-col items-center text-center">
+                    <div className="relative flex h-[136px] w-[136px] items-center justify-center">
+                      <div className="absolute z-10 h-[75px] w-[75px] rotate-45 bg-[#050B18]" />
 
-                    <img
-                      src={frame3.src}
-                      alt=""
-                      className="relative z-20 h-[136px] w-[136px]"
-                    />
+                      <img
+                        src={frame3.src}
+                        alt=""
+                        className="relative z-20 h-[136px] w-[136px]"
+                      />
+                    </div>
+
+                    <div className="mt-[48px] px-2">
+                      <h3 className="text-[18px] font-medium leading-[1.3] text-white">
+                        Remediation Guidance
+                      </h3>
+
+                      <p
+                        className="mx-auto mt-5 max-w-[200px] text-[16px] leading-[1.9] text-[#D1D1D1] animate-hero-reveal"
+                        style={{ animationDelay: "1300ms" }}
+                      >
+                        Actionable steps to mitigate risks, strengthen defenses,
+                        &amp; improve security posture.
+                      </p>
+                    </div>
                   </div>
-
-                  <div className="mt-[48px] px-2">
-                    <h3 className="text-[18px] font-medium leading-[1.3] text-white">
-                      Remediation Guidance
-                    </h3>
-
-                    <p className="mx-auto mt-5 max-w-[200px] text-[16px] leading-[1.9] text-[#D1D1D1] animate-hero-reveal" style={{animationDelay:"1300ms"}}>
-                      Actionable steps to mitigate risks, strengthen defenses,
-                      &amp; improve security posture.
-                    </p>
-                  </div>
-                </div>
                 </AnimatedCard>
 
                 {/* 4. Defense Evaluation */}
                 <AnimatedCard delay={0.8}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative flex h-[136px] w-[206px] items-center justify-center">
-                    <div className="absolute z-10 h-[75px] w-[75px] rotate-45 bg-[#050B18]" />
+                  <div className="flex flex-col items-center text-center">
+                    <div className="relative flex h-[136px] w-[206px] items-center justify-center">
+                      <div className="absolute z-10 h-[75px] w-[75px] rotate-45 bg-[#050B18]" />
 
-                    <img
-                      src={frame4.src}
-                      alt=""
-                      className="relative z-20 h-[136px] w-[136px]"
-                    />
+                      <img
+                        src={frame4.src}
+                        alt=""
+                        className="relative z-20 h-[136px] w-[136px]"
+                      />
+                    </div>
+
+                    <div className="mt-[48px] px-2">
+                      <h3 className="text-[18px] font-medium leading-[1.3] text-white">
+                        Defense Evaluation
+                      </h3>
+
+                      <p
+                        className="mx-auto mt-5 max-w-[170px] text-[16px] leading-[1.9] text-[#D1D1D1] animate-hero-reveal"
+                        style={{ animationDelay: "1300ms" }}
+                      >
+                        Assessment of SOC, detection, and response capabilities.
+                      </p>
+                    </div>
                   </div>
-
-                  <div className="mt-[48px] px-2">
-                    <h3 className="text-[18px] font-medium leading-[1.3] text-white">
-                      Defense Evaluation
-                    </h3>
-
-                    <p className="mx-auto mt-5 max-w-[170px] text-[16px] leading-[1.9] text-[#D1D1D1] animate-hero-reveal" style={{animationDelay:"1300ms"}}>
-                      Assessment of SOC, detection, and response capabilities.
-                    </p>
-                  </div>
-                </div>
                 </AnimatedCard>
 
                 {/* 5. Team Debrief */}
                 <AnimatedCard delay={1}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative flex h-[136px] w-[136px] items-center justify-center">
-                    <div className="absolute z-10 h-[75px] w-[75px] rotate-45 bg-[#050B18]" />
+                  <div className="flex flex-col items-center text-center">
+                    <div className="relative flex h-[136px] w-[136px] items-center justify-center">
+                      <div className="absolute z-10 h-[75px] w-[75px] rotate-45 bg-[#050B18]" />
 
-                    <img
-                      src={frame5.src}
-                      alt=""
-                      className="relative z-20 h-[136px] w-[136px]"
-                    />
+                      <img
+                        src={frame5.src}
+                        alt=""
+                        className="relative z-20 h-[136px] w-[136px]"
+                      />
+                    </div>
+
+                    <div className="mt-[48px] px-2">
+                      <h3 className="text-[18px] font-medium leading-[1.3] text-white">
+                        Team Debrief
+                      </h3>
+
+                      <p
+                        className="mx-auto mt-5 max-w-[200px] text-[17px] leading-[1.9] text-[#D1D1D1] animate-hero-reveal"
+                        style={{ animationDelay: "1000ms" }}
+                      >
+                        Interactive session with your security and IT teams to
+                        review findings and recommendations.
+                      </p>
+                    </div>
                   </div>
-
-                  <div className="mt-[48px] px-2">
-                    <h3 className="text-[18px] font-medium leading-[1.3] text-white">
-                      Team Debrief
-                    </h3>
-
-                    <p className="mx-auto mt-5 max-w-[200px] text-[17px] leading-[1.9] text-[#D1D1D1] animate-hero-reveal" style={{animationDelay:"1000ms"}}>
-                      Interactive session with your security and IT teams to
-                      review findings and recommendations.
-                    </p>
-                  </div>
-                </div>
                 </AnimatedCard>
               </div>
             </div>

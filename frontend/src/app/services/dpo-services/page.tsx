@@ -414,7 +414,7 @@ function page() {
   } = useForm<ContactFormData>();
 
   const submit = async (data: ContactFormData) => {
-    console.log(data);
+    console.log(data, "this is the data of dpo service");
     setLoading(true);
     try {
       if (!turnstileToken) {
@@ -453,16 +453,25 @@ function page() {
                 <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
                   OUTSOURCED DATA PROTECTION OFFICER
                 </p>
-                <h1 className="text-[#FFFFFF] lg:max-w-[440px] animate-hero-reveal" style={{animationDelay:"600ms"}}>
+                <h1
+                  className="text-[#FFFFFF] lg:max-w-[440px] animate-hero-reveal"
+                  style={{ animationDelay: "600ms" }}
+                >
                   Expert Privacy Leadership. Without the Full-Time Overhead.
                 </h1>
-                <p className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[450px] animate-hero-reveal" style={{animationDelay:"800ms"}}>
+                <p
+                  className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[450px] animate-hero-reveal"
+                  style={{ animationDelay: "800ms" }}
+                >
                   Strengthen data protection, manage privacy obligations, and
                   build customer trust with outsourced DPO services tailored to
                   your organisation’s regulatory requirements and business
                   needs.
                 </p>
-                <p className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[460px] animate-hero-reveal" style={{animationDelay:"1000ms"}}>
+                <p
+                  className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[460px] animate-hero-reveal"
+                  style={{ animationDelay: "1000ms" }}
+                >
                   ISECURION helps organisations establish privacy governance,
                   manage compliance responsibilities, and improve accountability
                   across the personal data lifecycle.
@@ -471,7 +480,10 @@ function page() {
             </Animation>
             <Animation>
               <ul className="mt-4 space-y-2 ">
-                <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal" style={{animationDelay:"1200ms"}}>
+                <li
+                  className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal"
+                  style={{ animationDelay: "1200ms" }}
+                >
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -479,7 +491,10 @@ function page() {
                   Privacy Governance & Compliance
                 </li>
 
-                <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal" style={{animationDelay:"1400ms"}}>
+                <li
+                  className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal"
+                  style={{ animationDelay: "1400ms" }}
+                >
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -487,7 +502,10 @@ function page() {
                   DPDP Act & GDPR Support
                 </li>
 
-                <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal" style={{animationDelay:"1500ms"}}>
+                <li
+                  className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal"
+                  style={{ animationDelay: "1500ms" }}
+                >
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -495,7 +513,10 @@ function page() {
                   Data Subject Rights Management
                 </li>
 
-                <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal" style={{animationDelay:"1800ms"}}>
+                <li
+                  className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal"
+                  style={{ animationDelay: "1800ms" }}
+                >
                   <Icon
                     icon="boxicons:seal-check"
                     className="mt-0.5 shrink-0 text-[20px] text-[#0F66EA]"
@@ -518,227 +539,226 @@ function page() {
             </Animation> */}
           </div>
 
-          <div className="flex-1 px-8 py-5 rounded-3xl space-y-5 bg-linear-to-r from-[#7B6FE860] to-[#7B6FE839] min-h-[800px]">
-            <form
-              action=""
-              className="space-y-5"
-              onSubmit={handleSubmit(submit)}
-            >
-              
-                <div className="flex flex-col sm:flex-row gap-6">
-                  <div className="flex flex-col w-full gap-3">
-                    <label
-                      htmlFor=""
-                      className="text-[#FEFEFE] text-sm font-normal"
-                    >
-                      First Name <span className="text-[#E42F23]">*</span>{" "}
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="First name"
-                      className={`px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C] ${errors.fullname ? "border border-red-500" : ""}`}
-                      {...register("fullname", {
-                        required: "Full name is required",
-                      })}
-                    />
-                    {errors.fullname && (
-                      <p className="text-sm font-normal text-red-500">
-                        {errors.fullname.message}
-                      </p>
-                    )}
-                  </div>
-                  <div className="flex flex-col w-full gap-3">
-                    <label
-                      htmlFor=""
-                      className="text-[#FEFEFE] text-[15px] font-normal"
-                    >
-                      Company Name
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Company name"
-                      className="px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
-                      {...register("companyname")}
-                    />
-                  </div>
+          <div className="flex-1 px-8 py-5 rounded-3xl space-y-5 bg-linear-to-r from-[#7B6FE860] to-[#7B6FE839] ">
+            <form className="space-y-3" onSubmit={handleSubmit(submit)}>
+              <div className="flex flex-col sm:flex-row gap-6">
+                <div className="flex flex-col w-full gap-3">
+                  <label
+                    htmlFor=""
+                    className="text-[#FEFEFE] text-sm font-normal"
+                  >
+                    First Name <span className="text-[#E42F23]">*</span>{" "}
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="First name"
+                    className={`text-sm font-normal  px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C] ${errors.fullname ? "border border-red-500" : ""}`}
+                    {...register("fullname", {
+                      required: "Full name is required",
+                    })}
+                  />
+                  {errors.fullname && (
+                    <p className="text-sm font-normal text-red-500">
+                      {errors.fullname.message}
+                    </p>
+                  )}
                 </div>
-           
-            
-                <div className="flex flex-col sm:flex-row gap-6">
-                  <div className="flex flex-col w-full gap-3">
-                    <label
-                      htmlFor=""
-                      className="text-[#FEFEFE] text-[15px] font-medium"
-                    >
-                      Email <span className="text-[#E42F23]">*</span>{" "}
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="youremail@gmail.com"
-                      className={`px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C] ${errors.email ? "border border-red-500" : ""}`}
-                      {...register("email", { required: "Email is required" })}
-                    />
-                    {errors.email && (
-                      <p className="text-sm font-normal text-red-500">
-                        {errors.email.message}
-                      </p>
-                    )}
-                  </div>
-                  <div className="flex flex-col w-full gap-3">
-                    <label
-                      htmlFor=""
-                      className="text-[#FEFEFE] text-[15px] font-medium"
-                    >
-                      Phone Number{" "}
-                      <span className="text-[#E42F23]">*</span>{" "}
-                    </label>
-                    <input
-                      type="tel"
-                      placeholder="+91 987-654-321"
-                      className={`px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C] ${errors.phonenumber ? "border border-red-500" : ""}`}
-                      {...register("phonenumber", {
-                        required: "Phone number is required",
-                      })}
-                    />
-                    {errors.phonenumber && (
-                      <p className="text-sm font-normal text-red-500">
-                        {errors.phonenumber.message}
-                      </p>
-                    )}
-                  </div>
+                <div className="flex flex-col w-full gap-3">
+                  <label
+                    htmlFor=""
+                    className="text-[#FEFEFE] text-[15px] font-normal"
+                  >
+                    Company Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Company name"
+                    className=" text-sm font-normal px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]"
+                    {...register("companyname")}
+                  />
                 </div>
-            
-       
-                <div className="flex flex-col sm:flex-row gap-6">
-                  <div className="flex flex-col w-full gap-3">
-                    <label
-                      htmlFor=""
-                      className="text-[#FEFEFE] text-[15px] font-medium"
-                    >
-                      Location
-                    </label>
-                    <select
-                      name=""
-                      id=""
-                      className={`h-12 w-full px-3 rounded-[10px] cursor-pointer outline-none  text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]`}
-                      {...register("location")}
-                    >
-                      <option value="" disabled>Select your loaction</option>
+              </div>
 
-                      <optgroup label="India">
-                        <option value="India - Bangalore">
-                          India - Bangalore
-                        </option>
-                        <option value="India - Mumbai">India - Mumbai</option>
-                        <option value="India - Delhi NCR">
-                          India - Delhi NCR
-                        </option>
-                        <option value="India - Pune">India - Pune</option>
-                        <option value="India - Hyderabad">
-                          India - Hyderabad
-                        </option>
-                        <option value="India - Kolkata">India - Kolkata</option>
-                        <option value="India - Ahmedabad">
-                          India - Ahmedabad
-                        </option>
-                        <option value="India - Noida">India - Noida</option>
-                        <option value="India - Chennai">India - Chennai</option>
-                        <option value="India - Other">India - Other</option>
-                      </optgroup>
-
-                      <optgroup label="Global">
-                        <option value="USA">USA</option>
-                        <option value="UK">UK</option>
-                        <option value="Europe - Other">Europe - Other</option>
-                        <option value="GCC - UAE">GCC - UAE</option>
-                        <option value="GCC - Other">GCC - Other</option>
-                        <option value="Singapore">Singapore</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Other">Other</option>
-                      </optgroup>
-                    </select>
-                  </div>
-                  <div className="flex flex-col w-full gap-3 ">
-                    <label
-                      htmlFor=""
-                      className="text-[#FEFEFE] text-[15px] font-medium"
-                    >
-                      Engagement Type
-                    </label>
-                    <select
-                      name=""
-                      id=""
-                      className="h-12 w-full px-2 rounded-[10px] cursor-pointer outline-none text-[#D1D1D1] bg-[#000C1C]"
-                      {...register("engagement")}
-                    >
-                      <option value="" disabled>Choose enagament type</option>
-                      <option value="">Foundational DPO (Startup / SME)</option>
-                      <option value="">Growth DPO (Mid-Market)</option>
-                      <option value="">Enterprise DPO (Continuous)</option>
-                      <option value="">On-demand Advisory / Retainer</option>
-                      <option value="">DPDP Act DPO Appointment</option>
-                      <option value="">GDPR Article 37 DPO Appointment</option>
-                    </select>
-                  </div>
-                </div>
-             
-        
-                <div className="flex flex-col gap-2">
+              <div className="flex flex-col sm:flex-row gap-6">
+                <div className="flex flex-col w-full gap-3">
                   <label
                     htmlFor=""
                     className="text-[#FEFEFE] text-[15px] font-medium"
                   >
-                    How Can We Help?
+                    Email <span className="text-[#E42F23]">*</span>{" "}
                   </label>
-                  <textarea
-                    placeholder=" Brief requirement (optional)"
+                  <input
+                    type="email"
+                    placeholder="youremail@gmail.com"
+                    className={`text-sm font-normal  px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C] ${errors.email ? "border border-red-500" : ""}`}
+                    {...register("email", { required: "Email is required" })}
+                  />
+                  {errors.email && (
+                    <p className="text-sm font-normal text-red-500">
+                      {errors.email.message}
+                    </p>
+                  )}
+                </div>
+                <div className="flex flex-col w-full gap-3">
+                  <label
+                    htmlFor=""
+                    className="text-[#FEFEFE] text-[15px] font-medium"
+                  >
+                    Phone Number <span className="text-[#E42F23]">*</span>{" "}
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="+91 987-654-321"
+                    className={`text-sm font-normal  px-3 py-3 rounded-[10px] outline-none text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C] ${errors.phonenumber ? "border border-red-500" : ""}`}
+                    {...register("phonenumber", {
+                      required: "Phone number is required",
+                    })}
+                  />
+                  {errors.phonenumber && (
+                    <p className="text-sm font-normal text-red-500">
+                      {errors.phonenumber.message}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-6">
+                <div className="flex flex-col w-full gap-3">
+                  <label
+                    htmlFor=""
+                    className="text-[#FEFEFE] text-[15px] font-medium"
+                  >
+                    Location
+                  </label>
+                  <select
                     name=""
                     id=""
-                    className="px-3 py-3 w-full rounded-[10px] text-[#D1D1D1] bg-[#000C1C] border border-[#262D3D] outline-none"
-                    rows={5}
-                    {...register("message")}
-                  ></textarea>
+                    className={`text-sm font-normal  h-12 w-full px-3 rounded-[10px] cursor-pointer outline-none  text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]`}
+                    {...register("location")}
+                  >
+                    <option value="">Select your loaction</option>
+
+                    <optgroup label="India">
+                      <option value="India - Bangalore">
+                        India - Bangalore
+                      </option>
+                      <option value="India - Mumbai">India - Mumbai</option>
+                      <option value="India - Delhi NCR">
+                        India - Delhi NCR
+                      </option>
+                      <option value="India - Pune">India - Pune</option>
+                      <option value="India - Hyderabad">
+                        India - Hyderabad
+                      </option>
+                      <option value="India - Kolkata">India - Kolkata</option>
+                      <option value="India - Ahmedabad">
+                        India - Ahmedabad
+                      </option>
+                      <option value="India - Noida">India - Noida</option>
+                      <option value="India - Chennai">India - Chennai</option>
+                      <option value="India - Other">India - Other</option>
+                    </optgroup>
+
+                    <optgroup label="Global">
+                      <option value="USA">USA</option>
+                      <option value="UK">UK</option>
+                      <option value="Europe - Other">Europe - Other</option>
+                      <option value="GCC - UAE">GCC - UAE</option>
+                      <option value="GCC - Other">GCC - Other</option>
+                      <option value="Singapore">Singapore</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Other">Other</option>
+                    </optgroup>
+                  </select>
                 </div>
-         
-           
-                <div className="">
-                  <div className="flex items-center gap-3">
-                    <Turnstile
-                      ref={turnstileRef}
-                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                      onSuccess={(token) => setTurnstileToken(token)}
-                      onExpire={() => setTurnstileToken("")}
-                      onError={() => setTurnstileToken("")}
-                    />
-                  </div>
+                <div className="flex flex-col w-full gap-3 ">
+                  <label
+                    htmlFor=""
+                    className="text-[#FEFEFE] text-[15px] font-medium"
+                  >
+                    Engagement Type
+                  </label>
+                  <select
+                    name=""
+                    id=""
+                    className="text-sm font-normal  h-12 w-full px-2 rounded-[10px] cursor-pointer outline-none text-[#D1D1D1] bg-[#000C1C]"
+                    {...register("engagement")}
+                  >
+                    <option value="">Choose enagament type</option>
+                    <option value="Foundational DPO (Startup / SME)">
+                      Foundational DPO (Startup / SME)
+                    </option>
+                    <option value="Growth DPO (Mid-Market)">
+                      Growth DPO (Mid-Market)
+                    </option>
+                    <option value="Enterprise DPO (Continuous)">
+                      Enterprise DPO (Continuous)
+                    </option>
+                    <option value="On-demand Advisory / Retainer">
+                      On-demand Advisory / Retainer
+                    </option>
+                    <option value="DPDP Act DPO Appointment">
+                      DPDP Act DPO Appointment
+                    </option>
+                    <option value="GDPR Article 37 DPO Appointment">
+                      GDPR Article 37 DPO Appointment
+                    </option>
+                  </select>
                 </div>
-             
-              
-                <div className="flex gap-3">
-                  <input
-                    type="checkbox"
-                    className="border border-[#D1D1D1] bg-none"
-                  />
-                  <p className="text-xs font-medium leading-[22px] text-[#D1D1D1]">
-                    By clicking submit below, you agree to our Terms of Use and
-                    Privacy Policy. Additionally, you consent to allow ISECURION
-                    Technology & Consulting Pvt. Ltd. to store and process the
-                    personal information submitted above to provide you the
-                    content requested.
-                  </p>
-                </div>
-            
-             
-                <button
-                  type="submit"
-                  className={`text-base sm:text-lg font-medium flex items-center justify-center py-3 w-full rounded-[10px] cursor-pointer text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] h-[54px] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label
+                  htmlFor=""
+                  className="text-[#FEFEFE] text-[15px] font-medium"
                 >
-                  Request Consultation{" "}
-                  <span>
-                    <Icon icon="akar-icons:arrow-right" className="text-lg" />
-                  </span>{" "}
-                </button>
-             
+                  How Can We Help?
+                </label>
+                <textarea
+                  placeholder=" Brief requirement (optional)"
+                  name=""
+                  id=""
+                  className="text-sm font-normal  px-3 py-3 w-full rounded-[10px] text-[#D1D1D1] bg-[#000C1C] border border-[#262D3D] outline-none"
+                  rows={2}
+                  {...register("message")}
+                ></textarea>
+              </div>
+
+              <div className="">
+                <div className="flex items-center gap-3">
+                  <Turnstile
+                    ref={turnstileRef}
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                    onSuccess={(token) => setTurnstileToken(token)}
+                    onExpire={() => setTurnstileToken("")}
+                    onError={() => setTurnstileToken("")}
+                  />
+                </div>
+              </div>
+
+              <div className="flex gap-3">
+                <input
+                  type="checkbox"
+                  className="border border-[#D1D1D1] bg-none"
+                />
+                <p className="text-xs font-medium leading-[22px] text-[#D1D1D1]">
+                  By clicking submit below, you agree to our Terms of Use and
+                  Privacy Policy. Additionally, you consent to allow ISECURION
+                  Technology & Consulting Pvt. Ltd. to store and process the
+                  personal information submitted above to provide you the
+                  content requested.
+                </p>
+              </div>
+
+              <button
+                type="submit"
+                className={`text-base sm:text-lg font-medium flex items-center justify-center py-3 w-full rounded-[10px]  text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] h-[54px] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+              >
+                Request Consultation{" "}
+                <span>
+                  <Icon icon="akar-icons:arrow-right" className="text-lg" />
+                </span>{" "}
+              </button>
             </form>
           </div>
         </div>
@@ -752,15 +772,22 @@ function page() {
               <p className="text-sm sm:text-base font-semibold uppercase text-[#0F66EA]">
                 UNDERSTANDING OUTSOURCED DPO
               </p>
-              <WordReveal text="Independent Privacy Oversight. Practical Business Support." className="text-[#FEFEFE] max-w-[720px]">
-                
-              </WordReveal>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[550px] animate-hero-reveal" style={{animationDelay:"1000ms"}}>
+              <WordReveal
+                text="Independent Privacy Oversight. Practical Business Support."
+                className="text-[#FEFEFE] max-w-[720px]"
+              ></WordReveal>
+              <p
+                className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[550px] animate-hero-reveal"
+                style={{ animationDelay: "1000ms" }}
+              >
                 An outsourced Data Protection Officer (DPO) provides specialist
                 privacy guidance, compliance oversight, and regulatory
                 coordination without requiring a full-time internal appointment.
               </p>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[550px] animate-hero-reveal" style={{animationDelay:"1200ms"}}>
+              <p
+                className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[550px] animate-hero-reveal"
+                style={{ animationDelay: "1200ms" }}
+              >
                 ISECURION helps organisations manage privacy responsibilities
                 through structured governance, documented processes, and ongoing
                 advisory support.
@@ -805,9 +832,10 @@ function page() {
               <p className="text-sm sm:text-base font-semibold text-[#0F66EA] ">
                 WHO NEEDS AN OUTSOURCED DPO?
               </p>
-              <WordReveal text="Does your organisation need an Outsourced DPO?" className="text-[#FFFFFF]">
-                
-              </WordReveal>
+              <WordReveal
+                text="Does your organisation need an Outsourced DPO?"
+                className="text-[#FFFFFF]"
+              ></WordReveal>
               <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[600px]">
                 If you recognise any one of these situations, an Outsourced DPO
                 engagement will deliver immediate impact across privacy and
@@ -858,56 +886,56 @@ function page() {
 
                 {/* Statistic 1 */}
                 <AnimatedCard delay={0.3}>
-                <div className="relative pl-5 sm:pl-7">
-                  <span className="absolute left-[-7px] top-[5px] h-4 w-4 rounded-full border-2 border-[#D1D5DB] bg-[#030707]" />
+                  <div className="relative pl-5 sm:pl-7">
+                    <span className="absolute left-[-7px] top-[5px] h-4 w-4 rounded-full border-2 border-[#D1D5DB] bg-[#030707]" />
 
-                  <h3 className="text-[28px] font-semibold leading-none tracking-[1px] text-[#0F66EA] sm:text-[30px] lg:text-[30px]">
-                    500+
-                  </h3>
-                  <h4 className="mt-3 text-sm font-semibold leading-5 text-white sm:text-[15px]">
-                    Clients Served Globally
-                  </h4>
-                  <p className="mt-2 max-w-[290px] text-[13px] leading-[21px] text-[#D1D1D1] sm:text-[13px] sm:leading-[22px]">
-                    From startups to Fortune 500s, we help organizations across
-                    industries secure what matters most.
-                  </p>
-                </div>
+                    <h3 className="text-[28px] font-semibold leading-none tracking-[1px] text-[#0F66EA] sm:text-[30px] lg:text-[30px]">
+                      500+
+                    </h3>
+                    <h4 className="mt-3 text-sm font-semibold leading-5 text-white sm:text-[15px]">
+                      Clients Served Globally
+                    </h4>
+                    <p className="mt-2 max-w-[290px] text-[13px] leading-[21px] text-[#D1D1D1] sm:text-[13px] sm:leading-[22px]">
+                      From startups to Fortune 500s, we help organizations
+                      across industries secure what matters most.
+                    </p>
+                  </div>
                 </AnimatedCard>
 
                 {/* Statistic 2 */}
                 <AnimatedCard delay={0.4}>
-                <div className="relative pl-5 sm:pl-7">
-                  <span className="absolute left-[-7px] top-[5px] h-4 w-4 rounded-full border-2 border-[#D1D5DB] bg-[#030707]" />
+                  <div className="relative pl-5 sm:pl-7">
+                    <span className="absolute left-[-7px] top-[5px] h-4 w-4 rounded-full border-2 border-[#D1D5DB] bg-[#030707]" />
 
-                  <h3 className="text-[28px] font-semibold leading-none tracking-[1px] text-[#0F66EA] sm:text-[30px] lg:text-[30px]">
-                    10+
-                  </h3>
-                  <h4 className="mt-3 text-sm font-semibold leading-5 text-white sm:text-[15px]">
-                    Years of Experience
-                  </h4>
-                  <p className="mt-2 max-w-[290px] text-[13px] leading-[21px] text-[#D1D1D1] sm:text-[13px] sm:leading-[22px]">
-                    A decade of hands-on expertise in cybersecurity, risk and
-                    resilience.
-                  </p>
-                </div>
+                    <h3 className="text-[28px] font-semibold leading-none tracking-[1px] text-[#0F66EA] sm:text-[30px] lg:text-[30px]">
+                      10+
+                    </h3>
+                    <h4 className="mt-3 text-sm font-semibold leading-5 text-white sm:text-[15px]">
+                      Years of Experience
+                    </h4>
+                    <p className="mt-2 max-w-[290px] text-[13px] leading-[21px] text-[#D1D1D1] sm:text-[13px] sm:leading-[22px]">
+                      A decade of hands-on expertise in cybersecurity, risk and
+                      resilience.
+                    </p>
+                  </div>
                 </AnimatedCard>
 
                 {/* Statistic 3 */}
                 <AnimatedCard delay={0.5}>
-                <div className="relative pl-5 sm:pl-7">
-                  <span className="absolute left-[-7px] top-[5px] h-4 w-4 rounded-full border-2 border-[#D1D5DB] bg-[#030707]" />
+                  <div className="relative pl-5 sm:pl-7">
+                    <span className="absolute left-[-7px] top-[5px] h-4 w-4 rounded-full border-2 border-[#D1D5DB] bg-[#030707]" />
 
-                  <h3 className="text-[28px] font-semibold leading-none tracking-[1px] text-[#0F66EA] sm:text-[30px] lg:text-[30px]">
-                    10+
-                  </h3>
-                  <h4 className="mt-3 text-sm font-semibold leading-5 text-white sm:text-[15px]">
-                    Privacy Frameworks
-                  </h4>
-                  <p className="mt-2 max-w-[280px] text-[13px] leading-[21px] text-[#D1D1D1] sm:text-[13px] sm:leading-[22px]">
-                    Aligned with global standards to help you meet today’s and
-                    tomorrow’s challenges.
-                  </p>
-                </div>
+                    <h3 className="text-[28px] font-semibold leading-none tracking-[1px] text-[#0F66EA] sm:text-[30px] lg:text-[30px]">
+                      10+
+                    </h3>
+                    <h4 className="mt-3 text-sm font-semibold leading-5 text-white sm:text-[15px]">
+                      Privacy Frameworks
+                    </h4>
+                    <p className="mt-2 max-w-[280px] text-[13px] leading-[21px] text-[#D1D1D1] sm:text-[13px] sm:leading-[22px]">
+                      Aligned with global standards to help you meet today’s and
+                      tomorrow’s challenges.
+                    </p>
+                  </div>
                 </AnimatedCard>
               </div>
 
@@ -918,18 +946,25 @@ function page() {
                     ISECURION PRIVACY PRACTICE
                   </p>
 
-                  <WordReveal text="Meet the ISECURION Outsourced DPO Team" className="mt-2 max-w-[520px] text-[24px] font-normal leading-[1.5] tracking-[-0.5px] text-white sm:text-[32px] md:text-[34px] lg:text-[30px] xl:text-[32px]">
-                    
-                  </WordReveal>
+                  <WordReveal
+                    text="Meet the ISECURION Outsourced DPO Team"
+                    className="mt-2 max-w-[520px] text-[24px] font-normal leading-[1.5] tracking-[-0.5px] text-white sm:text-[32px] md:text-[34px] lg:text-[30px] xl:text-[32px]"
+                  ></WordReveal>
 
-                  <p className="mt-8 max-w-[505px] text-[14px] font-normal leading-[25px] text-[#D1D1D1] sm:text-[15px] sm:leading-[25px] animate-hero-reveal" style={{animationDelay:"1000ms"}}>
+                  <p
+                    className="mt-8 max-w-[505px] text-[14px] font-normal leading-[25px] text-[#D1D1D1] sm:text-[15px] sm:leading-[25px] animate-hero-reveal"
+                    style={{ animationDelay: "1000ms" }}
+                  >
                     ISECURION&apos;s privacy practice is a dedicated team of
                     certified data protection professionals, privacy
                     lawyers-in-consult, and compliance specialists - built for
                     India&apos;s DPDP Act and global privacy regimes alike.
                   </p>
 
-                  <p className="mt-6 max-w-[505px] text-[14px] font-normal leading-[25px] text-[#D1D1D1] sm:text-[15px] sm:leading-[25px] animate-hero-reveal" style={{animationDelay:"1200ms"}}>
+                  <p
+                    className="mt-6 max-w-[505px] text-[14px] font-normal leading-[25px] text-[#D1D1D1] sm:text-[15px] sm:leading-[25px] animate-hero-reveal"
+                    style={{ animationDelay: "1200ms" }}
+                  >
                     With experience across BFSI, healthcare, IT/ITES,
                     e-commerce, and regulated industries, the team delivers{" "}
                     <span className="font-semibold text-white">
@@ -940,26 +975,25 @@ function page() {
 
                   {/* Credentials */}
                   <AnimatedCard>
-                  <div className="mt-18 flex flex-wrap gap-2">
-                    <span className="inline-flex min-h-[29px] items-center gap-1.5 rounded-full border border-[#FFFFFF24] bg-[#FFFFFF12] px-3 py-1 text-[10px] font-medium leading-4 text-[#E0F2FE] sm:text-[11px]">
-                      <Icon
-                        icon="boxicons:certification-filled"
-                        className="shrink-0 text-[12px]"
-                      />
-                      CERT-In Empanelled
-                    </span>
+                    <div className="mt-18 flex flex-wrap gap-2">
+                      <span className="inline-flex min-h-[29px] items-center gap-1.5 rounded-full border border-[#FFFFFF24] bg-[#FFFFFF12] px-3 py-1 text-[10px] font-medium leading-4 text-[#E0F2FE] sm:text-[11px]">
+                        <Icon
+                          icon="boxicons:certification-filled"
+                          className="shrink-0 text-[12px]"
+                        />
+                        CERT-In Empanelled
+                      </span>
 
-                    <span className="inline-flex min-h-[29px] items-center gap-1.5 rounded-full border border-[#FFFFFF24] bg-[#FFFFFF12] px-3 py-1 text-[10px] font-medium leading-4 text-[#E0F2FE] sm:text-[11px]">
-                      <Icon
-                        icon="fluent:ribbon-star-24-filled"
-                        className="shrink-0 text-[12px]"
-                      />
-                      ISO 27001:2022 Certified
-                    </span>
-                  </div>
+                      <span className="inline-flex min-h-[29px] items-center gap-1.5 rounded-full border border-[#FFFFFF24] bg-[#FFFFFF12] px-3 py-1 text-[10px] font-medium leading-4 text-[#E0F2FE] sm:text-[11px]">
+                        <Icon
+                          icon="fluent:ribbon-star-24-filled"
+                          className="shrink-0 text-[12px]"
+                        />
+                        ISO 27001:2022 Certified
+                      </span>
+                    </div>
                   </AnimatedCard>
 
-                  
                   <div className="mt-3 flex flex-wrap gap-2">
                     <span className="inline-flex min-h-[29px] items-center gap-1.5 rounded-full border border-[#FFFFFF24] bg-[#FFFFFF12] px-3 py-1 text-[10px] font-medium leading-4 text-[#E0F2FE] sm:text-[11px]">
                       <Icon
@@ -977,7 +1011,6 @@ function page() {
                       Bengaluru &amp; Kolkata Offices
                     </span>
                   </div>
-                  
                 </div>
               </RightAnimation>
             </div>
@@ -1131,11 +1164,15 @@ function page() {
                 ENGAGEMENT LIFECYCLE
               </p>
 
-              <WordReveal text="How ISECURION delivers outsourced DPO services" className="max-w-[670px] text-[32px] font-medium leading-[1.3] tracking-[-0.5px] text-white sm:text-[36px] lg:text-[40px]">
-                
-              </WordReveal>
+              <WordReveal
+                text="How ISECURION delivers outsourced DPO services"
+                className="max-w-[670px] text-[32px] font-medium leading-[1.3] tracking-[-0.5px] text-white sm:text-[36px] lg:text-[40px]"
+              ></WordReveal>
 
-              <p className="max-w-[819px] text-[15px] font-normal leading-[25px] text-[#D1D1D1] sm:text-base sm:leading-[28px] lg:text-[18px] lg:leading-[31px] animate-hero-reveal" style={{animationDelay:"800ms"}}>
+              <p
+                className="max-w-[819px] text-[15px] font-normal leading-[25px] text-[#D1D1D1] sm:text-base sm:leading-[28px] lg:text-[18px] lg:leading-[31px] animate-hero-reveal"
+                style={{ animationDelay: "800ms" }}
+              >
                 A practical engagement model that establishes privacy
                 foundations, operational workflows, and continuous oversight.
               </p>

@@ -488,12 +488,18 @@ function page() {
                 </p>
 
                 {/* Heading */}
-                <h1 className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{animationDelay:"500ms"}}>
+                <h1
+                  className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal"
+                  style={{ animationDelay: "500ms" }}
+                >
                   CICRA Audit Services for Critical Infrastructure Protection
                 </h1>
 
                 {/* Description */}
-                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{animationDelay:"750ms"}}>
+                <p
+                  className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
+                  style={{ animationDelay: "750ms" }}
+                >
                   ISECURION delivers industry-leading CICRA Audit Services in
                   India, helping organizations identify, assess, and mitigate
                   risks to their Critical Information Infrastructure (CII) and
@@ -501,7 +507,10 @@ function page() {
                 </p>
 
                 <ul className="mt-4 space-y-2">
-                  <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal" style={{animationDelay:"950ms"}}>
+                  <li
+                    className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal"
+                    style={{ animationDelay: "950ms" }}
+                  >
                     <Icon
                       icon="boxicons:seal-check"
                       className="mt-0.5 shrink-0 text-[20px] text-[#7D70F0]"
@@ -509,7 +518,10 @@ function page() {
                     Critical Infrastructure
                   </li>
 
-                  <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal" style={{animationDelay:"1050ms"}}>
+                  <li
+                    className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal"
+                    style={{ animationDelay: "1050ms" }}
+                  >
                     <Icon
                       icon="boxicons:seal-check"
                       className="mt-0.5 shrink-0 text-[20px] text-[#7D70F0]"
@@ -517,7 +529,10 @@ function page() {
                     Risk-Based Assessment
                   </li>
 
-                  <li className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal" style={{animationDelay:"1200ms"}}>
+                  <li
+                    className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal"
+                    style={{ animationDelay: "1200ms" }}
+                  >
                     <Icon
                       icon="boxicons:seal-check"
                       className="mt-0.5 shrink-0 text-[20px] text-[#7D70F0]"
@@ -543,202 +558,195 @@ function page() {
               </div>
             </Animation>
 
-              <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:p-[30px] xl:p-[40px]">
-                <div>
-                  <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
-                    Request CICRA Audit Consultation
-                  </h2>
+            <div className="w-full rounded-[20px] bg-[#202123] p-[30px] shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:p-[32px] lg:p-[30px] xl:p-[40px]">
+              <div>
+                <h2 className="text-[18px] font-medium leading-[1.3] text-white sm:text-[19px]">
+                  Request CICRA Audit Consultation
+                </h2>
 
-                  <p className="mt-3 text-[14px] leading-[1.5] text-[#D9D9D9]">
-                    Discuss your CICRA audit needs with our experts.
-                  </p>
-                </div>
+                <p className="mt-3 text-[14px] leading-[1.5] text-[#D9D9D9]">
+                  Discuss your CICRA audit needs with our experts.
+                </p>
+              </div>
 
-                {/* Form*/}
-                <form className="mt-8" onSubmit={handleSubmit(submit)}>
-                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                    <div>
-                      <label
-                        htmlFor="workEmail"
-                        className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
-                      >
-                        Work Email <span className="text-[#E42F23]">*</span>
-                      </label>
-
-                      <input
-                        id="workEmail"
-                        name="workEmail"
-                        type="email"
-                        placeholder="youremail@gmail.com"
-                        className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] ${errors.email ? "border border-red-500" : ""}`}
-                        {...register("email", {
-                          required: "Email is required",
-                        })}
-                      />
-                      {errors.email && (
-                        <p className="text-sm font-normal text-red-500">
-                          {errors.email.message}
-                        </p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="companyName"
-                        className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
-                      >
-                        Company Name
-                      </label>
-
-                      <input
-                        id="companyName"
-                        name="companyName"
-                        type="text"
-                        placeholder="Company name"
-                        className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] "
-                        {...register("companyName")}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="mt-4">
+              {/* Form*/}
+              <form className="mt-8" onSubmit={handleSubmit(submit)}>
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  <div>
                     <label
-                      htmlFor="assessmentType"
+                      htmlFor="workEmail"
                       className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
                     >
-                      Industry Sector <span className="text-[#F04444]">*</span>
+                      Work Email <span className="text-[#E42F23]">*</span>
                     </label>
 
-                    <div className="relative">
-                      <select
-                        id="target"
-                        name="target"
-                        defaultValue=""
-                        aria-label="Select Industry Sector"
-                        className={`h-[43px] w-full appearance-none rounded-[7px] border ${
-                          errors.industry
-                            ? "border-red-500"
-                            : "border-[#29292C]"
-                        } bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none`}
-                        {...register("industry", {
-                          required: "Please select an industry sector.",
-                        })}
-                      >
-                        <option value="">Select Industry Sector</option>
-                        <option value="Banking & Financial Services">
-                          Banking & Financial Services
-                        </option>
-                        <option value="NBFC / Payment Aggregator">
-                          NBFC / Payment Aggregator
-                        </option>
-                        <option value="Stock Broker / Trading">
-                          Stock Broker / Trading
-                        </option>
-                        <option value="FinTech Company">FinTech Company</option>
-                        <option value="Hospital / HealthTech Platform">
-                          Hospital / HealthTech Platform
-                        </option>
-                        <option value="Telemedicine / HealthTech Platform">
-                          Telemedicine / HealthTech Platform
-                        </option>
-                        <option value="Power / Energy Company">
-                          Power / Energy Company
-                        </option>
-                        <option value="Oil & Gas Operator">
-                          Oil & Gas Operator
-                        </option>
-                        <option value="Government / Public Sector">
-                          Government / Public Sector
-                        </option>
-                        <option value="Smart City Project">
-                          Smart City Project
-                        </option>
-                        <option value="Data Center / Cloud Provider">
-                          Data Center / Cloud Provider
-                        </option>
-                        <option value="Saas / IT Services Company">
-                          Saas / IT Services Company
-                        </option>
-                        <option value="Telecom Operator / ISP">
-                          Telecom Operator / ISP
-                        </option>
-                        <option value="Other Critical Infrastructure">
-                          Other Critical Infrastructure
-                        </option>
-                      </select>
-
-                      {errors.industry && (
-                        <p className="text-sm font-normal text-red-500">
-                          {errors.industry.message}
-                        </p>
-                      )}
-
-                      <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#777]">
-                        <svg
-                          width="14"
-                          height="8"
-                          viewBox="0 0 14 8"
-                          fill="none"
-                        >
-                          <path
-                            d="M1 1L7 7L13 1"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Captcha */}
-                  <div className="mt-7">
-                    <div className="flex items-center gap-3">
-                      <Turnstile
-                        ref={turnstileRef}
-                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                        onSuccess={(token) => setTurnstileToken(token)}
-                        onExpire={() => setTurnstileToken("")}
-                        onError={() => setTurnstileToken("")}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Consent */}
-                  <div className="mt-5 flex items-start gap-2.5">
                     <input
-                      id="consent"
-                      name="consent"
-                      type="checkbox"
-                      required
-                      className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
+                      id="workEmail"
+                      name="workEmail"
+                      type="email"
+                      placeholder="youremail@gmail.com"
+                      className={`h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] ${errors.email ? "border border-red-500" : ""}`}
+                      {...register("email", {
+                        required: "Email is required",
+                      })}
                     />
-
-                    <label
-                      htmlFor="consent"
-                      className="text-[10px] leading-[1.7] text-[#BDBDBD] sm:text-[11px]"
-                    >
-                      By clicking submit below, you agree to our Terms of Use
-                      and Privacy Policy. Additionally, you consent to allow
-                      ISECURION Technology & Consulting Pvt. Ltd. to store and
-                      process the personal information submitted above to
-                      provide you the content requested.
-                    </label>
+                    {errors.email && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.email.message}
+                      </p>
+                    )}
                   </div>
 
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    className="mt-8 flex h-[51px] w-full items-center justify-center rounded-[7px] border border-[#4D78C4] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(39,84,148,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#5282D3] hover:to-[#2B5CA0] active:translate-y-0"
+                  <div>
+                    <label
+                      htmlFor="companyName"
+                      className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
+                    >
+                      Company Name
+                    </label>
+
+                    <input
+                      id="companyName"
+                      name="companyName"
+                      type="text"
+                      placeholder="Company name"
+                      className="h-[43px] w-full rounded-[7px] border border-[#29292C] bg-[#090304] px-3 text-[13px] text-white outline-none placeholder:text-[#858585] "
+                      {...register("companyName")}
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-4">
+                  <label
+                    htmlFor="assessmentType"
+                    className="mb-2 block text-[13px] font-medium leading-5 text-[#E7E7E7]"
                   >
-                    Request CICRA Audit Consultation{""}
-                    <span className="ml-1.5 text-[18px] leading-none">
-                      <Icon icon="mdi:arrow-right" />
+                    Industry Sector <span className="text-[#F04444]">*</span>
+                  </label>
+
+                  <div className="relative">
+                    <select
+                      id="target"
+                      name="target"
+                      defaultValue=""
+                      aria-label="Select Industry Sector"
+                      className={`h-[43px] w-full appearance-none rounded-[7px] border ${
+                        errors.industry ? "border-red-500" : "border-[#29292C]"
+                      } bg-[#090304] px-3 pr-10 text-[13px] text-[#858585] outline-none`}
+                      {...register("industry", {
+                        required: "Please select an industry sector.",
+                      })}
+                    >
+                      <option value="">Select Industry Sector</option>
+                      <option value="Banking & Financial Services">
+                        Banking & Financial Services
+                      </option>
+                      <option value="NBFC / Payment Aggregator">
+                        NBFC / Payment Aggregator
+                      </option>
+                      <option value="Stock Broker / Trading">
+                        Stock Broker / Trading
+                      </option>
+                      <option value="FinTech Company">FinTech Company</option>
+                      <option value="Hospital / HealthTech Platform">
+                        Hospital / HealthTech Platform
+                      </option>
+                      <option value="Telemedicine / HealthTech Platform">
+                        Telemedicine / HealthTech Platform
+                      </option>
+                      <option value="Power / Energy Company">
+                        Power / Energy Company
+                      </option>
+                      <option value="Oil & Gas Operator">
+                        Oil & Gas Operator
+                      </option>
+                      <option value="Government / Public Sector">
+                        Government / Public Sector
+                      </option>
+                      <option value="Smart City Project">
+                        Smart City Project
+                      </option>
+                      <option value="Data Center / Cloud Provider">
+                        Data Center / Cloud Provider
+                      </option>
+                      <option value="Saas / IT Services Company">
+                        Saas / IT Services Company
+                      </option>
+                      <option value="Telecom Operator / ISP">
+                        Telecom Operator / ISP
+                      </option>
+                      <option value="Other Critical Infrastructure">
+                        Other Critical Infrastructure
+                      </option>
+                    </select>
+
+                    {errors.industry && (
+                      <p className="text-sm font-normal text-red-500">
+                        {errors.industry.message}
+                      </p>
+                    )}
+
+                    <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#777]">
+                      <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
+                        <path
+                          d="M1 1L7 7L13 1"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
                     </span>
-                  </button>
-                </form>
-              </div>
+                  </div>
+                </div>
+
+                {/* Captcha */}
+                <div className="mt-7">
+                  <div className="flex items-center gap-3">
+                    <Turnstile
+                      ref={turnstileRef}
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                      onSuccess={(token) => setTurnstileToken(token)}
+                      onExpire={() => setTurnstileToken("")}
+                      onError={() => setTurnstileToken("")}
+                    />
+                  </div>
+                </div>
+
+                {/* Consent */}
+                <div className="mt-5 flex items-start gap-2.5">
+                  <input
+                    id="consent"
+                    name="consent"
+                    type="checkbox"
+                    required
+                    className="mt-[2px] h-[14px] w-[14px] shrink-0 rounded-[2px] border border-[#A8A8A8] "
+                  />
+
+                  <label
+                    htmlFor="consent"
+                    className="text-[10px] leading-[1.7] text-[#BDBDBD] sm:text-[11px]"
+                  >
+                    By clicking submit below, you agree to our Terms of Use and
+                    Privacy Policy. Additionally, you consent to allow ISECURION
+                    Technology & Consulting Pvt. Ltd. to store and process the
+                    personal information submitted above to provide you the
+                    content requested.
+                  </label>
+                </div>
+
+                {/* Submit */}
+                <button
+                  type="submit"
+                  className={`mt-8 flex h-[51px] w-full items-center justify-center rounded-[7px] border border-[#4D78C4] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(39,84,148,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:from-[#5282D3] hover:to-[#2B5CA0] active:translate-y-0 ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                >
+                  Request CICRA Audit Consultation{""}
+                  <span className="ml-1.5 text-[18px] leading-none">
+                    <Icon icon="mdi:arrow-right" />
+                  </span>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -754,12 +762,16 @@ function page() {
                   UNDERSTANDING CICRA
                 </p>
 
-                <WordReveal  text="Protect Your Critical Information Infrastructure" className="mx-auto mt-4 max-w-[570px] text-center text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] md:text-left lg:mx-0 lg:text-[36px] xl:text-[40px]">
-                 
-                </WordReveal>
+                <WordReveal
+                  text="Protect Your Critical Information Infrastructure"
+                  className="mx-auto mt-4 max-w-[570px] text-center text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] md:text-left lg:mx-0 lg:text-[36px] xl:text-[40px]"
+                ></WordReveal>
 
                 <div className="mx-auto mt-[22px] max-w-[530px] space-y-5 text-center text-[15px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[16px] md:text-left lg:mx-0 lg:text-[16px] xl:text-[17px]">
-                  <p className="animate-hero-reveal" style={{animationDelay:"500ms"}}>
+                  <p
+                    className="animate-hero-reveal"
+                    style={{ animationDelay: "500ms" }}
+                  >
                     A CICRA (Critical Information & Cyber Risk Assessment) Audit
                     is a comprehensive evaluation of an organization's critical
                     systems and infrastructure, sensitive data assets and data
@@ -768,7 +780,10 @@ function page() {
                     incident response and business continuity readiness.
                   </p>
 
-                  <p className="animate-hero-reveal" style={{animationDelay:"750ms"}}>
+                  <p
+                    className="animate-hero-reveal"
+                    style={{ animationDelay: "750ms" }}
+                  >
                     Unlike an audit focused solely on documentation, a
                     risk-based CICRA assessment considers how security gaps
                     could affect essential operations, data integrity, and
@@ -824,10 +839,14 @@ function page() {
               <p className="text-sm sm:text-base font-semibold text-[#7D70F0] ">
                 INDUSTRIES WE SERVE
               </p>
-              <WordReveal text="CICRA Audits for High-Risk and Regulated Industries" className="text-[#FFFFFF] max-w-[700px]">
-                
-              </WordReveal>
-              <p className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[850px] animate-hero-reveal" style={{animationDelay:"800ms"}}>
+              <WordReveal
+                text="CICRA Audits for High-Risk and Regulated Industries"
+                className="text-[#FFFFFF] max-w-[700px]"
+              ></WordReveal>
+              <p
+                className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[850px] animate-hero-reveal"
+                style={{ animationDelay: "800ms" }}
+              >
                 ISECURION's CICRA Audit Services are tailored for organizations
                 operating in high-risk and regulated industries.
               </p>
@@ -874,10 +893,18 @@ function page() {
             </p>
 
             <h2 className="">
-              <WordReveal as="span" text="Understand the Risk Behind Your"></WordReveal> <br /> <WordReveal as="span" text="Critical Operations"></WordReveal>
+              <WordReveal
+                as="span"
+                text="Understand the Risk Behind Your"
+              ></WordReveal>{" "}
+              <br />{" "}
+              <WordReveal as="span" text="Critical Operations"></WordReveal>
             </h2>
 
-            <p className="mx-auto mt-4 text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px] animate-hero-reveal" style={{animationDelay:"600ms"}}>
+            <p
+              className="mx-auto mt-4 text-[14px] leading-5 text-[#D1D1D1] sm:text-[17px] sm:leading-[26px] animate-hero-reveal"
+              style={{ animationDelay: "600ms" }}
+            >
               A CICRA assessment gives leadership a clearer view of where cyber
               risk could directly affect business continuity.
             </p>
@@ -931,11 +958,15 @@ function page() {
               ASSESSMENT COVERAGE
             </p>
 
-            <WordReveal text="One Assessment Across Your Critical Security Landscape" className="mt-3 text-2xl font-medium leading-tight text-[#FEFEFE] sm:text-3xl md:text-4xl lg:text-[38px] lg:leading-[1.3]">
-              
-            </WordReveal>
+            <WordReveal
+              text="One Assessment Across Your Critical Security Landscape"
+              className="mt-3 text-2xl font-medium leading-tight text-[#FEFEFE] sm:text-3xl md:text-4xl lg:text-[38px] lg:leading-[1.3]"
+            ></WordReveal>
 
-            <p className="mx-auto mt-5 max-w-3xl text-sm font-normal leading-6 text-[#D1D1D1] sm:text-base sm:leading-7 animate-hero-reveal" style={{animationDelay:"800ms"}}>
+            <p
+              className="mx-auto mt-5 max-w-3xl text-sm font-normal leading-6 text-[#D1D1D1] sm:text-base sm:leading-7 animate-hero-reveal"
+              style={{ animationDelay: "800ms" }}
+            >
               A comprehensive assessment of the technical, governance, and
               operational controls protecting your critical environment.
             </p>
