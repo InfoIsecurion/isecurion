@@ -46,6 +46,8 @@ import healthcare from "../assets/home/health-care.png";
 import manufacturing from "../assets/home/manufacturingRight.png";
 import rightCircle from "../assets/home/rightCircle.png";
 import HomeCTA from "../components/home/HomeCTA";
+import crestbackround from "../assets/home/crestbackground.png";
+import crestcertificate from "../assets/home/auditorcertifications/crestcertificate.png";
 
 const containerVariants = {
   hidden: {},
@@ -212,9 +214,6 @@ const auditorCertificates = [
   {
     img: cisa,
   },
-  {
-    img: crest,
-  },
 ];
 
 const trustedCompanies = [
@@ -290,32 +289,23 @@ export default function Home() {
       >
         <div className="max-w-7xl w-full mx-auto px-6 sm:px-10">
           <div className="space-y-5 text-center lg:text-left">
-            <p className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading animate-hero-reveal">
+            <p
+              className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading animate-hero-reveal"
+              style={{ animationDelay: "150ms" }}
+            >
               SECURING MODERN ENTERPRISES
             </p>
 
-            <h1 className="text-transparent bg-clip-text bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2]">
-              <WordReveal as="span" text="Build for Trust" className="inline" />
-              <br />
-              <WordReveal
-                as="span"
-                text="Designed for Cyber Resilience."
-                className="inline"
-              />
+            <h1
+              className="text-transparent bg-clip-text bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2] animate-hero-reveal"
+              style={{ animationDelay: "300ms" }}
+            >
+              Build for Trust <br /> Designed for Cyber Resilience.
             </h1>
 
             <p
               className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-lg leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] animate-hero-reveal"
-              style={{ animationDelay: "1000ms" }}
-            >
-              Helping organizations anticipate threats, reduce cyber risk, and
-              build lasting resilience through expert cybersecurity consulting,
-              continuous validation, and intelligent security platforms.
-            </p>
-
-            <p
-              className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-lg leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] animate-hero-reveal"
-              style={{ animationDelay: "1000ms" }}
+              style={{ animationDelay: "450ms" }}
             >
               Helping organizations anticipate threats, reduce cyber risk, and
               build lasting resilience through expert cybersecurity consulting,
@@ -1105,72 +1095,98 @@ export default function Home() {
       {/* INDUSTRIES WE SECURE  */}
       <IndustriesWeSecure />
 
-      <div className="w-full bg-[#070F20]">
-        <div className="mx-auto max-w-7xl">
-          {/* Proven Impact */}
-          <section className="bg-[#070F20] px-6 py-14 sm:px-10 overflow-hidden">
-            <div className="flex flex-col items-center justify-between gap-10 lg:flex-row">
-              {/* Left Content */}
+      <section className="relative w-full mt-20 mb-3">
+        <Image
+          alt="crestbackground"
+          className="absolute w-full h-full"
+          src={crestbackround}
+        />
 
-              <div className="w-full lg:w-1/2">
-                <LeftAnimation>
-                  <h2 className="text-center  font-medium  text-white  lg:text-left">
-                    Proven Impact. Trusted by Enterprises{" "}
-                    <span className="text-[#0F66EA]">Worldwide.</span>
-                  </h2>
-
-                  <div className="mx-auto mt-5 h-[3px] w-[100px] bg-[#1A56DB] lg:mx-0" />
-                </LeftAnimation>
-              </div>
-
-              {/* ISO Certifications */}
-              <RightAnimation>
-                <div className="relative flex w-full items-center justify-center lg:w-1/2">
-                  <img
-                    src={iso27001.src}
-                    alt="ISO 27001"
-                    className="relative z-10 w-[120px] sm:w-[150px]"
-                  />
-
-                  <Icon
-                    icon="line-md:star-twotone"
-                    className="absolute left-1/2 top-1/2 z-20 h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 text-[#0F66EA33] sm:h-[150px] sm:w-[150px]"
-                  />
-
-                  <img
-                    src={iso90001.src}
-                    alt="ISO 9001"
-                    className="relative z-10 ml-10 w-[120px] sm:ml-16 sm:w-[150px]"
-                  />
-                </div>
-              </RightAnimation>
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-10 py-10">
+          <Animation>
+            <div className="text-center space-y-4">
+              <p className="text-lg md:text-xl font-semibold text-[#D9D9D9]">
+                OUR RECOGNITION
+              </p>
+              <h2 className="text-[#FEFEFE]">
+                Trusted. <span className="text-[#0F66EA]">Recognised</span>.
+                Certified.
+              </h2>
+              <p className="sectionDescription text-[#D1D1D1]">
+                Our commitment to excellence is reflected in industry
+                recognitions and globally recognised certifications.
+              </p>
             </div>
-          </section>
+          </Animation>
+          <Animation>
+            <div className="flex flex-wrap items-center justify-center gap-3 md:gap-10 mt-10">
+              <div className="pr-10 md:border-r border-[#88888861]">
+                <Image
+                  alt="crest certificate"
+                  src={crestcertificate}
+                  className="w-[180px] h-[200px]"
+                />
+              </div>
+              <div className="pr-10 md:border-r border-[#88888861]">
+                <Image
+                  alt="crest certificate"
+                  src={crest}
+                  className="w-[180px] h-[200px]"
+                />
+              </div>
+              <div className="w-[350px] ">
+                <p className="text-base sm:text-lg font-medium text-center md:text-left text-[#D1D1D1]">
+                  ISECURION is a{" "}
+                  <span className="font-semibold text-[#FFFFFF]">
+                    CREST Member
+                  </span>
+                  , accredited for
+                  <span className="font-semibold text-[#FFFFFF]">
+                    {" "}
+                    Penetration Testing.
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div>
+              <div className="relative flex w-full items-center justify-center mt-10">
+                <img
+                  src={iso27001.src}
+                  alt="ISO 27001"
+                  className="relative z-10 w-[120px] sm:w-[150px]"
+                />
+
+                <Icon
+                  icon="line-md:star-twotone"
+                  className="absolute left-1/2 top-1/2 z-20 h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 text-[#0F66EA33] sm:h-[150px] sm:w-[150px]"
+                />
+
+                <img
+                  src={iso90001.src}
+                  alt="ISO 9001"
+                  className="relative z-10 ml-10 w-[120px] sm:ml-16 sm:w-[150px]"
+                />
+              </div>
+            </div>
+          </Animation>
+        </div>
+      </section>
+      <div className="relative  -mt-7 mx-auto max-w-7xl p-5 rounded-lg  border border-gray-700 bg-linear-to-r from-[#060D1B] to-[#091c3b] opacity-90">
+        <h3 className="text-center text-[20px] font-semibold uppercase text-white sm:text-[22px]">
+          Auditors Certifications
+        </h3>
+        <div className=" mt-8 grid grid-cols-2 items-center justify-items-center gap-3 sm:grid-cols-3 lg:grid-cols-7">
+          {auditorCertificates.map((item, index) => (
+            <AnimatedCard key={index} delay={index * 0.15}>
+              <img
+                src={item.img.src}
+                alt=""
+                className="h-[100px] w-[90px] object-contain"
+              />
+            </AnimatedCard>
+          ))}
         </div>
       </div>
-
-      {/* Auditor Certifications */}
-      <section className="bg-gradient-to-r from-[#000000] via-[#071C41] to-[#092E70] px-6 py-8 sm:px-10">
-        <Animation>
-          <div className="mx-auto max-w-7xl">
-            <h3 className="text-center text-[20px] font-semibold uppercase text-white sm:text-[22px]">
-              Auditors Certifications
-            </h3>
-
-            <div className="mt-8 grid grid-cols-2 items-center justify-items-center gap-3 sm:grid-cols-3 lg:grid-cols-8">
-              {auditorCertificates.map((item, index) => (
-                <AnimatedCard key={index} delay={index * 0.15}>
-                  <img
-                    src={item.img.src}
-                    alt=""
-                    className="h-[100px] w-[90px] object-contain"
-                  />
-                </AnimatedCard>
-              ))}
-            </div>
-          </div>
-        </Animation>
-      </section>
 
       <div className="bg-[#060D1B] ">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-4 lg:px-10 bg-[#060D1B]">

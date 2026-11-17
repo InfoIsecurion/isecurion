@@ -1,4 +1,3 @@
-import { NextResponse } from 'next/server'
 import { sendContactEmail } from '../services/emailService'
 import { verifyTurnstile } from '@/services/verifyTurnstile'
 import type { PayloadRequest } from 'payload'
@@ -107,6 +106,16 @@ interface Iso27001 {
   industry: string
   turnstileToken: string
 }
+
+interface Soc2 {
+  email: string
+  companyname: string
+  phonenumber: string
+  country: string
+  target: string
+  turnstileToken: string
+}
+
 function containsHTML(value: string): boolean {
   return /<[^>]*>/i.test(value)
 }
@@ -115,7 +124,7 @@ function containsHTML(value: string): boolean {
 export async function submitContactForm(request: PayloadRequest) {
   try {
     const body: unknown = await request.json?.()
-    console.log(body, 'this is the body')
+
     if (!body || typeof body !== 'object') {
       return Response.json({ message: 'Invalid input' }, { status: 400 })
     }
@@ -1376,6 +1385,104 @@ export async function iso27001(request: PayloadRequest) {
         PhoneNumber: validatedData.phonenumber,
         Industry: validatedData.industry,
         Scope: validatedData.scope,
+      },
+    })
+
+    return Response.json(
+      {
+        success: true,
+        message: 'Your message has been sent successfully.',
+      },
+      { status: 200 },
+    )
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return Response.json({ success: false, message: 'Invalid request body.' }, { status: 400 })
+    }
+
+    console.error('Contact form submission failed:', error)
+
+    return Response.json(
+      {
+        success: false,
+        message: 'Unable to send your message. Please try again later.',
+      },
+      { status: 500 },
+    )
+  }
+}
+
+export async function soc2Compliance(request: PayloadRequest) {
+  try {
+    const body: unknown = await request.json?.()
+
+    if (!body || typeof body !== 'object') {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const { email, companyname, phonenumber, country, target, turnstileToken } = body as Record<
+      string,
+      unknown
+    >
+
+    if (!email || !phonenumber || !country || !target) {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (
+      typeof email !== 'string' ||
+      typeof companyname !== 'string' ||
+      typeof phonenumber !== 'string' ||
+      typeof country !== 'string' ||
+      typeof target !== 'string' ||
+      typeof turnstileToken !== 'string'
+    ) {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (email && !emailPattern.test(email)) {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (!turnstileToken || !turnstileToken.trim()) {
+      return Response.json(
+        { success: false, message: 'Please complete CAPTCHA verification.' },
+        { status: 400 },
+      )
+    }
+
+    const isVerified = await verifyTurnstile(turnstileToken)
+
+    if (!isVerified) {
+      return Response.json(
+        {
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        },
+        { status: 400 },
+      )
+    }
+
+    const validatedData: Soc2 = {
+      email,
+      companyname,
+      phonenumber,
+      country,
+      target,
+      turnstileToken,
+    }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `Sco2 Compliance`,
+      fields: {
+        Email: validatedData.email,
+        Company: validatedData.companyname,
+        PhoneNumber: validatedData.phonenumber,
+        Country: validatedData.country,
+        Target: validatedData.target,
       },
     })
 

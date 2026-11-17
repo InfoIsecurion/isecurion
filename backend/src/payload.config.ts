@@ -7,6 +7,7 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
+import { CaseStudies } from './collections/CaseStudies'
 import {
   breachAttackEndpoint,
   contactEndpoint,
@@ -22,6 +23,7 @@ import {
   iso27001Endpoint,
   bseNseAuditEndpoint,
   ciraAuditEndpoint,
+  soc2ComplianceEndpoint,
 } from './app/api/contact/contact.endpoint'
 
 const filename = fileURLToPath(import.meta.url)
@@ -34,7 +36,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media],
+  collections: [Users, Media, CaseStudies],
   endpoints: [
     contactEndpoint,
     breachAttackEndpoint,
@@ -50,6 +52,7 @@ export default buildConfig({
     iso27001Endpoint,
     bseNseAuditEndpoint,
     ciraAuditEndpoint,
+    soc2ComplianceEndpoint,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',

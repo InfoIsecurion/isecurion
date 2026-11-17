@@ -1,21 +1,20 @@
 "use client";
-import React from "react";
+
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import ceo from "../../../assets/about/ceo.png";
 import { motion } from "framer-motion";
 import { Animation } from "../../../components/ui/Animation";
-import hacker from "../../../assets/about/abouthacker.png";
+import aboutstory from "../../../assets/about/aboutstory.png";
 import herobackground from "../../../assets/about/abouthero.png";
 import TimelineAnimation from "../../../components/ui/TimelineAnimation";
-import CEO from "../../../assets/about/Director.png";
-import HR from "../../../assets/about/HR.png";
-import productLead from "../../../assets/about/productLead.png";
-import salesHead from "../../../assets/about/salesHead.png";
-import complianceHead from "../../../assets/about/complianceHead.png";
-import productHead from "../../../assets/about/productHead.png";
 import profile from "../../../assets/about/profile.jpg";
+import ceo from "../../../assets/about/ceo.png";
+import saleshead from "../../../assets/about/sales.png";
+import compliancehead from "../../../assets/about/compliancehead.png";
+import offensivesecurityhead from "../../../assets/about/offensivesecurityhead.png";
+import productlead from "../../../assets/about/productlead.png";
+import hrteam from "../../../assets/about/hrteam.png";
 
 const data = [
   {
@@ -74,76 +73,7 @@ const timelineData = [
   },
 ];
 
-const team = [
-  {
-    id: 1,
-    name: "Manjunath NG",
-    img: ceo,
-    designation: "Chief Executive Officer (CEO)",
-    description:
-      "Visionary leader with over 20 years of experience in cybersecurity, helping organizations strengthen resilience through strategic security consulting, innovation, and trusted leadership.",
-  },
-  {
-    id: 2,
-    name: "Manjunath NG",
-    img: ceo,
-    designation: "Chief Executive Officer (CEO)",
-    description:
-      "Visionary leader with over 20 years of experience in cybersecurity, helping organizations strengthen resilience through strategic security consulting, innovation, and trusted leadership.",
-  },
-  {
-    id: 3,
-    name: "Manjunath NG",
-    img: ceo,
-    designation: "Chief Executive Officer (CEO)",
-    description:
-      "Visionary leader with over 20 years of experience in cybersecurity, helping organizations strengthen resilience through strategic security consulting, innovation, and trusted leadership.",
-  },
-];
-
-const teamMembers = [
-  {
-    name: "SHIMANTA SEN",
-    role: "SALES HEAD",
-    image: salesHead,
-    linkedin: "https://www.linkedin.com/in/shimanta-sen-81aa66250/",
-  },
-  {
-    name: "DEBASHIS DEY",
-    role: "COMPLIANCE HEAD",
-    image: complianceHead,
-    linkedin: "https://www.linkedin.com/in/debadey/",
-  },
-  {
-    name: "CEPHAS JOSEPH",
-    role: "OFFENSIVE SECURITY & PRODUCT HEAD",
-    image: productHead,
-    linkedin: "https://www.linkedin.com/in/cephasjoe/",
-  },
-  {
-    name: "MANJESH KUMAR LD",
-    role: "PRODUCT LEAD",
-    image: productLead,
-    linkedin: "https://www.linkedin.com/in/manjesh-kumar-62992b205/",
-  },
-  {
-    name: "DOLLY CHAUDHRANI",
-    role: "HR MANAGER",
-    image: HR,
-    linkedin: "https://www.linkedin.com/in/dolly-rangnani/",
-  },
-];
-
-const director = {
-  name: "Manjunath NG",
-  role: "DIRECTOR & CEO",
-  image: "CEO",
-  description:
-    "Visionary leader with over 20 years of experience in cybersecurity, helping organizations strengthen resilience through strategic security consulting, innovation, and trusted leadership.",
-  linkedin: "https://www.linkedin.com/in/manjunath-n-g-18a97b13/",
-};
-
-function page() {
+function About() {
   return (
     <div>
       {/* hero section  */}
@@ -231,10 +161,13 @@ function page() {
           </Animation>
 
           <Animation>
-            <div
-              className="mt-10 min-h-[550px] w-full  rounded-2xl bg-center bg-cover"
-              style={{ backgroundImage: `url(${hacker.src})` }}
-            ></div>
+            <div className="mt-10 w-full h-[550px] rounded-2xl overflow-hidden">
+              <Image
+                src={aboutstory}
+                alt="about story"
+                className="w-full h-full "
+              />
+            </div>
           </Animation>
         </div>
       </div>
@@ -244,28 +177,30 @@ function page() {
         <div className="mx-auto max-w-7xl px-6 sm:px-10 flex flex-col lg:flex-row gap-10">
           <div className="flex-1 space-y-3 flex flex-col items-center lg:items-start text-center lg:text-left">
             <Animation>
-              <div className="w-fit px-4 py-2 rounded-4xl  bg-[#161B2F] ">
-                <p className="text-sm font-medium flex items-left gap-2 sectionheading uppercase text-[#B4CAFD]">
-                  {" "}
-                  <span>
-                    <Icon
-                      icon="ri:shield-star-fill"
-                      width={25}
-                      height={25}
-                      className="text-[#0F66EA]"
-                    />
-                  </span>{" "}
-                  our story
+              <div className="flex flex-col items-center lg:items-start">
+                <div className="w-fit px-4 py-2 rounded-4xl bg-[#161B2F] ">
+                  <p className="text-sm font-medium flex items-left gap-2 sectionheading uppercase text-[#B4CAFD]">
+                    {" "}
+                    <span>
+                      <Icon
+                        icon="ri:shield-star-fill"
+                        width={25}
+                        height={25}
+                        className="text-[#0F66EA]"
+                      />
+                    </span>{" "}
+                    our story
+                  </p>
+                </div>
+                <h2 className="max-w-md font-medium lg:leading-11.25 text-white mt-4">
+                  Building a more secure digital future
+                </h2>
+                <p className="text-[16px] font-medium max-w-lg leading-[28px] text-[#D1D1D1] mt-4">
+                  At ISECURION, we help organizations stay resilient against
+                  evolving cyber threats through expert cybersecurity services
+                  and purpose-built security solutions.
                 </p>
               </div>
-              <h2 className="max-w-md font-medium lg:leading-11.25 text-white mt-4">
-                Building a more secure digital future
-              </h2>
-              <p className="text-[16px] font-medium max-w-lg leading-[28px] text-[#D1D1D1] mt-4">
-                At ISECURION, we help organizations stay resilient against
-                evolving cyber threats through expert cybersecurity services and
-                purpose-built security solutions.
-              </p>
             </Animation>
             <Animation>
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -505,7 +440,7 @@ function page() {
       </section>
 
       {/* OUR TEAM */}
-      <section className="w-full bg-[#070D1A] py-14 sm:py-16 lg:py-20 overflow-hidden">
+      <section className="w-full bg-[#070D1A] py-14 overflow-hidden">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
           {/* SECTION HEADING */}
           <Animation>
@@ -531,132 +466,133 @@ function page() {
               </p>
             </div>
           </Animation>
-
-          {/* FEATURED DIRECTOR CARD */}
-
-          <Animation>
-            <div className="mt-22 mb-8 rounded-[28px] border border-[#262D3D] p-3 sm:p-4 lg:mb-15">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-20">
-                {/* DIRECTOR IMAGE */}
-                <div className="relative h-[300px] w-full max-w-[300px] shrink-0 overflow-hidden rounded-[18px] bg-white sm:h-[350px] sm:max-w-[300px]">
+          {/* ceo card  */}
+          <div className="flex flex-col items-center gap-5">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
+              Leadership
+            </h3>
+            <div className="w-[260px] h-[260px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
+              <Image
+                src={ceo}
+                alt="CEO"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
+              <p className="text-base sm:text-xl font-semibold text-[#19213D]">
+                Manjunath NG
+              </p>
+            </div>
+            <p className="text-base font-semibold text-[#2388FF]">
+              DIRECTOR & CEO
+            </p>
+          </div>
+          <div className="flex flex-col xl:flex-row mt-8 gap-10">
+            <div className="flex-1 flex flex-col sm:flex-row gap-10 items-center justify-center">
+              <div className="flex flex-col items-center gap-5 ">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
+                  Sales
+                </h3>
+                <div className="w-[260px] h-[260px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
                   <Image
-                    src={profile.src}
-                    alt={director.name}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 300px"
-                    className="rounded-[18px] object-cover object-center group-hover:scale-125 transition-all "
+                    src={saleshead}
+                    alt="saleshead"
+                    className="w-full h-full object-contain"
                   />
                 </div>
-
-                {/* DIRECTOR DETAILS */}
-                <div className="w-full sm:flex-2 flex flex-col justify-center gap-3 px-1 pb-2 sm:px-0 sm:py-2">
-                  <div className="flex flex-wrap items-center justify-center sm:justify-between  gap-3">
-                    <h3 className="text-xl font-semibold text-white sm:text-[36px] lg:text-[40px] text-center">
-                      {director.name}
-                    </h3>
-
-                    <span className="rounded-[8px] bg-white px-5 py-3 text-[15px] font-semibold text-[#0F66EA]">
-                      {director.role}
-                    </span>
-                  </div>
-
-                  <p className="mt-6 max-w-[500px] text-base sm:text-[17px] leading-[28px] text-center sm:text-left text-[#D1D1D1]">
-                    {director.description}
+                <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
+                  <p className="text-base sm:text-xl font-semibold text-[#19213D]">
+                    Shimanta Sen
                   </p>
+                </div>
+                <p className="text-base font-semibold text-[#2388FF]">
+                  Sales Head
+                </p>
+              </div>
+              <div className="flex flex-col items-center gap-5 ">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
+                  Compliance Practice
+                </h3>
+                <div className="w-[260px] h-[260px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
+                  <Image
+                    src={compliancehead}
+                    alt="compliancehead"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
+                  <p className="text-base sm:text-xl font-semibold text-[#19213D]">
+                    Debashis Dey
+                  </p>
+                </div>
+                <p className="text-base font-semibold text-[#2388FF]">
+                  Compliance Head
+                </p>
+              </div>
+            </div>
+            <div className="flex-2 min-w-0 space-y-5">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-center text-[#FFFFFF]">
+                Product & Offensive Security
+              </h3>
+              <div className="relative flex flex-col sm:flex-row justify-center items-center gap-10">
+                {/* Offensive Security Head */}
+                <div className="relative z-10 flex flex-col items-center gap-5">
+                  <div className="w-[260px] h-[260px] rounded-full bg-linear-to-b from-white to-[#C3DDFF] overflow-hidden flex justify-center">
+                    <Image
+                      src={offensivesecurityhead}
+                      alt="Offensive Security Head"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
+                    <p className="text-base sm:text-xl font-semibold text-[#19213D]">
+                      Cephas Joseph
+                    </p>
+                  </div>
+                  <p className="text-base font-semibold text-[#2388FF]">
+                    Offensive Security & Product Head
+                  </p>
+                </div>
 
-                  <a
-                    href={director.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${director.name} LinkedIn profile`}
-                    className="mt-4 flex h-10 w-10 items-center justify-center rounded-[10px] bg-[#152329] border border-[#666DCC] text-[#666DCC] transition-colors hover:bg-white hover:text-black"
-                  >
-                    <Icon icon="basil:linkedin-outline" width={24} />
-                  </a>
+                {/* Product Lead */}
+                <div className="relative sm:-ml-20 z-20 flex flex-col gap-5 items-center">
+                  <div className="w-[260px] h-[260px] rounded-full bg-linear-to-b from-white to-[#C3DDFF] overflow-hidden flex justify-center">
+                    <Image
+                      src={productlead}
+                      alt="Product Lead"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
+                    <p className="text-base sm:text-xl font-semibold text-[#19213D]">
+                      Manjesh Kumar LD
+                    </p>
+                  </div>
+                  <p className="text-base font-semibold text-[#2388FF]">
+                    Product Lead
+                  </p>
                 </div>
               </div>
             </div>
-          </Animation>
-
-          {/* OTHER TEAM MEMBERS */}
-          <div className="mx-auto flex max-w-7xl flex-col gap-8">
-            {/* FIRST ROW - 3 CARDS */}
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {teamMembers.slice(0, 3).map((member, index) => (
-                <div
-                  key={index}
-                  className="flex h-full flex-col items-center rounded-[22px] border border-[#262D3D] p-3 transition-colors duration-300 hover:border-[#344B7D]"
-                >
-                  <div className="relative w-full overflow-hidden rounded-[15px] bg-white">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={400}
-                      height={320}
-                      className="h-[250px] w-full object-cover object-top sm:h-[260px] lg:h-[270px] xl:h-[275px]"
-                    />
-
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${member.name} LinkedIn profile`}
-                      className="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-[10px] bg-[#101B3C] border border-[#666DCC] text-[#666DCC] hover:bg-white hover:text-black"
-                    >
-                      <Icon icon="basil:linkedin-outline" width={20} />
-                    </a>
-                  </div>
-
-                  <div className="flex flex-1 flex-col items-center justify-center gap-2 py-4 text-center">
-                    <h3 className="text-base sm:text-[19px] font-semibold text-[#0F66EA]">
-                      {member.name}
-                    </h3>
-                    <span className="rounded-[6px] bg-[#DADADA05] border border-[#6666666B] px-3 py-2 text-center text-[10px] font-semibold text-white">
-                      {member.role}
-                    </span>
-                  </div>
-                </div>
-              ))}
+          </div>
+          {/* hr team  */}
+          <div className="flex flex-col items-center gap-5 mt-8">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
+              HR Management
+            </h3>
+            <div className="w-[260px] h-[260px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
+              <Image
+                src={hrteam}
+                alt="CEO"
+                className="w-full h-full object-contain"
+              />
             </div>
-
-            {/* SECOND ROW - 2 CENTERED CARDS */}
-            <div className="mx-auto grid w-full max-w-[800px] grid-cols-1 gap-10 sm:grid-cols-2">
-              {teamMembers.slice(3, 5).map((member, index) => (
-                <div
-                  key={index}
-                  className="flex h-full flex-col items-center rounded-[22px] border border-[#262D3D] p-3 transition-colors duration-300 hover:border-[#344B7D]"
-                >
-                  <div className="relative w-full overflow-hidden rounded-[15px] bg-white">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={400}
-                      height={320}
-                      className="h-[250px] w-full object-cover object-top sm:h-[260px] lg:h-[270px] xl:h-[275px]"
-                    />
-
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${member.name} LinkedIn profile`}
-                      className="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-[10px] bg-[#101B3C] border border-[#666DCC] text-[#666DCC] hover:bg-white hover:text-black"
-                    >
-                      <Icon icon="basil:linkedin-outline" width={20} />
-                    </a>
-                  </div>
-
-                  <div className="flex flex-1 flex-col items-center justify-center gap-2 py-4 text-center">
-                    <h3 className="text-base sm:text-[19px] font-semibold text-[#0F66EA]">
-                      {member.name}
-                    </h3>
-                    <span className="rounded-[6px] bg-[#DADADA05] border border-[#6666666B] px-3 py-2 text-center text-[10px] font-semibold text-white">
-                      {member.role}
-                    </span>
-                  </div>
-                </div>
-              ))}
+            <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
+              <p className="text-base sm:text-xl font-semibold text-[#19213D]">
+                Dolly Chaudhrani
+              </p>
             </div>
+            <p className="text-base font-semibold text-[#2388FF]">HR Manager</p>
           </div>
         </div>
       </section>
@@ -664,4 +600,4 @@ function page() {
   );
 }
 
-export default page;
+export default About;

@@ -709,7 +709,7 @@ function DpdpCompliance() {
                   <input
                     type="email"
                     placeholder="youremail@gmail.com"
-                    className={`text-[15px] font-normal px-3 py-2.5 rounded-[10px] outline-none text-[#D1D1D1] bg-[#0A0303] ${errors.emai ? "border border-red-500" : "border-[1.12px] border-[#262D3D] "}`}
+                    className={`text-[15px] font-normal px-3 py-2.5 rounded-[10px] outline-none text-[#D1D1D1] bg-[#0A0303] ${errors.email ? "border border-red-500" : "border-[1.12px] border-[#262D3D] "}`}
                     {...register("email", { required: "Email is required" })}
                   />
                   {errors.email && (

@@ -150,7 +150,6 @@ function Contact() {
 
   // this is the api calling
   const submit = async (data: ContactFormData) => {
-    console.log(data);
     setLoading(true);
     try {
       if (!turnstileToken) {
@@ -299,7 +298,7 @@ function Contact() {
             {/* right section form  */}
             <div className="flex-1  rounded-[23px] p-4 sm:p-7 bg-[#000C1C]">
               <form className="space-y-5" onSubmit={handleSubmit(submit)}>
-                <div className="flex flex-col md:flex-row w-full items-center justify-between  gap-5">
+                <div className="flex flex-col md:flex-row w-full   gap-5">
                   <div className="w-full flex flex-col gap-2">
                     <label
                       htmlFor=""
@@ -313,6 +312,10 @@ function Contact() {
                       placeholder="First name"
                       {...register("fullname", {
                         required: "Full name is required",
+                        pattern: {
+                          value: /^[A-Za-z\s]+$/,
+                          message: "Invalid full name",
+                        },
                       })}
                     />
                     {errors.fullname && (
@@ -337,7 +340,7 @@ function Contact() {
                     />
                   </div>
                 </div>
-                <div className="flex flex-col md:flex-row w-full items-center justify-between  gap-5">
+                <div className="flex flex-col md:flex-row w-full   gap-5">
                   <div className="w-full flex flex-col gap-2">
                     <label
                       htmlFor=""
@@ -392,9 +395,7 @@ function Contact() {
                         setIsServiceOpen(!isServiceOpen);
                         setSelectedCategory("");
                       }}
-                      className={`flex h-11 w-full items-center justify-between rounded-md border ${
-                        errors.service ? "border-red-500" : "border-[#262D3D]"
-                      } bg-transparent px-3 text-left text-sm text-white`}
+                      className={`flex h-11 w-full items-center justify-between rounded-md border border-[#262D3D]  bg-transparent px-3 text-left text-sm text-white`}
                     >
                       <span
                         className={
@@ -471,7 +472,7 @@ function Contact() {
                     )}
                   </div>
                   {errors.service && (
-                    <p className="text-xs text-red-500">
+                    <p className="text-sm font-normal text-red-500">
                       {errors.service.message}
                     </p>
                   )}
@@ -493,8 +494,6 @@ function Contact() {
                   </div>
                 </div>
                 <div className="max-w-[300px] overflow-hidden flex flex-col gap-2">
-                  <p className="text-sm font-medium text-white">Captcha</p>
-
                   <Turnstile
                     ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
