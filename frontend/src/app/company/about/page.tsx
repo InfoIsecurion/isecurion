@@ -487,112 +487,107 @@ function About() {
               DIRECTOR & CEO
             </p>
           </div>
-          <div className="flex flex-col xl:flex-row mt-8 gap-10">
-            <div className="flex-1 flex flex-col sm:flex-row gap-10 items-center justify-center">
-              <div className="flex flex-col items-center gap-5 ">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
-                  Sales
-                </h3>
-                <div className="w-[260px] h-[260px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
-                  <Image
-                    src={saleshead}
-                    alt="saleshead"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
-                  <p className="text-base sm:text-xl font-semibold text-[#19213D]">
-                    Shimanta Sen
-                  </p>
-                </div>
-                <p className="text-base font-semibold text-[#2388FF]">
-                  Sales Head
-                </p>
-              </div>
-              <div className="flex flex-col items-center gap-5 ">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
-                  Compliance Practice
-                </h3>
-                <div className="w-[260px] h-[260px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
-                  <Image
-                    src={compliancehead}
-                    alt="compliancehead"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
-                  <p className="text-base sm:text-xl font-semibold text-[#19213D]">
-                    Debashis Dey
-                  </p>
-                </div>
-                <p className="text-base font-semibold text-[#2388FF]">
-                  Compliance Head
-                </p>
-              </div>
-            </div>
-            <div className="flex-2 min-w-0 space-y-5">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-center text-[#FFFFFF]">
-                Product & Offensive Security
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mt-8 gap-10">
+            <div className="flex flex-col items-center gap-5 ">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
+                Sales
               </h3>
-              <div className="relative flex flex-col sm:flex-row justify-center items-center gap-10">
-                {/* Offensive Security Head */}
-                <div className="relative z-10 flex flex-col items-center gap-5">
-                  <div className="w-[260px] h-[260px] rounded-full bg-linear-to-b from-white to-[#C3DDFF] overflow-hidden flex justify-center">
-                    <Image
-                      src={offensivesecurityhead}
-                      alt="Offensive Security Head"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
-                    <p className="text-base sm:text-xl font-semibold text-[#19213D]">
-                      Cephas Joseph
-                    </p>
-                  </div>
-                  <p className="text-base font-semibold text-[#2388FF]">
-                    Offensive Security & Product Head
-                  </p>
-                </div>
-
-                {/* Product Lead */}
-                <div className="relative sm:-ml-20 z-20 flex flex-col gap-5 items-center">
-                  <div className="w-[260px] h-[260px] rounded-full bg-linear-to-b from-white to-[#C3DDFF] overflow-hidden flex justify-center">
-                    <Image
-                      src={productlead}
-                      alt="Product Lead"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
-                    <p className="text-base sm:text-xl font-semibold text-[#19213D]">
-                      Manjesh Kumar LD
-                    </p>
-                  </div>
-                  <p className="text-base font-semibold text-[#2388FF]">
-                    Product Lead
-                  </p>
-                </div>
+              <div className="w-[230px] h-[230px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
+                <Image
+                  src={saleshead}
+                  alt="saleshead"
+                  className="w-full h-full object-contain"
+                />
               </div>
-            </div>
-          </div>
-          {/* hr team  */}
-          <div className="flex flex-col items-center gap-5 mt-8">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
-              HR Management
-            </h3>
-            <div className="w-[260px] h-[260px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
-              <Image
-                src={hrteam}
-                alt="CEO"
-                className="w-full h-full object-contain"
-              />
-            </div>
-            <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
-              <p className="text-base sm:text-xl font-semibold text-[#19213D]">
-                Dolly Chaudhrani
+              <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
+                <p className="text-base sm:text-xl font-semibold text-[#19213D]">
+                  Shimanta Sen
+                </p>
+              </div>
+              <p className="text-base font-semibold text-[#2388FF]">
+                Sales Head
               </p>
             </div>
-            <p className="text-base font-semibold text-[#2388FF]">HR Manager</p>
+            <div className="flex flex-col items-center gap-5 ">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
+                Compliance Practice
+              </h3>
+              <div className="w-[230px] h-[230px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
+                <Image
+                  src={compliancehead}
+                  alt="compliancehead"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
+                <p className="text-base sm:text-xl font-semibold text-[#19213D]">
+                  Debashis Dey
+                </p>
+              </div>
+              <p className="text-base font-semibold text-[#2388FF]">
+                Compliance Head
+              </p>
+            </div>
+            <div className="flex flex-col items-center gap-5 ">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
+                Offensive Security
+              </h3>
+              <div className="w-[230px] h-[230px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
+                <Image
+                  src={offensivesecurityhead}
+                  alt="compliancehead"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
+                <p className="text-base sm:text-xl font-semibold text-[#19213D]">
+                  Cephas Joseph
+                </p>
+              </div>
+              <p className="text-base font-semibold text-[#2388FF]">
+                Offensive Security & Product Head
+              </p>
+            </div>
+            <div className="flex flex-col items-center gap-5 ">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
+                Product Management
+              </h3>
+              <div className="w-[230px] h-[230px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
+                <Image
+                  src={productlead}
+                  alt="compliancehead"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
+                <p className="text-base sm:text-xl font-semibold text-[#19213D]">
+                  Manjesh Kumar LD
+                </p>
+              </div>
+              <p className="text-base font-semibold text-[#2388FF]">
+                Product Lead
+              </p>
+            </div>
+            <div className="flex flex-col items-center gap-5">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
+                HR Management
+              </h3>
+              <div className="w-[230px] h-[230px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
+                <Image
+                  src={hrteam}
+                  alt="CEO"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
+                <p className="text-base sm:text-xl font-semibold text-[#19213D]">
+                  Dolly Chaudhrani
+                </p>
+              </div>
+              <p className="text-base font-semibold text-[#2388FF]">
+                HR Manager
+              </p>
+            </div>
           </div>
         </div>
       </section>
