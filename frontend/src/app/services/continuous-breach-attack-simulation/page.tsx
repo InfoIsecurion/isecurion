@@ -6,7 +6,7 @@ import {
   Animation,
   AnimatedCard,
   LeftAnimation,
-  WordReveal
+  WordReveal,
 } from "../../../components/ui/Animation";
 import FAQSection from "../../../components/sections/FAQSection";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
@@ -176,8 +176,8 @@ function ContinuousBreachAttackSimulation() {
               </p>
 
               {/* CTA BUTTON */}
-              
-                {/* <div className="mt-8 animate-hero-reveal" style={{animationDelay:"1050ms"}}>
+
+              {/* <div className="mt-8 animate-hero-reveal" style={{animationDelay:"1050ms"}}>
                   <Link href="/company/contact">
                     <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg">
                       <span>Request Simulation</span>
@@ -185,7 +185,6 @@ function ContinuousBreachAttackSimulation() {
                     </button>
                   </Link>
                 </div> */}
-            
 
               {/* FOOTER TAGLINE */}
               <p
@@ -267,15 +266,12 @@ function ContinuousBreachAttackSimulation() {
                           required: "Simulation is required",
                         })}
                       >
-                        <option value="" disabled>Select Simulation Type</option>
-                        <option value="external">
-                          External Simulation
+                        <option value="" disabled>
+                          Select Simulation Type
                         </option>
-                        <option value="internal">
-                          Internal Simulation
-                        </option>
+                        <option value="external">External Simulation</option>
+                        <option value="internal">Internal Simulation</option>
                         <option value="cloud">Hybrid Approach</option>
-                        
                       </select>
                       <Icon
                         icon="lucide:chevron-down"
@@ -295,6 +291,7 @@ function ContinuousBreachAttackSimulation() {
                       <p className="text-sm font-medium text-white">Captcha</p>
 
                       <Turnstile
+                        ref={turnstileRef}
                         siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                         onSuccess={(token) => setTurnstileToken(token)}
                         onExpire={() => setTurnstileToken("")}
@@ -342,21 +339,29 @@ function ContinuousBreachAttackSimulation() {
       <section className="bg-[#050B1A]">
         <Animation>
           <div className="mx-auto max-w-7xl px-7 py-10 sm:px-10 lg:px-8 lg:py-14 xl:px-10 text-center lg:text-left">
-            <WordReveal text="What is Continuous Breach Attack Simulation?" className="text-[26px] font-normal leading-[1.4]  text-white sm:text-[36px] lg:text-[38px]">
-            </WordReveal>
+            <WordReveal
+              text="What is Continuous Breach Attack Simulation?"
+              className="text-[26px] font-normal leading-[1.4]  text-white sm:text-[36px] lg:text-[38px]"
+            ></WordReveal>
             <Animation>
-            <p className="mt-4 sectionDescription text-[#D1D1D1] lg:max-w-[700px] animate-hero-reveal" style={{animationDelay:"500ms"}}>
-              Continuous Breach Attack Simulation (CBAS) is an automated,
-              ongoing process that mimics cyber attackers using adversary
-              simulation techniques.
-            </p>
+              <p
+                className="mt-4 sectionDescription text-[#D1D1D1] lg:max-w-[700px] animate-hero-reveal"
+                style={{ animationDelay: "500ms" }}
+              >
+                Continuous Breach Attack Simulation (CBAS) is an automated,
+                ongoing process that mimics cyber attackers using adversary
+                simulation techniques.
+              </p>
             </Animation>
             <Animation delay={0.5}>
-            <p className="mt-10 sectionDescription text-[#D1D1D1]  lg:max-w-[700px] animate-hero-reveal" style={{animationDelay:"700ms"}}>
-              It validates your security investments daily, tests real-world
-              attack scenarios, and provides actionable insights to strengthen
-              resilience.
-            </p>
+              <p
+                className="mt-10 sectionDescription text-[#D1D1D1]  lg:max-w-[700px] animate-hero-reveal"
+                style={{ animationDelay: "700ms" }}
+              >
+                It validates your security investments daily, tests real-world
+                attack scenarios, and provides actionable insights to strengthen
+                resilience.
+              </p>
             </Animation>
           </div>
         </Animation>
@@ -385,9 +390,10 @@ function ContinuousBreachAttackSimulation() {
                       OUR APPROACH
                     </p>
 
-                    <WordReveal text="How We Validate Your Defenses?" className="mt-3 text-[34px] sm:text-[38px] lg:text-[40px] font-medium leading-[1.4] text-white lg:max-w-[450px]">
-                      
-                    </WordReveal>
+                    <WordReveal
+                      text="How We Validate Your Defenses?"
+                      className="mt-3 text-[34px] sm:text-[38px] lg:text-[40px] font-medium leading-[1.4] text-white lg:max-w-[450px]"
+                    ></WordReveal>
                   </div>
                 </Animation>
 
@@ -516,11 +522,15 @@ function ContinuousBreachAttackSimulation() {
                   WHAT SETS US APART
                 </p>
 
-                <WordReveal text="Security validation that keeps evolving." className="mt-[10px] text-[32px] font-medium leading-[1.25] text-white sm:text-[38px] lg:text-[40px]">
-                  
-                </WordReveal>
+                <WordReveal
+                  text="Security validation that keeps evolving."
+                  className="mt-[10px] text-[32px] font-medium leading-[1.25] text-white sm:text-[38px] lg:text-[40px]"
+                ></WordReveal>
 
-                <p className="mx-auto mt-[18px] max-w-[700px]  text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{animationDelay:"500ms"}}>
+                <p
+                  className="mx-auto mt-[18px] max-w-[700px]  text-[#D1D1D1] sectionDescription animate-hero-reveal"
+                  style={{ animationDelay: "500ms" }}
+                >
                   Continuous validation powered by real-world attack
                   intelligence, practical recommendations, and proactive
                   security improvement.
@@ -620,70 +630,70 @@ function ContinuousBreachAttackSimulation() {
               <div className="border-t border-[#B1B1B114] pt-[45px] lg:border-l lg:border-t-0 lg:pl-[32px] lg:pt-0">
                 <div className="space-y-[20px]">
                   <AnimatedCard delay={0.2}>
-                  <div className="grid grid-cols-[35px_1fr] gap-[14px]">
-                    <span className="text-[13px] sm:text-[14px] font-medium leading-[1.5] text-[#E24B4A]">
-                      01
-                    </span>
-                    <div>
-                      <h3 className="text-[15px] sm:text-base font-medium leading-[1.5] text-white">
-                        Certified Experts
-                      </h3>
-                      <p className="mt-[6px] max-w-[400px] text-[13px] sm:text-sm font-normal leading-[1.8] text-[#D1D1D1]">
-                        Team with OSCP, CEH, CISSP certifications & hands-on
-                        experience.
-                      </p>
+                    <div className="grid grid-cols-[35px_1fr] gap-[14px]">
+                      <span className="text-[13px] sm:text-[14px] font-medium leading-[1.5] text-[#E24B4A]">
+                        01
+                      </span>
+                      <div>
+                        <h3 className="text-[15px] sm:text-base font-medium leading-[1.5] text-white">
+                          Certified Experts
+                        </h3>
+                        <p className="mt-[6px] max-w-[400px] text-[13px] sm:text-sm font-normal leading-[1.8] text-[#D1D1D1]">
+                          Team with OSCP, CEH, CISSP certifications & hands-on
+                          experience.
+                        </p>
+                      </div>
                     </div>
-                  </div>
                   </AnimatedCard>
 
-                  <AnimatedCard delay={0.4}>    
-                  <div className="grid grid-cols-[35px_1fr] gap-[14px]">
-                    <span className="text-[13px] sm:text-sm font-medium leading-[1.5] text-[#E24B4A]">
-                      02
-                    </span>
-                    <div>
-                      <h3 className="text-[15px] sm:text-base font-medium leading-[1.5] text-white">
-                        Proven Experience
-                      </h3>
-                      <p className="mt-[6px] max-w-[400px] text-[13px] sm:text-sm font-normal leading-[1.8] text-[#D1D1D1]">
-                        Hundreds of breach simulations across BFSI, SaaS, and
-                        healthcare.
-                      </p>
+                  <AnimatedCard delay={0.4}>
+                    <div className="grid grid-cols-[35px_1fr] gap-[14px]">
+                      <span className="text-[13px] sm:text-sm font-medium leading-[1.5] text-[#E24B4A]">
+                        02
+                      </span>
+                      <div>
+                        <h3 className="text-[15px] sm:text-base font-medium leading-[1.5] text-white">
+                          Proven Experience
+                        </h3>
+                        <p className="mt-[6px] max-w-[400px] text-[13px] sm:text-sm font-normal leading-[1.8] text-[#D1D1D1]">
+                          Hundreds of breach simulations across BFSI, SaaS, and
+                          healthcare.
+                        </p>
+                      </div>
                     </div>
-                  </div>
                   </AnimatedCard>
 
                   <AnimatedCard delay={0.6}>
-                  <div className="grid grid-cols-[35px_1fr] gap-[14px]">
-                    <span className="text-[13px] sm:text-sm font-medium leading-[1.5] text-[#E24B4A]">
-                      03
-                    </span>
-                    <div>
-                      <h3 className="text-[15px] sm:text-base font-medium leading-[1.5] text-white">
-                        Trusted Partnership
-                      </h3>
-                      <p className="mt-[6px] max-w-[350px] text-[13px] sm:text-sm font-normal leading-[1.8] text-[#D1D1D1]">
-                        Long-term client engagement with continuous guidance &
-                        remediation.
-                      </p>
+                    <div className="grid grid-cols-[35px_1fr] gap-[14px]">
+                      <span className="text-[13px] sm:text-sm font-medium leading-[1.5] text-[#E24B4A]">
+                        03
+                      </span>
+                      <div>
+                        <h3 className="text-[15px] sm:text-base font-medium leading-[1.5] text-white">
+                          Trusted Partnership
+                        </h3>
+                        <p className="mt-[6px] max-w-[350px] text-[13px] sm:text-sm font-normal leading-[1.8] text-[#D1D1D1]">
+                          Long-term client engagement with continuous guidance &
+                          remediation.
+                        </p>
+                      </div>
                     </div>
-                  </div>
                   </AnimatedCard>
 
                   <AnimatedCard delay={0.8}>
-                  <div className="grid grid-cols-[35px_1fr] gap-[14px]">
-                    <span className="text-[13px] sm:text-sm font-medium leading-[1.5] text-[#E24B4A]">
-                      04
-                    </span>
-                    <div>
-                      <h3 className="text-[15px] sm:text-base font-medium leading-[1.5] text-white">
-                        Global Standards
-                      </h3>
-                      <p className="mt-[6px] max-w-[380px] text-[13px] sm:text-sm font-normal leading-[1.8] text-[#D1D1D1]">
-                        Aligned with MITRE ATT&CK, NIST CSF, and ISO 27001.
-                      </p>
+                    <div className="grid grid-cols-[35px_1fr] gap-[14px]">
+                      <span className="text-[13px] sm:text-sm font-medium leading-[1.5] text-[#E24B4A]">
+                        04
+                      </span>
+                      <div>
+                        <h3 className="text-[15px] sm:text-base font-medium leading-[1.5] text-white">
+                          Global Standards
+                        </h3>
+                        <p className="mt-[6px] max-w-[380px] text-[13px] sm:text-sm font-normal leading-[1.8] text-[#D1D1D1]">
+                          Aligned with MITRE ATT&CK, NIST CSF, and ISO 27001.
+                        </p>
+                      </div>
                     </div>
-                  </div>
                   </AnimatedCard>
                 </div>
               </div>
@@ -701,14 +711,25 @@ function ContinuousBreachAttackSimulation() {
               </p>
 
               <h2 className="mt-[10px]  text-white ">
-                <WordReveal as="span" text="From attack simulation to"></WordReveal> <br></br><WordReveal as="span" text="actionable improvement."></WordReveal>
+                <WordReveal
+                  as="span"
+                  text="From attack simulation to"
+                ></WordReveal>{" "}
+                <br></br>
+                <WordReveal
+                  as="span"
+                  text="actionable improvement."
+                ></WordReveal>
               </h2>
               <Animation>
-              <p className="mx-auto mt-[18px] max-w-[750px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{animationDelay:"800ms"}}>
-                Get clear, actionable outcomes from every simulation, from
-                leadership-level risk visibility to technical remediation and
-                team readiness.
-              </p>
+                <p
+                  className="mx-auto mt-[18px] max-w-[750px] text-[#D1D1D1] sectionDescription animate-hero-reveal"
+                  style={{ animationDelay: "800ms" }}
+                >
+                  Get clear, actionable outcomes from every simulation, from
+                  leadership-level risk visibility to technical remediation and
+                  team readiness.
+                </p>
               </Animation>
             </div>
           </div>

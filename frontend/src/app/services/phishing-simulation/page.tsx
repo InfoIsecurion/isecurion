@@ -549,15 +549,6 @@ function PhishingSimulation() {
               </p>
             </div>
 
-            <div className="space-y-1">
-              <h3 className="text-[22px] font-semibold text-[#FFFFFF]">
-                Request a Phishing Simulation Quote
-              </h3>
-              <p className="mt-2 text-base sm:text-[16px] text-[#D9D9D9]">
-                Get a Tailored Phishing Simulation Plan for Your Organisation.
-              </p>
-            </div>
-
             <div className="">
               <form
                 className="mt-6 space-y-4.5"
@@ -641,10 +632,6 @@ function PhishingSimulation() {
 
                 {/* CAPTCHA */}
                 <div className="flex min-h-[65px] items-center gap-3">
-                  <p className="shrink-0 text-sm font-medium text-white">
-                    Captcha
-                  </p>
-
                   <div className="min-h-[65px] flex items-center">
                     <Turnstile
                       siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}

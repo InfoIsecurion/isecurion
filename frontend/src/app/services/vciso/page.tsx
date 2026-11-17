@@ -1177,7 +1177,7 @@ function Vicso() {
                     {item.description}
                   </p>
                   <div
-                    className={`w-[100px] h-[27px] text-center rounded-[5px]  border-[0.3px] border-[#FFFFFF26] shadow-[inset_0_0px_10px_#FFFFFF26]  ${index === 5 ? "bg-[#A4FFCF38]" : ""}`}
+                    className={`w-[100px] h-[30px] flex items-center justify-center text-center rounded-[5px]  border-[0.3px] border-[#FFFFFF26] shadow-[inset_0_0px_4px_0_#FFFFFF26]  ${index === 4 ? "bg-[#A4FFCF38]" : "bg-[#514F6E40]"}`}
                   >
                     <p className="text-[13px] font-semibold text-center text-[#FFFFFF]">
                       {item.period}
@@ -1316,27 +1316,30 @@ function Vicso() {
               viewport={{ once: true }}
               className="flex-1 rounded-[26px] bg-[#DADADA0A] border border-gray-600"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-4  gap-y-6 w-full p-4">
-                {locations.map((item, index) => {
-                  const isLastColumn = (index + 1) % 4 === 0;
-                  const isLastRow = index >= locations.length - 4;
-                  return (
-                    <div key={index}>
-                      <div
-                        className={`space-y-3 p-3 flex flex-col items-center ${!isLastColumn ? "sm:order-r border-[#242A3B]" : ""} `}
-                      >
-                        <GradientIcon Icon={item.Icon} />
+              <div className="flex flex-wrap justify-center w-full p-4">
+                {locations.map((item, index) => (
+                  <div
+                    key={index}
+                    className="relative flex flex-col items-center justify-center gap-3 p-6 w-full sm:w-1/2 lg:w-1/4"
+                  >
+                    <GradientIcon Icon={item.Icon} />
 
-                        <h3 className="text-base md:text-lg font-normal text-[#D1D1D1]">
-                          {item.location}
-                        </h3>
-                      </div>
-                      <div
-                        className={`mt-4 ${!isLastRow ? "border border-[#242A3B]" : ""}`}
-                      ></div>
-                    </div>
-                  );
-                })}
+                    <h3 className="text-base md:text-lg font-normal text-[#D1D1D1]">
+                      {item.location}
+                    </h3>
+
+                    {/* Vertical separator */}
+                    {(index + 1) % 4 !== 0 &&
+                      index !== locations.length - 1 && (
+                        <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-16 bg-[#242A3B]" />
+                      )}
+
+                    {/* Horizontal separator */}
+                    {index < locations.length - 4 && (
+                      <div className="hidden lg:block absolute bottom-0 left-0 w-full h-[1px] bg-[#242A3B] w-[1000px]" />
+                    )}
+                  </div>
+                ))}
               </div>
             </motion.div>
           </div>

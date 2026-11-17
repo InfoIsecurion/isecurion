@@ -14,6 +14,7 @@ import {
   dpdp,
   vciso,
   iso27001,
+  soc2Compliance,
 } from '@/controller/contact.controller'
 
 export const contactEndpoint: Endpoint = {
@@ -98,4 +99,10 @@ export const iso27001Endpoint: Endpoint = {
   path: '/iso27001',
   method: 'post',
   handler: iso27001,
+}
+
+export const soc2ComplianceEndpoint: Endpoint = {
+  path: '/soc-compliance',
+  method: 'post',
+  handler: soc2Compliance,
 }
