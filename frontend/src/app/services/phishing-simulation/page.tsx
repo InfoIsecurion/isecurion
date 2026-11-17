@@ -355,11 +355,10 @@ function MetricChart({ type }: { type: string }) {
   if (type === "ring-green" || type === "ring-blue") {
     return (
       <div
-        className={`h-[51px] w-[51px] shrink-0 rounded-full ${
-          type === "ring-green"
-            ? "border-[5px] border-[#2DD4BF]"
-            : "border-[5px] border-[#3B82F6]"
-        }`}
+        className={`h-[51px] w-[51px] shrink-0 rounded-full ${type === "ring-green"
+          ? "border-[5px] border-[#2DD4BF]"
+          : "border-[5px] border-[#3B82F6]"
+          }`}
         aria-hidden="true"
       />
     );
@@ -435,7 +434,7 @@ function PhishingSimulation() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong. Please try again.",
+        "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -1040,18 +1039,10 @@ function PhishingSimulation() {
                 </p>
 
                 <h2 className="mt-[10px] text-[30px] font-normal leading-[1.25] text-white sm:text-[36px] lg:text-[34px]">
-                  <WordReveal
-                    as="span"
-                    text="Human Risk Intelligence that goes "
-                  ></WordReveal>
-                  <br />{" "}
-                  <WordReveal as="span" text="beyond click rates."></WordReveal>
+                  <WordReveal as="span" text="Human Risk Intelligence that goes "></WordReveal><br /> <WordReveal as="span" text="beyond click rates."></WordReveal>
                 </h2>
 
-                <p
-                  className="mx-auto mt-[18px] max-w-[1040px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-lg animate-hero-reveal"
-                  style={{ animationDelay: "800ms" }}
-                >
+                <p className="mx-auto mt-[18px] max-w-[1040px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-lg animate-hero-reveal" style={{ animationDelay: "800ms" }}>
                   ISECURION combines threat-informed simulations, behavioural
                   insights, and targeted remediation to help organisations
                   improve employee resilience against social engineering.
@@ -1065,24 +1056,17 @@ function PhishingSimulation() {
               <AnimatedCard>
                 <div className="relative min-h-[309px] bg-[#050B18] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[30px]">
                   <div className="text-white">
-                    <Icon
-                      icon="boxicons:vector-square"
-                      className="text-[36px]"
-                    />
+                    <Icon icon="boxicons:vector-square" className="text-[36px]" />
                   </div>
 
                   <div className="absolute bottom-[62px] left-[25px] right-[30px]">
                     <h3 className="max-w-[180px] text-[16px] font-medium leading-[1.55] text-white">
                       Threat-Informed <br /> Scenarios
                     </h3>
-                  <div className="absolute bottom-[62px] left-[25px] right-[30px]">
-                    <h3 className="max-w-[180px] text-[16px] font-medium leading-[1.55] text-white">
-                      Threat-Informed <br /> Scenarios
-                    </h3>
 
                     <p className="mt-[8px] lg:max-w-[255px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
-                      Our templates reflect active adversary campaigns and map
-                      to MITRE ATT&CK techniques for relevance and realism.
+                      Our templates reflect active adversary campaigns and map to
+                      MITRE ATT&CK techniques for relevance and realism.
                     </p>
                   </div>
                 </div>
@@ -1096,29 +1080,12 @@ function PhishingSimulation() {
                       className="text-[36px]"
                     />
                   </div>
-                <div className="relative min-h-[309px] bg-[#08142D] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[25px]">
-                  <div className="text-white">
-                    <Icon
-                      icon="majesticons:lightbulb-shine-line"
-                      className="text-[36px]"
-                    />
-                  </div>
 
                   <div className="absolute bottom-[62px] left-[25px] right-[30px]">
                     <h3 className="max-w-[180px] text-[16px] font-medium leading-[1.55] text-white">
                       Behavioural <br /> Science
                     </h3>
-                  <div className="absolute bottom-[62px] left-[25px] right-[30px]">
-                    <h3 className="max-w-[180px] text-[16px] font-medium leading-[1.55] text-white">
-                      Behavioural <br /> Science
-                    </h3>
 
-                    <p className="mt-[8px] max-w-[255px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
-                      Reinforce safer employee decisions through targeted
-                      awareness and practical learning.
-                    </p>
-                  </div>
-                </div>
                     <p className="mt-[8px] max-w-[255px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
                       Reinforce safer employee decisions through targeted
                       awareness and practical learning.
@@ -1132,27 +1099,12 @@ function PhishingSimulation() {
                   <div className="text-white">
                     <Icon icon="hugeicons:ai-chip" className="text-[36px]" />
                   </div>
-                <div className="relative min-h-[309px] bg-linear-to-b from-[#7D70F0] to-[#48408A] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[28px]">
-                  <div className="text-white">
-                    <Icon icon="hugeicons:ai-chip" className="text-[36px]" />
-                  </div>
 
                   <div className="absolute bottom-[47px] left-[25px] right-[25px]">
                     <h3 className="max-w-[180px] text-[16px] font-medium leading-[1.55] text-white">
                       In-House AI <br /> Platform
                     </h3>
-                  <div className="absolute bottom-[47px] left-[25px] right-[25px]">
-                    <h3 className="max-w-[180px] text-[16px] font-medium leading-[1.55] text-white">
-                      In-House AI <br /> Platform
-                    </h3>
 
-                    <p className="mt-[8px] lg:max-w-[275px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
-                      Powered by Drosera, our proprietary AI phishing simulation
-                      platform, not a third-party tool, so campaigns, data and
-                      reporting stay in one trusted stack.
-                    </p>
-                  </div>
-                </div>
                     <p className="mt-[8px] lg:max-w-[275px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
                       Powered by Drosera, our proprietary AI phishing simulation
                       platform, not a third-party tool, so campaigns, data and

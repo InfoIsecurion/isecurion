@@ -48,6 +48,8 @@ import rightCircle from "../assets/home/rightCircle.png";
 import HomeCTA from "../components/home/HomeCTA";
 import crestbackround from "../assets/home/crestbackground.png";
 import crestcertificate from "../assets/home/auditorcertifications/crestcertificate.png";
+import { title } from "node:process";
+import { link } from "node:fs";
 
 const containerVariants = {
   hidden: {},
@@ -86,10 +88,10 @@ const ourExpertise = [
     description:
       "Identify vulnerabilities through proactive security testing and real-world attack simulations.",
     services: [
-      "Vulnerability Assessment & Penetration Testing",
-      "Data Forensics",
-      "Web, Mobile & API Security",
-      "Red Teaming",
+      { title: "Vulnerability Assessment & Penetration Testing", link: "/services/vapt" },
+      { title: "Data Forensics", link: "/services/data-forensics" },
+      { title: "Web, Mobile & API Security", link: "/services/web-application-security-assessment" },
+      { title: "Red Teaming", link: "/services/red-team-assessment" },
     ],
     iconColor: "text-white",
     bgColor: "#88010045",
@@ -105,7 +107,12 @@ const ourExpertise = [
     title: "Managed Security",
     description:
       "Monitor, detect, and respond to cyber threats with managed security operations.",
-    services: ["Managed SOC", "Threat Hunting", "Incident Response", "MDR"],
+    services: [
+      { title: "Managed SOC", link: "/services/soc" }, 
+      { title: "Threat Hunting", link: "/services/threat-hunting" }, 
+      { title: "Incident Response", link: "/services/incident-response" }, 
+      { title: "MDR", link: "/services/mdr" }
+    ],
     iconColor: "text-white",
     bgColor: "#001233",
     hoverFrom: "#3477C5",
@@ -121,10 +128,10 @@ const ourExpertise = [
     description:
       "Secure cloud environments, infrastructure, identities across modern IT ecosystems.",
     services: [
-      "Cloud Security Assessment",
-      "Configuration Review",
-      "Identity Security",
-      "Infrastructure Hardening",
+      { title: "Cloud Security Assessment", link: "/services/cloud-security-assessment" },
+      { title: "Configuration Review", link: "/services/config-review" },
+      { title: "Identity Security", link: "/services/identity-security" },
+      { title: "Infrastructure Hardening", link: "/services/infrastructure" },
     ],
     iconColor: "text-white",
     bgColor: "#00031C",
@@ -140,7 +147,12 @@ const ourExpertise = [
     title: "Governance, Risk & Compliance",
     description:
       "Build a compliant and resilient organization with governance frameworks & regulatory expertise.",
-    services: ["ISO 27001", "SOC 2", "DPDP", "Risk Assessments"],
+    services: [
+      {title:"ISO 27001", link:"/services/iso27001"}, 
+      {title:"SOC 2", link:"/services/soc-2-compliance"}, 
+      {title:"DPDP", link: "/services/dpdp-compliance"}, 
+      {title:"Risk Assessments", link: "/services/risk"}
+    ],
     iconColor: "text-white",
     bgColor: "#00031C",
     hoverFrom: "#002E65",
@@ -156,10 +168,10 @@ const ourExpertise = [
     description:
       "Develop long-term cybersecurity maturity with strategic leadership and expert security guidance.",
     services: [
-      "Virtual CISO",
-      "Security Roadmaps",
-      "Risk Management",
-      "Security Consulting",
+      { title: "Virtual CISO", link: "/services/vciso" },
+      { title: "Security Roadmaps", link: "/services/security-roadmaps" },
+      { title: "Risk Management", link: "/services/risk-management" },
+      { title: "Security Consulting", link: "/services/security-consulting" },
     ],
     iconColor: "text-white",
     bgColor: "#001233",
@@ -176,10 +188,10 @@ const ourExpertise = [
     description:
       "Reduce human risk through security awareness and phishing simulations.",
     services: [
-      "Security Awareness Training",
-      "Phishing Simulations",
-      "Human Risk Assessment",
-      "Cybersecurity Workshops",
+      { title: "Security Awareness Training", link: "/services/security" },
+      { title: "Phishing Simulations", link: "/services/phishing-simulation" },
+      { title: "Human Risk Assessment", link: "/services/risk-assessment" },
+      { title: "Cybersecurity Workshops", link: "/services/cybersecurity" },
     ],
     iconColor: "text-white",
     bgColor: "#88010045",
@@ -757,17 +769,17 @@ export default function Home() {
                   <div className="relative z-10 mt-4">
                     <ul className="space-y-2">
                       {item.services.map((service, serviceIndex) => (
-                        <li
-                          key={serviceIndex}
-                          className={`flex items-center gap-1 text-sm font-medium ${item.listColor} group-hover:text-white transition-colors duration-300`}
-                        >
-                          <span
-                            className={` group-hover:text-white ${item.iconColor}`}
+                        <li key={serviceIndex}>
+                          <Link
+                            href={service.link}
+                            className={`inline-flex items-center gap-1 text-sm font-medium ${item.listColor} transition-all duration-300 group-hover:text-white hover:text-[#0F66EA] hover:underline hover:underline-offset-4`}
                           >
-                            <Icon icon="mingcute:right-fill" />
-                          </span>
+                            <span className="shrink-0">
+                              <Icon icon="mingcute:right-fill" />
+                            </span>
 
-                          {service}
+                            {service.title}
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -1323,18 +1335,16 @@ export default function Home() {
 
                   {/* Title */}
                   <h3
-                    className={`mt-4 max-w-[280px] text-[20px] font-medium leading-7 sm:text-[22px] sm:leading-8 lg:text-[24px] ${
-                      index === 0 ? "text-[#29263D]" : "text-white"
-                    }`}
+                    className={`mt-4 max-w-[280px] text-[20px] font-medium leading-7 sm:text-[22px] sm:leading-8 lg:text-[24px] ${index === 0 ? "text-[#29263D]" : "text-white"
+                      }`}
                   >
                     {card.title}
                   </h3>
 
                   {/* Description */}
                   <p
-                    className={`mt-5 max-w-[320px] pb-4 text-[14px] font-medium leading-6 sm:mt-6 sm:text-[15px] ${
-                      index === 0 ? "text-white" : "text-[#D1D1D1]"
-                    }`}
+                    className={`mt-5 max-w-[320px] pb-4 text-[14px] font-medium leading-6 sm:mt-6 sm:text-[15px] ${index === 0 ? "text-white" : "text-[#D1D1D1]"
+                      }`}
                   >
                     {card.description}
                   </p>

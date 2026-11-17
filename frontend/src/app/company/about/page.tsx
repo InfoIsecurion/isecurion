@@ -11,9 +11,9 @@ import TimelineAnimation from "../../../components/ui/TimelineAnimation";
 import profile from "../../../assets/about/profile.jpg";
 import ceo from "../../../assets/about/ceo.png";
 import saleshead from "../../../assets/about/sales.png";
-import compliancehead from "../../../assets/about/compliancehead.png";
+import compliancehead from "../../../assets/about/complianceHead.png";
 import offensivesecurityhead from "../../../assets/about/offensivesecurityhead.png";
-import productlead from "../../../assets/about/productlead.png";
+import productlead from "../../../assets/about/productLead.png";
 import hrteam from "../../../assets/about/hrteam.png";
 
 const data = [
