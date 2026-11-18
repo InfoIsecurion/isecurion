@@ -1,0 +1,183 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "BSE / NSE Audit Services - SEBI-Compliant IT & Cyber Security Audits",
+    "description": "Comprehensive BSE and NSE audit services for stock brokers, trading members, clearing members, depository participants, mutual funds, RTAs and capital market entities. SEBI-compliant IT governance, cybersecurity controls and operational resilience assessments.",
+    "provider": {
+      "@type": "Organization",
+      "name": "ISECURION",
+      "url": "https://isecurion.com",
+      "logo": "https://isecurion.com/images/isecurion1.png",
+      "sameAs": [
+        "https://www.facebook.com/ISECURION/",
+        "https://twitter.com/ISECURION",
+        "https://www.linkedin.com/company/isecurion"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+918861201570",
+        "contactType": "customer service",
+        "areaServed": [
+          "IN",
+          "US",
+          "GB",
+          "AE",
+          "SG"
+        ]
+      }
+    },
+    "serviceType": "BSE Audit, NSE Audit, SEBI Compliance Audit, Capital Market IT Audit, Cybersecurity Audit",
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Mumbai"
+      },
+      {
+        "@type": "City",
+        "name": "Bengaluru"
+      },
+      {
+        "@type": "City",
+        "name": "Delhi"
+      },
+      {
+        "@type": "City",
+        "name": "Kolkata"
+      },
+      {
+        "@type": "City",
+        "name": "Hyderabad"
+      },
+      {
+        "@type": "City",
+        "name": "Chennai"
+      },
+      {
+        "@type": "City",
+        "name": "Pune"
+      },
+      {
+        "@type": "Country",
+        "name": "India"
+      }
+    ],
+    "keywords": [
+      "BSE audit",
+      "NSE audit",
+      "SEBI compliance audit",
+      "stock broker IT audit",
+      "trading member audit",
+      "clearing member audit",
+      "depository participant audit",
+      "NSDL CDSL audit",
+      "mutual fund IT audit",
+      "AMC cybersecurity audit",
+      "RTA audit services",
+      "PMS compliance audit",
+      "capital market security audit",
+      "stock exchange compliance",
+      "SEBI IT governance audit",
+      "BSE NSE cybersecurity",
+      "market infrastructure audit",
+      "investment advisor audit",
+      "research analyst compliance",
+      "fintech exchange audit",
+      "Mumbai stock broker audit",
+      "Bengaluru capital market audit",
+      "Delhi NSE compliance",
+      "India SEBI audit services"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "url": "https://isecurion.com/services/bse-nse-audit-services",
+      "availability": "https://schema.org/InStock"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is BSE/NSE audit mandatory in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, SEBI mandates periodic IT and cybersecurity audits for applicable capital market entities including stock brokers, trading members, clearing members and depository participants."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should BSE/NSE audits be conducted?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Typically annually, or as specified by SEBI and exchange circulars. Entities should also conduct audits after significant system changes or security incidents."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ISECURION follow SEBI and exchange formats?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all reports are prepared in alignment with prescribed SEBI, BSE and NSE formats and guidelines for regulatory submission."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you help with pre-audit readiness?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we offer gap assessments and readiness reviews to identify control weaknesses before the formal audit engagement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you support audit remediation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we assist with closure of audit findings through remediation guidance, implementation support and validation testing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are cloud systems included in scope?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, both cloud-based and on-premises environments are covered as per SEBI guidelines for technology infrastructure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is incident response assessed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, incident response readiness, procedures and regulatory reporting mechanisms are key audit focus areas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will the audit impact daily operations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, audits are carefully planned and executed to minimize disruption to trading and business operations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are third-party vendors reviewed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, vendor and third-party risk management is assessed where mandated by SEBI guidelines."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does the audit take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Typically 2 to 6 weeks depending on organization size, complexity and scope of systems covered."
+        }
+      }
+    ]
+  }
+]

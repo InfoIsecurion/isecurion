@@ -1,0 +1,337 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Phishing Simulation Services",
+    "alternateName": [
+      "Phishing Testing Services",
+      "Phishing Awareness Simulation",
+      "Simulated Phishing Attack Services",
+      "AI Phishing Simulation Services"
+    ],
+    "description": "Enterprise-grade phishing simulation combining realistic email phishing, spear-phishing, vishing and smishing campaigns, powered by the Drosera AI phishing simulation and human risk management platform, with targeted security awareness training, remediation and executive reporting.",
+    "provider": {
+      "@type": "Organization",
+      "name": "ISECURION",
+      "url": "https://www.isecurion.com",
+      "logo": "https://isecurion.com/images/isecurion1.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/isecurion",
+        "https://www.facebook.com/ISECURION/",
+        "https://twitter.com/ISECURION"
+      ]
+    },
+    "areaServed": [
+      "IN",
+      "US",
+      "GB",
+      "AE"
+    ],
+    "serviceType": "Phishing Simulation, Security Awareness Training, Social Engineering Assessment, Human Risk Management",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": [
+        "Banks",
+        "FinTech",
+        "SaaS",
+        "Healthcare",
+        "Enterprises",
+        "Corporate Employees",
+        "Remote Workforce",
+        "Technology Companies",
+        "BFSI",
+        "Insurance",
+        "Critical Infrastructure",
+        "Government"
+      ]
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock"
+    },
+    "url": "https://isecurion.com/services/phishing-simulation",
+    "brand": {
+      "@type": "Brand",
+      "name": "Drosera",
+      "url": "https://drosera.ai/"
+    },
+    "keywords": [
+      "phishing simulation services",
+      "phishing simulation services India",
+      "phishing awareness training",
+      "cybersecurity phishing test",
+      "employee phishing test",
+      "security awareness training",
+      "social engineering assessment",
+      "email phishing simulation",
+      "spear phishing simulation",
+      "spear-phishing for executives",
+      "cybersecurity training for employees",
+      "phishing assessment for companies",
+      "anti phishing training",
+      "simulate phishing attack",
+      "security culture training",
+      "internal phishing campaign",
+      "managed phishing simulation",
+      "continuous phishing simulation program",
+      "cybersecurity for banks",
+      "phishing testing for enterprises",
+      "ISO 27001 awareness training",
+      "incident response training",
+      "cybersecurity training India",
+      "vishing simulation services",
+      "smishing simulation services",
+      "voice phishing testing",
+      "SMS phishing testing",
+      "credential harvesting simulation",
+      "business email compromise simulation",
+      "BEC testing",
+      "human risk management platform",
+      "human firewall training",
+      "phishing click rate reduction",
+      "phishing susceptibility index",
+      "SOC 2 security awareness training",
+      "phishing simulation for BFSI",
+      "phishing simulation for healthcare",
+      "phishing simulation vendor India",
+      "red team social engineering assessment",
+      "MITRE ATT&CK phishing simulation",
+      "CERT-In empanelled phishing simulation",
+      "Drosera",
+      "Drosera AI",
+      "Drosera phishing simulation platform",
+      "AI phishing simulation platform",
+      "human risk score",
+      "AI-generated phishing scenarios"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Drosera",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Web",
+    "url": "https://drosera.ai/",
+    "description": "Drosera is ISECURION's AI-powered phishing simulation and human risk management platform, delivering continuous, AI-generated phishing campaigns, security awareness training and a human risk score aligned with MITRE ATT&CK, NIST CSF, ISO 27001, SOC 2 and OWASP.",
+    "creator": {
+      "@type": "Organization",
+      "name": "ISECURION",
+      "url": "https://www.isecurion.com"
+    },
+    "featureList": [
+      "AI-generated, adaptive phishing scenarios",
+      "Human risk scoring across delivery, engagement and reporting",
+      "High-reputation sending infrastructure with no whitelisting required",
+      "Built-in security awareness training and LMS",
+      "Multi-tenant support for MSSPs and red teams",
+      "Alignment with MITRE ATT&CK, NIST CSF, ISO 27001, SOC 2 and OWASP"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ISECURION",
+    "url": "https://www.isecurion.com",
+    "logo": "https://isecurion.com/images/isecurion1.png",
+    "description": "ISECURION is a CERT-In empanelled, ISO 27001:2022 aligned information security consultancy providing VAPT, Red Teaming, Phishing Simulation (powered by Drosera), Security Awareness Training and Compliance Audit services.",
+    "email": "info@isecurion.com",
+    "telephone": "+91-88612-01570",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura",
+        "addressLocality": "Bengaluru",
+        "postalCode": "560109",
+        "addressCountry": "IN"
+      }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/isecurion",
+      "https://www.facebook.com/ISECURION/",
+      "https://twitter.com/ISECURION",
+      "https://drosera.ai/"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://isecurion.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Technical Services",
+        "item": "https://isecurion.com/technical-services/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Phishing Simulation",
+        "item": "https://isecurion.com/services/phishing-simulation"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a phishing simulation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A phishing simulation is a controlled exercise that emulates phishing attacks to measure employee response, reporting behaviour, and SOC readiness without exposing the organisation to real-world risk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are these simulations safe and legally compliant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Phishing simulations operate under a Rules of Engagement (ROE) reviewed with stakeholders and legal counsel. Sensitive employees can be excluded and evidence is handled securely."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How frequently should we run simulations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Monthly micro-campaigns are recommended as part of continuous programs, with quarterly comprehensive reporting. Frequency can be adjusted based on risk cohorts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will employees be penalised for failing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our recommended approach focuses on coaching and targeted training, not punitive actions. Organisations may choose to define their own HR policies separately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide remediation materials?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, remediation includes role-based micro-learning content, quizzes, and LMS-integrated training modules to address identified weaknesses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you simulate credential-harvesting safely?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Credential harvesting simulations are conducted on isolated, encrypted endpoints with immediate containment and no storage of plaintext credentials."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are vishing and smishing included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Voice phishing (vishing) and SMS phishing (smishing) simulations are available to assess mobile and communication-channel risks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you target specific departments or geographies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, campaigns can be segmented by role, business unit, or geography to align with specific policy constraints and risk focus areas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How are results shared?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Results are shared via executive summaries, technical evidence packs, and an interactive dashboard accessible to authorised users."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What KPIs do you track?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Key KPIs include click-through rate (CTR), report rate, susceptibility index, repeat failures, mean time to detect (MTTD) for simulated incidents, and training remediation completion."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long is onboarding?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Onboarding typically takes 1-2 weeks for pilots and 2-4 weeks for larger rollouts, depending on integrations and organisational approvals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you integrate with SIEM, LMS, or HR systems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Integrations are available through connectors and APIs, allowing simulated events to be forwarded to SIEMs, training tasks to be assigned via LMS, and users mapped through HR systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is employee privacy protected?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All personal data is protected with contractual safeguards, encryption in transit and at rest, and data retention policies agreed with clients."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does phishing simulation help with compliance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Deliverables include compliance mapping for ISO 27001, SOC 2, and privacy frameworks, supporting audits and certifications."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do we start?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can contact ISECURION at info@isecurion.com or submit the enquiry form on the website. A discovery call will be scheduled, followed by an SOW and timeline."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good phishing click-through rate benchmark?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mature security-aware organisations typically target a click-through rate below 5%, with continuous monthly simulation programs used to track progress toward that benchmark over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is phishing simulation different from a real phishing attack?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Phishing simulation uses the same lure techniques as real attackers but runs under an agreed Rules of Engagement, with no data exfiltration, safe credential capture, opt-out lists for sensitive staff, and immediate containment of any accidental exposure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Drosera?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Drosera is ISECURION's proprietary AI phishing simulation and human risk management platform. It runs continuous, AI-generated phishing campaigns from high-reputation, whitelist-free sending infrastructure and calculates a human risk score from delivery, engagement and reporting behaviour."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ISECURION use its own tool for phishing simulations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ISECURION's phishing simulation engagements are powered by Drosera, our in-house AI platform, which is also used by red teams, offensive security teams and MSSPs to run and manage phishing campaigns at scale."
+        }
+      }
+    ]
+  }
+]

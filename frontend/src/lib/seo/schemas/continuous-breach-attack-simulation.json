@@ -1,0 +1,186 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Continuous Breach & Attack Simulation (CBAS)",
+    "description": "ISECURION’s Continuous Breach and Attack Simulation (CBAS) service provides continuous security validation, automated attack simulations, real-time threat detection, and breach readiness evaluation for enterprises. Trusted by Banks, FinTech, SaaS, Healthcare, and Cloud-Native organizations across India and globally.",
+    "keywords": [
+      "CBAS",
+      "Continuous Breach and Attack Simulation",
+      "Continuous Security Validation",
+      "Cyber Attack Simulation",
+      "Breach Simulation",
+      "Attack Simulation India",
+      "Breach and Attack Simulation Services",
+      "Automated Red Teaming",
+      "Purple Teaming",
+      "Threat Exposure Management",
+      "Cybersecurity Services India",
+      "Security Posture Assessment",
+      "Continuous Monitoring Cybersecurity",
+      "ISECURION Security Services"
+    ],
+    "provider": {
+      "@type": "Organization",
+      "name": "ISECURION",
+      "url": "https://isecurion.com",
+      "logo": "https://isecurion.com/assets/images/logo.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/isecurion/",
+        "https://twitter.com/isecurion",
+        "https://www.facebook.com/isecurion"
+      ]
+    },
+    "serviceType": [
+      "Continuous Breach and Attack Simulation",
+      "Breach and Attack Simulation (BAS)",
+      "Continuous Security Validation",
+      "Automated Red Teaming",
+      "Threat Exposure Management",
+      "Breach Readiness Assessment"
+    ],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": [
+        "Banks",
+        "FinTech",
+        "SaaS Companies",
+        "Healthcare Organizations",
+        "Insurance",
+        "E-commerce",
+        "Telecom",
+        "Enterprises",
+        "Cloud-Native Companies",
+        "IT/ITES"
+      ]
+    },
+    "areaServed": [
+      "India",
+      "IN",
+      "United States",
+      "Europe",
+      "United Kingdom",
+      "Middle East",
+      "Singapore",
+      "Australia",
+      "Global",
+      "Mumbai",
+      "Delhi",
+      "Bengaluru",
+      "Bangalore",
+      "Hyderabad",
+      "Chennai",
+      "Pune",
+      "Kolkata",
+      "Ahmedabad",
+      "Gurgaon",
+      "Noida",
+      "Ghaziabad",
+      "Thane",
+      "Navi Mumbai",
+      "Jaipur",
+      "Surat",
+      "Indore",
+      "Kochi",
+      "Coimbatore",
+      "Nagpur",
+      "Lucknow",
+      "Chandigarh",
+      "Vizag",
+      "Mysore",
+      "Trivandrum"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "url": "https://isecurion.com/services/continuous-breach-attack-simulation"
+    },
+    "url": "https://isecurion.com/services/continuous-breach-attack-simulation"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is CBAS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Continuous Breach Attack Simulation (CBAS) validates defenses 24/7 by mimicking real-world attackers using adversary simulation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is CBAS different from Penetration Testing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Penetration Testing is point-in-time, while CBAS is continuous, automated, and ensures defenses stay validated against evolving threats."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which industries benefit most?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Banks, SaaS, FinTech, Healthcare, Government, and Enterprises handling sensitive data benefit most from Continuous Breach Attack Simulation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does CBAS support compliance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, CBAS helps organizations achieve and maintain compliance with ISO 27001, SOC 2, PCI DSS, RBI Cybersecurity Framework, and GDPR."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should CBAS be done?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CBAS runs continuously but results and insights can be reviewed weekly or monthly depending on your organization's needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does onboarding take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Onboarding typically takes 1-2 weeks depending on infrastructure size and integration requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can CBAS detect zero-day threats?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, CBAS adapts to new attack techniques and threat actor tactics (TTPs) ensuring your defenses are validated against the latest threats."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does CBAS disrupt business operations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, CBAS is designed to run safely in production environments without disrupting day-to-day operations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does ISECURION deliver reports?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ISECURION provides executive summaries, detailed technical findings, attack paths, and remediation guidance via dashboards and audit-ready reports."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why choose ISECURION for CBAS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ISECURION combines CERT-In empanelment, certified experts (OSCP, CEH, CISSP), and years of experience in Red Teaming and adversary simulations to deliver unmatched CBAS services."
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,276 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "DPDP Compliance in India - Cybersecurity Audit & Technical Compliance Services",
+    "serviceType": "DPDP Cybersecurity Audit & Technical Compliance Services",
+    "serviceCategory": "Data Protection, Cybersecurity Audit, DPDP Act Technical Compliance, DPDP Compliance India",
+    "provider": {
+      "@type": "Organization",
+      "name": "ISECURION",
+      "url": "https://isecurion.com/services/dpdp-compliance",
+      "logo": "https://isecurion.com/images/isecurion1.png",
+      "description": "CERT-In empanelled and ISO 27001 certified cybersecurity company providing DPDP compliance in India, including DPDP Act technical security audit, VAPT on data-handling systems, security controls implementation, breach readiness and gap assessment services across India.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+918861201570",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": [
+          "en",
+          "hi"
+        ]
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/isecurion",
+        "https://www.facebook.com/ISECURION/",
+        "https://twitter.com/ISECURION"
+      ]
+    },
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "India"
+      },
+      {
+        "@type": "City",
+        "name": "Bengaluru"
+      },
+      {
+        "@type": "City",
+        "name": "Mumbai"
+      },
+      {
+        "@type": "City",
+        "name": "Delhi"
+      },
+      {
+        "@type": "City",
+        "name": "Hyderabad"
+      },
+      {
+        "@type": "City",
+        "name": "Chennai"
+      },
+      {
+        "@type": "City",
+        "name": "Pune"
+      },
+      {
+        "@type": "City",
+        "name": "Kolkata"
+      },
+      {
+        "@type": "City",
+        "name": "Gurgaon"
+      },
+      {
+        "@type": "City",
+        "name": "Noida"
+      },
+      {
+        "@type": "City",
+        "name": "Ahmedabad"
+      },
+      {
+        "@type": "City",
+        "name": "Bhubaneswar"
+      },
+      {
+        "@type": "City",
+        "name": "Kochi"
+      },
+      {
+        "@type": "City",
+        "name": "Thiruvananthapuram"
+      },
+      {
+        "@type": "City",
+        "name": "Kozhikode"
+      },
+      {
+        "@type": "City",
+        "name": "Thrissur"
+      },
+      {
+        "@type": "City",
+        "name": "Kollam"
+      }
+    ],
+    "audience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Fintech & BFSI Companies"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Healthcare & HealthTech"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "SaaS & IT Companies"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "E-commerce & Retail"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "EdTech Platforms"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Startups & Enterprises"
+      }
+    ],
+    "keywords": [
+      "DPDP compliance in India",
+      "DPDP compliance India",
+      "DPDP Act compliance services",
+      "DPDP cybersecurity audit India",
+      "DPDP security controls India",
+      "DPDP technical compliance India",
+      "DPDP VAPT India",
+      "DPDP data security audit India",
+      "Digital Personal Data Protection Act cybersecurity",
+      "CERT-In DPDP audit",
+      "DPDP compliance fintech India",
+      "DPDP compliance healthcare India",
+      "DPDP compliance SaaS India",
+      "DPDP breach notification India",
+      "significant data fiduciary security India",
+      "DPDP penalty India",
+      "DPDP consultants India",
+      "DPDP compliance checklist India",
+      "DPDP Act 2023 audit",
+      "Data Protection Board India compliance",
+      "DPDP compliance Bengaluru",
+      "DPDP compliance Mumbai",
+      "DPDP compliance Kerala",
+      "DPDP compliance Bhubaneswar",
+      "DPDP readiness assessment India",
+      "personal data protection audit India"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ISECURION",
+    "url": "https://isecurion.com/",
+    "logo": "https://isecurion.com/images/isecurion1.png",
+    "description": "ISECURION is a CERT-In empanelled, ISO 27001 certified cybersecurity company offering DPDP compliance in India, VAPT, red teaming and regulatory compliance audit services.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "postalCode": "560109",
+      "addressCountry": "IN"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-88612-01570",
+        "contactType": "sales",
+        "areaServed": "IN",
+        "availableLanguage": [
+          "en",
+          "hi"
+        ]
+      }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/isecurion",
+      "https://www.facebook.com/ISECURION/",
+      "https://twitter.com/ISECURION"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://isecurion.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://isecurion.com/services/dpdp-compliance"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "DPDP Compliance in India",
+        "item": "https://isecurion.com/services/dpdp-compliance"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "DPDP Compliance in India | Cybersecurity Audit Services | ISECURION",
+    "url": "https://isecurion.com/services/dpdp-compliance",
+    "description": "ISECURION provides CERT-In empanelled DPDP compliance in India, covering DPDP Act security audits, VAPT, gap assessments, DPIA and breach-readiness services for every state and major city in India.",
+    "inLanguage": "en-IN",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "ISECURION",
+      "url": "https://isecurion.com/"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        ".answer-box",
+        "#overview p",
+        "h1"
+      ]
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "DPDP compliance in India"
+    },
+    "mainEntityOfPage": "https://isecurion.com/services/dpdp-compliance"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How ISECURION Delivers DPDP Compliance in India",
+    "description": "A five-phase methodology used by ISECURION to help organizations achieve DPDP compliance in India, from data discovery to ongoing audit support.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Discovery & Data Mapping",
+        "text": "Identify personal data assets, data flows, processing activities, third-party processors, and existing security controls."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Security Gap Analysis",
+        "text": "Map identified controls against DPDP's security obligations and produce a prioritized gap report with risk ratings and VAPT scope definition."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "VAPT & Technical Audit",
+        "text": "Execute penetration testing of personal data-handling systems and assess encryption, IAM, monitoring, secure code, and vendor security posture."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Controls & Documentation",
+        "text": "Implement remediation, security controls, breach response playbooks, RoPA, DPIA (for SDFs) and compliance documentation."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Audit Report & Ongoing Support",
+        "text": "Deliver a DPDP security audit report, train teams on breach notification obligations, and provide periodic re-assessment support."
+      }
+    ]
+  }
+]

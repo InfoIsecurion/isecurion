@@ -38,7 +38,7 @@ const serviceDetails = {
           },
           {
             label: "AI-Augmented Red Team",
-            href: "/services/ai-augamented-red-team",
+            href: "/services/ai-augmented-red-team",
           },
           {
             label: "Phishing Simulation",

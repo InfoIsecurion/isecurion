@@ -1,0 +1,296 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ISECURION",
+    "url": "https://www.isecurion.com",
+    "logo": "https://isecurion.com/images/isecurion1.png",
+    "description": "CERT-In empanelled and ISO 27001:2022 certified cybersecurity company providing AI-Augmented Red Team, LLM security testing, VAPT, and compliance services to clients across India, USA, Europe, GCC, Singapore, and Australia",
+    "telephone": "+91-88612-01570",
+    "email": "info@isecurion.com",
+    "knowsAbout": [
+      "AI Red Teaming",
+      "LLM Security Testing",
+      "Prompt Injection",
+      "Jailbreak Testing",
+      "AI Agent Security",
+      "AI Supply Chain Security",
+      "Model Poisoning",
+      "Deepfake Vishing Simulation",
+      "Business Email Compromise Simulation",
+      "AI-Accelerated Reconnaissance",
+      "OWASP Top 10 for LLM Applications",
+      "MLOps Security",
+      "Vulnerability Assessment and Penetration Testing",
+      "Red Team Assessment",
+      "Cloud Security",
+      "ISO 27001",
+      "SOC 2",
+      "GDPR",
+      "DORA",
+      "DPDP Act Compliance"
+    ],
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura",
+        "addressLocality": "Bengaluru",
+        "addressRegion": "Karnataka",
+        "postalCode": "560109",
+        "addressCountry": "IN"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Arch Square, 8th Floor, Unit No 809, Tower 1, Salt Lake City, Sector-V",
+        "addressLocality": "Kolkata",
+        "addressRegion": "West Bengal",
+        "postalCode": "700091",
+        "addressCountry": "IN"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "1014 N Plum Grove Road",
+        "addressLocality": "Schaumburg",
+        "addressRegion": "IL",
+        "postalCode": "60173",
+        "addressCountry": "US"
+      }
+    ],
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "India"
+      },
+      {
+        "@type": "Country",
+        "name": "United States"
+      },
+      {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      {
+        "@type": "Country",
+        "name": "Germany"
+      },
+      {
+        "@type": "Country",
+        "name": "United Arab Emirates"
+      },
+      {
+        "@type": "Country",
+        "name": "Saudi Arabia"
+      },
+      {
+        "@type": "Country",
+        "name": "Qatar"
+      },
+      {
+        "@type": "Country",
+        "name": "Singapore"
+      },
+      {
+        "@type": "Country",
+        "name": "Australia"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI-Augmented Red Team Services",
+    "alternateName": [
+      "LLM Red Teaming",
+      "AI Agent Security Testing",
+      "AI Supply Chain Attack Simulation",
+      "Deepfake Vishing Simulation",
+      "Deepfake BEC Simulation",
+      "AI-Accelerated Recon Benchmark",
+      "Generative AI Red Teaming",
+      "LLM Penetration Testing",
+      "Prompt Injection Testing Services",
+      "AI Threat Readiness Assessment"
+    ],
+    "description": "CERT-In empanelled AI-Augmented Red Team services covering AI supply chain attack simulation, LLM/agent red teaming (prompt injection, jailbreaks, tool-call hijack, excessive agency), deepfake vishing/BEC simulation, and AI-accelerated recon benchmarking, delivered as a standalone engagement or as an add-on to existing VAPT/RTaaS retainers. Delivered remotely and on-site to clients in India, the United States, Europe, the GCC, Singapore, and Australia.",
+    "keywords": "AI red team testing, LLM red teaming, prompt injection testing, jailbreak testing LLM, AI supply chain attack simulation, ML pipeline security testing, deepfake vishing simulation, business email compromise simulation, AI-accelerated recon benchmark, agentic AI security testing, tool calling hijack testing, excessive agency testing, system prompt extraction, CERT-In empanelled AI red team, OWASP LLM Top 10, global AI threat readiness assessment",
+    "provider": {
+      "@type": "Organization",
+      "name": "ISECURION",
+      "url": "https://www.isecurion.com",
+      "telephone": "+91-88612-01570",
+      "email": "info@isecurion.com"
+    },
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "India"
+      },
+      {
+        "@type": "Country",
+        "name": "United States"
+      },
+      {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      {
+        "@type": "Country",
+        "name": "Germany"
+      },
+      {
+        "@type": "Country",
+        "name": "United Arab Emirates"
+      },
+      {
+        "@type": "Country",
+        "name": "Saudi Arabia"
+      },
+      {
+        "@type": "Country",
+        "name": "Qatar"
+      },
+      {
+        "@type": "Country",
+        "name": "Singapore"
+      },
+      {
+        "@type": "Country",
+        "name": "Australia"
+      }
+    ],
+    "serviceType": [
+      "AI Red Team Testing",
+      "LLM Red Teaming",
+      "AI Agent Security Testing",
+      "Prompt Injection Testing",
+      "Indirect Prompt Injection Testing",
+      "Jailbreak / Guardrail Bypass Testing",
+      "Tool-Call / Function-Calling Hijack Testing",
+      "System Prompt Extraction Testing",
+      "Excessive Agency Testing",
+      "AI Supply Chain Attack Simulation",
+      "ML Pipeline Security Testing",
+      "Model / Dataset Poisoning Testing",
+      "Deepfake Vishing/BEC Simulation",
+      "AI-Accelerated Recon Benchmark",
+      "OWASP Top 10 for LLM Applications Testing",
+      "CERT-In Empanelled Red Team"
+    ],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": [
+        "Enterprises deploying LLM-powered chatbots or copilots",
+        "Companies running AI agents with tool/function-calling access",
+        "ML/MLOps teams operating training and inference pipelines",
+        "Finance & Ops teams exposed to deepfake fraud risk",
+        "Boards seeking an AI threat-readiness benchmark",
+        "Banks and fintechs adopting generative AI products",
+        "Healthcare and digital health platforms using AI agents",
+        "Global enterprises in the US, Europe, GCC, Singapore, and Australia"
+      ]
+    },
+    "url": "https://isecurion.com/services/ai-augamented-red-team"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://isecurion.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Security Testing",
+        "item": "https://isecurion.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "AI-Augmented Red Team",
+        "item": "https://isecurion.com/services/ai-augamented-red-team"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is AI-Augmented Red Team testing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI-Augmented Red Team testing simulates attack paths where AI systems are the target, the weapon, or both. It covers AI supply chain attack simulation against ML pipelines, LLM/agent red teaming including prompt injection and jailbreaks, deepfake-based vishing and BEC simulation, and AI-accelerated recon benchmarking, going beyond traditional network and human-focused red teaming."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ISECURION deliver AI-Augmented Red Team engagements outside India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ISECURION delivers AI-Augmented Red Team engagements globally, including the United States, United Kingdom, Europe, the GCC (UAE, Saudi Arabia, Qatar), Singapore, and Australia, through a mix of remote engagement and on-site delivery, coordinated across time zones by a dedicated engagement lead."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is this different from a traditional red team engagement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Traditional red teams test human and network attack paths - phishing, network pivoting, physical access. AI-Augmented Red Team specifically tests AI-native attack surfaces: ML training/inference pipelines, LLM guardrails and tool-calling agents, and AI-generated social engineering like deepfake voice cloning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can we run just one module, or do we need the full suite?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each of the four modules - Supply Chain Attack Simulation, LLM/Agent Red Teaming, Deepfake Vishing/BEC Simulation, and AI-Accelerated Recon Benchmark - can be scoped and priced standalone. Bundling two or more modules earns a discount, and the full suite is available at a flat package price."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can this be added to an existing VAPT or RTaaS retainer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. AI-Augmented Red Team is designed to sell as a standalone engagement or as an add-on module to an existing VAPT/RTaaS retainer, anywhere in the world, and individual modules can be scoped independently based on your AI footprint."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the deepfake vishing simulation legal and ethical across jurisdictions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Deepfake voice or video content is only created and used with documented consent from the impersonated individual, under signed rules of engagement tailored to local law in the client's jurisdiction, and destroyed after the engagement per agreed retention terms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does this align with data protection rules like GDPR or DPDP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Scoping and rules of engagement are adapted to the relevant data protection framework for the client's jurisdiction - including GDPR in Europe, DPDP in India, and equivalent frameworks in the GCC, Singapore, and Australia - so that test data handling, consent, and retention comply with local requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does an AI-Augmented Red Team engagement take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard engagements run 3-5 weeks depending on the number of modules selected and environment complexity, covering scoping, reconnaissance, execution, detection validation, and reporting - regardless of the client's location."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does an AI-Augmented Red Team engagement cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pricing depends on the modules selected and your environment complexity, and is quoted in your local currency on request. Contact ISECURION at +91-88612 01570 or info@isecurion.com for a customized, module-by-module quote with bundling discounts available."
+        }
+      }
+    ]
+  }
+]

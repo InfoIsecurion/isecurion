@@ -1,0 +1,270 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "CICRA Audit Services - Critical Information & Cyber Risk Assessment",
+    "description": "Comprehensive CICRA audit services covering critical infrastructure protection, cyber risk assessment, and regulatory compliance for BFSI, healthcare, energy, government, telecom, and IT sectors in India",
+    "provider": {
+      "@type": "Organization",
+      "name": "ISECURION",
+      "url": "https://www.isecurion.com"
+    },
+    "areaServed": [
+      "IN",
+      "NP",
+      "BD",
+      "LK",
+      "BT",
+      "MV"
+    ],
+    "serviceType": [
+      "CICRA Audit",
+      "Critical Infrastructure Security Assessment",
+      "Cyber Risk Assessment",
+      "Critical Information Infrastructure Protection",
+      "CERT-In Compliance Audit",
+      "RBI Cybersecurity Framework Audit",
+      "SEBI Cyber Resilience Assessment",
+      "IRDAI Security Audit",
+      "Healthcare Infrastructure Security",
+      "Energy Infrastructure Assessment",
+      "Government Cybersecurity Audit",
+      "Telecom Security Assessment",
+      "Cloud Infrastructure Security Audit",
+      "Data Center Security Assessment",
+      "Business Continuity Audit",
+      "Disaster Recovery Assessment",
+      "Incident Response Readiness",
+      "SOC Maturity Assessment",
+      "Third-Party Risk Assessment",
+      "Supply Chain Security Audit"
+    ],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": [
+        "Banks and Financial Institutions",
+        "NBFCs and Payment Aggregators",
+        "Stock Brokers and Trading Platforms",
+        "FinTech Companies",
+        "Hospitals and Healthcare Providers",
+        "Telemedicine Platforms",
+        "Power Distribution Companies",
+        "Oil and Gas Operators",
+        "Renewable Energy Providers",
+        "Smart Grid Operators",
+        "Government Departments",
+        "Smart City Projects",
+        "PSU Enterprises",
+        "Data Centers",
+        "SaaS Providers",
+        "Cloud Service Providers",
+        "Telecom Operators",
+        "ISPs and Infrastructure Providers"
+      ]
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "CICRA Audit Services"
+      }
+    },
+    "url": "https://isecurion.com/services/cicra-audit-services",
+    "keywords": [
+      "CICRA audit India",
+      "critical infrastructure security",
+      "cyber risk assessment",
+      "CII protection",
+      "CERT-In compliance",
+      "RBI cybersecurity framework",
+      "SEBI cyber resilience",
+      "IRDAI security guidelines",
+      "critical information infrastructure",
+      "infrastructure resilience",
+      "operational security maturity",
+      "BFSI security assessment",
+      "healthcare security audit",
+      "energy infrastructure security",
+      "government cybersecurity",
+      "telecom security assessment",
+      "cloud infrastructure audit",
+      "data center security",
+      "incident response assessment",
+      "business continuity audit",
+      "disaster recovery audit",
+      "DPDP compliance",
+      "ISO 27001 audit",
+      "NIST framework",
+      "vendor risk assessment",
+      "supply chain security",
+      "SOC maturity"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a CICRA Audit and why is it important?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A CICRA (Critical Information & Cyber Risk Assessment) Audit is a comprehensive evaluation of an organization's critical systems, infrastructure, data assets, cyber threat exposure, and security controls. Unlike traditional compliance audits, CICRA focuses on risk prioritization and resilience enhancement, ensuring critical business services remain secure and operational during cyber incidents. It's essential for organizations in regulated sectors like BFSI, healthcare, energy, and government."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who needs a CICRA Audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CICRA audits are crucial for organizations operating in high-risk and regulated industries including banks, NBFCs, payment aggregators, stock brokers, FinTech companies, hospitals, telemedicine platforms, power distribution companies, oil and gas operators, government departments, smart city projects, data centers, SaaS providers, cloud service providers, telecom operators, and ISPs. Any organization handling critical infrastructure or sensitive data should conduct regular CICRA audits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is CICRA audit mandatory in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CICRA audit requirements depend on regulatory and sectoral guidelines. Organizations in BFSI, telecom, energy, and healthcare sectors often face mandatory cybersecurity assessments under regulations from CERT-In, RBI, SEBI, IRDAI, and MeitY. While specific CICRA branding may not be mandated, the comprehensive risk assessment approach aligns with regulatory expectations for critical infrastructure protection."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a CICRA audit typically take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A typical CICRA audit takes 3-8 weeks depending on organizational size, complexity, number of critical systems, infrastructure scope, and geographical spread. Smaller organizations with limited infrastructure may complete audits in 3-4 weeks, while large enterprises with multiple locations, complex cloud environments, and extensive third-party integrations may require 6-8 weeks or more."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is CICRA different from ISO 27001 audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ISO 27001 focuses on establishing and maintaining an Information Security Management System (ISMS) with documented policies and procedures. CICRA emphasizes critical risk exposure, infrastructure resilience, and operational continuity. CICRA is more tactical and risk-focused, identifying vulnerabilities in critical systems and assessing real-world threat impacts. ISO 27001 provides the governance framework, while CICRA ensures critical assets can withstand and recover from cyber incidents."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does CICRA audit include technical security testing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, CICRA audits include comprehensive technical security assessments such as vulnerability scanning, penetration testing, network architecture review, firewall and IDS/IPS configuration analysis, endpoint protection assessment, cloud security evaluation, Identity & Access Management (IAM) control validation, and application security testing. Technical testing ensures security controls are effective in practice, not just documented."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can CICRA help with RBI, SEBI, or IRDAI compliance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. CICRA audits are specifically designed to support regulatory alignment. Our assessments map findings to RBI Cybersecurity Framework, SEBI Cyber Resilience Guidelines, IRDAI Information Security Guidelines, DPDP Act requirements, ISO 27001 Annex A controls, and NIST Cybersecurity Framework. The audit provides documentation and evidence suitable for regulatory submission and demonstrates compliance commitment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is cloud infrastructure covered in CICRA audits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, cloud infrastructure is a critical component of CICRA audits. We assess cloud configuration security, data protection controls, access management, encryption implementation, cloud service provider compliance, hybrid cloud architecture, multi-cloud environments, container security, serverless security, and cloud-native application security. Cloud environments often host critical systems, making them essential to the assessment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should CICRA audits be conducted?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CICRA audits should be conducted annually at minimum, or more frequently after major system changes, infrastructure upgrades, cloud migrations, merger and acquisition activities, significant security incidents, or regulatory updates. Organizations in highly regulated sectors or with rapidly evolving threat landscapes should consider bi-annual assessments to maintain continuous resilience."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ISECURION provide remediation support after the audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we provide comprehensive remediation support including advisory services, implementation guidance, security control deployment assistance, configuration hardening, policy development, incident response plan creation, and follow-up verification testing. Our goal is not just to identify risks but to help you systematically mitigate and manage them to build long-term cyber resilience."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will we receive board-level reporting and executive summaries?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all CICRA audits include executive summaries specifically designed for board and senior management presentations. These summaries provide strategic risk overview, business impact analysis, key findings in non-technical language, prioritized recommendations, budgetary considerations for security improvements, and long-term resilience planning insights. Detailed technical reports are also provided for IT and security teams."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can startups and smaller organizations benefit from CICRA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, especially FinTech startups, SaaS companies, healthtech platforms, and technology providers handling critical or sensitive data. CICRA helps startups establish security foundations, meet investor due diligence requirements, demonstrate security maturity to enterprise clients, achieve regulatory compliance for growth, and build cyber resilience before incidents occur. We tailor assessments to organizational size and maturity level."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is CICRA aligned with the DPDP Act?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, CICRA audits strengthen data protection governance in alignment with India's Digital Personal Data Protection (DPDP) Act. We assess data classification, consent management, data flow mapping, purpose limitation controls, data minimization practices, security safeguards, breach notification readiness, and data subject rights implementation. CICRA provides the security foundation necessary for DPDP compliance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does CICRA audit help with cyber insurance requirements?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, CICRA audits provide structured risk documentation that significantly supports cyber insurance underwriting. Insurers require evidence of cybersecurity maturity, risk management practices, incident response capabilities, and business continuity preparedness. A comprehensive CICRA audit demonstrates due diligence, potentially improving coverage terms and reducing premiums while ensuring you meet policy requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the CICRA audit process confidential?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. All CICRA audits are conducted under strict Non-Disclosure Agreements (NDAs) and confidentiality protocols. We follow ethical audit practices, secure handling of sensitive information, restricted access to audit data, encrypted communication channels, and secure documentation storage. Your critical infrastructure details, vulnerabilities, and business information remain completely confidential throughout and after the engagement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do we initiate a CICRA audit with ISECURION?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Contact our cybersecurity experts through our website, email (info@isecurion.com), or phone (+91 88612 01570). We'll schedule an initial consultation to understand your organization, critical infrastructure, regulatory requirements, and specific concerns. Based on this discussion, we'll provide a tailored proposal outlining scope, methodology, timeline, deliverables, and investment. Once agreed, we'll begin with planning and scoping."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes ISECURION different for CICRA audits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ISECURION combines industry-experienced cybersecurity auditors with regulatory-focused assessment approaches. Our team holds certifications including CISSP, CISA, ISO 27001 LA, and CEH. We provide both governance analysis and deep technical testing in a single comprehensive audit. With PAN-India presence and experience across BFSI, healthcare, energy, government, and technology sectors, we deliver practical, implementable recommendations tailored to your risk landscape and business context."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does CICRA assess third-party and supply chain risks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, third-party and supply chain risk assessment is a critical component of CICRA audits. We evaluate vendor risk management practices, third-party security controls, contractual security obligations, vendor access controls, data sharing agreements, supply chain dependencies, critical vendor identification, vendor security assessments, and integration point security. Supply chain compromises are increasingly common attack vectors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What deliverables will we receive from the CICRA audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You will receive a comprehensive package including: Detailed CICRA Audit Report with findings and analysis, Critical Asset Inventory documenting all critical systems, Risk Register with severity classification and prioritization, Compliance Gap Analysis mapped to relevant regulations, Risk Heat Map Dashboard for visual risk overview, Executive Summary for board and leadership, Remediation Roadmap with immediate, short-term, and long-term actions, and Evidence documentation suitable for regulatory submission."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can CICRA audits be conducted remotely?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, CICRA audits can be conducted remotely with secure access to systems, documentation, and key personnel. We use secure remote assessment methodologies, encrypted communication channels, and virtual interviews while maintaining comprehensive audit coverage. However, critical infrastructure assessments may benefit from on-site components for physical security evaluation, data center inspection, and network infrastructure review depending on scope and requirements."
+        }
+      }
+    ]
+  }
+]

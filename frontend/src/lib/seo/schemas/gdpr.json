@@ -1,0 +1,76 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "GDPR Compliance Audit",
+    "description": "GDPR compliance audits and readiness assessments for organisations processing EU personal data. Services include gap analysis, data mapping, security testing and remediation support.",
+    "provider": {
+      "@type": "Organization",
+      "name": "ISECURION",
+      "url": "https://isecurion.com",
+      "logo": "https://isecurion.com/images/isecurion1.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-8861201570",
+        "contactType": "sales",
+        "areaServed": [
+          "IN",
+          "EU"
+        ],
+        "availableLanguage": [
+          "en"
+        ]
+      }
+    },
+    "serviceType": "GDPR Compliance Audit",
+    "areaServed": "Worldwide",
+    "url": "https://isecurion.com/services/gdpr",
+    "image": "https://isecurion.com/images/ComplianceAuditServices/GDPRAudit.jpg"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://isecurion.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Compliance Audit Services",
+        "item": "https://isecurion.com/compliance-audit-services/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "GDPR Compliance Audit",
+        "item": "https://isecurion.com/services/gdpr"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ISECURION TECHNOLOGY & CONSULTING PVT. LTD.",
+    "image": "https://isecurion.com/images/isecurion1.png",
+    "@id": "https://isecurion.com/",
+    "url": "https://isecurion.com/",
+    "telephone": "+91-8861201570",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "postalCode": "560109",
+      "addressCountry": "IN"
+    },
+    "areaServed": [
+      "IN",
+      "EU"
+    ],
+    "priceRange": "Contact for Pricing"
+  }
+]

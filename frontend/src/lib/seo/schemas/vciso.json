@@ -1,0 +1,654 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "vCISO Services in India | Virtual CISO - USA, Singapore, UAE, Australia, Europe",
+    "description": "ISECURION is one of India's trusted CISO advisory companies, providing expert Virtual CISO (vCISO) services in India (Bangalore, Mumbai, Delhi, Pune, Hyderabad, Chennai) and globally across USA, Singapore, UAE, Europe, GCC, and Australia.",
+    "provider": {
+      "@type": "Organization",
+      "name": "ISECURION",
+      "url": "https://isecurion.com",
+      "logo": "https://isecurion.com/images/isecurion1.png",
+      "telephone": "+91-88612-01570",
+      "email": "info@isecurion.com"
+    },
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "India"
+      },
+      {
+        "@type": "State",
+        "name": "Karnataka"
+      },
+      {
+        "@type": "City",
+        "name": "Bengaluru"
+      },
+      {
+        "@type": "City",
+        "name": "Mumbai"
+      },
+      {
+        "@type": "City",
+        "name": "Delhi"
+      },
+      {
+        "@type": "City",
+        "name": "Pune"
+      },
+      {
+        "@type": "City",
+        "name": "Hyderabad"
+      },
+      {
+        "@type": "City",
+        "name": "Chennai"
+      },
+      {
+        "@type": "City",
+        "name": "Kolkata"
+      },
+      {
+        "@type": "City",
+        "name": "Ahmedabad"
+      },
+      {
+        "@type": "City",
+        "name": "Noida"
+      },
+      {
+        "@type": "City",
+        "name": "Gurugram"
+      },
+      {
+        "@type": "Country",
+        "name": "United States"
+      },
+      {
+        "@type": "Country",
+        "name": "Singapore"
+      },
+      {
+        "@type": "Country",
+        "name": "United Arab Emirates"
+      },
+      {
+        "@type": "Country",
+        "name": "Australia"
+      },
+      {
+        "@type": "Place",
+        "name": "Europe"
+      },
+      {
+        "@type": "Place",
+        "name": "United Kingdom"
+      },
+      {
+        "@type": "Place",
+        "name": "GCC"
+      }
+    ],
+    "serviceType": "Virtual CISO / Cybersecurity Leadership",
+    "url": "https://isecurion.com/services/vciso",
+    "keywords": [
+      "vCISO services India",
+      "virtual CISO India",
+      "vCISO Bangalore",
+      "vCISO Mumbai",
+      "vCISO Delhi",
+      "vCISO Pune",
+      "vCISO Hyderabad",
+      "vCISO Chennai",
+      "CISO as a Service India",
+      "CISO advisory companies India",
+      "CISO advisory services Bangalore",
+      "CISO advisory services Mumbai",
+      "virtual chief information security officer India",
+      "vCISO RBI compliance",
+      "vCISO CERT-In",
+      "vCISO DPDP",
+      "vCISO SEBI",
+      "vCISO ISO 27001",
+      "vCISO SOC 2",
+      "cybersecurity advisory firms India",
+      "vCISO services USA",
+      "vCISO services Singapore",
+      "vCISO services UAE",
+      "vCISO services Australia",
+      "vCISO services Europe",
+      "CISO advisory firm India",
+      "outsourced CISO India",
+      "interim CISO India",
+      "CISO consulting companies India",
+      "information security advisory companies India"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://isecurion.com/#organization",
+    "name": "ISECURION",
+    "url": "https://isecurion.com",
+    "logo": "https://isecurion.com/images/isecurion1.png",
+    "description": "ISECURION is a CERT-In Empanelled, ISO 27001:2022 certified cybersecurity consulting firm providing vCISO, VAPT, compliance, and managed security services in India and globally.",
+    "foundingDate": "2014",
+    "telephone": "+91-88612-01570",
+    "email": "info@isecurion.com",
+    "sameAs": [
+      "https://www.linkedin.com/company/isecurion",
+      "https://twitter.com/ISECURION",
+      "https://www.facebook.com/ISECURION/"
+    ],
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "name": "ISECURION Bengaluru (HQ)",
+        "streetAddress": "37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura",
+        "addressLocality": "Bengaluru",
+        "addressRegion": "Karnataka",
+        "postalCode": "560109",
+        "addressCountry": "IN"
+      },
+      {
+        "@type": "PostalAddress",
+        "name": "ISECURION Kolkata",
+        "streetAddress": "Arch Square, 8th Floor, Unit 809, Tower 1, Salt Lake City, Sector-V",
+        "addressLocality": "Kolkata",
+        "addressRegion": "West Bengal",
+        "postalCode": "700091",
+        "addressCountry": "IN"
+      },
+      {
+        "@type": "PostalAddress",
+        "name": "ISECURION Ahmedabad",
+        "streetAddress": "GF-001 Mauryansh Elanza, Shyamal Cross Road, Nr. Parekh Hospital, Satellite",
+        "addressLocality": "Ahmedabad",
+        "addressRegion": "Gujarat",
+        "postalCode": "380015",
+        "addressCountry": "IN"
+      },
+      {
+        "@type": "PostalAddress",
+        "name": "ISECURION Mumbai",
+        "streetAddress": "Millennial POD, A-203, A Wing, Boomerang, Chandivali Farm Road, Andheri East",
+        "addressLocality": "Mumbai",
+        "addressRegion": "Maharashtra",
+        "postalCode": "400072",
+        "addressCountry": "IN"
+      },
+      {
+        "@type": "PostalAddress",
+        "name": "ISECURION Noida",
+        "streetAddress": "5006, 5th Floor, Nukleus Tower, Plot No. 29, Sector 142",
+        "addressLocality": "Noida",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "201305",
+        "addressCountry": "IN"
+      },
+      {
+        "@type": "PostalAddress",
+        "name": "ISECURION USA",
+        "streetAddress": "1014 N Plum Grove Road",
+        "addressLocality": "Schaumburg",
+        "addressRegion": "IL",
+        "postalCode": "60173",
+        "addressCountry": "US"
+      }
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-88612-01570",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": [
+          "English",
+          "Hindi"
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ISECURION - vCISO & Cybersecurity Services Bangalore",
+    "image": "https://isecurion.com/images/isecurion1.png",
+    "@id": "https://isecurion.com/#localbusiness-bangalore",
+    "url": "https://isecurion.com/services/vciso",
+    "telephone": "+91-88612-01570",
+    "email": "info@isecurion.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "postalCode": "560109",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 12.9034,
+      "longitude": 77.5937
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "hasMap": "https://maps.google.com/?q=ISECURION+Bangalore",
+    "areaServed": [
+      "Bangalore",
+      "Mumbai",
+      "Delhi",
+      "Pune",
+      "Hyderabad",
+      "Chennai",
+      "Kolkata",
+      "Ahmedabad",
+      "Noida",
+      "Gurgaon"
+    ],
+    "knowsAbout": [
+      "vCISO Services",
+      "Virtual CISO",
+      "CISO Advisory Companies",
+      "CISO Advisory Services",
+      "RBI Compliance",
+      "CERT-In",
+      "DPDP Act",
+      "ISO 27001",
+      "SOC 2",
+      "VAPT"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ISECURION - vCISO & Cybersecurity Services Kolkata",
+    "image": "https://isecurion.com/images/isecurion1.png",
+    "@id": "https://isecurion.com/#localbusiness-kolkata",
+    "url": "https://isecurion.com/services/vciso",
+    "telephone": "+91-98305-54255",
+    "email": "sales.kol@isecurion.com",
+    "priceRange": "$$",
+    "parentOrganization": {
+      "@id": "https://isecurion.com/#organization"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Arch Square, 8th Floor, Unit 809, Tower 1, Salt Lake City, Sector-V",
+      "addressLocality": "Kolkata",
+      "addressRegion": "West Bengal",
+      "postalCode": "700091",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 22.5765,
+      "longitude": 88.4318
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "areaServed": [
+      "Kolkata",
+      "West Bengal",
+      "East India"
+    ],
+    "knowsAbout": [
+      "vCISO Services",
+      "Virtual CISO",
+      "ISO 27001",
+      "SOC 2",
+      "DPDP Compliance",
+      "RBI Compliance"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ISECURION - vCISO & Cybersecurity Services Ahmedabad",
+    "image": "https://isecurion.com/images/isecurion1.png",
+    "@id": "https://isecurion.com/#localbusiness-ahmedabad",
+    "url": "https://isecurion.com/services/vciso",
+    "telephone": "+91-88612-01570",
+    "email": "info@isecurion.com",
+    "priceRange": "$$",
+    "parentOrganization": {
+      "@id": "https://isecurion.com/#organization"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "GF-001 Mauryansh Elanza, Shyamal Cross Road, Nr. Parekh Hospital, Satellite",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
+      "postalCode": "380015",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 23.0295,
+      "longitude": 72.5217
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "areaServed": [
+      "Ahmedabad",
+      "Gujarat",
+      "West India"
+    ],
+    "knowsAbout": [
+      "vCISO Services",
+      "Virtual CISO",
+      "ISO 27001",
+      "SOC 2",
+      "DPDP Compliance"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ISECURION - vCISO & Cybersecurity Services Mumbai",
+    "image": "https://isecurion.com/images/isecurion1.png",
+    "@id": "https://isecurion.com/#localbusiness-mumbai",
+    "url": "https://isecurion.com/services/vciso",
+    "telephone": "+91-83560-80559",
+    "email": "sales.mumbai@isecurion.com",
+    "priceRange": "$$",
+    "parentOrganization": {
+      "@id": "https://isecurion.com/#organization"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Millennial POD, A-203, A Wing, Boomerang, Chandivali Farm Road, Andheri East",
+      "addressLocality": "Mumbai",
+      "addressRegion": "Maharashtra",
+      "postalCode": "400072",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 19.1197,
+      "longitude": 72.8697
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "areaServed": [
+      "Mumbai",
+      "Maharashtra",
+      "West India"
+    ],
+    "knowsAbout": [
+      "vCISO Services",
+      "Virtual CISO",
+      "RBI Compliance",
+      "SEBI CSCRF",
+      "IRDAI",
+      "ISO 27001",
+      "SOC 2"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ISECURION - vCISO & Cybersecurity Services Noida / Delhi NCR",
+    "image": "https://isecurion.com/images/isecurion1.png",
+    "@id": "https://isecurion.com/#localbusiness-noida",
+    "url": "https://isecurion.com/services/vciso",
+    "telephone": "+91-88612-01570",
+    "email": "info@isecurion.com",
+    "priceRange": "$$",
+    "parentOrganization": {
+      "@id": "https://isecurion.com/#organization"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5006, 5th Floor, Nukleus Tower, Plot No. 29, Sector 142",
+      "addressLocality": "Noida",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "201305",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 28.5,
+      "longitude": 77.39
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "areaServed": [
+      "Noida",
+      "Delhi NCR",
+      "Gurugram",
+      "Faridabad",
+      "North India"
+    ],
+    "knowsAbout": [
+      "vCISO Services",
+      "Virtual CISO",
+      "CERT-In Compliance",
+      "ISO 27001",
+      "SOC 2"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ISECURION - vCISO & Cybersecurity Services USA",
+    "image": "https://isecurion.com/images/isecurion1.png",
+    "@id": "https://isecurion.com/#localbusiness-usa",
+    "url": "https://isecurion.com/services/vciso",
+    "email": "info@isecurion.com",
+    "priceRange": "$$",
+    "parentOrganization": {
+      "@id": "https://isecurion.com/#organization"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1014 N Plum Grove Road",
+      "addressLocality": "Schaumburg",
+      "addressRegion": "IL",
+      "postalCode": "60173",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.0334,
+      "longitude": -88.0834
+    },
+    "areaServed": [
+      "United States"
+    ],
+    "knowsAbout": [
+      "vCISO Services",
+      "Virtual CISO",
+      "SOC 2",
+      "HIPAA",
+      "NIST CSF",
+      "CCPA"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://isecurion.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Technical Services",
+        "item": "https://isecurion.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "vCISO Services",
+        "item": "https://isecurion.com/services/vciso"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a vCISO (Virtual CISO)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A vCISO (Virtual Chief Information Security Officer) is an outsourced security leader who provides high-level strategic and operational cybersecurity leadership to organisations without a full-time in-house CISO. ISECURION's vCISO services are available across India (Bangalore, Mumbai, Delhi, Pune, Hyderabad, Chennai) and globally across USA, Singapore, UAE, Australia, and Europe."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do Indian companies specifically need vCISO services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Indian organisations face some of the most complex regulatory requirements in the world - mandatory CERT-In incident reporting within 6 hours, RBI cybersecurity frameworks for banks and NBFCs, DPDP Act data protection obligations, SEBI's CSCRF for capital market entities, and IRDAI guidelines for insurers. A vCISO brings deep expertise in all these frameworks simultaneously, at a fraction of the cost of a full-time hire in India's competitive CISO hiring market."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between vCISO and GRC services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A vCISO is a strategic security leadership role - an experienced executive who owns your organisation's entire information security function, including governance, risk, compliance, incident response, board advisory, cloud security, vendor risk, and security culture. GRC (Governance, Risk & Compliance) is a framework or function focused on policy documentation, risk registers, and compliance gap analysis. GRC is a subset of what a vCISO manages. ISECURION's vCISO service includes and leads GRC, plus cloud security, AppSec, TPRM, awareness training, and executive reporting - under one unified engagement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Indian cities does ISECURION serve for vCISO services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ISECURION provides vCISO services across all major Indian cities including Bangalore, Mumbai, Delhi NCR, Pune, Hyderabad, Chennai, Kolkata, Ahmedabad, Noida, Gurgaon, and beyond. Engagements are available through flexible remote, hybrid, and on-site models. ISECURION has offices in Bengaluru (HQ), Kolkata, Ahmedabad, and Noida."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a vCISO help with RBI compliance for banks and NBFCs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ISECURION's vCISOs have direct experience with RBI's Master Direction on IT governance, cybersecurity frameworks, IS audit requirements, incident reporting obligations, and board-level cyber risk reporting. We help banks, NBFCs, payment aggregators, fintech companies, and co-operative banks design and maintain RBI-compliant security programmes, prepare for RBI IS audits, and meet cybersecurity resilience benchmarks set by the regulator."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a vCISO help with DPDP Act 2023 compliance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. India's Digital Personal Data Protection (DPDP) Act 2023 creates significant new obligations for organisations that process personal data of Indian residents. ISECURION's vCISO helps classify personal data, implement consent management frameworks, establish breach notification procedures, support DPO appointment, and build technical controls aligned with DPDP obligations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What industries benefit most from vCISO services in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In India, the highest-impact sectors include BFSI (banks, NBFCs, fintech, insurance, capital markets), IT/ITES and SaaS companies exporting to global markets, healthcare and health-tech, e-commerce and digital platforms, government-adjacent IT companies, manufacturing and automotive technology firms, and early-stage startups seeking ISO 27001 or SOC 2 certification to win enterprise customers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly can ISECURION deploy a vCISO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ISECURION can onboard a Virtual CISO within 1-2 weeks following an initial briefing and engagement agreement. For organisations facing urgent regulatory deadlines - CERT-In audit, RBI IS audit, or SOC 2 readiness windows - we prioritise rapid onboarding to ensure no momentum is lost."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is vCISO suitable for startups and early-stage companies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. vCISO is ideal for startups and SMEs that need enterprise-grade security leadership but cannot justify a full-time CISO hire. ISECURION offers foundational vCISO packages specifically designed for early-stage organisations - helping them achieve ISO 27001 certification, SOC 2 readiness, or DPDP compliance to win enterprise customers and meet investor requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the vCISO participate in board and management meetings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ISECURION's vCISO attends and presents at board meetings, executive committees, IT steering committees, and audit committee meetings - briefing leadership on security posture, strategic risks, compliance status, and investment recommendations. This is particularly important for organisations regulated by RBI, SEBI, and IRDAI where board-level accountability for cybersecurity is explicitly required by the regulator."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can vCISO services handle multiple compliance frameworks simultaneously?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ISECURION's vCISO is specifically designed for multi-framework compliance. Many Indian organisations need to simultaneously address RBI requirements, CERT-In obligations, ISO 27001 certification for clients, and SOC 2 reports for US customers. ISECURION uses unified control mapping to avoid duplication of effort - ensuring evidence collected for one framework satisfies requirements across multiple standards efficiently."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can we get started with ISECURION's vCISO services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Reach out via the contact page at isecurion.com/contact-us.html, call +91-88612-01570, or email info@isecurion.com. ISECURION will schedule an initial consultation to understand your organisation's size, regulatory obligations, security maturity, and engagement needs - and provide a tailored proposal within 48 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should we look for when evaluating CISO advisory companies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When shortlisting CISO advisory companies, look for demonstrated regulatory depth (RBI, CERT-In, DPDP, SEBI, ISO 27001, SOC 2), a team-based delivery model rather than a single consultant, references from your industry, clear board-reporting capability, and the ability to move from advisory recommendations to hands-on implementation. ISECURION combines all of these - a CERT-In empanelled, ISO 27001:2022 certified practice with a bench of certified vCISOs across BFSI, IT/ITES, healthcare, and manufacturing sectors."
+        }
+      }
+    ]
+  }
+]

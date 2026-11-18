@@ -1,0 +1,305 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://isecurion.com/services/vapt#service",
+        "name": "Vulnerability Assessment and Penetration Testing (VAPT)",
+        "alternateName": [
+          "VAPT Services India",
+          "Penetration Testing India",
+          "VAPT Bangalore",
+          "VAPT Mumbai",
+          "VAPT Hyderabad",
+          "VAPT Chennai",
+          "VAPT Pune",
+          "VAPT Kolkata",
+          "VAPT Ahmedabad",
+          "VAPT Noida",
+          "VAPT Delhi",
+          "VAPT Kochi",
+          "CERT-In VAPT",
+          "Ethical Hacking India"
+        ],
+        "serviceType": "Vulnerability Assessment and Penetration Testing",
+        "serviceCategory": "Cybersecurity, VAPT, Penetration Testing, Ethical Hacking",
+        "description": "ISECURION provides CERT-In empanelled Vulnerability Assessment and Penetration Testing (VAPT) services across India - including Bangalore, Mumbai, Hyderabad, Chennai, Pune, Kolkata, Ahmedabad, Noida, Delhi, Kochi, Gurgaon, Chandigarh, Jaipur - and globally across USA, UK, UAE, Australia, Qatar, and Singapore. Our services cover web application, mobile app, cloud, network, API, IoT, and infrastructure security testing.",
+        "url": "https://isecurion.com/services/vapt",
+        "provider": {
+          "@type": "ProfessionalService",
+          "@id": "https://isecurion.com/#organization",
+          "name": "ISECURION",
+          "legalName": "ISECURION Information Security Consulting",
+          "url": "https://isecurion.com",
+          "logo": "https://isecurion.com/images/isecurion1.png",
+          "description": "CERT-In Empanelled and ISO 27001:2022 certified information security consulting company specializing in VAPT, penetration testing, and compliance audits.",
+          "address": [
+            {
+              "@type": "PostalAddress",
+              "streetAddress": "37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura",
+              "addressLocality": "Bengaluru",
+              "addressRegion": "Karnataka",
+              "postalCode": "560109",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "PostalAddress",
+              "streetAddress": "Arch Square, 8th Floor, Unit 809, Tower 1, Salt Lake City, Sector-V",
+              "addressLocality": "Kolkata",
+              "addressRegion": "West Bengal",
+              "postalCode": "700091",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "PostalAddress",
+              "streetAddress": "GF-001 Mauryansh Elanza, Shyamal Cross Road, Nr. Parekh Hospital, Satelite",
+              "addressLocality": "Ahmedabad",
+              "addressRegion": "Gujarat",
+              "postalCode": "380015",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "PostalAddress",
+              "streetAddress": "5006, 5th Floor, Nukleus Tower, Plot No. 29, Sector 142",
+              "addressLocality": "Noida",
+              "addressRegion": "Uttar Pradesh",
+              "postalCode": "201305",
+              "addressCountry": "IN"
+            }
+          ],
+          "telephone": "+918861201570",
+          "email": "info@isecurion.com",
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Bengaluru",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "City",
+              "name": "Mumbai",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "City",
+              "name": "Hyderabad",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "City",
+              "name": "Chennai",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "City",
+              "name": "Pune",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "City",
+              "name": "Kolkata",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "City",
+              "name": "Ahmedabad",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "City",
+              "name": "Noida",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "City",
+              "name": "Delhi",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "City",
+              "name": "Gurgaon",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "City",
+              "name": "Kochi",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "City",
+              "name": "Chandigarh",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "City",
+              "name": "Jaipur",
+              "addressCountry": "IN"
+            },
+            {
+              "@type": "Country",
+              "name": "India"
+            },
+            {
+              "@type": "Country",
+              "name": "United States"
+            },
+            {
+              "@type": "Country",
+              "name": "United Kingdom"
+            },
+            {
+              "@type": "Country",
+              "name": "United Arab Emirates"
+            },
+            {
+              "@type": "Country",
+              "name": "Australia"
+            },
+            {
+              "@type": "Country",
+              "name": "Qatar"
+            },
+            {
+              "@type": "Country",
+              "name": "Singapore"
+            }
+          ],
+          "sameAs": [
+            "https://www.facebook.com/iSECURION/",
+            "https://twitter.com/iSECURION",
+            "https://www.linkedin.com/company/isecurion"
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "104",
+            "bestRating": "5"
+          }
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://isecurion.com/services/vapt",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "eligibleRegion": [
+            {
+              "@type": "Country",
+              "name": "India"
+            },
+            {
+              "@type": "Country",
+              "name": "United States"
+            },
+            {
+              "@type": "Country",
+              "name": "United Kingdom"
+            },
+            {
+              "@type": "Country",
+              "name": "United Arab Emirates"
+            },
+            {
+              "@type": "Country",
+              "name": "Australia"
+            },
+            {
+              "@type": "Country",
+              "name": "Qatar"
+            },
+            {
+              "@type": "Country",
+              "name": "Singapore"
+            }
+          ]
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "VAPT Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Web Application Penetration Testing"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Mobile Application Security Testing"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Cloud Security Assessment"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Network Penetration Testing"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "API Security Testing"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Red Team Assessment"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "IoT Security Testing"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Infrastructure Security Assessment"
+              }
+            }
+          ]
+        },
+        "keywords": "VAPT services Bangalore, VAPT services Mumbai, VAPT services Hyderabad, VAPT services Chennai, VAPT services Pune, VAPT services Kolkata, VAPT services Ahmedabad, VAPT services Noida, VAPT services Delhi, VAPT services Kochi, VAPT services Gurgaon, VAPT company India, penetration testing India, CERT-In empanelled VAPT, web application penetration testing, mobile app security testing, cloud security assessment, network penetration testing, API security testing, ethical hacking India, ISO 27001 VAPT, SOC 2 penetration testing, PCI DSS penetration testing, VAPT services USA, VAPT services UK, VAPT services UAE, VAPT services Australia, VAPT services Singapore"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://isecurion.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Technical Services",
+            "item": "https://isecurion.com/technical-services/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Vulnerability Assessment & Penetration Testing",
+            "item": "https://isecurion.com/services/vapt"
+          }
+        ]
+      }
+    ]
+  }
+]

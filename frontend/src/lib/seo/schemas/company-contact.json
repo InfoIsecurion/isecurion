@@ -1,0 +1,399 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://isecurion.com/#organization",
+        "name": "ISECURION Technology and Consulting Pvt. Ltd.",
+        "alternateName": "ISECURION",
+        "url": "https://isecurion.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://isecurion.com/images/isecurion1.png"
+        },
+        "description": "CERT-IN empanelled cybersecurity company offering VAPT, penetration testing, cloud security, SOC 2, ISO 27001, RBI audit, GDPR and compliance services across India and globally.",
+        "foundingDate": "2014",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "info@isecurion.com",
+            "telephone": "+918861201570",
+            "areaServed": [
+              "IN",
+              "US",
+              "AE"
+            ],
+            "availableLanguage": [
+              "English",
+              "Hindi"
+            ]
+          },
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "info@isecurion.com",
+            "telephone": "+918861201570",
+            "areaServed": [
+              "IN",
+              "US",
+              "AE"
+            ],
+            "availableLanguage": [
+              "English",
+              "Hindi"
+            ]
+          },
+          {
+            "@type": "ContactPoint",
+            "contactType": "human resources",
+            "email": "careers@isecurion.com",
+            "telephone": "+919632447172",
+            "areaServed": "IN",
+            "availableLanguage": [
+              "English",
+              "Hindi"
+            ]
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/ISECURION/",
+          "https://twitter.com/ISECURION",
+          "https://www.linkedin.com/company/isecurion"
+        ],
+        "areaServed": [
+          "Bangalore",
+          "Bengaluru",
+          "Kolkata",
+          "Ahmedabad",
+          "Noida",
+          "Delhi NCR",
+          "Mumbai",
+          "Hyderabad",
+          "Chennai",
+          "Pune",
+          "India",
+          "United States",
+          "United Arab Emirates",
+          "Global"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Cybersecurity Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Vulnerability Assessment and Penetration Testing (VAPT)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Web Application Security Assessment"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Mobile Application Security Testing"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Cloud Security Assessment"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Red Team Assessment"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Secure Code Review"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "SOC 2 Compliance"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "ISO 27001 Audit"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "RBI Information Security Audit"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "GDPR Compliance"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "DPDP Compliance"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "DevSecOps"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "vCISO Services"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Incident Response & DFIR"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Ransomware Negotiation"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "IoT Security Testing"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Phishing Simulation"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Automotive Cybersecurity"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "MCP Pentesting Services"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Smart Contract Security Audit"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://isecurion.com/#bangalore",
+        "name": "ISECURION Technology and Consulting Pvt. Ltd. - Bangalore",
+        "url": "https://isecurion.com/company/contact",
+        "image": "https://isecurion.com/images/isecurion1.png",
+        "telephone": "+918861201570",
+        "email": "info@isecurion.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "postalCode": "560109",
+          "addressCountry": "IN"
+        },
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "priceRange": "$$",
+        "areaServed": [
+          "Bangalore",
+          "Bengaluru",
+          "Mysore",
+          "Karnataka",
+          "India"
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://isecurion.com/#kolkata",
+        "name": "ISECURION Technology and Consulting Pvt. Ltd. - Kolkata",
+        "url": "https://isecurion.com/company/contact",
+        "image": "https://isecurion.com/images/isecurion1.png",
+        "telephone": "+919830554255",
+        "email": "sales.kol@isecurion.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Arch Square, 8th Floor, Unit No 809, Tower 1, Salt Lake City, Sector-V",
+          "addressLocality": "Kolkata",
+          "addressRegion": "West Bengal",
+          "postalCode": "700091",
+          "addressCountry": "IN"
+        },
+        "areaServed": [
+          "Kolkata",
+          "West Bengal",
+          "Eastern India"
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://isecurion.com/#mumbai",
+        "name": "ISECURION Technology and Consulting Pvt. Ltd. - Mumbai",
+        "url": "https://isecurion.com/company/contact",
+        "image": "https://isecurion.com/images/isecurion1.png",
+        "telephone": "+918356080559",
+        "email": "sales.mumbai@isecurion.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Millennial POD, A-203, A Wing, Boomerang, Chandivali Farm Road, Andheri East",
+          "addressLocality": "Mumbai",
+          "addressRegion": "Maharashtra",
+          "postalCode": "400072",
+          "addressCountry": "IN"
+        },
+        "areaServed": [
+          "Mumbai",
+          "Navi Mumbai",
+          "Maharashtra",
+          "Western India"
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://isecurion.com/#ahmedabad",
+        "name": "ISECURION Technology and Consulting Pvt. Ltd. - Ahmedabad",
+        "url": "https://isecurion.com/company/contact",
+        "image": "https://isecurion.com/images/isecurion1.png",
+        "telephone": "+918861201570",
+        "email": "info@isecurion.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "GF-001, Mauryansh Elanza, Shyamal Cross Road, Nr. Parekh Hospital, Satellite",
+          "addressLocality": "Ahmedabad",
+          "addressRegion": "Gujarat",
+          "postalCode": "380015",
+          "addressCountry": "IN"
+        },
+        "areaServed": [
+          "Ahmedabad",
+          "Gujarat",
+          "Western India"
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://isecurion.com/#noida",
+        "name": "ISECURION Technology and Consulting Pvt. Ltd. - Noida",
+        "url": "https://isecurion.com/company/contact",
+        "image": "https://isecurion.com/images/isecurion1.png",
+        "telephone": "+918861201570",
+        "email": "info@isecurion.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "5006, 5th Floor, Nukleus Tower, Plot No. 29, Sector 142",
+          "addressLocality": "Noida",
+          "addressRegion": "Uttar Pradesh",
+          "postalCode": "201305",
+          "addressCountry": "IN"
+        },
+        "areaServed": [
+          "Noida",
+          "Delhi NCR",
+          "Uttar Pradesh",
+          "North India"
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://isecurion.com/#usa",
+        "name": "ISECURION - United States",
+        "url": "https://isecurion.com/company/contact",
+        "image": "https://isecurion.com/images/isecurion1.png",
+        "email": "info@isecurion.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1014 N Plum Grove Road",
+          "addressLocality": "Schaumburg",
+          "addressRegion": "IL",
+          "postalCode": "60173",
+          "addressCountry": "US"
+        },
+        "areaServed": [
+          "United States",
+          "North America"
+        ]
+      },
+      {
+        "@type": "ContactPage",
+        "@id": "https://isecurion.com/company/contact#contactpage",
+        "name": "Contact ISECURION for VAPT, Security Audits & Compliance",
+        "url": "https://isecurion.com/company/contact",
+        "description": "Contact ISECURION for VAPT, penetration testing, ISO 27001, SOC 2, RBI audit, GDPR, DPDP compliance and cybersecurity consulting.",
+        "mainEntity": {
+          "@id": "https://isecurion.com/#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://isecurion.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Company",
+            "item": "https://isecurion.com/company/about"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Contact Us",
+            "item": "https://isecurion.com/company/contact"
+          }
+        ]
+      }
+    ]
+  }
+]

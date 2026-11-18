@@ -1,0 +1,88 @@
+[
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Cloud Security Assessment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Cloud Security Assessment evaluates your cloud infrastructure for vulnerabilities, compliance gaps, and risks, ensuring secure operations and protection of sensitive data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which cloud environments are assessed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our assessment covers IaaS, PaaS, and SaaS platforms across public, private, and hybrid cloud environments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you ensure compliance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We align cloud infrastructure with ISO 27001, HIPAA, PCI DSS, and local regulatory requirements, ensuring your systems meet industry best practices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What types of security tests are performed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tests include internal/external network penetration testing, application security assessments, endpoint security testing, firewall and VPN reviews, and configuration analysis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a Cloud Security Assessment take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depending on the size and complexity of your cloud infrastructure, assessments typically take between 2 to 6 weeks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my data be safe during assessment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. All assessments are conducted under strict confidentiality agreements, ensuring your data and systems remain secure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide remediation guidance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. After identifying gaps and vulnerabilities, we provide actionable remediation recommendations and support to fix the issues."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you handle multi-cloud environments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We assess each cloud platform independently while also reviewing integrations and data flow between different cloud providers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can this assessment be used for regulatory audits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The assessment report is structured to assist in regulatory audits and compliance verification."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why choose ISECURION for Cloud Security Assessment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ISECURION is a CERT-IN empanelled, ISO 27001 certified company with expert consultants providing comprehensive, end-to-end cloud security assessments and actionable remediation guidance."
+        }
+      }
+    ]
+  }
+]
