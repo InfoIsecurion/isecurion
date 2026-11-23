@@ -982,7 +982,7 @@ export const services: ServiceEntry[] = [
   },
 
   {
-    slug: "contact",
+    slug: "company-contact",
     path: "/company/contact",
     name: "Contact Us",
     serviceType: "",

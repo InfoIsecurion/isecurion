@@ -15,6 +15,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { doraCompliance } from "../../../services/api/contact";
 import { motion } from "framer-motion";
+import FAQSection from "../../../components/sections/FAQSection";
 
 interface ContactFormData {
     email: string;
@@ -140,6 +141,211 @@ const scopeOfWork = [
         title: "Regulatory Reporting Readiness",
         description: "Ensure organizations are prepared for DORA regulatory reporting and operational resilience standards.",
     },
+];
+
+const setsApart = [
+    {
+        icon: "iconmind:eval-report-outline-regular",
+        title: "End-to-End DORA Services",
+        description:
+            "Comprehensive DORA compliance services tailored for EU financial institutions.",
+    },
+    {
+        icon: "boxicons:light-bulb-on",
+        title: "DORA Expertise",
+        description:
+            "Expert guidance in Digital Operational Resilience Act enforcement and ICT compliance.",
+    },
+    {
+        icon: "cuida:settings-outline",
+        title: "Tailored Solutions",
+        description:
+            "Custom ICT risk and operational continuity solutions for your organization’s needs.",
+    },
+    {
+        icon: "ic:outline-fact-check",
+        title: "Latest Regulatory Updates",
+        description:
+            "Stay aligned with the latest EU DORA legislation and regulatory updates.",
+    },
+];
+
+const Steps = [
+    {
+        number: "01",
+        step: "Phase 01",
+        title: "Initial Assessment",
+        description:
+            "Identify gaps in digital operational resilience & DORA compliance.",
+        side: "left",
+    },
+    {
+        number: "02",
+        step: "Phase 02",
+        title: "ICT Risk Evaluation",
+        description:
+            "Review governance, systems, and controls for DORA operational resilience.",
+        side: "right",
+    },
+    {
+        number: "03",
+        step: "Phase 03",
+        title: "Incident Management Review",
+        description:
+            "Test incident response plans against DORA cyber security requirements.",
+        side: "left",
+    },
+    {
+        number: "04",
+        step: "Phase 04",
+        title: "Third-Party Assessment",
+        description:
+            "Evaluate outsourcing and third-party ICT service providers.",
+        side: "right",
+    },
+    {
+        number: "05",
+        step: "Phase 05",
+        title: "Digital Resilience Testing",
+        description:
+            "Conduct stress tests, penetration testing, and continuity drills.",
+        side: "left",
+    },
+    {
+        number: "06",
+        step: "Phase 06",
+        title: "Compliance Roadmap",
+        description:
+            "Deliver actionable recommendations and DORA regulatory alignment roadmap.",
+        side: "right",
+    },
+];
+
+const whatYouReceive = [
+  {
+    title: "Comprehensive Report",
+    description:
+      "Full DORA compliance assessment report covering gaps and recommendations.",
+  },
+  {
+    title: "ICT Risk Analysis",
+    description:
+      "Detailed assessment of ICT risk and operational resilience.",
+  },
+  {
+    title: "Incident Management Review",
+    description:
+      "Evaluation of incident response and reporting frameworks against DORA standards.",
+  },
+  {
+    title: "Third-Party Assessment",
+    description:
+      "Assessment of third-party ICT providers and outsourcing risks.",
+  },
+  {
+    title: "Actionable Roadmap",
+    description:
+      "Step-by-step roadmap for full DORA regulatory compliance and operational resilience.",
+  },
+  {
+    title: "Testing Results",
+    description:
+      "Digital resilience testing results, including stress and penetration tests, with recommendations.",
+  },
+];
+
+const doraFAQs = [
+  {
+    question: "What is DORA?",
+    answer:
+      "The Digital Operational Resilience Act (DORA) is a European Union regulation designed to strengthen the digital operational resilience of financial entities across the EU. It ensures firms can withstand, respond to, and recover from all types of ICT-related disruptions and threats.",
+  },
+  {
+    question: "What is the purpose of DORA?",
+    answer:
+      "DORA aims to harmonize ICT risk management, incident reporting, and resilience standards for financial entities in the EU, ensuring continuity of critical operations and reducing cyber and operational risks.",
+  },
+  {
+    question: "Who does DORA apply to?",
+    answer:
+      "DORA applies to financial institutions, payment service providers, crypto-asset service providers, investment firms, and third-party ICT service providers supporting financial services in the EU.",
+  },
+  {
+    question: "What is the scope of DORA?",
+    answer:
+      "The scope includes ICT risk management and governance, incident reporting, digital operational resilience testing, and third-party risk management. DORA covers both internal ICT operations and external service providers.",
+  },
+  {
+    question: "What is DORA's current status?",
+    answer:
+      "DORA was adopted in 2022 by the European Parliament and is currently in the implementation phase, with enforcement expected by 2025. EU member states must align national regulations with DORA.",
+  },
+  {
+    question: "When will DORA enforcement begin?",
+    answer:
+      "DORA enforcement deadlines vary for different requirements, with full compliance generally required by January 2025. Specific timelines are detailed in the DORA regulatory technical standards.",
+  },
+  {
+    question: "What are the key requirements of DORA?",
+    answer:
+      "Key requirements include: ICT risk management and governance,Incident response and reporting,Digital operational resilience testing,Third-party risk management,Compliance with DORA regulatory technical standards",
+  },
+  {
+    question: "What is ICT risk management under DORA?",
+    answer:
+      "ICT risk management involves identifying, assessing, and mitigating risks in digital systems, networks, and third-party ICT services to ensure continuity of financial operations.",
+  },
+  {
+    question: "What does incident response and reporting mean in DORA?",
+    answer:
+      "Financial entities must report major ICT incidents to competent authorities within the timelines set by DORA and maintain an effective incident response and recovery process.",
+  },
+  {
+    question: "What is digital operational resilience testing?",
+    answer:
+      "DORA mandates regular testing of digital systems to ensure resilience against cyberattacks, operational disruptions, and ICT failures. Stress tests and advanced penetration testing are recommended.",
+  },
+  {
+    question:"How does DORA handle third-party risk management?",
+    answer:"DORA requires financial institutions to monitor and manage ICT risks arising from outsourcing, especially critical third-party providers, ensuring contracts and SLAs comply with resilience standards."
+  },
+  {
+    question:"What is ISECURION’s scope of work for DORA?",
+    answer:"ISECURION provides end-to-end DORA compliance support, including:ICT risk assessment,Gap analysis against DORA requirements,Incident reporting framework setup,Operational resilience testing,Third-party vendor assessment"
+  },
+  {
+    question:"What methodology does ISECURION follow?",
+    answer:"ISECURION follows a structured methodology:Assessment & Gap Analysis,Risk Management Implementation,Incident Response & Reporting Framework,Digital Operational Resilience Testing,Third-Party Risk Management & Compliance Certification"
+  },
+  {
+    question:"What sets ISECURION apart in DORA compliance?",
+    answer:"Our value-add includes:Expert guidance from cybersecurity and regulatory specialists,Customized solutions for EU financial entities,Hands-on operational resilience testing,End-to-end compliance with DORA directives"
+  },
+  {
+    question:"What deliverables will I receive?",
+    answer:"Comprehensive DORA gap analysis report,ICT risk management framework,Incident response plan,Operational resilience testing report,Third-party vendor compliance checklist"
+  },
+  {
+    question:"How often should organizations test digital operational resilience?",
+    answer:"DORA requires regular testing, at least annually, or more frequently based on risk exposure. This includes simulations, penetration testing, and scenario-based stress tests."
+  },
+  {
+    question:"Why choose ISECURION for DORA compliance?",
+    answer:"As trusted security experts, ISECURION ensures compliance with DORA regulations, minimizes ICT risks, and provides actionable insights to strengthen digital resilience for financial organizations."
+  },
+  {
+    question:"How does DORA improve cyber resilience?",
+    answer:"By enforcing standardized ICT risk management, incident reporting, and operational testing, DORA ensures financial entities are better prepared for cyber threats and operational disruptions."
+  },
+  {
+    question:"Is DORA applicable outside the EU?",
+    answer:"While DORA is an EU regulation, financial entities outside the EU providing services to EU clients or relying on EU third-party ICT providers may also need to comply."
+  },
+  {
+    question:"What happens if a company is non-compliant with DORA?",
+    answer:"Non-compliance can result in regulatory penalties, reputational damage, operational disruptions, and potential restrictions on EU market operations. ISECURION helps organizations achieve timely compliance to avoid these risks."
+  }
+
 ];
 
 function page() {
@@ -474,7 +680,7 @@ function page() {
                                         DORA brings together core areas of ICT risk management, incident response, resilience testing, third-party oversight and information sharing.
                                     </p>
                                     <p className="sectionDescription text-[#D1D1D1] lg:max-w-[530px]">
-                                        By strengthening governance, validating security controls, managing third-party dependencies and improving incident response capabilities, 
+                                        By strengthening governance, validating security controls, managing third-party dependencies and improving incident response capabilities,
                                         organisations can build a more resilient and reliable digital operating environment.
                                     </p>
                                 </div>
@@ -511,7 +717,7 @@ function page() {
                 </div>
             </section>
 
-                <section className="relative border-t border-white/5 bg-[#07101D] pt-16 text-white sm:pt-18 lg:py-20">
+            <section className="relative border-t border-white/5 bg-[#07101D] pt-16 text-white sm:pt-18 lg:py-20">
                 <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
                     <Animation>
                         <div className="grid grid-cols-1 items-start gap-10 md:gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 xl:gap-16">
@@ -569,6 +775,222 @@ function page() {
                     </Animation>
                 </div>
             </section>
+
+            <section className="relative w-full overflow-hidden bg-[#060D1B] py-14 sm:py-16 lg:py-20">
+                <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
+                    <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
+                        <LeftAnimation>
+                            <div className="w-full lg:w-[500px] text-center lg:text-left space-y-4">
+                                <p className="mt-4 sm:mt-0 text-sm sm:text-base font-semibold text-[#3B9E6A] uppercase">
+                                    Our Approach
+                                </p>
+                                <h2 className=" text-[#FEFEFE] lg:max-w-[518px]">
+                                    A Roadmap to DORA Alignment
+                                </h2>
+                            </div>
+                        </LeftAnimation>
+                        <RightAnimation>
+                            <div className="w-full text-center lg:text-left">
+                                <p className="text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[560px]">
+                                    From identifying gaps to validating controls, our assessment process helps organisations understand their current readiness and prioritise the next steps.
+                                </p>
+                            </div>
+                        </RightAnimation>
+                    </div>
+
+                    {/* Timeline */}
+                    <div className="relative mx-auto mt-10 max-w-5xl sm:mt-12 lg:mt-20">
+                        {/* Center line on tablet/desktop; left-side line on mobile */}
+                        <div className="absolute bottom-5 left-[14px] top-1 w-px bg-gradient-to-b from-[#3B9E6A] to-[#263028] sm:left-1/2 sm:-translate-x-1/2" />
+
+                        <div className="relative space-y-8 sm:space-y-8 lg:space-y-9">
+                            {Steps.map((item, index) => (
+                                <AnimatedCard
+                                    delay={index * 0.15}
+                                    key={item.number}
+                                    className="relative grid min-w-0 grid-cols-[30px_minmax(0,1fr)] gap-x-3 sm:grid-cols-[minmax(0,1fr)_44px_minmax(0,1fr)] sm:gap-x-0"
+                                >
+                                    {/* Left content */}
+
+                                    <div
+                                        className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${item.side === "left"
+                                            ? "sm:pr-7 sm:text-right lg:pr-8"
+                                            : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
+                                            }`}
+                                    >
+                                        {item.side === "left" && (
+                                            <>
+                                                <p className="text-sm tracking-[0.12em] text-[#3B9E6A] sm:text-[14px]">
+                                                    {item.step}
+                                                </p>
+                                                <h3 className="mt-2 sm:mt-3 text-base font-medium leading-5 text-[#FEFEFE] sm:text-lg">
+                                                    {item.title}
+                                                </h3>
+                                                <p className="mt-3 sm:mt-5 w-full max-w-[475px] break-words text-sm font-normal leading-[21px] text-[#D1D1D1] sm:text-[15px] sm:leading-[24px]">
+                                                    {item.description}
+                                                </p>
+                                            </>
+                                        )}
+                                    </div>
+
+                                    {/* Number marker */}
+                                    <div className="absolute left-0 top-0 z-10 flex h-[30px] w-[30px] shrink-0 items-center justify-center border border-[#3B9E6A]/60 bg-[#0A0D0B] text-[11px] font-normal text-[#3B9E6A] sm:relative sm:col-start-2 sm:row-start-1 sm:mx-auto sm:h-[36px] sm:w-[36px]">
+                                        {item.number}
+                                    </div>
+
+                                    {/* Right content */}
+
+                                    <div
+                                        className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${item.side === "right"
+                                            ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
+                                            : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
+                                            }`}
+                                    >
+                                        {item.side === "right" && (
+                                            <>
+                                                <p className="text-sm tracking-[0.12em] text-[#3B9E6A] sm:text-[14px]">
+                                                    {item.step}
+                                                </p>
+                                                <h3 className="mt-2 sm:mt-3 text-base font-medium leading-5 text-[#FEFEFE] sm:text-lg">
+                                                    {item.title}
+                                                </h3>
+                                                <p className="mt-3 sm:mt-5 w-full max-w-[485px] break-words text-sm font-normal leading-[21px] text-[#D1D1D1] sm:text-[15px] sm:leading-[24px]">
+                                                    {item.description}
+                                                </p>
+                                            </>
+                                        )}
+                                    </div>
+                                </AnimatedCard>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="bg-[#050D1C] text-white">
+                <div className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-[76px]">
+                    <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12">
+                        {/* Left: Section introduction */}
+                        <LeftAnimation>
+                            <div className="lg:max-w-[470px] md:pt-1 text-center lg:text-left">
+                                <p className="text-[13px] sm:text-base font-semibold uppercase leading-5 text-[#3B9E6A] ">
+                                    What Sets Us Apart
+                                </p>
+
+                                <h2 className="mt-3 lg:max-w-[400px] leading-[1.28] tracking-[-0.5px] text-[#F8F9FC] sm:leading-[1.35]">
+                                    Value That Goes Beyond Findings.
+                                </h2>
+
+                                <p className="mt-5 lg:max-w-[420px] text-[15px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-[16px]">
+                                    From expert-led assessments to prioritised remediation guidance, we help organisations turn security insights into meaningful improvements.
+                                </p>
+                            </div>
+                        </LeftAnimation>
+
+
+                        {/* Right: Deliverables grid */}
+                        <Animation>
+                            <div className="grid min-w-0 grid-cols-1 overflow-hidden rounded-[6px] border border-[#183B32] sm:grid-cols-2">
+                                {setsApart.map((item, index) => (
+                                    <AnimatedCard
+                                        key={item.title}
+                                        className={[
+                                            "flex min-w-0 flex-col px-6 py-7 sm:min-h-[203px] sm:px-6 sm:py-7 lg:px-6 lg:py-7",
+                                            index === 0 || index === 3
+                                                ? "bg-[#181E29]"
+                                                : "bg-[#050D1C]",
+                                            index % 2 === 0
+                                                ? "sm:border-r sm:border-[#183B32]"
+                                                : "",
+                                            index < 3
+                                                ? "border-b border-[#183B32] sm:border-b-0"
+                                                : "",
+                                            index < 2
+                                                ? "sm:border-b sm:border-[#183B32]"
+                                                : "",
+                                        ].join(" ")}
+                                    >
+                                        <Icon
+                                            icon={item.icon}
+                                            className="h-5 w-5 shrink-0 text-[#3B9E6A]"
+                                            aria-hidden="true"
+                                        />
+
+                                        <h3 className="mt-7 text-[16px] font-medium leading-6 text-[#F5F6FA]">
+                                            {item.title}
+                                        </h3>
+
+                                        <p className="mt-2 max-w-[260px] text-[13px] font-normal leading-[22px] text-[#C5C8D0] sm:text-[13px]">
+                                            {item.description}
+                                        </p>
+                                    </AnimatedCard>
+                                ))}
+                            </div>
+                        </Animation>
+
+                    </div>
+                </div>
+            </section>
+
+            <section className="w-full py-14 bg-[#060D1B]">
+                    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-6 sm:px-10 gap-8 lg:gap-15">
+                      <div className="w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
+                        <LeftAnimation>
+                          <p className="mt-10 text-sm sm:text-base font-semibold text-[#3B9E6A]">
+                            WHAT YOU RECEIVE
+                          </p>
+                          <h2 className="mt-2 font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF] lg:max-w-[430px]">
+                            Findings That Move You Forward.
+                          </h2>
+                          <p className="mt-4 text-base sm:text-lg font-normal leading-[25px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[480px]">
+                            Clear assessment outputs to help your teams understand gaps, prioritise remediation and strengthen operational resilience.
+                          </p>
+                        </LeftAnimation>
+                      </div>
+            
+                      <div className="flex-1">
+                        <div className="relative mt-8">
+                          <div className="absolute top-0 bottom-0 border-l-[2px] border-[#B1B1B114] shadow-[inset_3px_0_4px_0_#FFFFFFCF]"></div>
+                          <div className="space-y-8 ">
+                            {whatYouReceive.map((item, index) => (
+                              <AnimatedCard
+                                key={index}
+                                delay={index * 0.15}
+                                className="flex gap-10"
+                              >
+                                <div className="relative w-0"></div>
+                                <div className="flex gap-10 items-start">
+                                  <div>
+                                    <p className="text-base font-semibold text-[#3B9E6A] tracking-[2px]">
+                                      {String(index + 1).padStart(2, "0")}
+                                    </p>
+                                  </div>
+                                  <div className="space-y-1">
+                                    <h3 className="text-lg text-[#FEFEFE]">{item.title}</h3>
+                                    <p className="text-sm leading-[23px] text-[#D1D1D1] max-w-[380px]">
+                                      {item.description}
+                                    </p>
+                                  </div>
+                                </div>
+                              </AnimatedCard>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <FAQSection
+                          title={
+                            <>
+                              Frequently Asked Questions -
+                              <br className="hidden sm:block" />
+                              DORA Compliance 
+                            </>
+                          }
+                          description="Find answers to common questions about DORA requirements, compliance expectations and digital operational resilience."
+                          faqs={doraFAQs}
+                        />
         </div>
     )
 }

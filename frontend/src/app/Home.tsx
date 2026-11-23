@@ -439,7 +439,7 @@ export default function Home() {
         <div className="max-w-7xl w-full mx-auto px-6 sm:px-10">
           <div className="space-y-5 text-center lg:text-left">
             <p
-              className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading animate-hero-reveal uppercase"
+              className="pt-14 text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading animate-hero-reveal uppercase"
               style={{ animationDelay: "150ms" }}
             >
               Build for Trust. Designed for Cyber Resilience.
