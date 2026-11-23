@@ -22,6 +22,12 @@
     }
 }
 
+@layer components {
+    .casestudiesheading {
+        font-family: Montserrat;
+    }
+}
+
 .sectionheading {
     font-family: 'Lato'
 }

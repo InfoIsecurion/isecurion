@@ -8,6 +8,7 @@ import sharp from 'sharp'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { CaseStudies } from './collections/CaseStudies'
+import { Blog } from './collections/Blog'
 import {
   breachAttackEndpoint,
   contactEndpoint,
@@ -36,7 +37,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, CaseStudies],
+  collections: [Users, Media, CaseStudies, Blog],
   endpoints: [
     contactEndpoint,
     breachAttackEndpoint,
@@ -65,5 +66,18 @@ export default buildConfig({
   sharp,
   plugins: [],
 
-  cors: ['http://localhost:3000', 'http://localhost:3001'],
+  cors: [
+    'http://localhost:3000',
+    'http://localhost:3001',
+    'https://rom-holland-cheque-stones.trycloudflare.com',
+  ],
+  upload: {
+    requestSizeLimit: 10 * 1024 * 1024,
+    limits: {
+      fileSize: 5 * 1024 * 1024,
+      fieldSize: 8 * 1024 * 1024,
+      files: 3,
+      fields: 100,
+    },
+  },
 })

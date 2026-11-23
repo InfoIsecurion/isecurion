@@ -304,18 +304,18 @@ const company = [
       // {
       //   name: "Careers",
       //   description: "Build a safer digital future with us",
-      //   link: "/career",
+      //   link: "/careers",
       // },
     ],
   },
   {
     mainHeading: "RESOURCES",
     list: [
-      // {
-      //   name: "Case Studies",
-      //   description: "Real-world security challenges and outcomes",
-      //   link: "/case-studies",
-      // },
+      {
+        name: "Case Studies",
+        description: "Real-world security challenges and outcomes",
+        link: "/case-studies",
+      },
       // {
       //   name: "Insights",
       //   description: "Cybersecurity insights and research",

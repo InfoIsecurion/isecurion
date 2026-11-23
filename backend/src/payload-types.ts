@@ -70,6 +70,7 @@ export interface Config {
     users: User;
     media: Media;
     'case-studies': CaseStudy;
+    blog: Blog;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -80,6 +81,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     'case-studies': CaseStudiesSelect<false> | CaseStudiesSelect<true>;
+    blog: BlogSelect<false> | BlogSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -152,17 +154,11 @@ export interface User {
 export interface Media {
   id: string;
   alt: string;
+  filename: string;
+  mimeType: string;
+  imageData: string;
   updatedAt: string;
   createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -172,8 +168,215 @@ export interface CaseStudy {
   id: string;
   title: string;
   slug: string;
-  shortDescription: string;
+  /**
+   * Example: COMPLIANCE AUDIT, RED TEAM, CLOUD
+   */
+  category: string;
   featuredImage: string | Media;
+  status: 'draft' | 'published';
+  /**
+   * Example: Technical Research · Windows Internals
+   */
+  heroEyebrow: string;
+  heading: string;
+  description: string;
+  /**
+   * Pills shown under the hero description
+   */
+  heroHighlights?:
+    | {
+        label: string;
+        /**
+         * Iconify name, e.g. mdi:microsoft-windows
+         */
+        icon: string;
+        id?: string | null;
+      }[]
+    | null;
+  heroTemplate: 'template1' | 'template2' | 'template3' | 'template4' | 'template5' | 'template6';
+  agenda?:
+    | {
+        number: string;
+        title: string;
+        id?: string | null;
+      }[]
+    | null;
+  section1: {
+    number?: string | null;
+    eyebrow: string;
+    mainheading: string;
+    description?:
+      | {
+          description?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+    researchfocus?:
+      | {
+          researchitem?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+    observations?:
+      | {
+          value: string;
+          description: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  section2: {
+    number?: string | null;
+    eyebrow: string;
+    section2heading: string;
+    paragraphs?:
+      | {
+          text: string;
+          id?: string | null;
+        }[]
+      | null;
+    questionIntro?: string | null;
+    questionLabel?: string | null;
+    highlightQuestion?: string | null;
+    answer?: string | null;
+  };
+  section3?: {
+    number?: string | null;
+    eyebrow?: string | null;
+    heading?: string | null;
+    description?: string | null;
+    corecomponents?:
+      | {
+          componentlist?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+    constraints?:
+      | {
+          constraintitem?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+    techniques?:
+      | {
+          technique?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  section4?: {
+    number?: string | null;
+    eyebrow?: string | null;
+    heading?: string | null;
+    description?: string | null;
+    cards?:
+      | {
+          phasenumber?: string | null;
+          heading?: string | null;
+          description?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  section5?: {
+    number?: string | null;
+    eyebrow?: string | null;
+    heading?: string | null;
+    cards?:
+      | {
+          heading?: string | null;
+          description?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  section6?: {
+    number?: string | null;
+    eyebrow?: string | null;
+    heading?: string | null;
+    cards?:
+      | {
+          heading?: string | null;
+          title?: string | null;
+          description?: string | null;
+          listItems?:
+            | {
+                item?: string | null;
+                id?: string | null;
+              }[]
+            | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  section7?: {
+    number?: string | null;
+    eyebrow?: string | null;
+    mainheading?: string | null;
+    descriptions?:
+      | {
+          description?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+    cards?:
+      | {
+          heading?: string | null;
+          description?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  section8?: {
+    number?: string | null;
+    eyebrow?: string | null;
+    heading?: string | null;
+    cards?:
+      | {
+          icon?: string | null;
+          heading?: string | null;
+          description?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+    conclusion?: string | null;
+  };
+  section9?: {
+    number?: string | null;
+    eyebrow?: string | null;
+    heading?: string | null;
+    descriptions?:
+      | {
+          title?: string | null;
+          description: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  number?: string | null;
+  faqheading: string;
+  faqdescription: string;
+  faqs?:
+    | {
+        question: string;
+        answer: string;
+        id?: string | null;
+      }[]
+    | null;
+  faqnote?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog".
+ */
+export interface Blog {
+  id: string;
+  title: string;
+  slug: string;
+  featuredImage: string | Media;
+  description: string;
   status: 'draft' | 'published';
   updatedAt: string;
   createdAt: string;
@@ -213,6 +416,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'case-studies';
         value: string | CaseStudy;
+      } | null)
+    | ({
+        relationTo: 'blog';
+        value: string | Blog;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -285,17 +492,11 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  url?: T;
-  thumbnailURL?: T;
   filename?: T;
   mimeType?: T;
-  filesize?: T;
-  width?: T;
-  height?: T;
-  focalX?: T;
-  focalY?: T;
+  imageData?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -304,8 +505,220 @@ export interface MediaSelect<T extends boolean = true> {
 export interface CaseStudiesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
-  shortDescription?: T;
+  category?: T;
   featuredImage?: T;
+  status?: T;
+  heroEyebrow?: T;
+  heading?: T;
+  description?: T;
+  heroHighlights?:
+    | T
+    | {
+        label?: T;
+        icon?: T;
+        id?: T;
+      };
+  heroTemplate?: T;
+  agenda?:
+    | T
+    | {
+        number?: T;
+        title?: T;
+        id?: T;
+      };
+  section1?:
+    | T
+    | {
+        number?: T;
+        eyebrow?: T;
+        mainheading?: T;
+        description?:
+          | T
+          | {
+              description?: T;
+              id?: T;
+            };
+        researchfocus?:
+          | T
+          | {
+              researchitem?: T;
+              id?: T;
+            };
+        observations?:
+          | T
+          | {
+              value?: T;
+              description?: T;
+              id?: T;
+            };
+      };
+  section2?:
+    | T
+    | {
+        number?: T;
+        eyebrow?: T;
+        section2heading?: T;
+        paragraphs?:
+          | T
+          | {
+              text?: T;
+              id?: T;
+            };
+        questionIntro?: T;
+        questionLabel?: T;
+        highlightQuestion?: T;
+        answer?: T;
+      };
+  section3?:
+    | T
+    | {
+        number?: T;
+        eyebrow?: T;
+        heading?: T;
+        description?: T;
+        corecomponents?:
+          | T
+          | {
+              componentlist?: T;
+              id?: T;
+            };
+        constraints?:
+          | T
+          | {
+              constraintitem?: T;
+              id?: T;
+            };
+        techniques?:
+          | T
+          | {
+              technique?: T;
+              id?: T;
+            };
+      };
+  section4?:
+    | T
+    | {
+        number?: T;
+        eyebrow?: T;
+        heading?: T;
+        description?: T;
+        cards?:
+          | T
+          | {
+              phasenumber?: T;
+              heading?: T;
+              description?: T;
+              id?: T;
+            };
+      };
+  section5?:
+    | T
+    | {
+        number?: T;
+        eyebrow?: T;
+        heading?: T;
+        cards?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              id?: T;
+            };
+      };
+  section6?:
+    | T
+    | {
+        number?: T;
+        eyebrow?: T;
+        heading?: T;
+        cards?:
+          | T
+          | {
+              heading?: T;
+              title?: T;
+              description?: T;
+              listItems?:
+                | T
+                | {
+                    item?: T;
+                    id?: T;
+                  };
+              id?: T;
+            };
+      };
+  section7?:
+    | T
+    | {
+        number?: T;
+        eyebrow?: T;
+        mainheading?: T;
+        descriptions?:
+          | T
+          | {
+              description?: T;
+              id?: T;
+            };
+        cards?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              id?: T;
+            };
+      };
+  section8?:
+    | T
+    | {
+        number?: T;
+        eyebrow?: T;
+        heading?: T;
+        cards?:
+          | T
+          | {
+              icon?: T;
+              heading?: T;
+              description?: T;
+              id?: T;
+            };
+        conclusion?: T;
+      };
+  section9?:
+    | T
+    | {
+        number?: T;
+        eyebrow?: T;
+        heading?: T;
+        descriptions?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              id?: T;
+            };
+      };
+  number?: T;
+  faqheading?: T;
+  faqdescription?: T;
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
+  faqnote?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blog_select".
+ */
+export interface BlogSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  featuredImage?: T;
+  description?: T;
   status?: T;
   updatedAt?: T;
   createdAt?: T;

@@ -1,7 +1,25 @@
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+
+  images: {
+    dangerouslyAllowLocalIP: true,
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "3001",
+        pathname: "/api/media/file/**",
+      },
+    ],
+  },
+
   reactCompiler: true,
-  allowedDevOrigins: ['175.175.0.176', "192.168.1.153"],
+
+  allowedDevOrigins: [
+    "*.trycloudflare.com",
+  ],
+
   turbopack: {
     root: process.cwd(),
   },
