@@ -11,7 +11,6 @@ export const contactForm = async (data) => {
     if (!response.ok) {
       return {
         status: response.status,
-        success: false,
         message: result.message || "Failed to submit contact form.",
         errors: result.errors,
       };
