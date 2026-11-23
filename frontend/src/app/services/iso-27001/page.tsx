@@ -27,10 +27,9 @@ interface ContactFormData {
 }
 
 const iso27001Services = [
-  "ISO/IEC 27001:2022",
-  "End-to-End ISMS Implementation",
-  "Risk-Based Security Controls",
-  "Certification Audit Support",
+  "150+ ISO 27001 Projects ",
+  "30+ Industries Served ",
+  "100% Certification Success",
 ];
 
 const understandingIso = [
@@ -151,7 +150,7 @@ const scopeofwork = [
     Icon: "bx:search-alt",
     heading: "Gap & Risk Assessment",
     description:
-      "Evaluate existing security practices, identify compliance gaps, assess risks, and prioritise remediation actions.",
+      "Control mapping to all 93 ISO 27001:2022 Annex A controls, maturity scoring across four themes (Organisational, People, Physical, Technological) and a prioritised remediation roadmap.",
     bgColor: "#112533",
     textColor: "#0FEADB",
   },
@@ -208,7 +207,7 @@ const methodology = [
     phase: "Phase 02",
     heading: "Gap Assessment & Risk Treatment",
     description:
-      "Review existing controls, identify compliance gaps, assess risks, and prioritise corrective actions.",
+      "Assess the 93 Annex A controls, run ISO 27005-aligned risk assessments and propose prioritised risk treatment options with effort estimates.",
   },
   {
     phase: "Phase 03",
@@ -224,9 +223,9 @@ const methodology = [
   },
   {
     phase: "Phase 05",
-    heading: "Certification & Continuous Improvement",
+    heading: "Certification & Continuous Monitoring",
     description:
-      "Coordinate certification audit preparation, support audit findings, and establish ongoing monitoring and maintenance.",
+      "Coordinate Stage 1 and Stage 2 certification audits, respond to certification body findings, and establish ongoing ISMS health checks and surveillance readiness.",
   },
 ];
 
@@ -414,15 +413,14 @@ function Iso27001() {
               className="text-[#FFFFFF] opacity-0 animate-hero-reveal"
               style={{ animationDelay: "300ms" }}
             >
-              ISO 27001 Audit, Implementation & Certification
+              ISO/IEC 27001:2022 Audit, Implementation & Certification Consulting
             </h1>
             <p
-              className="text-base sm:text-lg font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] opacity-0 animate-hero-reveal max-w-[440px]"
+              className="text-base sm:text-lg font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] opacity-0 animate-hero-reveal max-w-[540px]"
               style={{ animationDelay: "450ms" }}
             >
-              Establish a robust Information Security Management System (ISMS)
-              with expert guidance across risk assessment, security controls,
-              documentation, internal audits, and certification readiness.
+              India's trusted ISO 27001 consultants. We guide you from ISMS scoping and gap analysis through risk treatment, documentation, internal audit and certification, so you protect sensitive data, satisfy enterprise buyers and comply with RBI, SEBI, DPDP and global regulations. Serving clients in 
+              Bengaluru, Mumbai, Delhi, Hyderabad, Chennai, Pune and Kolkata, and internationally across the USA, UK, EU, UAE, GCC, Singapore and Australia.
             </p>
             {/* <Link href="/company/contact">
             <button
@@ -650,13 +648,17 @@ function Iso27001() {
                 </div>
               </LeftAnimation>
             </div>
-            <div className="w-full lg:w-[50%] ">
+            <div className="w-full lg:w-[54%] ">
               <RightAnimation>
                 <div className="space-y-4 text-center lg:text-left">
                   <p className="sectionDescription text-[#D1D1D1]">
                     ISO/IEC 27001:2022 is an internationally recognised standard
                     for establishing, implementing, maintaining, and continually
                     improving an Information Security Management System.
+                  </p>
+                  <p className="sectionDescription text-[#D1D1D1]">
+                    ISO/IEC 27001:2022 is the international standard for Information Security Management Systems (ISMS), published by the International Organization for Standardization. 
+                    The 2022 edition introduced 11 new controls and reduced the Annex A control set from 114 to 93 controls across four themes.
                   </p>
                   <p className="sectionDescription text-[#D1D1D1]">
                     It helps organisations identify security risks, protect
@@ -761,9 +763,7 @@ function Iso27001() {
                   Turn Security Compliance into Business Confidence
                 </h2>
                 <p className="sectionDescription text-[#D1D1D1]">
-                  Whether you're a growing startup or an established enterprise,
-                  ISO 27001 helps build a structured security programme that
-                  scales with your business.
+                  ISO 27001 turns security from a cost into a sales and trust advantage. Here is what certification gives your business.
                 </p>
               </div>
             </LeftAnimation>

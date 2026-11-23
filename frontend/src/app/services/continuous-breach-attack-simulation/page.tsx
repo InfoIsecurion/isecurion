@@ -152,39 +152,52 @@ function ContinuousBreachAttackSimulation() {
                 className="text-sm sm:text-base font-semibold tracking-[0.02em] uppercase text-[#E24B4A] opacity-0 animate-hero-reveal"
                 style={{ animationDelay: "450ms" }}
               >
-                CONTINUOUS BREACH ATTACK SIMULATION
+                {/* CONTINUOUS BREACH ATTACK SIMULATION |  */}
+                CONTINUOUS BREACH ATTACK SIMULATION | <br />
+                REAL-TIME SECURITY VALIDATION
               </p>
 
               {/* HEADING */}
 
               <h1
-                className="mt-4 font-semibold leading-[1.4] tracking-[-0.02em] text-white lg:max-w-[400px] opacity-0 animate-hero-reveal"
+                className="mt-4 font-semibold leading-[1.4] tracking-[-0.02em] text-white lg:max-w-[400px] opacity-0 animate-hero-reveal text-3xl"
                 style={{ animationDelay: "800ms" }}
               >
-                Continuously validate your defenses against real-world attacks.
+                Continuous Breach & Attack Simulation (CBAS) to Validate Your Defenses Against Real-World Attacks
               </h1>
 
               {/* DESCRIPTION */}
 
               <p
-                className="mt-5 text-[14px] sm:text-[16px] font-medium leading-[1.7] text-[#D1D1D1] lg:max-w-[380px] opacity-0 animate-hero-reveal"
+                className="mt-5 text-[14px] sm:text-[16px] font-medium leading-[1.7] text-[#D1D1D1] lg:max-w-[450px] opacity-0 animate-hero-reveal"
                 style={{ animationDelay: "950ms" }}
               >
-                ISECURION&apos;s CBAS continuously simulates real-world attacks
-                to identify gaps, validate defenses, and improve your
-                cybersecurity posture proactively.
+                ISECURION's CBAS continuously simulates real-world attacks using adversary simulation techniques to identify gaps, validate defenses,
+                and improve your cybersecurity posture proactively. Delivered by a CERT-In empanelled, ISO 27001:2022 certified team.
               </p>
 
               {/* CTA BUTTON */}
+              <div className="flex mt-8 animate-hero-reveal gap-4" style={{ animationDelay: "1050ms" }} >
+                <Link href="/company/contact">
+                  <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg">
+                    <span>Request Simulation</span>
+                    <Icon icon="lucide:arrow-right" className="h-4 w-4" />
+                  </button>
+                </Link>
 
-              {/* <div className="mt-8 animate-hero-reveal" style={{animationDelay:"1050ms"}}>
-                  <Link href="/company/contact">
-                    <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg">
-                      <span>Request Simulation</span>
-                      <Icon icon="lucide:arrow-right" className="h-4 w-4" />
-                    </button>
-                  </Link>
-                </div> */}
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("scopeofwork")
+                      ?.scrollIntoView({ behavior: "smooth", block: "start" })
+                  }
+                  className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29]"
+                >
+                  <span></span>
+                  See Scope of Work ›
+                </button>
+
+              </div>
 
               {/* FOOTER TAGLINE */}
               <p
@@ -192,7 +205,7 @@ function ContinuousBreachAttackSimulation() {
                 style={{ animationDelay: "1300ms" }}
               >
                 Continuous Validation · Adversary Simulation · MITRE ATT&amp;CK
-                · Security Resilience
+                · | Real-Time Security Validation
               </p>
             </div>
 
@@ -348,9 +361,7 @@ function ContinuousBreachAttackSimulation() {
                 className="mt-4 sectionDescription text-[#D1D1D1] lg:max-w-[700px] animate-hero-reveal"
                 style={{ animationDelay: "500ms" }}
               >
-                Continuous Breach Attack Simulation (CBAS) is an automated,
-                ongoing process that mimics cyber attackers using adversary
-                simulation techniques.
+                Continuous Breach Attack Simulation (CBAS) is an automated, ongoing process that mimics cyber attackers using adversary simulation techniques. It validates your security investments daily, tests real-world attack scenarios, and provides actionable insights to strengthen resilience.
               </p>
             </Animation>
             <Animation delay={0.5}>
@@ -367,7 +378,7 @@ function ContinuousBreachAttackSimulation() {
         </Animation>
       </section>
 
-      <section className="bg-black px-0 relative overflow-hidden">
+      <section id="scopeofwork" className="bg-black px-0 relative overflow-hidden">
         <div className="relative min-h-[671px] overflow-hidden">
           {/* Background */}
           <div
@@ -451,8 +462,7 @@ function ContinuousBreachAttackSimulation() {
                         Step 2: Automated <br /> Simulation
                       </h3>
                       <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[200px]">
-                        Continuously execute controlled attack scenarios across
-                        your security environment.
+                        Continuous execution of controlled attack scenarios across your security environment with zero downtime.
                       </p>
                     </div>
                   </div>
@@ -501,8 +511,7 @@ function ContinuousBreachAttackSimulation() {
                         Step 4: Reporting
                       </h3>
                       <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1] max-w-[200px]">
-                        Deliver clear findings, control insights, and
-                        prioritized recommendations.
+                        Comprehensive dashboards and audit-ready compliance reports, with clear findings, control insights, and prioritized recommendations.
                       </p>
                     </div>
                   </div>
@@ -570,11 +579,11 @@ function ContinuousBreachAttackSimulation() {
 
                 <div className="absolute bottom-[85px] left-[25px] right-[30px]">
                   <h3 className="max-w-[180px] text-[16px] font-medium leading-[1.55] text-white">
-                    Attack-Driven <br /> Insight
+                    Actionable <br/> Insights
                   </h3>
 
                   <p className="mt-[8px] max-w-[225px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
-                    Receive recommendations tailored to your environment.
+                    Detailed recommendations tailored to your environment.
                   </p>
                 </div>
               </div>
@@ -653,7 +662,7 @@ function ContinuousBreachAttackSimulation() {
                       </span>
                       <div>
                         <h3 className="text-[15px] sm:text-base font-medium leading-[1.5] text-white">
-                          Proven Experience
+                          Proven Track Record
                         </h3>
                         <p className="mt-[6px] max-w-[400px] text-[13px] sm:text-sm font-normal leading-[1.8] text-[#D1D1D1]">
                           Hundreds of breach simulations across BFSI, SaaS, and
@@ -771,7 +780,7 @@ function ContinuousBreachAttackSimulation() {
             Continuous Breach Attack Simulation
           </>
         }
-        description="Answers to common questions about Red Team engagements, scope, and outcomes."
+        description="Answers to common questions about Continuous Breach Attack Simulation scope, onboarding, and outcomes."
         faqs={cbsFAQs}
       />
     </div>

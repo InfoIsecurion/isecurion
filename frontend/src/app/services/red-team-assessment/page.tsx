@@ -135,7 +135,7 @@ export default function RedTeamAssessmentPage() {
               <div className="flex flex-col justify-center lg:py-2 text-center md:text-left">
                 {/* Eyebrow */}
                 <p className="text-[13px] sm:text-base font-semibold uppercase leading-none text-[#E24B4A] sm:text-sm text-center lg:text-left">
-                  Red Team Assessment
+                  RED TEAM ASSESSMENT | SIMULATE REAL ATTACKS
                 </p>
 
                 {/* Heading */}
@@ -156,8 +156,8 @@ export default function RedTeamAssessmentPage() {
                   posture across people, processes, and technology.
                 </p>
 
-                {/* CTA
-                <div className="mt-6 text-center lg:text-left animate-hero-reveal" style={{animationDelay:"900ms"}}>
+                
+                <div className="flex gap-4 mt-6 text-center lg:text-left animate-hero-reveal" style={{animationDelay:"900ms"}}>
                   <Link href="/company/contact">
                   <button
                     type="button"
@@ -170,7 +170,19 @@ export default function RedTeamAssessmentPage() {
                     </span>
                   </button>
                   </Link>
-                </div> */}
+
+                  <button
+                  onClick={() =>
+                    document
+                      .getElementById("scopeofwork")
+                      ?.scrollIntoView({ behavior: "smooth", block: "start" })
+                  }
+                  className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29]"
+                >
+                  <span></span>
+                  See Scope of Work ›
+                </button>
+                </div>
 
                 {/* ==================== STATS ==================== */}
                 <div className="mt-9 grid lg:max-w-[380px] grid-cols-3 lg:grid-cols-2 gap-x-10 gap-y-6 text-center">
@@ -446,8 +458,7 @@ export default function RedTeamAssessmentPage() {
 
                 {/* Description */}
                 <p className="relative z-10 mt-3 max-w-[275px] text-[14px] leading-[1.8] text-[#AFAFB4]">
-                  Evaluate your environment against realistic adversary tactics
-                  and attack vectors.
+                  Check the environment against real-world threat actor vectors
                 </p>
 
                 {/* Number */}
@@ -480,11 +491,9 @@ export default function RedTeamAssessmentPage() {
 
                 {/* Description */}
                 <p className="relative z-10 mt-3 max-w-[275px] text-[13px] leading-[1.8] text-[#D1D1D1D9]">
-                  Test physical, human, and digital controls for weaknesses and
-                  bypass opportunities.
+                  Evaluate Physical, Human, and Digital controls comprehensively
                 </p>
 
-                {/* Number */}
                 {/* Number */}
                 <span className="px-5 pointer-events-none absolute bottom-[-8px] right-1 select-none font-black text-[70px] leading-[98.92px] tracking-[-3.96px] text-transparent [-webkit-text-stroke:1.03px_rgba(245,240,232,0.07)]">
                   02
@@ -509,16 +518,14 @@ export default function RedTeamAssessmentPage() {
 
                 {/* Title */}
                 <h3 className="relative z-10 mt-4 text-[16px]  leading-[1.4] text-[#F5F0E8]">
-                  Detection and Response
+                  Incident Readiness
                 </h3>
 
                 {/* Description */}
                 <p className="relative z-10 mt-3 max-w-[275px] text-[13px] leading-[1.8] text-[#AFAFB4]">
-                  Determine whether your security teams can detect, investigate,
-                  and respond to an active attack.
+                  Assess readiness to detect and respond to real-world incidents.
                 </p>
 
-                {/* Number */}
                 {/* Number */}
                 <span className="px-5 pointer-events-none absolute bottom-[-8px] right-1 select-none font-black text-[70px] leading-[98.92px] tracking-[-3.96px] text-transparent [-webkit-text-stroke:1.03px_rgba(245,240,232,0.07)]">
                   03
@@ -543,16 +550,14 @@ export default function RedTeamAssessmentPage() {
 
                 {/* Title */}
                 <h4 className="relative z-10 mt-4 text-[16px]  leading-[1.4] text-[#F5F0E8]">
-                  Business Impact
+                  Security ROI
                 </h4>
 
                 {/* Description */}
                 <p className="relative z-10 mt-3 max-w-[275px] text-[13px] leading-[1.8] text-[#AFAFB4]">
-                  Understand potential attack paths to critical systems,
-                  privileged access, and sensitive information.
+                  Gain a realistic view of security spends and return on investment.
                 </p>
 
-                {/* Number */}
                 {/* Number */}
                 <span className="px-5 pointer-events-none absolute bottom-[-8px] right-1 select-none font-black text-[70px] leading-[98.92px] tracking-[-3.96px] text-transparent [-webkit-text-stroke:1.03px_rgba(245,240,232,0.07)]">
                   04
@@ -750,7 +755,7 @@ export default function RedTeamAssessmentPage() {
         </Animation>
       </section>
 
-      <section className="bg-black px-0">
+      <section id="scopeofwork" className="bg-black px-0">
         <div className="relative min-h-[671px] overflow-hidden">
           {/* Background */}
           <div
@@ -1218,12 +1223,11 @@ export default function RedTeamAssessmentPage() {
 
                   <div className="absolute bottom-[62px] left-[25px] right-[30px]">
                     <h3 className="max-w-[180px] text-[16px] font-medium leading-[1.55] text-white">
-                      Attack-Driven <br /> Insight
+                      Actionable<br /> Insight
                     </h3>
 
                     <p className="mt-[8px] max-w-[255px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
-                      Turn observed attack paths and weaknesses into clear,
-                      prioritized security improvements.
+                      Recommendations that directly improve your cybersecurity posture.
                     </p>
                   </div>
                 </div>

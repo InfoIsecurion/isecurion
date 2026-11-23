@@ -61,55 +61,55 @@ const OurServices = [
     Icon: "icon-park-outline:preschool",
     heading: "24/7 SOC Monitoring",
     description:
-      "Continuously monitor networks, endpoints, servers, & cloud infrastructure to identify suspicious activity & investigate security alerts.",
+      "Continuous monitoring of networks, endpoints, servers, and cloud infrastructure. Our analysts triage alerts, filter false positives, and escalate real threats in real time.",
   },
   {
     Icon: "akar-icons:bug",
     heading: "Threat Detection & Response",
     description:
-      "Detect and investigate malware, ransomware, phishing, and other cyber threats to support timely response.",
+      "AI-driven detection of malware, ransomware, phishing, insider threats, and advanced persistent threats (APTs), backed by global threat intelligence feeds.",
   },
   {
     Icon: "iconmind:incident-commander-outline-bold",
-    heading: "Incident Response",
+    heading: "Incident Response (IR)",
     description:
-      "Support incident triage, investigation, containment, recovery, and root-cause analysis to reduce business impact.",
+      "Rapid triage, investigation, containment, eradication, and recovery, with SLA-backed critical incident response and post-incident root cause analysis.",
   },
   {
     Icon: "boxicons:file-report",
     heading: "Vulnerability Management",
     description:
-      "Identify, prioritize, and track vulnerabilities across on-premises, cloud, and hybrid environments.",
+      "Continuous discovery, risk-based prioritization, and remediation tracking across on-premises, cloud, and hybrid environments.",
   },
   {
     Icon: "icon-park-outline:table-report",
     heading: "Compliance & Audit Reporting",
     description:
-      "Generate security reports & audit-supporting documentation aligned with relevant standards & regulatory requirements.",
+      "Audit-ready dashboards and monthly reports aligned with ISO 27001, SOC 2, NIST CSF, RBI, GDPR, MAS TRM, DORA, and NCA/SAMA frameworks.",
   },
   {
     Icon: "iconmind:vpc-outline-regular",
     heading: "Cloud Security Monitoring",
     description:
-      "Monitor cloud environments for misconfigurations, identity-related risks, and suspicious activity.",
+      "Security monitoring for AWS, Microsoft Azure, and Google Cloud, covering misconfigurations, IAM anomalies, data exfiltration, and cloud-native attack patterns.",
   },
   {
     Icon: "bx:search-alt",
     heading: "Threat Hunting",
     description:
-      "Proactively investigate unusual behavior and indicators of compromise that may evade routine detection.",
+      "Proactive, hypothesis-driven hunting for hidden adversaries and indicators of compromise (IOCs) that evade automated detection.",
   },
   {
     Icon: "fe:sitemap",
     heading: "SIEM & Log Management",
     description:
-      "Centralize and correlate security logs to improve event visibility, investigation, and detection capabilities.",
+      "Centralized log collection, correlation, and analysis using enterprise SIEM platforms, with custom detection rules mapped to MITRE ATT&CK.",
   },
   {
     Icon: "iconmind:security-champion-outline-bold",
     heading: "Security Consulting & vCISO",
     description:
-      "Get strategic guidance, risk assessments, & security program recommendations aligned with business objectives.",
+      "Strategic security advisory, policy development, risk assessments, and virtual CISO support to align your security program with business objectives.",
   },
 ];
 
@@ -239,14 +239,14 @@ const securityDomains = [
   {
     title: "CERT-In Empanelled",
     description:
-      "Officially empanelled by India's national cybersecurity agency, meeting government-recognized security requirements.",
+      "Officially empanelled by India's national cybersecurity agency, ensuring our services meet the highest government-recognized security standards.",
     icon: "charm:certificate",
     background: "bg-[#080D1B]",
   },
   {
     title: "24/7 Certified Analysts",
     description:
-      "Certified security professionals providing round-the-clock monitoring and expert threat analysis.",
+      "Our SOC is staffed round the clock by certified security professionals (CEH, CISSP, OSCP) with deep expertise across sectors and geographies.",
     icon: "grommet-icons:shield-security",
     background: "bg-[#08142D]",
   },
@@ -274,7 +274,7 @@ const securityDomains = [
   {
     title: "Global Coverage, Local Expertise",
     description:
-      "Transparent SLAs for detection, escalation, and resolution, backed by regular performance reports.",
+      "Serving India, USA, UK, UAE, GCC, Singapore, and Australia, with deep understanding of regional regulatory requirements and threat landscapes.",
     icon: "boxicons:globe-alt-3",
     background: "bg-[#080D1B]",
   },
@@ -487,6 +487,14 @@ function ManagedSecurityServices() {
                 </span>
               </Link>
             </div>
+
+            <p
+                className="mt-6 text-[13px] sm:text-[14px] lg:text-[16px] font-medium leading-7 text-[#C8912A] opacity-0 animate-hero-reveal"
+                style={{ animationDelay: "1300ms" }}
+              >
+                CERT-In Empanelled  | ISO 27001:2022 | 24/7 Global SOC 
+                | SLA-Backed Response
+              </p>
           </div>
         </div>
       </section>
@@ -509,19 +517,15 @@ function ManagedSecurityServices() {
               <div className="w-full lg:mt-15 text-center lg:text-left">
                 <Animation>
                   <p className="text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[640px]">
-                    A Managed Security Service Provider (MSSP) delivers continuous
-                    cybersecurity monitoring, threat detection, incident response,
-                    and compliance support - acting as a dedicated extension of
-                    your internal security team.
+                    A Managed Security Service Provider (MSSP) delivers continuous cybersecurity monitoring, threat detection, 
+                    incident response, and compliance support, acting as a dedicated extension of your internal security team. 
+                    This model is also known as managed detection and response (MDR) or SOC-as-a-Service, depending on the scope of coverage.
                   </p>
                 </Animation>
                 <Animation delay={0.5}>
                   <p className="mt-6 text-base sm:text-[17px] font-normal leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[640px]">
-                    ISECURION's MSSP practice combines certified security
-                    analysts, advanced SIEM/XDR technology, and global threat
-                    intelligence to deliver measurable, SLA-backed security
-                    outcomes - whether your team is in Bengaluru, Dubai, London,
-                    or New York.
+                    With the average cost of a data breach exceeding $4.5 million and the global shortage of cybersecurity professionals widening, 
+                    organizations across industries are turning to MSSPs to gain enterprise-grade protection without the overhead of building an in-house SOC. 
                   </p>
                 </Animation>
               </div>
@@ -614,7 +618,7 @@ function ManagedSecurityServices() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
             <LeftAnimation>
               <div className="w-full lg:w-[500px] text-center lg:text-left space-y-4">
-                <p className="mt-4 sm:mt-0 text-sm sm:text-base font-semibold text-[#C8912A]">
+                <p className="mt-4 sm:mt-0 text-sm sm:text-base font-semibold text-[#C8912A] uppercase">
                   How It Works
                 </p>
                 <h2 className=" text-[#FEFEFE] lg:max-w-[418px]">
@@ -801,7 +805,7 @@ function ManagedSecurityServices() {
       <section className="relative overflow-hidden bg-[#060D1B] py-14 sm:py-16 lg:py-[72px]">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           {/* Intro + Framework Cards */}
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.76fr)_minmax(0,1.24fr)] lg:items-start lg:gap-8 xl:gap-10">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.66fr)_minmax(0,1.24fr)] lg:items-start lg:gap-8 xl:gap-10">
             {/* Left: Intro */}
             <LeftAnimation>
               <div className="lg:max-w-[400px] text-center lg:text-left">
@@ -834,7 +838,7 @@ function ManagedSecurityServices() {
                     </h3>
                   </div>
 
-                  <div className="mt-4 flex flex-wrap gap-1.5">
+                  <div className="mt-4 flex flex-col gap-1.5">
                     {[
                       "RBI IT Framework & DPDP",
                       "SEBI / CSCRF",
@@ -842,7 +846,7 @@ function ManagedSecurityServices() {
                     ].map((framework) => (
                       <span
                         key={framework}
-                        className="inline-flex min-h-[23px] items-center rounded-[4px] bg-[#42515059] px-2.5 py-1 text-[9px] font-normal leading-3 text-[#E2E5EB] sm:text-[10px]"
+                        className="inline-flex min-h-[23px] items-center self-start rounded-[4px] bg-[#42515059] px-2.5 py-1 text-[9px] font-normal leading-3 text-[#E2E5EB] sm:text-[10px]"
                       >
                         {framework}
                       </span>
@@ -859,7 +863,7 @@ function ManagedSecurityServices() {
                 </div>
 
                 {/* Global Frameworks */}
-                <div className="flex min-w-0 flex-col rounded-[17px] border border-[#4C7370]/16 bg-[#666666]/8 px-3 sm:p-[25px] pb-8">
+                <div className="flex min-w-0 flex-col rounded-[17px] border border-[#4C7370]/16 bg-[#666666]/8 px-3 sm:p-[15px] pb-8">
                   <div className="flex items-center gap-2.5">
                     <span className="shrink-0 text-[20px] leading-none">
                       <Icon icon="fluent-emoji-flat:globe-showing-europe-africa" />
@@ -871,13 +875,15 @@ function ManagedSecurityServices() {
 
                   <div className="mt-4 flex flex-wrap gap-1.5">
                     {[
-                      "ISO 27001:2022",
-                      "SOC 2 Type I & II",
-                      "NIST CSF / SP 800-53",
-                      "GDPR",
-                      "MAS TRM",
-                      "SAMA / NCA ECC",
-                      "DORA",
+                      "ISO 27001:2022 (Global / India)",
+                      "SOC 2 Type I & II (USA / Global SaaS) ",
+                      "NIST CSF / SP 800-53 (USA Federal & Enterprise)",
+                      "GDPR (EU / UK) ",
+                      "RBI IT Framework & DPDP (India, BFSI) ",
+                      "SEBI CSCRF / SEBI MSOC (India, Capital Markets) ",
+                      "MAS TRM (Singapore, Financial) ",
+                      "SAMA / NCA ECC (KSA / GCC) ",
+                      "DORA (EU, Financial Services)"
                     ].map((framework) => (
                       <span
                         key={framework}

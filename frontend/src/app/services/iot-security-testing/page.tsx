@@ -3,6 +3,7 @@ import WordReveal, { Animation, AnimatedCard } from "../../../components/ui/Anim
 import IOTsecutityBg from "../../../assets/services/iot-security-bg.png";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import FAQSection from "../../../components/sections/FAQSection";
 
 const testingSteps = [
   {
@@ -38,14 +39,14 @@ const cards = [
     iconBg: "#022D6C",
     title: "Prevent Security Breaches",
     description:
-      "Identify exploitable weaknesses before attackers can compromise connected systems.",
+      "Where VAPT is conducted as part of the engagement, penetration testing is delivered by a CREST Member, accredited for Penetration Testing",
   },
   {
     icon: "iconmind:hazard-outline-regular",
     iconBg: "#3B9E6A",
     title: "Reduce Operational Risk",
     description:
-      "Detect vulnerabilities that could disrupt devices, networks, or critical operations.",
+      "Where VAPT is conducted as part of the engagement, penetration testing is delivered by a CREST Member, accredited for Penetration Testing",
   },
   {
     icon: "akar-icons:people-group",
@@ -66,7 +67,7 @@ const cards = [
     iconBg: "#C8912A",
     title: "Support Compliance",
     description:
-      "Align IoT security practices with relevant regulatory and industry requirements.",
+      "Where VAPT is conducted as part of the engagement, penetration testing is delivered by a CREST Member, accredited for Penetration Testing",
   },
   {
     icon: "bx:lock",
@@ -74,6 +75,29 @@ const cards = [
     title: "Improve Resilience",
     description:
       "Strengthen defenses against attacks that could create operational or business disruption.",
+  },
+];
+
+const iotFAQs = [
+  {
+    question: "What is IoT security testing?",
+    answer:
+      "A structured assessment, often called IoT penetration testing, of connected devices, protocols, applications, APIs, networks and supporting cloud and backend systems to find vulnerabilities before attackers do.",
+  },
+  {
+    question: "What does the assessment cover? ",
+    answer:
+      "The full attack surface: device firmware and interfaces, communication protocols, APIs, cloud platforms, mobile applications and backend systems.",
+  },
+  {
+    question: "What do we receive? ",
+    answer:
+      "A detailed report with findings prioritized by severity and business impact, remediation guidance for engineering and security teams, and a re-test of fixed issues.",
+  },
+  {
+    question: "Is ISECURION CREST accredited?",
+    answer:
+      "Yes. ISECURION is a CREST Member, accredited for Penetration Testing, and is also CERT-In empanelled and ISO 27001:2022 certified. ",
   },
 ];
 
@@ -111,8 +135,7 @@ function page() {
 
               {/* FIRST DESCRIPTION */}
               <p className="mt-[24px] max-w-[550px] text-[15px] font-normal leading-[1.75] text-[#D1D1D1] sm:text-[17px] lg:mt-[26px] lg:max-w-[450px] lg:text-[17px] lg:leading-[1.72] animate-hero-reveal" style={{ animationDelay: "750ms" }}>
-                Identify vulnerabilities across your connected devices, networks,
-                and IoT infrastructure, before attackers do.
+                Where VAPT is conducted as part of the engagement, penetration testing is delivered by a CREST Member, accredited for Penetration Testing
               </p>
 
               {/* SECOND DESCRIPTION */}
@@ -122,7 +145,7 @@ function page() {
                 safer operations.
               </p>
 
-              <div className="mt-[30px] sm:mt-[34px] animate-hero-reveal" style={{animationDelay:"1050ms"}}>
+              <div className="mt-[30px] sm:mt-[34px] animate-hero-reveal" style={{ animationDelay: "1050ms" }}>
                 <Link href="/company/contact">
                   <button className="inline-flex h-[54px] items-center justify-center rounded-[9px] bg-white px-[20px] py-[14px] text-[13px] sm:text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-[#F3F5F8] sm:min-h-[54px] sm:px-[21px] lg:px-[20px] cursor-pointer">
                     <span>Schedule My IoT Security Consultation</span>
@@ -161,10 +184,7 @@ function page() {
 
                 <div className="mt-[22px] max-w-[530px] space-y-5  text-[#D1D1D1] lg:mx-0 sectionDescription">
                   <p className="animate-hero-reveal" style={{ animationDelay: "600ms" }}>
-                    IoT Security Testing is a structured assessment of connected
-                    devices, communication protocols, applications, APIs,
-                    networks, and supporting infrastructure to identify
-                    vulnerabilities before they can be exploited.
+                    Where VAPT is conducted as part of the engagement, penetration testing is delivered by a CREST Member, accredited for Penetration Testing
                   </p>
 
                   <p className="animate-hero-reveal" style={{ animationDelay: "750ms" }}>
@@ -248,7 +268,7 @@ function page() {
                       {card.title}
                     </h3>
 
-                    <p className="mt-2.5 w-full max-w-[250px] text-[13px] leading-relaxed text-[#D1D1D1] sm:text-[14px]">
+                    <p className="mt-2.5 w-full max-w-[250px] text-[13px] leading-relaxed text-[#D1D1D1] sm:text-[14px] h-[100px]">
                       {card.description}
                     </p>
                   </div>
@@ -489,6 +509,17 @@ function page() {
           </Animation>
         </div>
       </section>
+      <FAQSection
+        title={
+          <>
+            Frequently Asked Questions -
+            <br className="hidden sm:block" />
+            Iot Security Testing
+          </>
+        }
+        description="Answers to common questions about Iot security testing"
+        faqs={iotFAQs}
+      />
     </main>
   );
 }

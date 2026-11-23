@@ -18,6 +18,7 @@ import { toast } from "react-toastify";
 import { useRef, useState } from "react";
 import { vcsio } from "../../../services/api/contact";
 import Link from "next/link";
+import { desc } from "framer-motion/m";
 
 interface ContactFormData {
   fullname: string;
@@ -82,39 +83,57 @@ const services = [
 const whoNeedsCiso = [
   {
     Icon: "boxicons:bank",
-    heading: "Regulated Organizations",
+    heading: "RBI / CERT-In Audit Due",
     description:
-      "Banks, NBFCs, fintechs, and regulated entities managing RBI, CERT-In, SEBI/CSCRF, and IRDAI requirements.",
+      "Banks, NBFCs or fintechs facing mandatory RBI IS audits or CERT-In obligations without internal security leadership.",
   },
   {
     Icon: "iconmind:compliance-outline-regular",
-    heading: "Compliance & Audit Readiness",
+    heading: "ISO 27001 or SOC 2 Needed",
     description:
-      "Organizations pursuing ISO 27001 or SOC 2, meeting DPDP obligations, or strengthening security documentation and controls.",
+      "IT exporters, SaaS companies or BPOs facing enterprise demands for ISO 27001 certification or SOC 2 reports.",
   },
   {
     Icon: "healthicons:chart-cured-increasing-24px",
-    heading: "Businesses & Startups",
+    heading: "Startup Scaling Fast",
     description:
-      "Scaling companies that need investor-ready security, enterprise client assurance, and a roadmap without a full-time CISO.",
+      "Series A/B startups needing an investor-grade security posture without full-time CISO overhead.",
   },
   {
     Icon: "akar-icons:people-group",
-    heading: "No Security Leadership",
+    heading: "DPDP Act Obligations",
     description:
-      "Businesses needing interim CISO support, executive security guidance, and clear board-level accountability.",
+      "Organisations processing Indian personal data needing DPO support, consent frameworks and breach response procedures.",
   },
   {
     Icon: "ri:global-line",
-    heading: "Businesses Serving Global Clients",
+    heading: "	SEBI / CSCRF Regulated",
     description:
-      "Organizations handling security questionnaires, client assessments, & international security expectations across markets.",
+      "Stockbrokers, AMCs, RTAs and other SEBI-regulated entities needing CSCRF-compliant security programmes and SOC capabilities.",
   },
   {
     Icon: "charm:shield-warning",
-    heading: "Incident-Prone Businesses",
+    heading: "	CISO Role Vacant",
     description:
-      "Organizations recovering from cyber incidents that need stronger governance, incident response planning, & measures to prevent recurrence.",
+      "Organisations between hires, facing 3-6 month hiring cycles, needing interim leadership with zero knowledge gap.",
+  },
+    {
+    Icon: "garden:security-26",
+    heading: "Global Clients Requiring Security",
+    description:
+      "Organisations receiving RFPs, security questionnaires or customer-mandated security reviews from US, EU or APAC enterprises.",
+  },
+    {
+    Icon: "energy-icons:post-office-48-bold",
+    heading: "Post-Incident Recovery",
+    description:
+      "Organisations recovering from a cyber incident that need leadership to rebuild governance and prevent recurrence.",
+  },
+    {
+    Icon: "uix-solid:accountability",
+    heading: "Board Accountability Required: ",
+    description:
+      "Regulated entities where RBI, SEBI or IRDAI mandates board-level cybersecurity accountability.",
   },
 ];
 
@@ -276,26 +295,32 @@ const locations = [
   {
     location: "Bangalore",
     Icon: "reicon:city",
+    desc:"IT exporters, SaaS and fintech firms needing ISO 27001, SOC 2 and DPDP compliance"
   },
   {
     location: "Mumbai",
     Icon: "game-icons:tower-bridge",
+    desc: "Banks, NBFCs, insurers and stockbrokers under RBI, SEBI and IRDAI"
   },
   {
     location: "Hyderabad",
     Icon: "fluent:building-mosque-12-regular",
+    desc: "Healthcare IT, pharma-tech and SaaS (HITEC City, Gachibowli)"
   },
   {
     location: "Chennai",
     Icon: "la:vihara",
+    desc: "IT/ITES exporters, BPO and banking technology"
   },
   {
     location: "Pune",
     Icon: "icon-park-outline:city-gate",
+    desc: "IT services, engineering and automotive technology"
   },
   {
     location: "Delhi NCR",
     Icon: "hugeicons:india-gate",
+    desc: "Government contractors, PSUs and enterprise technology firms (Gurugram, Noida, Faridabad)"
   },
 ];
 const globalLocations = [
@@ -559,7 +584,7 @@ function Vicso() {
                 className="text-sm sm:text-base font-semibold text-[#0F66EA] opacity-0 animate-hero-reveal sectionheading"
                 style={{ animationDelay: "150ms" }}
               >
-                VIRTUAL CISO SERVICES
+                vCISO SERVICES IN INDIA & GLOBALLY | VIRTUAL CISO
               </p>
               <h1
                 className="text-[#FFFFFF] opacity-0 animate-hero-reveal"
@@ -571,10 +596,8 @@ function Vicso() {
                 className="text-base sm:text-lg font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] opacity-0 animate-hero-reveal"
                 style={{ animationDelay: "450ms" }}
               >
-                Access experienced cybersecurity leadership to manage risk,
-                strengthen governance, and navigate compliance requirements.
-                ISECURION’s Virtual CISO services help turn security priorities
-                into a practical, business-aligned strategy.
+                ISECURION delivers enterprise-grade Virtual Chief Information Security Officer (vCISO) services across India (Bangalore, Mumbai, Delhi and beyond) and globally, in the USA, Singapore, UAE, Europe and Australia. As one of India's most experienced CISO advisory companies, 
+                we bring on-demand cybersecurity leadership and RBI, CERT-In, DPDP and SEBI compliance expertise, without the overhead of a full-time CISO hire. 
               </p>
             </div>
             <div
@@ -841,7 +864,7 @@ function Vicso() {
       <section className="w-full py-14 bg-[#060D1B]">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <Animation>
-            <div className="max-w-xl mx-auto lg:mx-0 space-y-4 text-center lg:text-left">
+            <div className="max-w-2xl mx-auto lg:mx-0 space-y-4 text-center lg:text-left">
               <p className="text-sm sm:text-base font-semibold uppercase text-[#0F66EA] sectionheading">
                 Understanding vCISO
               </p>
@@ -850,9 +873,8 @@ function Vicso() {
                 business.
               </h2>
               <p className="sectionDescription text-[#D1D1D1]">
-                A Virtual Chief Information Security Officer (vCISO) provides
-                strategic and operational security leadership on a flexible,
-                outsourced basis.
+                A Virtual Chief Information Security Officer (vCISO) is a highly experienced cybersecurity professional who serves as your organisation's security leader on a part-time, remote or contract basis. The vCISO works alongside your management and technical teams to define strategic security goals, build governance frameworks, and oversee compliance, risk management and incident response. ISECURION's vCISO team acts as a seamless extension of your 
+                organisation, combining strategic CISO advisory services with hands-on execution, so recommendations become implemented controls, not a report on a shelf.
               </p>
               <p className="sectionDescription text-[#D1D1D1]">
                 From risk management and security policies to compliance and
@@ -1143,8 +1165,8 @@ function Vicso() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <Animation>
             <div className="lg:max-w-xl space-y-4 text-center lg:text-left">
-              <p className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading">
-                ENGAGEMENT LIFECYCLE
+              <p className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading uppercase">
+                How ISECURION Delivers vCISO Services
               </p>
               <h2 className="text-[#FFFFFF]">
                 vCISO Services Across Key Markets
@@ -1320,13 +1342,17 @@ function Vicso() {
                 {locations.map((item, index) => (
                   <div
                     key={index}
-                    className="relative flex flex-col items-center justify-center gap-3 p-6 w-full sm:w-1/2 lg:w-1/4"
+                    className="relative flex flex-col items-center justify-center gap-3 p-6 w-full sm:w-1/2 lg:w-1/3"
                   >
                     <GradientIcon Icon={item.Icon} />
 
                     <h3 className="text-base md:text-lg font-normal text-[#D1D1D1]">
                       {item.location}
                     </h3>
+
+                    <p className="text-center text-sm font-normal text-[#D1D1D1] h-[100px]">
+                      {item.desc}
+                    </p>
 
                     {/* Vertical separator */}
                     {(index + 1) % 4 !== 0 &&

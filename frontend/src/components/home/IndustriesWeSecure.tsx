@@ -7,6 +7,9 @@ import education from "../../assets/home/education.png";
 import government from "../../assets/home/government.png";
 import { Animation } from "../../components/ui/Animation";
 import industryHoverBg from "../../assets/home/industryHoverBg.png";
+import bfsi from "../../assets/home/bfsi.png"
+import manufacturing from "../../assets/home/manufacturing.png"
+import crypto from "../../assets/home/crypto.png"
 
 const industriesData = [
   // ROW 1: Both Images on LEFT
@@ -33,7 +36,7 @@ const industriesData = [
     imagePosition: "left",
     stats: [
       { value: "18+", label: "Customers" },
-      { value: "400+", label: "Projects Completed" },
+      { value: "300+", label: "Projects Completed" },
     ],
   },
   // ROW 2: Both Images on RIGHT
@@ -46,8 +49,8 @@ const industriesData = [
     bgColor: "bg-[#121D4A]",
     imagePosition: "right",
     stats: [
-      { value: "22+", label: "Customers" },
-      { value: "460+", label: "Projects Completed" },
+      { value: "50+", label: "Customers" },
+      { value: "600+", label: "Projects Completed" },
     ],
   },
   {
@@ -59,8 +62,8 @@ const industriesData = [
     bgColor: "bg-[#1F407C]",
     imagePosition: "right",
     stats: [
-      { value: "9+", label: "Customers" },
-      { value: "280+", label: "Start Up Companies" },
+      { value: "12+", label: "Customers" },
+      { value: "320+", label: "Projects Completed" },
     ],
   },
   // ROW 3: Both Images on LEFT
@@ -68,13 +71,13 @@ const industriesData = [
     id: "05",
     title: "Education",
     description:
-      "Safeguard educational ecosystems, research, and digital campuses.",
+      "Protect educational ecosystems, research and digital campuses.",
     image: education.src || education,
     bgColor: "bg-gradient-to-t from-[#4A81D3] to-[#3B9E6A]",
     imagePosition: "left",
     stats: [
-      { value: "2+", label: "Customers" },
-      { value: "25+", label: "Projects Completed" },
+      { value: "7+", label: "Customers" },
+      { value: "65+", label: "Projects Completed" },
     ],
   },
   {
@@ -86,8 +89,47 @@ const industriesData = [
     bgColor: "bg-[#1F407C]",
     imagePosition: "left",
     stats: [
-      { value: "8+", label: "Customers" },
-      { value: "200+", label: "Projects Completed" },
+      { value: "15+", label: "Customers" },
+      { value: "400+", label: "Projects Completed" },
+    ],
+  },
+  {
+    id: "07",
+    title: "BFSI",
+    description:
+      "Meet RBI, IRDAI and SEBI requirements with VAPT, audits & compliance support.",
+    image: bfsi.src || bfsi,
+    bgColor: "bg-[#121D4A]",
+    imagePosition: "right",
+    stats: [
+      { value: "12+", label: "Customers" },
+      { value: "180+", label: "Projects Completed" },
+    ],
+  },
+  {
+    id: "08",
+    title: "Manufacturing & Automotive",
+    description:
+      "Secure OT/ICS environments, connected systems and automotive platforms.",
+    image: manufacturing.src || manufacturing,
+    bgColor: "bg-[#1F407C]",
+    imagePosition: "right",
+    stats: [
+      { value: "20+", label: "Customers" },
+      { value: "400+", label: "Projects Completed" },
+    ],
+  },
+  {
+    id: "09",
+    title: "Crypto & Blockchain",
+    description:
+      "Exchange, wallet & smart contract security testing, with FIU-IND & UAE VASP compliance.",
+    image: crypto.src || crypto,
+    bgColor: "bg-gradient-to-t from-[#4A81D3] to-[#3B9E6A]",
+    imagePosition: "left",
+    stats: [
+      { value: "15+", label: "Customers" },
+      { value: "180+", label: "Projects Completed" },
     ],
   },
 ];
@@ -155,7 +197,7 @@ function IndustryCard({ item }) {
   );
 
   return (
-    <div className="group flex h-[280px] flex-1 overflow-hidden">
+    <div className="group flex h-[280px] flex-1 overflow-hidden lg:max-w-1/2">
       {isImageLeft ? (
         <>
           {imageBlock}

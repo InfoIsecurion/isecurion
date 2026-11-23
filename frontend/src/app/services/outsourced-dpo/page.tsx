@@ -93,39 +93,57 @@ const globalCards = [
 const whoNeedsDpo = [
   {
     Icon: "boxicons:bank",
-    heading: "Regulated Organizations",
+    heading: "Significant Data Fiduciary (DPDP)",
     description:
-      "Businesses operating under data protection laws or sector-specific regulatory requirements that need structured privacy oversight.",
+      "Organisations notified as Significant Data Fiduciaries under India's DPDP Act 2023, requiring a formally appointed, India-based DPO.",
   },
   {
     Icon: "iconmind:compliance-outline-regular",
-    heading: "GDPR-Regulated Businesses",
+    heading: "Large-Scale Monitoring (GDPR)",
     description:
-      "Organisations whose processing activities meet the criteria for mandatory DPO appointment under GDPR.",
+      "Entities whose core activities involve regular, systematic monitoring of individuals or large-scale processing of special category data under GDPR Article 37.",
   },
   {
     Icon: "healthicons:chart-cured-increasing-24px",
-    heading: "Startups & SaaS Companies",
+    heading: "Multi-Jurisdiction Data Flows",
     description:
-      "Scaling businesses that need privacy governance to support enterprise customers, partnerships, and market expansion.",
+      "Companies processing personal data across India, EU, UK, GCC, Singapore and Australia that need one coordinated privacy function.",
   },
   {
     Icon: "ri:global-line",
-    heading: "Businesses Handling Global Data",
+    heading: "Startup Scaling Fast: ",
     description:
-      "Organisations processing personal data across multiple jurisdictions with overlapping privacy requirements.",
+      "Funded startups needing investor-grade privacy governance and a named DPO without full-time overhead.",
   },
   {
     Icon: "material-symbols:vpn-key-alert-outline",
-    heading: "Organisations Facing Privacy Gaps",
+    heading: "DPO Role Vacant",
     description:
-      "Businesses with incomplete privacy documentation, unclear accountability, or gaps in data handling processes.",
+      "Organisations between DPO hires needing interim coverage with zero compliance gap.",
   },
   {
     Icon: "charm:shield-warning",
-    heading: "Businesses Facing Data Breaches",
+    heading: "Vendor / Customer Contract Requirement",
     description:
-      "Organisations seeking structured support for data breaches, privacy complaints, and remediation activities.",
+      "Enterprise clients or DPAs requiring a named DPO contact.",
+  },
+  {
+    Icon: "charm:shield-warning",
+    heading: "Rising DSAR / Grievance Volume",
+    description:
+      "Growing data subject requests with no structured process or SLA.",
+  },
+  {
+    Icon: "charm:shield-warning",
+    heading: "Post-Breach Remediation",
+    description:
+      "Organisations recovering from a personal data breach needing independent privacy leadership and regulator notification support.",
+  },
+  {
+    Icon: "charm:shield-warning",
+    heading: "Board Accountability Required",
+    description:
+      "Regulated entities where leadership needs demonstrable, board-level accountability for data protection.",
   },
 ];
 
@@ -138,7 +156,7 @@ const engagementLifecycle = [
   },
   {
     number: "02",
-    title: "DPO Appointment & Onboarding",
+    title: "DPO Appointment & Registration",
     description:
       "Define the engagement scope, responsibilities, reporting arrangements, and appointment formalities where required.",
   },
@@ -174,7 +192,7 @@ const engagementMilestones = [
     number: "02",
     period: "Month 1",
     title: "DPO appointed & registered",
-    description: "Prioritise risks and define compliance improvement actions.",
+    description: "Formal appointment letter, regulator registration where required, privacy notice and consent framework drafted.",
   },
   {
     number: "03",
@@ -451,7 +469,7 @@ function page() {
             <Animation>
               <div className="space-y-4 text-center lg:text-left">
                 <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
-                  OUTSOURCED DATA PROTECTION OFFICER
+                  OUTSOURCED DPO SERVICES IN INDIA & GLOBALLY | VIRTUAL DATA PROTECTION OFFICER
                 </p>
                 <h1
                   className="text-[#FFFFFF] lg:max-w-[440px] animate-hero-reveal"
@@ -459,6 +477,11 @@ function page() {
                 >
                   Expert Privacy Leadership. Without the Full-Time Overhead.
                 </h1>
+                <p className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[500px] animate-hero-reveal"
+                  style={{ animationDelay: "800ms" }}>
+                  ISECURION delivers a fully qualified Outsourced Data Protection Officer (DPO) service across India and globally, including the USA, UK, EU, GCC, Singapore and Australia. 
+                  Get on-demand privacy leadership and DPDP Act, GDPR, RBI, SEBI and PDPA compliance expertise, without the overhead of a full-time in-house DPO.
+                </p>
                 <p
                   className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[450px] animate-hero-reveal"
                   style={{ animationDelay: "800ms" }}
@@ -792,6 +815,17 @@ function page() {
                 through structured governance, documented processes, and ongoing
                 advisory support.
               </p>
+              <WordReveal
+                text="What is an Outsourced DPO "
+                className="text-[#FEFEFE] max-w-[720px]"
+              ></WordReveal>
+              <p
+                className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[670px] animate-hero-reveal"
+                style={{ animationDelay: "1200ms" }}
+              >
+                A Data Protection Officer (DPO) is an independent privacy expert responsible for monitoring an organisation's compliance with data protection law, advising on lawful processing, managing data subject requests, and acting as the designated point of contact for regulators and individuals. An Outsourced DPO delivers this function on a part-time, remote or retainer basis, without the cost or key-person risk of a full-time hire. 
+                ISECURION's team acts as a seamless extension of your organisation, backed by certified privacy and security professionals rather than a single individual.
+              </p>
             </div>
           </Animation>
           <div className="mt-10">
@@ -862,7 +896,7 @@ function page() {
                         />
                       </span>
                     </div>
-                    <p className="text-[15px] font-normal leading-[24px] text-[#D1D1D1] max-w-[338px]">
+                    <p className="text-[15px] font-normal leading-[24px] text-[#D1D1D1] max-w-[338px] h-[90px]">
                       {item.description}
                     </p>
                   </AnimatedCard>
@@ -1226,7 +1260,7 @@ function page() {
                           "Week 1-2",
                           "Month 1",
                           "Months 1-3",
-                          "Month 3",
+                          "Ongoing",
                           "Continuous",
                         ][index]
                       }

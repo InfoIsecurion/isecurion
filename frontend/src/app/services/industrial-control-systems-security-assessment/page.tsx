@@ -100,7 +100,7 @@ const industrialSystemSteps = [
   {
     title: "Reconnaissance",
     description:
-      "Identify remote and local entry points across the ICS/SCADA environment.",
+      "Identify remote and local entry points. ",
     icon: <Icon icon="fluent:search-16-filled" />,
   },
   {
@@ -112,7 +112,7 @@ const industrialSystemSteps = [
   {
     title: "System Enumeration",
     description:
-      "Assess PLCs, RTUs, HMIs, historians, SCADA applications, databases, credentials, and wireless connections.",
+      "Assess PLCs, RTUs, HMIs, historians, ICCP servers, master nodes, SCADA applications, databases, credentials, and wireless and radio connections.",
     icon: <Icon icon="iconmind:session-fixation-guard-outline-regular" />,
   },
   {
@@ -124,7 +124,7 @@ const industrialSystemSteps = [
   {
     title: "Controlled Exploitation",
     description:
-      "Safely validate exploitable weaknesses, remote-access paths, and diagnostic mechanisms within agreed rules of engagement.",
+      "Safely validate exploitable weaknesses in remote-access mechanisms and VPNs, diagnostic and dial-up mechanisms, and default configurations, within agreed rules of engagement.",
     icon: <Icon icon="bx:layer" />,
   },
   {
@@ -165,9 +165,8 @@ function page() {
 
               {/*DESCRIPTION */}
               <p className="mt-[24px] max-w-[460px] text-[#D1D1D1] lg:mt-[26px] sectionDescription animate-hero-reveal" style={{ animationDelay: "800ms" }}>
-                ISECURION helps identify, assess, and prioritize security risks
-                across critical industrial systems, networks, applications, and
-                infrastructure.
+                ISECURION helps identify, assess, and prioritize security risks across critical industrial systems, SCADA networks, applications, and infrastructure. 
+                Delivered by a CREST Member (accredited for Penetration Testing), CERT-In empanelled, ISO 27001:2022 certified team.
               </p>
 
               <div className="mt-[30px] sm:mt-[34px] animate-hero-reveal" style={{ animationDelay: "1080ms" }}>
@@ -197,12 +196,20 @@ function page() {
 
               <WordReveal text=" What Is ICS Security Assessment?" className="mt-3 text-2xl font-semibold text-white sm:text-3xl lg:text-[32px]" />
 
-              <p className="mt-4 max-w-[580px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{ animationDelay: "850ms" }}>
+              <p className="mt-4 max-w-[680px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{ animationDelay: "850ms" }}>
                 Modern ICS/SCADA environments are increasingly connected to
                 corporate networks and the Internet, creating new opportunities
                 for cyber threats. ISECURION assesses these environments to
                 identify vulnerabilities and security gaps before they can
                 impact critical operations.
+              </p>
+              <p className="mt-4 max-w-[680px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{ animationDelay: "850ms" }}>
+                Industrial control systems play a fundamental role in modern society, supporting telecommunications, transportation, water 
+                and electricity services. As ICS/SCADA systems connect to TCP/IP corporate networks and the Internet, they gain efficiency 
+                and lower costs but also face growing cyber risk, and attacks on critical infrastructure are a growing problem. Events such 
+                as the Stuxnet virus alerted governments to the consequences. 
+                ISECURION helps organizations identify and prioritize risks to their ICS/SCADA environments and mitigate critical 
+                vulnerabilities before they are exploited.
               </p>
             </div>
           </Animation>
@@ -225,6 +232,10 @@ function page() {
                   "Firewalls, routers & switches",
                   "Network ports, protocols & services",
                   "Wireless access controls",
+                  "Boundary defense policies ",
+                  "Account monitoring and control ",
+                  "Application software security ",
+                  "Critical controls for industrial control systems"
                 ].map((item, index) => (
                   <motion.li
                     key={item}
@@ -306,11 +317,11 @@ function page() {
                 01
               </span>
               <p className="text-[15px] sm:text-base font-normal uppercase text-white">
-                COMPLIANCE &amp; SECURITY GOVERNANCE
+                Compliance Auditing.
               </p>
             </div>
             <p className="mt-2 text-[14px] sm:text-base text-[#D1D1D1]">
-              Ensure the right controls, policies and processes are in place.
+              Our experts audit the key compliance processes driving your ICS security program, focusing on NESA, NIST SP 800-82 and ISO 27001:2022. 
             </p>
 
             {/* 4 CARDS GRID */}
@@ -357,8 +368,12 @@ function page() {
                 ICS VULNERABILITY ASSESSMENT &amp; PENETRATION TESTING
               </p>
             </div>
-            <p className="mt-2 text-[14px] sm:text-base text-[#D1D1D1]">
-              Find and validate what can be exploited, before attackers do.
+            <p className="mt-2 text-[14px] sm:text-base text-[#D1D1D1] max-w-4xl">
+              Our methodology combines vulnerability assessment tools with practical manual testing, derived from recognised standards such as OSSTMM and OWASP.
+            </p>
+            <p className="mt-2 text-[14px] sm:text-base text-[#D1D1D1] max-w-2xl">
+              Assessments on industrial control systems are done with extreme caution because of the criticality of the systems in scope. 
+              We advise clients to provide test beds or identify redundant live systems for testing, and a thorough impact analysis is done before any assessment begins.
             </p>
           </div>
         </div>

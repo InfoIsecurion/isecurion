@@ -215,9 +215,7 @@ function SmartContractSecurity() {
                 className="font-medium text-[#D9D9D9] md:max-w-[500px] opacity-0 animate-hero-reveal sectionDescription"
                 style={{ animationDelay: "750ms" }}
               >
-                ISECURION audits smart contracts to identify vulnerabilities,
-                validate functionality, and strengthen security across
-                blockchain ecosystems.
+                ISECURION audits smart contracts to identify vulnerabilities, validate functionality, and strengthen security across blockchain ecosystems, using industry-standard tools and techniques. CERT-In empanelled and ISO 27001:2022 certified.
               </p>
               <Link href="/company/contact">
               <button
@@ -242,16 +240,16 @@ function SmartContractSecurity() {
           <div className="text-center md:text-left">
             <Animation>
               <p className="text-sm sm:text-base font-semibold  uppercase  tracking-[0.2px] sectionheading text-[#0F66EA] ">
-                WHY SMART CONTRACT SECURITY?
+                Why Smart Contract Security Audit Is Required?
               </p>
               <h2 className="mt-3  text-white ">
                 <WordReveal as="span" text="Protect the code behind" ></WordReveal><br /><WordReveal as="span" text="your digital assets."></WordReveal> 
               </h2>
 
               <p className="mt-6 md:max-w-[480px]  text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{ animationDelay: "600ms" }}>
-                Smart contracts directly control critical blockchain operations
-                and can introduce significant financial and security risks when
-                vulnerabilities go undetected.
+                Smart contracts are only as good as their security. A proactive smart contract security audit identifies and addresses 
+                vulnerabilities in the code, reducing financial risk, building trust, supporting regulatory compliance, and adapting to 
+                the evolving blockchain threat landscape.
               </p>
             </Animation>
           </div>
@@ -322,8 +320,8 @@ function SmartContractSecurity() {
               <div className="lg:col-span-5 lg:pt-9">
                 <RightAnimation>
                   <p className=" text-[#D1D1D1] md:max-w-[430px] text-center md:text-left sectionDescription">
-                    We analyze your smart contracts from code to risk, ensuring
-                    they are secure, reliable, and ready for real-world use.
+                    Solidity smart contract audits covering reentrancy, access control, oracle manipulation, and 
+                    logic vulnerabilities for DeFi, NFT, and crypto exchange platforms. 
                   </p>
                 </RightAnimation>
               </div>

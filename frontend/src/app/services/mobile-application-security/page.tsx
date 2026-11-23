@@ -186,25 +186,24 @@ function page() {
                 </h1>
 
                 <p className="mt-5 max-w-[640px] text-base leading-8 text-[#D9D9D9] sm:text-lg animate-hero-reveal" style={{ animationDelay: "400ms" }}>
-                  ISECURION assesses iOS and Android applications across the
-                  client, communication, and backend layers to identify
-                  vulnerabilities before they can be exploited.
+                  ISECURION assesses iOS and Android applications across the client, communication, and backend layers to identify vulnerabilities before they can be exploited.
+                  Delivered by a CREST Member (accredited for Penetration Testing), CERT-In empanelled, ISO 27001:2022 certified team.
                 </p>
 
                 <Animation>
                   <Link href="/company/contact">
-                  <button
-                    type="button"
-                    className="mt-8 inline-flex h-[54px] items-center justify-center rounded-[10px] bg-white px-7 text-sm sm:text-[16px] font-medium text-[#31435C] transition hover:bg-gray-100 cursor-pointer"
-                  >
-                    
-                    Scecure My Mobile App{""}
-                   
-                    <span className="pl-2">
-                      <Icon icon="mdi:arrow-right" width={20} />
-                    </span>
-                  </button>
-                   </Link>
+                    <button
+                      type="button"
+                      className="mt-8 inline-flex h-[54px] items-center justify-center rounded-[10px] bg-white px-7 text-sm sm:text-[16px] font-medium text-[#31435C] transition hover:bg-gray-100 cursor-pointer"
+                    >
+
+                      Scecure My Mobile App{""}
+
+                      <span className="pl-2">
+                        <Icon icon="mdi:arrow-right" width={20} />
+                      </span>
+                    </button>
+                  </Link>
                 </Animation>
               </div>
             </div>
@@ -221,31 +220,27 @@ function page() {
               </WordReveal>
 
               <Animation>
-              <p className="mt-6 max-w-[550px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{animationDelay:"500ms"}}>
-                A Mobile Application Security Assessment is a structured
-                evaluation of mobile applications to identify vulnerabilities
-                across the application, device, communication, and backend API
-                layers.
-              </p>
+                <p className="mt-6 max-w-[750px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{ animationDelay: "500ms" }}>
+                  A Mobile Application Security Assessment is a structured
+                  evaluation of mobile applications to identify vulnerabilities
+                  across the application, device, communication, and backend API
+                  layers.
+                </p>
               </Animation>
 
               <Animation delay={0.5}>
-              <p className="mt-4 max-w-[610px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{animationDelay:"650ms"}}>
-                We combine{" "}
-                <span className="font-medium text-white">
-                  OWASP MASVS/MSTG-aligned testing
-                </span>
-                ,{" "}
-                <span className="font-medium text-white">
-                  targeted automation
-                </span>
-                , and{" "}
-                <span className="font-medium text-white">
-                  expert-led manual assessment
-                </span>{" "}
-                to uncover weaknesses in application logic, authentication, data
-                protection, APIs, and mobile platform controls.
-              </p>
+                <p className="mt-4 max-w-[810px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{ animationDelay: "650ms" }}>
+                  ISECURION's Mobile Application Security Assessment helps organizations harden their iOS and Android apps across the full stack
+                  (client, transport, and server), covering native, hybrid, and cross-platform builds. Our approach aligns with OWASP MASVS/MSTG
+                  and leading compliance frameworks. We combine manual testing (link to VAPT) with targeted tooling to uncover logic flaws,
+                  insecure data storage, weak cryptography, authentication and session issues, and API risks. You receive prioritized remediation
+                  guidance and clear evidence for every finding, supporting faster release cycles and compliance readiness.
+                </p>
+                <ul className="mt-4 max-w-[810px] text-[#D1D1D1] sectionDescription animate-hero-reveal" style={{ animationDelay: "650ms" }}>
+                  <li><strong>Platforms: </strong> iOS, Android (phone and tablet), wearables</li>
+                  <li><strong>App types: </strong> Native, Hybrid, Cross-platform (React Native, Flutter, etc.)</li>
+                  <li><strong>Coverage: </strong> App binaries, local storage, APIs, backend integrations, authentication, transport security</li>
+                </ul>
               </Animation>
             </div>
           </Animation>
@@ -340,13 +335,13 @@ function page() {
           <Animation>
             <div className="relative mx-auto max-w-7xl px-6 pb-8 pt-16 text-center sm:px-10 lg:px-12 lg:pt-20">
               <WordReveal text="Our Mobile Security Methodology" className="text-white font-semibold">
-                
+
               </WordReveal>
               <Animation>
-              <p className="mx-auto mt-5 max-w-[780px] sectionDescription text-[#D1D1D1] animate-hero-reveal" style={{animationDelay:"850ms"}}>
-                Our methodology combines threat modeling, manual testing, and
-                targeted automation to deliver depth and accuracy.
-              </p>
+                <p className="mx-auto mt-5 max-w-[780px] sectionDescription text-[#D1D1D1] animate-hero-reveal" style={{ animationDelay: "850ms" }}>
+                  Our methodology combines threat modeling, manual testing, and
+                  targeted automation to deliver depth and accuracy.
+                </p>
               </Animation>
             </div>
           </Animation>

@@ -92,6 +92,24 @@ const organizationsSupported = [
     description:
       "Service providers supporting Aadhaar-related systems, integrations, and infrastructure.",
   },
+  {
+    Icon: "evicons:charging-operator",
+    heading: "Telecom Operators",
+    description:
+      "Issuing Aadhaar-linked SIMs and managing subscriber authentication.",
+  },
+  {
+    Icon: "iconoven:government-building",
+    heading: "Government Agencies",
+    description:
+      "Delivering citizen services using Aadhaar authentication.",
+  },
+  {
+    Icon: "carbon:user-identification",
+    heading: "Face Authentication Providers",
+    description:
+      "Meeting UIDAI biometric and facial recognition standards.",
+  },
 ];
 
 const whyAadhaarAuditsMatter = [
@@ -322,7 +340,7 @@ const ourDifferentiators = [
   {
     heading: "Incident Response & BCP",
     description:
-      "We ensure your organization is not just compliant but secure, resilient, and trusted in India's digital identity ecosystem.",
+      "Assess incident detection, response and recovery, and business continuity, so authentication services stay available under threat. Keep the closing sentence as a standalone line under the grid.",
   },
 ];
 
@@ -463,9 +481,8 @@ function AadharAudit() {
               className="text-base sm:text-lg font-medium leading-[28px] text-[#D1D1D1] animate-hero-reveal"
               style={{ animationDelay: "750ms" }}
             >
-              Strengthen the security and compliance of your Aadhaar-enabled
-              systems with a structured audit of information security controls,
-              data protection practices, and operational safeguards.
+              ISECURION delivers comprehensive Aadhaar/UIDAI audit services, helping your organization meet UIDAI security, privacy and operational standards for authentication services. From AUA and KUA audit 
+              support to Face Authentication readiness, we help you safeguard citizen data and maintain regulatory trust. CERT-In empanelled and ISO 27001:2022 certified.
             </p>
             <div className="mx-auto lg:mx-0">
               <ul
@@ -491,14 +508,14 @@ function AadharAudit() {
                 ))}
               </ul>
             </div>
-            {/* <Link href="/comapny/contact">
-            <button className="mt-9 text-[15px] font-medium flex items-center px-3 py-3 mx-auto lg:mx-0 rounded-[10px] text-[#31435C] bg-[#FFFFFF]">
+            <Link href="/comapny/contact">
+            <button className="mt-9 text-[15px] font-medium flex items-center px-3 py-3 mx-auto lg:mx-0 rounded-[10px] text-[#31435C] bg-[#FFFFFF] cursor-pointer">
               Request Audit Quote{" "}
               <span>
                 <Icon icon="akar-icons:arrow-right" />
               </span>
             </button>
-            </Link> */}
+            </Link>
           </div>
           {/* right  */}
           <div className="flex-1 px-6 py-6 rounded-[23px] bg-[#202123]">
@@ -643,10 +660,10 @@ function AadharAudit() {
             ></WordReveal>
             <Animation>
               <p className="sectionDescription text-[#D1D1D1]">
-                Organizations involved in Aadhaar authentication and related
-                services must protect sensitive identity information and
-                maintain appropriate security controls across their systems and
-                processes.
+               Aadhaar has become the backbone of India's digital identity ecosystem, enabling authentication for banking, telecom, 
+               government welfare and fintech services. With sensitive biometric and demographic data at stake, a UIDAI audit is 
+               critical for operational and reputational security. 
+               Whether your infrastructure is on-premise, cloud-based or hybrid, we cover all authentication and data handling processes.
               </p>
             </Animation>
             <Animation delay={0.5}>

@@ -172,7 +172,7 @@ const Steps = [
     step: "Phase 03",
     title: "Technical Assessment",
     description:
-      "Review infrastructure, applications, configurations, and technical controls within the agreed scope.",
+      "Conduct vulnerability scans, penetration testing, and system configuration checks across infrastructure and applications. Penetration testing is delivered by a CREST Member, accredited for Penetration Testing. ",
     side: "left",
   },
   {
@@ -180,7 +180,7 @@ const Steps = [
     step: "Phase 04",
     title: "Control Validation",
     description:
-      "Evaluate whether security controls are implemented and operating effectively.",
+      "Verify that security controls are effective in practice, not just on paper.",
     side: "right",
   },
   {
@@ -509,12 +509,15 @@ function page() {
                 </h1>
 
                 {/* Description */}
-                <p className="mt-4 lg:max-w-[400px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "1000ms" }}>
-                  Strengthen your institution’s cybersecurity and regulatory
-                  readiness with a comprehensive RBI Information Security Audit.
-                  Evaluate IT controls, protect sensitive financial data, &
-                  improve resilience across banking and digital financial
-                  services.
+                <p className="mt-4 lg:max-w-[460px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "1000ms" }}>
+                  ISECURION delivers comprehensive RBI Information Security Audit services, helping banks, NBFCs, payment banks, 
+                  small finance banks and fintech companies strengthen cybersecurity, protect customer data and achieve regulatory 
+                  compliance across India and South Asia. CERT-In empanelled and ISO 27001:2022 certified.
+                </p>
+                <p className="mt-4 lg:max-w-[460px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "1000ms" }}>
+                  The Reserve Bank of India (RBI) expects regulated entities to run Information Security audits so that financial institutions stay resilient, 
+                  secure and compliant. With online banking, payment gateways and digital wallets, cyber risk has never been higher. Our approach goes beyond 
+                  checklists: we focus on real-world security effectiveness, with actionable insights that keep you ahead of cyber risks while meeting RBI guidelines.
                 </p>
 
                 <ul className="mt-8 grid grid-cols gap-y-4 ">
@@ -543,7 +546,7 @@ function page() {
                 </ul>
 
                 {/* CTA */}
-                {/* <div className="mt-10 text-center lg:text-left">
+                <div className="mt-10 text-center lg:text-left">
                   <Link href="/company/contact">
                   <button
                     type="button"
@@ -555,7 +558,7 @@ function page() {
                     </span>
                   </button>
                   </Link>
-                </div> */}
+                </div>
               </div>
             </Animation>
 

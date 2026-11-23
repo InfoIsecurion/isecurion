@@ -76,13 +76,13 @@ const scopeOfWork = [
     Icon: "garden:email-stroke-20",
     heading: "Enterprise Email Phishing",
     description:
-      "Simulate targeted email campaigns, domain spoofing, malicious links, and credential-harvesting scenarios.",
+      "Mass and targeted email campaigns, domain spoofing checks, detection and link analysis, and safe credential-harvesting simulations for SaaS/SSO portals.",
   },
   {
     Icon: "iconoven:executive",
     heading: "Spear-Phishing for Executives",
     description:
-      "Test leadership and privileged users with realistic, high-fidelity scenarios targeting executive-level threats.",
+      "High-fidelity, bespoke scenarios against leadership and privileged users with strict approvals and ROE, focused on targeted threats such as BEC",
   },
   {
     Icon: "basil:mobile-phone-outline",
@@ -94,7 +94,7 @@ const scopeOfWork = [
     Icon: "icon-park-outline:permissions",
     heading: "Role-Based Exposure",
     description:
-      "Assess phishing susceptibility across departments and roles to identify where targeted training is needed.",
+      "Assess risk by role and department (finance, HR, procurement, IT admins) to prioritize training and controls where it matters most",
   },
   {
     Icon: "mdi:shopping-outline",
@@ -106,11 +106,11 @@ const scopeOfWork = [
     Icon: "grommet-icons:analytics",
     heading: "Metrics & Reporting",
     description:
-      "Track clicks, reports, credential submissions, repeat failures, and behavioural risk trends through the Drosera dashboard.",
+      "Click rate, report rate, credential submission rate, repeat failures, susceptibility index and time-series trends, live in the Drosera dashboard",
   },
 ];
 
-const engagementLifecycle = [
+const methodology = [
   {
     number: "01",
     title: "Recon & Threat Modelling",
@@ -127,7 +127,7 @@ const engagementLifecycle = [
     number: "03",
     title: "Controlled Execution",
     description:
-      "Execute safe campaigns through Drosera’s trusted infrastructure, encrypted capture, and immediate containment.",
+      "Safe sends via Drosera's dedicated, high-reputation infrastructure, encrypted capture endpoints, and immediate containment for mistaken credential submissions.",
   },
   {
     number: "04",
@@ -464,10 +464,8 @@ function PhishingSimulation() {
                   className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[450px] animate-hero-reveal"
                   style={{ animationDelay: "700ms" }}
                 >
-                  Identify employee vulnerabilities, improve threat reporting,
-                  and reduce exposure to phishing, credential theft, and social
-                  engineering attacks through realistic, controlled phishing
-                  simulations.
+                  ISECURION's Phishing Simulation service combines threat-informed campaigns, executive reporting and targeted training to reduce employee susceptibility 
+                  to credential theft, business email compromise (BEC) and social-engineering attacks. Powered by Drosera, our AI phishing simulation platform, to measure human risk and build stronger security awareness.
                 </p>
                 <p
                   className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[460px] animate-hero-reveal"
@@ -477,6 +475,14 @@ function PhishingSimulation() {
                   organisations measure human risk and build stronger security
                   awareness.
                 </p>
+                {/* FOOTER TAGLINE */}
+              <p
+                className="mt-6 text-[13px] sm:text-[14px] lg:text-[16px] font-medium leading-7 text-[#0F66EA] lg:max-w-[360px] opacity-0 animate-hero-reveal"
+                style={{ animationDelay: "1300ms" }}
+              >
+                Targeted Spear-Phishing | Vishing & Smishing | Credential-Harvest (Safe) &amp;CK
+                | Executive Dashboards
+              </p>
               </div>
             </Animation>
             {/* <Animation>
@@ -732,7 +738,7 @@ function PhishingSimulation() {
               ></WordReveal>
               <Animation>
                 <p
-                  className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[550px] animate-hero-reveal"
+                  className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[750px] animate-hero-reveal"
                   style={{ animationDelay: "600ms" }}
                 >
                   Phishing simulation is a controlled exercise that replicates
@@ -742,12 +748,33 @@ function PhishingSimulation() {
               </Animation>
               <Animation delay={0.5}>
                 <p
-                  className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[590px] animate-hero-reveal"
+                  className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[750px] animate-hero-reveal"
                   style={{ animationDelay: "750ms" }}
                 >
                   ISECURION combines realistic attack scenarios with behavioural
                   insights and targeted training to identify weaknesses and
                   strengthen your organisation's human security layer.
+                </p>
+              </Animation>
+              <Animation delay={0.5}>
+                <p
+                  className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[750px] animate-hero-reveal"
+                  style={{ animationDelay: "750ms" }}
+                >
+                  <strong>Why it matters: </strong>{' '}Social engineering remains responsible for a large share of breaches across industries. 
+                  While technical controls are essential, they must be complemented by a vigilant workforce. 
+                  Regular, threat-informed phishing simulations show where investment in awareness, detection and process improvement 
+                  will yield the greatest reduction in risk.
+                </p>
+              </Animation>
+              <Animation delay={0.5}>
+                <p
+                  className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[750px] animate-hero-reveal"
+                  style={{ animationDelay: "750ms" }}
+                >
+                  <strong>Business outcomes: </strong>{' '}Enterprises that adopt continuous phishing simulation typically see measurable improvement in reporting rates, 
+                  a decline in successful simulated credential theft, and stronger SOC detection tuning. 
+                  These outcomes translate into fewer incidents, shorter investigation timelines and lower cost per incident.
                 </p>
               </Animation>
             </div>
@@ -816,13 +843,12 @@ function PhishingSimulation() {
                 ></WordReveal>
 
                 <p
-                  className="mt-4 lg:max-w-[380px] text-[14px] leading-[25px] text-[#C7C9D3] sm:text-[15px] sm:leading-[25.5px] text-center lg:text-left animate-hero-reveal"
+                  className="mt-4 lg:max-w-[420px] text-[14px] leading-[25px] text-[#C7C9D3] sm:text-[15px] sm:leading-[25.5px] text-center lg:text-left animate-hero-reveal"
                   style={{ animationDelay: "550ms" }}
                 >
-                  Drosera is ISECURION&apos;s in-house phishing simulation and
-                  human risk management platform, designed to help organisations
-                  run campaigns, analyse employee behaviour, and deliver
-                  targeted security awareness training.
+                  Drosera is ISECURION's in-house AI phishing simulation and human risk management platform. It generates realistic, context-aware phishing scenarios, 
+                  sends them from high-reputation infrastructure with no whitelisting required, and turns every click, submission and report into an actionable 
+                  human risk score.
                 </p>
 
                 <ul className="mt-5 space-y-3 text-center lg:text-left">
@@ -903,12 +929,12 @@ function PhishingSimulation() {
         </div>
       </section>
 
-      <section className="relative w-full py-14 overflow-hidden bg-[#050D1C]">
+      <section className="relative w-full pt-14 pb-6 overflow-hidden bg-[#050D1C]">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 -right-20 w-[300px] h-[300px] rounded-full blur-[100px] bg-[#FFFFFF33]" />
         </div>
         <Animation>
-          <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10">
+          <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8">
             <div className="max-w-2xl space-y-3 text-center lg:text-left">
               <p className="text-sm sm:text-base font-semibold text-[#7D70F0]">
                 SCOPE OF WORK
@@ -918,7 +944,6 @@ function PhishingSimulation() {
                 className="text-[#FFFFFF]"
               ></WordReveal>
               <Animation>
-                x
                 <p
                   className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] max-w-[647px] animate-hero-reveal"
                   style={{ animationDelay: "600ms" }}
@@ -956,11 +981,20 @@ function PhishingSimulation() {
                 ))}
               </div>
             </div>
+             <Animation>
+                <p
+                  className="mt-10 text-base sm:text-lg leading-[26px] text-[#D1D1D1] animate-hero-reveal"
+                  style={{ animationDelay: "600ms" }}
+                >
+                  Every scope item is performed under a documented Rules of Engagement (ROE), with opt-out lists for sensitive personnel and strict evidence-handling procedures.
+                </p>
+              </Animation>
           </div>
         </Animation>
+
       </section>
 
-      <section className="relative w-full overflow-hidden bg-[#050D1C] py-14 sm:py-16 lg:py-[72px]">
+      <section className="relative w-full overflow-hidden bg-[#050D1C] py-10">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
           {/* Section Heading */}
           <Animation>
@@ -987,9 +1021,8 @@ function PhishingSimulation() {
             </div>
           </Animation>
 
-          {/* Five Engagement Stages */}
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-0 xl:gap-x-8">
-            {engagementLifecycle.map((item, index) => (
+            {methodology.map((item, index) => (
               <AnimatedCard
                 key={item.number}
                 delay={index * 0.2}
@@ -1002,7 +1035,7 @@ function PhishingSimulation() {
                       {item.number}
                     </span>
 
-                    {index < engagementLifecycle.length - 1 && (
+                    {index < methodology.length - 1 && (
                       <Icon
                         icon="akar-icons:arrow-right"
                         className="text-[22px] text-[#F5F0E8A1]"

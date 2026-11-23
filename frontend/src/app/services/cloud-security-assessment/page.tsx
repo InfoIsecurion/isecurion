@@ -153,6 +153,10 @@ const cloudAssessmentFAQs = [
     answer:
       "ISECURION is a CERT-IN empanelled, ISO 27001 certified company with expert consultants providing comprehensive, end-to-end cloud security assessments and actionable remediation guidance.",
   },
+  {
+    question: "Is ISECURION CREST accredited? ",
+    answer: "Yes. ISECURION is a CREST Member, accredited for Penetration Testing. CREST is an international accreditation body for the cybersecurity industry, and its accreditation applies to ISECURION's Penetration Testing service. ISECURION is also CERT-In empanelled and ISO 27001:2022 certified."
+  }
 ];
 
 function CloudSecurity() {
@@ -172,30 +176,22 @@ function CloudSecurity() {
           </h1>
 
           <div className="space-y-1">
-            <p
-              className="sectionDescription  max-w-2xl  text-[#D9D9D9] opacity-0 animate-hero-reveal"
-              style={{ animationDelay: "300ms" }}
-            >
-              Cloud environments introduce new risks across infrastructure,
-              identities, applications, data, and configurations.
-            </p>
+
             <p
               className="text-base sm:text-lg font-medium  max-w-2xl  text-[#D9D9D9] opacity-0 animate-hero-reveal"
               style={{ animationDelay: "450ms" }}
             >
-              ISECURION assesses your cloud environment to uncover
-              vulnerabilities, misconfigurations, and security gaps before they
-              become business risks.
+              Cloud environments introduce new risks across infrastructure, identities, applications, data, and configurations. ISECURION, a CREST Member (accredited for Penetration Testing), CERT-In empanelled and ISO 27001:2022 certified company, assesses your cloud environment to uncover vulnerabilities, misconfigurations, and security gaps before they become business risks.
             </p>
           </div>
           <Link href="/company/contact">
-          <button
-            className="text-base font-medium flex items-center gap-3 px-4 py-4 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
-            style={{ animationDelay: "650ms" }}
-          >
-            Schedule My Cloud Security Consultation
-            <Icon icon="akar-icons:arrow-right" className="text-xl" />
-          </button>
+            <button
+              className="text-base font-medium flex items-center gap-3 px-4 py-4 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
+              style={{ animationDelay: "650ms" }}
+            >
+              Schedule My Cloud Security Consultation
+              <Icon icon="akar-icons:arrow-right" className="text-xl" />
+            </button>
           </Link>
         </div>
       </section>
@@ -210,12 +206,32 @@ function CloudSecurity() {
                 <h2 className=" text-[#FEFEFE]">
                   What Is Cloud Security Assessment?
                 </h2>
-                <p className="sectionDescription lg:max-w-lg  text-[#D1D1D1]">
+                <p className="sectionDescription lg:max-w-xl  text-[#D1D1D1]">
                   A Cloud Security Assessment is a structured evaluation of your
                   cloud infrastructure, configurations, identities,
                   applications, and security controls to identify
                   vulnerabilities and compliance gaps.
                 </p>
+                <p className="sectionDescription lg:max-w-xl  text-[#D1D1D1]">
+                  Cloud adoption accelerates digital transformation, but it introduces risks including misconfigurations, insecure APIs, and compliance gaps. ISECURION's Cloud
+                  Security Assessment keeps your cloud infrastructure secure, resilient, and compliant with standards such as ISO 27001, HIPAA, and PCI DSS.
+                </p>
+                <ul className="sectionDescription lg:max-w-xl space-y-1 text-[#D1D1D1]">
+                  {[
+                    "Secure your IaaS, PaaS, and SaaS environments",
+                    "Identify and remediate cloud vulnerabilities",
+                    "Ensure regulatory compliance and audit readiness",
+                    "Strengthen incident response and governance",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <Icon
+                        icon="lucide:check-circle"
+                        className="mt-1.5 shrink-0 text-[#0F66EA]"
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
                 <p className="sectionDescription lg:max-w-xl  text-[#D1D1D1]">
                   At ISECURION, we assess{" "}
                   <span className="font-semibold">

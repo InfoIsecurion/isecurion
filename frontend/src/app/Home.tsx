@@ -8,6 +8,8 @@ import allianz from "../assets/home/client/allianz.png";
 import shellinfo from "../assets/home/client/shellinfo.png";
 import bosch from "../assets/home/client/Bosch_logo.png";
 import Link from "next/link";
+import React from "react";
+import FAQSection from "../components/sections/FAQSection";
 
 import indentifyrisk from "../assets/home/indentifyrisk.jpg";
 import continuousvalidation from "../assets/home/continuousvalidattion.png";
@@ -46,10 +48,11 @@ import healthcare from "../assets/home/health-care.png";
 import manufacturing from "../assets/home/manufacturingRight.png";
 import rightCircle from "../assets/home/rightCircle.png";
 import HomeCTA from "../components/home/HomeCTA";
-import crestbackround from "../assets/home/crestbackground.png";
+import crestbackground from "../assets/home/certificationBackground.png";
 import crestcertificate from "../assets/home/auditorcertifications/crestcertificate.png";
 import { title } from "node:process";
 import { link } from "node:fs";
+import mapBackground from "../assets/home/mapBackground.png"
 
 const containerVariants = {
   hidden: {},
@@ -88,10 +91,14 @@ const ourExpertise = [
     description:
       "Identify vulnerabilities through proactive security testing and real-world attack simulations.",
     services: [
-      { title: "Vulnerability Assessment & Penetration Testing", link: "/services/vapt" },
-      { title: "Data Forensics", link: "/services/data-forensics" },
-      { title: "Web, Mobile & API Security", link: "/services/web-application-security-assessment" },
-      { title: "Red Teaming", link: "/services/red-team-assessment" },
+      { title: "Vulnerability Assessment & Penetration Testing", link: "/services/vulnerability-assessment-penetration-testing" },
+      { title: "Web Application Security Assessment", link: "/services/web-application-security-assessment" },
+      { title: "Mobile Application Security (iOS & Android)", link: "/services/mobile-application-security" },
+      // { title: "API Security Testing", link: "/services/" },
+      { title: "Secure Code Review", link: "/services/secure-code-review" },
+      { title: "Crypto Currency Exchange Pentest", link: "/services/crypto-currency-exchange" },
+      { title: "Red Team & AI-Augmented Red Team", link: "/services/red-team-assessment" },
+      { title: "IoT & Industrial Control System Security", link: "/services/iot-security-testing" },
     ],
     iconColor: "text-white",
     bgColor: "#88010045",
@@ -100,18 +107,18 @@ const ourExpertise = [
     descriptionColor: "text-[#D1D1D1]",
     headingColor: "text-[#E24B4A]",
     listColor: "text-[#A8A8A8]",
-    link: "services/continuous-breach-attack-simulation",
+    link: "services/vulnerability-assessment-penetration-testing",
   },
   {
     Icon: "lucide:monitor-cog",
     title: "Managed Security",
     description:
-      "Monitor, detect, and respond to cyber threats with managed security operations.",
+      "24x7 threat detection, round-the-clock SOC monitoring and incident response to detect, contain and remediate attacks quickly.",
     services: [
-      { title: "Managed SOC", link: "/services/soc" }, 
-      { title: "Threat Hunting", link: "/services/threat-hunting" }, 
-      { title: "Incident Response", link: "/services/incident-response" }, 
-      { title: "MDR", link: "/services/mdr" }
+      { title: "Managed Security Services (MSSP)", link: "/services/managed-security-services" },
+      { title: "In-House SOC", link: "/services/inhouse-soc" },
+      { title: "Hybrid SOC", link: "/services/hybrid-soc" },
+      { title: "Incident Response & DFIR", link: "/services/" }
     ],
     iconColor: "text-white",
     bgColor: "#001233",
@@ -126,11 +133,11 @@ const ourExpertise = [
     Icon: "gridicons:cloud-outline",
     title: "Cloud & Infrastructure Security",
     description:
-      "Secure cloud environments, infrastructure, identities across modern IT ecosystems.",
+      "Secure AWS, Azure and GCP environments against misconfigurations and threats across modern IT ecosystems.",
     services: [
       { title: "Cloud Security Assessment", link: "/services/cloud-security-assessment" },
       { title: "Configuration Review", link: "/services/config-review" },
-      { title: "Identity Security", link: "/services/identity-security" },
+      { title: "Network & Infrastructure Penetration Testing", link: "/services/" },
       { title: "Infrastructure Hardening", link: "/services/infrastructure" },
     ],
     iconColor: "text-white",
@@ -146,12 +153,13 @@ const ourExpertise = [
     Icon: "charm:notes-tick",
     title: "Governance, Risk & Compliance",
     description:
-      "Build a compliant and resilient organization with governance frameworks & regulatory expertise.",
+      "Align with Indian and global regulations through audits, advisory and governance frameworks.",
     services: [
-      {title:"ISO 27001", link:"/services/iso27001"}, 
-      {title:"SOC 2", link:"/services/soc-2-compliance"}, 
-      {title:"DPDP", link: "/services/dpdp-compliance"}, 
-      {title:"Risk Assessments", link: "/services/risk"}
+      { title: "ISO 27001 27001:2022", link: "/services/iso27001" },
+      { title: "SOC 2 Compliance", link: "/services/soc-2-compliance" },
+      { title: "DPDP Act, 2023 & GDPR", link: "/services/dpdp-compliance" },
+      { title: "RBI Information Security Audit", link: "/services/rbi-security-audit" },
+      { title: "UAE VASP Compliance", link: "/services/" },
     ],
     iconColor: "text-white",
     bgColor: "#00031C",
@@ -160,18 +168,19 @@ const ourExpertise = [
     descriptionColor: "text-[#D1D1D1]",
     headingColor: "text-[#0F66EA]",
     listColor: "text-[#A8A8A8]",
-    link: "services/iso27001",
+    link: "services/iso-27001",
   },
   {
     Icon: "lucide:users-round",
     title: "Security Advisory",
     description:
-      "Develop long-term cybersecurity maturity with strategic leadership and expert security guidance.",
+      "Strategic cybersecurity leadership, governance and compliance guidance without a full-time CISO.",
     services: [
       { title: "Virtual CISO", link: "/services/vciso" },
+      { title: "DPO Services", link: "/services/outsourced-dpo" },
       { title: "Security Roadmaps", link: "/services/security-roadmaps" },
       { title: "Risk Management", link: "/services/risk-management" },
-      { title: "Security Consulting", link: "/services/security-consulting" },
+
     ],
     iconColor: "text-white",
     bgColor: "#001233",
@@ -186,7 +195,7 @@ const ourExpertise = [
     Icon: "material-symbols:warning-outline-rounded",
     title: "Security Awareness & Human Risk",
     description:
-      "Reduce human risk through security awareness and phishing simulations.",
+      "Test employee awareness with real-world phishing simulation, powered by our Drosera -Phishing simulation platform.",
     services: [
       { title: "Security Awareness Training", link: "/services/security" },
       { title: "Phishing Simulations", link: "/services/phishing-simulation" },
@@ -202,6 +211,17 @@ const ourExpertise = [
     listColor: "text-[#A8A8A8]",
     link: "services/phishing-simulation",
   },
+];
+
+const mapMarkers = [
+  { id: 1, x: "18.4%", y: "38.6%", type: "red" },
+  { id: 2, x: "49.3%", y: "31%", type: "red" },
+  { id: 3, x: "54%", y: "51%", type: "blue" },
+  { id: 4, x: "63.9%", y: "49%", type: "red" },
+  { id: 5, x: "65.8%", y: "49%", type: "red" },
+  { id: 6, x: "72.5%", y: "51.7%", type: "red" },
+  { id: 7, x: "80.1%", y: "59.1%", type: "red" },
+  { id: 8, x: "93.7%", y: "77.9%", type: "red" },
 ];
 
 const auditorCertificates = [
@@ -246,7 +266,7 @@ const trustedCompanies = [
   },
   {
     src: indegene.src,
-    alt: "Indegece",
+    alt: "Indegene",
     className: "h-7 w-35",
   },
   {
@@ -291,6 +311,123 @@ const impactCards = [
   },
 ];
 
+const homeFAQs = [
+  {
+    question: "Is ISECURION CREST accredited?",
+    answer:
+      ( <> Yes. ISECURION is a CREST Member, accredited for Penetration Testing. CREST is an international accreditation body for the cyber security industry, and its company accreditation is awarded to organisations that meet its standards for processes, technical methodologies and data handling. The CREST accreditation applies to ISECURION's Penetration Testing service. ISECURION is also CERT-In empanelled and ISO 27001:2022 certified. 
+      {' '}<a href="https://www.crest-approved.org/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Learn more about CREST →</a> 
+      </>),
+  },
+  {
+    question: "What does CREST accreditation mean for penetration testing, and why does it matter?",
+    answer:
+      "CREST accreditation is an independent assessment of a company's penetration testing processes, technical methodologies and data-handling practices. For clients, it provides assurance that testing is delivered to a recognised international standard, which is valued by enterprises, regulated sectors and organisations that work with global partners. ISECURION is a CREST Member accredited for Penetration Testing.",
+  },
+  {
+    question: "What is VAPT and why does my organisation need it?",
+    answer:
+      "VAPT stands for Vulnerability Assessment and Penetration Testing. The assessment phase identifies known vulnerabilities in your systems, while the penetration testing phase simulates real-world attacks to exploit those weaknesses. Organisations need VAPT to discover security gaps before malicious actors do, to meet regulatory compliance requirements (CERT-In, RBI, SEBI, etc.), and to protect sensitive customer data from breach.",
+  },
+  {
+    question: "What is the difference between vulnerability assessment and penetration testing?",
+    answer:
+      "A vulnerability assessment identifies, classifies and prioritises security weaknesses across systems, applications and networks, usually with a broad scan supported by manual validation. Penetration testing goes further: skilled testers actively attempt to exploit vulnerabilities to show real-world impact and attack paths. Together they make up VAPT, giving both wide coverage and proof of what an attacker could actually achieve.",
+  },
+  {
+    question: "Is ISECURION CERT-In empanelled?",
+    answer:
+      "Yes, ISECURION is a CERT-In (Indian Computer Emergency Response Team) empanelled cybersecurity company. This empanelment is granted by the Ministry of Electronics and Information Technology (MeitY), Government of India, and confirms that our team meets the stringent technical and quality standards required to conduct cybersecurity audits and penetration testing for government and critical-sector organisations across India.",
+  },
+  {
+    question: "What is the difference between CERT-In empanelment and CREST accreditation?",
+    answer:
+      "CERT-In empanelment is an Indian government recognition that allows an organisation to conduct information security audits, and it is widely required by Indian government bodies and regulated entities. CREST accreditation is an international accreditation for penetration testing providers, recognised by clients and regulators in many countries. ISECURION holds both: it is CERT-In empanelled and a CREST Member accredited for Penetration Testing.",
+  },
+  {
+    question: "How do I choose a VAPT or penetration testing company in India?",
+    answer:
+      "Look for recognised credentials such as CERT-In empanelment and CREST accreditation, testers who hold qualifications like OSCP, CEH or CISSP, a methodology that combines manual testing with tools rather than relying only on scanners, clear reports with remediation guidance and a retest, strong confidentiality and data-handling practices, and experience in your industry. ISECURION is CERT-In empanelled, a CREST Member accredited for Penetration Testing and ISO 27001:2022 certified.",
+  },
+  {
+    question: "What types of penetration testing does ISECURION offer?",
+    answer:
+      "ISECURION offers web application, mobile application (iOS and Android), cloud (AWS, Azure and GCP), network and infrastructure, API, IoT, industrial control system, smart contract and crypto exchange penetration testing, along with secure code review, red team assessments and AI-augmented red teaming. The CREST accreditation applies to ISECURION's Penetration Testing service.",
+  },
+  {
+    question: "What is the difference between penetration testing and red teaming?",
+    answer:
+      "A penetration test is a scoped exercise that aims to find and exploit as many vulnerabilities as possible in specific systems. A red team assessment is objective-based: testers simulate a real adversary across people, process and technology to test whether your organisation can detect and respond to an attack. ISECURION provides both penetration testing and red team assessments, including AI-augmented red teaming.",
+  },
+  {
+    question: "How long does a typical VAPT engagement take?",
+    answer:
+      "The duration depends on the scope and complexity of the systems being assessed. A web application assessment typically takes 5-10 business days, a mobile application test takes 5-7 days, a network infrastructure assessment ranges from 7-15 days, and a comprehensive red team exercise can take 3-6 weeks. ISECURION provides a detailed timeline estimate after an initial scoping call.",
+  },
+  {
+    question:
+      "What deliverables will I receive after a VAPT engagement?",
+    answer:
+      "After every VAPT engagement, ISECURION provides: an executive summary for management, a detailed technical report with all findings classified by severity (Critical, High, Medium, Low, Informational), proof-of-concept screenshots or videos, step-by-step remediation guidance for every vulnerability, and a remediation-verification retest (included) to confirm that fixes have been applied correctly.",
+  },
+  {
+    question: "How much does a VAPT or penetration test cost in India?",
+    answer:
+      "The cost depends on the scope: the number of applications, APIs, IP addresses or cloud environments, the complexity of the systems, the testing approach (black box, grey box or white box), the depth required and whether a retest is included. ISECURION prepares a fixed-scope quotation after a short scoping call. To request one, email info@isecurion.com or call +91 88612 01570.",
+  },
+  {
+    question:
+      "How often should an organisation conduct penetration testing?",
+    answer:
+      "Most organisations should run a penetration test at least once a year and after significant changes such as a major release, infrastructure or cloud migration, acquisition or security incident. Frameworks and regulators including SOC 2, ISO 27001, PCI DSS and sector regulators in India expect regular security testing, and high-risk or fast-changing environments often test more frequently.",
+  },
+  {
+    question:"What industries does ISECURION serve?",
+    answer:"ISECURION serves a broad range of industries including BFSI (Banking, Financial Services and Insurance), fintech, healthcare, e-commerce, government and public sector, IT and SaaS, manufacturing, automotive, crypto and blockchain, and telecommunications. We serve clients across India - Bangalore, Mumbai, Delhi, Pune, Hyderabad, Chennai, Kolkata, Ahmedabad, Noida - and globally in the USA, UK, UAE, Qatar, Singapore, Australia, and across the GCC region."
+  },
+   {
+    question:"What compliance frameworks does ISECURION support?",
+    answer:"ISECURION supports a comprehensive range of compliance frameworks: SOC 2, ISO 27001:2022, GDPR, India's DPDP Act, RBI Information Security Audit, IRDA Audit, SEBI CSCRF and Market SOC (MSOC), AADHAR/UIDAI Audit, DORA Compliance (EU), FIU-IND for Crypto and Virtual Digital Assets, UAE VASP Compliance, ISO 42001 (AI Management Systems), BSE/NSE Audit, ILDC, CICRA, and UPI Compliance Audit."
+  },
+   {
+    question:"Does ISECURION provide 24x7 SOC and managed security services?",
+    answer:"Yes. ISECURION offers Managed Security Services (MSSP), In-House SOC and Hybrid SOC services, providing round-the-clock monitoring, threat detection and incident response so that attacks can be detected, contained and remediated quickly."
+  },
+   {
+    question:"Does ISECURION offer cybersecurity services outside India?",
+    answer:"Yes. ISECURION delivers cybersecurity services globally. We have an office in Schaumburg, Illinois, USA, and regularly serve clients in the United Kingdom, the European Union, the UAE, Qatar, Singapore, Australia, Saudi Arabia, Kuwait, Bahrain, and Oman. Remote assessments and on-site engagements are both available for international clients."
+  },
+   {
+    question:"Where are ISECURION's offices and how can I contact the team?",
+    answer:"ISECURION's corporate office is in Bengaluru, with offices in Kolkata, Mumbai, Ahmedabad and Noida in India, and in Schaumburg, Illinois in the United States. To contact the team, email info@isecurion.com or call +91 88612 01570."
+  },
+   {
+    question:"What is Vulnytics and how does it help my security team?",
+    answer:"Vulnytics is ISECURION's proprietary vulnerability management platform. It aggregates findings from penetration tests, automated scanners, and bug bounty programs into a single workspace, enabling security and development teams to assign tasks, track remediation progress, and generate executive and technical reports. It is purpose-built for enterprises, startups, and MSSPs that want to streamline their entire vulnerability lifecycle. "
+  },
+  {
+    question: "What is Drosera, ISECURION's phishing simulation platform?",
+    answer: (
+      <>
+        Drosera is ISECURION's{" "}
+        <strong>phishing simulation platform</strong>. It helps
+        organisations run realistic phishing campaigns, measure how
+        employees respond and strengthen security awareness over time.
+        Drosera complements ISECURION's Phishing Simulation service.{" "}
+
+        <a
+          href="https://drosera.ai/"
+          className="text-primary hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit Drosera →
+        </a>
+      </>
+    ),
+  },
+];
+
 export default function Home() {
   return (
     <div className="w-full bg-[#060D1B]">
@@ -302,30 +439,29 @@ export default function Home() {
         <div className="max-w-7xl w-full mx-auto px-6 sm:px-10">
           <div className="space-y-5 text-center lg:text-left">
             <p
-              className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading animate-hero-reveal"
+              className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading animate-hero-reveal uppercase"
               style={{ animationDelay: "150ms" }}
             >
-              SECURING MODERN ENTERPRISES
+              Build for Trust. Designed for Cyber Resilience.
             </p>
 
             <h1
-              className="text-transparent bg-clip-text bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2] animate-hero-reveal"
+              className="text-transparent font-bold bg-clip-text bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2] animate-hero-reveal"
               style={{ animationDelay: "300ms" }}
             >
-              Build for Trust <br /> Designed for Cyber Resilience.
+              CREST MEMBER & CERT-IN <br /> EMPANELLED VAPT COMPANY IN INDIA
             </h1>
 
             <p
-              className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-lg leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] animate-hero-reveal"
+              className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-xl leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] animate-hero-reveal"
               style={{ animationDelay: "450ms" }}
             >
-              Helping organizations anticipate threats, reduce cyber risk, and
-              build lasting resilience through expert cybersecurity consulting,
-              continuous validation, and intelligent security platforms.
+              ISECURION is a CERT-In empanelled, ISO 27001:2022 certified cybersecurity company and a CREST Member, accredited for Penetration Testing. We help organizations anticipate threats, reduce cyber risk, and build lasting resilience through VAPT, cloud security, SOC 2 compliance,
+              phishing simulation and intelligent security platforms.
             </p>
           </div>
           <div
-            className="flex flex-col justify-center lg:justify-start sm:flex-row gap-3 py-4 opacity-0 animate-hero-reveal"
+            className="flex flex-col justify-center lg:justify-start sm:flex-row gap-3 py-4 opacity-0 animate-hero-reveal mt-5"
             style={{ animationDelay: "600ms" }}
           >
             <Animation>
@@ -341,8 +477,12 @@ export default function Home() {
             </Animation>
             <Animation>
               <button
-                className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29] animate-hero-reveal"
-                style={{ animationDelay: "1400ms" }}
+                onClick={() =>
+                  document
+                    .getElementById("services")
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" })
+                }
+                className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29]"
               >
                 <span></span>
                 Explore services ›
@@ -362,16 +502,16 @@ export default function Home() {
               <AnimatedCard>
                 <div className="relative px-0 py-6 md:px-8 lg:px-10 lg:py-0">
                   <div className="flex flex-col justify-between gap-1">
-                    <p className="text-base sm:text-lg lg:text-xl font-semibold  text-[#0F66EA]">
-                      1K+
+                    <p className="text-lg sm:text-xl lg:text-2xl font-semibold  text-[#0F66EA]">
+                      50+
                     </p>
 
                     <p className="mt-1 text-base sm:text-lg font-medium leading-[28px]   h-[40px] text-[#8E8E8E]">
-                      Security Engagements
+                      Enterprise Customers
                     </p>
 
-                    <p className="mt-2 text-sm sm:text-[16px] font-medium leading-[27px] text-[#FFFFFF]">
-                      Across industries worldwide
+                    <p className="text-sm sm:text-[16px] font-medium leading-[27px] text-[#FFFFFF]">
+                      Trusted by organizations across sectors
                     </p>
                   </div>
                 </div>
@@ -379,21 +519,21 @@ export default function Home() {
 
               {/* Stat 2 */}
               <AnimatedCard delay={0.5}>
-                <div className="relative border-t border-[#4F5051] px-0 py-6 md:px-8 sm:border-t-0 lg:px-12 lg:py-0">
+                <div className="relative border-t border-[#505050] px-0 py-6 md:px-8 sm:border-t-0 lg:px-12 lg:py-0">
                   {/* Desktop Divider */}
-                  <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#4F5051] lg:block" />
+                  <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#505050] lg:block" />
 
                   <div className="flex flex-col justify-between gap-1">
                     <p className="text-base sm:text-lg lg:text-xl font-semibold text-[#0F66EA]">
-                      20+
+                      1K+
                     </p>
 
-                    <p className="mt-1  text-base sm:text-lg font-medium leading-[30px] h-[40px]  text-[#999999]">
-                      Industry Verticals
+                    <p className="mt-1 text-base sm:text-lg font-medium leading-[30px] h-[40px]  text-[#999999]">
+                      Projects Completed
                     </p>
 
-                    <p className="mt-2 text-[16px] font-medium leading-[27px] text-white">
-                      Deep domain expertise
+                    <p className="text-[16px] font-medium leading-[27px] text-white">
+                      Across VAPT, cloud and compliance
                     </p>
                   </div>
                 </div>
@@ -401,12 +541,12 @@ export default function Home() {
 
               {/* Stat 3 */}
               <AnimatedCard delay={0.8}>
-                <div className="relative border-t border-[#4F5051]  px-0 py-6 md:px-8 sm:border-t-0 lg:px-12 lg:py-0">
+                <div className="relative border-t border-[#505050]  px-0 py-6 md:px-8 sm:border-t-0 lg:px-12 lg:py-0">
                   {/* Desktop Divider */}
-                  <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#4F5051] lg:block" />
+                  <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#505050] lg:block" />
 
                   <div className="flex flex-col justify-between gap-2">
-                    <p className="text-base sm:text-lg lg:text-xl font-semibold  text-[#0F66EA]">
+                    <p className="text-lg sm:text-xl lg:text-2xl font-semibold  text-[#0F66EA]">
                       15+
                     </p>
 
@@ -423,22 +563,21 @@ export default function Home() {
 
               {/* Stat 4 */}
               <AnimatedCard delay={1.2}>
-                <div className="relative border-t border-[#4F5051]  px-0 py-6 md:border-t-0 md:px-8 lg:px-12 lg:py-0">
+                <div className="relative border-t border-[#505050]  px-0 py-6 md:border-t-0 md:px-8 lg:px-12 lg:py-0">
                   {/* Desktop Divider */}
-                  <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#4F5051] lg:block" />
+                  <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#505050] lg:block" />
 
                   <div className="flex flex-col justify-between">
-                    <p className="text-base sm:text-lg lg:text-xl font-semibold  text-[#0F66EA]">
-                      99%
+                    <p className="text-lg sm:text-xl lg:text-2xl font-semibold  text-[#0F66EA]">
+                      500+
                     </p>
 
                     <p className="mt-1  text-base sm:text-lg font-medium leading-[30px]  h-[40px]  text-[#999999]">
-                      Client Satisfaction
+                      Start-up Companies
                     </p>
 
-                    <p className="mt-2 text-[16px] font-medium leading-[27px] text-white">
+                    <p className="text-[16px] font-medium leading-[27px] text-white">
                       Long-term partnerships
-                      <br />
                       built on trust
                     </p>
                   </div>
@@ -524,11 +663,10 @@ export default function Home() {
               </h2>
             </LeftAnimation>
             <RightAnimation>
-              <p className="sectionDescription  lg:max-w-lg text-center lg:text-left  text-[#D1D1D1]">
-                Organizations rely on applications, cloud infrastructure,
-                digital identities, and connected systems to operate. ISECURION
-                helps validate security continuously, reduce risk proactively,
-                and build long-term cyber resilience.
+              <p className="sectionDescription  lg:max-w-[575px] text-center lg:text-left  text-[#D1D1D1]">
+                Organizations rely on applications, cloud infrastructure, digital identities and connected systems to operate.
+                ISECURION, a CERT-In empanelled VAPT company, helps validate security continuously,
+                reduce risk proactively and build long-term cyber resilience.
               </p>
             </RightAnimation>
           </div>
@@ -544,24 +682,24 @@ export default function Home() {
                       className="h-full w-full object-cover transition-transform duration-800 ease-in-out group-hover:scale-115 "
                     />
                   </div>
-                  <div className="relative z-10 flex max-w-[360px] rounded-[5px] bg-linear-to-r from-[#002A69] to-[#000000] p-4 ">
+                  <div className="relative z-10 flex max-w-[360px] rounded-[5px] bg-linear-to-r from-[#002A69] to-[#000000] px-4 py-8">
                     <div className="w-full">
                       <h3 className="mb-3 text-base font-medium h-[20px] text-white">
                         Identify Risk
                       </h3>
 
                       <div className="flex items-center gap-3 h-[70px] ">
-                        <p className="transition-all duration-300 group-hover:hidden text-[11px] sm:text-sm font-medium text-[#ACACAC] max-w-[252px] ">
-                          Uncover exploitable vulnerabilities before they become
-                          business disruptions.
+                        <p className="mt-3 transition-all duration-300 group-hover:hidden text-[11px] sm:text-sm font-medium text-[#ACACAC] max-w-[252px] ">
+                          Uncover exploitable vulnerabilities through vulnerability assessment and penetration testing (VAPT) before they become business disruptions.
                         </p>
 
                         <Link
-                          href="services/phishing-simulation"
+                          href="services/vulnerability-assessment-penetration-testing"
                           className="ml-auto flex w-[40px] shrink-0 lg:shrink items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
                         >
                           <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
-                            Explore Risk Identification
+                            Explore VAPT & Penetration Testing
+
                           </span>
 
                           <Icon
@@ -581,20 +719,19 @@ export default function Home() {
                       className="h-full w-full object-cover group-hover:scale-115 transition-all duration-500 ease-in-out"
                     />
                   </div>
-                  <div className="relative z-10 flex max-w-md rounded-[5px] bg-linear-to-r from-[#002A69] to-[#000000] p-4 ">
+                  <div className="relative z-10 flex max-w-md rounded-[5px] bg-linear-to-r from-[#002A69] to-[#000000] px-4 py-8">
                     <div className="w-full">
                       <h3 className="mb-3 text-base font-medium h-[20px] text-white">
                         Validate Continuously
                       </h3>
 
                       <div className="flex items-center gap-3 h-[70px]">
-                        <p className=" transition-all duration-300 group-hover:hidden text-[11px] sm:text-sm font-medium max-w-[282px] text-[#ACACAC] lg:leading-[21px]">
-                          Continuously test security across applications, cloud,
-                          identities and infrastructure.
+                        <p className="mt-3 transition-all duration-300 group-hover:hidden text-[11px] sm:text-sm font-medium max-w-[282px] text-[#ACACAC] lg:leading-[21px]">
+                          Continuously test security across web applications, mobile apps, APIs, cloud (AWS, Azure and GCP), identities and infrastructure.
                         </p>
 
                         <Link
-                          href="services/vapt"
+                          href="services/web-application-security-assessment"
                           className="ml-auto flex w-[40px] shrink-0 lg:shrink  items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
                         >
                           <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
@@ -622,20 +759,19 @@ export default function Home() {
                       className="h-full w-full w-full object-cover group-hover:scale-115 transition-all duration-500 ease-in-out"
                     />
                   </div>
-                  <div className="relative z-10 flex max-w-md rounded-md bg-linear-to-r from-[#002A69] to-[#000000] p-4 ">
+                  <div className="relative z-10 flex max-w-md rounded-md bg-linear-to-r from-[#002A69] to-[#000000] px-4 py-8">
                     <div className="w-full">
                       <h3 className="mb-4 text-base font-medium h-[20px] text-white">
                         Strengthen Defenses
                       </h3>
 
                       <div className="flex items-center gap-3 h-[60px]">
-                        <p className=" transition-all duration-300 group-hover:hidden text-[11px] sm:text-sm max-w-[235px] font-medium text-[#ACACAC] lg:leading-[21px]">
-                          Offensive security that transforms findings into
-                          measurable resilience.
+                        <p className="mt-3 transition-all duration-300 group-hover:hidden text-[11px] sm:text-sm max-w-[235px] font-medium text-[#ACACAC] lg:leading-[21px]">
+                          Red team assessment and AI-augmented red teaming that transform findings into measurable resilience.
                         </p>
 
                         <Link
-                          href="services/continuous-breach-attack-simulation"
+                          href="services/red-team-assessment"
                           className="ml-auto flex w-[40px] items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
                         >
                           <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
@@ -659,20 +795,19 @@ export default function Home() {
                       className="h-full w-full object-cover group-hover:scale-115 transition-all duration-500 ease-in-out"
                     />
                   </div>
-                  <div className="relative z-10 flex max-w-[370px] rounded-md bg-linear-to-l to-[#002A69] from-[#000000] p-4 ">
+                  <div className="relative z-10 flex max-w-[370px] rounded-md bg-linear-to-l to-[#002A69] from-[#000000] px-4 py-8">
                     <div className="w-full">
                       <h3 className="mb-3 text-base font-medium h-[20px] text-white">
                         Build Trust
                       </h3>
 
                       <div className="flex items-center gap-3 h-[60px]">
-                        <p className=" transition-all duration-300 group-hover:hidden text-[11px] sm:text-sm  font-medium text-[#ACACAC] lg:leading-[21px] max-w-[282px]">
-                          Protect business continuity while strengthening
-                          customer trust and confidence.
+                        <p className="mt-4 transition-all duration-300 group-hover:hidden text-[11px] sm:text-sm  font-medium text-[#ACACAC] lg:leading-[21px] max-w-[282px]">
+                          SOC 2, ISO 27001 and DPDP Act compliance that protects business continuity and strengthens customer trust.
                         </p>
 
                         <Link
-                          href="services/aadhar-audit"
+                          href="services/soc-2-compliance"
                           className="ml-auto flex w-[40px] shrink-0 lg:shrink items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
                         >
                           <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
@@ -695,7 +830,6 @@ export default function Home() {
       </div>
 
       {/* Capabilities  */}
-
       <div className="bg-[#070D1A] overflow-hidden" id="services">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 bg-[#070D1A] py-10">
           <Animation>
@@ -716,9 +850,7 @@ export default function Home() {
                       OUR EXPERTISE
                     </p>
                     <p className="sectionDescription text-center lg:text-left  text-white">
-                      A comprehensive portfolio of services and platforms built
-                      to reduce risk, improve resilience, and enable secure
-                      growth.
+                      A comprehensive portfolio of VAPT, compliance, SOC & advisory services, plus platforms built to reduce risk, improve resilience & enable secure growth.
                     </p>
                   </div>
                 </RightAnimation>
@@ -731,7 +863,7 @@ export default function Home() {
               <AnimatedCard key={index} delay={index * 0.1}>
                 <div
                   key={index}
-                  className="relative z-10 overflow-hidden flex flex-col justify-between rounded-[14px] p-5 cursor-pointer group transition-all duration-500"
+                  className="relative z-10 overflow-hidden flex flex-col justify-between rounded-[14px] p-5 cursor-pointer group transition-all duration-500 h-[485px]"
                   style={{ backgroundColor: item.bgColor }}
                 >
                   <div
@@ -760,7 +892,7 @@ export default function Home() {
                     </h3>
 
                     <p
-                      className={`text-sm font-medium leading-6 ${item.descriptionColor} group-hover:text-white transition-colors duration-300 max-w-[237px]`}
+                      className={`text-sm font-medium leading-6 ${item.descriptionColor} group-hover:text-white transition-colors duration-300 max-w-[277px]`}
                     >
                       {item.description}
                     </p>
@@ -822,9 +954,7 @@ export default function Home() {
             </Animation>
             <Animation>
               <p className="sectionDescription text-[#D1D1D1] ">
-                Purpose-built platforms that help organizations validate
-                security continuously, strengthen cyber resilience, and make
-                informed decisions.
+                Purpose-built platforms that help organizations manage vulnerabilities, run phishing simulations and train employees, so security keeps improving after every assessment.
               </p>
             </Animation>
           </div>
@@ -835,7 +965,7 @@ export default function Home() {
                 <div className="flex-1 space-y-4">
                   <div className="flex flex-col">
                     <h3 className="text-xl sm:text-2xl font-medium text-[#4ADE80]">
-                      Vulnytics
+                      Vulnytics: Vulnerability Management Platform
                     </h3>
                     <span className="mt-2 bg-[#818181] w-15 h-0.5"></span>
                   </div>
@@ -844,9 +974,8 @@ export default function Home() {
                     <span className="text-[#4ADE80]">Intelligence.</span>
                   </h3>
                   <p className="font-medium max-w-[408px]  leading-[25px] tracking-[-0.34px] text-[#8F90AB]">
-                    Discover, prioritize, and remediate vulnerabilities across
-                    your digital assets with actionable insights and real-time
-                    visibility.
+                    Vulnytics brings findings from penetration tests, scanners and bug bounty programs into one workspace, so security and development teams can assign tasks, track remediation and generate executive and technical reports.
+                    Built for enterprises, startups and MSSPs.
                   </p>
                   <ul className="space-y-1">
                     <li className="flex items-center text-sm font-medium text-[#A8A8A8] gap-2">
@@ -854,7 +983,7 @@ export default function Home() {
                         icon="mdi:tick-circle"
                         className="text-[#C3C3C3] w-[16px] h-[16px]"
                       />
-                      <span>Continuous Scanning</span>
+                      <span>Unified Vulnerability Tracking</span>
                     </li>
                     <li className="flex items-center text-sm font-medium text-[#A8A8A8] gap-2">
                       <Icon
@@ -868,7 +997,7 @@ export default function Home() {
                         icon="mdi:tick-circle"
                         className="text-[#C3C3C3] w-[16px] h-[16px]"
                       />
-                      <span>Executive Reporting</span>
+                      <span>Executive & Technical Reporting</span>
                     </li>
                     <li className="flex items-center text-sm font-medium text-[#A8A8A8] gap-2">
                       <Icon
@@ -903,7 +1032,7 @@ export default function Home() {
                 <div className="flex-1 space-y-4">
                   <div className="flex flex-col">
                     <h3 className="text-xl sm:text-2xl font-medium text-[#7D70F0]">
-                      Drosera Phishing
+                      Drosera: Phishing Simulation Platform
                     </h3>
                     <span className="bg-[#818181] w-15 h-0.5 mt-2"></span>
                   </div>
@@ -914,8 +1043,7 @@ export default function Home() {
                     </span>{" "}
                   </h3>
                   <p className="text-base font-medium max-w-[400px] leading-[25px] tracking-[-0.34px] text-[#8F90AB]">
-                    Run realistic phishing simulations, track user behavior, and
-                    build a security-aware culture across your organization.
+                    Run realistic phishing campaigns, measure how your employees respond and strengthen security awareness across your organization.
                   </p>
                   <ul className="space-y-1">
                     <li className="flex items-center text-sm font-medium text-[#A8A8A8] gap-2">
@@ -972,7 +1100,7 @@ export default function Home() {
                 <div className="flex-1 space-y-5">
                   <div className="flex flex-col">
                     <h3 className="text-xl sm:text-2xl font-medium text-[#38BDF8]">
-                      Learning Management System (LMS)
+                      Learning Management System (LMS): Security Learning & Awareness
                     </h3>
                     <span className="bg-[#818181] w-15 h-0.5 mt-2"></span>
                   </div>
@@ -1089,9 +1217,8 @@ export default function Home() {
                 <AnimatedCard
                   key={index}
                   delay={index * 0.1}
-                  className={`mx-auto px-14 text-center ${
-                    index !== 4 ? "lg:border-r lg:border-[#888888]" : ""
-                  }`}
+                  className={`mx-auto px-14 text-center ${index !== 4 ? "lg:border-r lg:border-[#888888]" : ""
+                    }`}
                 >
                   <h3 className="text-[16px] font-normal text-white sm:text-3xl">
                     {item.value}
@@ -1110,22 +1237,111 @@ export default function Home() {
       {/* INDUSTRIES WE SECURE  */}
       <IndustriesWeSecure />
 
+      <section className="relative w-full overflow-hidden bg-[#060D1B]">
+        <div className="relative mx-auto flex min-h-[550px] max-w-7xl flex-col justify-center px-6 xl:px-2 py-10 sm:px-10 lg:min-h-[600px] lg:pb-20 lg:pt-30">
+
+          {/* Left Content */}
+          <div className="relative z-20 w-full lg:w-[43%]">
+
+            <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
+              GLOBAL PRESENCE
+            </p>
+
+            <h2 className="mt-5 text-2xl font-medium lg:leading-12 text-white sm:text-3xl lg:text-[40px]">
+              Cybersecurity expertise
+              <br />
+              across the industries that matter.
+            </h2>
+
+            <p className="mt-7 text-base leading-7 text-[#D1D1D1] sm:text-lg lg:max-w-[450px]">
+              We serve BFSI, fintech, healthcare, e-commerce, government, IT and SaaS, manufacturing, automotive, crypto and blockchain, and telecommunications,
+              with solutions built for each industry's risks and regulations.
+            </p>
+
+            {/* Country Tabs */}
+            <div className="mt-6 flex w-full min-w-0 items-center gap-2 overflow-x-auto whitespace-nowrap pb-1 scrollbar-hide sm:gap-3 lg:overflow-visible lg:gap-2">
+
+              {/* India - Active Country */}
+              <div className="flex shrink-0 items-center gap-2 rounded-full bg-[#F1F5FF] px-3 py-2 text-sm font-medium text-[#111827]">
+                <span className="relative flex h-3 w-3 items-center justify-center">
+                  <span className="absolute h-3 w-3 rounded-full bg-[#2563EB] opacity-30 blur-[3px]" />
+                  <span className="relative h-2 w-2 rounded-full bg-[#2563EB] shadow-[0_0_6px_2px_#2563EB80]" />
+                </span>
+                India
+              </div>
+
+              <span className="h-6 w-px shrink-0 bg-[#88888880]" />
+
+              {/* Other Countries */}
+              {["USA", "UK", "UAE", "Qatar", "Singapore", "Australia", "GCC"].map(
+                (country, index) => (
+                  <React.Fragment key={country}>
+                    <span className="shrink-0 text-sm sm:text-base font-medium text-[#D1D1D1]">
+                      {country}
+                    </span>
+
+                    {index !== 6 && (
+                      <span className="h-6 w-px shrink-0 bg-[#787891]" />
+                    )}
+                  </React.Fragment>
+                )
+              )}
+            </div>
+          </div>
+
+          {/* Right Map + Markers */}
+          <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden lg:absolute lg:right-0 lg:top-0 lg:mt-0 lg:h-full lg:w-[72%] lg:aspect-auto">
+
+            <Image
+              src={mapBackground}
+              alt="Global presence map"
+              fill
+              priority
+              className="object-contain object-center"
+            />
+
+            {mapMarkers.map((marker) => (
+              <div
+                key={marker.id}
+                className="absolute z-10 -translate-x-1/2 -translate-y-1/2"
+                style={{ left: marker.x, top: marker.y }}
+              >
+                <span
+                  className={`block rounded-full ${marker.type === "blue"
+                    ? "h-3.5 w-3.5 bg-[#2563EB] shadow-[0_0_12px_5px_#2563EB80]"
+                    : "h-2.5 w-2.5 bg-[#EF5350] shadow-[0_0_8px_3px_#EF535080]"
+                    }`}
+                />
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
       <section className="relative w-full mt-20 mb-3">
         <Image
           alt="crestbackground"
           className="absolute w-full h-full"
-          src={crestbackround}
+          src={crestbackground}
         />
 
         <div className="relative max-w-7xl mx-auto px-6 sm:px-10 py-10">
           <Animation>
             <div className="text-center space-y-4">
-              <p className="text-lg md:text-xl font-semibold text-[#D9D9D9]">
-                OUR RECOGNITION
-              </p>
+
+              <div className="mx-auto flex w-full max-w-[550px] items-center gap-4 px-3 py-1">
+                <span className="h-px flex-1 bg-linear-to-r to-[#FFFFFFE3] from-[#DADADA0A]" />
+
+                <p className="whitespace-nowrap text-base sm:text-lg font-medium text-[#D9D9D9] uppercase">
+                  Recognition and Certifications
+                </p>
+
+                <span className="h-px flex-1 bg-linear-to-r from-[#FFFFFFE3] to-[#DADADA0A]" />
+              </div>
               <h2 className="text-[#FEFEFE]">
-                Trusted. <span className="text-[#0F66EA]">Recognised</span>.
-                Certified.
+                Proven impact. Trusted by enterprises <span className="text-[#0F66EA]">worldwide.</span>
+
               </h2>
               <p className="sectionDescription text-[#D1D1D1]">
                 Our commitment to excellence is reflected in industry
@@ -1161,6 +1377,9 @@ export default function Home() {
                     Penetration Testing.
                   </span>
                 </p>
+                <p className="mt-2 text-base sm:text-lg font-medium text-center md:text-left text-[#D1D1D1]">
+                  We are also{' '} <span className="font-semibold text-[#FFFFFF]">CERT-In empanelled </span> and <span className="font-semibold text-[#FFFFFF]">ISO 27001:2022 certified.</span>
+                </p>
               </div>
             </div>
             <div>
@@ -1186,6 +1405,7 @@ export default function Home() {
           </Animation>
         </div>
       </section>
+
       <div className="relative  -mt-7 mx-auto max-w-7xl p-5 rounded-lg  border border-gray-700 bg-linear-to-r from-[#060D1B] to-[#091c3b] opacity-90">
         <h3 className="text-center text-[20px] font-semibold uppercase text-white sm:text-[22px]">
           Auditors Certifications
@@ -1236,17 +1456,17 @@ export default function Home() {
             {/* Healthcare Case Study */}
             <div className="mt-8 rounded-[12px] bg-[#00453A] p-4 sm:p-5">
               {/* Category */}
-              <span className="inline-flex items-center rounded-full bg-[#00BE9F70] px-3 py-1.5 text-[9px] font-medium text-white">
+              <span className="inline-flex items-center rounded-full bg-[#00BE9F70] px-3 py-1.5 text-[13px] font-medium text-white">
                 HEALTHCARE
               </span>
 
               {/* Title */}
               <h3 className="mt-3 text-lg sm:text-xl font-medium text-white tracking-[0.1px]">
-                Ransomware Recovery for a Multi-Speciality Hospital
+                Ransomware Recovery for a Multi-Specialty Hospital
               </h3>
 
               {/* Description */}
-              <p className="mt-2 text-sm  font-medium leading-5 text-[#D1D1D1] tracking-[0.2px]">
+              <p className="mt-2 text-sm sm:text-base  font-medium leading-5 text-[#D1D1D1] tracking-[0.2px]">
                 Rapid-response and digital forensics enabled critical systems
                 recovery while restoring operations with minimal disruption.
               </p>
@@ -1256,7 +1476,7 @@ export default function Home() {
                 <div className="mt-4 overflow-hidden rounded-[12px]">
                   <img
                     src={healthcare.src}
-                    alt="Ransomware Recovery for a Multi-Speciality Hospital"
+                    alt="Ransomware Recovery for a Multi-Specialty Hospital"
                     className="w-full h-auto object-cover transition-transform duration-500 hover:scale-[1.02]"
                   />
 
@@ -1268,6 +1488,11 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+
+              <button className="mt-4 flex w-fit cursor-pointer items-center gap-1 text-base font-medium text-white transition-colors duration-300 hover:text-[#0F66EA]">
+                Read Case Study
+                <Icon icon="ep:right" />
+              </button>
             </div>
           </Animation>
 
@@ -1277,7 +1502,7 @@ export default function Home() {
               {/* Left Content */}
               <div className="w-full lg:w-[55%]">
                 {/* Category */}
-                <span className="inline-flex rounded-full bg-[#087E70] px-3 py-1.5 text-[10px] font-medium text-white">
+                <span className="inline-flex rounded-full bg-[#087E70] px-3 py-1.5 text-[10px] font-medium text-white text-[13px]">
                   MANUFACTURING
                 </span>
 
@@ -1289,13 +1514,12 @@ export default function Home() {
                 </h3>
 
                 {/* Description */}
-                <p className="mt-3 max-w-[450px] text-[14px] font-medium leading-6 text-[#D1D1D1]">
-                  Identified critical vulnerabilities across OT and IT
-                  environments before they impacted production and operations.
+                <p className="mt-3 max-w-[450px] text-base font-medium leading-6 text-[#D1D1D1]">
+                  Identified critical vulnerabilities across OT and IT environments before they impacted production and operations.
                 </p>
 
                 {/* Read Case Study */}
-                <button className="mt-4 flex w-fit cursor-pointer items-center gap-1 text-[14px] font-medium text-white transition-colors duration-300 hover:text-[#0F66EA]">
+                <button className="mt-4 flex w-fit cursor-pointer items-center gap-1 text-base font-medium text-white transition-colors duration-300 hover:text-[#0F66EA]">
                   Read Case Study
                   <Icon icon="ep:right" />
                 </button>
@@ -1351,7 +1575,7 @@ export default function Home() {
 
                   {/* Link */}
                   <button
-                    className="mt-auto flex w-fit cursor-pointer items-center gap-1 pt-4 text-[13px] font-medium sm:text-sm"
+                    className="mt-auto flex w-fit cursor-pointer items-center gap-1 pt-4 text-[13px] font-medium sm:text-sm hover:underline"
                     style={{ color: card.linkColor }}
                   >
                     Read Case Study
@@ -1363,6 +1587,11 @@ export default function Home() {
           </AnimatedCard>
         </div>
       </div>
+      <FAQSection
+        title={<>Frequently Asked Questions</>}
+        description="Everything you need to know about ISECURION's cybersecurity, CREST-accredited penetration testing and VAPT services."
+        faqs={homeFAQs}
+      />
       <HomeCTA />
     </div>
   );

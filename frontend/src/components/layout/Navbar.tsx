@@ -104,7 +104,7 @@ const serviceDetails = {
         links: [
           {
             label: "Vulnerability Assessment & Penetration Testing (VAPT)",
-            href: "/services/vapt",
+            href: "/services/vulnerability-assessment-penetration-testing",
           },
           {
             label: "Cloud Security Assessment",
@@ -153,7 +153,7 @@ const serviceDetails = {
         links: [
           {
             label: "DPO Services",
-            href: "/services/dpo-services",
+            href: "/services/outsourced-dpo",
           },
           // {
           //   label: "Data Localization Audit",
@@ -201,7 +201,7 @@ const serviceDetails = {
           },
           {
             label: "ISO 27001",
-            href: "/services/iso27001",
+            href: "/services/iso-27001",
           },
           {
             label: "SOC 2 Compliance",
