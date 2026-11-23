@@ -534,3 +534,36 @@ export const socCompliance = async (data) => {
     };
   }
 };
+
+export const doraCompliance = async (data) => {
+  try {
+    const response = await fetch(`${API_URL}/api/dora-compliance`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      return {
+        status: response.status,
+        message: result.message || "Failed to submit contact form.",
+      };
+    }
+    return {
+      status: response.status,
+      message:
+        result.message ||
+        "Thank you for contacting ISECURION! Our team will get back to you soon.",
+    };
+  } catch (error: unknown) {
+    return {
+      status: 500,
+      message:
+        error instanceof Error ? error.message : "Internal server error.",
+    };
+  }
+};

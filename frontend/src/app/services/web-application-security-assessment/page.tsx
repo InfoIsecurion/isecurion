@@ -177,7 +177,7 @@ function page() {
                   assessments from a CREST Member (accredited for Penetration Testing), CERT-In empanelled, ISO 27001:2022 certified company.
                 </p>
 
-                <p className="mt-4 max-w-[650px] text-[#D9D9D9] sectionDescription animate-hero-reveal" style={{ animationDelay: "650ms" }}>
+                <p className="mt-4 max-w-[650px] text-[#D9D9D9] sectionDescription animate-hero-reveal" style={{ animationDelay: "850ms" }}>
                   Web applications are increasingly targeted by cybercriminals. Despite firewalls and intrusion detection systems, attackers often exploit application-level vulnerabilities. With Web 2.0 technologies and social platforms, applications
                   carry valuable user data and business-critical information, making them prime targets for data theft, tampering with functionality, and service disruption.
                 </p>

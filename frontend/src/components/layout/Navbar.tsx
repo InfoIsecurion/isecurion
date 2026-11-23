@@ -228,10 +228,10 @@ const serviceDetails = {
           //   label: "Market SOC Audit (MSOC)",
           //   href: "/services/market-soc-audit",
           // },
-          // {
-          //   label: "DORA Compliance",
-          //   href: "/services/dora-compliance",
-          // },
+          {
+            label: "DORA Compliance",
+            href: "/services/dora-compliance",
+          },
           {
             label: "CICRA Audit Services",
             href: "/services/cicra-audit-services",

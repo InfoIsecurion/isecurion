@@ -110,9 +110,6 @@ function page() {
                         </div>
                     </Animation>
 
-
-
-
                     <div className="hidden lg:block flex-1"></div>
                 </div>
 

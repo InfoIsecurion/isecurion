@@ -439,22 +439,22 @@ export default function Home() {
         <div className="max-w-7xl w-full mx-auto px-6 sm:px-10">
           <div className="space-y-5 text-center lg:text-left">
             <p
-              className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading animate-hero-reveal uppercase"
+              className="pt-14 text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading animate-hero-reveal uppercase"
               style={{ animationDelay: "150ms" }}
             >
               Build for Trust. Designed for Cyber Resilience.
             </p>
 
-            <h1
-              className="text-transparent font-bold bg-clip-text bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2] animate-hero-reveal"
-              style={{ animationDelay: "300ms" }}
+            <WordReveal text="CREST MEMBER & CERT-IN EMPANELLED VAPT COMPANY IN INDIA"
+              className="text-transparent font-bold bg-clip-text bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2] max-w-[840px]"
+
             >
-              CREST MEMBER & CERT-IN <br /> EMPANELLED VAPT COMPANY IN INDIA
-            </h1>
+              
+            </WordReveal>
 
             <p
               className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-xl leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] animate-hero-reveal"
-              style={{ animationDelay: "450ms" }}
+              style={{ animationDelay: "650ms" }}
             >
               ISECURION is a CERT-In empanelled, ISO 27001:2022 certified cybersecurity company and a CREST Member, accredited for Penetration Testing. We help organizations anticipate threats, reduce cyber risk, and build lasting resilience through VAPT, cloud security, SOC 2 compliance,
               phishing simulation and intelligent security platforms.
@@ -482,7 +482,8 @@ export default function Home() {
                     .getElementById("services")
                     ?.scrollIntoView({ behavior: "smooth", block: "start" })
                 }
-                className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29]"
+                className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29] animate-hero-reveal"
+                style={{ animationDelay: "1800ms" }}
               >
                 <span></span>
                 Explore services ›
@@ -492,101 +493,103 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STATS SECTION */}
-      <section className="w-full  bg-[#01060E] shadow-[0_0_45px_rgba(15,102,234,0.20)]">
-        {/* 7XL Stats Box */}
-        <div className="max-w-7xl mx-auto ">
-          <div className="px-6 py-10 sm:px-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-              {/* Stat 1 */}
-              <AnimatedCard>
-                <div className="relative px-0 py-6 md:px-8 lg:px-10 lg:py-0">
-                  <div className="flex flex-col justify-between gap-1">
-                    <p className="text-lg sm:text-xl lg:text-2xl font-semibold  text-[#0F66EA]">
-                      50+
-                    </p>
+     
+{/* STATS SECTION */}
+<section className="w-full bg-[#01060E] shadow-[0_0_45px_rgba(15,102,234,0.20)]">
+  <div className="max-w-7xl mx-auto">
+    <div className="px-6 py-10 sm:px-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
 
-                    <p className="mt-1 text-base sm:text-lg font-medium leading-[28px]   h-[40px] text-[#8E8E8E]">
-                      Enterprise Customers
-                    </p>
+        {/* Stat 1 */}
+        <AnimatedCard>
+          <div className="relative px-0 py-6 sm:px-6 xl:px-8 xl:py-0">
+            <div className="flex flex-col gap-1">
+              <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-[#0F66EA]">
+                50+
+              </p>
 
-                    <p className="text-sm sm:text-[16px] font-medium leading-[27px] text-[#FFFFFF]">
-                      Trusted by organizations across sectors
-                    </p>
-                  </div>
-                </div>
-              </AnimatedCard>
+              <p className="mt-1 min-h-[56px] text-base sm:text-lg font-medium leading-7 text-[#8E8E8E]">
+                Enterprise Customers
+              </p>
 
-              {/* Stat 2 */}
-              <AnimatedCard delay={0.5}>
-                <div className="relative border-t border-[#505050] px-0 py-6 md:px-8 sm:border-t-0 lg:px-12 lg:py-0">
-                  {/* Desktop Divider */}
-                  <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#505050] lg:block" />
-
-                  <div className="flex flex-col justify-between gap-1">
-                    <p className="text-base sm:text-lg lg:text-xl font-semibold text-[#0F66EA]">
-                      1K+
-                    </p>
-
-                    <p className="mt-1 text-base sm:text-lg font-medium leading-[30px] h-[40px]  text-[#999999]">
-                      Projects Completed
-                    </p>
-
-                    <p className="text-[16px] font-medium leading-[27px] text-white">
-                      Across VAPT, cloud and compliance
-                    </p>
-                  </div>
-                </div>
-              </AnimatedCard>
-
-              {/* Stat 3 */}
-              <AnimatedCard delay={0.8}>
-                <div className="relative border-t border-[#505050]  px-0 py-6 md:px-8 sm:border-t-0 lg:px-12 lg:py-0">
-                  {/* Desktop Divider */}
-                  <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#505050] lg:block" />
-
-                  <div className="flex flex-col justify-between gap-2">
-                    <p className="text-lg sm:text-xl lg:text-2xl font-semibold  text-[#0F66EA]">
-                      15+
-                    </p>
-
-                    <p className="text-base sm:text-lg font-mediumleading-[30px] h-[40px]  text-[#999999]">
-                      Years of Cybersecurity Excellence
-                    </p>
-
-                    <p className="mt-2 text-[16px] font-medium leading-[27px] text-white">
-                      Proven track record
-                    </p>
-                  </div>
-                </div>
-              </AnimatedCard>
-
-              {/* Stat 4 */}
-              <AnimatedCard delay={1.2}>
-                <div className="relative border-t border-[#505050]  px-0 py-6 md:border-t-0 md:px-8 lg:px-12 lg:py-0">
-                  {/* Desktop Divider */}
-                  <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#505050] lg:block" />
-
-                  <div className="flex flex-col justify-between">
-                    <p className="text-lg sm:text-xl lg:text-2xl font-semibold  text-[#0F66EA]">
-                      500+
-                    </p>
-
-                    <p className="mt-1  text-base sm:text-lg font-medium leading-[30px]  h-[40px]  text-[#999999]">
-                      Start-up Companies
-                    </p>
-
-                    <p className="text-[16px] font-medium leading-[27px] text-white">
-                      Long-term partnerships
-                      built on trust
-                    </p>
-                  </div>
-                </div>
-              </AnimatedCard>
+              <p className="min-h-[54px] text-sm sm:text-base font-medium leading-7 text-white">
+                Trusted by organizations across sectors
+              </p>
             </div>
           </div>
-        </div>
-      </section>
+        </AnimatedCard>
+
+        {/* Stat 2 */}
+        <AnimatedCard delay={0.5}>
+          <div className="relative border-t border-[#505050] px-0 py-6 lg:border-t-0 sm:px-6 xl:px-8 xl:py-0">
+            {/* Desktop Divider */}
+            <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#505050] lg:block" />
+
+            <div className="flex flex-col gap-1">
+              <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-[#0F66EA]">
+                1K+
+              </p>
+
+              <p className="mt-1 min-h-[56px] text-base sm:text-lg font-medium leading-7 text-[#999999]">
+                Projects Completed
+              </p>
+
+              <p className="min-h-[54px] text-sm sm:text-base font-medium leading-7 text-white">
+                Across VAPT, cloud and compliance
+              </p>
+            </div>
+          </div>
+        </AnimatedCard>
+
+        {/* Stat 3 */}
+        <AnimatedCard delay={0.8}>
+          <div className="relative border-t border-[#505050] px-0 py-6 sm:px-6 lg:border-t-0 xl:px-8 xl:py-0">
+            {/* Desktop Divider */}
+            <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#505050] lg:block" />
+
+            <div className="flex flex-col gap-1">
+              <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-[#0F66EA]">
+                15+
+              </p>
+
+              <p className="mt-1 min-h-[56px] text-base sm:text-lg font-medium leading-7 text-[#999999]">
+                Years of Cybersecurity Excellence
+              </p>
+
+              <p className="min-h-[54px] text-sm sm:text-base font-medium leading-7 text-white">
+                Proven track record
+              </p>
+            </div>
+          </div>
+        </AnimatedCard>
+
+        {/* Stat 4 */}
+        <AnimatedCard delay={1.2}>
+          <div className="relative border-t border-[#505050] px-0 py-6 sm:px-6 lg:border-t-0 xl:px-8 xl:py-0">
+            {/* Desktop Divider */}
+            <div className="absolute left-0 top-1/2 hidden h-[106px] w-px -translate-y-1/2 bg-[#505050] lg:block" />
+
+            <div className="flex flex-col gap-1">
+              <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-[#0F66EA]">
+                500+
+              </p>
+
+              <p className="mt-1 min-h-[56px] text-base sm:text-lg font-medium leading-7 text-[#999999]">
+                Start-up Companies
+              </p>
+
+              <p className="min-h-[54px] text-sm sm:text-base font-medium leading-7 text-white">
+                Long-term partnerships built on trust
+              </p>
+            </div>
+          </div>
+        </AnimatedCard>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* TRUSTED BY LEADING ORGANIZATIONS */}
       <div className="bg-[#060D1B]">
