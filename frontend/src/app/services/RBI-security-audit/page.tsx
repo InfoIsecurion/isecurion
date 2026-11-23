@@ -433,6 +433,7 @@ const RBI_FAQs = [
       "Yes, mobile banking and payment applications are thoroughly assessed for security vulnerabilities, authentication mechanisms, data encryption, session management, and compliance with secure coding practices.",
   },
 ];
+
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
