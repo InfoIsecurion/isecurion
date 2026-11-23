@@ -351,9 +351,9 @@ const dpdpScope = [
       "Review application code for vulnerabilities in personal data collection, storage, and processing.",
   },
   {
-    heading: "DPIA & SDF Security Support",
+    heading: "Data Inventory & Flow Mapping",
     description:
-      "Track how personal data is collected, stored, processed, and shared across systems.",
+      "Document where personal data is collected, stored, processed and transferred. Build the data flow maps required for RoPA and DPIA compliance.",
   },
   {
     heading: "Ongoing Compliance & Monitoring",
@@ -586,7 +586,7 @@ const dpdpFaqs = [
   {
     question: "Is DPDP compliance mandatory now, or is there a grace period?",
     answer:
-      "The DPDP Act 2023 has been enacted, and rules under the Act govern the compliance and enforcement timeline. Organizations should not wait for enforcement to begin before building security safeguards, breach-readiness processes and consent mechanisms - technical controls such as encryption, VAPT and access management typically take weeks to months to implement properly, so early action reduces risk.",
+      "The DPDP Act 2023 is law and the DPDP Rules, 2025 were notified on 13 November 2025. Commencement is phased: the Data Protection Board provisions are already in force, consent manager provisions follow in November 2026, and the main obligations, including reasonable security safeguards and breach notification, take effect about 18 months after notification, in May 2027. Technical controls such as encryption, VAPT and access management take weeks to months to implement, so organizations should start now. ",
   },
   {
     question:
@@ -661,9 +661,11 @@ function DpdpCompliance() {
               className="text-base sm:text-[17px] font-medium leading-[26px] md:leading-[28px] text-[#D1D1D1] opacity-0 animate-hero-reveal"
               style={{ animationDelay: "450ms" }}
             >
-              Identify security gaps, strengthen technical safeguards, and
-              address the cybersecurity obligations of India’s Digital Personal
-              Data Protection Act, 2023.
+              The Digital Personal Data Protection Act 2023 requires every Data Fiduciary to implement reasonable 
+              security safeguards to protect personal data, and failure to do so can attract penalties of up to ₹250 crore. 
+              As a CERT-In empanelled cybersecurity company, ISECURION delivers complete DPDP compliance in India: 
+              identifying security gaps, hardening data systems, and meeting DPDP's technical obligations before the main obligations take effect in May 2027. 
+              VAPT of personal data systems is delivered by a CREST Member, accredited for Penetration Testing.
             </p>
             <p
               className="text-base sm:text-[17px] font-medium leading-[26px] md:leading-[28px] text-[#D1D1D1] opacity-0 animate-hero-reveal"

@@ -59,8 +59,7 @@ function Footer() {
             </Link>
 
             <p className="mt-5 max-w-xs text-sm leading-7 text-[#9AA4BA]">
-              Building cyber resilience through intelligent security services,
-              platforms and continuous validation.
+              Building cyber resilience through VAPT, cybersecurity services, intelligent platforms and continuous validation. CERT-In empanelled. CREST Member.
             </p>
 
             <h4 className="mt-8 text-sm font-medium text-white">
@@ -121,25 +120,33 @@ function Footer() {
 
                 <ul className="space-y-3 text-sm text-[#BFBFBF]">
                   <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
-                    <Link href="/services/vapt">VAPT</Link>
+                    <Link href="/services/vulnerabitity-assessment-penetration-testing">VAPT & Penetration Testing</Link>
                   </li>
-                  {/* <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
-                    <Link href="/services/compliance-auditing">
-                      Compliance Auditing
-                    </Link>
-                  </li> */}
                   <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
-                    <Link href="/services/vciso">VCISO Services</Link>
+                    <Link href="/services/cloud-security-assessment">Cloud Security Assessment</Link>
+                  </li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="/services/soc-2-compliance">SOC 2 Compliance</Link>
                   </li>
                   <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
                     <Link href="/services/dpdp-compliance">
                       DPDP Act Compliance
                     </Link>
                   </li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="/services/vciso">VCISO Services</Link>
+                  </li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="/services/phishing-simulation">Phishing Simulation</Link>
+                  </li>
                   {/* <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
-                    Market SOC
-                    <br />
-                    (MSOC) Services
+                    <Link href="/services/vciso">Incident Response & DFIR</Link>
+                  </li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="/services/vciso">Market SOC (MSOC)</Link>
+                  </li>
+                  <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
+                    <Link href="/services/vciso">Dark Web Monitoring</Link>
                   </li> */}
                 </ul>
               </div>
@@ -180,6 +187,8 @@ function Footer() {
                     info@isecurion.com
                   </Link>
                 </span>
+
+      
               </div>
 
               <div className="hidden h-[40px] w-[2px] bg-[#454D5F] sm:block"></div>

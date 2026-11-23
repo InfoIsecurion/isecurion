@@ -5,7 +5,7 @@ import { Animation } from "../../components/ui/Animation";
 
 type FAQItem = {
   question: string;
-  answer: string;
+  answer: ReactNode;
 };
 
 type FAQSectionProps = {

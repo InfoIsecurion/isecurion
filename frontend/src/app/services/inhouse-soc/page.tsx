@@ -5,6 +5,7 @@ import WordReveal, {
   LeftAnimation,
   RightAnimation,
 } from "../../../components/ui/Animation";
+import Link from "next/link";
 
 interface SOCFoundation {
   Icon: string;
@@ -53,18 +54,18 @@ function InHouseSoc() {
         style={{ backgroundImage: `url(${inhousescobackground.src})` }}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="max-w-xl mx-auto lg:mx-0 space-y-4 text-center lg:text-left">
+          <div className="max-w-3xl mx-auto lg:mx-0 space-y-4 text-center lg:text-left">
             <p
               className="text-sm sm:text-base font-semibold text-[#7D70F0] opacity-0 animate-hero-reveal sectionheading"
               style={{ animationDelay: "150ms" }}
             >
-              IN-HOUSE SOC SERVICE
+             IN-HOUSE SOC SERVICE | SOC SETUP & IMPLEMENTATION
             </p>
             <h1
               className="text-[#FFFFFF] opacity-0 animate-hero-reveal"
               style={{ animationDelay: "300ms" }}
             >
-              Build a SOC That Works Around Your Business
+              Build an In-House SOC That Works Around Your Business
             </h1>
             <p
               className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D9D9D9] opacity-0 animate-hero-reveal"
@@ -78,9 +79,8 @@ function InHouseSoc() {
                 className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D9D9D9] opacity-0 animate-hero-reveal"
                 style={{ animationDelay: "600ms" }}
               >
-                ISECURION is here to help. We work closely with your in-house
-                team to design a SOC architecture that is both resilient and
-                highly available.
+                ISECURION supports you in building your internal Security Operation Center (SOC). Looking to establish a strong SOC for your organization's infrastructure and data protection? We work closely with your in-house team to design a SOC architecture that is both resilient and highly available. Our certified cyber experts, from a CERT-In empanelled and ISO 27001:2022 certified company, have experience implementing and configuring SIEM 
+                & MDR technologies to effectively integrate and ingest log data. We can also help create use cases that make monitoring easier for your team.
               </p>
               <p
                 className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D9D9D9] opacity-0 animate-hero-reveal"
@@ -92,6 +92,28 @@ function InHouseSoc() {
                 cases to make monitoring easier for your team.
               </p>
             </div>
+            <div className="mt-6 flex gap-4">
+              <Link href="/company/contact">
+              <button className="text-[15px] font-medium px-4 py-3 flex items-center gap-3 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]">
+                Build My SOC {" "}
+                <span>
+                  <Icon icon="akar-icons:arrow-right" />
+                </span>
+              </button>
+              </Link>
+              <Link href="tel:+918861201570" target="_blank">
+                <button
+                  className=" text-[15px] font-medium px-4 py-3 flex items-center gap-3 rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF]/16 animate-hero-reveal"
+                  style={{ animationDelay: "1200ms" }}
+                >
+                  <span>
+                    <Icon icon="flowbite:outgoing-call-outline" />
+                  </span>
+                  {""}
+                  Talk to a SOC Expert
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -102,8 +124,8 @@ function InHouseSoc() {
           {/* heading  */}
           <div className="space-y-4 text-center lg:text-left">
             <LeftAnimation>
-              <p className="text-sm sm:text-base font-semibold text-[#7D70F0]">
-                SOC FOUNDATION
+              <p className="text-sm sm:text-base font-semibold text-[#7D70F0] uppercase">
+                In-House SOC Services
               </p>
             </LeftAnimation>
             <div className="flex flex-col lg:flex-row justify-between space-y-4 lg:space-y-0">

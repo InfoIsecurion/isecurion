@@ -15,8 +15,7 @@ function HomeCTA() {
             </h3>
 
             <p className="max-w-[520px] text-[16px] font-medium leading-7 text-[#8F90AB] sm:text-[18px]">
-              Partner with ISECURION to identify risks, close gaps, and build a
-              stronger, more resilient organization.
+              Partner with ISECURION, a CERT-In empanelled and CREST Member cybersecurity company, to identify risks, close gaps and build a stronger, more resilient organization.
             </p>
 
             <div className="flex flex-col gap-3 py-3 sm:flex-row">

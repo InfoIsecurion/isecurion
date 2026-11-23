@@ -1,0 +1,232 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "RBI Information Security Audit Services",
+    "description": "Comprehensive RBI IS Audit services covering cybersecurity, IT governance, and regulatory compliance for banks, NBFCs, and financial institutions",
+    "provider": {
+      "@type": "Organization",
+      "name": "ISECURION",
+      "url": "https://www.isecurion.com"
+    },
+    "areaServed": [
+      "IN",
+      "NP",
+      "BD",
+      "LK",
+      "BT",
+      "MV"
+    ],
+    "serviceType": [
+      "RBI Information Security Audit",
+      "Banking Cybersecurity Audit",
+      "RBI Compliance Assessment",
+      "Financial Institution Security Audit",
+      "NBFC Security Audit",
+      "Digital Banking Security Audit",
+      "Fintech Security Assessment",
+      "Payment Bank Audit",
+      "Vulnerability Assessment and Penetration Testing",
+      "IT Governance Audit",
+      "Third Party Risk Assessment",
+      "Business Continuity Audit",
+      "Cloud Banking Security Audit",
+      "Mobile Banking Security Audit"
+    ],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": [
+        "Scheduled Commercial Banks",
+        "Cooperative Banks",
+        "Non-Banking Financial Companies",
+        "Small Finance Banks",
+        "Payment Banks",
+        "FinTech Companies",
+        "Technology Vendors for Banking",
+        "Regional Rural Banks",
+        "Urban Cooperative Banks"
+      ]
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "RBI IS Audit Services"
+      }
+    },
+    "url": "https://isecurion.com/services/rbi-security-audit",
+    "keywords": [
+      "RBI IS audit",
+      "RBI information security audit",
+      "banking cybersecurity audit",
+      "NBFC security audit",
+      "RBI compliance services",
+      "digital banking security",
+      "fintech security assessment",
+      "payment bank audit",
+      "cooperative bank security",
+      "RBI guidelines compliance",
+      "vulnerability assessment banking",
+      "penetration testing banking",
+      "IT governance audit",
+      "cyber security framework RBI",
+      "ISO 27001 banking",
+      "vendor risk assessment",
+      "business continuity audit",
+      "cloud banking security",
+      "mobile banking security",
+      "core banking audit"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is RBI IS Audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is a regulatory audit that assesses an institution's cybersecurity, IT governance, and risk management framework in alignment with RBI guidelines. The audit evaluates technical controls, policies, procedures, and operational practices to ensure financial institutions are secure and compliant."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is required to undergo the audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Banks, NBFCs, payment banks, small finance banks, and fintechs regulated by the RBI are required to undergo regular IS audits to ensure compliance with RBI's cybersecurity and IT governance requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should the audit be conducted?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Typically annually or as mandated by specific RBI circulars. Some institutions may require more frequent audits based on their risk profile, size, or regulatory observations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the audit include technical testing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, including vulnerability assessments, penetration testing, and application security reviews. We conduct thorough technical assessments of core banking systems, mobile apps, APIs, and infrastructure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can audits be conducted remotely?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, with secure access to systems and documentation. We use secure remote assessment methodologies while maintaining audit rigor and ensuring no compromise on quality or coverage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What deliverables will I receive?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Audit report, executive summary, gap analysis, risk register, remediation roadmap, and compliance evidence pack ready for RBI submission and board presentations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ISECURION provide remediation support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we help implement and verify all remediation actions. Our team provides guidance on implementing recommended controls and conducts follow-up assessments to ensure fixes are effective."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are audits aligned with ISO 27001?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, where applicable, controls are mapped to international security best practices including ISO 27001, helping you achieve dual compliance objectives."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are common audit findings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Weak access management, unpatched systems, insufficient monitoring, gaps in policies, inadequate incident response procedures, and incomplete vendor risk assessments are among the most common findings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does the audit take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Duration depends on the size and complexity of the organization. Typically, audits range from 3-8 weeks depending on the number of systems, branches, and scope of assessment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the audit improve customer trust?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Demonstrating compliance and security strengthens client confidence, builds stakeholder trust, and enhances your institution's reputation in the market."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is third-party vendor risk included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, vendor controls and integrations are assessed. We evaluate third-party risk management frameworks, vendor contracts, and security practices of critical service providers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can multiple branches or entities be audited together?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, scalable frameworks allow multi-entity assessments. This is particularly useful for banks with multiple branches or banking groups with different entities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is business continuity assessed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We evaluate disaster recovery plans, backup strategies, and failover mechanisms. This includes reviewing documented procedures, testing frequency, recovery time objectives (RTO), and recovery point objectives (RPO)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why choose ISECURION for RBI IS Audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our combination of regulatory expertise, technical skill, and practical recommendations ensures comprehensive, actionable, and reliable audit outcomes. We don't just help you comply - we help you operate securely and build resilience against cyber threats."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What RBI circulars are covered in the audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We cover all relevant RBI circulars including those on Cyber Security Framework, IT Governance, Outsourcing guidelines, Digital Payment Security Controls, and other applicable notifications based on your institution type."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you assess cloud banking infrastructure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we assess both on-premise and cloud-based banking infrastructure, including hybrid environments. Our audits cover cloud security configurations, data protection, access controls, and compliance with RBI's guidelines on cloud adoption."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are mobile banking applications included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, mobile banking and payment applications are thoroughly assessed for security vulnerabilities, authentication mechanisms, data encryption, session management, and compliance with secure coding practices."
+        }
+      }
+    ]
+  }
+]

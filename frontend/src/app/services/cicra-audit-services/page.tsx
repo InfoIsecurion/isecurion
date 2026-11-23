@@ -69,13 +69,13 @@ const industriesWeServe = [
     Icon: "pepicons-pop:electricity",
     heading: "Energy & Critical Infrastructure",
     description:
-      "Identify risks across power systems, industrial environments, energy networks, and operational technology.",
+      "Power distribution companies, oil and gas operators, renewable energy plants and smart grid operators.",
   },
   {
     Icon: "mingcute:government-line",
     heading: "Government & Public Sector",
     description:
-      "Strengthen the protection of e-governance platforms, public services, and sensitive government information.",
+      "Power distribution companies, oil and gas operators, renewable energy plants and smart grid operators.",
   },
   {
     Icon: "iconmind:vpc-outline-regular",
@@ -145,7 +145,7 @@ const assessmentCoverage = [
   {
     title: "Cyber Threat & Risk Assessment",
     description:
-      "Evaluate threat exposure, vulnerabilities, likelihood, impact and overall risk priority.",
+      "Threat modeling for internal and external threats, vulnerability exposure assessment, risk likelihood and impact scoring, and a risk prioritization matrix.",
   },
   {
     title: "Governance & Policy Review",
@@ -160,12 +160,12 @@ const assessmentCoverage = [
   {
     title: "Compliance & Regulatory Mapping",
     description:
-      "Map applicable requirements across relevant regulatory and security frameworks.",
+      "RBI Cybersecurity Framework, SEBI Cyber Resilience, IRDAI Guidelines, DPDP Act alignment, ISO 27001 Annex A controls and the NIST Framework.",
   },
   {
     title: "Incident Response & Continuity",
     description:
-      "Assess detection, response, recovery, backup, disaster recovery and business continuity readiness.",
+      "Incident response plan evaluation, SOC maturity assessment, disaster recovery testing readiness, and backup and restoration strategy review.",
   },
 ];
 
@@ -293,7 +293,7 @@ const differentiators = [
   {
     heading: "PAN-India Presence",
     description:
-      "Offices in Bangalore, Mumbai, Delhi, Chennai, Hyderabad with nationwide service capability.",
+      "Offices in Bangalore, Kolkata, Ahmedabad, Mumbai and Noida with nationwide remote capability.",
     Icon: "boxicons:globe-alt-3",
     bgColor: "#7D70F0",
   },
@@ -492,12 +492,22 @@ function page() {
                   className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal"
                   style={{ animationDelay: "500ms" }}
                 >
-                  CICRA Audit Services for Critical Infrastructure Protection
+                  CICRA Audit Services in India: Critical Information & Cyber Risk Assessment
                 </h1>
+
+                <p
+                  className="mt-4 lg:max-w-[480px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
+                  style={{ animationDelay: "750ms" }}
+                >
+                  With regulators such as CERT-In, SEBI, IRDAI, MeitY and sectoral authorities placing growing emphasis on cybersecurity governance, 
+                  risk-based assessments of critical information infrastructure are increasingly expected in regulated sectors. Unlike traditional 
+                  compliance audits, a CICRA audit focuses on risk prioritization and resilience enhancement, so critical business services stay 
+                  secure and operational even during cyber incidents.
+                </p>
 
                 {/* Description */}
                 <p
-                  className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
+                  className="mt-4 lg:max-w-[460px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
                   style={{ animationDelay: "750ms" }}
                 >
                   ISECURION delivers industry-leading CICRA Audit Services in
@@ -542,7 +552,7 @@ function page() {
                 </ul>
 
                 {/* CTA */}
-                {/* <div className="mt-10 text-center lg:text-left">
+                <div className="mt-10 text-center lg:text-left">
                   <Link href="/company/contact">
                   <button
                     type="button"
@@ -554,7 +564,7 @@ function page() {
                     </span>
                   </button>
                   </Link>
-                </div> */}
+                </div>
               </div>
             </Animation>
 
@@ -954,7 +964,7 @@ function page() {
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
           {/* Heading */}
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-medium tracking-wide text-[#7D70F0] sm:text-sm">
+            <p className="text-sm sm:text-base font-semibold tracking-wide text-[#7D70F0]">
               ASSESSMENT COVERAGE
             </p>
 
@@ -1000,7 +1010,7 @@ function page() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10">
             <LeftAnimation>
               <div className="w-full lg:w-[500px] text-center lg:text-left space-y-4">
-                <p className="mt-4 sm:mt-0 text-sm sm:text-base font-semibold text-[#7D70F0]">
+                <p className="mt-4 sm:mt-0 text-sm sm:text-base font-semibold text-[#7D70F0] uppercase">
                   Our Approach
                 </p>
                 <h2 className=" text-[#FEFEFE] lg:max-w-[418px]">

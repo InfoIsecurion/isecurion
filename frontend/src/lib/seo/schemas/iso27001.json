@@ -1,0 +1,632 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ISECURION",
+    "url": "https://isecurion.com",
+    "logo": "https://isecurion.com/images/isecurion1.png",
+    "description": "ISECURION is a CERT-In Empanelled and ISO 27001:2022 certified information security consulting company providing ISO 27001 audit, ISMS implementation, cybersecurity compliance, VAPT and regulatory audit services across India, USA, UK, UAE, Singapore and Australia.",
+    "foundingDate": "2015",
+    "legalName": "ISECURION",
+    "email": "info@isecurion.com",
+    "telephone": "+918861201570",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura",
+        "addressLocality": "Bengaluru",
+        "addressRegion": "Karnataka",
+        "postalCode": "560109",
+        "addressCountry": "IN"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Arch Square, 8th Floor, Unit No 809, Tower 1, Salt Lake City, Sector-V",
+        "addressLocality": "Kolkata",
+        "addressRegion": "West Bengal",
+        "postalCode": "700091",
+        "addressCountry": "IN"
+      }
+    ],
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Bengaluru"
+      },
+      {
+        "@type": "City",
+        "name": "Mumbai"
+      },
+      {
+        "@type": "City",
+        "name": "Delhi"
+      },
+      {
+        "@type": "City",
+        "name": "Hyderabad"
+      },
+      {
+        "@type": "City",
+        "name": "Chennai"
+      },
+      {
+        "@type": "City",
+        "name": "Pune"
+      },
+      {
+        "@type": "City",
+        "name": "Kolkata"
+      },
+      {
+        "@type": "City",
+        "name": "Ahmedabad"
+      },
+      {
+        "@type": "City",
+        "name": "Noida"
+      },
+      {
+        "@type": "City",
+        "name": "Gurgaon"
+      },
+      {
+        "@type": "City",
+        "name": "Jaipur"
+      },
+      {
+        "@type": "City",
+        "name": "Chandigarh"
+      },
+      {
+        "@type": "City",
+        "name": "Kochi"
+      },
+      {
+        "@type": "City",
+        "name": "Bhubaneswar"
+      },
+      {
+        "@type": "Country",
+        "name": "India"
+      },
+      {
+        "@type": "Country",
+        "name": "United States"
+      },
+      {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      {
+        "@type": "Country",
+        "name": "Australia"
+      },
+      {
+        "@type": "Country",
+        "name": "United Arab Emirates"
+      },
+      {
+        "@type": "Country",
+        "name": "Qatar"
+      },
+      {
+        "@type": "Country",
+        "name": "Saudi Arabia"
+      },
+      {
+        "@type": "Country",
+        "name": "Kuwait"
+      },
+      {
+        "@type": "Country",
+        "name": "Bahrain"
+      },
+      {
+        "@type": "Country",
+        "name": "Oman"
+      },
+      {
+        "@type": "Country",
+        "name": "Singapore"
+      },
+      {
+        "@type": "Country",
+        "name": "Germany"
+      },
+      {
+        "@type": "Country",
+        "name": "Netherlands"
+      },
+      {
+        "@type": "Country",
+        "name": "France"
+      },
+      {
+        "@type": "Country",
+        "name": "Canada"
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/iSECURION/",
+      "https://twitter.com/iSECURION",
+      "https://www.linkedin.com/company/isecurion"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Cybersecurity & Compliance Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "ISO 27001 Audit & Certification"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SOC 2 Compliance"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "VAPT Services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "GDPR Compliance"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "DPDP Compliance"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ISECURION – ISO 27001 Audit & Certification Consultants",
+    "image": "https://isecurion.com/images/isecurion1.png",
+    "url": "https://isecurion.com/services/iso27001",
+    "telephone": "+918861201570",
+    "email": "info@isecurion.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "postalCode": "560109",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 12.9008,
+      "longitude": 77.5937
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:30"
+    },
+    "areaServed": [
+      "Bengaluru",
+      "Mumbai",
+      "Delhi",
+      "Hyderabad",
+      "Chennai",
+      "Pune",
+      "Kolkata",
+      "Ahmedabad",
+      "Noida",
+      "Gurgaon",
+      "Kochi",
+      "Jaipur",
+      "United States",
+      "United Kingdom",
+      "United Arab Emirates",
+      "Singapore",
+      "Australia",
+      "Qatar",
+      "Saudi Arabia",
+      "Germany"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "ISO 27001 Audit & Certification Consulting",
+    "serviceCategory": "Compliance Audit, Cybersecurity, Information Security Management",
+    "name": "ISO 27001 Audit & Certification Services",
+    "description": "End-to-end ISO/IEC 27001:2022 ISMS implementation, gap analysis, risk assessment, documentation, internal audit and certification support. Serving SaaS, FinTech, healthcare, cloud and enterprise organisations across India (Bengaluru, Mumbai, Delhi, Hyderabad, Chennai, Pune, Kolkata), USA, UK, UAE, GCC, Singapore and Australia.",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "ISECURION",
+      "url": "https://isecurion.com",
+      "logo": "https://isecurion.com/images/isecurion1.png"
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Bengaluru"
+      },
+      {
+        "@type": "City",
+        "name": "Mumbai"
+      },
+      {
+        "@type": "City",
+        "name": "Delhi"
+      },
+      {
+        "@type": "City",
+        "name": "Hyderabad"
+      },
+      {
+        "@type": "City",
+        "name": "Chennai"
+      },
+      {
+        "@type": "City",
+        "name": "Pune"
+      },
+      {
+        "@type": "City",
+        "name": "Kolkata"
+      },
+      {
+        "@type": "City",
+        "name": "Ahmedabad"
+      },
+      {
+        "@type": "City",
+        "name": "Noida"
+      },
+      {
+        "@type": "City",
+        "name": "Gurgaon"
+      },
+      {
+        "@type": "City",
+        "name": "Kochi"
+      },
+      {
+        "@type": "City",
+        "name": "Jaipur"
+      },
+      {
+        "@type": "City",
+        "name": "Chandigarh"
+      },
+      {
+        "@type": "City",
+        "name": "Surat"
+      },
+      {
+        "@type": "City",
+        "name": "Bhubaneswar"
+      },
+      {
+        "@type": "City",
+        "name": "Nagpur"
+      },
+      {
+        "@type": "Country",
+        "name": "India"
+      },
+      {
+        "@type": "Country",
+        "name": "United States"
+      },
+      {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      {
+        "@type": "Country",
+        "name": "Australia"
+      },
+      {
+        "@type": "Country",
+        "name": "United Arab Emirates"
+      },
+      {
+        "@type": "Country",
+        "name": "Qatar"
+      },
+      {
+        "@type": "Country",
+        "name": "Saudi Arabia"
+      },
+      {
+        "@type": "Country",
+        "name": "Kuwait"
+      },
+      {
+        "@type": "Country",
+        "name": "Bahrain"
+      },
+      {
+        "@type": "Country",
+        "name": "Oman"
+      },
+      {
+        "@type": "Country",
+        "name": "Singapore"
+      },
+      {
+        "@type": "Country",
+        "name": "Germany"
+      },
+      {
+        "@type": "Country",
+        "name": "Netherlands"
+      },
+      {
+        "@type": "Country",
+        "name": "France"
+      },
+      {
+        "@type": "Country",
+        "name": "Canada"
+      }
+    ],
+    "serviceAudience": [
+      {
+        "@type": "Audience",
+        "audienceType": "SaaS Companies"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Cloud Service Providers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "FinTech Companies"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Healthcare Organizations"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "IT Service Providers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Enterprises and Startups"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Data Centers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "E-commerce Businesses"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "EdTech Companies"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Logistics Companies"
+      }
+    ],
+    "keywords": "ISO 27001 audit India, ISO 27001 certification India, ISO 27001 Bengaluru, ISO 27001 Mumbai, ISO 27001 Delhi, ISO 27001 Hyderabad, ISO 27001 Chennai, ISO 27001 Pune, ISO 27001 Kolkata, ISO 27001 USA, ISO 27001 UK, ISO 27001 UAE, ISO 27001 Singapore, ISO 27001 Australia, ISMS implementation, ISO 27001 gap analysis, ISO 27001 internal audit, ISO 27001 risk assessment, ISO 27001 SoA, ISO 27001 2022, CERT-In empanelled, information security audit, ISO 27001 for SaaS, ISO 27001 FinTech, ISO 27001 certification cost, ISO 27001 consultant India",
+    "offers": {
+      "@type": "Offer",
+      "url": "https://isecurion.com/services/iso27001",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock",
+      "eligibleRegion": [
+        {
+          "@type": "Country",
+          "name": "India"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "Qatar"
+        },
+        {
+          "@type": "Country",
+          "name": "Saudi Arabia"
+        },
+        {
+          "@type": "Country",
+          "name": "Singapore"
+        },
+        {
+          "@type": "Country",
+          "name": "Germany"
+        },
+        {
+          "@type": "Country",
+          "name": "Netherlands"
+        }
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does ISO 27001 certification take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A scoped ISO 27001 implementation typically takes 2–4 months for mid-sized organisations. Larger enterprises with complex environments may require 4–6 months depending on the number of controls that need remediation, team availability and existing documentation maturity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the cost of ISO 27001 certification in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ISO 27001 certification cost in India varies based on organisational size, scope, number of employees and existing controls. ISECURION offers competitive packages for startups, mid-market and enterprise clients. Contact us for a tailored quote."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do we need a certification body to get ISO 27001 certified?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ISO 27001 certification is issued by an accredited third-party certification body (CB) such as BSI, Bureau Veritas, TÜV, DNV or NQA. ISECURION prepares your ISMS artifacts and coordinates Stage 1 and Stage 2 certification audits on your behalf."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ISO 27001 overlap with SOC 2?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes - many ISO 27001 Annex A controls align with SOC 2 Trust Services Criteria. ISECURION harmonises your control sets so you can pursue both frameworks simultaneously, eliminating duplicate work and reducing overall compliance effort."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What version of ISO 27001 should we certify on?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ISO/IEC 27001:2022 is the current standard. All new certifications must be issued against the 2022 edition. Organisations certified under ISO 27001:2013 must transition by October 2025. ISECURION handles transition projects for 2013-certified organisations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is ISO 27001 mandatory in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ISO 27001 is not universally mandatory in India but is strongly recommended or contractually required in many sectors. RBI, SEBI, IRDAI and DPDP-regulated entities benefit significantly from ISO 27001 as it demonstrates a mature information security posture and is frequently demanded by enterprise customers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ISECURION provide ISO 27001 consulting outside India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ISECURION provides remote and on-site ISO 27001 consulting services across USA, UK, UAE, GCC (Qatar, Saudi Arabia, Kuwait, Bahrain, Oman), Singapore, Australia, Germany, Netherlands and France."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What industries does ISECURION serve for ISO 27001?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ISECURION has completed ISO 27001 projects for SaaS, FinTech, HealthTech, EdTech, cloud services, data centres, IT services, e-commerce, logistics, BFSI, insurance and manufacturing companies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is an ISMS gap analysis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An ISMS gap analysis evaluates your current information security controls against ISO 27001:2022 requirements and Annex A controls. The output is a prioritised remediation plan, maturity score and estimated effort to achieve certification readiness."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many Annex A controls are in ISO 27001:2022?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ISO 27001:2022 includes 93 Annex A controls across 4 themes: Organisational (37), People (8), Physical (14) and Technological (34). This is a reduction from the 114 controls in the 2013 edition, with 11 new controls added."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://isecurion.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Compliance Audit Services",
+        "item": "https://isecurion.com/compliance-audit-services/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "ISO 27001 Audit & Certification",
+        "item": "https://isecurion.com/services/iso27001"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Get ISO 27001 Certified with ISECURION",
+    "description": "A 5-phase process to achieve ISO 27001 certification for your organisation.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Scoping & Consultation",
+        "text": "Define your ISMS scope, assets, systems, vendors and key stakeholders."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Gap Assessment & Risk Treatment",
+        "text": "Assess existing controls against ISO 27001:2022, run risk assessments and propose risk treatment options."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "ISMS Documentation & Control Design",
+        "text": "Create policies, SoA, risk register, incident playbooks and all required ISMS documentation."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Implementation & Internal Audit",
+        "text": "Deploy technical and organisational controls, train teams and conduct a formal internal audit."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Certification & Continuous Monitoring",
+        "text": "Coordinate Stage 1 and Stage 2 certification audits with the accredited CB and establish ongoing ISMS health checks."
+      }
+    ]
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ISECURION",
+    "url": "https://isecurion.com",
+    "logo": "https://isecurion.com/images/isecurion1.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+918861201570",
+      "contactType": "Customer Service"
+    },
+    "sameAs": [
+      "https://www.facebook.com/iSECURION/",
+      "https://twitter.com/iSECURION",
+      "https://www.linkedin.com/company/isecurion"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://isecurion.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Terms of Use",
+        "item": "https://isecurion.com/terms-of-use"
+      }
+    ]
+  }
+]

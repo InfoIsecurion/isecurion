@@ -1,0 +1,185 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Aadhaar / UIDAI Compliance Audit Services",
+    "description": "Comprehensive Aadhaar and UIDAI compliance audit services for AUA, KUA, Sub-AUA, Sub-KUA and Face Authentication entities to ensure adherence to UIDAI security, operational, and data protection guidelines.",
+    "provider": {
+      "@type": "Organization",
+      "name": "ISECURION",
+      "url": "https://www.isecurion.com"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "serviceType": [
+      "UIDAI Compliance Audit",
+      "AUA Audit Services",
+      "KUA Audit Services",
+      "Sub-AUA and Sub-KUA Audit",
+      "Face Authentication Audit",
+      "Aadhaar Security Assessment",
+      "eKYC Compliance Audit",
+      "Biometric Authentication Audit"
+    ],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": [
+        "Banks",
+        "NBFCs",
+        "FinTech Companies",
+        "Telecom Operators",
+        "Government Agencies",
+        "AUA and KUA Organizations",
+        "Sub-AUA and Sub-KUA Entities",
+        "Face Authentication Service Providers"
+      ]
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock"
+    },
+    "url": "https://isecurion.com/services/aadhar-audit",
+    "keywords": [
+      "Aadhaar audit services India",
+      "UIDAI compliance audit",
+      "AUA audit services",
+      "KUA audit services",
+      "Sub-AUA audit",
+      "Sub-KUA audit",
+      "Face Authentication audit",
+      "Aadhaar security audit",
+      "eKYC audit UIDAI",
+      "biometric authentication audit",
+      "UIDAI guidelines compliance",
+      "Aadhaar data protection audit"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Aadhaar/UIDAI Audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aadhaar/UIDAI Audit is a compliance audit conducted for AUAs, KUAs, Sub-AUAs, Sub-KUAs, and Face Authentication entities to ensure adherence to UIDAI security and operational guidelines."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is required to undergo the audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Banks, NBFCs, fintech companies, telecom operators, government agencies, and Sub-AUA or Sub-KUA entities are required to undergo the audit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the audit include Face Authentication systems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all biometric systems including Face Authentication solutions are assessed for security controls and UIDAI compliance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can audits be conducted remotely?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, audits can be conducted remotely with secure system access and submission of required documentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What deliverables will I receive?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Deliverables include a detailed audit report, executive summary, gap analysis, risk register, remediation roadmap, and supporting evidence documentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ISECURION assist with remediation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, ISECURION provides remediation guidance, verification support, and re-audit assistance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this audit mandatory?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, UIDAI mandates compliance audits for all AUA, KUA, Sub-AUA, Sub-KUA, and authentication service providers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does the audit take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The audit duration depends on organizational size, system complexity, and the number of Aadhaar-enabled applications."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the audit improve operational security?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the audit strengthens authentication mechanisms, monitoring controls, logging, and incident response capabilities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are third-party vendors included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Sub-AUAs, Sub-KUAs, and integration or technology partners are included in the audit scope."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is encryption mandatory?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, UIDAI mandates encryption of Aadhaar data both at rest and in transit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the audit assess logs and monitoring?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, tamper-proof audit logs and real-time monitoring mechanisms are thoroughly reviewed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are biometric systems tested?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, fingerprint and Face Authentication biometric systems are validated as part of the audit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can multiple entities be audited together?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, scalable audit frameworks allow concurrent assessment of multiple entities and systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why choose ISECURION?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ISECURION combines deep UIDAI regulatory expertise with strong cybersecurity capabilities to deliver practical, audit-ready, and resilient Aadhaar compliance."
+        }
+      }
+    ]
+  }
+]

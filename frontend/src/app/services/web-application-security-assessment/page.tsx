@@ -60,7 +60,7 @@ const webApplicationFAQs = [
   {
     question: "What is a Web Application Security Assessment?",
     answer:
-      "A Web Application Security Assessment evaluates your web application for vulnerabilities, security misconfigurations, and compliance gaps to protect user data and business operations.",
+      "It evaluates your web application for vulnerabilities, security misconfigurations, and compliance gaps to protect user data and business operations.",
   },
   {
     question: "Why is web application security important?",
@@ -70,12 +70,12 @@ const webApplicationFAQs = [
   {
     question: "How often should web applications be tested?",
     answer:
-      "Web applications should be tested regularly—at least once a year, or after major updates or feature releases—to ensure ongoing protection against vulnerabilities.",
+      "At least once a year, or after major updates or feature releases.",
   },
   {
     question: "What types of vulnerabilities are tested?",
     answer:
-      "Our assessment covers authentication, authorization, session management, input validation, SQL injection, XSS, business logic flaws, and other common and advanced vulnerabilities.",
+      "Authentication, authorization, session management, input validation, SQL injection, XSS, business logic flaws, and other common and advanced vulnerabilities.",
   },
   {
     question: "Who conducts the assessment?",
@@ -107,6 +107,11 @@ const webApplicationFAQs = [
     answer:
       "You can get started by contacting ISECURION via our Contact Us page to schedule a free consultation and initiate the assessment process.",
   },
+  {
+    question: "Is ISECURION CREST accredited? ",
+    answer:
+      "Yes. ISECURION is a CREST Member, accredited for Penetration Testing, and is also CERT-In empanelled and ISO 27001:2022 certified. ",
+  },
 ];
 
 const webAssessmentSteps = [
@@ -119,13 +124,13 @@ const webAssessmentSteps = [
   {
     title: "Threat Modeling",
     description:
-      "Identify potential threats and attack vectors based on application design and business logic.",
+      "Identify potential threats and attack vectors based on application architecture, user roles, and business logic to focus testing on high-risk areas.",
     icon: <Icon icon="grommet-icons:document-threat" />,
   },
   {
     title: "Security Assessment",
     description:
-      "Evaluate critical areas such as authentication, authorization, input validation and business logic.",
+      "Evaluate authentication, authorization, session management, input validation, business logic, error handling, and client-side security vulnerabilities.",
     icon: <Icon icon="iconmind:book-review-outline-regular" />,
   },
   {
@@ -137,13 +142,13 @@ const webAssessmentSteps = [
   {
     title: "Remediation Guidance",
     description:
-      "Provide actionable remediation guidance to fix vulnerabilities, strengthen security, and support compliance.",
+      "Actionable recommendations to fix vulnerabilities, improve application security, and align with ISO 27001 and SOC 2 compliance. (Link both terms to their pages.)",
     icon: <Icon icon="ic:outline-tips-and-updates" />,
   },
   {
     title: "Reporting & Deliverables",
     description:
-      "Deliver a comprehensive report with prioritized findings and clear mitigation steps.",
+      "A comprehensive report with prioritized findings, detailed risk analysis, and recommended mitigation steps for continuous improvement.",
     icon: <Icon icon="pajamas:review-checkmark" />,
   },
 ];
@@ -167,10 +172,14 @@ function page() {
                   Web Application Security Assessment
                 </h1>
 
-                <p className="mt-4 max-w-[610px] text-[#D9D9D9] sectionDescription animate-hero-reveal" style={{ animationDelay: "650ms" }}>
-                  Identify vulnerabilities, uncover real-world attack risks, and
-                  protect your web applications with expert-led security
-                  assessments.
+                <p className="mt-4 max-w-[650px] text-[#D9D9D9] sectionDescription animate-hero-reveal" style={{ animationDelay: "650ms" }}>
+                  Identify vulnerabilities, uncover real-world attack risks, and protect your web applications with expert-led web application security
+                  assessments from a CREST Member (accredited for Penetration Testing), CERT-In empanelled, ISO 27001:2022 certified company.
+                </p>
+
+                <p className="mt-4 max-w-[650px] text-[#D9D9D9] sectionDescription animate-hero-reveal" style={{ animationDelay: "650ms" }}>
+                  Web applications are increasingly targeted by cybercriminals. Despite firewalls and intrusion detection systems, attackers often exploit application-level vulnerabilities. With Web 2.0 technologies and social platforms, applications
+                  carry valuable user data and business-critical information, making them prime targets for data theft, tampering with functionality, and service disruption.
                 </p>
                 <Link href="/company/contact">
                   <button
@@ -270,6 +279,10 @@ function page() {
               </div>
             </Animation>
 
+            <h2 className="mt-10 max-w-[700px] font-semibold leading-[1.3] text-white">
+              Benefits of Web Application Security Assessment
+            </h2>
+
             <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
               {assessmentCards.map((card, index) => (
                 <Animation key={card.title} delay={index * 0.12}>
@@ -316,18 +329,9 @@ function page() {
               <WordReveal text="Our Security Assessment Methodology" className="relative text-3xl font-normal leading-tight text-white sm:text-4xl lg:text-[36px]">
               </WordReveal>
 
-              <p className="relative mx-auto mt-5 max-w-[850px] text-sm leading-6 text-white/70 sm:text-base animate-hero-reveal" style={{ animationDelay: "600ms" }}>
-                At ISECURION, we combine{" "}
-                <span className="font-medium text-white">
-                  OWASP-aligned testing
-                </span>
-                ,{" "}
-                <span className="font-medium text-white">automated tools</span>,
-                and{" "}
-                <span className="font-medium text-white">
-                  expert-led manual assessment
-                </span>{" "}
-                to uncover and validate web application security risks.
+              <p className="relative mx-auto mt-5 max-w-[850px] text-sm leading-7 text-white/70 sm:text-base animate-hero-reveal" style={{ animationDelay: "600ms" }}>
+                Our methodology is based on internationally recognized standards and frameworks such as OWASP Top 10, SANS, and ISO 27001 guidelines. 
+                We combine automated tools with expert-led manual testing to deliver actionable insights that protect your web applications from real-world threats.
               </p>
             </div>
           </Animation>

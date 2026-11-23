@@ -1,0 +1,264 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Red Team Assessment Services",
+    "serviceCategory": "Cybersecurity, Adversary Simulation, Red Teaming",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "ISECURION",
+      "url": "https://isecurion.com/services/red-team-assessment",
+      "logo": "https://isecurion.com/images/isecurion1.png",
+      "description": "ISECURION provides Red Team Assessment services across India, USA, UK, Australia, UAE, Qatar, and Singapore, simulating real-world adversary tactics to evaluate resilience and incident response.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura",
+        "addressLocality": "Bengaluru",
+        "postalCode": "560109",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+918861201570",
+        "contactType": "customer service",
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "India"
+          },
+          {
+            "@type": "Country",
+            "name": "United States"
+          },
+          {
+            "@type": "Country",
+            "name": "United Kingdom"
+          },
+          {
+            "@type": "Country",
+            "name": "Australia"
+          },
+          {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          },
+          {
+            "@type": "Country",
+            "name": "Qatar"
+          },
+          {
+            "@type": "Country",
+            "name": "Singapore"
+          }
+        ]
+      },
+      "sameAs": [
+        "https://www.facebook.com/iSECURION/",
+        "https://twitter.com/iSECURION",
+        "https://www.linkedin.com/company/isecurion"
+      ]
+    },
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "India"
+      },
+      {
+        "@type": "Country",
+        "name": "United States"
+      },
+      {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      {
+        "@type": "Country",
+        "name": "Australia"
+      },
+      {
+        "@type": "Country",
+        "name": "United Arab Emirates"
+      },
+      {
+        "@type": "Country",
+        "name": "Qatar"
+      },
+      {
+        "@type": "Country",
+        "name": "Singapore"
+      }
+    ],
+    "serviceAudience": [
+      {
+        "@type": "Audience",
+        "audienceType": "Enterprises"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Financial Institutions"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Critical Infrastructure Providers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Healthcare Organizations"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Cloud Service Providers"
+      },
+      {
+        "@type": "Audience",
+        "audienceType": "Government Agencies"
+      }
+    ],
+    "keywords": [
+      "Red Team Assessment India",
+      "Red Team Assessment USA",
+      "Red Team Assessment UK",
+      "Red Team Assessment Australia",
+      "Red Team Assessment UAE",
+      "Red Team Assessment Qatar",
+      "Red Team Assessment Singapore",
+      "Adversary simulation services",
+      "Breach and attack simulation",
+      "Advanced penetration testing",
+      "Red Teaming company",
+      "threat emulation testing",
+      "cyber resilience testing",
+      "best red team company",
+      "Red Team engagement services",
+      "Red Team attack simulation",
+      "CERT-In empanelled red team provider",
+      "cybersecurity red team consulting",
+      "red team testing for enterprises",
+      "red team vs blue team assessment",
+      "red team adversary emulation services"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "url": "https://isecurion.com/services/red-team-assessment",
+      "priceCurrency": "INR",
+      "price": "0",
+      "eligibleRegion": [
+        {
+          "@type": "Country",
+          "name": "India"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "Qatar"
+        },
+        {
+          "@type": "Country",
+          "name": "Singapore"
+        }
+      ],
+      "availability": "https://schema.org/InStock"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Red Team Assessment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Red Team Assessment simulates real-world cyber attacks to evaluate an organization's security posture and response effectiveness."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is Red Teaming important for businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It helps organizations identify hidden vulnerabilities, improve incident response, and ensure regulatory compliance while preparing for advanced cyber threats."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should a Red Team Assessment be conducted?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ideally, annually or after significant infrastructure changes. Frequent assessments help maintain strong security posture."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between Red Team and Penetration Testing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Penetration Testing focuses on specific systems or applications, whereas Red Team Assessment simulates full-scope, realistic attacks across multiple vectors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Red Teaming include physical security testing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Red Team exercises can simulate social engineering attacks and assess physical security controls like access to premises or sensitive areas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does ISECURION report Red Team findings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Detailed reports include vulnerability findings, attack paths, risk ratings, and actionable remediation plans tailored to the organization."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Red Team Assessments help with regulatory compliance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. They help organizations meet compliance requirements such as ISO 27001, SOC 2, GDPR, and other cybersecurity regulations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does a typical Red Team Assessment take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Duration varies based on scope, but most assessments take 2-4 weeks, including planning, simulation, and reporting phases."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What industries benefit most from Red Teaming?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Any organization handling sensitive data, including finance, healthcare, government, and technology sectors, can benefit significantly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What makes ISECURION’s Red Team Assessment unique?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our assessments combine CERT-In expertise, hands-on real-world attack simulations, compliance focus, and actionable remediation strategies."
+        }
+      }
+    ]
+  }
+]

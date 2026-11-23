@@ -1,0 +1,184 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "IRDAI ISNP Audit Services",
+    "description": "Regulatory audit to ensure digital insurance platforms comply with IRDAI security and operational guidelines, including vulnerability assessment, penetration testing, and application security testing.",
+    "provider": {
+      "@type": "Organization",
+      "name": "ISECURION",
+      "url": "https://www.isecurion.com"
+    },
+    "areaServed": [
+      "IN",
+      "NP",
+      "BD",
+      "LK",
+      "BT",
+      "MV"
+    ],
+    "serviceType": "Insurance Security Audit, IRDAI Compliance Assessment, Information Security and Network Platform Audit, Insurance Cybersecurity Audit, Penetration Testing, Vulnerability Assessment",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": [
+        "Insurance Companies",
+        "Third-Party Administrators",
+        "Insurance Aggregators",
+        "Technology Providers for Insurance",
+        "Policy Servicing Providers"
+      ]
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock"
+    },
+    "url": "https://isecurion.com/services/irda-audit",
+    "keywords": [
+      "IRDAI ISNP audit",
+      "insurance security audit India",
+      "IRDAI compliance services",
+      "insurance cybersecurity assessment",
+      "TPA security audit",
+      "insurance aggregator compliance",
+      "digital insurance platform security",
+      "IRDAI guidelines audit",
+      "insurance data protection",
+      "policyholder data security audit",
+      "IRDAI mandatory audit",
+      "insurance penetration testing",
+      "vulnerability assessment insurance",
+      "cloud security audit",
+      "ISO 27001 insurance",
+      "insurance IT audit",
+      "third party vendor audit",
+      "insurance network security",
+      "IRDAI regulatory compliance"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is IRDAI ISNP Audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A regulatory audit to ensure digital insurance platforms comply with IRDAI security and operational guidelines. It evaluates information security controls, network infrastructure, data protection mechanisms, and operational processes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who needs to undergo the audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Insurance companies, aggregators, TPAs, and technology providers handling sensitive insurance data are required to undergo IRDAI ISNP audits to ensure compliance with regulatory requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the audit include technical testing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, it includes vulnerability assessment, penetration testing, and application security testing to identify technical vulnerabilities in your digital insurance platforms and infrastructure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are cloud platforms included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, both on-premise and cloud-based systems are assessed. We evaluate cloud security configurations, data protection controls, and service provider compliance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can audits be conducted remotely?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, with secure access to systems and documentation. We use secure remote assessment methodologies while maintaining the same level of rigor and thoroughness."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What deliverables are provided?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Audit report, executive summary, gap analysis, risk register, remediation roadmap, and evidence pack ready for IRDAI submission."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you assist with remediation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we provide guidance and verification for remediation steps. Our team helps you implement recommended controls and validates their effectiveness through follow-up assessments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is ISNP audit mandatory?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, IRDAI mandates this audit for all regulated digital insurance platforms to ensure policyholder data protection and operational security."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are common findings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Weak access controls, insecure APIs, lack of monitoring, incomplete logging, insufficient encryption, and gaps in incident response procedures are among the most common findings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does the audit take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Duration depends on platform complexity, number of systems, and organizational size. Typically, audits range from 2-6 weeks depending on scope."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this audit improve customer trust?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, secure platforms build confidence with policyholders and partners. Demonstrating IRDAI compliance strengthens your market reputation and customer relationships."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is ISO 27001 alignment included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, controls are mapped to ISO 27001 best practices where applicable, helping you achieve dual compliance objectives."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are third-party vendors audited?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, TPAs and other vendors are included in the scope. We assess third-party risk management controls and vendor security practices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can multiple platforms be audited together?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, scalable frameworks allow multi-platform audits. This is often more efficient for organizations with multiple digital insurance systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why choose ISECURION?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our combination of regulatory expertise, cybersecurity skill, and practical guidance ensures comprehensive, actionable, and reliable audit outcomes that help you operate securely and confidently."
+        }
+      }
+    ]
+  }
+]

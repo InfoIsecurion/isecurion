@@ -16,6 +16,7 @@ import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { socCompliance } from "../../../services/api/contact";
+import { desc } from "framer-motion/m";
 
 interface ContactFormData {
   email: string;
@@ -50,14 +51,14 @@ const trustServices = [
 ];
 
 const socLocations = [
-  { name: "Bangalore", Icon: "reicon:city" },
-  { name: "Mumbai", Icon: "game-icons:tower-bridge" },
-  { name: "Hyderabad", Icon: "fluent:building-mosque-12-regular" },
-  { name: "Chennai", Icon: "icon-park-outline:city-one" },
-  { name: "Pune", Icon: "icon-park-outline:city-gate" },
-  { name: "Kochi", Icon: "lucide:tree-palm" },
-  { name: "Kolkata", Icon: "game-icons:arch-bridge" },
-  { name: "Pan-India Coverage", Icon: "iconmind:canvas-pan-outline-regular" },
+  { name: "Bangalore", Icon: "reicon:city", desc: "India's Silicon Valley SaaS and IT hub; we serve 100+ Bangalore-based tech companies." },
+  { name: "Mumbai", Icon: "game-icons:tower-bridge", desc:"FinTech, BFSI and cloud service providers." },
+  { name: "Hyderabad", Icon: "fluent:building-mosque-12-regular", desc:"HITEC City's IT companies seeking SOC 2 readiness and Type II audits." },
+  { name: "Chennai", Icon: "icon-park-outline:city-one", desc: "Automotive, manufacturing tech and IT services firms scaling to enterprise." },
+  { name: "Pune", Icon: "icon-park-outline:city-gate", desc: "Hinjewadi IT park companies and product startups; gap assessments on demand." },
+  { name: "Kochi", Icon: "lucide:tree-palm", desc:"Infopark and Technopark companies pursuing global enterprise customers." },
+  { name: "Kolkata", Icon: "game-icons:arch-bridge", desc:"Sector V and Salt Lake tech companies; local office in Kolkata." },
+  { name: "Pan-India Coverage", Icon: "iconmind:canvas-pan-outline-regular", desc:"Delhi, Ahmedabad, Noida, Gurgaon and more, fully remote-capable." },
 ];
 
 const globalRegions = [
@@ -391,36 +392,27 @@ function SocCompliance() {
 
                 {/* Description */}
                 <p
-                  className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
+                  className="mt-4 lg:max-w-[450px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
                   style={{ animationDelay: "650ms" }}
                 >
-                  Trusted by SaaS, FinTech, and cloud companies across
-                  Bangalore, Mumbai, Hyderabad, Chennai, Pune, Kolkata, and
-                  Kochi - and globally in USA, UK, UAE, Australia, and
-                  Singapore.
-                </p>
-
-                <p
-                  className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
-                  style={{ animationDelay: "750ms" }}
-                >
-                  ISECURION takes you end-to-end from scoping and gap analysis
-                  to evidence readiness and CPA auditor coordination. 100% audit
-                  success rate. 250+ engagements.
+                  ISECURION delivers fully remote SOC 2 compliance services to companies headquartered in the United States, United Kingdom, UAE (including Dubai and Abu Dhabi), Australia (Sydney, Melbourne) and Singapore. Our engagement model is timezone-flexible and tool-agnostic, designed to fit the procurement and audit 
+                  timelines of global buyers. We coordinate directly with AICPA-licensed CPA firms on your behalf and manage the full PBC (Prepared by Client) evidence delivery process.
                 </p>
 
                 {/* CTA */}
-                {/* <div className="mt-6 text-center lg:text-left">
+                <div className="mt-6 text-center lg:text-left animate-hero-reveal" style={{animationDelay: "780ms"}}>
+                  <Link href="tel:+918861201570" target="_blank">
                   <button
                     type="button"
-                    className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3]"
+                    className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3] cursor-pointer"
                   >
                     Book a Free Readiness Call{""}
                     <span className="ml-1.5 text-[17px] leading-none text-[#31435C]">
                       <Icon icon="mdi:arrow-right"></Icon>
                     </span>
                   </button>
-                </div> */}
+                  </Link>
+                </div>
 
                 {/* ==================== STATS ==================== */}
                 <div className="mt-9 grid lg:max-w-[380px] grid-cols-3 lg:grid-cols-2 gap-x-10 gap-y-6 text-center lg:text-left">
@@ -823,7 +815,7 @@ function SocCompliance() {
       >
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* TOP: INDIAN MARKETS */}
-          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10 xl:gap-12">
+          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-0 xl:gap-2">
             {/* Intro */}
             <LeftAnimation>
               <div className="lg:max-w-[440px] text-center lg:text-left">
@@ -863,6 +855,10 @@ function SocCompliance() {
 
                     <span className="text-center text-[13px] font-normal leading-5 text-[#D1D3DB] sm:text-[15px]">
                       {location.name}
+                    </span>
+
+                    <span className="text-center text-sm font-normal leading-5 text-[#D1D3DB] h-[100px]">
+                      {location.desc}
                     </span>
                   </AnimatedCard>
                 ))}

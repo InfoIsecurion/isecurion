@@ -1,0 +1,412 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://isecurion.com/#organization",
+        "name": "ISECURION",
+        "legalName": "ISECURION Technology & Consulting Pvt. Ltd.",
+        "url": "https://isecurion.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://isecurion.com/images/isecurion1.png"
+        },
+        "image": "https://isecurion.com/images/isecurion1.png",
+        "description": "ISECURION is a CERT-In empanelled and ISO 27001:2022 certified cybersecurity and compliance consulting company providing SOC 2, ISO 27001, VAPT, GDPR, DPDP and related services to organizations in India, the UAE, the Middle East and the USA.",
+        "email": "info@isecurion.com",
+        "telephone": "+91-88612-01570",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "37, Judicial Layout 2nd Phase, Kanakapura Main Rd, Thalaghattaapura",
+            "addressLocality": "Bengaluru",
+            "addressRegion": "Karnataka",
+            "postalCode": "560109",
+            "addressCountry": "IN"
+          },
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "Arch Square, 8th Floor, Unit 809, Tower 1, Salt Lake City, Sector-V",
+            "addressLocality": "Kolkata",
+            "addressRegion": "West Bengal",
+            "postalCode": "700091",
+            "addressCountry": "IN"
+          },
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "Millennial POD, A-203, A Wing, Boomerang, Chandivali Farm Road, Andheri East",
+            "addressLocality": "Mumbai",
+            "addressRegion": "Maharashtra",
+            "postalCode": "400072",
+            "addressCountry": "IN"
+          },
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "5006, 5th Floor, Nukleus Tower, Plot No. 29, Sector 142",
+            "addressLocality": "Noida",
+            "addressRegion": "Uttar Pradesh",
+            "postalCode": "201305",
+            "addressCountry": "IN"
+          },
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "GF-001 Mauryansh Elanza, Shyamal Cross Road, Satellite",
+            "addressLocality": "Ahmedabad",
+            "addressRegion": "Gujarat",
+            "postalCode": "380015",
+            "addressCountry": "IN"
+          },
+          {
+            "@type": "PostalAddress",
+            "streetAddress": "1014 N Plum Grove Road",
+            "addressLocality": "Schaumburg",
+            "addressRegion": "IL",
+            "postalCode": "60173",
+            "addressCountry": "US"
+          }
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "telephone": "+91-88612-01570",
+            "email": "info@isecurion.com",
+            "areaServed": [
+              "IN",
+              "AE",
+              "US",
+              "GB",
+              "AU",
+              "SG"
+            ],
+            "availableLanguage": [
+              "English"
+            ]
+          }
+        ],
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "India"
+          },
+          {
+            "@type": "Country",
+            "name": "United States"
+          },
+          {
+            "@type": "Country",
+            "name": "United Kingdom"
+          },
+          {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          },
+          {
+            "@type": "Country",
+            "name": "Australia"
+          },
+          {
+            "@type": "Country",
+            "name": "Singapore"
+          }
+        ],
+        "knowsAbout": [
+          "SOC 2 compliance",
+          "ISO 27001",
+          "Vulnerability assessment and penetration testing",
+          "GDPR",
+          "DPDP Act compliance",
+          "Cybersecurity compliance audit"
+        ],
+        "sameAs": [
+          "https://www.facebook.com/ISECURION/",
+          "https://twitter.com/ISECURION",
+          "https://www.linkedin.com/company/isecurion"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://isecurion.com/#website",
+        "url": "https://isecurion.com/",
+        "name": "ISECURION",
+        "inLanguage": "en-IN",
+        "publisher": {
+          "@id": "https://isecurion.com/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://isecurion.com/services/soc-2-compliance#webpage",
+        "url": "https://isecurion.com/services/soc-2-compliance",
+        "name": "SOC 2 Compliance Services in India | ISECURION",
+        "description": "End-to-end SOC 2 compliance services in India: gap assessment, control implementation, evidence readiness and CPA audit coordination.",
+        "inLanguage": "en-IN",
+        "isPartOf": {
+          "@id": "https://isecurion.com/#website"
+        },
+        "about": {
+          "@id": "https://isecurion.com/services/soc-2-compliance#service"
+        },
+        "breadcrumb": {
+          "@id": "https://isecurion.com/services/soc-2-compliance#breadcrumb"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://isecurion.com/images/isecurion1.png"
+        },
+        "dateModified": "2026-11-16"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://isecurion.com/services/soc-2-compliance#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://isecurion.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "SOC 2 Compliance Services",
+            "item": "https://isecurion.com/services/soc-2-compliance"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://isecurion.com/services/soc-2-compliance#service",
+        "name": "SOC 2 Compliance Services",
+        "alternateName": [
+          "SOC 2 Readiness and Audit Support",
+          "SOC 2 Compliance India"
+        ],
+        "serviceType": "SOC 2 readiness, gap assessment, control implementation and CPA audit coordination",
+        "description": "ISECURION helps organizations in India prepare for SOC 2 Type I and Type II examinations: scoping, gap assessment, risk assessment, control design and implementation, documentation, evidence packaging and coordination with an independent AICPA-licensed CPA firm that issues the SOC 2 report. Remote delivery is available for companies in the USA, UK, UAE, Australia and Singapore.",
+        "url": "https://isecurion.com/services/soc-2-compliance",
+        "mainEntityOfPage": {
+          "@id": "https://isecurion.com/services/soc-2-compliance#webpage"
+        },
+        "provider": {
+          "@id": "https://isecurion.com/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "India"
+          },
+          {
+            "@type": "Country",
+            "name": "United States"
+          },
+          {
+            "@type": "Country",
+            "name": "United Kingdom"
+          },
+          {
+            "@type": "Country",
+            "name": "United Arab Emirates"
+          },
+          {
+            "@type": "Country",
+            "name": "Australia"
+          },
+          {
+            "@type": "Country",
+            "name": "Singapore"
+          }
+        ],
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "SaaS, FinTech, HealthTech, cloud and IT services companies"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "SOC 2 Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "SOC 2 Readiness and Gap Assessment"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "SOC 2 Risk Assessment"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "SOC 2 Control Design and Implementation"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "ISMS-Aligned Policy and Procedure Documentation"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "SOC 2 Evidence Collection and Packaging"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "SOC 2 Audit Coordination and Continuous Monitoring"
+              }
+            }
+          ]
+        },
+        "keywords": "SOC 2 compliance services India, SOC 2 audit India, SOC 2 readiness assessment, SOC 2 Type I, SOC 2 Type II, SOC 2 consulting, AICPA Trust Services Criteria"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://isecurion.com/services/soc-2-compliance#faq",
+        "isPartOf": {
+          "@id": "https://isecurion.com/services/soc-2-compliance#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is SOC 2 compliance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SOC 2 is an attestation report issued by an independent AICPA-licensed CPA firm after evaluating a service organization's controls against the Trust Services Criteria (TSC): Security, Availability, Processing Integrity, Confidentiality and Privacy. Indian SaaS, cloud and IT services companies commonly need it to sell to enterprise customers in the USA, UK, UAE and other markets."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is SOC 2 mandatory for companies in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SOC 2 is not a legal requirement in India. It is a customer-driven standard: enterprise buyers, especially in the USA and UK, often make a SOC 2 report part of vendor due diligence, so it becomes a commercial necessity for companies that sell to them."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does ISECURION issue the SOC 2 report?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. A SOC 2 report is issued by an independent AICPA-licensed CPA firm. ISECURION prepares your organization for the audit: scoping, gap assessment, control implementation, documentation, evidence readiness and coordination with the CPA firm until the report is issued."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between SOC 2 Type I and Type II?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Type I assesses the design of controls at a point in time. Type II assesses operating effectiveness across a period, typically 3–12 months. Most enterprise buyers, especially in the USA and UK, require Type II. Many Indian companies start with Type I and achieve Type II within 6–12 months."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does a SOC 2 audit take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SOC 2 Type I can typically be achieved 6–10 weeks after remediation is complete. Type II requires a review period of 3–12 months of operating evidence before the audit window closes. Timeline depends on your starting maturity. ISECURION provides a timeline estimate as part of the free gap snapshot."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What affects the cost of SOC 2 compliance in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cost depends on scope: the number of Trust Services Criteria included, the systems and locations in scope, your current control maturity, team size and the CPA firm chosen for the audit. ISECURION scopes your requirement first through a free gap snapshot and then provides an itemized quote for the readiness work."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do we need ISO 27001 before pursuing SOC 2?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Many companies pursue SOC 2 as their first compliance framework. If you want both ISO 27001 and SOC 2, ISECURION harmonizes controls to minimize duplication and effort, which is a popular choice among SaaS companies expanding globally."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which tools and cloud platforms does ISECURION support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ISECURION supports AWS, Azure, GCP, Okta/Entra, Jira, GitHub/GitLab, CrowdStrike/Defender, Datadog and most modern SaaS stacks. We adapt to your environment rather than asking you to change tools to fit our methodology."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does ISECURION provide SOC 2 services across Indian cities?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We support companies in Bengaluru, Mumbai, Hyderabad, Chennai, Pune, Kolkata, Delhi NCR, Kochi and elsewhere in India through on-site or remote engagements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does ISECURION provide SOC 2 services outside India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Engagements for companies in the USA, UK, UAE, Australia and Singapore are delivered remotely and scheduled around your time zone. We coordinate with AICPA-licensed CPA firms on your behalf."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is ISECURION CERT-In empanelled?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. ISECURION is a CERT-In (Indian Computer Emergency Response Team) empanelled information security auditing organization and holds ISO 27001:2022 certification."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://isecurion.com/services/soc-2-compliance#howto",
+        "name": "How ISECURION takes your organization from SOC 2 scoping to a CPA-issued report",
+        "description": "ISECURION's 5-phase process to get your organization SOC 2 ready and supported through the audit.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Scoping and Consultation",
+            "text": "Define in-scope products, systems, vendors, locations and Trust Services Criteria (TSC)."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Readiness and Gap Assessment",
+            "text": "Compare existing controls against SOC 2 expectations and create a prioritized remediation plan."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Remediation and Control Implementation",
+            "text": "Implement access management, change management, backup, incident response, vendor and SDLC controls."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Evidence Collection and Documentation",
+            "text": "Build an audit-ready evidence pack including logs, tickets, policies, risk register and configurations."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 5,
+            "name": "Audit Support and Ongoing Compliance",
+            "text": "Coordinate with the CPA firm, respond to PBC lists and maintain controls after the report is issued."
+          }
+        ]
+      }
+    ]
+  }
+]

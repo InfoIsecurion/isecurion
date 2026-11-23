@@ -11,9 +11,9 @@ import TimelineAnimation from "../../../components/ui/TimelineAnimation";
 import profile from "../../../assets/about/profile.jpg";
 import ceo from "../../../assets/about/ceo.png";
 import saleshead from "../../../assets/about/sales.png";
-import compliancehead from "../../../assets/about/compliancehead.png";
+import compliancehead from "../../../assets/about/complianceHead.png";
 import offensivesecurityhead from "../../../assets/about/offensivesecurityhead.png";
-import productlead from "../../../assets/about/productlead.png";
+import productlead from "../../../assets/about/productLead.png";
 import hrteam from "../../../assets/about/hrteam.png";
 
 const data = [
@@ -471,7 +471,7 @@ function About() {
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
               Leadership
             </h3>
-            <div className="w-[260px] h-[260px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
+            <div className="w-[260px] h-[260px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
               <Image
                 src={ceo}
                 alt="CEO"
@@ -492,7 +492,7 @@ function About() {
               <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
                 Sales
               </h3>
-              <div className="w-[230px] h-[230px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
+              <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={saleshead}
                   alt="saleshead"
@@ -512,7 +512,7 @@ function About() {
               <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
                 Compliance Practice
               </h3>
-              <div className="w-[230px] h-[230px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
+              <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={compliancehead}
                   alt="compliancehead"
@@ -532,7 +532,7 @@ function About() {
               <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
                 Offensive Security
               </h3>
-              <div className="w-[230px] h-[230px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
+              <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={offensivesecurityhead}
                   alt="compliancehead"
@@ -552,7 +552,7 @@ function About() {
               <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
                 Product Management
               </h3>
-              <div className="w-[230px] h-[230px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
+              <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={productlead}
                   alt="compliancehead"
@@ -572,7 +572,7 @@ function About() {
               <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
                 HR Management
               </h3>
-              <div className="w-[230px] h-[230px] rounded-full bg-linear-to-b from-[#FFFFFF] to-[#C3DDFF] overflow-hidden flex  justify-center">
+              <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={hrteam}
                   alt="CEO"

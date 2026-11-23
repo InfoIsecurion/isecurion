@@ -63,42 +63,42 @@ const securityBenefits = [
     Icon: "fa-solid:shield-alt",
     title: "Risk Mitigation",
     description:
-      "Identify vulnerabilities early and reduce potential security and financial risks.",
+      "Assess application vulnerabilities and fix them with proven methods before they cause security or financial loss.",
     bgColor: "#022D6C",
   },
   {
     Icon: "iconmind:compliance-outline-regular",
     title: "User Fund Protection",
     description:
-      "Strengthen smart contract security to help protect user assets and transactions.",
+      "Reduce the risk of commercial fraud and monetary loss for end users.",
     bgColor: "#3B9E6A",
   },
   {
     Icon: "iconmind:hazard-outline-regular",
     title: "Trust & Reputation",
     description:
-      "Build greater confidence in your blockchain platform through stronger security.",
+      "Build user and investor confidence in your exchange through stronger, independently tested security.",
     bgColor: "#E24B4A",
   },
   {
     Icon: "ic:outline-policy",
     title: "Regulatory Readiness",
     description:
-      "Support compliance requirements with a more secure and well-assessed contract.",
+      "Support compliance with applicable regulations and focus on high-risk events.",
     bgColor: "#0F66EA",
   },
   {
     Icon: "keyline-icons:graduation-cap",
-    title: "Contract Reliability",
+    title: "Deeper Coverage: ",
     description:
-      "Validate smart contract functionality and ensure critical operations work as intended.",
+      "Identify both technical and process vulnerabilities, with clear guidance on how to fix them.",
     bgColor: "#C8912A",
   },
   {
     Icon: "bx:lock",
-    title: "Early & Future Protection",
+    title: "Security Awareness & Incident Response Planning:",
     description:
-      "Detect issues early and strengthen contracts against evolving security threats.",
+      "Strengthen team awareness and build an incident response plan for exchange incidents.",
     bgColor: "#959EFE",
   },
 ];
@@ -171,7 +171,7 @@ function CryptoCurrencyExchange() {
                 className="text-sm sm:text-base uppercase font-semibold sectionheading text-[#0F66EA] opacity-0 animate-hero-reveal"
                 style={{ animationDelay: "150ms" }}
               >
-                Crypto Currency Exchange Security Assessment
+                CRYPTO CURRENCY EXCHANGE PENTEST | SECURITY AUDIT
               </p>
               <h1
                 className=" text-[#FFFFFF] max-w-[610px] mx-auto lg:mx-0 opacity-0 animate-hero-reveal"
@@ -183,10 +183,8 @@ function CryptoCurrencyExchange() {
                 className="text-base sm:text-lg font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D9D9D9] lg:max-w-[510px] mx-auto lg:mx-0 opacity-0 animate-hero-reveal"
                 style={{ animationDelay: "450ms" }}
               >
-                ISECURION assesses cryptocurrency exchanges across applications,
-                APIs, infrastructure, wallets, and business logic to identify
-                vulnerabilities before they can impact users, assets, or
-                operations.
+                ISECURION runs penetration testing and security audits for centralized and decentralized cryptocurrency exchanges across applications, APIs, infrastructure, wallets, and business logic, identifying vulnerabilities before 
+                they can impact users, assets, or operations. Delivered by a CREST Member (accredited for Penetration Testing), CERT-In empanelled, ISO 27001:2022 certified team.
               </p>
               <Link href="/company/contact">
               <button
@@ -209,7 +207,7 @@ function CryptoCurrencyExchange() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="space-y-5">
             <Animation>
-              <div className="space-y-4 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
+              <div className="space-y-4 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
                 <p className="text-sm sm:text-base font-semibold sectionheading text-[#0F66EA] ">
                   WHY CRYPTO EXCHANGE SECURITY MATTERS
                 </p>
@@ -217,11 +215,8 @@ function CryptoCurrencyExchange() {
                   Protect the platform. Protect the assets.
                 </h2>
                 <p className="sectionDescription text-[#D1D1D1]">
-                  Cryptocurrency exchanges face evolving threats across their
-                  perimeter, internal infrastructure, web applications, APIs,
-                  and wallet systems. Regular penetration testing helps identify
-                  weaknesses and continuously improve the platform's security
-                  posture.
+                  A cryptocurrency exchange penetration test should be conducted regularly to adapt to evolving threats and keep improving the platform's security posture. A 
+                  thorough pentest reviews the exchange's perimeter defenses, internal infrastructure, web applications and APIs, for both centralized and decentralized exchanges.
                 </p>
               </div>
             </Animation>

@@ -343,7 +343,7 @@ const BSE_NSE_FAQs = [
   {
     question: "Is this audit the same as VAPT?",
     answer:
-      "No, while technical security testing is included, BSE/NSE audits focus primarily on compliance, governance and operational controls. VAPT may be conducted as a complementary activity.",
+      "No, while technical security testing is included, BSE/NSE audits focus primarily on compliance, governance and operational controls. VAPT may be conducted as a complementary activity.Where VAPT is conducted as part of the engagement, penetration testing is delivered by a CREST Member, accredited for Penetration Testing",
   },
   {
     question: "Do you assist with regulatory queries?",
@@ -544,16 +544,20 @@ function page() {
                 </p>
 
                 {/* Heading */}
-                <h1 className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left">
-                  BSE / NSE Audit Services for Capital Market Entities
+                <h1
+                  className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal"
+                  style={{ animationDelay: "800ms" }}
+                >
+                  BSE / NSE Audit Services in India: SEBI-Compliant IT & Cyber Security Audits
                 </h1>
 
                 {/* Description */}
-                <p className="mt-4 lg:max-w-[410px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left">
-                  Strengthen your regulatory compliance and cybersecurity
-                  posture with comprehensive BSE/NSE audits. Assess IT
-                  governance, security controls, and operational resilience in
-                  alignment with applicable SEBI and exchange requirements.
+                <p
+                  className="mt-4 lg:max-w-[410px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
+                  style={{ animationDelay: "1000ms" }}
+                >
+                  Comprehensive regulatory compliance audits for stock brokers, trading members, depository participants, mutual funds and capital market entities. 
+                  ISECURION helps your organization meet SEBI IT governance, cybersecurity and operational resilience requirements.
                 </p>
 
                 <ul className="mt-8 grid grid-cols gap-y-4">
@@ -582,7 +586,7 @@ function page() {
                 </ul>
 
                 {/* CTA */}
-                {/* <div className="mt-10 text-center lg:text-left">
+                <div className="mt-10 text-center lg:text-left">
                   <Link href="/company/contact">
                     <button
                       type="button"
@@ -594,7 +598,7 @@ function page() {
                       </span>
                     </button>
                   </Link>
-                </div> */}
+                </div>
               </div>
             </Animation>
 
@@ -812,12 +816,11 @@ function page() {
 
                   <Animation delay={0.5}>
                     <p>
-                      ISECURION's BSE/NSE Audit Services help evaluate your IT
-                      infrastructure, cybersecurity controls, governance
-                      practices, and operational processes against applicable
-                      SEBI guidelines and exchange requirements. Identify
-                      compliance gaps, strengthen security controls, and improve
-                      readiness for regulatory assessments.
+                      Organizations operating under BSE and NSE are subject to stringent SEBI IT and cybersecurity audit requirements. 
+                      These audits help ensure capital market systems remain secure, resilient and able to protect investor interests while 
+                      maintaining operational continuity. Our audits validate the real-world effectiveness 
+                      of security controls and help you achieve compliance, reduce cyber risk and avoid audit observations or penalties, 
+                      without disrupting business operations. 
                     </p>
                   </Animation>
                 </div>
@@ -976,16 +979,15 @@ function page() {
               text="Comprehensive BSE / NSE Audit Coverage"
               className="mt-2 max-w-[650px] leading-[1.35] text-white "
             ></WordReveal>
-            <WordReveal
-              text="Comprehensive BSE / NSE Audit Coverage"
-              className="mt-2 max-w-[650px] leading-[1.35] text-white "
-            ></WordReveal>
 
             <Animation>
               <p className="mt-3 max-w-[780px] text-base leading-[1.8] text-[#D1D1D1] sm:text-[17px]">
                 From governance to operations, we assess the controls, processes
                 and systems that keep your exchange secure, resilient and
                 compliant.
+              </p >
+              <p className="mt-3 max-w-[780px] text-base leading-[1.8] text-[#D1D1D1] sm:text-[17px]">
+                Scope is customized based on entity classification (broker, depository, AMC and so on) and the applicable BSE, NSE and SEBI requirements.
               </p>
             </Animation>
           </div>

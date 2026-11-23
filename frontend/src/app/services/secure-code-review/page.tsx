@@ -10,6 +10,7 @@ import {
   AnimatedCard,
 } from "../../../components/ui/Animation";
 import Link from "next/link";
+import FAQSection from "../../../components/sections/FAQSection";
 
 const securecodelist = [
   "Application Source Code",
@@ -52,7 +53,7 @@ const benefits = [
     number: "05",
     title: "Secure SDLC Integration",
     description:
-      "Embed security into the development lifecycle by introducing code-level security reviews at the right stages of planning, development, testing, and release.",
+      "Embed security into the development lifecycle with code-level reviews at the right stages of planning, development, testing, and release, supporting Agile development workflows.",
   },
   {
     number: "06",
@@ -85,7 +86,7 @@ const secureCodeReviewMethodology = [
     number: "02",
     title: "Code Review Execution",
     description:
-      "Combine automated static analysis, expert manual inspection, & controlled testing.",
+      "Automated static analysis scans the code for potential vulnerabilities, experienced security professionals inspect it manually, and testing may execute the code in a controlled environment to identify runtime vulnerabilities.",
   },
   {
     number: "03",
@@ -97,13 +98,37 @@ const secureCodeReviewMethodology = [
     number: "04",
     title: "Remediation and Verification",
     description:
-      "Apply secure coding fixes and re-review the code to verify effective remediation.",
+      "Developers fix findings by implementing secure coding practices, applying patches, or rewriting vulnerable code segments. The code is then re-reviewed to verify the fixes.",
   },
   {
     number: "05",
     title: "Continuous Improvement",
     description:
-      "Use review insights, feedback, and emerging threats to continuously strengthen the process.",
+      "Gather feedback from code reviewers, developers, and stakeholders, and fold in lessons from past reviews and emerging threats.",
+  },
+];
+
+const secureCodeFAQs = [
+  {
+    question: "What is secure code review? ",
+    answer:
+      "Inspecting, scanning and evaluating source code for defects and weaknesses, using automated static analysis and manual review by security professionals.",
+  },
+  {
+    question: "How is it different from penetration testing?",
+    answer:
+      "Penetration testing attacks the running application. Code review inspects the source to find the flaw and the exact code, component or function responsible. Many teams combine it with a Web Application Security Assessment or VAPT. ",
+  },
+  {
+    question: "When should we do it? ",
+    answer:
+      "Before release, after major changes, and as part of a secure SDLC.",
+  },
+  {
+    question:
+      "What do we receive? ",
+    answer:
+      "Documented findings prioritized by severity and business impact, with clear remediation guidance and a re-review to verify fixes.",
   },
 ];
 
@@ -132,9 +157,8 @@ function SecureCode() {
               transition={{ duration: 0.8, delay: 0.15 }}
               className="text-base sm:text-lg font-medium leading-7 md:leading-8 text-[#D9D9D9]"
             >
-              Identify vulnerabilities in source code early through automated
-              analysis and expert-led manual review, helping development teams
-              build more secure, resilient applications.
+              Identify vulnerabilities in source code early through automated static analysis (SAST) and expert-led manual code review, 
+              helping development teams build more secure, resilient applications. Delivered by a CERT-In empanelled, ISO 27001:2022 certified team.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 80 }}
@@ -176,10 +200,8 @@ function SecureCode() {
                 Secure code, from the start.
               </h2>
               <p className="text-base sm:text-lg font-normal leading-[25px] md:leading-[31px] lg:max-w-2xl text-[#D1D1D1]">
-                Secure Code Review is a structured evaluation of application
-                source code to identify security vulnerabilities, insecure
-                coding practices, and weaknesses before they become exploitable
-                risks.
+                Secure code review is the process of inspecting, scanning and evaluating source code for defects and weaknesses. It applies secure coding practices 
+                and security considerations to defend software from attacks, identifying vulnerabilities and insecure coding before they become exploitable risks.
               </p>
               <p className="text-base sm:text-lg font-normal leading-[25px] md:leading-[31px] lg:max-w-2xl text-[#D1D1D1]">
                 At ISECURION, we combine automated static analysis with
@@ -273,7 +295,7 @@ function SecureCode() {
       </section>
 
       {/* Secure Code Review Methodology  */}
-      <section className="relative w-full py-14 overflow-hidden bg-[#060D1B]">
+      <section className="relative w-full pt-14 pb-40 overflow-hidden bg-[#060D1B]">
         <div className="absolute top-0 left-[10%] w-[80%] h-[400px] blur-3xl rounded-full pointer-events-none opacity-70 bg-[#FFA8262E]"></div>
         <div className="max-w-7xl mx-auto px-6 sm:px-10 sm:py-8">
           {/* this is the heading  */}
@@ -314,6 +336,18 @@ function SecureCode() {
           </div>
         </div>
       </section>
+
+      <FAQSection
+              title={
+                <>
+                  Frequently Asked Questions - 
+                  <br className="hidden sm:block" />
+                  Secure Code Review
+                </>
+              }
+              description="Common questions from organizations across Bangalore, Mumbai, Hyderabad, Kolkata, Ahmedabad, Noida, and globally."
+              faqs={secureCodeFAQs}
+            />
     </div>
   );
 }

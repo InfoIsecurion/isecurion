@@ -82,7 +82,8 @@ function page() {
                                 Strengthen Your Security Operations with a Hybrid SOC
                             </h1>
                             <p className="text-base sm:text-[17px] text-[#D9D9D9] max-w-[520px] leading-7 animate-hero-reveal" style={{ animationDelay: "450ms" }}>
-                                Combine your in-house security team with ISECURION’s cybersecurity expertise to improve threat visibility, strengthen incident response, and build scalable security operations tailored to your business.
+                                Complement and develop your existing security team to increase overall security performance. Combine your in-house team with ISECURION's cybersecurity expertise 
+                                to improve threat visibility, strengthen incident response, and build scalable security operations tailored to your business.
                             </p>
                             <ul className="mt-8 grid grid-cols-1 gap-y-4 sm:grid-cols-2">
                                 {[

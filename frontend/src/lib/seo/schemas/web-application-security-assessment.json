@@ -1,0 +1,88 @@
+[
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Web Application Security Assessment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Web Application Security Assessment evaluates your web application for vulnerabilities, security misconfigurations, and compliance gaps to protect user data and business operations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is web application security important?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Web applications are prime targets for cyberattacks. Security assessments prevent data breaches, protect customer information, and reduce business risks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should web applications be tested?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Web applications should be tested regularly - at least once a year, or after major updates or feature releases - to ensure ongoing protection against vulnerabilities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What types of vulnerabilities are tested?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our assessment covers authentication, authorization, session management, input validation, SQL injection, XSS, business logic flaws, and other common and advanced vulnerabilities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who conducts the assessment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our assessments are conducted by experienced security professionals certified by industry standards and empanelled with CERT-IN, ensuring reliable and thorough testing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What deliverables do I receive?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You receive a detailed report including prioritized vulnerabilities, root cause analysis, recommended fixes, and actionable guidance to improve overall application security."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does the assessment take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The duration depends on the application’s size and complexity, typically ranging from 1-3 weeks for medium-sized applications."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is testing disruptive to live applications?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our assessments are designed to minimize disruption. Testing is performed carefully to avoid downtime while simulating real-world attack scenarios."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you ensure compliance standards are met?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our methodology aligns with OWASP, SANS, and industry standards to ensure your web application meets compliance and regulatory requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I get started with a security assessment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can get started by contacting ISECURION via our Contact Us page to schedule a free consultation and initiate the assessment process."
+        }
+      }
+    ]
+  }
+]
