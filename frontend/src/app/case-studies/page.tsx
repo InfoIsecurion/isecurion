@@ -160,6 +160,9 @@ function CaseStudies() {
                   <h3 className="text-[15px] font-medium line-clamp-2  text-[#F6FDFE]">
                     {item.title}
                   </h3>
+                  <p className="text-base font-normal text-[#D1D1D1]">
+                    {item.carddescription}
+                  </p>
 
                   <Link
                     href={`/case-studies/${item.slug}`}

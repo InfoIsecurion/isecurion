@@ -134,7 +134,7 @@ interface CaseStudy {
     number?: string;
     eyebrow?: string;
     heading?: string;
-
+    description?: string;
     cards?: {
       id?: string;
       icon?: string;
@@ -150,7 +150,10 @@ interface CaseStudy {
     descriptions?: {
       id?: string;
       title?: string;
-      description: string;
+      description?: {
+        id?: string;
+        description?: string;
+      }[];
     }[];
   };
   faqheading?: string;
@@ -312,10 +315,12 @@ export default async function Page({ params }: Props) {
                 <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-[#FEFEFE]">
                   Key Research Observations
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 px-10 py-4 mt-8 bg-[#08152899] border-t border-b border-[#13304F]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-10 px-10 py-4 mt-8 bg-[#08152899] border-t border-b border-[#13304F]">
                   {caseStudy.section1.observations.map((item, index) => (
                     <div key={item.id || index} className="space-y-1">
-                      <h4 className="text-2xl font-medium text-[#C8912A]">
+                      <h4
+                        className={`text-2xl font-medium ${index == 0 ? "text-blue-500" : index === 1 ? "text-[#C8912A]" : index === 2 ? "text-[#3B9E6A]" : "text-[#E24B4A]"}`}
+                      >
                         {item.value}
                       </h4>
                       <p className="text-[13px] font-normal text-[#B1B2B4]">
@@ -360,6 +365,9 @@ export default async function Page({ params }: Props) {
             <div className="mt-5 space-y-3">
               <p className="text-base sm:text-lg font-normal sectionDescription text-[#D1D1D1]">
                 {caseStudy.section2?.questionIntro}
+              </p>
+              <p className="text-base sm:text-lg font-medium text-[#D1D1D1]">
+                {caseStudy.section2?.questionLabel}
               </p>
 
               <p className="text-[15px] font-normal rounded-sm px-10 py-5 sectionDescription text-[#FFFFFF] bg-[#002C41] border border-[#0E7C8640]">
@@ -688,6 +696,9 @@ export default async function Page({ params }: Props) {
               <h2 className="max-w-2xl mx-auto lg:mx-0 text-[#FEFEFE]">
                 {caseStudy.section6?.heading}
               </h2>
+              <p className="text-base sm:text-lg font-normal text-[#D1D1D1]">
+                {caseStudy.section8?.description}
+              </p>
             </div>
             <div>
               <p className="text-base sm:text-lg font-normal sectionDescription text-[#D1D1D1]">
@@ -748,9 +759,16 @@ export default async function Page({ params }: Props) {
                     </h3>
                   )}
 
-                  <p className="text-base sm:text-base  font-normal leading-[22px] text-[#D1D1D1]">
-                    {item.description}
-                  </p>
+                  <div className="space-y-2">
+                    {item.description?.map((desc, descIndex) => (
+                      <p
+                        key={desc.id || descIndex}
+                        className="text-base font-normal leading-[22px] text-[#D1D1D1]"
+                      >
+                        {desc.description}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>

@@ -13,7 +13,7 @@ export type ServiceFaq = { question: string; answer: string };
 export type ServiceEntry = {
   /** Use the folder name of the page, e.g. "red-team-assessment" */
   slug: string;
-  isPage?:boolean;
+  isPage?: boolean;
   /** Real URL path of the page */
   path: string;
   /** Keeps an existing schema @id stable. Default: "<page url>#service" (only used when the page has no JSON file) */
@@ -28,7 +28,7 @@ export type ServiceEntry = {
   /** Full text for og:title. Default: title + " | ISECURION" */
   ogTitle?: string;
   ogDescription?: string;
-  ogType?:string;
+  ogType?: string;
   twitterTitle?: string;
   twitterDescription?: string;
   /** Social share image. Default: the site-wide image */
@@ -56,7 +56,11 @@ export type ServiceEntry = {
 
   // ---- extra schema ----
   faqs?: ServiceFaq[];
-  howTo?: { name: string; description: string; steps: { name: string; text: string }[] };
+  howTo?: {
+    name: string;
+    description: string;
+    steps: { name: string; text: string }[];
+  };
   /** ISO date, e.g. "2026-11-18" */
   lastModified?: string;
 };
@@ -68,17 +72,25 @@ export const services: ServiceEntry[] = [
     path: "/services/vapt",
     name: "Vulnerability Assessment and Penetration Testing (VAPT)",
     serviceType: "Vulnerability Assessment and Penetration Testing",
-    title: "VAPT Services in India | Penetration Testing Company in Bangalore, Mumbai, Hyderabad | CERT-In Empanelled",
+    title:
+      "VAPT Services in India | Penetration Testing Company in Bangalore, Mumbai, Hyderabad | CERT-In Empanelled",
     description:
       "ISECURION is a CERT-In empanelled VAPT company providing Vulnerability Assessment and Penetration Testing in Bangalore, Mumbai, Hyderabad, Chennai, Pune, Kolkata, Ahmedabad, Noida, and globally. Expert web, mobile, cloud, network, and API penetration testing with compliance-ready reports for ISO 27001, SOC 2, PCI DSS, and RBI.",
-    ogTitle: "VAPT Services India | CERT-In Empanelled Penetration Testing Company - Bangalore, Mumbai, Hyderabad",
+    ogTitle:
+      "VAPT Services India | CERT-In Empanelled Penetration Testing Company - Bangalore, Mumbai, Hyderabad",
     ogDescription:
       "India's trusted CERT-In empanelled VAPT company. Serving Bangalore, Mumbai, Hyderabad, Chennai, Pune, Kolkata, Ahmedabad, Noida and globally. Expert penetration testing for web, mobile, cloud, network and API.",
-    twitterTitle: "VAPT Services India | CERT-In Empanelled Penetration Testing Experts",
+    twitterTitle:
+      "VAPT Services India | CERT-In Empanelled Penetration Testing Experts",
     twitterDescription:
       "ISECURION provides expert VAPT and penetration testing in Bangalore, Mumbai, Hyderabad, Pune, Kolkata, Ahmedabad, Noida and globally.",
-    image: { url: "https://www.isecurion.com/images/TechnicalServices/VulnerabilityAssessment.jpg" },
-    catalogNames: ["CREST-Accredited Penetration Testing", "Vulnerability Assessment and Penetration Testing (VAPT)"],
+    image: {
+      url: "https://www.isecurion.com/images/TechnicalServices/VulnerabilityAssessment.jpg",
+    },
+    catalogNames: [
+      "CREST-Accredited Penetration Testing",
+      "Vulnerability Assessment and Penetration Testing (VAPT)",
+    ],
     keywords: [
       "VAPT services India",
       "VAPT company India",
@@ -156,7 +168,9 @@ export const services: ServiceEntry[] = [
     twitterTitle: "AI-Augmented Red Team Services | Global | ISECURION",
     twitterDescription:
       "CERT-In empanelled AI-Augmented Red Team testing: LLM/agent red teaming, AI supply chain attacks, deepfake vishing simulation, AI-driven recon benchmarking. USA, Europe, GCC, Singapore, Australia, India.",
-    image: { url: "https://isecurion.com/images/TechnicalServices/AI-Augmented-Red-Team.jpg" },
+    image: {
+      url: "https://isecurion.com/images/TechnicalServices/AI-Augmented-Red-Team.jpg",
+    },
     keywords: [
       "AI red team testing",
       "AI-augmented red team services",
@@ -290,7 +304,12 @@ export const services: ServiceEntry[] = [
       "ISECURION delivers expert vCISO services in India and globally. RBI, CERT-In, DPDP, SEBI compliance expertise. CERT-In Empanelled. ISO 27001:2022 Certified.",
     twitterDescription:
       "Expert Virtual CISO services across India and globally. RBI, CERT-In, DPDP, SEBI, ISO 27001, SOC 2 compliance. CERT-In Empanelled firm.",
-    image: { url: "https://isecurion.com/assets/images/vciso-og-image.jpg", alt: "ISECURION vCISO Services in India - Virtual CISO Bangalore Mumbai Delhi", width: 1200, height: 630 },
+    image: {
+      url: "https://isecurion.com/assets/images/vciso-og-image.jpg",
+      alt: "ISECURION vCISO Services in India - Virtual CISO Bangalore Mumbai Delhi",
+      width: 1200,
+      height: 630,
+    },
     keywords: [
       "vCISO services India",
       "virtual CISO India",
@@ -395,19 +414,22 @@ export const services: ServiceEntry[] = [
     path: "/services/web-application-security-assessment",
     name: "Web Application Security Assessment",
     serviceType: "Web Application Security Assessment",
-    title: "Web Application Security Assessment - Secure Web App Audit Services",
+    title:
+      "Web Application Security Assessment - Secure Web App Audit Services",
     description:
       "Protect your web applications and user data with ISECURION's Web Application Security Assessment services. Conducted by CERT-IN empanelled experts using industry best practices.",
-    keywords: ["web application security assessment", 
-      "Web App Security Audit", 
-      "Secure Website Assessment", 
-      "Application Penetration Testing", 
-      "ISECURION Web Security"
+    keywords: [
+      "web application security assessment",
+      "Web App Security Audit",
+      "Secure Website Assessment",
+      "Application Penetration Testing",
+      "ISECURION Web Security",
     ],
-    ogTitle: "Web Application Security Assessment - Secure Web App Audit Services | ISECURION",
+    ogTitle:
+      "Web Application Security Assessment - Secure Web App Audit Services | ISECURION",
     ogDescription:
-      "Protect your web applications and user data with ISECURION's Web Application Security Assessment services. Conducted by CERT-IN empanelled experts using industry best practices." ,
-    ogType:"website",
+      "Protect your web applications and user data with ISECURION's Web Application Security Assessment services. Conducted by CERT-IN empanelled experts using industry best practices.",
+    ogType: "website",
   },
 
   {
@@ -418,12 +440,21 @@ export const services: ServiceEntry[] = [
     title: "Mobile Application Security Assessment & Testing",
     description:
       "End-to-end mobile application security assessment for iOS and Android. Identify vulnerabilities, reduce risk, and meet compliance with expert-led testing and remediation.",
-    keywords: ["mobile application security", "mobile app pentest", "ios security testing", "android security testing", "mobile VAPT", "OWASP MASVS", "security assessment"],
+    keywords: [
+      "mobile application security",
+      "mobile app pentest",
+      "ios security testing",
+      "android security testing",
+      "mobile VAPT",
+      "OWASP MASVS",
+      "security assessment",
+    ],
     ogTitle: "Mobile Application Security Assessment & Testing | ISECURION",
     ogDescription:
-      "Expert-led iOS & Android application security assessments mapped to OWASP MASVS. Prioritized remediation and clear reporting." ,
-    ogType:"website",
-    twitterTitle: "Mobile Application Security Assessment & Testing | ISECURION",
+      "Expert-led iOS & Android application security assessments mapped to OWASP MASVS. Prioritized remediation and clear reporting.",
+    ogType: "website",
+    twitterTitle:
+      "Mobile Application Security Assessment & Testing | ISECURION",
     twitterDescription:
       "Harden your mobile apps with comprehensive security testing and remediation guidance.",
   },
@@ -439,8 +470,8 @@ export const services: ServiceEntry[] = [
     keywords: [],
     ogTitle: "Secure Code Review - Application Vulnerability Assessment",
     ogDescription:
-      "Commission a secure code review / audit to ensure your application is free of weaknesses & user data is protected. Opt for comprehensive security testing." ,
-    ogType:"website",
+      "Commission a secure code review / audit to ensure your application is free of weaknesses & user data is protected. Opt for comprehensive security testing.",
+    ogType: "website",
   },
 
   {
@@ -454,8 +485,8 @@ export const services: ServiceEntry[] = [
     keywords: [],
     ogTitle: "IoT Security Testing - Web Application Cyber Security Audit",
     ogDescription:
-      "Thorough testing & assessment of IoT devices as well as networks is crucial for maintaining comprehensive security. Contact us for security testing services." ,
-    ogType:"website",
+      "Thorough testing & assessment of IoT devices as well as networks is crucial for maintaining comprehensive security. Contact us for security testing services.",
+    ogType: "website",
   },
 
   {
@@ -469,8 +500,8 @@ export const services: ServiceEntry[] = [
     keywords: [],
     ogTitle: "Industrial Control Systems Security Assessment - SCADA Audit",
     ogDescription:
-      "Modern industrial control systems (SCADA) can be vulnerable to threats due to being connected to the internet. Opt for comprehensive expert security audits." ,
-    ogType:"website",
+      "Modern industrial control systems (SCADA) can be vulnerable to threats due to being connected to the internet. Opt for comprehensive expert security audits.",
+    ogType: "website",
   },
 
   {
@@ -484,8 +515,8 @@ export const services: ServiceEntry[] = [
     keywords: [],
     ogTitle: "Crypto Currency Exchange - Security Audit & Pentest Services",
     ogDescription:
-      "Threat assessment, security audits & pentesting services tailored for crypto currency exchange helps avoid commercial fraud & monetary loss for end users." ,
-    ogType:"website",
+      "Threat assessment, security audits & pentesting services tailored for crypto currency exchange helps avoid commercial fraud & monetary loss for end users.",
+    ogType: "website",
   },
 
   {
@@ -499,8 +530,8 @@ export const services: ServiceEntry[] = [
     keywords: [],
     ogTitle: "Smart Contract Security Audit - Security Testing Service",
     ogDescription:
-      "Proactive smart contract security audit is key for reducing financial risk; fixing potential vulnerabilities with comprehensive assessment & audit service." ,
-    ogType:"website",
+      "Proactive smart contract security audit is key for reducing financial risk; fixing potential vulnerabilities with comprehensive assessment & audit service.",
+    ogType: "website",
   },
 
   {
@@ -511,12 +542,24 @@ export const services: ServiceEntry[] = [
     title: "Cloud Security Assessment Services | CERT-IN Cybersecurity Audit",
     description:
       "ISECURION provides expert Cloud Security Assessment services. Ensure secure cloud infrastructure with CERT-IN certified auditors, risk analysis, and compliance readiness.",
-    keywords: ["cloud security assessment", "Cloud Security Audit", "Cyber Security Audit", "CERT-IN Cloud Assessment", "Cloud Compliance", "ISO 27001 Cloud Security", "IaaS Security", "PaaS Security", "SaaS Security", "Cloud Vulnerability Assessment"],
+    keywords: [
+      "cloud security assessment",
+      "Cloud Security Audit",
+      "Cyber Security Audit",
+      "CERT-IN Cloud Assessment",
+      "Cloud Compliance",
+      "ISO 27001 Cloud Security",
+      "IaaS Security",
+      "PaaS Security",
+      "SaaS Security",
+      "Cloud Vulnerability Assessment",
+    ],
     ogTitle: "Cloud Security Assessment Services | CERT-IN Cybersecurity Audit",
     ogDescription:
-      "ISECURION provides expert Cloud Security Assessment services. Ensure secure cloud infrastructure with CERT-IN certified auditors, risk analysis, and compliance readiness." ,
-    ogType:"website",
-    twitterTitle: "Cloud Security Assessment Services | CERT-IN Cybersecurity Audit",
+      "ISECURION provides expert Cloud Security Assessment services. Ensure secure cloud infrastructure with CERT-IN certified auditors, risk analysis, and compliance readiness.",
+    ogType: "website",
+    twitterTitle:
+      "Cloud Security Assessment Services | CERT-IN Cybersecurity Audit",
     twitterDescription:
       "ISECURION provides expert Cloud Security Assessment services. Ensure secure cloud infrastructure with CERT-IN certified auditors, risk analysis, and compliance readiness.",
   },
@@ -529,12 +572,18 @@ export const services: ServiceEntry[] = [
     title: "Outsourced DPO Services in India | Virtual Data Protection Officer",
     description:
       "Leading Outsourced DPO Services in India - Bangalore, Mumbai, Delhi, Pune, Hyderabad, Chennai. ISECURION provides Virtual Data Protection Officer services globally across USA, Singapore, UAE, Europe & Australia. DPDP Act, GDPR, RBI, SEBI compliance expertise.",
-    ogTitle: "Outsourced DPO Services in India | Virtual Data Protection Officer | ISECURION",
+    ogTitle:
+      "Outsourced DPO Services in India | Virtual Data Protection Officer | ISECURION",
     ogDescription:
       "ISECURION delivers expert Outsourced DPO services in India and globally. DPDP Act, GDPR, RBI, SEBI compliance expertise. CERT-In Empanelled. ISO 27001:2022 Certified.",
     twitterDescription:
       "Expert Outsourced Data Protection Officer services across India and globally. DPDP Act, GDPR, RBI, SEBI compliance. CERT-In Empanelled firm.",
-    image: { url: "https://isecurion.com/assets/images/dpo-og-image.jpg", alt: "ISECURION Outsourced DPO Services in India - Bangalore Mumbai Delhi", width: 1200, height: 630 },
+    image: {
+      url: "https://isecurion.com/assets/images/dpo-og-image.jpg",
+      alt: "ISECURION Outsourced DPO Services in India - Bangalore Mumbai Delhi",
+      width: 1200,
+      height: 630,
+    },
     keywords: [
       "outsourced DPO services India",
       "virtual data protection officer India",
@@ -555,13 +604,16 @@ export const services: ServiceEntry[] = [
     path: "/services/gdpr",
     name: "GDPR Compliance Audit",
     serviceType: "GDPR Compliance Audit",
-    title: "GDPR Compliance Audit Services in India | Readiness, Gap Analysis & Certification — ISECURION",
+    title:
+      "GDPR Compliance Audit Services in India | Readiness, Gap Analysis & Certification — ISECURION",
     description:
       "ISECURION provides GDPR readiness assessments, gap analysis, remediation support and certification-ready reports. Avoid fines, secure EU business and demonstrate robust data protection.",
     ogTitle: "GDPR Compliance Audit Services in India | ISECURION",
     ogDescription:
       "Get GDPR readiness assessments, gap analysis and certification-ready reports from ISECURION. Protect data, avoid fines and stay audit-ready.",
-    image: { url: "https://isecurion.com/images/ComplianceAuditServices/GDPRAudit.jpg" },
+    image: {
+      url: "https://isecurion.com/images/ComplianceAuditServices/GDPRAudit.jpg",
+    },
     keywords: [
       "GDPR compliance audit",
       "GDPR audit India",
@@ -579,13 +631,17 @@ export const services: ServiceEntry[] = [
     title: "Managed Security Services (MSSP)",
     description:
       "CERT-In empanelled MSSP: 24/7 SOC monitoring, threat detection, incident response and compliance reporting across India, USA, UK, UAE, GCC & APAC.",
-    ogTitle: "Managed Security Services (MSSP) | 24/7 SOC & Threat Detection | ISECURION",
+    ogTitle:
+      "Managed Security Services (MSSP) | 24/7 SOC & Threat Detection | ISECURION",
     ogDescription:
       "End-to-end MSSP services - 24/7 SOC monitoring, threat detection, incident response & compliance. Serving India, USA, UK, UAE, GCC, Singapore & Australia. CERT-In empanelled & ISO 27001 certified.",
     twitterTitle: "Managed Security Services (MSSP) | ISECURION",
     twitterDescription:
       "24/7 MSSP - threat detection, SOC monitoring, incident response, vulnerability management. Serving India, USA, UK, UAE, GCC, Singapore & Australia. CERT-In empanelled.",
-    image: { url: "https://isecurion.com/images/isecurion1.png", alt: "ISECURION - Managed Security Services (MSSP)" },
+    image: {
+      url: "https://isecurion.com/images/isecurion1.png",
+      alt: "ISECURION - Managed Security Services (MSSP)",
+    },
     keywords: [
       "managed security services",
       "MSSP",
@@ -637,7 +693,8 @@ export const services: ServiceEntry[] = [
     path: "/services/aadhar-audit",
     name: "Aadhaar / UIDAI Compliance Audit Services",
     serviceType: "UIDAI Compliance Audit",
-    title: "Aadhaar/UIDAI Audit Services | AUA, KUA, Sub-AUA Compliance | ISECURION India",
+    title:
+      "Aadhaar/UIDAI Audit Services | AUA, KUA, Sub-AUA Compliance | ISECURION India",
     description:
       "ISECURION provides comprehensive Aadhaar/UIDAI audit services for AUA, KUA, Sub-AUA, Sub-KUA, and Face Authentication compliance. Expert UIDAI security audits for banks, NBFCs, fintech, telecom, and government agencies across India.",
     ogTitle: "Aadhaar/UIDAI Audit Services | AUA, KUA Compliance | ISECURION",
@@ -670,7 +727,8 @@ export const services: ServiceEntry[] = [
     title: "IRDAI ISNP Audit Services India | Insurance Security Compliance",
     description:
       "ISECURION provides comprehensive IRDAI ISNP Audit services for insurance companies, TPAs, aggregators, and technology providers across India. Expert security audits ensuring compliance with IRDAI guidelines for digital insurance platforms.",
-    ogTitle: "IRDAI ISNP Audit Services India | Insurance Security Compliance | ISECURION",
+    ogTitle:
+      "IRDAI ISNP Audit Services India | Insurance Security Compliance | ISECURION",
     ogDescription:
       "Expert IRDAI ISNP Audit services for insurance companies, TPAs, and aggregators. Comprehensive security audits ensuring compliance with IRDAI regulations and protecting policyholder data.",
     keywords: [
@@ -704,7 +762,8 @@ export const services: ServiceEntry[] = [
     title: "RBI Information Security Audit Services India | Banking Compliance",
     description:
       "ISECURION provides comprehensive RBI Information Security (IS) Audit services for banks, NBFCs, payment banks, and fintech companies across India. Expert cybersecurity audits ensuring compliance with RBI guidelines and regulations.",
-    ogTitle: "RBI Information Security Audit Services India | Banking Compliance | ISECURION",
+    ogTitle:
+      "RBI Information Security Audit Services India | Banking Compliance | ISECURION",
     ogDescription:
       "Expert RBI IS Audit services for banks, NBFCs, and fintech companies. Comprehensive security audits ensuring compliance with RBI regulations and protecting customer financial data.",
     keywords: [
@@ -750,7 +809,8 @@ export const services: ServiceEntry[] = [
     path: "/services/iso27001",
     name: "ISO 27001 Audit & Certification Services",
     serviceType: "ISO 27001 Certification Audit",
-    title: "ISO 27001 Audit & Certification Services in India | ISMS Consulting – ISECURION",
+    title:
+      "ISO 27001 Audit & Certification Services in India | ISMS Consulting – ISECURION",
     description:
       "ISECURION is India's top ISO 27001 audit and certification consultancy. We deliver ISMS gap analysis, risk treatment, documentation, internal audit and full certification support for SaaS, FinTech, Healthcare and enterprise clients across Bengaluru, Mumbai, Delhi, Chennai, Hyderabad, Pune, Kolkata, USA, UK, UAE, Singapore and Australia. Book a free readiness call today.",
     ogTitle: "ISO 27001 Audit & Certification Services in India – ISECURION",
@@ -759,7 +819,9 @@ export const services: ServiceEntry[] = [
     twitterTitle: "ISO 27001 Audit & Certification Services – ISECURION",
     twitterDescription:
       "CERT-In empanelled ISO 27001 consultants. Gap analysis, ISMS implementation and certification support across India, USA, UK, UAE, Singapore and Australia.",
-    image: { url: "https://isecurion.com/images/ComplianceAuditServices/isoAudit.jpg" },
+    image: {
+      url: "https://isecurion.com/images/ComplianceAuditServices/isoAudit.jpg",
+    },
     keywords: [
       "ISO 27001 audit India",
       "ISO 27001 certification India",
@@ -808,10 +870,12 @@ export const services: ServiceEntry[] = [
     path: "/services/cicra-audit-services",
     name: "CICRA Audit Services",
     serviceType: "Critical Infrastructure Cyber Risk Assessment",
-    title: "CICRA Audit Services India | Critical Infrastructure Cyber Risk Assessment",
+    title:
+      "CICRA Audit Services India | Critical Infrastructure Cyber Risk Assessment",
     description:
       "ISECURION provides comprehensive CICRA (Critical Information & Cyber Risk Assessment) Audit services for critical infrastructure in India. Expert assessments for BFSI, healthcare, energy, government, telecom, and IT sectors ensuring regulatory compliance and cyber resilience.",
-    ogTitle: "CICRA Audit Services India | Critical Infrastructure Cyber Risk Assessment | ISECURION",
+    ogTitle:
+      "CICRA Audit Services India | Critical Infrastructure Cyber Risk Assessment | ISECURION",
     ogDescription:
       "Expert CICRA Audit services for critical infrastructure in India. Comprehensive cyber risk assessments ensuring regulatory compliance and resilience across BFSI, healthcare, energy, government, and telecom sectors.",
     keywords: [
@@ -851,10 +915,12 @@ export const services: ServiceEntry[] = [
     path: "/services/bse-nse-audit-services",
     name: "BSE / NSE Audit Services",
     serviceType: "SEBI-Compliant IT & Cyber Security Audit",
-    title: "BSE / NSE Audit Services in India | SEBI-Compliant IT & Cyber Security Audits",
+    title:
+      "BSE / NSE Audit Services in India | SEBI-Compliant IT & Cyber Security Audits",
     description:
       "BSE and NSE audit services for stock brokers, trading members, depository participants, mutual funds and capital market entities. SEBI-compliant IT governance, cybersecurity and operational resilience audits by ISECURION.",
-    ogTitle: "BSE / NSE Audit Services in India | SEBI-Compliant IT & Cyber Security Audits | ISECURION",
+    ogTitle:
+      "BSE / NSE Audit Services in India | SEBI-Compliant IT & Cyber Security Audits | ISECURION",
     ogDescription:
       "ISECURION provides comprehensive BSE/NSE audit services for capital market entities including stock brokers, trading members, depository participants and mutual funds in compliance with SEBI guidelines.",
     keywords: [
@@ -882,7 +948,8 @@ export const services: ServiceEntry[] = [
     title: "Continuous Breach Attack Simulation (CBAS) Services in India",
     description:
       "ISECURION offers Continuous Breach Attack Simulation (CBAS) services in India. Detect threats in real-time, validate defenses, identify gaps, and build proactive cybersecurity resilience with continuous security validation.",
-    ogTitle: "Continuous Breach Attack Simulation (CBAS) Services in India | ISECURION",
+    ogTitle:
+      "Continuous Breach Attack Simulation (CBAS) Services in India | ISECURION",
     ogDescription:
       "Validate your cyber defenses 24/7 with ISECURION’s Continuous Breach Attack Simulation. Stay ahead of attackers with real-world adversary simulations.",
     keywords: [
@@ -902,7 +969,8 @@ export const services: ServiceEntry[] = [
     path: "/services/phishing-simulation",
     name: "Phishing Simulation Services",
     serviceType: "Phishing Simulation",
-    title: "Phishing Simulation Services India | Email, Vishing & Smishing Testing - ISECURION",
+    title:
+      "Phishing Simulation Services India | Email, Vishing & Smishing Testing - ISECURION",
     description:
       "ISECURION delivers enterprise phishing simulation services powered by Drosera: AI-driven email phishing, spear-phishing, vishing, smishing, credential-harvest testing, security awareness training and executive reporting to reduce human cyber risk. CERT-In empanelled, ISO 27001 aligned.",
     ogTitle: "Phishing Simulation Services in India | ISECURION",
@@ -962,8 +1030,8 @@ export const services: ServiceEntry[] = [
     keywords: [],
     ogTitle: "In-house Security Operation Center - Data Protection Audit",
     ogDescription:
-      "Establish a resilient in-house security operations center with the help of our cyber security experts who can help implement proven SIEM & MDR technologies." ,
-    ogType:"website",
+      "Establish a resilient in-house security operations center with the help of our cyber security experts who can help implement proven SIEM & MDR technologies.",
+    ogType: "website",
   },
 
   {
@@ -977,25 +1045,43 @@ export const services: ServiceEntry[] = [
     keywords: [],
     ogTitle: "Hybrid SOC - Managed Threat Assessment & Pentesting Service",
     ogDescription:
-      "Leverage the expertise of an external cyber security company to complement the in house SOC to provide flexible, scalable security to protect your business." ,
-    ogType:"website",
+      "Leverage the expertise of an external cyber security company to complement the in house SOC to provide flexible, scalable security to protect your business.",
+    ogType: "website",
   },
 
   {
-    slug: "contact",
+    slug: "company-contact",
     path: "/company/contact",
     name: "Contact Us",
     serviceType: "",
     title: "Contact-us",
     description:
       "Contact ISECURION - India's CERT-IN empanelled cybersecurity firm. Offices in Bangalore, Kolkata, Mumbai, Ahmedabad, Noida (UP), USA & UAE partner. Reach us for VAPT, penetration testing, SOC 2, ISO 27001, RBI audit, GDPR & compliance services.",
-    keywords: ["contact ISECURION", "cybersecurity company India", "VAPT company Bangalore", "penetration testing Noida", "cybersecurity Ahmedabad", "cybersecurity Kolkata", "CERT-IN empanelled company", "SOC 2 compliance India", "ISO 27001 audit India", "RBI security audit", "GDPR compliance India", "DPDP compliance","cloud security assessment", "red team assessment", "DevSecOps India",
-      "vCISO services India", "incident response India", "ISECURION contact"
+    keywords: [
+      "contact ISECURION",
+      "cybersecurity company India",
+      "VAPT company Bangalore",
+      "penetration testing Noida",
+      "cybersecurity Ahmedabad",
+      "cybersecurity Kolkata",
+      "CERT-IN empanelled company",
+      "SOC 2 compliance India",
+      "ISO 27001 audit India",
+      "RBI security audit",
+      "GDPR compliance India",
+      "DPDP compliance",
+      "cloud security assessment",
+      "red team assessment",
+      "DevSecOps India",
+      "vCISO services India",
+      "incident response India",
+      "ISECURION contact",
     ],
-    ogTitle: "Contact ISECURION | CERT-IN Empanelled VAPT & Cybersecurity Company India",
+    ogTitle:
+      "Contact ISECURION | CERT-IN Empanelled VAPT & Cybersecurity Company India",
     ogDescription:
-      "Get in touch with ISECURION for VAPT, penetration testing, SOC 2, ISO 27001, RBI audit & compliance services. Offices across Bangalore, Kolkata, Mumbai, Ahmedabad, Noida and the USA." ,
-    ogType:"website",
+      "Get in touch with ISECURION for VAPT, penetration testing, SOC 2, ISO 27001, RBI audit & compliance services. Offices across Bangalore, Kolkata, Mumbai, Ahmedabad, Noida and the USA.",
+    ogType: "website",
     twitterTitle: "Contact ISECURION | VAPT & Cybersecurity Services India",
     twitterDescription:
       "Reach ISECURION for VAPT, penetration testing, compliance audits & cybersecurity consulting across India and globally.",
@@ -1007,7 +1093,8 @@ export const services: ServiceEntry[] = [
     isPage: true,
     name: "About",
     serviceType: "Page",
-    title: "About ISECURION | CREST Member & CERT-In Empanelled Cyber Security Company",
+    title:
+      "About ISECURION | CREST Member & CERT-In Empanelled Cyber Security Company",
     description:
       "ISECURION is a CREST Member (accredited for Penetration Testing) and CERT-In empanelled cyber security company in Bangalore offering VAPT, compliance audits and penetration testing services.",
     keywords: [],
@@ -1044,7 +1131,8 @@ export const services: ServiceEntry[] = [
     isPage: true,
     name: "Terms of Use",
     serviceType: "Page",
-    title: "ISECURION Terms of Use | Cybersecurity, VAPT, and Compliance Services India",
+    title:
+      "ISECURION Terms of Use | Cybersecurity, VAPT, and Compliance Services India",
     description:
       "Explore ISECURION's Terms of Use detailing cybersecurity audit, VAPT, and compliance service terms in India. Know your rights and our responsibilities.",
     ogTitle: "Terms of Use | ISECURION - Cybersecurity & VAPT Services India",
@@ -1052,13 +1140,13 @@ export const services: ServiceEntry[] = [
       "Read through the terms of use applicable when using the website of iSecurion, a leading cyber security vendor & IT data security auditor based in Bangalore.",
     keywords: [],
   },
-
-
-
 ];
 
 export function getService(slug: string): ServiceEntry {
   const s = services.find((x) => x.slug === slug);
-  if (!s) throw new Error(`Unknown service slug "${slug}". Add it to lib/seo/services.ts`);
+  if (!s)
+    throw new Error(
+      `Unknown service slug "${slug}". Add it to lib/seo/services.ts`,
+    );
   return s;
 }

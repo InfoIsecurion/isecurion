@@ -167,6 +167,7 @@ export interface Media {
 export interface CaseStudy {
   id: string;
   title: string;
+  carddescription: string;
   slug: string;
   /**
    * Example: COMPLIANCE AUDIT, RED TEAM, CLOUD
@@ -331,6 +332,7 @@ export interface CaseStudy {
     number?: string | null;
     eyebrow?: string | null;
     heading?: string | null;
+    description?: string | null;
     cards?:
       | {
           icon?: string | null;
@@ -348,7 +350,10 @@ export interface CaseStudy {
     descriptions?:
       | {
           title?: string | null;
-          description: string;
+          description: {
+            description?: string | null;
+            id?: string | null;
+          }[];
           id?: string | null;
         }[]
       | null;
@@ -504,6 +509,7 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface CaseStudiesSelect<T extends boolean = true> {
   title?: T;
+  carddescription?: T;
   slug?: T;
   category?: T;
   featuredImage?: T;
@@ -672,6 +678,7 @@ export interface CaseStudiesSelect<T extends boolean = true> {
         number?: T;
         eyebrow?: T;
         heading?: T;
+        description?: T;
         cards?:
           | T
           | {
@@ -692,7 +699,12 @@ export interface CaseStudiesSelect<T extends boolean = true> {
           | T
           | {
               title?: T;
-              description?: T;
+              description?:
+                | T
+                | {
+                    description?: T;
+                    id?: T;
+                  };
               id?: T;
             };
       };

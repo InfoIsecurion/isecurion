@@ -35,6 +35,12 @@ export const CaseStudies: CollectionConfig = {
       required: true,
     },
     {
+      name: 'carddescription',
+      type: 'text',
+      required: true,
+      label: 'carddescription',
+    },
+    {
       name: 'slug',
       type: 'text',
       required: true,
@@ -224,7 +230,6 @@ export const CaseStudies: CollectionConfig = {
         {
           name: 'number',
           type: 'text',
-
           label: 'Section Number',
         },
         {
@@ -549,7 +554,6 @@ export const CaseStudies: CollectionConfig = {
         {
           name: 'number',
           type: 'text',
-
           label: 'Section Number',
         },
         {
@@ -562,7 +566,11 @@ export const CaseStudies: CollectionConfig = {
           type: 'text',
           label: 'Main Heading',
         },
-
+        {
+          name: 'description',
+          type: 'textarea',
+          label: 'descritpion',
+        },
         {
           name: 'cards',
           type: 'array',
@@ -618,9 +626,16 @@ export const CaseStudies: CollectionConfig = {
             },
             {
               name: 'description',
-              type: 'textarea',
+              type: 'array',
               required: true,
               label: 'Description',
+              fields: [
+                {
+                  name: 'description',
+                  type: 'textarea',
+                  label: 'description',
+                },
+              ],
             },
           ],
         },
