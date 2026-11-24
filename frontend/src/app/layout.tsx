@@ -19,6 +19,7 @@ import { IBM_Plex_Mono } from "next/font/google";
 import { Cantata_One } from "next/font/google";
 import { Manrope } from "next/font/google";
 import { Roboto_Serif } from "next/font/google";
+import ScrollToTop from "../components/ui/ScrollToTop";
 
 const fragmentMono = Fragment_Mono({
   subsets: ["latin"],
@@ -100,7 +101,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang={siteConfig.language} className={`${fragmentMono.variable} ${average.variable} ${ibmPlexMono.variable} ${cantataOne.variable}  ${manrope.variable} ${robotoSerif.variable} h-full`}>
       <head />
-      <body className=" flex flex-col">
+      <body className="h-screen flex flex-col">
+        <ScrollToTop />
         <Navbar />
         {/* {children} */}
         <SmoothScroll>{children}</SmoothScroll>

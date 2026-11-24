@@ -68,13 +68,13 @@ function Footer() {
 
             <div className="mt-3 flex gap-3">
               <Link href="https://www.facebook.com/isecurion" target="_blank">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#FFFFFF0D] text-white hover:bg-white hover:text-[black]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#FFFFFF2D] text-white hover:bg-white hover:text-[black]">
                   <Icon icon="iconoir:facebook" width={18} />
                 </div>
               </Link>
 
               <Link href="https://twitter.com/isecurion" target="_blank">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#FFFFFF0D] text-white hover:bg-white hover:text-[black]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#FFFFFF2D] text-white hover:bg-white hover:text-[black]">
                   <Icon icon="line-md:twitter" width={18} />
                 </div>
               </Link>
@@ -83,7 +83,7 @@ function Footer() {
                 href="https://www.linkedin.com/company/isecurion"
                 target="_blank"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#FFFFFF0D] text-white hover:bg-white hover:text-[black]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#FFFFFF2D] text-white hover:bg-white hover:text-[black]">
                   <Icon icon="ri:linkedin-line" width={18} />
                 </div>
               </Link>
@@ -120,7 +120,7 @@ function Footer() {
 
                 <ul className="space-y-3 text-sm text-[#BFBFBF]">
                   <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
-                    <Link href="/services/vulnerabitity-assessment-penetration-testing">VAPT & Penetration Testing</Link>
+                    <Link href="/services/vulnerability-assessment-penetration-testing">VAPT & Penetration Testing</Link>
                   </li>
                   <li className="cursor-pointer hover:text-[#0F66EA] hover:underline">
                     <Link href="/services/cloud-security-assessment">Cloud Security Assessment</Link>

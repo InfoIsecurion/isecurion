@@ -98,7 +98,7 @@ const securityControls = [
     isecurionService: (
       <>
         {" "}
-        <Link href="/services/vapt">
+        <Link href="/services/vulnerability-assessment-penetration-testing">
           <span className="underline text-[#0F66EA]">VAPT Services</span>{" "}
         </Link>
       </>
@@ -112,7 +112,7 @@ const securityControls = [
     isecurionService: (
       <>
         {" "}
-        <span className="underline text-[#0F66EA]">
+        <span className="">
           Incident Response & DFIR
         </span>{" "}
       </>
@@ -153,7 +153,7 @@ const securityControls = [
       <>
         {" "}
         {""}
-        <span className="underline text-[#0F66EA]">
+        <span className="">
           CERT-In Empanelled Audit
         </span>
       </>
@@ -691,7 +691,7 @@ function DpdpCompliance() {
             </p>
             <Link href="/company/contact">
               <button
-                className="mx-auto lg:mx-0 flex items-center px-4 py-3 mt-5 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
+                className="mx-auto lg:mx-0 flex items-center px-4 py-3 mt-5 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal gap-3"
                 style={{ animationDelay: "650ms" }}
               >
                 Get a Free Gap Assessment{" "}
@@ -782,7 +782,6 @@ function DpdpCompliance() {
               {/* Captcha */}
               <div className="mt-7">
                 <div className="flex items-center gap-3">
-                  <p className="text-sm font-medium text-white">Captcha</p>
 
                   <Turnstile
                     ref={turnstileRef}
@@ -1293,12 +1292,12 @@ function DpdpCompliance() {
 
                           <button className="text-[15px] font-semibold flex items-center justify-center gap-2 p-4 text-center mt-5 rounded-md text-[#FFFFFF]  bg-[#0049801A] border border-[#0000000A]">
                             {item.button}
-                            <span>
+                            {/* <span>
                               <Icon
                                 icon="akar-icons:arrow-right"
                                 className="text-lg"
                               />
-                            </span>
+                            </span> */}
                           </button>
                         </div>
                       </div>
@@ -1578,7 +1577,7 @@ function DpdpCompliance() {
                   </span>
                 </button>
               </Link>
-              <Link href="/services/vapt">
+              <Link href="/services/vulnerability-assessment-penetration-testing">
                 <button className="text-base font-medium px-4 py-3 rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF29]">
                   View VAPT Services
                 </button>

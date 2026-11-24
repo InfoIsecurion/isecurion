@@ -594,8 +594,6 @@ function Iso27001() {
               {/* Captcha */}
               <div className="mt-7">
                 <div className="flex items-center gap-3">
-                  <p className="text-sm font-medium text-white">Captcha</p>
-
                   <Turnstile
                     ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}

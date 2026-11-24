@@ -157,4 +157,6 @@ svg[style*="--icon-stroke"] {
   --font-consolas: "Consolas", "Courier New", monospace;
   --font-cantata-one: var(--font-cantata-one);
   --font-manrope: var(--font-manrope);
+  --font-roboto-serif: var(--font-roboto-serif);
 }
+

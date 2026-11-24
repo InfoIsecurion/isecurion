@@ -7,7 +7,7 @@ import { Icon } from "@iconify/react";
 
 import isecurionLogo from "../../assets/home/isecurion_logo.png";
 
-type ServiceId = "detection" | "application" | "data" | "grc";
+type ServiceId = "application" | "detection" | "data" | "grc";
 type Service = {
   id: ServiceId;
   icon: string;
@@ -22,64 +22,6 @@ const navItems = [
   { label: "Company", href: "/company" },
 ];
 const serviceDetails = {
-  detection: {
-    mainHeading: "Detect, simulate, and respond to evolving threats.",
-    sections: [
-      {
-        heading: "OFFENSIVE SECURITY",
-        links: [
-          {
-            label: "Breach Attack Simulation",
-            href: "/services/continuous-breach-attack-simulation",
-          },
-          {
-            label: "Red Team Assessment",
-            href: "/services/red-team-assessment",
-          },
-          {
-            label: "AI-Augmented Red Team",
-            href: "/services/ai-augmented-red-team",
-          },
-          {
-            label: "Phishing Simulation",
-            href: "/services/phishing-simulation",
-          },
-        ],
-      },
-      {
-        heading: "SECURITY OPERATIONS",
-        links: [
-          {
-            label: "Managed Security Services(MSSP)",
-            href: "/services/managed-security-services",
-          },
-          {
-            label: "In-House SOC Service",
-            href: "/services/inhouse-soc",
-          },
-          { label: "Hybrid SOC Service", href: "/services/hybrid-soc" },
-          // {
-          //   label: "Incident Response & DFIR",
-          //   href: "/services/incident-response-dfir",
-          // },
-          // { label: "Ransomware Negotiation", href: "/services/ransomware" },
-        ],
-      },
-      // {
-      //   heading: "Adersarial & Resilience Testing",
-      //   links: [
-      //     {
-      //       label: "DDoS Testing Services",
-      //       href: "/services/ddos-testing-service",
-      //     },
-      //     {
-      //       label: "MCP Pentesting Services",
-      //       href: "/services/mcp-pentesting-service",
-      //     },
-      //   ],
-      // },
-    ],
-  },
 
   application: {
     mainHeading: "Secure the technologies your business runs on.",
@@ -142,6 +84,65 @@ const serviceDetails = {
           // },
         ],
       },
+    ],
+  },
+
+  detection: {
+    mainHeading: "Detect, simulate, and respond to evolving threats.",
+    sections: [
+      {
+        heading: "OFFENSIVE SECURITY",
+        links: [
+          {
+            label: "Breach Attack Simulation",
+            href: "/services/continuous-breach-attack-simulation",
+          },
+          {
+            label: "Red Team Assessment",
+            href: "/services/red-team-assessment",
+          },
+          {
+            label: "AI-Augmented Red Team",
+            href: "/services/ai-augmented-red-team",
+          },
+          {
+            label: "Phishing Simulation",
+            href: "/services/phishing-simulation",
+          },
+        ],
+      },
+      {
+        heading: "SECURITY OPERATIONS",
+        links: [
+          {
+            label: "Managed Security Services(MSSP)",
+            href: "/services/managed-security-services",
+          },
+          {
+            label: "In-House SOC Service",
+            href: "/services/inhouse-soc",
+          },
+          { label: "Hybrid SOC Service", href: "/services/hybrid-soc" },
+          // {
+          //   label: "Incident Response & DFIR",
+          //   href: "/services/incident-response-dfir",
+          // },
+          // { label: "Ransomware Negotiation", href: "/services/ransomware" },
+        ],
+      },
+      // {
+      //   heading: "Adersarial & Resilience Testing",
+      //   links: [
+      //     {
+      //       label: "DDoS Testing Services",
+      //       href: "/services/ddos-testing-service",
+      //     },
+      //     {
+      //       label: "MCP Pentesting Services",
+      //       href: "/services/mcp-pentesting-service",
+      //     },
+      //   ],
+      // },
     ],
   },
 
@@ -247,18 +248,19 @@ const serviceDetails = {
 } as const;
 
 const serviceCategories: Service[] = [
+   {
+    id: "application",
+    icon: "ant-design:cloud-outlined",
+    title: "Application, Cloud & Platform",
+    description: "Build and operate securely.",
+  },
   {
     id: "detection",
     icon: "bx:check-shield",
     title: "Detection & Response",
     description: "Detect threats. Respond fast.",
   },
-  {
-    id: "application",
-    icon: "ant-design:cloud-outlined",
-    title: "Application, Cloud & Platform",
-    description: "Build and operate securely.",
-  },
+ 
   {
     id: "data",
     icon: "energy-icons:database-20",
@@ -426,7 +428,7 @@ function Navbar() {
               >
                 <Link
                   href=""
-                  className="flex items-center gap-1 text-base font-medium text-white"
+                  className="font-manrope flex items-center gap-1 text-base font-normal text-white"
                 >
                   Services
                   <span className="transition-transform duration-300 group-hover:rotate-180">
@@ -438,11 +440,10 @@ function Navbar() {
                 </Link>
 
                 <div
-                  className={`flex flex-col fixed top-full z-50 mt-5 w-[calc(100vw-2rem)] max-w-6xl -translate-x-1/2 rounded-xl bg-gradient-to-b from-[#F5F9FD] to-[#FFFFFF] shadow-xl transition-all duration-200 ${
-                    desktopMenu === "services"
+                  className={`flex flex-col fixed top-full z-50 mt-5 w-[calc(100vw-2rem)] max-w-6xl -translate-x-1/2 rounded-xl bg-gradient-to-b from-[#F5F9FD] to-[#FFFFFF] shadow-xl transition-all duration-200 ${desktopMenu === "services"
                       ? "visible translate-y-0 opacity-100"
                       : "invisible translate-y-2 opacity-0"
-                  }`}
+                    }`}
                 >
                   <span className="invisible group-hover:visible absolute left-140  -top-0.5   w-[100px] h-[5px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
                   <div className="flex gap-5">
@@ -454,11 +455,10 @@ function Navbar() {
                           type="button"
                           onMouseEnter={() => setActiveService(service.id)}
                           onFocus={() => setActiveService(service.id)}
-                          className={`flex w-full cursor-pointer items-center gap-3 rounded-br-2xl rounded-tr-2xl border-l-4 border-transparent p-3 text-left transition-all duration-200 ${
-                            activeService === service.id
+                          className={`flex w-full cursor-pointer items-center gap-3 rounded-br-2xl rounded-tr-2xl border-l-4 border-transparent p-3 text-left transition-all duration-200 ${activeService === service.id
                               ? "border-l-[#05B9EE] bg-[#E8F3FF]"
                               : "hover:border-l-[#05B9EE] hover:bg-[#E8F3FF]"
-                          }`}
+                            }`}
                         >
                           <span className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full bg-[#DCE9FA]">
                             <Icon
@@ -532,7 +532,7 @@ function Navbar() {
                               .filter(
                                 (section) =>
                                   section.heading ===
-                                    "CLOUD & INFRASTRUCTURE" ||
+                                  "CLOUD & INFRASTRUCTURE" ||
                                   section.heading === "CONNECTED & INDUSTRIAL",
                               )
                               .map((section) => (
@@ -649,7 +649,7 @@ function Navbar() {
               >
                 <Link
                   href=""
-                  className="font-manrope text-base font-medium flex items-center gap-1 text-white"
+                  className="font-manrope text-base font-normal flex items-center gap-1 text-white"
                 >
                   Company {""}
                   <span className="transition-transform duration-300 group-hover:rotate-180">
@@ -660,11 +660,10 @@ function Navbar() {
                   </span>
                 </Link>
                 <div
-                  className={`flex flex-col items-center absolute left-1/2 top-full z-50 mt-5 px-6 py-6 w-xl -translate-x-1/2 rounded-xl bg-gradient-to-b from-[#F5F9FD] to-[#FFFFFF] transition-all duration-200 ${
-                    desktopMenu === "company"
+                  className={`flex flex-col items-center absolute left-1/2 top-full z-50 mt-5 px-6 py-6 w-xl -translate-x-1/2 rounded-xl bg-gradient-to-b from-[#F5F9FD] to-[#FFFFFF] transition-all duration-200 ${desktopMenu === "company"
                       ? "visible translate-y-0 opacity-100"
                       : "invisible translate-y-2 opacity-0"
-                  }`}
+                    }`}
                 >
                   <span className="invisible group-hover:visible absolute  -top-0.5   w-[100px] h-[5px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
                   <div>
@@ -731,11 +730,10 @@ function Navbar() {
 
         {/* Mobile Navigation */}
         <div
-          className={`absolute left-0 right-0 top-[65px] z-50 overflow-y-auto bg-[#020E1C] transition-all duration-300 lg:hidden ${
-            isOpen
+          className={`absolute left-0 right-0 top-[65px] z-50 overflow-y-auto bg-[#020E1C] transition-all duration-300 lg:hidden ${isOpen
               ? "max-h-[calc(100dvh-65px)] opacity-100"
               : "max-h-0 opacity-0"
-          }`}
+            }`}
         >
           <nav className="border-t border-white/10 px-6 py-6 sm:px-8">
             <ul className="flex flex-col gap-5 text-[15px] font-medium text-white">
@@ -760,18 +758,16 @@ function Navbar() {
                   Products
                   <Icon
                     icon="ant-design:caret-down-filled"
-                    className={`h-[14px] w-[14px] transition-transform duration-300 ${
-                      openDropdown === "product" ? "rotate-180" : ""
-                    }`}
+                    className={`h-[14px] w-[14px] transition-transform duration-300 ${openDropdown === "product" ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 
                 <div
-                  className={`grid transition-all duration-300 ${
-                    openDropdown === "product"
+                  className={`grid transition-all duration-300 ${openDropdown === "product"
                       ? "grid-rows-[1fr] opacity-100"
                       : "grid-rows-[0fr] opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="overflow-hidden">
                     <div className="flex flex-col gap-4 py-4 pl-4">
@@ -801,7 +797,7 @@ function Navbar() {
               <li>
                 <button
                   type="button"
-                  className="font-manrope flex w-full items-center gap-1"
+                  className="font-manrope text-base font-normal flex w-full items-center gap-1"
                   onClick={() =>
                     setOpenDropdown(
                       openDropdown === "services" ? null : "services",
@@ -811,18 +807,16 @@ function Navbar() {
                   Services
                   <Icon
                     icon="ant-design:caret-down-filled"
-                    className={`h-[14px] w-[14px] transition-transform duration-300 ${
-                      openDropdown === "services" ? "rotate-180" : ""
-                    }`}
+                    className={`h-[14px] w-[14px] transition-transform duration-300 ${openDropdown === "services" ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 
                 <div
-                  className={`grid transition-all duration-300 ${
-                    openDropdown === "services"
+                  className={`grid transition-all duration-300 ${openDropdown === "services"
                       ? "grid-rows-[1fr] opacity-100"
                       : "grid-rows-[0fr] opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="overflow-hidden">
                     <div className="flex flex-col gap-3 py-4 pl-4">
@@ -832,11 +826,10 @@ function Navbar() {
                           <button
                             type="button"
                             onClick={() => setActiveService(item.id)}
-                            className={`flex w-full items-center gap-3 rounded-lg p-2 text-left transition-colors ${
-                              activeService === item.id
+                            className={`flex w-full items-center gap-3 rounded-lg p-2 text-left transition-colors ${activeService === item.id
                                 ? "bg-[#102C49]"
                                 : "hover:bg-[#102C49]"
-                            }`}
+                              }`}
                           >
                             <Icon
                               icon={item.icon}
@@ -903,7 +896,7 @@ function Navbar() {
               <li>
                 <button
                   type="button"
-                  className="flex w-full items-center gap-1"
+                  className="font-flex w-full items-center gap-1"
                   onClick={() =>
                     setOpenDropdown(
                       openDropdown === "company" ? null : "company",
@@ -913,18 +906,16 @@ function Navbar() {
                   Company
                   <Icon
                     icon="ant-design:caret-down-filled"
-                    className={`h-[14px] w-[14px] transition-transform duration-300 ${
-                      openDropdown === "company" ? "rotate-180" : ""
-                    }`}
+                    className={`h-[14px] w-[14px] transition-transform duration-300 ${openDropdown === "company" ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
 
                 <div
-                  className={`grid transition-all duration-300 ${
-                    openDropdown === "company"
+                  className={`grid transition-all duration-300 ${openDropdown === "company"
                       ? "grid-rows-[1fr] opacity-100"
                       : "grid-rows-[0fr] opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="overflow-hidden">
                     <div className="grid grid-cols-2 gap-5 py-4 pl-4">

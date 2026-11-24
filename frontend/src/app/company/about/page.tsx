@@ -20,11 +20,11 @@ import team1 from "../../../assets/about/team1.png";
 
 const data = [
   {
-    number: "50+",
+    number: "150+",
     description: "Enterprise Clients Protected",
   },
   {
-    number: "1.5k+",
+    number: "3k+",
     description: "Security Assessments Delivered",
   },
   {
@@ -220,12 +220,12 @@ function About() {
           <Animation>
             <div className="flex-1 flex flex-row gap-8 justify-center">
               {/* Timeline */}
-              <div className="flex flex-col items-center mt-5 ">
-                <div className="h-2.5 w-2.5 rounded-full bg-[#0F66EA]"></div>
+              <div className="flex flex-col items-center mt-5">
+                <div className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#0F66EA]" />
 
-                <div className="h-[530px] sm:h-[300px] lg:h-[300px] xl:h-[300px] w-[8px] border-l border-dashed border-[#646464]"></div>
+                <div className="h-[530px] sm:h-[300px] lg:h-[300px] xl:h-[300px] w-0 border-l border-dashed border-[#646464]" />
 
-                <div className="h-2.5 w-2.5 rounded-full bg-[#0F66EA]"></div>
+                <div className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#0F66EA]" />
               </div>
 
               {/* Content */}
@@ -483,7 +483,7 @@ function About() {
               </p>
             </div>
             <p className="text-base font-semibold text-[#2388FF]">
-              DIRECTOR & CEO
+              FOUNDER & CEO
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mt-8 gap-10">

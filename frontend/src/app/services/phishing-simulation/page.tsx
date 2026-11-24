@@ -638,7 +638,7 @@ function PhishingSimulation() {
                 {/* Captcha */}
                 <div className="mt-7">
                   <div className="flex items-center gap-3">
-                    <p className="text-sm font-medium text-white">Captcha</p>
+                  
 
                     <Turnstile
                       ref={turnstileRef}

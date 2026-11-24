@@ -633,8 +633,7 @@ function page() {
 
                 {/* CAPTCHA */}
                 <div className="flex min-h-[65px] items-center gap-3 mt-7">
-                  <p className="shrink-0 text-sm font-medium text-white">Captcha</p>
-
+          
                   <div className="min-h-[65px] flex items-center">
                     <Turnstile
                       siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}

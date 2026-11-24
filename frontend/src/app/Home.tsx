@@ -255,14 +255,14 @@ const ourExpertise = [
 ];
 
 const mapMarkers = [
-  { id: 1, x: "18.4%", y: "38.6%", type: "red" },
-  { id: 2, x: "49.3%", y: "31%", type: "red" },
-  { id: 3, x: "54%", y: "51%", type: "blue" },
-  { id: 4, x: "63.9%", y: "49%", type: "red" },
-  { id: 5, x: "65.8%", y: "49%", type: "red" },
-  { id: 6, x: "72.5%", y: "51.7%", type: "red" },
-  { id: 7, x: "80.1%", y: "59.1%", type: "red" },
-  { id: 8, x: "93.7%", y: "77.9%", type: "red" },
+  { id: 1, x: "18.4%", y: "38.6%", type: "red", country: "USA" },
+  { id: 2, x: "49.3%", y: "31%", type: "red", country: "UK" },
+  { id: 3, x: "73%", y: "51%", type: "blue", country: "India" },
+  { id: 4, x: "63.9%", y: "49%", type: "red", country: "UAE" },
+  { id: 5, x: "65.8%", y: "49%", type: "red", country: "Qatar" },
+  { id: 6, x: "72.5%", y: "41.7%", type: "red", country: "Singapore" },
+  { id: 7, x: "80.1%", y: "59.1%", type: "red", country: "Australia" },
+  { id: 8, x: "93.7%", y: "77.9%", type: "red", country: "GCC" },
 ];
 
 const auditorCertificates = [
@@ -532,15 +532,17 @@ export default function Home() {
             style={{ animationDelay: "600ms" }}
           >
             <Animation>
+              <Link href="/company/contact">
               <button
                 className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1] animate-hero-reveal"
                 style={{ animationDelay: "1200ms" }}
               >
-                <Link href="/company/contact">Schedule a Consultation </Link>
+                Schedule a Consultation 
                 <span>
                   <Icon icon="mdi:arrow-right" width={20} />
                 </span>
               </button>
+              </Link>
             </Animation>
             <Animation>
               <button
@@ -572,7 +574,7 @@ export default function Home() {
                 <div className="relative px-0 py-6 sm:px-6 xl:px-8 xl:py-0">
                   <div className="flex flex-col gap-1">
                     <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-[#0F66EA]">
-                      50+
+                      150+
                     </p>
 
                     <p className="mt-1 lg:min-h-[56px] text-base sm:text-lg font-medium leading-7 text-[#8E8E8E]">
@@ -594,7 +596,7 @@ export default function Home() {
 
                   <div className="flex flex-col gap-1">
                     <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-[#0F66EA]">
-                      1K+
+                      3K+
                     </p>
 
                     <p className="mt-1 lg:min-h-[56px] text-base sm:text-lg font-medium leading-7 text-[#999999]">
@@ -758,18 +760,12 @@ export default function Home() {
                         Identify Risk
                       </h3>
 
-                      <div className="flex items-center gap-3 h-[70px] ">
-                        <p className="mt-3 transition-all duration-300 group-hover:hidden text-[11px] sm:text-sm font-medium text-[#ACACAC] max-w-[252px] ">
-                          Uncover exploitable vulnerabilities through
-                          vulnerability assessment and penetration testing
-                          (VAPT) before they become business disruptions.
-                        </p>
-
+                      <div className="relative h-[70px]">
                         <Link
                           href="services/vulnerability-assessment-penetration-testing"
-                          className="ml-auto flex w-[40px] shrink-0 lg:shrink items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
+                          className="peer group/btn absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F66EA] px-3 text-white overflow-hidden transition-[width] duration-500 ease-in-out hover:w-full hover:justify-between focus-visible:w-full focus-visible:justify-between"
                         >
-                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
+                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-300 group-hover/btn:max-w-[250px] group-hover/btn:opacity-100 group-hover/btn:delay-150">
                             Explore VAPT & Penetration Testing
                           </span>
 
@@ -778,6 +774,12 @@ export default function Home() {
                             className="shrink-0"
                           />
                         </Link>
+
+                        <p className="absolute left-0 top-3 pr-12 transition-opacity duration-300 peer-hover:opacity-0 peer-focus-visible:opacity-0 pointer-events-none text-[11px] sm:text-sm font-medium text-[#ACACAC] max-w- ">
+                          Uncover exploitable vulnerabilities through
+                          vulnerability assessment and penetration testing
+                          (VAPT) before they become business disruptions.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -796,18 +798,12 @@ export default function Home() {
                         Validate Continuously
                       </h3>
 
-                      <div className="flex items-center gap-3 h-[70px]">
-                        <p className="mt-3 transition-all duration-300 group-hover:hidden text-[11px] sm:text-sm font-medium max-w-[282px] text-[#ACACAC] lg:leading-[21px]">
-                          Continuously test security across web applications,
-                          mobile apps, APIs, cloud (AWS, Azure and GCP),
-                          identities and infrastructure.
-                        </p>
-
+                      <div className="relative h-[70px]">
                         <Link
                           href="services/web-application-security-assessment"
-                          className="ml-auto flex w-[40px] shrink-0 lg:shrink  items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
+                          className="peer group/btn absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F66EA] px-3 text-white overflow-hidden transition-[width] duration-500 ease-in-out hover:w-full hover:justify-between focus-visible:w-full focus-visible:justify-between"
                         >
-                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
+                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-300 group-hover/btn:max-w-[250px] group-hover/btn:opacity-100 group-hover/btn:delay-150">
                             Explore Continuous Validation
                           </span>
 
@@ -816,6 +812,12 @@ export default function Home() {
                             className="shrink-0"
                           />
                         </Link>
+
+                        <p className="absolute left-0 top-3 pr-12 transition-opacity duration-300 peer-hover:opacity-0 peer-focus-visible:opacity-0 pointer-events-none text-[11px] sm:text-sm font-medium max-w-full text-[#ACACAC] lg:leading-[21px]">
+                          Continuously test security across web applications,
+                          mobile apps, APIs, cloud (AWS, Azure and GCP),
+                          identities and infrastructure.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -838,17 +840,12 @@ export default function Home() {
                         Strengthen Defenses
                       </h3>
 
-                      <div className="flex items-center gap-3 h-[60px]">
-                        <p className="mt-3 transition-all duration-300 group-hover:hidden text-[11px] sm:text-sm max-w-[235px] font-medium text-[#ACACAC] lg:leading-[21px]">
-                          Red team assessment and AI-augmented red teaming that
-                          transform findings into measurable resilience.
-                        </p>
-
+                      <div className="relative h-[60px]">
                         <Link
                           href="services/red-team-assessment"
-                          className="ml-auto flex w-[40px] items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
+                          className="peer group/btn absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F66EA] px-3 text-white overflow-hidden transition-[width] duration-500 ease-in-out hover:w-full hover:justify-between focus-visible:w-full focus-visible:justify-between"
                         >
-                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
+                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-300 group-hover/btn:max-w-[250px] group-hover/btn:opacity-100 group-hover/btn:delay-150">
                             Explore Offensive Security
                           </span>
 
@@ -857,6 +854,11 @@ export default function Home() {
                             className="shrink-0"
                           />
                         </Link>
+
+                        <p className="absolute left-0 top-3 pr-12 transition-opacity duration-300 peer-hover:opacity-0 peer-focus-visible:opacity-0 pointer-events-none text-[11px] sm:text-sm max-w-full font-medium text-[#ACACAC] lg:leading-[21px]">
+                          Red team assessment and AI-augmented red teaming that
+                          transform findings into measurable resilience.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -875,17 +877,12 @@ export default function Home() {
                         Build Trust
                       </h3>
 
-                      <div className="flex items-center gap-3 h-[60px]">
-                        <p className="mt-4 transition-all duration-300 group-hover:hidden text-[11px] sm:text-sm  font-medium text-[#ACACAC] lg:leading-[21px] max-w-[282px]">
-                          SOC 2, ISO 27001 and DPDP Act compliance that protects
-                          business continuity and strengthens customer trust.
-                        </p>
-
+                      <div className="relative h-[60px]">
                         <Link
                           href="services/soc-2-compliance"
-                          className="ml-auto flex w-[40px] shrink-0 lg:shrink items-center justify-center rounded-lg bg-[#0F66EA] px-3 py-3 text-white overflow-hidden transition-[width] duration-1000 ease-in-out group-hover:w-full group-hover:justify-between"
+                          className="peer group/btn absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F66EA] px-3 text-white overflow-hidden transition-[width] duration-500 ease-in-out hover:w-full hover:justify-between focus-visible:w-full focus-visible:justify-between"
                         >
-                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-200 ease-out group-hover:max-w-[250px] group-hover:opacity-100">
+                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-300 group-hover/btn:max-w-[250px] group-hover/btn:opacity-100 group-hover/btn:delay-150">
                             Explore Compliance & Trust
                           </span>
 
@@ -894,6 +891,11 @@ export default function Home() {
                             className="shrink-0"
                           />
                         </Link>
+
+                        <p className="absolute left-0 top-4 pr-12 transition-opacity duration-300 peer-hover:opacity-0 peer-focus-visible:opacity-0 pointer-events-none text-[11px] sm:text-sm  font-medium text-[#ACACAC] lg:leading-[21px] max-w-full">
+                          SOC 2, ISO 27001 and DPDP Act compliance that protects
+                          business continuity and strengthens customer trust.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -903,6 +905,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
 
       {/* Capabilities  */}
       <div className="bg-[#070D1A] overflow-hidden" id="services">
@@ -1293,11 +1296,11 @@ export default function Home() {
           <Animation>
             <div className="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
               {[
-                { value: "50+", label: "Enterprise Customers" },
-                { value: "1K+", label: "Projects Completed" },
+                { value: "150+", label: "Enterprise Customers" },
+                { value: "3K+", label: "Projects Completed" },
                 { value: "500+", label: "Start Up Companies" },
                 { value: "5", label: "of the Top 10 Global Tech Companies" },
-                { value: "40+", label: "Fintech & Healthcare Companies" },
+                { value: "75+", label: "Fintech & Healthcare Companies" },
               ].map((item, index) => (
                 <AnimatedCard
                   key={index}
@@ -1394,21 +1397,21 @@ export default function Home() {
             {mapMarkers.map((marker) => (
               <div
                 key={marker.id}
-                className="absolute z-10 -translate-x-1/2 -translate-y-1/2"
+                className="group absolute z-10 -translate-x-1/2 -translate-y-1/2"
                 style={{ left: marker.x, top: marker.y }}
               >
                 <span
-                  className={`block rounded-full ${
+                  className={`block cursor-pointer rounded-full ${
                     marker.type === "blue"
                       ? "h-3.5 w-3.5 bg-[#2563EB] shadow-[0_0_12px_5px_#2563EB80]"
                       : "h-2.5 w-2.5 bg-[#EF5350] shadow-[0_0_8px_3px_#EF535080]"
                   }`}
-                  // className={`block rounded-full ${
-                  //   marker.type === "blue"
-                  //     ? "h-3.5 w-3.5 bg-[#2563EB] shadow-[0_0_12px_5px_#2563EB80]"
-                  //     : "h-2.5 w-2.5 bg-[#EF5350] shadow-[0_0_8px_3px_#EF535080]"
-                  // }`}
                 />
+
+                {/* Tooltip */}
+                <div className="pointer-events-none invisible absolute bottom-full left-1/2 z-30 mb-3 -translate-x-1/2 whitespace-nowrap rounded-md border border-[#FFFFFF1F] bg-[#121828] px-4 py-2 text-sm font-medium text-white opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                  {marker.country}
+                </div>
               </div>
             ))}
           </div>
