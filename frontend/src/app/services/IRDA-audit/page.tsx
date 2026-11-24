@@ -436,21 +436,21 @@ function page() {
         />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.9fr_1.25fr] lg:gap-5 xl:gap-8">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-5 xl:gap-8">
             <Animation>
               <div className="flex flex-col justify-center lg:py-2 text-center md:text-left">
                 {/* Eyebrow */}
-                <p className="text-[13px] sm:text-base font-semibold uppercase leading-7 text-[#7D70F0] text-center lg:text-left lg:max-w-[410px]">
+                <p className="text-[13px] sm:text-base font-semibold uppercase leading-7 text-[#7D70F0] text-center lg:text-left ">
                   IRDAI COMPLIANCE • INSURANCE CYBERSECURITY • ISNP AUDIT
                 </p>
 
                 {/* Heading */}
-                <h1 className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "600ms" }}>
+                <h1 className="mt-5 lg:max-w-[550px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "600ms" }}>
                   IRDAI ISNP Audit Services for Digital Insurance Platforms
                 </h1>
 
                 {/* Description */}
-                <p className="mt-4 lg:max-w-[390px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "850ms" }}>
+                <p className="mt-4 lg:max-w-[500px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "850ms" }}>
                   Strengthen the security and compliance of your digital
                   insurance ecosystem with a structured IRDAI ISNP audit. Assess
                   cybersecurity controls, protect policyholder data, and improve
@@ -484,7 +484,7 @@ function page() {
                 </ul>
 
                 {/* CTA */}
-                {/* <div className="mt-10 text-center lg:text-left">
+                <div className="mt-10 text-center lg:text-left">
                   <Link href="/company/contact">
                   <button
                     type="button"
@@ -496,7 +496,7 @@ function page() {
                     </span>
                   </button>
                   </Link>
-                </div> */}
+                </div>
               </div>
             </Animation>
 

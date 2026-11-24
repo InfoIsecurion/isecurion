@@ -279,7 +279,7 @@ function page() {
               </div>
             </Animation>
 
-            <h2 className="mt-10 max-w-[700px] font-semibold leading-[1.3] text-white">
+            <h2 className="mt-10 max-w-[700px] font-semibold leading-[1.3] text-white text-center lg:text-left">
               Benefits of Web Application Security Assessment
             </h2>
 

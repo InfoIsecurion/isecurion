@@ -451,7 +451,7 @@ function page() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong. Please try again.",
+        "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -461,10 +461,10 @@ function page() {
   return (
     <div className="bg-[#050B18]">
       {/* hero section  */}
-      <section className="relative overflow-hidden min-h-[80vh] py-14 flex items-center  bg-[#000000]">
+      <section className="relative isolate overflow-hidden bg-[#000000] py-12 sm:py-14 lg:py-16">
         <div className="absolute w-[650px] h-[650px] left-20 rounded-full blur-[200px] pointer-events-none bg-[#0F66EA80]"></div>
 
-        <div className="relative max-w-7xl w-full mx-auto px-6 sm:px-10 flex flex-col lg:flex-row items-center gap-15">
+        <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-10 px-6 sm:px-10 lg:grid-cols-[1.25fr_1.25fr] lg:gap-8 xl:gap-12">
           <div className="flex-1">
             <Animation>
               <div className="space-y-4 text-center lg:text-left">
@@ -472,18 +472,18 @@ function page() {
                   OUTSOURCED DPO SERVICES IN INDIA & GLOBALLY | VIRTUAL DATA PROTECTION OFFICER
                 </p>
                 <h1
-                  className="text-[#FFFFFF] lg:max-w-[440px] animate-hero-reveal"
+                  className="text-[#FFFFFF] lg:max-w-3xl animate-hero-reveal"
                   style={{ animationDelay: "600ms" }}
                 >
                   Expert Privacy Leadership. Without the Full-Time Overhead.
                 </h1>
-                <p className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[500px] animate-hero-reveal"
+                <p className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[530px] animate-hero-reveal"
                   style={{ animationDelay: "800ms" }}>
-                  ISECURION delivers a fully qualified Outsourced Data Protection Officer (DPO) service across India and globally, including the USA, UK, EU, GCC, Singapore and Australia. 
+                  ISECURION delivers a fully qualified Outsourced Data Protection Officer (DPO) service across India and globally, including the USA, UK, EU, GCC, Singapore and Australia.
                   Get on-demand privacy leadership and DPDP Act, GDPR, RBI, SEBI and PDPA compliance expertise, without the overhead of a full-time in-house DPO.
                 </p>
                 <p
-                  className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[450px] animate-hero-reveal"
+                  className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[530px] animate-hero-reveal"
                   style={{ animationDelay: "800ms" }}
                 >
                   Strengthen data protection, manage privacy obligations, and
@@ -492,7 +492,7 @@ function page() {
                   needs.
                 </p>
                 <p
-                  className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[460px] animate-hero-reveal"
+                  className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[540px] animate-hero-reveal"
                   style={{ animationDelay: "1000ms" }}
                 >
                   ISECURION helps organisations establish privacy governance,
@@ -548,9 +548,9 @@ function page() {
                 </li>
               </ul>
             </Animation>
-            {/* <Animation>
+            <Animation>
               <div className="flex flex-col sm:flex-row  justify-center lg:justify-start gap-4 mt-8">
-                <div className="mt-8 text-center">
+                <div className="text-center">
                   <Link href="/company/contact">
                     <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg cursor-pointer">
                       <span>Request a DPO Consultation</span>
@@ -559,10 +559,10 @@ function page() {
                   </Link>
                 </div>
               </div>
-            </Animation> */}
+            </Animation>
           </div>
 
-          <div className="flex-1 px-8 py-5 rounded-3xl space-y-5 bg-linear-to-r from-[#7B6FE860] to-[#7B6FE839] ">
+          <div className="flex-1 px-8 py-10 rounded-3xl space-y-5 bg-linear-to-r from-[#7B6FE860] to-[#7B6FE839] ">
             <form className="space-y-3" onSubmit={handleSubmit(submit)}>
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="flex flex-col w-full gap-3">
@@ -659,7 +659,7 @@ function page() {
                     className={`text-sm font-normal  h-12 w-full px-3 rounded-[10px] cursor-pointer outline-none  text-[#D1D1D1] border border-[#262D3D] bg-[#000C1C]`}
                     {...register("location")}
                   >
-                    <option value="">Select your loaction</option>
+                    <option value="">Select your location</option>
 
                     <optgroup label="India">
                       <option value="India - Bangalore">
@@ -747,8 +747,11 @@ function page() {
                 ></textarea>
               </div>
 
-              <div className="">
+              {/* Captcha */}
+              <div className="mt-7">
                 <div className="flex items-center gap-3">
+                  <p className="text-sm font-medium text-white">Captcha</p>
+
                   <Turnstile
                     ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
@@ -775,7 +778,7 @@ function page() {
 
               <button
                 type="submit"
-                className={`text-base sm:text-lg font-medium flex items-center justify-center py-3 w-full rounded-[10px]  text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] h-[54px] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                className={`mt-6 text-base sm:text-lg font-medium flex items-center justify-center py-3 w-full rounded-[10px]  text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] h-[54px] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
               >
                 Request Consultation{" "}
                 <span>
@@ -823,7 +826,7 @@ function page() {
                 className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[670px] animate-hero-reveal"
                 style={{ animationDelay: "1200ms" }}
               >
-                A Data Protection Officer (DPO) is an independent privacy expert responsible for monitoring an organisation's compliance with data protection law, advising on lawful processing, managing data subject requests, and acting as the designated point of contact for regulators and individuals. An Outsourced DPO delivers this function on a part-time, remote or retainer basis, without the cost or key-person risk of a full-time hire. 
+                A Data Protection Officer (DPO) is an independent privacy expert responsible for monitoring an organisation's compliance with data protection law, advising on lawful processing, managing data subject requests, and acting as the designated point of contact for regulators and individuals. An Outsourced DPO delivers this function on a part-time, remote or retainer basis, without the cost or key-person risk of a full-time hire.
                 ISECURION's team acts as a seamless extension of your organisation, backed by certified privacy and security professionals rather than a single individual.
               </p>
             </div>
@@ -1249,11 +1252,10 @@ function page() {
                   {/* Timeline Badge */}
                   <div className="mt-5 pt-0">
                     <span
-                      className={`inline-flex min-h-[30px] items-center justify-center whitespace-nowrap rounded-[6px] border px-3.5 py-1 text-[13px] font-medium leading-5 ${
-                        index === engagementLifecycle.length - 1
+                      className={`inline-flex min-h-[30px] items-center justify-center whitespace-nowrap rounded-[6px] border px-3.5 py-1 text-[13px] font-medium leading-5 ${index === engagementLifecycle.length - 1
                           ? "border-[#526F69] bg-[#A4FFCF38] text-white"
                           : "border-[#343B50] bg-[#514F6E40] text-white"
-                      }`}
+                        }`}
                     >
                       {
                         [
@@ -1321,11 +1323,10 @@ function page() {
                       <AnimatedCard
                         delay={index * 0.1}
                         key={item.number}
-                        className={`grid min-h-[75px] grid-cols-[68px_minmax(0,1fr)] gap-x-2 sm:grid-cols-[76px_minmax(0,1fr)] sm:gap-x-3 ${
-                          index !== engagementMilestones.length - 1
+                        className={`grid min-h-[75px] grid-cols-[68px_minmax(0,1fr)] gap-x-2 sm:grid-cols-[76px_minmax(0,1fr)] sm:gap-x-3 ${index !== engagementMilestones.length - 1
                             ? "border-b border-[#172338] pb-3"
                             : ""
-                        }`}
+                          }`}
                       >
                         <div className="pt-[30px]">
                           <p className="text-[12px] font-medium leading-5 text-[#22D3EE] sm:text-[13px]">
@@ -1439,17 +1440,14 @@ function page() {
                   <AnimatedCard
                     delay={index * 0.1}
                     key={location.name}
-                    className={`flex min-w-0 flex-col items-center justify-center gap-3 px-2 py-5 sm:py-6 ${
-                      index < 4
+                    className={`flex min-w-0 flex-col items-center justify-center gap-3 px-2 py-5 sm:py-6 ${index < 4
                         ? "border-b border-[#FFFFFF0D] sm:border-b-0"
                         : ""
-                    } ${
-                      index % 4 !== 3 ? "sm:border-r sm:border-[#FFFFFF05]" : ""
-                    } ${
-                      index % 2 === 0
+                      } ${index % 4 !== 3 ? "sm:border-r sm:border-[#FFFFFF05]" : ""
+                      } ${index % 2 === 0
                         ? "border-r border-[#FFFFFF08] sm:border-r-0"
                         : ""
-                    } ${index >= 4 ? "sm:border-t sm:border-[#FFFFFF0D]" : ""}`}
+                      } ${index >= 4 ? "sm:border-t sm:border-[#FFFFFF0D]" : ""}`}
                   >
                     <GradientIcon Icon={location.Icon} />
 
@@ -1492,23 +1490,18 @@ function page() {
                   <AnimatedCard
                     delay={index * 0.1}
                     key={region.code}
-                    className={`flex min-w-0 flex-col items-center justify-center px-2 py-5 text-center sm:px-3 lg:py-3 ${
-                      index % 2 === 0 ? "border-r border-[#243849]" : ""
-                    } ${
-                      index === 1 || index === 3
+                    className={`flex min-w-0 flex-col items-center justify-center px-2 py-5 text-center sm:px-3 lg:py-3 ${index % 2 === 0 ? "border-r border-[#243849]" : ""
+                      } ${index === 1 || index === 3
                         ? "sm:border-r sm:border-[#243849]"
                         : ""
-                    } ${
-                      index < 3 ? "border-b border-[#243849] sm:border-b-0" : ""
-                    } ${
-                      index === 2
+                      } ${index < 3 ? "border-b border-[#243849] sm:border-b-0" : ""
+                      } ${index === 2
                         ? "sm:border-r sm:border-[#243849] lg:border-r lg:border-[#243849]"
                         : ""
-                    } ${
-                      index === 3
+                      } ${index === 3
                         ? "sm:border-r-0 lg:border-r lg:border-[#243849]"
                         : ""
-                    } ${index === 4 ? "col-span-2 sm:col-span-1" : ""}`}
+                      } ${index === 4 ? "col-span-2 sm:col-span-1" : ""}`}
                   >
                     <GradientIcon
                       Icon={region.icon}

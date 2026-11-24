@@ -452,7 +452,7 @@ function AadharAudit() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong. Please try again.",
+        "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -481,7 +481,7 @@ function AadharAudit() {
               className="text-base sm:text-lg font-medium leading-[28px] text-[#D1D1D1] animate-hero-reveal"
               style={{ animationDelay: "750ms" }}
             >
-              ISECURION delivers comprehensive Aadhaar/UIDAI audit services, helping your organization meet UIDAI security, privacy and operational standards for authentication services. From AUA and KUA audit 
+              ISECURION delivers comprehensive Aadhaar/UIDAI audit services, helping your organization meet UIDAI security, privacy and operational standards for authentication services. From AUA and KUA audit
               support to Face Authentication readiness, we help you safeguard citizen data and maintain regulatory trust. CERT-In empanelled and ISO 27001:2022 certified.
             </p>
             <div className="mx-auto lg:mx-0">
@@ -509,16 +509,16 @@ function AadharAudit() {
               </ul>
             </div>
             <Link href="/comapny/contact">
-            <button className="mt-9 text-[15px] font-medium flex items-center px-3 py-3 mx-auto lg:mx-0 rounded-[10px] text-[#31435C] bg-[#FFFFFF] cursor-pointer">
-              Request Audit Quote{" "}
-              <span>
-                <Icon icon="akar-icons:arrow-right" />
-              </span>
-            </button>
+              <button className="mt-9 text-[15px] font-medium flex items-center px-3 py-3 mx-auto lg:mx-0 rounded-[10px] text-[#31435C] bg-[#FFFFFF] cursor-pointer">
+                Request Audit Quote{" "}
+                <span>
+                  <Icon icon="akar-icons:arrow-right" />
+                </span>
+              </button>
             </Link>
           </div>
           {/* right  */}
-          <div className="flex-1 px-6 py-6 rounded-[23px] bg-[#202123]">
+          <div className="flex-1 px-6 py-8 rounded-[23px] bg-[#202123]">
             <div className="space-y-1">
               <h3 className="text-base sm:text-lg font-semibold text-[#FFFFFF]">
                 Request UIDAI Audit Consultation
@@ -528,7 +528,7 @@ function AadharAudit() {
               </p>
             </div>
             <form className="mt-5 space-y-3" onSubmit={handleSubmit(submit)}>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex w-full min-w-0 flex-col gap-4">
                 <div className="w-full flex flex-col gap-2">
                   <label
                     htmlFor=""
@@ -607,18 +607,21 @@ function AadharAudit() {
                   </p>
                 )}
               </div>
-              <div className=" flex flex-col gap-2">
-                <p className="text-sm font-medium text-white">Captcha</p>
+              {/* Captcha */}
+              <div className="mt-7">
+                <div className="flex items-center gap-3">
+                  <p className="text-sm font-medium text-white">Captcha</p>
 
-                <Turnstile
-                  ref={turnstileRef}
-                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                  onSuccess={(token) => setTurnstileToken(token)}
-                  onExpire={() => setTurnstileToken("")}
-                  onError={() => setTurnstileToken("")}
-                />
+                  <Turnstile
+                    ref={turnstileRef}
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                    onSuccess={(token) => setTurnstileToken(token)}
+                    onExpire={() => setTurnstileToken("")}
+                    onError={() => setTurnstileToken("")}
+                  />
+                </div>
               </div>
-              <div className="flex gap-5">
+              <div className="flex gap-5 mt-4">
                 <input
                   type="checkbox"
                   required
@@ -634,7 +637,7 @@ function AadharAudit() {
               </div>
               <button
                 type="submit"
-                className={`w-full text-sm sm:text-base font-semibold flex items-center justify-center gap-3 px-3 py-3 rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]  ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                className={`mt-8 w-full text-sm sm:text-base font-semibold flex items-center justify-center gap-3 px-3 py-3 rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70]  ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
               >
                 Request UIDAI Audit{" "}
                 <span>
@@ -660,10 +663,10 @@ function AadharAudit() {
             ></WordReveal>
             <Animation>
               <p className="sectionDescription text-[#D1D1D1]">
-               Aadhaar has become the backbone of India's digital identity ecosystem, enabling authentication for banking, telecom, 
-               government welfare and fintech services. With sensitive biometric and demographic data at stake, a UIDAI audit is 
-               critical for operational and reputational security. 
-               Whether your infrastructure is on-premise, cloud-based or hybrid, we cover all authentication and data handling processes.
+                Aadhaar has become the backbone of India's digital identity ecosystem, enabling authentication for banking, telecom,
+                government welfare and fintech services. With sensitive biometric and demographic data at stake, a UIDAI audit is
+                critical for operational and reputational security.
+                Whether your infrastructure is on-premise, cloud-based or hybrid, we cover all authentication and data handling processes.
               </p>
             </Animation>
             <Animation delay={0.5}>
@@ -910,11 +913,10 @@ function AadharAudit() {
 
                     {/* Left card */}
                     <div
-                      className={`col-start-2 flex flex-col ${
-                        isLeft
+                      className={`col-start-2 flex flex-col ${isLeft
                           ? "items-start pl-0 text-left sm:col-start-1 sm:items-end sm:pr-10 sm:text-right"
                           : "hidden sm:col-start-1 sm:block sm:invisible"
-                      }`}
+                        }`}
                     >
                       {isLeft && (
                         <div className="space-y-3">
@@ -935,11 +937,10 @@ function AadharAudit() {
 
                     {/* Right card */}
                     <div
-                      className={`col-start-2 flex flex-col justify-start ${
-                        !isLeft
+                      className={`col-start-2 flex flex-col justify-start ${!isLeft
                           ? "items-start pl-0 text-left sm:col-start-2 sm:pl-10"
                           : "hidden sm:col-start-2 sm:block sm:invisible"
-                      }`}
+                        }`}
                     >
                       {!isLeft && (
                         <div className="space-y-3">

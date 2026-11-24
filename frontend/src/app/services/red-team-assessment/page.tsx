@@ -157,21 +157,16 @@ export default function RedTeamAssessmentPage() {
                 </p>
 
                 
-                <div className="flex gap-4 mt-6 text-center lg:text-left animate-hero-reveal" style={{animationDelay:"900ms"}}>
-                  <Link href="/company/contact">
-                  <button
-                    type="button"
-                    className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 cursor-pointer"
-                  >
-                    Request Assessment{""}
-                    
-                    <span className="ml-1.5 text-[17px] leading-none text-[#31435C]">
-                      <Icon icon="mdi:arrow-right"></Icon>
-                    </span>
+                {/* CTA BUTTON */}
+              <div className="flex mt-8 animate-hero-reveal gap-4" style={{ animationDelay: "1050ms" }} >
+                <Link href="/company/contact">
+                  <button className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-white px-6 py-3.5 text-[15px] font-medium text-[#31435C] transition-all duration-200 hover:bg-gray-100 shadow-lg">
+                    <span>Request Simulation</span>
+                    <Icon icon="lucide:arrow-right" className="h-4 w-4" />
                   </button>
-                  </Link>
+                </Link>
 
-                  <button
+                <button
                   onClick={() =>
                     document
                       .getElementById("scopeofwork")
@@ -182,7 +177,8 @@ export default function RedTeamAssessmentPage() {
                   <span></span>
                   See Scope of Work ›
                 </button>
-                </div>
+
+              </div>
 
                 {/* ==================== STATS ==================== */}
                 <div className="mt-9 grid lg:max-w-[380px] grid-cols-3 lg:grid-cols-2 gap-x-10 gap-y-6 text-center">
@@ -331,6 +327,8 @@ export default function RedTeamAssessmentPage() {
                 {/* Captcha */}
                 <div className="mt-7">
                   <div className="flex items-center gap-3">
+                    <p className="text-sm font-medium text-white">Captcha</p>
+
                     <Turnstile
                       ref={turnstileRef}
                       siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}

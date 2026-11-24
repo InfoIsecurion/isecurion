@@ -52,13 +52,13 @@ const trustServices = [
 
 const socLocations = [
   { name: "Bangalore", Icon: "reicon:city", desc: "India's Silicon Valley SaaS and IT hub; we serve 100+ Bangalore-based tech companies." },
-  { name: "Mumbai", Icon: "game-icons:tower-bridge", desc:"FinTech, BFSI and cloud service providers." },
-  { name: "Hyderabad", Icon: "fluent:building-mosque-12-regular", desc:"HITEC City's IT companies seeking SOC 2 readiness and Type II audits." },
+  { name: "Mumbai", Icon: "game-icons:tower-bridge", desc: "FinTech, BFSI and cloud service providers." },
+  { name: "Hyderabad", Icon: "fluent:building-mosque-12-regular", desc: "HITEC City's IT companies seeking SOC 2 readiness and Type II audits." },
   { name: "Chennai", Icon: "icon-park-outline:city-one", desc: "Automotive, manufacturing tech and IT services firms scaling to enterprise." },
   { name: "Pune", Icon: "icon-park-outline:city-gate", desc: "Hinjewadi IT park companies and product startups; gap assessments on demand." },
-  { name: "Kochi", Icon: "lucide:tree-palm", desc:"Infopark and Technopark companies pursuing global enterprise customers." },
-  { name: "Kolkata", Icon: "game-icons:arch-bridge", desc:"Sector V and Salt Lake tech companies; local office in Kolkata." },
-  { name: "Pan-India Coverage", Icon: "iconmind:canvas-pan-outline-regular", desc:"Delhi, Ahmedabad, Noida, Gurgaon and more, fully remote-capable." },
+  { name: "Kochi", Icon: "lucide:tree-palm", desc: "Infopark and Technopark companies pursuing global enterprise customers." },
+  { name: "Kolkata", Icon: "game-icons:arch-bridge", desc: "Sector V and Salt Lake tech companies; local office in Kolkata." },
+  { name: "Pan-India Coverage", Icon: "iconmind:canvas-pan-outline-regular", desc: "Delhi, Ahmedabad, Noida, Gurgaon and more, fully remote-capable." },
 ];
 
 const globalRegions = [
@@ -358,7 +358,7 @@ function SocCompliance() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong. Please try again.",
+        "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -395,22 +395,22 @@ function SocCompliance() {
                   className="mt-4 lg:max-w-[450px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
                   style={{ animationDelay: "650ms" }}
                 >
-                  ISECURION delivers fully remote SOC 2 compliance services to companies headquartered in the United States, United Kingdom, UAE (including Dubai and Abu Dhabi), Australia (Sydney, Melbourne) and Singapore. Our engagement model is timezone-flexible and tool-agnostic, designed to fit the procurement and audit 
+                  ISECURION delivers fully remote SOC 2 compliance services to companies headquartered in the United States, United Kingdom, UAE (including Dubai and Abu Dhabi), Australia (Sydney, Melbourne) and Singapore. Our engagement model is timezone-flexible and tool-agnostic, designed to fit the procurement and audit
                   timelines of global buyers. We coordinate directly with AICPA-licensed CPA firms on your behalf and manage the full PBC (Prepared by Client) evidence delivery process.
                 </p>
 
                 {/* CTA */}
-                <div className="mt-6 text-center lg:text-left animate-hero-reveal" style={{animationDelay: "780ms"}}>
+                <div className="mt-6 text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "780ms" }}>
                   <Link href="tel:+918861201570" target="_blank">
-                  <button
-                    type="button"
-                    className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3] cursor-pointer"
-                  >
-                    Book a Free Readiness Call{""}
-                    <span className="ml-1.5 text-[17px] leading-none text-[#31435C]">
-                      <Icon icon="mdi:arrow-right"></Icon>
-                    </span>
-                  </button>
+                    <button
+                      type="button"
+                      className="inline-flex h-[45px] items-center justify-center rounded-lg bg-white px-5 text-[13px] font-semibold text-[#31435C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f3f3f3] cursor-pointer"
+                    >
+                      Book a Free Readiness Call{""}
+                      <span className="ml-1.5 text-[17px] leading-none text-[#31435C]">
+                        <Icon icon="mdi:arrow-right"></Icon>
+                      </span>
+                    </button>
                   </Link>
                 </div>
 
@@ -678,15 +678,15 @@ function SocCompliance() {
                   {/* Captcha */}
                   <div className="mt-7">
                     <div className="flex items-center gap-3">
-                      <div className="">
-                        <Turnstile
-                          ref={turnstileRef}
-                          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                          onSuccess={(token) => setTurnstileToken(token)}
-                          onExpire={() => setTurnstileToken("")}
-                          onError={() => setTurnstileToken("")}
-                        />
-                      </div>
+                      <p className="text-sm font-medium text-white">Captcha</p>
+
+                      <Turnstile
+                        ref={turnstileRef}
+                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                        onSuccess={(token) => setTurnstileToken(token)}
+                        onExpire={() => setTurnstileToken("")}
+                        onError={() => setTurnstileToken("")}
+                      />
                     </div>
                   </div>
 
@@ -839,17 +839,14 @@ function SocCompliance() {
                   <AnimatedCard
                     delay={index * 0.1}
                     key={location.name}
-                    className={`flex min-w-0 flex-col items-center justify-center gap-3 px-2 py-5 sm:py-6 ${
-                      index < 4
+                    className={`flex min-w-0 flex-col items-center justify-center gap-3 px-2 py-5 sm:py-6 ${index < 4
                         ? "border-b border-[#FFFFFF0D] sm:border-b-0"
                         : ""
-                    } ${
-                      index % 4 !== 3 ? "sm:border-r sm:border-[#FFFFFF05]" : ""
-                    } ${
-                      index % 2 === 0
+                      } ${index % 4 !== 3 ? "sm:border-r sm:border-[#FFFFFF05]" : ""
+                      } ${index % 2 === 0
                         ? "border-r border-[#FFFFFF08] sm:border-r-0"
                         : ""
-                    } ${index >= 4 ? "sm:border-t sm:border-[#FFFFFF0D]" : ""}`}
+                      } ${index >= 4 ? "sm:border-t sm:border-[#FFFFFF0D]" : ""}`}
                   >
                     <GradientIcon Icon={location.Icon} />
 
@@ -872,17 +869,17 @@ function SocCompliance() {
               {/* Global Coverage Intro */}
               <Animation>
                 <div className="min-w-0">
-                  <p className="text-[15px] font-medium uppercase tracking-wide text-[#1680FF] sm:text-[17px]">
+                  <p className="text-center lg:text-left text-[15px] font-medium uppercase tracking-wide text-[#1680FF] sm:text-[17px]">
                     GLOBAL COVERAGE
                   </p>
 
-                  <h3 className="mt-3 text-[21px] font-normal leading-[1.5] text-white sm:text-[23px]">
+                  <h3 className="text-center lg:text-left mt-3 text-[21px] font-normal leading-[1.5] text-white sm:text-[23px]">
                     Global reach.
                     <br />
                     Consistent standards.
                   </h3>
 
-                  <p className="mt-3 text-[14px] leading-[25px] text-[#C5C9D2] sm:text-[15px] sm:leading-[26px]">
+                  <p className="text-center lg:text-left mt-3 text-[14px] leading-[25px] text-[#C5C9D2] sm:text-[15px] sm:leading-[26px]">
                     Indian-priced expertise, international-standard delivery.
                     <br /> We support SOC 2 audits across:
                   </p>
@@ -890,47 +887,29 @@ function SocCompliance() {
               </Animation>
 
               {/* Global Regions */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
-                {globalRegions.map((region, index) => (
-                  <AnimatedCard
-                    delay={index * 0.1}
-                    key={region.code}
-                    className={`flex min-w-0 flex-col items-center justify-center px-2 py-5 text-center sm:px-3 lg:py-3 ${
-                      index % 2 === 0 ? "border-r border-[#243849]" : ""
-                    } ${
-                      index === 1 || index === 3
-                        ? "sm:border-r sm:border-[#243849]"
-                        : ""
-                    } ${
-                      index < 3 ? "border-b border-[#243849] sm:border-b-0" : ""
-                    } ${
-                      index === 2
-                        ? "sm:border-r sm:border-[#243849] lg:border-r lg:border-[#243849]"
-                        : ""
-                    } ${
-                      index === 3
-                        ? "sm:border-r-0 lg:border-r lg:border-[#243849]"
-                        : ""
-                    } ${index === 4 ? "col-span-2 sm:col-span-1" : ""}`}
-                  >
-                    <GradientIcon
-                      Icon={region.icon}
-                      className="h-[43px] w-[43px] text-[#00D6E9] sm:h-[46px] sm:w-[46px]"
-                      aria-hidden="true"
-                    />
-
-                    <span className="mt-4 text-[12px] font-medium tracking-wide text-[#BFC4CE]">
-                      {region.code}
-                    </span>
-
-                    <span className="mt-2 h-[2px] w-[23px] bg-[#315A7D]" />
-
-                    <span className="mt-2 text-[12px] leading-5 text-[#C5C9D2] sm:text-[13px]">
-                      {region.name}
-                    </span>
-                  </AnimatedCard>
-                ))}
-              </div>
+              <div className="w-full flex-2 ">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                              {globalRegions.map((item, index) => (
+                                <AnimatedCard
+                                  key={index}
+                                  delay={index * 0.15}
+                                  className={`w-full flex flex-col items-center gap-3 px-3 ${index !== globalRegions.length - 1 ? "border-[#2B3756] lg:border-r" : ""}`}
+                                >
+                                  <GradientIcon Icon={item.icon} />
+              
+                                  <h3 className="text-center text-base font-normal text-[#D1D1D1]">
+                                    {item.code}
+                                  </h3>
+              
+                                  <div className="h-[2px] w-[30px] rounded-[1px] border border-[#455F6DB5] bg-[#0F66EA]" />
+              
+                                  <p className="text-center text-sm font-normal text-[#D1D1D1] sm:text-base">
+                                    {item.name}
+                                  </p>
+                                </AnimatedCard>
+                              ))}
+                            </div>
+                          </div>
             </div>
           </div>
         </div>
@@ -1177,11 +1156,10 @@ function SocCompliance() {
                   {/* Left content */}
 
                   <div
-                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${
-                      item.side === "left"
+                    className={`col-start-2 min-w-0 w-full sm:col-start-1 sm:row-start-1 ${item.side === "left"
                         ? "sm:pr-7 sm:text-right lg:pr-8"
                         : "hidden sm:invisible sm:block sm:pl-7 lg:pl-8"
-                    }`}
+                      }`}
                   >
                     {item.side === "left" && (
                       <>
@@ -1206,11 +1184,10 @@ function SocCompliance() {
                   {/* Right content */}
 
                   <div
-                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${
-                      item.side === "right"
+                    className={`min-w-0 w-full sm:col-start-3 sm:row-start-1 ${item.side === "right"
                         ? "col-start-2 sm:pl-5 sm:text-left lg:pl-4"
                         : "hidden sm:invisible sm:block sm:pr-5 lg:pr-0"
-                    }`}
+                      }`}
                   >
                     {item.side === "right" && (
                       <>

@@ -17,7 +17,7 @@ const nextConfig = {
   reactCompiler: true,
 
   allowedDevOrigins: [
-    "*.trycloudflare.com",
+    "*.trycloudflare.com", "175.175.0.165"
   ],
 
   turbopack: {

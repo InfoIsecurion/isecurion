@@ -160,7 +160,7 @@ function ContinuousBreachAttackSimulation() {
               {/* HEADING */}
 
               <h1
-                className="mt-4 font-semibold leading-[1.4] tracking-[-0.02em] text-white lg:max-w-[400px] opacity-0 animate-hero-reveal text-3xl"
+                className="mt-4 font-semibold leading-[1.4] tracking-[-0.02em] text-white lg:max-w-[500px] opacity-0 animate-hero-reveal text-3xl"
                 style={{ animationDelay: "800ms" }}
               >
                 Continuous Breach & Attack Simulation (CBAS) to Validate Your Defenses Against Real-World Attacks
@@ -169,7 +169,7 @@ function ContinuousBreachAttackSimulation() {
               {/* DESCRIPTION */}
 
               <p
-                className="mt-5 text-[14px] sm:text-[16px] font-medium leading-[1.7] text-[#D1D1D1] lg:max-w-[450px] opacity-0 animate-hero-reveal"
+                className="mt-5 text-[14px] sm:text-[16px] font-medium leading-[1.7] text-[#D1D1D1] lg:max-w-[500px] opacity-0 animate-hero-reveal"
                 style={{ animationDelay: "950ms" }}
               >
                 ISECURION's CBAS continuously simulates real-world attacks using adversary simulation techniques to identify gaps, validate defenses,
@@ -201,7 +201,7 @@ function ContinuousBreachAttackSimulation() {
 
               {/* FOOTER TAGLINE */}
               <p
-                className="mt-6 text-[13px] sm:text-[14px] lg:text-[16px] font-medium leading-7 text-[#0F66EA] lg:max-w-[360px] opacity-0 animate-hero-reveal"
+                className="mt-6 text-[13px] sm:text-[14px] lg:text-[16px] font-medium leading-7 text-[#0F66EA] lg:max-w-[460px] opacity-0 animate-hero-reveal"
                 style={{ animationDelay: "1300ms" }}
               >
                 Continuous Validation · Adversary Simulation · MITRE ATT&amp;CK
