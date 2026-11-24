@@ -359,8 +359,8 @@ export interface CaseStudy {
       | null;
   };
   number?: string | null;
-  faqheading: string;
-  faqdescription: string;
+  faqheading?: string | null;
+  faqdescription?: string | null;
   faqs?:
     | {
         question: string;
@@ -369,6 +369,11 @@ export interface CaseStudy {
       }[]
     | null;
   faqnote?: string | null;
+  catsection?: {
+    heading?: string | null;
+    description?: string | null;
+    button?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -719,6 +724,13 @@ export interface CaseStudiesSelect<T extends boolean = true> {
         id?: T;
       };
   faqnote?: T;
+  catsection?:
+    | T
+    | {
+        heading?: T;
+        description?: T;
+        button?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

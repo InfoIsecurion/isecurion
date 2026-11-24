@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import CaseStudyHero from "../../../components/case-studies/CaseStudyHero";
-
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 interface CaseStudy {
@@ -165,6 +165,11 @@ interface CaseStudy {
     answer: string;
   }[];
   faqnote?: string;
+  catsection?: {
+    heading?: string;
+    description?: string;
+    button?: string;
+  };
 }
 
 interface Props {
@@ -425,42 +430,44 @@ export default async function Page({ params }: Props) {
                   ))}
                 </ul>
               </div>
-
               {/* Constraints */}
-              <div className="">
-                <h3 className="text-xl font-semibold text-white mb-5">
-                  Constraints
-                </h3>
+              {caseStudy.section3?.constraints?.length > 0 && (
+                <div className="">
+                  <h3 className="text-xl font-semibold text-white mb-5">
+                    Constraints
+                  </h3>
 
-                <ul className="space-y-1 list-disc pl-5">
-                  {caseStudy.section3?.constraints?.map((item, index) => (
-                    <li
-                      key={item.id || index}
-                      className="text-sm sm:text-base text-[#D1D1D1]"
-                    >
-                      {item.constraintitem}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
+                  <ul className="space-y-1 list-disc pl-5">
+                    {caseStudy.section3?.constraints?.map((item, index) => (
+                      <li
+                        key={item.id || index}
+                        className="text-sm sm:text-base text-[#D1D1D1]"
+                      >
+                        {item.constraintitem}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               {/* Techniques */}
-              <div className="">
-                <h3 className="text-xl font-semibold text-white mb-5">
-                  Techniques
-                </h3>
+              {caseStudy.section3?.techniques?.length > 0 && (
+                <div className="">
+                  <h3 className="text-xl font-semibold text-white mb-5">
+                    Techniques
+                  </h3>
 
-                <ul className="flex flex-wrap gap-5 ">
-                  {caseStudy.section3?.techniques?.map((item, index) => (
-                    <li
-                      key={item.id || index}
-                      className="text-sm font-semibold px-3 py-2 rounded-md text-[#FFFFFF] border border-[#DADADA17] bg-[#121828]"
-                    >
-                      {item.technique}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                  <ul className="flex flex-wrap gap-5 ">
+                    {caseStudy.section3?.techniques?.map((item, index) => (
+                      <li
+                        key={item.id || index}
+                        className="text-sm font-semibold px-3 py-2 rounded-md text-[#FFFFFF] border border-[#DADADA17] bg-[#121828]"
+                      >
+                        {item.technique}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -468,7 +475,7 @@ export default async function Page({ params }: Props) {
 
       {/* section 4 */}
       {show.s4 && (
-        <section className="w-full py-14">
+        <section className="w-full py-14" id="section-4">
           <div className="max-w-7xl mx-auto px-6 sm:px-10">
             <div className="relative space-y-4 text-center lg:text-left">
               <p className="absolute -top-12 left-0 text-[120px] font-medium text-[#E3EFFF21] pointer-events-none">
@@ -559,7 +566,7 @@ export default async function Page({ params }: Props) {
       )}
       {/* section 5 */}
       {show.s5 && (
-        <section className="w-full py-14">
+        <section className="w-full py-14" id="section-5">
           <div className="max-w-7xl mx-auto px-6 sm:px-10">
             <div className="relative text-center lg:text-left">
               <p className="absolute -top-12 left-0 text-[120px] font-medium text-[#E3EFFF21] pointer-events-none">
@@ -594,7 +601,7 @@ export default async function Page({ params }: Props) {
       )}
       {/* section 6  */}
       {show.s6 && (
-        <section className="w-full py-14">
+        <section className="w-full py-14" id="section-6">
           <div className="max-w-7xl mx-auto px-6 sm:px-10">
             <div className="relative space-y-4">
               <p className="absolute -top-12 left-0 text-[120px] font-medium text-[#E3EFFF21] pointer-events-none">
@@ -644,7 +651,7 @@ export default async function Page({ params }: Props) {
       )}
       {/* section 7  */}
       {show.s7 && (
-        <section className="w-full py-14">
+        <section className="w-full py-14" id="section-7">
           <div className="max-w-7xl mx-auto px-6 sm:px-10">
             {/* Section Heading */}
             <div className="relative space-y-4 text-center lg:text-left">
@@ -656,7 +663,9 @@ export default async function Page({ params }: Props) {
                 {caseStudy.section7?.eyebrow}
               </p>
 
-              <h2 className="text-[#FEFEFE]">{caseStudy.section6?.heading}</h2>
+              <h2 className="text-[#FEFEFE]">
+                {caseStudy.section7?.mainheading}
+              </h2>
             </div>
 
             {/* Impact Cards */}
@@ -682,7 +691,7 @@ export default async function Page({ params }: Props) {
       )}
       {/* section 8  */}
       {show.s8 && (
-        <section className="w-full py-14">
+        <section className="w-full py-14" id="section-8">
           <div className="max-w-7xl mx-auto px-6 sm:px-10 space-y-4">
             <div className="relative space-y-4 text-center lg:text-left">
               <p className="absolute -top-12 left-0 text-[120px] font-medium text-[#E3EFFF21] pointer-events-none">
@@ -694,7 +703,7 @@ export default async function Page({ params }: Props) {
               </p>
 
               <h2 className="max-w-2xl mx-auto lg:mx-0 text-[#FEFEFE]">
-                {caseStudy.section6?.heading}
+                {caseStudy.section8?.heading}
               </h2>
               <p className="text-base sm:text-lg font-normal text-[#D1D1D1]">
                 {caseStudy.section8?.description}
@@ -705,19 +714,19 @@ export default async function Page({ params }: Props) {
                 {caseStudy.section8?.description}
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 rounded-xl border border-[#FFFFFF1F]">
+            <div className="flex flex-row   rounded-xl border border-[#FFFFFF1F]">
               {caseStudy.section8.cards.map((item, index) => (
                 <div
                   key={index}
                   className={`flex flex-col items-center  space-y-2 px-3 py-4 border border-[#1F2532] ${index === 0 ? "bg-[#060D1B]" : "bg-[#0B1220]"}`}
                 >
                   <div>
-                    <Icon icon={item.icon} />
+                    <Icon icon={item.icon} className="text-2xl text-white" />
                   </div>
                   <h3 className="text-sm font-semibold text-[#FFFFFF]">
                     {item.heading}
                   </h3>
-                  <p className="text-sm font-medium text-[#D1D1D1]">
+                  <p className="text-sm font-medium text-center text-[#D1D1D1]">
                     {item.description}
                   </p>
                 </div>
@@ -731,7 +740,7 @@ export default async function Page({ params }: Props) {
       )}
       {/* section 9 */}
       {show.s9 && (
-        <section className="w-full py-14">
+        <section className="w-full py-14" id="section-9">
           <div className="max-w-7xl mx-auto px-6 sm:px-10">
             <div className="relative text-center lg:text-left">
               <p className="absolute -top-15 left-0 text-[120px] font-medium text-[#E3EFFF21] pointer-events-none">
@@ -777,7 +786,7 @@ export default async function Page({ params }: Props) {
       )}
       {/* faqs section  */}
 
-      <section className="w-full py-14">
+      <section className="w-full py-14" id="section-10">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="relative space-y-4 text-center lg:text-left">
             <p className="absolute -top-20 left-0 text-[120px] font-medium text-[#E3EFFF21] pointer-events-none">
@@ -811,7 +820,7 @@ export default async function Page({ params }: Props) {
                     {faq.question}
                   </h3>
 
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-[#17263A] text-xl font-light text-[#0FEADB] transition-transform duration-300">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#181E29] text-xl font-light text-[#FFFFFF] transition-transform duration-300">
                     <span className="group-open:hidden">+</span>
                     <span className="hidden group-open:inline">−</span>
                   </span>
@@ -856,6 +865,32 @@ export default async function Page({ params }: Props) {
                 return <span key={index}>{part}</span>;
               })}
           </p>
+        </div>
+      </section>
+
+      {/* cta  */}
+      <section className="w-full py-14 rounded-tl-4xl rounded-tr-4xl bg-[#121828]">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 space-y-4">
+          <h2 className="max-w-2xl font-semibold text-[#FFFFFF]">
+            {caseStudy.catsection?.heading}
+          </h2>
+          <p className="max-w-4xl text-base lg:text-[17px] font-medium text-[#D1D1D1]">
+            {caseStudy.catsection?.description}
+          </p>
+          <div className="flex gap-5 flex-wrap">
+            <Link
+              href="/company/contact"
+              className="text-[15px] font-medium px-4 py-3 rounded-[10px] text-[#FFFFFF] bg-[#3263B1]"
+            >
+              {caseStudy.catsection?.button}
+            </Link>
+            <Link
+              href="/services/vulnerability-assessment-penetration-testing"
+              className="text-[15px] font-medium px-4 py-3 rounded-[10px] text-[#FFFFFF] border border-[#FFFFFF29]"
+            >
+              Explore VAPT Services
+            </Link>
+          </div>
         </div>
       </section>
     </div>

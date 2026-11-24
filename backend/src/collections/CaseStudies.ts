@@ -651,13 +651,13 @@ export const CaseStudies: CollectionConfig = {
     {
       name: 'faqheading',
       type: 'text',
-      required: true,
+
       label: 'FAQ Heading',
     },
     {
       name: 'faqdescription',
       type: 'text',
-      required: true,
+
       label: 'FAQ description',
     },
 
@@ -684,6 +684,29 @@ export const CaseStudies: CollectionConfig = {
       name: 'faqnote',
       type: 'textarea',
       label: 'faqnote',
+    },
+    // cat section
+    {
+      name: 'catsection',
+      type: 'group',
+      label: 'CTA Section',
+      fields: [
+        {
+          name: 'heading',
+          type: 'text',
+          label: 'Heading',
+        },
+        {
+          name: 'description',
+          type: 'textarea',
+          label: 'Description',
+        },
+        {
+          name: 'button',
+          type: 'text',
+          label: 'Button',
+        },
+      ],
     },
   ],
 

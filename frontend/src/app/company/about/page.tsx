@@ -15,6 +15,8 @@ import compliancehead from "../../../assets/about/compliancehead.png";
 import offensivesecurityhead from "../../../assets/about/offensivesecurityhead.png";
 import productlead from "../../../assets/about/productlead.png";
 import hrteam from "../../../assets/about/hrteam.png";
+import team from "../../../assets/about/team.png";
+import team1 from "../../../assets/about/team1.png";
 
 const data = [
   {
@@ -75,7 +77,7 @@ const timelineData = [
 
 function About() {
   return (
-    <div>
+    <div className="bg-[#060D1B]">
       {/* hero section  */}
       <div
         className="bg-cover bg-center py-16"
@@ -160,16 +162,13 @@ function About() {
             </div>
           </Animation>
 
-          <Animation>
-            <div className="mt-10 w-full h-[550px] rounded-2xl overflow-hidden">
-              <Image
-                src={aboutstory}
-                alt="about story"
-                className="w-full h-full "
-              />
-            </div>
-          </Animation>
+          {/* <Animation>
+            
+          </Animation> */}
         </div>
+      </div>
+      <div className="mt-10 w-full  overflow-hidden bg-[#070D1A]">
+        <Image src={team1} alt="about story" className="w-full " />
       </div>
 
       {/* our story  */}

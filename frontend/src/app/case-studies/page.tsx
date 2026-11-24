@@ -128,28 +128,41 @@ function CaseStudies() {
             {filteredCaseStudies.map((item, index) => (
               <div
                 key={item.id || index}
-                className="relative  rounded-xl  overflow-hidden flex flex-col justify-between  "
+                className="relative flex flex-col overflow-hidden rounded-xl"
               >
-                <div className="w-full h-[250px] overflow-hidden">
+                {/* Featured Image */}
+                <div className="relative w-full h-[250px] overflow-hidden">
                   {item.featuredImage?.imageData && (
                     <Image
                       src={item.featuredImage.imageData}
                       width={500}
                       height={300}
                       alt={item.featuredImage.alt || item.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                       unoptimized
                     />
                   )}
                 </div>
+
+                {/* Category */}
                 <p
-                  className={`text-sm font-semibold absolute top-4 right-4 px-4 py-1.5 rounded-[5px] uppercase sectionheading text-[#0F66EA] bg-[#121828] border border-[#242A38] ${item.category === "red team" ? "text-[#E24B4A]" : item.category === "compliance audit" ? "text-[#0F66EA]" : ""}`}
+                  className={`absolute top-4 right-4 text-sm font-semibold px-4 py-1.5 rounded-[5px] uppercase sectionheading bg-[#121828] border border-[#242A38]
+      ${
+        item.category?.toLowerCase() === "red team"
+          ? "text-[#E24B4A]"
+          : item.category?.toLowerCase() === "compliance audit"
+            ? "text-[#0F66EA]"
+            : "text-[#0FEADB]"
+      }`}
                 >
                   {item.category}
                 </p>
-                <div className="flex  flex-col p-5 space-y-3 bg-linear-to-t from-[#02081D] to-[#010513]">
-                  <div className="w-fit rounded-3xl px-5 py-2 bg-[#2989FF29] text-[#FFFFFF]">
-                    <p className="text-xs font-medium rounded-3xl text-[#FFFFFF]">
+
+                {/* Card Content */}
+                <div className="flex flex-1 flex-col p-5 space-y-3 bg-linear-to-t from-[#02081D] to-[#010513]">
+                  {/* Date */}
+                  <div className="w-fit rounded-3xl px-5 py-2 bg-[#2989FF29]">
+                    <p className="text-xs font-medium text-white">
                       {new Date(item.createdAt).toLocaleDateString("en-US", {
                         month: "short",
                         day: "numeric",
@@ -157,20 +170,27 @@ function CaseStudies() {
                       })}
                     </p>
                   </div>
-                  <h3 className="text-[15px] font-medium line-clamp-2  text-[#F6FDFE]">
+
+                  {/* Title */}
+                  <h3 className="text-[15px] font-medium line-clamp-2 text-[#F6FDFE]">
                     {item.title}
                   </h3>
+
+                  {/* Description */}
                   <p className="text-base font-normal text-[#D1D1D1]">
                     {item.carddescription}
                   </p>
 
-                  <Link
-                    href={`/case-studies/${item.slug}`}
-                    className="text-sm font-semibold flex items-center gap-2 w-fit px-3 py-2 rounded-lg mt-3 text-[#0C0407] bg-[#FFFFFF] border border-[#E0E0E0]"
-                  >
-                    Read More{" "}
-                    <Icon icon="akar-icons:arrow-right" className="text-lg" />
-                  </Link>
+                  {/* Read More */}
+                  <div className="mt-auto pt-3">
+                    <Link
+                      href={`/case-studies/${item.slug}`}
+                      className="text-sm font-semibold inline-flex items-center gap-2 w-fit px-3 py-2 rounded-lg text-[#0C0407] bg-white border border-[#E0E0E0] transition-colors hover:bg-[#DDEBFF]"
+                    >
+                      Read More
+                      <Icon icon="akar-icons:arrow-right" className="text-lg" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}

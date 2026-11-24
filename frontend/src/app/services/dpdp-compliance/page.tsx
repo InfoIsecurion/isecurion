@@ -13,7 +13,7 @@ import healthtech from "../../../assets/services/dpdp/healthtech.png";
 import manufacturing from "../../../assets/services/dpdp/manufacturing.png";
 import sass from "../../../assets/services/dpdp/sass.png";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import FAQSection from "../../../components/sections/FAQSection";
@@ -661,11 +661,15 @@ function DpdpCompliance() {
               className="text-base sm:text-[17px] font-medium leading-[26px] md:leading-[28px] text-[#D1D1D1] opacity-0 animate-hero-reveal"
               style={{ animationDelay: "450ms" }}
             >
-              The Digital Personal Data Protection Act 2023 requires every Data Fiduciary to implement reasonable 
-              security safeguards to protect personal data, and failure to do so can attract penalties of up to ₹250 crore. 
-              As a CERT-In empanelled cybersecurity company, ISECURION delivers complete DPDP compliance in India: 
-              identifying security gaps, hardening data systems, and meeting DPDP's technical obligations before the main obligations take effect in May 2027. 
-              VAPT of personal data systems is delivered by a CREST Member, accredited for Penetration Testing.
+              The Digital Personal Data Protection Act 2023 requires every Data
+              Fiduciary to implement reasonable security safeguards to protect
+              personal data, and failure to do so can attract penalties of up to
+              ₹250 crore. As a CERT-In empanelled cybersecurity company,
+              ISECURION delivers complete DPDP compliance in India: identifying
+              security gaps, hardening data systems, and meeting DPDP's
+              technical obligations before the main obligations take effect in
+              May 2027. VAPT of personal data systems is delivered by a CREST
+              Member, accredited for Penetration Testing.
             </p>
             <p
               className="text-base sm:text-[17px] font-medium leading-[26px] md:leading-[28px] text-[#D1D1D1] opacity-0 animate-hero-reveal"
@@ -1205,11 +1209,16 @@ function DpdpCompliance() {
           <div className="mt-10">
             <div className="relative w-full">
               <Swiper
-                modules={[Pagination]}
+                modules={[Pagination, Autoplay]}
                 slidesPerView={1}
                 spaceBetween={30}
                 loop={true}
                 speed={500}
+                autoplay={{
+                  delay: 2000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                }}
                 pagination={{
                   clickable: true,
                   el: ".sector-pagination",

@@ -3,11 +3,15 @@ import background1 from "../../assets/casestudies/Hero 1.svg";
 import background2 from "../../assets/casestudies/Hero 2.svg";
 import background3 from "../../assets/casestudies/Hero 3.svg";
 import background4 from "../../assets/casestudies/Hero 4.svg";
+import background5 from "../../assets/casestudies/hero 5.svg";
+import background6 from "../../assets/casestudies/Hero 6.svg";
 const heroBackgrounds = {
   template1: background1.src,
   template2: background2.src,
   template3: background3.src,
   template4: background4.src,
+  template5: background5.src,
+  template6: background6.src,
 };
 
 const heroStyles = {
