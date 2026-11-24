@@ -494,8 +494,8 @@ function page() {
           className="pointer-events-none absolute -left-[100px] top-[100px] z-0 h-[550px] w-[560px] rounded-full bg-[#3B9E6A]/28 blur-[140px] lg:left-[100px]"
         />
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.9fr_1.25fr] lg:gap-5 xl:gap-8">
+        <div className="">
+          <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-10 px-6 sm:px-10 lg:grid-cols-[1.15fr_1.15fr] lg:gap-10 xl:gap-14">
             <Animation>
               <div className="flex flex-col justify-center lg:py-2 text-center md:text-left">
                 {/* Eyebrow */}
@@ -504,24 +504,24 @@ function page() {
                 </p>
 
                 {/* Heading */}
-                <h1 className="mt-5 lg:max-w-[450px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "700ms" }}>
+                <h1 className="mt-5  font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "700ms" }}>
                   RBI Information Security (IS) Audit Services for Financial
                   Institutions
                 </h1>
 
                 {/* Description */}
-                <p className="mt-4 lg:max-w-[460px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "1000ms" }}>
+                <p className="mt-4 lg:max-w-[540px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "1000ms" }}>
                   ISECURION delivers comprehensive RBI Information Security Audit services, helping banks, NBFCs, payment banks, 
                   small finance banks and fintech companies strengthen cybersecurity, protect customer data and achieve regulatory 
                   compliance across India and South Asia. CERT-In empanelled and ISO 27001:2022 certified.
                 </p>
-                <p className="mt-4 lg:max-w-[460px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "1000ms" }}>
+                <p className="mt-4 lg:max-w-[540px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal" style={{ animationDelay: "1000ms" }}>
                   The Reserve Bank of India (RBI) expects regulated entities to run Information Security audits so that financial institutions stay resilient, 
                   secure and compliant. With online banking, payment gateways and digital wallets, cyber risk has never been higher. Our approach goes beyond 
                   checklists: we focus on real-world security effectiveness, with actionable insights that keep you ahead of cyber risks while meeting RBI guidelines.
                 </p>
 
-                <ul className="mt-8 grid grid-cols gap-y-4 ">
+                {/* <ul className="mt-8 grid grid-cols gap-y-4 ">
                   {[
                     "RBI Regulatory Alignment",
                     "Financial Data Protection",
@@ -544,10 +544,10 @@ function page() {
                       <span>{item}</span>
                     </motion.li>
                   ))}
-                </ul>
+                </ul> */}
 
                 {/* CTA */}
-                <div className="mt-10 text-center lg:text-left">
+                <div className="mt-6 text-center lg:text-left">
                   <Link href="/company/contact">
                   <button
                     type="button"

@@ -478,25 +478,25 @@ function page() {
         />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.9fr_1.25fr] lg:gap-5 xl:gap-8">
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1.25fr_1.15fr] lg:gap-8 xl:gap-12">
             <Animation>
-              <div className="flex flex-col justify-center lg:py-2 text-center md:text-left">
+              <div className="flex w-full min-w-0 flex-col justify-center text-center md:text-left lg:py-2">
                 {/* Eyebrow */}
                 <p className="text-[13px] sm:text-base font-semibold uppercase leading-7 text-[#7D70F0] text-center lg:text-left">
-                  CRITICAL INFRASTRUCTURE • CYBER RESILIENCE <br /> • RISK
+                  CRITICAL INFRASTRUCTURE • CYBER RESILIENCE • RISK
                   ASSESSMENT
                 </p>
 
                 {/* Heading */}
                 <h1
-                  className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal"
+                  className="mt-5 lg:max-w-[560px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal"
                   style={{ animationDelay: "500ms" }}
                 >
                   CICRA Audit Services in India: Critical Information & Cyber Risk Assessment
                 </h1>
 
                 <p
-                  className="mt-4 lg:max-w-[480px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
+                  className="mt-4 lg:max-w-[580px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
                   style={{ animationDelay: "750ms" }}
                 >
                   With regulators such as CERT-In, SEBI, IRDAI, MeitY and sectoral authorities placing growing emphasis on cybersecurity governance, 
@@ -507,7 +507,7 @@ function page() {
 
                 {/* Description */}
                 <p
-                  className="mt-4 lg:max-w-[460px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
+                  className="mt-4 lg:max-w-[540px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
                   style={{ animationDelay: "750ms" }}
                 >
                   ISECURION delivers industry-leading CICRA Audit Services in
@@ -516,7 +516,7 @@ function page() {
                   sensitive digital assets.
                 </p>
 
-                <ul className="mt-4 space-y-2">
+                {/* <ul className="mt-4 space-y-2">
                   <li
                     className="flex items-center justify-center lg:justify-start gap-2 text-xs text-[#D1D1D1] sm:text-[14px] animate-hero-reveal"
                     style={{ animationDelay: "950ms" }}
@@ -549,10 +549,10 @@ function page() {
                     />
                     Regulatory Aligned
                   </li>
-                </ul>
+                </ul> */}
 
                 {/* CTA */}
-                <div className="mt-10 text-center lg:text-left">
+                <div className="mt-6 text-center lg:text-left">
                   <Link href="/company/contact">
                   <button
                     type="button"

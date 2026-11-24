@@ -189,7 +189,7 @@ function page() {
         <div className="mx-auto max-w-7xl px-6 py-12 sm:py-16">
           {/* SECTION HEADER & OVERVIEW */}
           <Animation>
-            <div className="mt-14 text-center md:text-left">
+            <div className="text-center md:text-left">
               <p className="text-[14px] sm:text-base font-semibold uppercase leading-[18px] tracking-[0.2px] text-[#0F66EA] sm:text-[15px]">
                 OVERVIEW
               </p>

@@ -397,7 +397,7 @@ function AiAugamentedRedTeam() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong. Please try again.",
+        "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -409,14 +409,14 @@ function AiAugamentedRedTeam() {
       {/* this is the hero section  */}
       <section className="relative py-14  min-h-[calc(100dvh-110px)] 2xl:min-h-[70vh] flex items-center overflow-hidden bg-[#000000]">
         <div className="absolute top-0 left-30 w-[650px] h-[600px] blur-[140px] rounded-full pointer-events-none opacity-80 bg-[#E24B4A]/30 "></div>
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 flex gap-8 sm:gap-15 flex-col lg:flex-row">
+        <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-10 px-6 sm:px-10 lg:grid-cols-[1.15fr_1.25fr] lg:gap-10 xl:gap-14">
           {/* left  */}
           <div className="w-full lg:flex-1 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start">
             <p className="text-base font-semibold sectionheading text-[#E24B4A] ">
               RTaaS ADD-ON | AI THREAT READINESS | GLOBAL DELIVERY
             </p>
             <h1
-              className=" text-[#FFFFFF] animate-hero-reveal text-[36px]"
+              className=" text-[#FFFFFF] animate-hero-reveal text-[26px] sm:text-[36px]"
               style={{ animationDelay: "600ms" }}
             >
               AI-Augmented Red Team Services: Testing AI as the Target, the Weapon, and the Attack Surface, Worldwide
@@ -427,7 +427,7 @@ function AiAugamentedRedTeam() {
                 className="text-base sm:text-[17px] font-medium leading-[26px] sm:leading-[32px]  text-[#D1D1D1] animate-hero-reveal"
                 style={{ animationDelay: "750ms" }}
               >
-                ISECURION's AI-Augmented Red Team goes beyond traditional network and human-focused red teaming to test the attack paths that matter now: AI supply chain compromise, LLM and agent exploitation, deepfake-driven social engineering, and AI-accelerated reconnaissance. Delivered by CERT-In empanelled red team specialists with dedicated AI/ML security expertise to enterprises across the United States, United Kingdom, Europe, the GCC, Singapore, Australia, and India, 
+                ISECURION's AI-Augmented Red Team goes beyond traditional network and human-focused red teaming to test the attack paths that matter now: AI supply chain compromise, LLM and agent exploitation, deepfake-driven social engineering, and AI-accelerated reconnaissance. Delivered by CERT-In empanelled red team specialists with dedicated AI/ML security expertise to enterprises across the United States, United Kingdom, Europe, the GCC, Singapore, Australia, and India,
                 remotely or on-site. Available as a standalone engagement or as an add-on module to your existing VAPT/RTaaS retainer..
               </p>
               <p
@@ -447,12 +447,12 @@ function AiAugamentedRedTeam() {
             </p>
             <div className="flex gap-4">
               <Link href="/company/contact">
-              <button className="text-[15px] font-medium px-4 py-3 flex items-center gap-3 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]">
-                Get AI Red Team Quote{" "}
-                <span>
-                  <Icon icon="akar-icons:arrow-right" />
-                </span>
-              </button>
+                <button className="text-[15px] font-medium px-4 py-3 flex items-center gap-3 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]">
+                  Get AI Red Team Quote{" "}
+                  <span>
+                    <Icon icon="akar-icons:arrow-right" />
+                  </span>
+                </button>
               </Link>
               <Link href="tel:+918861201570" target="_blank">
                 <button
@@ -469,7 +469,7 @@ function AiAugamentedRedTeam() {
             </div>
           </div>
           {/* right  */}
-          <div className="w-full lg:flex-1 rounded-3xl  px-7 py-8 bg-[#202123]">
+          <div className="w-full min-w-0 h-fit self-start rounded-3xl px-5 py-6 sm:px-7 sm:py-8 bg-[#202123]">
             <div className="space-y-1">
               <h3 className="text-base sm:text-lg font-semibold text-[#FFFFFF]">
                 Request AI-Augmented Red Team Consultation
@@ -482,7 +482,7 @@ function AiAugamentedRedTeam() {
             <div className="mt-5">
               <form className="space-y-4" onSubmit={handleSubmit(submit)}>
                 {/* work email + org name  */}
-                <div className="flex flex-col sm:flex-row gap-5 ">
+                <div className="flex w-full min-w-0 flex-col gap-2">
                   <div className="flex flex-col gap-2 w-full">
                     <label
                       htmlFor=""
@@ -528,7 +528,7 @@ function AiAugamentedRedTeam() {
                   </div>
                 </div>
                 {/* phone number +country  */}
-                <div className="flex flex-col sm:flex-row gap-5 ">
+                <div className="flex w-full min-w-0 flex-col gap-2">
                   <div className="flex flex-col gap-2 w-full">
                     <label
                       htmlFor=""
@@ -592,7 +592,7 @@ function AiAugamentedRedTeam() {
                   </div>
                 </div>
                 {/* Ai foot print  */}
-                <div className="flex flex-col sm:flex-row ">
+                <div className="flex w-full min-w-0 flex-col gap-2">
                   <div className="flex flex-col gap-2 w-full">
                     <label
                       htmlFor=""
@@ -637,14 +637,19 @@ function AiAugamentedRedTeam() {
                     )}
                   </div>
                 </div>
-                <div className="max-w-[300px] overflow-hidden flex flex-col gap-2">
-                  <Turnstile
-                    ref={turnstileRef}
-                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                    onSuccess={(token) => setTurnstileToken(token)}
-                    onExpire={() => setTurnstileToken("")}
-                    onError={() => setTurnstileToken("")}
-                  />
+                {/* Captcha */}
+                <div className="mt-7">
+                  <div className="flex items-center gap-3">
+                    <p className="text-sm font-medium text-white">Captcha</p>
+
+                    <Turnstile
+                      ref={turnstileRef}
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                      onSuccess={(token) => setTurnstileToken(token)}
+                      onExpire={() => setTurnstileToken("")}
+                      onError={() => setTurnstileToken("")}
+                    />
+                  </div>
                 </div>
                 <div className="flex gap-5">
                   <input
@@ -689,15 +694,15 @@ function AiAugamentedRedTeam() {
               ></WordReveal>
               <div className="space-y-4 flex flex-col items-center lg:items-start">
                 <p className="sectionDescription text-[#D1D1D1]">
-                  Traditional red team engagements test human and network attack paths: phishing, network pivoting, physical access. 
-                  AI systems introduce new ones: malicious model or dataset references injected into ML pipelines, prompt injection against 
-                  LLM-powered products, agents with tool-calling access steered into unintended actions, and AI-cloned voices used to bypass financial approval controls. 
+                  Traditional red team engagements test human and network attack paths: phishing, network pivoting, physical access.
+                  AI systems introduce new ones: malicious model or dataset references injected into ML pipelines, prompt injection against
+                  LLM-powered products, agents with tool-calling access steered into unintended actions, and AI-cloned voices used to bypass financial approval controls.
                   These risks apply equally to enterprises in New York, London, Frankfurt, Dubai, Singapore, Sydney, or Bangalore.
                 </p>
                 <p className="sectionDescription text-[#D1D1D1]">
-                  Each of the four modules combines functional testing of guardrails, approval gates, and detection pipelines 
-                  with hands-on attack simulation, so you learn not just whether an attack is possible, but whether your controls actually catch it. 
-                  Engagements are scoped to local regulatory requirements: GDPR in Europe, DPDP in India, 
+                  Each of the four modules combines functional testing of guardrails, approval gates, and detection pipelines
+                  with hands-on attack simulation, so you learn not just whether an attack is possible, but whether your controls actually catch it.
+                  Engagements are scoped to local regulatory requirements: GDPR in Europe, DPDP in India,
                   and equivalent frameworks in the GCC, Singapore, and Australia.{""}
                 </p>
                 <div className="mt-2 h-[3px] w-[104px] rounded-[3px] bg-[#E24B4A]"></div>
@@ -841,7 +846,7 @@ function AiAugamentedRedTeam() {
                     <p className="text-xs font-medium h-[30px] mt-4 leading-[20px] uppercase text-[#0F66EA]">
                       {item.subtitle}
                     </p>
-                    <p className="text-xs font-normal mt-7 h-[230px] leading-[21px]  text-[#D1D1D1D6]">
+                    <p className="text-xs font-normal mt-7 lg:h-[230px] leading-[21px]  text-[#D1D1D1D6]">
                       {item.description}
                     </p>
                     <div className="h-[3px] w-[64px] mt-4 mb-4 rounded-[3px] bg-[#4E4E4E]"></div>
@@ -912,9 +917,8 @@ function AiAugamentedRedTeam() {
                   ].map((title, i) => (
                     <div
                       key={title}
-                      className={`bg-[#071329] border border-white/20 px-4 py-3 text-[13px] font-medium text-[#E5E5E5] ${
-                        i === 3 ? "text-center" : ""
-                      }`}
+                      className={`bg-[#071329] border border-white/20 px-4 py-3 text-[13px] font-medium text-[#E5E5E5] ${i === 3 ? "text-center" : ""
+                        }`}
                     >
                       {title}
                     </div>

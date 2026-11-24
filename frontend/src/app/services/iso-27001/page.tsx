@@ -388,7 +388,7 @@ function Iso27001() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong. Please try again.",
+        "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -419,7 +419,7 @@ function Iso27001() {
               className="text-base sm:text-lg font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] opacity-0 animate-hero-reveal max-w-[540px]"
               style={{ animationDelay: "450ms" }}
             >
-              India's trusted ISO 27001 consultants. We guide you from ISMS scoping and gap analysis through risk treatment, documentation, internal audit and certification, so you protect sensitive data, satisfy enterprise buyers and comply with RBI, SEBI, DPDP and global regulations. Serving clients in 
+              India's trusted ISO 27001 consultants. We guide you from ISMS scoping and gap analysis through risk treatment, documentation, internal audit and certification, so you protect sensitive data, satisfy enterprise buyers and comply with RBI, SEBI, DPDP and global regulations. Serving clients in
               Bengaluru, Mumbai, Delhi, Hyderabad, Chennai, Pune and Kolkata, and internationally across the USA, UK, EU, UAE, GCC, Singapore and Australia.
             </p>
             {/* <Link href="/company/contact">
@@ -452,7 +452,7 @@ function Iso27001() {
             </div>
           </div>
           {/* right  */}
-          <div className="flex-1 px-6 py-4 rounded-[23px] bg-[#202123]">
+          <div className="flex-1 px-6 py-8 rounded-[23px] bg-[#202123]">
             <div className="space-y-2">
               <h3 className="text-base sm:text-lg font-semibold text-[#FFFFFF]">
                 Get a Free ISO 27001 Gap Snapshot
@@ -463,7 +463,7 @@ function Iso27001() {
             </div>
             <form
               action=""
-              className="mt-4 space-y-3"
+              className="mt-4 space-y-4"
               onSubmit={handleSubmit(submit)}
             >
               {/* email+company name  */}
@@ -591,9 +591,11 @@ function Iso27001() {
                   </p>
                 )}
               </div>
-              {/* captcha  */}
-              <div className="">
-                <div className="flex flex-col  gap-3">
+              {/* Captcha */}
+              <div className="mt-7">
+                <div className="flex items-center gap-3">
+                  <p className="text-sm font-medium text-white">Captcha</p>
+
                   <Turnstile
                     ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
@@ -619,7 +621,7 @@ function Iso27001() {
               </div>
               <button
                 type="submit"
-                className={`w-full text-sm sm:text-base font-semibold flex items-center justify-center py-2.5 gap-2 rounded-[10px]  text-[#FFFFFF] border-2 border-[#00000000] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                className={`mt-6 w-full text-sm sm:text-base font-semibold flex items-center justify-center py-2.5 gap-2 rounded-[10px]  text-[#FFFFFF] border-2 border-[#00000000] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
               >
                 Get My Free Gap Snapshot{" "}
                 <span>
@@ -657,7 +659,7 @@ function Iso27001() {
                     improving an Information Security Management System.
                   </p>
                   <p className="sectionDescription text-[#D1D1D1]">
-                    ISO/IEC 27001:2022 is the international standard for Information Security Management Systems (ISMS), published by the International Organization for Standardization. 
+                    ISO/IEC 27001:2022 is the international standard for Information Security Management Systems (ISMS), published by the International Organization for Standardization.
                     The 2022 edition introduced 11 new controls and reduced the Annex A control set from 114 to 93 controls across four themes.
                   </p>
                   <p className="sectionDescription text-[#D1D1D1]">
@@ -901,11 +903,10 @@ function Iso27001() {
 
                     {/* Left card */}
                     <div
-                      className={`col-start-2 flex flex-col ${
-                        isLeft
+                      className={`col-start-2 flex flex-col ${isLeft
                           ? "items-start pl-0 text-left sm:col-start-1 sm:items-end sm:pr-10 sm:text-right"
                           : "hidden sm:col-start-1 sm:block sm:invisible"
-                      }`}
+                        }`}
                     >
                       {isLeft && (
                         <div className="space-y-3">
@@ -926,11 +927,10 @@ function Iso27001() {
 
                     {/* Right card */}
                     <div
-                      className={`col-start-2 flex flex-col justify-start ${
-                        !isLeft
+                      className={`col-start-2 flex flex-col justify-start ${!isLeft
                           ? "items-start pl-0 text-left sm:col-start-2 sm:pl-10"
                           : "hidden sm:col-start-2 sm:block sm:invisible"
-                      }`}
+                        }`}
                     >
                       {!isLeft && (
                         <div className="space-y-3">

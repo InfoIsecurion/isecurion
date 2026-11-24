@@ -116,7 +116,7 @@ function page() {
         <div className="absolute inset-0 bg-[#07101D]/10" />
 
         <div
-          className="relative z-10 mx-auto flex min-h-[610px] max-w-7xl items-center px-6 py-16 sm:px-8 md:min-h-[560px] md:px-10
+          className="relative z-10 mx-auto flex min-h-[500px] max-w-7xl items-center px-6 py-16 sm:px-8 md:min-h-[560px] md:px-10
                     lg:min-h-[560px] lg:px-[26px] lg:py-[50px]"
         >
           <Animation>
@@ -172,7 +172,7 @@ function page() {
             <div className="grid grid-cols-1 items-start gap-10 md:gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 xl:gap-16">
 
               {/* LEFT COLUMN: OVERVIEW */}
-              <div className="min-w-0">
+              <div className="min-w-0 text-center sm:text-left">
                 <p className="text-[14px] font-semibold uppercase leading-[18px] tracking-[0.2px] text-[#0F66EA] sm:text-[15px]">
                   OVERVIEW
                 </p>

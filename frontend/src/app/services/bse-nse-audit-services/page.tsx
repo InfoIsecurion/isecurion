@@ -535,7 +535,7 @@ function page() {
         />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl  px-6 sm:px-10">
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.9fr_1.25fr] lg:gap-5 xl:gap-8">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.25fr_1.25fr] lg:gap-5 xl:gap-8">
             <Animation>
               <div className="flex flex-col justify-center lg:py-2 text-center md:text-left">
                 {/* Eyebrow */}
@@ -545,7 +545,7 @@ function page() {
 
                 {/* Heading */}
                 <h1
-                  className="mt-5 lg:max-w-[500px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal"
+                  className="mt-5 lg:max-w-[540px] font-semibold leading-[1.4] tracking-[-0.02em] text-white text-center lg:text-left animate-hero-reveal"
                   style={{ animationDelay: "800ms" }}
                 >
                   BSE / NSE Audit Services in India: SEBI-Compliant IT & Cyber Security Audits
@@ -553,7 +553,7 @@ function page() {
 
                 {/* Description */}
                 <p
-                  className="mt-4 lg:max-w-[410px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
+                  className="mt-4 lg:max-w-[540px] text-[15px] leading-[1.8] text-[#D9D9D9] sm:text-[16px] text-center lg:text-left animate-hero-reveal"
                   style={{ animationDelay: "1000ms" }}
                 >
                   Comprehensive regulatory compliance audits for stock brokers, trading members, depository participants, mutual funds and capital market entities. 

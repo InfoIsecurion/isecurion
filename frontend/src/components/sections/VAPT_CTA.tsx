@@ -24,11 +24,6 @@ function VAPT_CTA() {
                 <span><Icon icon="ep:right" width={20}/> </span>
               </button>
               </Link>
-
-              <button className="flex flex-row gap-3 cursor-pointer items-center justify-center rounded-lg border border-[#D8E4EF] bg-white px-5 py-3 text-base font-semibold text-[#31435C]">
-                <span><Icon icon="boxicons:message-bubble-dots" width={20}/></span>
-                WhatsApp Us
-              </button>
             </div>
           </div>
 

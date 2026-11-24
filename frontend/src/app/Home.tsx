@@ -139,7 +139,7 @@ const ourExpertise = [
       },
       { title: "In-House SOC", link: "/services/inhouse-soc" },
       { title: "Hybrid SOC", link: "/services/hybrid-soc" },
-      { title: "Incident Response & DFIR", link: "/services/" },
+      // { title: "Incident Response & DFIR", link: "/services/" }
     ],
     iconColor: "text-white",
     bgColor: "#001233",
@@ -160,12 +160,18 @@ const ourExpertise = [
         title: "Cloud Security Assessment",
         link: "/services/cloud-security-assessment",
       },
-      { title: "Configuration Review", link: "/services/config-review" },
+      {
+        title: "Configuration Review",
+        link: "/services/cloud-security-assessment",
+      },
       {
         title: "Network & Infrastructure Penetration Testing",
-        link: "/services/",
+        link: "/services/vulnerability-assessment-penetration-testing",
       },
-      { title: "Infrastructure Hardening", link: "/services/infrastructure" },
+      {
+        title: "Infrastructure Hardening",
+        link: "/services/cloud-security-assessment",
+      },
     ],
     iconColor: "text-white",
     bgColor: "#00031C",
@@ -182,14 +188,14 @@ const ourExpertise = [
     description:
       "Align with Indian and global regulations through audits, advisory and governance frameworks.",
     services: [
-      { title: "ISO 27001 27001:2022", link: "/services/iso27001" },
+      { title: "ISO 27001 27001:2022", link: "/services/iso-27001" },
       { title: "SOC 2 Compliance", link: "/services/soc-2-compliance" },
       { title: "DPDP Act, 2023 & GDPR", link: "/services/dpdp-compliance" },
       {
         title: "RBI Information Security Audit",
         link: "/services/rbi-security-audit",
       },
-      { title: "UAE VASP Compliance", link: "/services/" },
+      // { title: "UAE VASP Compliance", link: "/services/" },
     ],
     iconColor: "text-white",
     bgColor: "#00031C",
@@ -208,8 +214,8 @@ const ourExpertise = [
     services: [
       { title: "Virtual CISO", link: "/services/vciso" },
       { title: "DPO Services", link: "/services/outsourced-dpo" },
-      { title: "Security Roadmaps", link: "/services/security-roadmaps" },
-      { title: "Risk Management", link: "/services/risk-management" },
+      { title: "Security Roadmaps", link: "/services/vciso" },
+      { title: "Risk Management", link: "/services/vciso" },
     ],
     iconColor: "text-white",
     bgColor: "#001233",
@@ -226,10 +232,16 @@ const ourExpertise = [
     description:
       "Test employee awareness with real-world phishing simulation, powered by our Drosera -Phishing simulation platform.",
     services: [
-      { title: "Security Awareness Training", link: "/services/security" },
+      {
+        title: "Security Awareness Training",
+        link: " https://drosera.ai/security-awareness",
+      },
       { title: "Phishing Simulations", link: "/services/phishing-simulation" },
-      { title: "Human Risk Assessment", link: "/services/risk-assessment" },
-      { title: "Cybersecurity Workshops", link: "/services/cybersecurity" },
+      { title: "Human Risk Assessment", link: "/services/phishing-simulation" },
+      {
+        title: "Cybersecurity Workshops",
+        link: "https://drosera.ai/security-awareness-lms ",
+      },
     ],
     iconColor: "text-white",
     bgColor: "#88010045",
@@ -439,6 +451,16 @@ const homeFAQs = [
       "ISECURION supports a comprehensive range of compliance frameworks: SOC 2, ISO 27001:2022, GDPR, India's DPDP Act, RBI Information Security Audit, IRDA Audit, SEBI CSCRF and Market SOC (MSOC), AADHAR/UIDAI Audit, DORA Compliance (EU), FIU-IND for Crypto and Virtual Digital Assets, UAE VASP Compliance, ISO 42001 (AI Management Systems), BSE/NSE Audit, ILDC, CICRA, and UPI Compliance Audit.",
   },
   {
+    question: "What compliance frameworks does ISECURION support?",
+    answer:
+      "ISECURION supports a comprehensive range of compliance frameworks: SOC 2, ISO 27001:2022, GDPR, India's DPDP Act, RBI Information Security Audit, IRDA Audit, SEBI CSCRF and Market SOC (MSOC), AADHAR/UIDAI Audit, DORA Compliance (EU), FIU-IND for Crypto and Virtual Digital Assets, UAE VASP Compliance, ISO 42001 (AI Management Systems), BSE/NSE Audit, ILDC, CICRA, and UPI Compliance Audit.",
+  },
+  {
+    question: "Does ISECURION provide 24x7 SOC and managed security services?",
+    answer:
+      "Yes. ISECURION offers Managed Security Services (MSSP), In-House SOC and Hybrid SOC services, providing round-the-clock monitoring, threat detection and incident response so that attacks can be detected, contained and remediated quickly.",
+  },
+  {
     question: "Does ISECURION provide 24x7 SOC and managed security services?",
     answer:
       "Yes. ISECURION offers Managed Security Services (MSSP), In-House SOC and Hybrid SOC services, providing round-the-clock monitoring, threat detection and incident response so that attacks can be detected, contained and remediated quickly.",
@@ -449,9 +471,24 @@ const homeFAQs = [
       "Yes. ISECURION delivers cybersecurity services globally. We have an office in Schaumburg, Illinois, USA, and regularly serve clients in the United Kingdom, the European Union, the UAE, Qatar, Singapore, Australia, Saudi Arabia, Kuwait, Bahrain, and Oman. Remote assessments and on-site engagements are both available for international clients.",
   },
   {
+    question: "Does ISECURION offer cybersecurity services outside India?",
+    answer:
+      "Yes. ISECURION delivers cybersecurity services globally. We have an office in Schaumburg, Illinois, USA, and regularly serve clients in the United Kingdom, the European Union, the UAE, Qatar, Singapore, Australia, Saudi Arabia, Kuwait, Bahrain, and Oman. Remote assessments and on-site engagements are both available for international clients.",
+  },
+  {
     question: "Where are ISECURION's offices and how can I contact the team?",
     answer:
       "ISECURION's corporate office is in Bengaluru, with offices in Kolkata, Mumbai, Ahmedabad and Noida in India, and in Schaumburg, Illinois in the United States. To contact the team, email info@isecurion.com or call +91 88612 01570.",
+  },
+  {
+    question: "Where are ISECURION's offices and how can I contact the team?",
+    answer:
+      "ISECURION's corporate office is in Bengaluru, with offices in Kolkata, Mumbai, Ahmedabad and Noida in India, and in Schaumburg, Illinois in the United States. To contact the team, email info@isecurion.com or call +91 88612 01570.",
+  },
+  {
+    question: "What is Vulnytics and how does it help my security team?",
+    answer:
+      "Vulnytics is ISECURION's proprietary vulnerability management platform. It aggregates findings from penetration tests, automated scanners, and bug bounty programs into a single workspace, enabling security and development teams to assign tasks, track remediation progress, and generate executive and technical reports. It is purpose-built for enterprises, startups, and MSSPs that want to streamline their entire vulnerability lifecycle. ",
   },
   {
     question: "What is Vulnytics and how does it help my security team?",
@@ -484,13 +521,13 @@ export default function Home() {
     <div className="w-full bg-[#060D1B]">
       {/* this is the hero section  */}
       <section
-        className="w-full xl:h-[80vh] 2xl:h-[70vh] flex items-center py-14 bg-cover bg-center"
+        className="w-full xl:h-[70vh] 2xl:h-[80vh] flex items-center py-14 bg-cover bg-center"
         style={{ backgroundImage: `url(${herobackground.src})` }}
       >
         <div className="max-w-7xl w-full mx-auto px-6 sm:px-10">
           <div className="space-y-5 text-center lg:text-left">
             <p
-              className="pt-14 text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading animate-hero-reveal uppercase"
+              className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading animate-hero-reveal uppercase"
               style={{ animationDelay: "150ms" }}
             >
               Build for Trust. Designed for Cyber Resilience.
@@ -547,6 +584,8 @@ export default function Home() {
       </section>
 
       {/* STATS SECTION */}
+
+      {/* STATS SECTION */}
       <section className="w-full bg-[#01060E] shadow-[0_0_45px_rgba(15,102,234,0.20)]">
         <div className="max-w-7xl mx-auto">
           <div className="px-6 py-10 sm:px-10">
@@ -559,11 +598,11 @@ export default function Home() {
                       50+
                     </p>
 
-                    <p className="mt-1 min-h-[56px] text-base sm:text-lg font-medium leading-7 text-[#8E8E8E]">
+                    <p className="mt-1 lg:min-h-[56px] text-base sm:text-lg font-medium leading-7 text-[#8E8E8E]">
                       Enterprise Customers
                     </p>
 
-                    <p className="min-h-[54px] text-sm sm:text-base font-medium leading-7 text-white">
+                    <p className="lg:min-h-[54px] text-sm sm:text-base font-medium leading-7 text-white">
                       Trusted by organizations across sectors
                     </p>
                   </div>
@@ -581,11 +620,11 @@ export default function Home() {
                       1K+
                     </p>
 
-                    <p className="mt-1 min-h-[56px] text-base sm:text-lg font-medium leading-7 text-[#999999]">
+                    <p className="mt-1 lg:min-h-[56px] text-base sm:text-lg font-medium leading-7 text-[#999999]">
                       Projects Completed
                     </p>
 
-                    <p className="min-h-[54px] text-sm sm:text-base font-medium leading-7 text-white">
+                    <p className="lg:min-h-[54px] text-sm sm:text-base font-medium leading-7 text-white">
                       Across VAPT, cloud and compliance
                     </p>
                   </div>
@@ -603,11 +642,11 @@ export default function Home() {
                       15+
                     </p>
 
-                    <p className="mt-1 min-h-[56px] text-base sm:text-lg font-medium leading-7 text-[#999999]">
+                    <p className="mt-1 lg:min-h-[56px] text-base sm:text-lg font-medium leading-7 text-[#999999]">
                       Years of Cybersecurity Excellence
                     </p>
 
-                    <p className="min-h-[54px] text-sm sm:text-base font-medium leading-7 text-white">
+                    <p className="lg:min-h-[54px] text-sm sm:text-base font-medium leading-7 text-white">
                       Proven track record
                     </p>
                   </div>
@@ -625,11 +664,11 @@ export default function Home() {
                       500+
                     </p>
 
-                    <p className="mt-1 min-h-[56px] text-base sm:text-lg font-medium leading-7 text-[#999999]">
+                    <p className="mt-1 lg:min-h-[56px] text-base sm:text-lg font-medium leading-7 text-[#999999]">
                       Start-up Companies
                     </p>
 
-                    <p className="min-h-[54px] text-sm sm:text-base font-medium leading-7 text-white">
+                    <p className="lg:min-h-[54px] text-sm sm:text-base font-medium leading-7 text-white">
                       Long-term partnerships built on trust
                     </p>
                   </div>
@@ -1308,14 +1347,14 @@ export default function Home() {
       <IndustriesWeSecure />
 
       <section className="relative w-full overflow-hidden bg-[#060D1B]">
-        <div className="relative mx-auto flex min-h-[550px] max-w-7xl flex-col justify-center px-6 xl:px-2 py-10 sm:px-10 lg:min-h-[600px] lg:pb-20 lg:pt-30">
+        <div className="relative mx-auto flex min-h-[550px] max-w-7xl flex-col justify-center px-6 py-10 sm:px-10 lg:min-h-[600px] lg:py-20 xl:px-2">
           {/* Left Content */}
-          <div className="relative z-20 w-full lg:w-[43%]">
-            <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
+          <div className="relative z-20 w-full lg:w-[45%] xl:w-[43%]">
+            <p className="text-sm font-semibold text-[#0F66EA] sm:text-base">
               GLOBAL PRESENCE
             </p>
 
-            <h2 className="mt-5 text-2xl font-medium lg:leading-12 text-white sm:text-3xl lg:text-[40px]">
+            <h2 className="mt-5 text-2xl font-medium leading-tight text-white sm:text-3xl lg:text-3xl xl:text-[40px] xl:leading-[1.2]">
               Cybersecurity expertise
               <br />
               across the industries that matter.
@@ -1329,7 +1368,7 @@ export default function Home() {
             </p>
 
             {/* Country Tabs */}
-            <div className="mt-6 flex w-full min-w-0 items-center gap-2 overflow-x-auto whitespace-nowrap pb-1 scrollbar-hide sm:gap-3 lg:overflow-visible lg:gap-2">
+            <div className="mt-6 flex w-full min-w-0 items-center gap-2 overflow-x-auto whitespace-nowrap pb-2 scrollbar-hide sm:gap-3 lg:max-w-full lg:gap-2">
               {/* India - Active Country */}
               <div className="flex shrink-0 items-center gap-2 rounded-full bg-[#F1F5FF] px-3 py-2 text-sm font-medium text-[#111827]">
                 <span className="relative flex h-3 w-3 items-center justify-center">
@@ -1352,7 +1391,7 @@ export default function Home() {
                 "GCC",
               ].map((country, index) => (
                 <React.Fragment key={country}>
-                  <span className="shrink-0 text-sm sm:text-base font-medium text-[#D1D1D1]">
+                  <span className="shrink-0 text-sm font-medium text-[#D1D1D1] sm:text-base">
                     {country}
                   </span>
 
@@ -1365,12 +1404,13 @@ export default function Home() {
           </div>
 
           {/* Right Map + Markers */}
-          <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden lg:absolute lg:right-0 lg:top-0 lg:mt-0 lg:h-full lg:w-[72%] lg:aspect-auto">
+          <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden lg:absolute lg:right-0 lg:top-0 lg:mt-0 lg:h-full lg:w-[62%] lg:aspect-auto xl:w-[68%]">
             <Image
               src={mapBackground}
               alt="Global presence map"
               fill
               priority
+              sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 62vw, 68vw"
               className="object-contain object-center"
             />
 
@@ -1386,6 +1426,11 @@ export default function Home() {
                       ? "h-3.5 w-3.5 bg-[#2563EB] shadow-[0_0_12px_5px_#2563EB80]"
                       : "h-2.5 w-2.5 bg-[#EF5350] shadow-[0_0_8px_3px_#EF535080]"
                   }`}
+                  // className={`block rounded-full ${
+                  //   marker.type === "blue"
+                  //     ? "h-3.5 w-3.5 bg-[#2563EB] shadow-[0_0_12px_5px_#2563EB80]"
+                  //     : "h-2.5 w-2.5 bg-[#EF5350] shadow-[0_0_8px_3px_#EF535080]"
+                  // }`}
                 />
               </div>
             ))}

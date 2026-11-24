@@ -202,17 +202,17 @@ function CloudSecurity() {
           {/* heading  */}
           <div className="space-y-4">
             <Animation>
-              <div className="space-y-4 text-center lg:text-left">
-                <h2 className=" text-[#FEFEFE]">
+              <div className="space-y-4 ">
+                <h2 className=" text-[#FEFEFE] text-center lg:text-left">
                   What Is Cloud Security Assessment?
                 </h2>
-                <p className="sectionDescription lg:max-w-xl  text-[#D1D1D1]">
+                <p className="sectionDescription lg:max-w-xl  text-[#D1D1D1] text-center lg:text-left">
                   A Cloud Security Assessment is a structured evaluation of your
                   cloud infrastructure, configurations, identities,
                   applications, and security controls to identify
                   vulnerabilities and compliance gaps.
                 </p>
-                <p className="sectionDescription lg:max-w-xl  text-[#D1D1D1]">
+                <p className="sectionDescription lg:max-w-xl  text-[#D1D1D1] text-center lg:text-left">
                   Cloud adoption accelerates digital transformation, but it introduces risks including misconfigurations, insecure APIs, and compliance gaps. ISECURION's Cloud
                   Security Assessment keeps your cloud infrastructure secure, resilient, and compliant with standards such as ISO 27001, HIPAA, and PCI DSS.
                 </p>
@@ -232,7 +232,7 @@ function CloudSecurity() {
                     </li>
                   ))}
                 </ul>
-                <p className="sectionDescription lg:max-w-xl  text-[#D1D1D1]">
+                <p className="sectionDescription lg:max-w-xl  text-[#D1D1D1] text-center lg:text-left">
                   At ISECURION, we assess{" "}
                   <span className="font-semibold">
                     IaaS, PaaS, and SaaS environments

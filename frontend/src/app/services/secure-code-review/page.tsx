@@ -295,7 +295,7 @@ function SecureCode() {
       </section>
 
       {/* Secure Code Review Methodology  */}
-      <section className="relative w-full pt-14 pb-40 overflow-hidden bg-[#060D1B]">
+      <section className="relative w-full pt-14 lg:pb-40 overflow-hidden bg-[#060D1B]">
         <div className="absolute top-0 left-[10%] w-[80%] h-[400px] blur-3xl rounded-full pointer-events-none opacity-70 bg-[#FFA8262E]"></div>
         <div className="max-w-7xl mx-auto px-6 sm:px-10 sm:py-8">
           {/* this is the heading  */}

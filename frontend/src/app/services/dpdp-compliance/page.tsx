@@ -640,7 +640,7 @@ function DpdpCompliance() {
     <div className="bg-[#060D1B]">
       {/* hero section  */}
       <section className="relative w-full min-h-[80vh] flex items-center py-14 overflow-hidden bg-[#000000]">
-        <div className="relative max-w-7xl mx-auto px-6 sm:px-10 flex flex-col lg:flex-row items-center gap-15">
+        <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-start gap-10 px-6 sm:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 xl:gap-14">
           <div className="absolute left-10 w-[500px] h-[500px] blur-[120px] rounded-full bg-[#3B9E6A45]"></div>
           {/* left  */}
           <div className="flex-1 space-y-4 text-center lg:text-left">
@@ -669,7 +669,16 @@ function DpdpCompliance() {
               security gaps, hardening data systems, and meeting DPDP's
               technical obligations before the main obligations take effect in
               May 2027. VAPT of personal data systems is delivered by a CREST
-              Member, accredited for Penetration Testing.
+              Member, accredited for Penetration Testing. The Digital Personal
+              Data Protection Act 2023 requires every Data Fiduciary to
+              implement reasonable security safeguards to protect personal data,
+              and failure to do so can attract penalties of up to ₹250 crore. As
+              a CERT-In empanelled cybersecurity company, ISECURION delivers
+              complete DPDP compliance in India: identifying security gaps,
+              hardening data systems, and meeting DPDP's technical obligations
+              before the main obligations take effect in May 2027. VAPT of
+              personal data systems is delivered by a CREST Member, accredited
+              for Penetration Testing.
             </p>
             <p
               className="text-base sm:text-[17px] font-medium leading-[26px] md:leading-[28px] text-[#D1D1D1] opacity-0 animate-hero-reveal"
@@ -680,7 +689,7 @@ function DpdpCompliance() {
               hardening data systems, and meeting DPDP's technical obligations -
               before enforcement hits.
             </p>
-            {/* <Link href="/company/contact">
+            <Link href="/company/contact">
               <button
                 className="mx-auto lg:mx-0 flex items-center px-4 py-3 mt-5 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF] opacity-0 animate-hero-reveal"
                 style={{ animationDelay: "650ms" }}
@@ -690,10 +699,10 @@ function DpdpCompliance() {
                   <Icon icon="akar-icons:arrow-right" />
                 </span>
               </button>
-            </Link> */}
+            </Link>
           </div>
           {/* right  */}
-          <div className="w-full lg:flex-1  px-10 py-8 rounded-[23px] bg-[#202123]">
+          <div className="w-full min-w-0 h-fit self-start rounded-3xl px-5 py-6 sm:px-7 sm:py-8 bg-[#202123]">
             <div className="space-y-2">
               <h3 className="text-base sm:text-lg font-semibold text-[#FFFFFF]">
                 Request a Free DPDP Security Gap Assessment
@@ -704,7 +713,7 @@ function DpdpCompliance() {
             </div>
             <form className="mt-4 space-y-3" onSubmit={handleSubmit(submit)}>
               {/* email+company name  */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex w-full min-w-0 flex-col gap-4">
                 <div className="w-full flex flex-col gap-2">
                   <label
                     htmlFor=""
@@ -741,7 +750,7 @@ function DpdpCompliance() {
               </div>
 
               {/* industry  */}
-              <div className="w-full flex flex-col gap-2">
+              <div className="mt-4 w-full flex flex-col gap-2">
                 <label
                   htmlFor=""
                   className="text-sm font-normal text-[#FEFEFE]"
@@ -770,9 +779,11 @@ function DpdpCompliance() {
                   <option value="Other">Other</option>
                 </select>
               </div>
-              {/* captcha  */}
-              <div className="">
+              {/* Captcha */}
+              <div className="mt-7">
                 <div className="flex items-center gap-3">
+                  <p className="text-sm font-medium text-white">Captcha</p>
+
                   <Turnstile
                     ref={turnstileRef}
                     siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
@@ -788,7 +799,7 @@ function DpdpCompliance() {
                   type="checkbox"
                   className="rounded-[23px] border-[1.4px] border-[#D1D1D1]"
                 />{" "}
-                <p className="text-xs font-medium text-[#D1D1D1]">
+                <p className="mt-4 text-xs font-medium text-[#D1D1D1]">
                   By clicking submit below, you agree to our Terms of Use and
                   Privacy Policy. Additionally, you consent to allow ISECURION
                   Technology & Consulting Pvt. Ltd. to store and process the
@@ -798,7 +809,7 @@ function DpdpCompliance() {
               </div>
               <button
                 type="submit"
-                className={`w-full text-base font-semibold flex items-center justify-center py-2.5 gap-2 rounded-[10px] text-[#FFFFFF] border-2 border-[#00000000] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                className={`mt-8 w-full text-base font-semibold flex items-center justify-center py-2.5 gap-2 rounded-[10px] text-[#FFFFFF] border-2 border-[#00000000] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
               >
                 Get My Free Gap Assessment{" "}
                 <span>
@@ -1249,7 +1260,6 @@ function DpdpCompliance() {
 
                         {/* Arrow button inside the notch */}
                         <a
-                          href={item.button}
                           aria-label={`View ${item.heading}`}
                           className="absolute right-0 top-0 z-20 flex h-[66px] w-[66px] items-center justify-center rounded-xl bg-[#0F66EA] text-2xl text-white transition-colors group hover:bg-[#000000]"
                         >

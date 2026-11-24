@@ -117,19 +117,19 @@ const whoNeedsCiso = [
     description:
       "Organisations between hires, facing 3-6 month hiring cycles, needing interim leadership with zero knowledge gap.",
   },
-    {
+  {
     Icon: "garden:security-26",
     heading: "Global Clients Requiring Security",
     description:
       "Organisations receiving RFPs, security questionnaires or customer-mandated security reviews from US, EU or APAC enterprises.",
   },
-    {
+  {
     Icon: "energy-icons:post-office-48-bold",
     heading: "Post-Incident Recovery",
     description:
       "Organisations recovering from a cyber incident that need leadership to rebuild governance and prevent recurrence.",
   },
-    {
+  {
     Icon: "uix-solid:accountability",
     heading: "Board Accountability Required: ",
     description:
@@ -295,7 +295,7 @@ const locations = [
   {
     location: "Bangalore",
     Icon: "reicon:city",
-    desc:"IT exporters, SaaS and fintech firms needing ISO 27001, SOC 2 and DPDP compliance"
+    desc: "IT exporters, SaaS and fintech firms needing ISO 27001, SOC 2 and DPDP compliance"
   },
   {
     location: "Mumbai",
@@ -565,7 +565,7 @@ function Vicso() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-          "Something went wrong. Please try again.",
+        "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -596,8 +596,8 @@ function Vicso() {
                 className="text-base sm:text-lg font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] opacity-0 animate-hero-reveal"
                 style={{ animationDelay: "450ms" }}
               >
-                ISECURION delivers enterprise-grade Virtual Chief Information Security Officer (vCISO) services across India (Bangalore, Mumbai, Delhi and beyond) and globally, in the USA, Singapore, UAE, Europe and Australia. As one of India's most experienced CISO advisory companies, 
-                we bring on-demand cybersecurity leadership and RBI, CERT-In, DPDP and SEBI compliance expertise, without the overhead of a full-time CISO hire. 
+                ISECURION delivers enterprise-grade Virtual Chief Information Security Officer (vCISO) services across India (Bangalore, Mumbai, Delhi and beyond) and globally, in the USA, Singapore, UAE, Europe and Australia. As one of India's most experienced CISO advisory companies,
+                we bring on-demand cybersecurity leadership and RBI, CERT-In, DPDP and SEBI compliance expertise, without the overhead of a full-time CISO hire.
               </p>
             </div>
             <div
@@ -624,27 +624,27 @@ function Vicso() {
               className="flex flex-col sm:flex-row  justify-center lg:justify-start gap-4 mt-8 opacity-0 animate-hero-reveal"
               style={{ animationDelay: "750ms" }}
             >
-              {/* <Link href="/company/contact"> 
-              <button className="text-[15px] font-medium px-4 py-4 flex items-center gap-2 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]">
-                Request a vCISO Consultation{" "}
-                <span>
-                  <Icon icon="akar-icons:arrow-right" className="text-lg" />
-                </span>
-              </button>
-              </Link> */}
-              {/* <button className="text-[15px] font-medium px-4 py-4  rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF29]">
+              <Link href="/company/contact">
+                <button className="text-[15px] font-medium px-4 py-4 flex items-center gap-2 rounded-[10px] cursor-pointer text-[#31435C] bg-[#FFFFFF]">
+                  Request a vCISO Consultation{" "}
+                  <span>
+                    <Icon icon="akar-icons:arrow-right" className="text-lg" />
+                  </span>
+                </button>
+              </Link>
+              <button className="text-[15px] font-medium px-4 py-4  rounded-[10px] cursor-pointer text-[#FFFFFF] border border-[#FFFFFF29]">
                 View Scope of Work{" "}
-              </button> */}
+              </button>
             </div>
           </div>
-          <div className="flex-1  px-7 py-5 rounded-3xl space-y-3 bg-linear-to-r from-[#7B6FE829] to-[#090B21]">
+          <div className="flex-1  px-7 py-10 rounded-3xl space-y-3 bg-linear-to-r from-[#7B6FE829] to-[#090B21]">
             <form
               action=""
-              className="space-y-3"
+              className="space-y-6"
               onSubmit={handleSubmit(submit)}
             >
               <div className="flex flex-col sm:flex-row gap-6">
-                <div className="flex flex-col w-full gap-2">
+                <div className="flex flex-col w-full gap-3">
                   <label
                     htmlFor=""
                     className="text-[#FEFEFE] text-sm font-normal"
@@ -824,14 +824,19 @@ function Vicso() {
                   {...register("message")}
                 ></textarea>
               </div>
-              <div>
-                <Turnstile
-                  ref={turnstileRef}
-                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                  onSuccess={(token) => setTurnstileToken(token)}
-                  onExpire={() => setTurnstileToken("")}
-                  onError={() => setTurnstileToken("")}
-                />
+              {/* Captcha */}
+              <div className="mt-7">
+                <div className="flex items-center gap-3">
+                  <p className="text-sm font-medium text-white">Captcha</p>
+
+                  <Turnstile
+                    ref={turnstileRef}
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                    onSuccess={(token) => setTurnstileToken(token)}
+                    onExpire={() => setTurnstileToken("")}
+                    onError={() => setTurnstileToken("")}
+                  />
+                </div>
               </div>
               <div className="flex gap-3">
                 <input
@@ -848,7 +853,7 @@ function Vicso() {
               </div>
               <button
                 type="submit"
-                className={`text-base sm:text-lg font-medium flex items-center justify-center gap-3 py-3 w-full rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
+                className={`mt-5 text-base sm:text-lg font-medium flex items-center justify-center gap-3 py-3 w-full rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#577bbd] ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
               >
                 Request Consultation{" "}
                 <span>
@@ -873,7 +878,7 @@ function Vicso() {
                 business.
               </h2>
               <p className="sectionDescription text-[#D1D1D1]">
-                A Virtual Chief Information Security Officer (vCISO) is a highly experienced cybersecurity professional who serves as your organisation's security leader on a part-time, remote or contract basis. The vCISO works alongside your management and technical teams to define strategic security goals, build governance frameworks, and oversee compliance, risk management and incident response. ISECURION's vCISO team acts as a seamless extension of your 
+                A Virtual Chief Information Security Officer (vCISO) is a highly experienced cybersecurity professional who serves as your organisation's security leader on a part-time, remote or contract basis. The vCISO works alongside your management and technical teams to define strategic security goals, build governance frameworks, and oversee compliance, risk management and incident response. ISECURION's vCISO team acts as a seamless extension of your
                 organisation, combining strategic CISO advisory services with hands-on execution, so recommendations become implemented controls, not a report on a shelf.
               </p>
               <p className="sectionDescription text-[#D1D1D1]">
@@ -1179,12 +1184,12 @@ function Vicso() {
             </div>
           </Animation>
           <div className="mt-10">
-            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 xl:grid-cols-5 gap-5">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
               {engagementLifeCycle.map((item, index) => (
                 <AnimatedCard
                   key={index}
                   delay={index * 0.15}
-                  className="w-[260px] space-y-4 flex flex-col justify-between"
+                  className="w-full min-w-0 space-y-4 flex flex-col justify-between"
                 >
                   <p className="text-base font-semibold flex items-center gap-2 text-[#0F66EA]">
                     0{index + 1}{" "}
@@ -1220,35 +1225,46 @@ function Vicso() {
                   Key steps. Measurable outcomes.
                 </h3>
               </div>
+
               <div className="mt-8">
-                <div className="space-y-7 relative">
+                <div className="relative flex flex-col gap-7">
+
+                  {/* Single continuous vertical timeline */}
+                  <div className="absolute left-[21px] top-[21px] bottom-[21px] w-[2px] bg-[#38A8F580]" />
+
                   {engagementMilestones.map((item, index) => (
                     <AnimatedCard
                       key={index}
                       delay={index * 0.12}
-                      className="relative flex gap-6 z-10"
+                      className="relative z-10 flex min-w-0 items-start gap-5 sm:gap-6"
                     >
-                      {index !== engagementMilestones.length - 1 && (
-                        <div className="absolute left-[21px] top-[47px] w-[2px] h-[calc(100%-19px)] -z-10 bg-[#38A8F580]" />
-                      )}
-                      <div className="">
-                        <div className="w-[43px] h-[43px] flex items-center justify-center rounded-full border-[1.48px]  border-[#5EB0EC] ring-4 ring-[#2E89E469]">
-                          <p className="text-sm font-normal text-[#22D3EE]">
-                            0{index + 1}
-                          </p>
-                        </div>
+                      {/* Timeline Number */}
+                      <div className="relative z-10 flex h-[43px] w-[43px] shrink-0 items-center justify-center rounded-full border-[1.48px] border-[#5EB0EC] bg-[#0E1623] ring-4 ring-[#2E89E469]">
+                        <p className="text-sm font-normal text-[#22D3EE]">
+                          0{index + 1}
+                        </p>
                       </div>
-                      <div className="flex py-2 gap-8 border-b border-[#13304F5E] ">
-                        <div className="w-[80px]">
+
+                      {/* Milestone Content */}
+                      <div
+                        className={`flex min-w-0 flex-1 flex-col gap-2 pb-5 sm:flex-row sm:gap-6 ${index !== engagementMilestones.length - 1
+                          ? "border-b border-[#13304F5E]"
+                          : ""
+                          }`}
+                      >
+                        {/* Period */}
+                        <div className="w-full shrink-0 sm:w-[80px]">
                           <p className="text-sm font-medium text-[#22D3EE]">
                             {item.period}
                           </p>
                         </div>
-                        <div>
+
+                        {/* Description */}
+                        <div className="min-w-0 flex-1">
                           <h3 className="text-[15px] font-normal text-[#FFFFFF]">
                             {item.title}
                           </h3>
-                          <p className="text-[13px] font-normal text-[#D1D1D1]">
+                          <p className="mt-1 text-[13px] leading-5 font-normal text-[#D1D1D1]">
                             {item.description}
                           </p>
                         </div>
@@ -1257,6 +1273,7 @@ function Vicso() {
                   ))}
                 </div>
               </div>
+
             </div>
             <div className="flex-1 p-6 rounded-lg border border-[#18242F] bg-[#0E1623]">
               <div className="space-y-3 text-center lg:text-left">
@@ -1277,7 +1294,7 @@ function Vicso() {
                   {regulatoryCoverage.map((item, index) => (
                     <div
                       key={index}
-                      className="flex flex-col md:flex-row gap-3 justify-between px-4 md:px-7 py-2 rounded-[6px] border border-[#66666614] bg-linear-to-l from-[#181E2F] via-[#0F66EA12] from-[#181E2F]"
+                      className="flex flex-col gap-4 rounded-[6px] border border-[#66666614] bg-linear-to-l from-[#181E2F] via-[#0F66EA12] to-[#181E2F] px-4 py-4 md:flex-row md:items-center md:justify-between md:gap-5 md:px-5 lg:px-7"
                     >
                       <div className="flex gap-5">
                         <div className="w-[48px] h-[48px] flex items-center justify-center rounded-full shrink-0 bg-[#050D1C] border border-[#13304F]">
@@ -1295,7 +1312,7 @@ function Vicso() {
                           </p>
                         </div>
                       </div>
-                      <div className="w-[180px] pl-4 border-l border-[#929BFF94]">
+                      <div className="w-full min-w-0 border-t border-[#929BFF94] pt-3 md:w-[180px] md:shrink-0 md:border-t-0 md:border-l md:pl-4 md:pt-0">
                         <p className="text-xs font-normal leading-[15px] text-[#9DB4CF]">
                           {item.description}
                         </p>
@@ -1331,54 +1348,45 @@ function Vicso() {
               </LeftAnimation>
             </div>
 
+
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="flex-1 rounded-[26px] bg-[#DADADA0A] border border-gray-600"
+              className="flex-1 min-w-0 overflow-hidden rounded-[26px] border border-gray-600 bg-[#242A3B]"
             >
-              <div className="flex flex-wrap justify-center w-full p-4">
+              <div className="grid w-full grid-cols-1 gap-px sm:grid-cols-2 lg:grid-cols-3">
                 {locations.map((item, index) => (
                   <div
                     key={index}
-                    className="relative flex flex-col items-center justify-center gap-3 p-6 w-full sm:w-1/2 lg:w-1/3"
+                    className="flex min-w-0 flex-col items-center justify-start gap-3 bg-[#0D1626] px-4 py-7 sm:px-5 sm:py-8"
                   >
                     <GradientIcon Icon={item.Icon} />
 
-                    <h3 className="text-base md:text-lg font-normal text-[#D1D1D1]">
+                    <h3 className="text-center text-base font-normal text-[#D1D1D1] md:text-lg">
                       {item.location}
                     </h3>
 
-                    <p className="text-center text-sm font-normal text-[#D1D1D1] h-[100px]">
+                    <p className="max-w-[260px] text-center text-sm font-normal leading-6 text-[#D1D1D1]">
                       {item.desc}
                     </p>
-
-                    {/* Vertical separator */}
-                    {(index + 1) % 4 !== 0 &&
-                      index !== locations.length - 1 && (
-                        <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-16 bg-[#242A3B]" />
-                      )}
-
-                    {/* Horizontal separator */}
-                    {index < locations.length - 4 && (
-                      <div className="hidden lg:block absolute bottom-0 left-0 w-full h-[1px] bg-[#242A3B] w-[1000px]" />
-                    )}
                   </div>
                 ))}
               </div>
             </motion.div>
+
           </div>
           {/* global coverage  */}
           <div className="flex flex-col lg:flex-row items-center py-10 px-6 sm:px-10 mt-10 rounded-[19px] gap-10  border border-gray-700 bg-linear-to-r from-[#1D1E2A]/4 to-[#3B9E6A]/25">
             <div className="w-full flex-1 space-y-4 ">
-              <p className="text-base sm:text-lg lg:text-xl font-medium text-center md:text-left text-[#0F66EA] sectionheading">
+              <p className="text-center lg:text-left text-base sm:text-lg lg:text-xl font-medium text-[#0F66EA] sectionheading">
                 GLOBAL COVERAGE
               </p>
-              <h3 className="text-xl md:text-2xl font-medium leading-[35px] md:leading-[38px] text-center md:text-left text-[#FEFEFE]">
+              <h3 className="text-center lg:text-left text-xl md:text-2xl font-medium leading-[35px] md:leading-[38px] text-[#FEFEFE]">
                 Global reach. <br /> Consistent standards.
               </h3>
-              <p className="text-base sm:text-[17px] font-normal max-w-sm leading-[28px] text-center md:text-left text-[#D1D1D1]">
+              <p className="mx-auto max-w-sm text-center text-base font-normal leading-[28px] text-[#D1D1D1] sm:text-[17px] lg:mx-0 lg:text-left">
                 India-headquartered expertise. Globally deployed. Locally
                 compliant.
               </p>
@@ -1389,15 +1397,17 @@ function Vicso() {
                   <AnimatedCard
                     key={index}
                     delay={index * 0.15}
-                    className={`w-[150px] flex flex-col items-center gap-3 px-3 ${index !== globalLocations.length - 1 ? "border-[#2B3756] sm:border-r" : ""}`}
+                    className={`w-full flex flex-col items-center gap-3 px-3 ${index !== globalLocations.length - 1 ? "border-[#2B3756] lg:border-r" : ""}`}
                   >
                     <GradientIcon Icon={item.Icon} />
 
-                    <h3 className="text-base font-normal text-[#D1D1D1]">
+                    <h3 className="text-center text-base font-normal text-[#D1D1D1]">
                       {item.location}
                     </h3>
-                    <div className="h-[2px] w-[30px] rounded-[1px] border border-[#455F6DB5] bg-[#0F66EA]"></div>
-                    <p className="text-sm sm:text-base font-normal text-center text-[#D1D1D1]">
+
+                    <div className="h-[2px] w-[30px] rounded-[1px] border border-[#455F6DB5] bg-[#0F66EA]" />
+
+                    <p className="text-center text-sm font-normal text-[#D1D1D1] sm:text-base">
                       {item.fullName}
                     </p>
                   </AnimatedCard>
