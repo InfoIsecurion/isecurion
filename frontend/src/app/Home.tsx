@@ -521,11 +521,11 @@ export default function Home() {
     <div className="w-full bg-[#060D1B]">
       {/* this is the hero section  */}
       <section
-        className="w-full xl:h-[70vh] 2xl:h-[80vh] flex items-center py-14 bg-cover bg-center"
+        className="w-full  flex items-center py-14 bg-cover bg-center"
         style={{ backgroundImage: `url(${herobackground.src})` }}
       >
         <div className="max-w-7xl w-full mx-auto px-6 sm:px-10">
-          <div className="space-y-5 text-center lg:text-left">
+          <div className="space-y-4 text-center lg:text-left">
             <p
               className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading animate-hero-reveal uppercase"
               style={{ animationDelay: "150ms" }}
@@ -551,7 +551,7 @@ export default function Home() {
             </p>
           </div>
           <div
-            className="flex flex-col justify-center lg:justify-start sm:flex-row gap-3 py-4 opacity-0 animate-hero-reveal mt-5"
+            className="flex flex-col justify-center lg:justify-start sm:flex-row gap-3 py-4 opacity-0 animate-hero-reveal mt-4"
             style={{ animationDelay: "600ms" }}
           >
             <Animation>
@@ -582,8 +582,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* STATS SECTION */}
 
       {/* STATS SECTION */}
       <section className="w-full bg-[#01060E] shadow-[0_0_45px_rgba(15,102,234,0.20)]">
@@ -1347,7 +1345,7 @@ export default function Home() {
       <IndustriesWeSecure />
 
       <section className="relative w-full overflow-hidden bg-[#060D1B]">
-        <div className="relative mx-auto flex min-h-[550px] max-w-7xl flex-col justify-center px-6 py-10 sm:px-10 lg:min-h-[600px] lg:py-20 xl:px-2">
+        <div className="relative mx-auto flex min-h-[550px] max-w-7xl flex-col justify-center px-6 py-10 sm:px-10 lg:min-h-[600px] lg:py-20 overflow-hidden">
           {/* Left Content */}
           <div className="relative z-20 w-full lg:w-[45%] xl:w-[43%]">
             <p className="text-sm font-semibold text-[#0F66EA] sm:text-base">
@@ -1426,11 +1424,6 @@ export default function Home() {
                       ? "h-3.5 w-3.5 bg-[#2563EB] shadow-[0_0_12px_5px_#2563EB80]"
                       : "h-2.5 w-2.5 bg-[#EF5350] shadow-[0_0_8px_3px_#EF535080]"
                   }`}
-                  // className={`block rounded-full ${
-                  //   marker.type === "blue"
-                  //     ? "h-3.5 w-3.5 bg-[#2563EB] shadow-[0_0_12px_5px_#2563EB80]"
-                  //     : "h-2.5 w-2.5 bg-[#EF5350] shadow-[0_0_8px_3px_#EF535080]"
-                  // }`}
                 />
               </div>
             ))}
@@ -1451,7 +1444,7 @@ export default function Home() {
               <div className="mx-auto flex w-full max-w-[550px] items-center gap-4 px-3 py-1">
                 <span className="h-px flex-1 bg-linear-to-r to-[#FFFFFFE3] from-[#DADADA0A]" />
 
-                <p className="whitespace-nowrap text-base sm:text-lg font-medium text-[#D9D9D9] uppercase">
+                <p className=" text-base sm:text-lg font-medium text-[#D9D9D9] uppercase">
                   Recognition and Certifications
                 </p>
 

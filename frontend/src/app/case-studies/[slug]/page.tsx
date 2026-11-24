@@ -38,6 +38,11 @@ interface CaseStudy {
       id?: string;
       description: string;
     }[];
+    engagementsnapshot?: {
+      id?: string;
+      heading?: string;
+      description?: string;
+    }[];
 
     researchfocus?: {
       id?: string;
@@ -293,28 +298,34 @@ export default async function Page({ params }: Props) {
                 {caseStudy.section1.description?.map((item, index) => (
                   <p
                     key={item.id || index}
-                    className="max-w-3xl mx-auto lg:mx-0 text-base sm:text-lg font-normal sectionDescription text-[#D1D1D1]"
+                    className="max-w-3xl mx-auto lg:mx-0 sectionDescription text-[#D1D1D1]"
                   >
                     {item.description}
                   </p>
                 ))}
               </div>
             </div>
-            <div className="space-y-2 mt-5">
+            <div className="mt-8 space-y-3">
               <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-[#FEFEFE]">
-                Research Focus
+                Engagement Snapshot
               </h3>
-              <ul className="space-y-1 list-disc pl-10">
-                {caseStudy.section1?.researchfocus?.map((listItem, index) => (
-                  <li
-                    key={listItem.id || index}
-                    className="text-sm sm:text-base font-normal text-[#D1D1D1]"
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                {caseStudy.section1?.engagementsnapshot?.map((item, index) => (
+                  <div
+                    key={item.id || index}
+                    className="px-4 py-3 space-y-3 rounded-lg border border-gray-800 "
                   >
-                    {listItem.researchitem}
-                  </li>
+                    <h3 className="text-base sm:text-lg text-[#9ab0b5]">
+                      {item.heading}
+                    </h3>
+                    <p className="text-sm sm:text-base font-normal text-[#ffffff]">
+                      {item.description}
+                    </p>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
+
             {!!caseStudy.section1?.observations?.length && (
               <div className="mt-6">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-medium text-[#FEFEFE]">
@@ -360,7 +371,7 @@ export default async function Page({ params }: Props) {
               {caseStudy.section2?.paragraphs?.map((paragraph, index) => (
                 <p
                   key={paragraph.id || index}
-                  className="text-base sm:text-lg font-normal sectionDescription text-[#D1D1D1]"
+                  className=" sectionDescription text-[#D1D1D1]"
                 >
                   {paragraph.text}
                 </p>
@@ -406,7 +417,7 @@ export default async function Page({ params }: Props) {
                 {caseStudy.section3?.heading}
               </h2>
 
-              <p className="max-w-4xl mx-auto lg:mx-0 text-base sm:text-lg font-normal leading-7 text-[#D1D1D1]">
+              <p className="max-w-4xl mx-auto lg:mx-0 sectionDescription text-[#D1D1D1]">
                 {caseStudy.section3?.description}
               </p>
             </div>
@@ -490,7 +501,7 @@ export default async function Page({ params }: Props) {
                 {caseStudy.section4?.heading}
               </h2>
 
-              <p className="max-w-4xl mx-auto lg:mx-0 text-base sm:text-lg font-normal leading-7 text-[#D1D1D1]">
+              <p className="max-w-4xl mx-auto lg:mx-0 sectionDescription text-[#D1D1D1]">
                 {caseStudy.section3?.description}
               </p>
             </div>
@@ -710,15 +721,15 @@ export default async function Page({ params }: Props) {
               </p>
             </div>
             <div>
-              <p className="text-base sm:text-lg font-normal sectionDescription text-[#D1D1D1]">
+              <p className=" sectionDescription text-[#D1D1D1]">
                 {caseStudy.section8?.description}
               </p>
             </div>
-            <div className="flex flex-row   rounded-xl border border-[#FFFFFF1F]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded-xl border border-[#FFFFFF1F]">
               {caseStudy.section8.cards.map((item, index) => (
                 <div
                   key={index}
-                  className={`flex flex-col items-center  space-y-2 px-3 py-4 border border-[#1F2532] ${index === 0 ? "bg-[#060D1B]" : "bg-[#0B1220]"}`}
+                  className={`flex flex-col items-center  space-y-2 px-3 py-4 border border-[#1F2532] ${index === 0 || index === caseStudy.section8.cards.length - 1 ? "bg-[#060D1B]" : "bg-[#0B1220]"}`}
                 >
                   <div>
                     <Icon icon={item.icon} className="text-2xl text-white" />
@@ -772,7 +783,7 @@ export default async function Page({ params }: Props) {
                     {item.description?.map((desc, descIndex) => (
                       <p
                         key={desc.id || descIndex}
-                        className="text-base font-normal leading-[22px] text-[#D1D1D1]"
+                        className="sectionDescription text-[#D1D1D1]"
                       >
                         {desc.description}
                       </p>
@@ -803,7 +814,7 @@ export default async function Page({ params }: Props) {
               </h2>
             )}
             {caseStudy.faqdescription && (
-              <p className="mt-3 text-base sm:text-lg font-normal sectionDescription text-[#D1D1D1]">
+              <p className="mt-3 sectionDescription text-[#D1D1D1]">
                 {caseStudy.faqdescription}
               </p>
             )}

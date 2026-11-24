@@ -190,6 +190,23 @@ export const CaseStudies: CollectionConfig = {
           ],
         },
         {
+          name: 'engagementsnapshot',
+          type: 'array',
+          label: 'Engagement Snapshot',
+          fields: [
+            {
+              name: 'heading',
+              type: 'text',
+              label: 'heading',
+            },
+            {
+              name: 'description',
+              type: 'text',
+              label: 'description',
+            },
+          ],
+        },
+        {
           name: 'researchfocus',
           type: 'array',
           label: 'Research list',

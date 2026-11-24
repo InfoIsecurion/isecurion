@@ -212,6 +212,13 @@ export interface CaseStudy {
           id?: string | null;
         }[]
       | null;
+    engagementsnapshot?:
+      | {
+          heading?: string | null;
+          description?: string | null;
+          id?: string | null;
+        }[]
+      | null;
     researchfocus?:
       | {
           researchitem?: string | null;
@@ -546,6 +553,13 @@ export interface CaseStudiesSelect<T extends boolean = true> {
         description?:
           | T
           | {
+              description?: T;
+              id?: T;
+            };
+        engagementsnapshot?:
+          | T
+          | {
+              heading?: T;
               description?: T;
               id?: T;
             };

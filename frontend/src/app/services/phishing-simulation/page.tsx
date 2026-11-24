@@ -355,10 +355,11 @@ function MetricChart({ type }: { type: string }) {
   if (type === "ring-green" || type === "ring-blue") {
     return (
       <div
-        className={`h-[51px] w-[51px] shrink-0 rounded-full ${type === "ring-green"
-          ? "border-[5px] border-[#2DD4BF]"
-          : "border-[5px] border-[#3B82F6]"
-          }`}
+        className={`h-[51px] w-[51px] shrink-0 rounded-full ${
+          type === "ring-green"
+            ? "border-[5px] border-[#2DD4BF]"
+            : "border-[5px] border-[#3B82F6]"
+        }`}
         aria-hidden="true"
       />
     );
@@ -434,7 +435,7 @@ function PhishingSimulation() {
     } catch (error) {
       toast.error(
         error.response?.data?.message ||
-        "Something went wrong. Please try again.",
+          "Something went wrong. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -464,8 +465,13 @@ function PhishingSimulation() {
                   className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[540px] animate-hero-reveal"
                   style={{ animationDelay: "700ms" }}
                 >
-                  ISECURION's Phishing Simulation service combines threat-informed campaigns, executive reporting and targeted training to reduce employee susceptibility
-                  to credential theft, business email compromise (BEC) and social-engineering attacks. Powered by Drosera, our AI phishing simulation platform, to measure human risk and build stronger security awareness.
+                  ISECURION's Phishing Simulation service combines
+                  threat-informed campaigns, executive reporting and targeted
+                  training to reduce employee susceptibility to credential
+                  theft, business email compromise (BEC) and social-engineering
+                  attacks. Powered by Drosera, our AI phishing simulation
+                  platform, to measure human risk and build stronger security
+                  awareness.
                 </p>
                 <p
                   className="text-base sm:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#D1D1D1] lg:max-w-[560px] animate-hero-reveal"
@@ -480,8 +486,8 @@ function PhishingSimulation() {
                   className="mt-6 text-[13px] sm:text-[14px] lg:text-[16px] font-medium leading-7 text-[#0F66EA] lg:max-w-[460px] opacity-0 animate-hero-reveal"
                   style={{ animationDelay: "1300ms" }}
                 >
-                  Targeted Spear-Phishing | Vishing & Smishing | Credential-Harvest (Safe) &amp;CK
-                  | Executive Dashboards
+                  Targeted Spear-Phishing | Vishing & Smishing |
+                  Credential-Harvest (Safe) &amp;CK | Executive Dashboards
                 </p>
               </div>
             </Animation>
@@ -676,7 +682,7 @@ function PhishingSimulation() {
                   type="submit"
                   className={`w-full h-[48px] mt-2 inline-flex items-center justify-center gap-2 rounded-[8px] bg-gradient-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] text-[15px] font-medium text-white border-[1.5px] border-[#00000000] transition-all duration-200 shadow-md shadow-[#0F66EA]/20 ${loading ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
                 >
-                  <span>{loading ? "getting" : "Get Quote"}</span>
+                  <span>{loading ? "Getting" : "Get Quote"}</span>
                   <Icon icon="lucide:arrow-right" className="h-4 w-4" />
                 </button>
               </form>
@@ -764,10 +770,13 @@ function PhishingSimulation() {
                   className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[750px] animate-hero-reveal"
                   style={{ animationDelay: "750ms" }}
                 >
-                  <strong>Why it matters: </strong>{' '}Social engineering remains responsible for a large share of breaches across industries.
-                  While technical controls are essential, they must be complemented by a vigilant workforce.
-                  Regular, threat-informed phishing simulations show where investment in awareness, detection and process improvement
-                  will yield the greatest reduction in risk.
+                  <strong>Why it matters: </strong> Social engineering remains
+                  responsible for a large share of breaches across industries.
+                  While technical controls are essential, they must be
+                  complemented by a vigilant workforce. Regular, threat-informed
+                  phishing simulations show where investment in awareness,
+                  detection and process improvement will yield the greatest
+                  reduction in risk.
                 </p>
               </Animation>
               <Animation delay={0.5}>
@@ -775,9 +784,12 @@ function PhishingSimulation() {
                   className="text-base sm:text-lg leading-[26px] sm:leading-[29px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[750px] animate-hero-reveal"
                   style={{ animationDelay: "750ms" }}
                 >
-                  <strong>Business outcomes: </strong>{' '}Enterprises that adopt continuous phishing simulation typically see measurable improvement in reporting rates,
-                  a decline in successful simulated credential theft, and stronger SOC detection tuning.
-                  These outcomes translate into fewer incidents, shorter investigation timelines and lower cost per incident.
+                  <strong>Business outcomes: </strong> Enterprises that adopt
+                  continuous phishing simulation typically see measurable
+                  improvement in reporting rates, a decline in successful
+                  simulated credential theft, and stronger SOC detection tuning.
+                  These outcomes translate into fewer incidents, shorter
+                  investigation timelines and lower cost per incident.
                 </p>
               </Animation>
             </div>
@@ -849,9 +861,12 @@ function PhishingSimulation() {
                   className="mt-4 lg:max-w-[420px] text-[14px] leading-[25px] text-[#C7C9D3] sm:text-[15px] sm:leading-[25.5px] text-center lg:text-left animate-hero-reveal"
                   style={{ animationDelay: "550ms" }}
                 >
-                  Drosera is ISECURION's in-house AI phishing simulation and human risk management platform. It generates realistic, context-aware phishing scenarios,
-                  sends them from high-reputation infrastructure with no whitelisting required, and turns every click, submission and report into an actionable
-                  human risk score.
+                  Drosera is ISECURION's in-house AI phishing simulation and
+                  human risk management platform. It generates realistic,
+                  context-aware phishing scenarios, sends them from
+                  high-reputation infrastructure with no whitelisting required,
+                  and turns every click, submission and report into an
+                  actionable human risk score.
                 </p>
 
                 <ul className="mt-5 space-y-3 text-center lg:text-left">
@@ -989,12 +1004,13 @@ function PhishingSimulation() {
                 className="mt-10 text-base sm:text-lg leading-[26px] text-[#D1D1D1] animate-hero-reveal"
                 style={{ animationDelay: "600ms" }}
               >
-                Every scope item is performed under a documented Rules of Engagement (ROE), with opt-out lists for sensitive personnel and strict evidence-handling procedures.
+                Every scope item is performed under a documented Rules of
+                Engagement (ROE), with opt-out lists for sensitive personnel and
+                strict evidence-handling procedures.
               </p>
             </Animation>
           </div>
         </Animation>
-
       </section>
 
       <section className="relative w-full overflow-hidden bg-[#050D1C] py-10">
@@ -1075,10 +1091,18 @@ function PhishingSimulation() {
                 </p>
 
                 <h2 className="mt-[10px] text-[30px] font-normal leading-[1.25] text-white sm:text-[36px] lg:text-[34px]">
-                  <WordReveal as="span" text="Human Risk Intelligence that goes "></WordReveal><br /> <WordReveal as="span" text="beyond click rates."></WordReveal>
+                  <WordReveal
+                    as="span"
+                    text="Human Risk Intelligence that goes "
+                  ></WordReveal>
+                  <br />{" "}
+                  <WordReveal as="span" text="beyond click rates."></WordReveal>
                 </h2>
 
-                <p className="mx-auto mt-[18px] max-w-[1040px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-lg animate-hero-reveal" style={{ animationDelay: "800ms" }}>
+                <p
+                  className="mx-auto mt-[18px] max-w-[1040px] text-[14px] font-normal leading-[1.8] text-[#D1D1D1] sm:text-lg animate-hero-reveal"
+                  style={{ animationDelay: "800ms" }}
+                >
                   ISECURION combines threat-informed simulations, behavioural
                   insights, and targeted remediation to help organisations
                   improve employee resilience against social engineering.
@@ -1092,7 +1116,10 @@ function PhishingSimulation() {
               <AnimatedCard>
                 <div className="relative min-h-[309px] bg-[#050B18] px-[25px] pb-[42px] pt-[31px] sm:px-[25px] lg:px-[30px]">
                   <div className="text-white">
-                    <Icon icon="boxicons:vector-square" className="text-[36px]" />
+                    <Icon
+                      icon="boxicons:vector-square"
+                      className="text-[36px]"
+                    />
                   </div>
 
                   <div className="absolute bottom-[62px] left-[25px] right-[30px]">
@@ -1101,8 +1128,8 @@ function PhishingSimulation() {
                     </h3>
 
                     <p className="mt-[8px] lg:max-w-[255px] text-[13px] font-normal leading-[1.6] text-[#B9BDC5]">
-                      Our templates reflect active adversary campaigns and map to
-                      MITRE ATT&CK techniques for relevance and realism.
+                      Our templates reflect active adversary campaigns and map
+                      to MITRE ATT&CK techniques for relevance and realism.
                     </p>
                   </div>
                 </div>

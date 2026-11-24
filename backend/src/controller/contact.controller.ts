@@ -115,6 +115,11 @@ interface Soc2 {
   target: string
   turnstileToken: string
 }
+interface DoraCompliance {
+  email: string
+  companyName: string
+  turnstileToken: string
+}
 
 function containsHTML(value: string): boolean {
   return /<[^>]*>/i.test(value)
@@ -1483,6 +1488,92 @@ export async function soc2Compliance(request: PayloadRequest) {
         PhoneNumber: validatedData.phonenumber,
         Country: validatedData.country,
         Target: validatedData.target,
+      },
+    })
+
+    return Response.json(
+      {
+        success: true,
+        message: 'Your message has been sent successfully.',
+      },
+      { status: 200 },
+    )
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return Response.json({ success: false, message: 'Invalid request body.' }, { status: 400 })
+    }
+
+    console.error('Contact form submission failed:', error)
+
+    return Response.json(
+      {
+        success: false,
+        message: 'Unable to send your message. Please try again later.',
+      },
+      { status: 500 },
+    )
+  }
+}
+
+export async function dora(request: PayloadRequest) {
+  try {
+    const body: unknown = await request.json?.()
+
+    if (!body || typeof body !== 'object') {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const { email, companyName, turnstileToken } = body as Record<string, unknown>
+
+    if (!email || !companyName) {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (
+      typeof email !== 'string' ||
+      typeof companyName !== 'string' ||
+      typeof turnstileToken !== 'string'
+    ) {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (email && !emailPattern.test(email)) {
+      return Response.json({ message: 'Invalid input' }, { status: 400 })
+    }
+
+    if (!turnstileToken || !turnstileToken.trim()) {
+      return Response.json(
+        { success: false, message: 'Please complete CAPTCHA verification.' },
+        { status: 400 },
+      )
+    }
+
+    const isVerified = await verifyTurnstile(turnstileToken)
+
+    if (!isVerified) {
+      return Response.json(
+        {
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        },
+        { status: 400 },
+      )
+    }
+
+    const validatedData: DoraCompliance = {
+      email,
+      companyName,
+      turnstileToken,
+    }
+
+    await sendContactEmail({
+      email: validatedData.email,
+      subject: `Dora Compliance`,
+      fields: {
+        Email: validatedData.email,
+        Company: validatedData.companyName,
       },
     })
 

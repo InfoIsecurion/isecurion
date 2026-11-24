@@ -15,6 +15,7 @@ import {
   vciso,
   iso27001,
   soc2Compliance,
+  dora,
 } from '@/controller/contact.controller'
 
 export const contactEndpoint: Endpoint = {
@@ -105,4 +106,9 @@ export const soc2ComplianceEndpoint: Endpoint = {
   path: '/soc-compliance',
   method: 'post',
   handler: soc2Compliance,
+}
+export const doraComplianceEndpoint: Endpoint = {
+  path: '/dora-compliance',
+  method: 'post',
+  handler: dora,
 }
