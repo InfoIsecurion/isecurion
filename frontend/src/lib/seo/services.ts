@@ -69,7 +69,7 @@ export const services: ServiceEntry[] = [
   // ---- converted pages ----
   {
     slug: "vapt",
-    path: "/services/vapt",
+    path: "/services/vulnerability-assessment-penetration-testing",
     name: "Vulnerability Assessment and Penetration Testing (VAPT)",
     serviceType: "Vulnerability Assessment and Penetration Testing",
     title:
@@ -566,7 +566,7 @@ export const services: ServiceEntry[] = [
 
   {
     slug: "dpo-services",
-    path: "/services/dpo-services",
+    path: "/services/outsourced-dpo",
     name: "Outsourced DPO Services",
     serviceType: "Outsourced Data Protection Officer / Privacy Compliance",
     title: "Outsourced DPO Services in India | Virtual Data Protection Officer",
@@ -806,7 +806,7 @@ export const services: ServiceEntry[] = [
 
   {
     slug: "iso27001",
-    path: "/services/iso27001",
+    path: "/services/iso-27001",
     name: "ISO 27001 Audit & Certification Services",
     serviceType: "ISO 27001 Certification Audit",
     title:

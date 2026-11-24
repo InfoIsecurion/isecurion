@@ -13,6 +13,51 @@ import { siteConfig } from "../lib/seo/site.config";
 import Analytics from "../components/seo/Analytics";
 import CookieConsent from "../components/cookie/CookieConsent";
 
+import { Fragment_Mono } from "next/font/google";
+import { Average } from "next/font/google";
+import { IBM_Plex_Mono } from "next/font/google";
+import { Cantata_One } from "next/font/google";
+import { Manrope } from "next/font/google";
+import { Roboto_Serif } from "next/font/google";
+
+const fragmentMono = Fragment_Mono({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-fragment-mono",
+});
+
+const average = Average({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-average",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-ibm-plex-mono",
+});
+
+const cantataOne = Cantata_One({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-cantata-one",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-manrope",
+});
+
+const robotoSerif = Roboto_Serif({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-roboto-serif",
+});
+
+
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   // Pages pass a short title; this template adds the brand.
@@ -53,7 +98,7 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang={siteConfig.language} className={`h-full`}>
+    <html lang={siteConfig.language} className={`${fragmentMono.variable} ${average.variable} ${ibmPlexMono.variable} ${cantataOne.variable}  ${manrope.variable} ${robotoSerif.variable} h-full`}>
       <head />
       <body className=" flex flex-col">
         <Navbar />

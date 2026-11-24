@@ -198,7 +198,7 @@
     "@type": "LocalBusiness",
     "name": "ISECURION – ISO 27001 Audit & Certification Consultants",
     "image": "https://isecurion.com/images/isecurion1.png",
-    "url": "https://isecurion.com/services/iso27001",
+    "url": "https://isecurion.com/services/iso-27001",
     "telephone": "+918861201570",
     "email": "info@isecurion.com",
     "priceRange": "$$",
@@ -434,7 +434,7 @@
     "keywords": "ISO 27001 audit India, ISO 27001 certification India, ISO 27001 Bengaluru, ISO 27001 Mumbai, ISO 27001 Delhi, ISO 27001 Hyderabad, ISO 27001 Chennai, ISO 27001 Pune, ISO 27001 Kolkata, ISO 27001 USA, ISO 27001 UK, ISO 27001 UAE, ISO 27001 Singapore, ISO 27001 Australia, ISMS implementation, ISO 27001 gap analysis, ISO 27001 internal audit, ISO 27001 risk assessment, ISO 27001 SoA, ISO 27001 2022, CERT-In empanelled, information security audit, ISO 27001 for SaaS, ISO 27001 FinTech, ISO 27001 certification cost, ISO 27001 consultant India",
     "offers": {
       "@type": "Offer",
-      "url": "https://isecurion.com/services/iso27001",
+      "url": "https://isecurion.com/services/iso-27001",
       "priceCurrency": "INR",
       "availability": "https://schema.org/InStock",
       "eligibleRegion": [
@@ -587,7 +587,7 @@
         "@type": "ListItem",
         "position": 3,
         "name": "ISO 27001 Audit & Certification",
-        "item": "https://isecurion.com/services/iso27001"
+        "item": "https://isecurion.com/services/iso-27001"
       }
     ]
   },

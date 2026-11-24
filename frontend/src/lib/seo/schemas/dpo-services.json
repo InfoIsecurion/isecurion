@@ -39,7 +39,7 @@
       }
     ],
     "serviceType": "Outsourced Data Protection Officer / Privacy Compliance",
-    "url": "https://isecurion.com/services/dpo-services"
+    "url": "https://isecurion.com/services/outsourced-dpo"
   },
   {
     "@context": "https://schema.org",
@@ -86,7 +86,7 @@
     "name": "ISECURION - Outsourced DPO & Data Privacy Services Bangalore",
     "image": "https://isecurion.com/images/isecurion1.png",
     "@id": "https://isecurion.com/#localbusiness-bangalore-dpo",
-    "url": "https://isecurion.com/services/dpo-services",
+    "url": "https://isecurion.com/services/outsourced-dpo",
     "telephone": "+91-88612-01570",
     "email": "info@isecurion.com",
     "priceRange": "$$",
@@ -159,7 +159,7 @@
         "@type": "ListItem",
         "position": 3,
         "name": "Outsourced DPO Services",
-        "item": "https://isecurion.com/services/dpo-services"
+        "item": "https://isecurion.com/services/outsourced-dpo"
       }
     ]
   },

@@ -25,7 +25,7 @@
         "serviceType": "Vulnerability Assessment and Penetration Testing",
         "serviceCategory": "Cybersecurity, VAPT, Penetration Testing, Ethical Hacking",
         "description": "ISECURION provides CERT-In empanelled Vulnerability Assessment and Penetration Testing (VAPT) services across India - including Bangalore, Mumbai, Hyderabad, Chennai, Pune, Kolkata, Ahmedabad, Noida, Delhi, Kochi, Gurgaon, Chandigarh, Jaipur - and globally across USA, UK, UAE, Australia, Qatar, and Singapore. Our services cover web application, mobile app, cloud, network, API, IoT, and infrastructure security testing.",
-        "url": "https://isecurion.com/services/vapt",
+        "url": "https://isecurion.com/services/vulnerability-assessment-penetration-testing",
         "provider": {
           "@type": "ProfessionalService",
           "@id": "https://isecurion.com/#organization",
@@ -179,7 +179,7 @@
         },
         "offers": {
           "@type": "Offer",
-          "url": "https://isecurion.com/services/vapt",
+          "url": "https://isecurion.com/services/vulnerability-assessment-penetration-testing",
           "priceCurrency": "INR",
           "availability": "https://schema.org/InStock",
           "eligibleRegion": [
@@ -296,7 +296,7 @@
             "@type": "ListItem",
             "position": 3,
             "name": "Vulnerability Assessment & Penetration Testing",
-            "item": "https://isecurion.com/services/vapt"
+            "item": "https://isecurion.com/services/vulnerability-assessment-penetration-testing"
           }
         ]
       }

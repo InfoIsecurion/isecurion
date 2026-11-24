@@ -148,3 +148,13 @@ svg[style*="--icon-stroke"] {
 .sector-pagination .swiper-pagination-bullet-active {
     background: #F9F4ED;
 }
+
+@theme inline {
+  --font-fragment: var(--font-fragment-mono);
+  --font-average: var(--font-average);
+  --font-calisto: "Calisto MT", "Bookman Old Style", serif;
+  --font-ibm-plex-mono: var(--font-ibm-plex-mono);
+  --font-consolas: "Consolas", "Courier New", monospace;
+  --font-cantata-one: var(--font-cantata-one);
+  --font-manrope: var(--font-manrope);
+}

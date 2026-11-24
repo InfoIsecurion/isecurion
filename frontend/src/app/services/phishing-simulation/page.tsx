@@ -885,7 +885,7 @@ function PhishingSimulation() {
                   style={{ animationDelay: "800ms" }}
                 >
                   <Link
-                    href="https://simulate.drosera.ai/"
+                    href="https://drosera.ai/"
                     className="mt-7 inline-flex min-h-[45px] items-center justify-center gap-2 rounded-[8px] border border-[#568CE0]/60 bg-gradient-to-b from-[#386CC0] to-[#20477E] px-5 py-3 text-[13px] font-medium text-white shadow-[0_4px_16px_rgba(15,102,234,0.15)] transition duration-300 hover:border-[#70A7FF] hover:from-[#437DD5] hover:to-[#285795] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F80FF] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080B19]"
                   >
                     Explore Drosera

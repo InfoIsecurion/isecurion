@@ -371,9 +371,9 @@ function Navbar() {
 
           {/* Desktop Navigation */}
           <nav className="absolute left-1/2 hidden -translate-x-1/2 lg:block">
-            <ul className="flex items-center gap-13">
+            <ul className="flex items-center gap-13 ">
               <li className="relative flex items-center justify-center group">
-                <Link href="/" className="text-base font-normal text-white">
+                <Link href="/" className="font-manrope text-base font-normal text-white">
                   Home
                 </Link>
                 <span className="invisible group-hover:visible absolute left-0 top-[30px] w-[45px] h-[3px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
@@ -383,7 +383,7 @@ function Navbar() {
                 <Link
                   href=""
                   onClick={closeMenu}
-                  className="text-base font-normal flex items-center gap-1 text-white"
+                  className="font-manrope text-base font-normal flex items-center gap-1 text-white"
                 >
                   Products{" "}
                   <span className="transition-transform duration-300 group-hover:rotate-180">
@@ -426,7 +426,7 @@ function Navbar() {
               >
                 <Link
                   href=""
-                  className="flex items-center gap-1 text-[15px] font-medium text-white"
+                  className="flex items-center gap-1 text-base font-medium text-white"
                 >
                   Services
                   <span className="transition-transform duration-300 group-hover:rotate-180">
@@ -649,7 +649,7 @@ function Navbar() {
               >
                 <Link
                   href=""
-                  className="text-[15px] font-medium flex items-center gap-1 text-white"
+                  className="font-manrope text-base font-medium flex items-center gap-1 text-white"
                 >
                   Company {""}
                   <span className="transition-transform duration-300 group-hover:rotate-180">
@@ -801,7 +801,7 @@ function Navbar() {
               <li>
                 <button
                   type="button"
-                  className="flex w-full items-center gap-1"
+                  className="font-manrope flex w-full items-center gap-1"
                   onClick={() =>
                     setOpenDropdown(
                       openDropdown === "services" ? null : "services",

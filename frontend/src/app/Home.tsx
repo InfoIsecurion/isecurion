@@ -450,26 +450,13 @@ const homeFAQs = [
     answer:
       "ISECURION supports a comprehensive range of compliance frameworks: SOC 2, ISO 27001:2022, GDPR, India's DPDP Act, RBI Information Security Audit, IRDA Audit, SEBI CSCRF and Market SOC (MSOC), AADHAR/UIDAI Audit, DORA Compliance (EU), FIU-IND for Crypto and Virtual Digital Assets, UAE VASP Compliance, ISO 42001 (AI Management Systems), BSE/NSE Audit, ILDC, CICRA, and UPI Compliance Audit.",
   },
-  {
-    question: "What compliance frameworks does ISECURION support?",
-    answer:
-      "ISECURION supports a comprehensive range of compliance frameworks: SOC 2, ISO 27001:2022, GDPR, India's DPDP Act, RBI Information Security Audit, IRDA Audit, SEBI CSCRF and Market SOC (MSOC), AADHAR/UIDAI Audit, DORA Compliance (EU), FIU-IND for Crypto and Virtual Digital Assets, UAE VASP Compliance, ISO 42001 (AI Management Systems), BSE/NSE Audit, ILDC, CICRA, and UPI Compliance Audit.",
-  },
+
   {
     question: "Does ISECURION provide 24x7 SOC and managed security services?",
     answer:
       "Yes. ISECURION offers Managed Security Services (MSSP), In-House SOC and Hybrid SOC services, providing round-the-clock monitoring, threat detection and incident response so that attacks can be detected, contained and remediated quickly.",
   },
-  {
-    question: "Does ISECURION provide 24x7 SOC and managed security services?",
-    answer:
-      "Yes. ISECURION offers Managed Security Services (MSSP), In-House SOC and Hybrid SOC services, providing round-the-clock monitoring, threat detection and incident response so that attacks can be detected, contained and remediated quickly.",
-  },
-  {
-    question: "Does ISECURION offer cybersecurity services outside India?",
-    answer:
-      "Yes. ISECURION delivers cybersecurity services globally. We have an office in Schaumburg, Illinois, USA, and regularly serve clients in the United Kingdom, the European Union, the UAE, Qatar, Singapore, Australia, Saudi Arabia, Kuwait, Bahrain, and Oman. Remote assessments and on-site engagements are both available for international clients.",
-  },
+
   {
     question: "Does ISECURION offer cybersecurity services outside India?",
     answer:
@@ -479,16 +466,6 @@ const homeFAQs = [
     question: "Where are ISECURION's offices and how can I contact the team?",
     answer:
       "ISECURION's corporate office is in Bengaluru, with offices in Kolkata, Mumbai, Ahmedabad and Noida in India, and in Schaumburg, Illinois in the United States. To contact the team, email info@isecurion.com or call +91 88612 01570.",
-  },
-  {
-    question: "Where are ISECURION's offices and how can I contact the team?",
-    answer:
-      "ISECURION's corporate office is in Bengaluru, with offices in Kolkata, Mumbai, Ahmedabad and Noida in India, and in Schaumburg, Illinois in the United States. To contact the team, email info@isecurion.com or call +91 88612 01570.",
-  },
-  {
-    question: "What is Vulnytics and how does it help my security team?",
-    answer:
-      "Vulnytics is ISECURION's proprietary vulnerability management platform. It aggregates findings from penetration tests, automated scanners, and bug bounty programs into a single workspace, enabling security and development teams to assign tasks, track remediation progress, and generate executive and technical reports. It is purpose-built for enterprises, startups, and MSSPs that want to streamline their entire vulnerability lifecycle. ",
   },
   {
     question: "What is Vulnytics and how does it help my security team?",
