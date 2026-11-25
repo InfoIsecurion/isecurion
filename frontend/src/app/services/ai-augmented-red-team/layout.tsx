@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import ServiceJsonLd from "../../../components/seo/ServiceJsonLd";
 import { serviceMetadata } from "../../../lib/seo/buildMetadata";
 
-const SLUG = "ai-augamented-red-team";
+const SLUG = "ai-augmented-red-team";
 
 export const metadata = serviceMetadata(SLUG);
 

@@ -12,7 +12,7 @@ import FAQSection from "../../../components/sections/FAQSection";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useForm } from "react-hook-form";
 import {
-  aiAugamented,
+  aiaugmented,
   breachAttackSimulation,
 } from "../../../services/api/contact";
 import { toast } from "react-toastify";

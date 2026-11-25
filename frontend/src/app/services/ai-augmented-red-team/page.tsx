@@ -13,7 +13,7 @@ import airedteaming from "../../../assets/services/ai-redteaming.png";
 import Image from "next/image";
 import FAQSection from "../../../components/sections/FAQSection";
 
-import { aiAugamented } from "../../../services/api/contact";
+import { aiaugmented } from "../../../services/api/contact";
 import { toast } from "react-toastify";
 import { useRef, useState } from "react";
 import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
@@ -369,7 +369,7 @@ const aiRedTeamAssessmentFAQs = [
   },
 ];
 
-function AiAugamentedRedTeam() {
+function AiaugmentedRedTeam() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [loading, setLoading] = useState(false);
   const turnstileRef = useRef<TurnstileInstance>(null);
@@ -385,7 +385,7 @@ function AiAugamentedRedTeam() {
   const submit = async (data: ContactFormData) => {
     setLoading(true);
     try {
-      const response = await aiAugamented({ ...data, turnstileToken });
+      const response = await aiaugmented({ ...data, turnstileToken });
       if (response.status === 200) {
         toast.success(response.message);
         reset();
@@ -1129,4 +1129,4 @@ function AiAugamentedRedTeam() {
   );
 }
 
-export default AiAugamentedRedTeam;
+export default AiaugmentedRedTeam;
