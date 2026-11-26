@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import webHeroBackground from "../../../assets/services/webHeroBackground.png";
+import webHeroBackground from "../../../assets/services/webApplicationBg.png";
 import webAssessment from "../../../assets/services/webAssessment.png";
 import methodologySettings from "../../../assets/services/methodologySettings.png";
 import { Icon } from "@iconify/react";
@@ -283,10 +283,10 @@ function page() {
               Benefits of Web Application Security Assessment
             </h2>
 
-            <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4">
+            <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-4 [&>*]:h-full">
               {assessmentCards.map((card, index) => (
                 <Animation key={card.title} delay={index * 0.12}>
-                  <motion.div className="min-h-[155px] rounded-[15px] border border-[#002C8C] bg-gradient-to-b from-[#0A1119] to-[#17366E] p-4 sm:min-h-[235px] sm:p-5">
+                  <motion.div className="h-full min-h-[155px] rounded-[15px] border border-[#002C8C] bg-gradient-to-b from-[#0A1119] to-[#17366E] p-4 sm:min-h-[235px] sm:p-5">
                     {/* Icon */}
                     <div
                       className="flex h-12 w-12 items-center justify-center rounded-full"

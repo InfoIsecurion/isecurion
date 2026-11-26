@@ -412,7 +412,7 @@ function DesktopDiagram({
               <span
                 className="block font-medium text-[#29559D]"
                 style={{
-                  fontSize: `max(14px, ${cq(14.5)})`,
+                  fontSize: `clamp(12px, ${cq(14.5)}, 14.5px)`,
                   lineHeight: 1.2,
                 }}
               >
@@ -421,7 +421,7 @@ function DesktopDiagram({
               <h3
                 className="font-medium text-white"
                 style={{
-                  fontSize: `max(16px, ${cq(14)})`,
+                  fontSize: `clamp(13px, ${cq(16)}, 16px)`,
                   lineHeight: 1.3,
                   marginTop: cq(5),
                 }}
@@ -431,7 +431,7 @@ function DesktopDiagram({
               <p
                 className="text-white/65"
                 style={{
-                  fontSize: `max(15px, ${cq(11.8)})`,
+                  fontSize: `clamp(12px, ${cq(15)}, 15px)`,
                   lineHeight: 1.55,
                   marginTop: cq(8),
                 }}

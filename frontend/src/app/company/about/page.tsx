@@ -17,6 +17,12 @@ import productlead from "../../../assets/about/productLead.png";
 import hrteam from "../../../assets/about/hrteam.png";
 import team from "../../../assets/about/team.png";
 import team1 from "../../../assets/about/team1.png";
+import crestLogo from "../../../assets/about/crest.png" 
+import certinLogo from "../../../assets/about/certin.png"
+import isoLogo from "../../../assets/about/iso.png"
+import rama from "../../../assets/about/Rama Photo.jpg"
+import satish from "../../../assets/about/Sathish1.png"
+import satishM from "../../../assets/about/Satish_M.png"
 
 const data = [
   {
@@ -28,7 +34,7 @@ const data = [
     description: "Security Assessments Delivered",
   },
   {
-    number: "15+",
+    number: "10+",
     description: "Years of Cybersecurity Expertise",
   },
   {
@@ -41,37 +47,111 @@ const timelineData = [
   {
     id: 1,
     year: "2015",
-    position: "bottom",
+    title: "THE BEGINNING",
     description:
-      "Founded to strengthen organizations against evolving cyber threats.",
+      "Founded with a vision to strengthen information security and build a safer digital ecosystem.",
+    position: "bottom",
   },
   {
     id: 2,
     year: "2016",
-    position: "top",
+    title: "BUILDING CAPABILITIES",
     description:
-      "Named among India's Top 25 Promising Cybersecurity Consultants.",
+      "Expanded cybersecurity capabilities and established a strong foundation in security consulting.",
+    position: "top",
   },
   {
     id: 3,
     year: "2019",
-    position: "bottom",
+    title: "ENTERPRISE EXPANSION",
     description:
-      "Achieved ISO 27001 certification for information security excellence.",
+      "Expanded into enterprise cybersecurity engagements, strengthening our service capabilities.",
+    position: "bottom",
   },
   {
     id: 4,
     year: "2021",
-    position: "top",
+    title: "CERT-In EMPANELMENT",
     description:
-      "Became a CERT-In Empanelled Information Security Auditing Organization.",
+      "Achieved CERT-In empanelment, reinforcing our commitment to cybersecurity excellence.",
+    position: "top",
   },
   {
     id: 5,
-    year: "2023",
-    position: "bottom",
+    year: "2022",
+    title: "ISO 27001 CERTIFICATION",
     description:
-      "Trusted by 200+ organizations, powered by 75+ cybersecurity experts.",
+      "Achieved ISO 27001 certification, demonstrating our commitment to information security management.",
+    position: "bottom",
+  },
+  {
+    id: 6,
+    year: "2023",
+    title: "200+ CUSTOMERS",
+    description:
+      "Reached 200+ customers, delivering cybersecurity services across India.",
+    position: "top",
+  },
+  {
+    id: 7,
+    year: "2025",
+    title: "EXPANSION & INNOVATION",
+    description:
+      "Expanded our presence across India with multiple offices and introduced our in-house cybersecurity product, Vulnytics.",
+    position: "bottom",
+  },
+  {
+    id: 8,
+    year: "2026",
+    title: "CREST ACCREDITATION",
+    description:
+      "Achieved CREST accreditation, launched Drosera.ai, expanded our global delivery and SOC operations, grew to 100+ professionals, and surpassed 500 customers.",
+    position: "top",
+  },
+];
+
+const accreditations = [
+  {
+    id: 1,
+    title: "CREST MEMBER",
+    logo: crestLogo,
+    alt: "CREST Member",
+    logoClass: "h-[96px] sm:h-[100px]",
+    description: (
+      <>
+        ISECURION is a{" "}
+        <strong className="font-semibold text-white">CREST Member,</strong>{" "}
+        accredited for Penetration Testing.
+      </>
+    ),
+  },
+  {
+    id: 2,
+    title: "CERT-IN EMPANELLED",
+    logo: certinLogo,
+    alt: "CERT-In",
+    logoClass: "mt-2.5 h-[42px] sm:h-[44px]",
+    description: (
+      <>
+        ISECURION is empanelled by{" "}
+        <strong className="font-semibold text-white">CERT-In</strong> under the
+        Ministry of Electronics and Information Technology.
+      </>
+    ),
+  },
+  {
+    id: 3,
+    title: "ISO 27001:2022 CERTIFIED",
+    logo: isoLogo,
+    alt: "ISO 27001",
+    logoClass: "mt-1 h-[92px] sm:h-[96px]",
+    description: (
+      <>
+        ISECURION is{" "}
+        <strong className="font-semibold text-white">ISO 27001:2022</strong>{" "}
+        certified, ensuring robust information security management.
+      </>
+    ),
   },
 ];
 
@@ -92,11 +172,11 @@ function About() {
               duration: 0.6,
               ease: "easeOut",
             }}
-            className="space-x-1 text-base sm:text-lg font-semibold"
+            className="text-center space-x-1 text-base sm:text-lg font-semibold"
           >
             <Link href="/">HOME</Link>
             <span>/</span>
-            <Link href="/about">ABOUT US</Link>
+            <span>ABOUT US</span>
           </motion.div>
 
           {/* Heading Animation */}
@@ -148,16 +228,18 @@ function About() {
               <h2 className=" font-medium mx-auto lg:mx-0 text-center lg:text-left leading-8 sm:leading-12 max-w-md text-white mt-4">
                 Building a safer digital tomorrow, today.
               </h2>
-              <p className="text-base sm:text-base font-medium max-w-3xl mx-auto lg:mx-0 text-center lg:text-left leading-6 md:leading-7 text-[#D1D1D1] max-w-[753px]">
+              <p className="text-base sm:text-base font-medium max-w-3xl mx-auto lg:mx-0 text-center lg:text-left leading-6 md:leading-7 text-[#D1D1D1] max-w-[850px]">
                 ISECURION is an{" "}
                 <span className="text-[#9AA4BA]">
                   CERT-In Empanelled and ISO 27001:2022 certified
                 </span>{" "}
-                information security consulting company providing out-most
-                service quality, innovation and research in the field of
-                Information Security and Consultancy. We provide a unique blend
-                of services to our customers catering to the current information
-                security landscape.
+                information security consulting company and a <span className="text-[#9AA4BA]"> CREST Member </span>, accredited for Penetration Testing. 
+                ISECURION is fully compliant with India's Digital Personal Data Protection (DPDP) Act, 2023, providing out-most service quality, innovation and research in the 
+                field of Information Security and Consultancy. We provide a unique blend of services to our customers catering to the current information security and data privacy landscape.
+              </p>
+              <p className="text-base sm:text-base font-medium max-w-3xl mx-auto lg:mx-0 text-center lg:text-left leading-6 md:leading-7 text-[#D1D1D1] max-w-[853px]">
+                  Our business oriented approach helps us understand our client’s security requirements based on their business type and processes related to it. Along with identifying critical 
+                  loopholes in our client systems, ISECURION also provides support in remediation by aligning them with <Link href="/services/vulnerability-assessment-penetration-testing" className="hover:underline text-[#0F66CA]" >industry best practices</Link>  and <Link href="/services/iso-27001" className="hover:underline text-[#0F66CA]"> compliance requirements</Link>.
               </p>
             </div>
           </Animation>
@@ -170,6 +252,108 @@ function About() {
       <div className="mt-10 w-full  overflow-hidden bg-[#070D1A]">
         <Image src={team1} alt="about story" className="w-full " />
       </div>
+
+      {/* ACCREDITATIONS & RECOGNITION */}
+      <section className="relative overflow-hidden bg-[#020712] py-14 sm:py-16">
+        {/* Decorative background (glows, arcs, dots) */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          {/* top-left glow */}
+          <div className="absolute -left-28 -top-28 h-[320px] w-[320px] rounded-full bg-[#0F66EA]/25 blur-[100px] sm:h-[420px] sm:w-[420px]" />
+
+          {/* bottom-right glow + light streak */}
+          <div className="absolute -bottom-20 -right-20 h-[260px] w-[260px] rounded-full bg-[#0F66EA]/25 blur-[90px] sm:h-[320px] sm:w-[320px]" />
+          <div className="absolute bottom-16 right-0 hidden h-[2px] w-[300px] -rotate-[33deg] bg-gradient-to-r from-transparent via-[#2F7CFF] to-transparent blur-[1px] md:block" />
+
+          {/* top-right arcs */}
+          <svg
+            className="absolute right-0 top-0 hidden h-[260px] w-[260px] md:block"
+            viewBox="0 0 260 260"
+            fill="none"
+          >
+            <circle cx="310" cy="-50" r="170" stroke="#2563D8" strokeOpacity="0.22" />
+            <circle cx="310" cy="-50" r="215" stroke="#2563D8" strokeOpacity="0.18" />
+            <circle cx="310" cy="-50" r="260" stroke="#2563D8" strokeOpacity="0.14" />
+            <circle cx="310" cy="-50" r="305" stroke="#2563D8" strokeOpacity="0.1" />
+            <circle cx="236" cy="40" r="6" fill="#19D3F3" fillOpacity="0.25" />
+            <circle cx="236" cy="40" r="2.5" fill="#19D3F3" />
+          </svg>
+
+          {/* left arcs */}
+          <svg
+            className="absolute left-0 top-[270px] hidden h-[260px] w-[200px] md:block"
+            viewBox="0 0 200 260"
+            fill="none"
+          >
+            <circle cx="-70" cy="150" r="110" stroke="#2563D8" strokeOpacity="0.22" />
+            <circle cx="-70" cy="150" r="150" stroke="#2563D8" strokeOpacity="0.18" />
+            <circle cx="-70" cy="150" r="190" stroke="#2563D8" strokeOpacity="0.14" />
+            <circle cx="35" cy="92" r="6" fill="#19D3F3" fillOpacity="0.25" />
+            <circle cx="35" cy="92" r="2.5" fill="#19D3F3" />
+            <circle cx="2" cy="118" r="2" fill="#19D3F3" />
+          </svg>
+        </div>
+
+        <div className="relative mx-auto max-w-7xl px-6 sm:px-10">
+          {/* Heading */}
+          <Animation>
+            <div className="mx-auto flex max-w-[880px] flex-col items-center text-center">
+              {/* Eyebrow with fading lines */}
+              <div className="flex items-center justify-center gap-4 sm:gap-8">
+                <span className="hidden h-[1.5px] w-16 bg-gradient-to-r from-transparent to-[#9AA0AB] sm:block lg:w-28" />
+                <p className="text-xs font-medium uppercase tracking-[1px] text-[#D9DCE3] sm:text-base lg:text-[18px]">
+                  ACCREDITATIONS &amp; RECOGNITION
+                </p>
+                <span className="hidden h-[1.5px] w-16 bg-gradient-to-l from-transparent to-[#9AA0AB] sm:block lg:w-28" />
+              </div>
+
+              <h2 className="mt-5 text-[28px] font-medium leading-[1.2] text-white sm:text-[34px] lg:text-[40px]">
+                Trusted. <span className="text-[#0F66EA]">Recognised</span>.
+                Compliant.
+              </h2>
+
+              <p className="mt-5 max-w-[880px] text-sm leading-[1.9] text-[#D1D1D1] sm:text-base">
+                Recognised by leading industry bodies and certified against
+                globally recognised standards, reinforcing our commitment to
+                trusted cybersecurity practices and service excellence.
+              </p>
+            </div>
+          </Animation>
+
+          {/* Cards */}
+          <Animation>
+            <div className="mx-auto mt-10 flex max-w-[1030px] flex-wrap justify-center gap-6 sm:mt-14 lg:mt-[72px]">
+              {accreditations.map((item) => (
+                <div
+                  key={item.id}
+                  className="w-full max-w-[420px] rounded-md border-t-[5px] border-[#56A0D2] bg-gradient-to-b from-[#080E1B] to-[#050A15] px-4 pb-6 pt-[26px] sm:w-[calc(50%-12px)] sm:max-w-none lg:w-[calc(33.333%-16px)]"
+                >
+                  {/* Logo */}
+                  <div className="flex h-[100px] items-start">
+                    <Image
+                      src={item.logo}
+                      alt={item.alt}
+                      className={`w-auto object-contain ${item.logoClass}`}
+                    />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="mt-5 text-[17px] font-medium uppercase tracking-[0.3px] text-white sm:text-[18px]">
+                    {item.title}
+                  </h3>
+
+                  {/* Accent bar */}
+                  <span className="mt-3 block h-[2px] w-20 bg-gradient-to-r from-[#3A7CA5] to-[#56A0D2]" />
+
+                  {/* Description */}
+                  <p className="mt-4 text-[15px] leading-[27px] text-[#D1D1D1]">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Animation>
+        </div>
+      </section>
 
       {/* our story  */}
       <div className="py-14 bg-[#070D1A]">
@@ -191,10 +375,10 @@ function About() {
                     our story
                   </p>
                 </div>
-                <h2 className="max-w-md font-medium lg:leading-11.25 text-white mt-4">
+                <h2 className="w-full lg:max-w-md font-medium lg:leading-11.25 text-white mt-4">
                   Building a more secure digital future
                 </h2>
-                <p className="text-[16px] font-medium max-w-lg leading-[28px] text-[#D1D1D1] mt-4">
+                <p className="text-[16px] font-medium lg:max-w-lg leading-[28px] text-[#D1D1D1] mt-4">
                   At ISECURION, we help organizations stay resilient against
                   evolving cyber threats through expert cybersecurity services
                   and purpose-built security solutions.
@@ -332,107 +516,133 @@ function About() {
       </div>
 
       {/* our journey  */}
-      <section className="relative  overflow-hidden bg-gradient-to-b from-[#000B23] to-[#092E70] py-14">
-        <div className="mx-auto max-w-7xl px-6 sm:px-10">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#000B23] to-[#092E7030] py-14">
+        <div className="mx-auto max-w-7xl px-6 lg:pr-15 lg:pl-2">
           {/* Heading */}
           <Animation>
             <div className="relative flex items-center justify-center">
-              <h2 className="text-center text-[28px] font-medium uppercase tracking-[12px] text-[#17305B] sm:text-[30px]">
+              <h2 className="whitespace-nowrap text-center text-[16px] font-semibold uppercase tracking-[2px] text-[#15264D] min-[420px]:text-[18px] min-[420px]:tracking-[4px] sm:text-[24px] sm:tracking-[6px] md:text-[26px] md:tracking-[10px] lg:text-[30px] lg:tracking-[12px]">
                 Journey Of ISECURION
               </h2>
 
-              <h4 className="absolute text-[26px] font-medium uppercase tracking-[4px] text-white sm:text-[30px]">
+              <h4 className="absolute whitespace-nowrap text-[16px] font-medium uppercase tracking-[3px] text-white sm:text-[20px] lg:text-[22px]">
                 Timeline
               </h4>
             </div>
           </Animation>
 
-          {/* Timeline Card */}
+          {/* Timeline */}
           <Animation>
-            <div className="relative hidden lg:block mt-10 rounded-[35px] border border-[#52617A] bg-[#101B35] px-6 py-10 sm:px-10 lg:px-12">
-              {/* Left Circle */}
-              <div className="absolute -left-[18px] top-1/4 z-20 h-14 w-14 rounded-full bg-gradient-to-b from-[#22D1EE] to-[#3D5AF1]"></div>
-
-              {/* Horizontal Timeline Line */}
-              <div className="absolute left-14 right-14 top-1/2 h-[2px] bg-[#2563D8]" />
-
-              {/* Timeline Items */}
+            {/* ───────── Desktop (lg and above): horizontal ───────── */}
+            <div className="relative hidden lg:block mt-10 py-10">
               <div
-                className="relative grid gap-4"
+                className="grid"
                 style={{
                   gridTemplateColumns: `repeat(${timelineData.length}, minmax(0, 1fr))`,
+                  // 1 top text | 2 top connector | 3 year | 4 circle + line | 5 bottom connector | 6 bottom text
+                  gridTemplateRows: "auto 85px 46px 28px 66px auto",
                 }}
               >
-                {timelineData.map((item) => (
-                  <div
-                    key={item.id}
-                    className="relative flex min-h-[380px] flex-col items-center"
-                  >
-                    {item.position === "bottom" ? (
-                      <>
-                        {/* Year - TOP */}
-                        <h4 className="absolute bottom-1/2 mb-12 text-2xl font-semibold text-[#0F66EA]">
-                          {item.year}
-                        </h4>
+                {timelineData.map((item, index) => {
+                  const isBottom = item.position === "bottom";
 
-                        {/* Connector - BOTTOM */}
-                        <div className="absolute top-1/2 mt-6 h-16 w-px bg-[#D5D9E0]" />
-
-                        {/* Description - BOTTOM */}
-                        <p className="absolute top-1/2 mt-[100px] max-w-[320px] text-center text-sm font-medium leading-7 text-white">
-                          {item.description}
-                        </p>
-                      </>
-                    ) : (
-                      <>
-                        {/* Description - TOP */}
-                        <p className="absolute bottom-1/2 mb-[110px] max-w-[460px] text-center text-sm font-medium leading-7 text-white">
-                          {item.description}
-                        </p>
-
-                        {/* Connector - TOP */}
-                        <div className="absolute bottom-1/2 mb-6 h-16 w-[0.5px] bg-[#DCDCDC]" />
-
-                        {/* Year - BOTTOM */}
-                        <h4 className="absolute top-1/2 mt-12 text-2xl font-semibold text-[#0F66EA]">
-                          {item.year}
-                        </h4>
-                      </>
-                    )}
-
-                    {/* Timeline Circle */}
-                    <div className="absolute top-1/2 z-10 h-7 w-7 -translate-y-1/2 rounded-full border-[3.5px] border-[#55D6FF] bg-[#101B35]">
-                      <div className="absolute inset-[3px] rounded-full bg-[#55D6FF]" />
+                  const textBlock = (
+                    <div className="w-[180px] shrink-0 text-center xl:w-[200px] 2xl:w-[210px]">
+                      <h5 className="mb-[3px] text-[12px] font-medium leading-[18px] tracking-[0.5px] text-[#77EBFE] xl:text-[13px]">
+                        {item.title}
+                      </h5>
+                      <p className="mt-2 text-[13px] font-medium leading-[1.5] text-[#FEFEFE] xl:text-sm">
+                        {item.description}
+                      </p>
                     </div>
-                  </div>
-                ))}
+                  );
+
+                  const connector = (
+                    <div className="relative h-full w-px bg-[#DCDCDC] after:absolute after:bottom-0 after:left-1/2 after:h-[6px] after:w-[6px] after:-translate-x-1/2 after:rounded-full after:bg-[#D5D9E0]" />
+                  );
+
+                  return (
+                    <div
+                      key={item.id}
+                      className="grid row-span-6 justify-items-stretch [grid-template-rows:subgrid]"
+                      style={{ gridColumn: index + 1, gridRow: "1 / span 6" }}
+                    >
+                      {/* 1. Text above the line */}
+                      <div className="flex items-start justify-center pb-6">
+                        {!isBottom && textBlock}
+                      </div>
+
+                      {/* 2. Connector above the line */}
+                      <div className="flex justify-center">
+                        {!isBottom && connector}
+                      </div>
+
+                      {/* 3. Year (always above the line) */}
+                      <div className="flex items-center justify-center">
+                        <h4 className="text-xl font-semibold leading-8 text-[#0F66EA] xl:text-2xl">
+                          {item.year}
+                        </h4>
+                      </div>
+
+                      {/* 4. Circle + horizontal line segment */}
+                      <div className="relative flex items-center justify-center before:absolute before:inset-x-0 before:top-1/2 before:h-[2px] before:-translate-y-1/2 before:bg-[#2563D8]">
+                        <div className="relative z-10 h-7 w-7 rounded-full border-[3.5px] border-[#55D6FF] bg-[#101B35]">
+                          <div className="absolute inset-[3px] rounded-full bg-[#55D6FF]" />
+                        </div>
+                      </div>
+
+                      {/* 5. Connector below the line */}
+                      <div className="flex justify-center pt-2.5">
+                        {isBottom && <div className="h-[56px]">{connector}</div>}
+                      </div>
+
+                      {/* 6. Text below the line */}
+                      <div className="flex items-start justify-center pt-4">
+                        {isBottom && textBlock}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
-            <div className="relative lg:hidden mt-10">
-              {/* Vertical line */}
-              <div className="absolute left-[15px] top-4 bottom-4 w-[2px] bg-[#2563D8]" />
 
-              <div className="space-y-10">
-                {timelineData.map((item) => (
-                  <div key={item.id} className="relative flex gap-6">
+            {/* ───────── Mobile / Tablet (below lg): vertical ───────── */}
+            <div className="relative mx-auto mt-10 max-w-2xl lg:hidden">
+              {timelineData.map((item, index) => {
+                const isLast = index === timelineData.length - 1;
+
+                return (
+                  <div
+                    key={item.id}
+                    className={`relative flex gap-5 ${isLast ? "" : "pb-10"}`}
+                  >
+                    {/* Vertical line segment to the next point */}
+                    {!isLast && (
+                      <div className="absolute bottom-0 left-[9.5px] top-7 w-[2px] bg-[#2563D8]" />
+                    )}
+
                     {/* Timeline point */}
-                    <div className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-[4px] border-[#55D6FF] bg-[#101B35]">
-                      <div className="h-2 w-2 rounded-full bg-[#55D6FF]" />
+                    <div className="relative z-10 h-5 w-5 shrink-0 rounded-full border-[3.5px] border-[#55D6FF] bg-[#101B35]">
+                      <div className="absolute inset-[4px] rounded-full bg-[#55D6FF]" />
                     </div>
 
                     {/* Content */}
-                    <div className="flex-1 pb-2">
-                      <h4 className="text-xl font-semibold text-[#0F66EA]">
+                    <div className="min-w-0 flex-1">
+                      <h4 className="text-xl font-semibold leading-7 text-[#0F66EA]">
                         {item.year}
                       </h4>
 
-                      <p className="mt-2 text-sm font-medium leading-6 text-white">
+                      <h5 className="mt-1 text-xs font-medium tracking-[0.5px] text-[#55D6FF]">
+                        {item.title}
+                      </h5>
+
+                      <p className="mt-1.5 text-sm font-medium leading-6 text-white">
                         {item.description}
                       </p>
                     </div>
                   </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
           </Animation>
         </div>
@@ -488,9 +698,7 @@ function About() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mt-8 gap-10">
             <div className="flex flex-col items-center gap-5 ">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
-                Sales
-              </h3>
+              
               <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={saleshead}
@@ -504,13 +712,11 @@ function About() {
                 </p>
               </div>
               <p className="text-base font-semibold text-[#2388FF]">
-                Sales Head
+                General Manager
               </p>
             </div>
             <div className="flex flex-col items-center gap-5 ">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
-                Compliance Practice
-              </h3>
+              
               <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={compliancehead}
@@ -527,10 +733,27 @@ function About() {
                 Compliance Head
               </p>
             </div>
+            <div className="flex flex-col items-center gap-5">
+              
+              <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
+                <Image
+                  src={rama}
+                  alt="Senior Manager"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
+                <p className="text-base sm:text-xl font-semibold text-[#19213D]">
+                  Ramakrishnan S
+                </p>
+
+              </div>
+              <p className="text-base font-semibold text-[#2388FF]">
+                Senior Manager
+              </p>
+            </div>
             <div className="flex flex-col items-center gap-5 ">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
-                Offensive Security
-              </h3>
+              
               <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={offensivesecurityhead}
@@ -547,10 +770,27 @@ function About() {
                 Offensive Security & Product Head
               </p>
             </div>
+            <div className="flex flex-col items-center gap-5">
+              
+              <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
+                <Image
+                  src={satish}
+                  alt="Presales Manager"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
+                <p className="text-base sm:text-xl font-semibold text-[#19213D]">
+                  Sathish
+                </p>
+
+              </div>
+              <p className="text-base font-semibold text-[#2388FF]">
+                Presales Manager
+              </p>
+            </div>
             <div className="flex flex-col items-center gap-5 ">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
-                Product Management
-              </h3>
+              
               <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={productlead}
@@ -567,14 +807,11 @@ function About() {
                 Product Lead
               </p>
             </div>
-            <div className="flex flex-col items-center gap-5">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#FFFFFF]">
-                HR Management
-              </h3>
+            <div className="flex flex-col items-center gap-5"> 
               <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={hrteam}
-                  alt="CEO"
+                  alt="HR Manager"
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -585,6 +822,25 @@ function About() {
               </div>
               <p className="text-base font-semibold text-[#2388FF]">
                 HR Manager
+              </p>
+            </div>
+            
+            <div className="flex flex-col items-center gap-5">
+              <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
+                <Image
+                  src={satishM}
+                  alt="Presales Manager"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
+                <p className="text-base sm:text-xl font-semibold text-[#19213D]">
+                  Sathish M
+                </p>
+
+              </div>
+              <p className="text-base font-semibold text-[#2388FF]">
+                
               </p>
             </div>
           </div>

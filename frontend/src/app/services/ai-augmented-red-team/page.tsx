@@ -428,7 +428,7 @@ function AiaugmentedRedTeam() {
                 style={{ animationDelay: "750ms" }}
               >
                 ISECURION's AI-Augmented Red Team goes beyond traditional network and human-focused red teaming to test the attack paths that matter now: AI supply chain compromise, LLM and agent exploitation, deepfake-driven social engineering, and AI-accelerated reconnaissance. Delivered by CERT-In empanelled red team specialists with dedicated AI/ML security expertise to enterprises across the United States, United Kingdom, Europe, the GCC, Singapore, Australia, and India,
-                remotely or on-site. Available as a standalone engagement or as an add-on module to your existing VAPT/RTaaS retainer..
+                remotely or on-site. Available as a standalone engagement or as an add-on module to your existing VAPT/RTaaS retainer.
               </p>
               <p
                 className="text-base sm:text-lg leading-7.5 md:leading-8 text-[#D1D1D1] animate-hero-reveal"

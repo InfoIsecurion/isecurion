@@ -774,10 +774,10 @@ function page() {
 
                 <WordReveal
                   text="Protect Your Critical Information Infrastructure"
-                  className="mx-auto mt-4 max-w-[570px] text-center text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] md:text-left lg:mx-0 lg:text-[36px] xl:text-[40px]"
+                  className="mx-auto mt-4 lg:max-w-[570px] text-center text-[28px] font-medium leading-[1.3] tracking-[-0.02em] text-white sm:text-[34px] md:text-left lg:mx-0 lg:text-[36px] xl:text-[40px]"
                 ></WordReveal>
 
-                <div className="mx-auto mt-[22px] max-w-[530px] space-y-5 text-center text-[15px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[16px] md:text-left lg:mx-0 lg:text-[16px] xl:text-[17px]">
+                <div className="mx-auto mt-[22px] lg:max-w-[530px] space-y-5 text-center text-[15px] font-normal leading-[1.72] text-[#D1D1D1] sm:text-[16px] sm:text-left lg:mx-0 lg:text-[16px] xl:text-[17px]">
                   <p
                     className="animate-hero-reveal"
                     style={{ animationDelay: "500ms" }}

@@ -13,7 +13,7 @@ import {
   breachAttackEndpoint,
   contactEndpoint,
   redTeamEndpoint,
-  aiAugamentedEndpoint,
+  aiaugmentedEndpoint,
   phishingSimulationEndpoint,
   dpoEndpoint,
   dpdpEndpoint,
@@ -25,6 +25,7 @@ import {
   bseNseAuditEndpoint,
   ciraAuditEndpoint,
   soc2ComplianceEndpoint,
+  doraComplianceEndpoint,
 } from './app/api/contact/contact.endpoint'
 
 const filename = fileURLToPath(import.meta.url)
@@ -42,7 +43,7 @@ export default buildConfig({
     contactEndpoint,
     breachAttackEndpoint,
     redTeamEndpoint,
-    aiAugamentedEndpoint,
+    aiaugmentedEndpoint,
     phishingSimulationEndpoint,
     dpoEndpoint,
     dpdpEndpoint,
@@ -54,6 +55,7 @@ export default buildConfig({
     bseNseAuditEndpoint,
     ciraAuditEndpoint,
     soc2ComplianceEndpoint,
+    doraComplianceEndpoint,
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',

@@ -242,13 +242,15 @@ const gdprSteps = [
 function page() {
   return (
     <div>
-      <section className="relative w-full min-h-[560px] py-14 flex items-center">
+      <section className="relative flex w-full min-h-[560px] py-14 flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src={heroBackground}
-            alt="Smart contract security"
+            alt=""
             fill
-            className="object-cover"
+            priority
+            sizes="100vw"
+            className="object-cover object-[75%_center] lg:object-center"
           />
         </div>
 

@@ -282,10 +282,10 @@ function SecureCode() {
                 <p className="text-sm sm:text-base font-semibold text-[#0F66EA]">
                   {item.number}
                 </p>
-                <h3 className="text-base font-medium text-[#F5F0E8]">
+                <h3 className="text-base font-medium text-[#F5F0E8] ">
                   {item.title}
                 </h3>
-                <p className="relative text-sm font-normal leading-6 text-[#D1D1D1D6]">
+                <p className="relative text-sm font-normal leading-6 text-[#D1D1D1D6] md:h-[150px]">
                   {item.description}
                 </p>
               </AnimatedCard>
@@ -314,7 +314,7 @@ function SecureCode() {
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-10">
             {secureCodeReviewMethodology.map((item, index) => (
               <AnimatedCard key={index} delay={index * 0.15}>
-                <div className="flex flex-col justify-between space-y-2 h-auto  md:h-[160px]">
+                <div className="flex flex-col justify-between space-y-2 h-auto  md:h-[180px]">
                   <p className="text-base font-semibold flex items-center gap-2 text-[#0F66EA]">
                     {item.number}
                     <span>
@@ -324,10 +324,10 @@ function SecureCode() {
                       ></Icon>
                     </span>
                   </p>
-                  <h3 className="text-sm sm:text-[17px] font-medium text-[#F5F0E8] max-w-[155px] leading-7">
+                  <h3 className="text-sm sm:text-[17px] font-medium text-[#F5F0E8] lg:max-w-[155px] lg:leading-7">
                     {item.title}
                   </h3>
-                  <p className="mt-4 text-[15px] font-normal leading-[22px] text-[#D1D1D1]">
+                  <p className="lg:mt-4 text-[15px] font-normal leading-[22px] text-[#D1D1D1]">
                     {item.description}
                   </p>
                 </div>

@@ -1,0 +1,15 @@
+[
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "DORA Compliance & Digital Operational Resilience Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "ISECURION",
+      "url": "https://isecurion.com"
+    },
+    "description": "ISECURION provides expert DORA compliance and Digital Operational Resilience services for financial institutions, covering ICT risk management, incident reporting, operational resilience testing, and third-party risk management.",
+    "url": "https://isecurion.com//compliance-audit-services/dora-compliance.html",
+    "keywords": "dora compliance, dora regulation, dora act, digital operational resilience act, dora eu, dora europe, digital operational resilience, dora cyber security, dora legislation"
+  }
+]

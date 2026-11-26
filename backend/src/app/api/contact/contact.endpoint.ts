@@ -3,7 +3,7 @@ import {
   submitContactForm,
   breachAttackSimulation,
   redTeam,
-  aiAugamentedRedTeam,
+  aiaugmentedRedTeam,
   phishingSimulation,
   dpoServices,
   aadharAudit,
@@ -15,6 +15,7 @@ import {
   vciso,
   iso27001,
   soc2Compliance,
+  doraCompliance,
 } from '@/controller/contact.controller'
 
 export const contactEndpoint: Endpoint = {
@@ -35,10 +36,10 @@ export const redTeamEndpoint: Endpoint = {
   handler: redTeam,
 }
 
-export const aiAugamentedEndpoint: Endpoint = {
-  path: '/ai-augamented',
+export const aiaugmentedEndpoint: Endpoint = {
+  path: '/ai-augmented',
   method: 'post',
-  handler: aiAugamentedRedTeam,
+  handler: aiaugmentedRedTeam,
 }
 
 export const phishingSimulationEndpoint: Endpoint = {
@@ -105,4 +106,10 @@ export const soc2ComplianceEndpoint: Endpoint = {
   path: '/soc-compliance',
   method: 'post',
   handler: soc2Compliance,
+}
+
+export const doraComplianceEndpoint: Endpoint = {
+  path: '/dora-compliance',
+  method: 'post',
+  handler: doraCompliance,
 }

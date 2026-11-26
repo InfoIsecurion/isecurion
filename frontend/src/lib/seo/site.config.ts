@@ -238,7 +238,7 @@ export const siteConfig = {
       id: "vulnytics",
       name: "Vulnytics - Vulnerability Management Platform",
       applicationCategory: "SecurityApplication",
-      url: `${url}/vulnytics.html`,
+      url: `https://vulnytics.isecurion.com/`,
       image: `${url}/assets/images/vulnytics-logo.png`,
       description:
         "Vulnytics is a vulnerability tracking and penetration testing workflow platform designed for enterprises, startups and MSSPs to streamline remediation and improve security posture.",

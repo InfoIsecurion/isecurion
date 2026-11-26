@@ -172,7 +172,7 @@ function Footer() {
             </div>
 
             {/* CONTACT CARD */}
-            <div className="mt-10 flex flex-col gap-6 rounded-[8px] bg-[#1E2433] px-4 py-3 sm:flex-row sm:items-center sm:px-12">
+            <div className="mt-10 flex flex-col gap-5 rounded-[8px] bg-[#1E2433] px-2 py-4 sm:flex-row sm:items-center sm:justify-center sm:gap-2 sm:px-6 lg:justify-start lg:px-10 xl:px-12">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white">
                   <Icon
@@ -182,7 +182,7 @@ function Footer() {
                   />
                 </div>
 
-                <span className="text-sm font-medium text-white">
+                <span className="whitespace-nowrap text-sm font-medium text-white">
                   <Link href="mailto:info@isecurion.com" target="_blank">
                     info@isecurion.com
                   </Link>
@@ -202,7 +202,7 @@ function Footer() {
                   />
                 </div>
 
-                <span className="text-sm font-medium text-white">
+                <span className="whitespace-nowrap text-sm font-medium text-white">
                   <Link href="tel:+918861201570" target="_blank">
                     +91 88612 01570
                   </Link>
@@ -279,7 +279,7 @@ function Footer() {
           <div className="flex flex-wrap items-center gap-3">
             <p>
               Copyright ©2026{" "}
-              <Link href="/" className="hover:text-[#0F66EA] hover:underline">
+              <Link href="/" className="hover:text-[#0F66EA] hover:underline uppercase">
                 Isecurion
               </Link>
             </p>

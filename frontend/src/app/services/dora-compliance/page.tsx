@@ -222,129 +222,129 @@ const Steps = [
 ];
 
 const whatYouReceive = [
-  {
-    title: "Comprehensive Report",
-    description:
-      "Full DORA compliance assessment report covering gaps and recommendations.",
-  },
-  {
-    title: "ICT Risk Analysis",
-    description:
-      "Detailed assessment of ICT risk and operational resilience.",
-  },
-  {
-    title: "Incident Management Review",
-    description:
-      "Evaluation of incident response and reporting frameworks against DORA standards.",
-  },
-  {
-    title: "Third-Party Assessment",
-    description:
-      "Assessment of third-party ICT providers and outsourcing risks.",
-  },
-  {
-    title: "Actionable Roadmap",
-    description:
-      "Step-by-step roadmap for full DORA regulatory compliance and operational resilience.",
-  },
-  {
-    title: "Testing Results",
-    description:
-      "Digital resilience testing results, including stress and penetration tests, with recommendations.",
-  },
+    {
+        title: "Comprehensive Report",
+        description:
+            "Full DORA compliance assessment report covering gaps and recommendations.",
+    },
+    {
+        title: "ICT Risk Analysis",
+        description:
+            "Detailed assessment of ICT risk and operational resilience.",
+    },
+    {
+        title: "Incident Management Review",
+        description:
+            "Evaluation of incident response and reporting frameworks against DORA standards.",
+    },
+    {
+        title: "Third-Party Assessment",
+        description:
+            "Assessment of third-party ICT providers and outsourcing risks.",
+    },
+    {
+        title: "Actionable Roadmap",
+        description:
+            "Step-by-step roadmap for full DORA regulatory compliance and operational resilience.",
+    },
+    {
+        title: "Testing Results",
+        description:
+            "Digital resilience testing results, including stress and penetration tests, with recommendations.",
+    },
 ];
 
 const doraFAQs = [
-  {
-    question: "What is DORA?",
-    answer:
-      "The Digital Operational Resilience Act (DORA) is a European Union regulation designed to strengthen the digital operational resilience of financial entities across the EU. It ensures firms can withstand, respond to, and recover from all types of ICT-related disruptions and threats.",
-  },
-  {
-    question: "What is the purpose of DORA?",
-    answer:
-      "DORA aims to harmonize ICT risk management, incident reporting, and resilience standards for financial entities in the EU, ensuring continuity of critical operations and reducing cyber and operational risks.",
-  },
-  {
-    question: "Who does DORA apply to?",
-    answer:
-      "DORA applies to financial institutions, payment service providers, crypto-asset service providers, investment firms, and third-party ICT service providers supporting financial services in the EU.",
-  },
-  {
-    question: "What is the scope of DORA?",
-    answer:
-      "The scope includes ICT risk management and governance, incident reporting, digital operational resilience testing, and third-party risk management. DORA covers both internal ICT operations and external service providers.",
-  },
-  {
-    question: "What is DORA's current status?",
-    answer:
-      "DORA was adopted in 2022 by the European Parliament and is currently in the implementation phase, with enforcement expected by 2025. EU member states must align national regulations with DORA.",
-  },
-  {
-    question: "When will DORA enforcement begin?",
-    answer:
-      "DORA enforcement deadlines vary for different requirements, with full compliance generally required by January 2025. Specific timelines are detailed in the DORA regulatory technical standards.",
-  },
-  {
-    question: "What are the key requirements of DORA?",
-    answer:
-      "Key requirements include: ICT risk management and governance,Incident response and reporting,Digital operational resilience testing,Third-party risk management,Compliance with DORA regulatory technical standards",
-  },
-  {
-    question: "What is ICT risk management under DORA?",
-    answer:
-      "ICT risk management involves identifying, assessing, and mitigating risks in digital systems, networks, and third-party ICT services to ensure continuity of financial operations.",
-  },
-  {
-    question: "What does incident response and reporting mean in DORA?",
-    answer:
-      "Financial entities must report major ICT incidents to competent authorities within the timelines set by DORA and maintain an effective incident response and recovery process.",
-  },
-  {
-    question: "What is digital operational resilience testing?",
-    answer:
-      "DORA mandates regular testing of digital systems to ensure resilience against cyberattacks, operational disruptions, and ICT failures. Stress tests and advanced penetration testing are recommended.",
-  },
-  {
-    question:"How does DORA handle third-party risk management?",
-    answer:"DORA requires financial institutions to monitor and manage ICT risks arising from outsourcing, especially critical third-party providers, ensuring contracts and SLAs comply with resilience standards."
-  },
-  {
-    question:"What is ISECURION’s scope of work for DORA?",
-    answer:"ISECURION provides end-to-end DORA compliance support, including:ICT risk assessment,Gap analysis against DORA requirements,Incident reporting framework setup,Operational resilience testing,Third-party vendor assessment"
-  },
-  {
-    question:"What methodology does ISECURION follow?",
-    answer:"ISECURION follows a structured methodology:Assessment & Gap Analysis,Risk Management Implementation,Incident Response & Reporting Framework,Digital Operational Resilience Testing,Third-Party Risk Management & Compliance Certification"
-  },
-  {
-    question:"What sets ISECURION apart in DORA compliance?",
-    answer:"Our value-add includes:Expert guidance from cybersecurity and regulatory specialists,Customized solutions for EU financial entities,Hands-on operational resilience testing,End-to-end compliance with DORA directives"
-  },
-  {
-    question:"What deliverables will I receive?",
-    answer:"Comprehensive DORA gap analysis report,ICT risk management framework,Incident response plan,Operational resilience testing report,Third-party vendor compliance checklist"
-  },
-  {
-    question:"How often should organizations test digital operational resilience?",
-    answer:"DORA requires regular testing, at least annually, or more frequently based on risk exposure. This includes simulations, penetration testing, and scenario-based stress tests."
-  },
-  {
-    question:"Why choose ISECURION for DORA compliance?",
-    answer:"As trusted security experts, ISECURION ensures compliance with DORA regulations, minimizes ICT risks, and provides actionable insights to strengthen digital resilience for financial organizations."
-  },
-  {
-    question:"How does DORA improve cyber resilience?",
-    answer:"By enforcing standardized ICT risk management, incident reporting, and operational testing, DORA ensures financial entities are better prepared for cyber threats and operational disruptions."
-  },
-  {
-    question:"Is DORA applicable outside the EU?",
-    answer:"While DORA is an EU regulation, financial entities outside the EU providing services to EU clients or relying on EU third-party ICT providers may also need to comply."
-  },
-  {
-    question:"What happens if a company is non-compliant with DORA?",
-    answer:"Non-compliance can result in regulatory penalties, reputational damage, operational disruptions, and potential restrictions on EU market operations. ISECURION helps organizations achieve timely compliance to avoid these risks."
-  }
+    {
+        question: "What is DORA?",
+        answer:
+            "The Digital Operational Resilience Act (DORA) is a European Union regulation designed to strengthen the digital operational resilience of financial entities across the EU. It ensures firms can withstand, respond to, and recover from all types of ICT-related disruptions and threats.",
+    },
+    {
+        question: "What is the purpose of DORA?",
+        answer:
+            "DORA aims to harmonize ICT risk management, incident reporting, and resilience standards for financial entities in the EU, ensuring continuity of critical operations and reducing cyber and operational risks.",
+    },
+    {
+        question: "Who does DORA apply to?",
+        answer:
+            "DORA applies to financial institutions, payment service providers, crypto-asset service providers, investment firms, and third-party ICT service providers supporting financial services in the EU.",
+    },
+    {
+        question: "What is the scope of DORA?",
+        answer:
+            "The scope includes ICT risk management and governance, incident reporting, digital operational resilience testing, and third-party risk management. DORA covers both internal ICT operations and external service providers.",
+    },
+    {
+        question: "What is DORA's current status?",
+        answer:
+            "DORA was adopted in 2022 by the European Parliament and is currently in the implementation phase, with enforcement expected by 2025. EU member states must align national regulations with DORA.",
+    },
+    {
+        question: "When will DORA enforcement begin?",
+        answer:
+            "DORA enforcement deadlines vary for different requirements, with full compliance generally required by January 2025. Specific timelines are detailed in the DORA regulatory technical standards.",
+    },
+    {
+        question: "What are the key requirements of DORA?",
+        answer:
+            "Key requirements include: ICT risk management and governance,Incident response and reporting,Digital operational resilience testing,Third-party risk management,Compliance with DORA regulatory technical standards",
+    },
+    {
+        question: "What is ICT risk management under DORA?",
+        answer:
+            "ICT risk management involves identifying, assessing, and mitigating risks in digital systems, networks, and third-party ICT services to ensure continuity of financial operations.",
+    },
+    {
+        question: "What does incident response and reporting mean in DORA?",
+        answer:
+            "Financial entities must report major ICT incidents to competent authorities within the timelines set by DORA and maintain an effective incident response and recovery process.",
+    },
+    {
+        question: "What is digital operational resilience testing?",
+        answer:
+            "DORA mandates regular testing of digital systems to ensure resilience against cyberattacks, operational disruptions, and ICT failures. Stress tests and advanced penetration testing are recommended.",
+    },
+    {
+        question: "How does DORA handle third-party risk management?",
+        answer: "DORA requires financial institutions to monitor and manage ICT risks arising from outsourcing, especially critical third-party providers, ensuring contracts and SLAs comply with resilience standards."
+    },
+    {
+        question: "What is ISECURION’s scope of work for DORA?",
+        answer: "ISECURION provides end-to-end DORA compliance support, including:ICT risk assessment,Gap analysis against DORA requirements,Incident reporting framework setup,Operational resilience testing,Third-party vendor assessment"
+    },
+    {
+        question: "What methodology does ISECURION follow?",
+        answer: "ISECURION follows a structured methodology:Assessment & Gap Analysis,Risk Management Implementation,Incident Response & Reporting Framework,Digital Operational Resilience Testing,Third-Party Risk Management & Compliance Certification"
+    },
+    {
+        question: "What sets ISECURION apart in DORA compliance?",
+        answer: "Our value-add includes:Expert guidance from cybersecurity and regulatory specialists,Customized solutions for EU financial entities,Hands-on operational resilience testing,End-to-end compliance with DORA directives"
+    },
+    {
+        question: "What deliverables will I receive?",
+        answer: "Comprehensive DORA gap analysis report,ICT risk management framework,Incident response plan,Operational resilience testing report,Third-party vendor compliance checklist"
+    },
+    {
+        question: "How often should organizations test digital operational resilience?",
+        answer: "DORA requires regular testing, at least annually, or more frequently based on risk exposure. This includes simulations, penetration testing, and scenario-based stress tests."
+    },
+    {
+        question: "Why choose ISECURION for DORA compliance?",
+        answer: "As trusted security experts, ISECURION ensures compliance with DORA regulations, minimizes ICT risks, and provides actionable insights to strengthen digital resilience for financial organizations."
+    },
+    {
+        question: "How does DORA improve cyber resilience?",
+        answer: "By enforcing standardized ICT risk management, incident reporting, and operational testing, DORA ensures financial entities are better prepared for cyber threats and operational disruptions."
+    },
+    {
+        question: "Is DORA applicable outside the EU?",
+        answer: "While DORA is an EU regulation, financial entities outside the EU providing services to EU clients or relying on EU third-party ICT providers may also need to comply."
+    },
+    {
+        question: "What happens if a company is non-compliant with DORA?",
+        answer: "Non-compliance can result in regulatory penalties, reputational damage, operational disruptions, and potential restrictions on EU market operations. ISECURION helps organizations achieve timely compliance to avoid these risks."
+    }
 
 ];
 
@@ -362,27 +362,23 @@ function page() {
     } = useForm<ContactFormData>();
 
     const submit = async (data: ContactFormData) => {
-        console.log(data);
+        const payload = {
+            ...data,
+            turnstileToken,
+        };
+
         setLoading(true);
+
         try {
-            if (!turnstileToken) {
-                toast.error("Please complete CAPTCHA verification.");
-                return;
-            }
-            const response = await doraCompliance({ ...data, turnstileToken });
+            const response = await doraCompliance(payload);
+
             if (response.status === 200) {
                 toast.success(response.message);
                 reset();
                 setTurnstileToken("");
-                turnstileRef.current?.reset();
             } else {
                 toast.error(response.message);
             }
-        } catch (error) {
-            toast.error(
-                error.response?.data?.message ||
-                "Something went wrong. Please try again.",
-            );
         } finally {
             setLoading(false);
         }
@@ -498,7 +494,9 @@ function page() {
                                     <div className="min-h-[65px] flex items-center">
                                         <Turnstile
                                             siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                                            onSuccess={(token) => setTurnstileToken(token)}
+                                            onSuccess={(token) => {
+                                                setTurnstileToken(token);
+                                            }}
                                             onExpire={() => setTurnstileToken("")}
                                             onError={() => setTurnstileToken("")}
                                         />
@@ -932,64 +930,64 @@ function page() {
             </section>
 
             <section className="w-full py-14 bg-[#060D1B]">
-                    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-6 sm:px-10 gap-8 lg:gap-15">
-                      <div className="w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
+                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-6 sm:px-10 gap-8 lg:gap-15">
+                    <div className="w-full space-y-4 text-center lg:sticky lg:top-24 lg:h-fit lg:w-1/2 lg:self-start lg:text-left">
                         <LeftAnimation>
-                          <p className="mt-10 text-sm sm:text-base font-semibold text-[#3B9E6A]">
-                            WHAT YOU RECEIVE
-                          </p>
-                          <h2 className="mt-2 font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF] lg:max-w-[430px]">
-                            Findings That Move You Forward.
-                          </h2>
-                          <p className="mt-4 text-base sm:text-lg font-normal leading-[25px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[480px]">
-                            Clear assessment outputs to help your teams understand gaps, prioritise remediation and strengthen operational resilience.
-                          </p>
+                            <p className="mt-10 text-sm sm:text-base font-semibold text-[#3B9E6A]">
+                                WHAT YOU RECEIVE
+                            </p>
+                            <h2 className="mt-2 font-medium leading-[40px] md:leading-[55px] text-[#FFFFFF] lg:max-w-[430px]">
+                                Findings That Move You Forward.
+                            </h2>
+                            <p className="mt-4 text-base sm:text-lg font-normal leading-[25px] md:leading-[31px] text-[#D1D1D1] lg:max-w-[480px]">
+                                Clear assessment outputs to help your teams understand gaps, prioritise remediation and strengthen operational resilience.
+                            </p>
                         </LeftAnimation>
-                      </div>
-            
-                      <div className="flex-1">
-                        <div className="relative mt-8">
-                          <div className="absolute top-0 bottom-0 border-l-[2px] border-[#B1B1B114] shadow-[inset_3px_0_4px_0_#FFFFFFCF]"></div>
-                          <div className="space-y-8 ">
-                            {whatYouReceive.map((item, index) => (
-                              <AnimatedCard
-                                key={index}
-                                delay={index * 0.15}
-                                className="flex gap-10"
-                              >
-                                <div className="relative w-0"></div>
-                                <div className="flex gap-10 items-start">
-                                  <div>
-                                    <p className="text-base font-semibold text-[#3B9E6A] tracking-[2px]">
-                                      {String(index + 1).padStart(2, "0")}
-                                    </p>
-                                  </div>
-                                  <div className="space-y-1">
-                                    <h3 className="text-lg text-[#FEFEFE]">{item.title}</h3>
-                                    <p className="text-sm leading-[23px] text-[#D1D1D1] max-w-[380px]">
-                                      {item.description}
-                                    </p>
-                                  </div>
-                                </div>
-                              </AnimatedCard>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
                     </div>
-                  </section>
 
-                  <FAQSection
-                          title={
-                            <>
-                              Frequently Asked Questions -
-                              <br className="hidden sm:block" />
-                              DORA Compliance 
-                            </>
-                          }
-                          description="Find answers to common questions about DORA requirements, compliance expectations and digital operational resilience."
-                          faqs={doraFAQs}
-                        />
+                    <div className="flex-1">
+                        <div className="relative mt-8">
+                            <div className="absolute top-0 bottom-0 border-l-[2px] border-[#B1B1B114] shadow-[inset_3px_0_4px_0_#FFFFFFCF]"></div>
+                            <div className="space-y-8 ">
+                                {whatYouReceive.map((item, index) => (
+                                    <AnimatedCard
+                                        key={index}
+                                        delay={index * 0.15}
+                                        className="flex gap-10"
+                                    >
+                                        <div className="relative w-0"></div>
+                                        <div className="flex gap-10 items-start">
+                                            <div>
+                                                <p className="text-base font-semibold text-[#3B9E6A] tracking-[2px]">
+                                                    {String(index + 1).padStart(2, "0")}
+                                                </p>
+                                            </div>
+                                            <div className="space-y-1">
+                                                <h3 className="text-lg text-[#FEFEFE]">{item.title}</h3>
+                                                <p className="text-sm leading-[23px] text-[#D1D1D1] max-w-[380px]">
+                                                    {item.description}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </AnimatedCard>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <FAQSection
+                title={
+                    <>
+                        Frequently Asked Questions -
+                        <br className="hidden sm:block" />
+                        DORA Compliance
+                    </>
+                }
+                description="Find answers to common questions about DORA requirements, compliance expectations and digital operational resilience."
+                faqs={doraFAQs}
+            />
         </div>
     )
 }

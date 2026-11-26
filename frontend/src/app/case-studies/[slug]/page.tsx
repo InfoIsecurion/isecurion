@@ -2,6 +2,10 @@ import { notFound } from "next/navigation";
 import CaseStudyHero from "../../../components/case-studies/CaseStudyHero";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import type { Metadata } from "next";
+import JsonLd from "../../../components/seo/JsonLd";
+import { caseStudyMetadata, caseStudySchema, getCaseStudyBySlug } from "../../../lib/seo/caseStudy";
+
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 interface CaseStudy {
@@ -178,9 +182,14 @@ interface Props {
   }>;
 }
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  return caseStudyMetadata(slug);
+}
+
 export default async function Page({ params }: Props) {
   const { slug } = await params;
-
+  
   const response = await fetch(`${API_URL}/api/case-studies/get-all`, {
     method: "GET",
     cache: "no-store",
@@ -199,6 +208,7 @@ export default async function Page({ params }: Props) {
   if (!caseStudy) {
     notFound();
   }
+
   const s1 = caseStudy.section1;
   const s2 = caseStudy.section2;
   const s3 = caseStudy.section3;
@@ -238,8 +248,12 @@ export default async function Page({ params }: Props) {
     s9: !!(s9?.heading || s9?.descriptions?.length),
   };
 
+    
+  
+
   return (
     <div className="bg-[#060D1B]">
+      <JsonLd id="schema-case-study" data={caseStudySchema(caseStudy)} />
       {/* this is the hero section  */}
       <CaseStudyHero
         heroTemplate={caseStudy.heroTemplate}
@@ -869,7 +883,7 @@ export default async function Page({ params }: Props) {
       </section>
 
       {/* cta  */}
-      <section className="w-full py-14 rounded-tl-4xl rounded-tr-4xl bg-[#121828]">
+      <section className="w-full py-14 rounded-tl-4xl rounded-tr-4xl bg-black">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 space-y-4">
           <h2 className="max-w-2xl font-semibold text-[#FFFFFF]">
             {caseStudy.catsection?.heading}

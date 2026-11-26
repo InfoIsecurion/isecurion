@@ -1,0 +1,60 @@
+[
+    {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "headline": "ISECURION Case Studies - Real-World Engagement Walkthroughs",
+  "description": "Real engagement case studies from ISECURION - Active Directory penetration tests, red team assessments, DFIR investigations, and regulatory IS audits.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "ISECURION",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://isecurion.com/images/isecurion1.png"
+    }
+  },
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "From a Standard Domain Account to Domain Administrator: An AD Penetration Test Walkthrough",
+      "image": "https://isecurion.com/assets/images/ad-pentest-case-study.jpg",
+      "datePublished": "2026-08-17",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://isecurion.com/active-directory-penetration-test-domain-admin-case-study.html" }
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "CERT-In & RBI Cybersecurity Framework Audit Case Study: IS Audit of a Co-operative Bank",
+      "image": "https://isecurion.com/assets/images/certin-rbi-audit-case-study.jpg",
+      "datePublished": "2026-08-03",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://isecurion.com/cert-in-rbi-cybersecurity-framework-audit-case-study.html" }
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Red Team Engagement Case Study: Cloud & Kubernetes Compromise via Hardcoded Credentials",
+      "image": "https://isecurion.com/assets/images/red-team-cloud-case-study.jpg",
+      "datePublished": "2026-07-29",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://isecurion.com/red-team-cloud-compromise-case-study.html" }
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Architectural Limits of Kernel-Level EDR: Detecting In-Memory Execution in Modern Windows Systems",
+      "image": "https://isecurion.com/assets/images/blog-architectural-limits-kernel-edr.jpg",
+      "datePublished": "2026-07-28",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://isecurion.com/architectural-limits-kernel-edr.html" }
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Microsoft 365 Account Takeover Case Study: Session Hijacking & BEC Fraud Investigation",
+      "image": "https://isecurion.com/assets/images/m365-ato-case-study.jpg",
+      "datePublished": "2026-07-21",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://isecurion.com/microsoft-365-account-takeover-bec-investigation.html" }
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "AI Red Teaming Case Study: Red Teaming an AI Voice Banking Assistant - When the Model Isn't the Weakest Link",
+      "image": "https://isecurion.com/assets/images/ai-voice-red-team-casestudy.jpg",
+      "datePublished": "2026-06-22",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://isecurion.com/ai-voice-rekyc-red-team-case-study.html" }
+    }
+  ]
+}
+]

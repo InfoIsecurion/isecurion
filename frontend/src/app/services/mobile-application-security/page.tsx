@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import mobileHeroBackground from "../../../assets/services/mobileHeroBackground.png";
+import mobileHeroBackground from "../../../assets/services/mobileApplicationBg.png";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import FAQSection from "../../../components/sections/FAQSection";
@@ -295,10 +295,10 @@ function page() {
           </Animation>
 
           {/* Assessment Benefits */}
-          <div className="mt-9 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-9 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 [&>*]:h-full">
             {mobileAssessmentCards.map((card, index) => (
               <AnimatedCard key={card.title} delay={index * 0.12}>
-                <div className="min-h-[180px] rounded-lg border border-[#002C8C] bg-gradient-to-b from-[#0A1119] to-[#17366E] p-4 sm:min-h-[235px] sm:p-5">
+                <div className="h-full min-h-[180px] rounded-lg border border-[#002C8C] bg-gradient-to-b from-[#0A1119] to-[#17366E] p-4 sm:min-h-[235px] sm:p-5">
                   {/* Icon */}
                   <div
                     className="flex h-13 w-13 items-center justify-center rounded-full"

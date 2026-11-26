@@ -765,140 +765,140 @@ export default function RedTeamAssessmentPage() {
 
           <div className="relative z-10 mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-16 lg:min-h-[671px] lg:px-[26px] lg:py-[58px]">
             {/* ================= DESKTOP ================= */}
-            <div className="hidden lg:block">
-              <div className="relative min-h-[555px]">
-                {/* Left content */}
+            <div className="hidden lg:flex lg:min-h-[555px] lg:justify-between">
+              {/* Left content */}
+              <div className="flex w-[38%] flex-col justify-between text-left xl:w-[500px]">
                 <Animation>
-                  <div className="absolute left-0 top-0 w-[500px] text-center lg:text-left">
-                    <p className="text-[15px] sm:text-base font-semibold leading-[18px] text-[#E24B4A] text-center lg:text-left">
+                  <div>
+                    <p className="text-base font-semibold leading-[18px] text-[#E24B4A]">
                       OUR APPROACH
                     </p>
 
-                    <h2 className="mt-[12px] lg:max-w-[500px] text-[40px] font-normal leading-[1.5] text-white text-center lg:text-left">
+                    <h2 className="mt-[12px] text-[32px] font-normal leading-[1.5] text-white xl:text-[40px]">
                       From Intelligence to
                       <br />
                       Objective
                       <br />
                       Achievement
                     </h2>
-               
-                    <p className="absolute left-0 top-[392px] lg:max-w-[382px] sectionDescription text-center lg:text-left">
-                      A structured, adversary-driven methodology designed to
-                      simulate real-world attacks, uncover attack paths, and
-                      strengthen your organizations ability to detect, respond,
-                      and withstand them.
-                    </p>
-                   
                   </div>
                 </Animation>
 
-                {/* Card 01 */}
                 <Animation>
-                  <div className="absolute left-[690px] top-[60px] h-[240px] w-[242px] rounded-[7px] border-[0.9px] border-white/[9%] bg-black/[51%] px-[20px] py-[20px]">
-                    <div className="flex items-start justify-between">
-                      <Icon
-                        icon="fa6-regular:handshake"
-                        className="text-[25px] text-white"
-                      />
-
-                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
-                        01
-                      </span>
-                    </div>
-
-                    <div className="absolute bottom-[23px] left-[20px] right-[20px]">
-                      <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
-                        Step 1: Pre-Engagement
-                      </h3>
-
-                      <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1]">
-                        Define scope, objectives, and rules of engagement with
-                        stakeholders.
-                      </p>
-                    </div>
-                  </div>
+                  <p className="sectionDescription max-w-[382px]">
+                    A structured, adversary-driven methodology designed to
+                    simulate real-world attacks, uncover attack paths, and
+                    strengthen your organizations ability to detect, respond,
+                    and withstand them.
+                  </p>
                 </Animation>
+              </div>
 
-                {/* Card 02 */}
-                <Animation delay={0.5}>
-                  <div className="absolute left-[947px] top-0 h-[240px] w-[242px] rounded-[7px] border-[0.9px] border-white/[9%] bg-black/[51%] px-[20px] py-[20px]">
-                    <div className="flex items-start justify-between">
-                      <Icon
-                        icon="iconmind:click-and-collect-outline-regular"
-                        className="text-[25px] text-white"
-                      />
+              {/* Cards: two staggered columns that scale with the container */}
+              <div className="flex w-[58%] gap-3 xl:mr-10 xl:w-[499px]">
+                <div className="flex min-w-0 flex-1 flex-col gap-3 pt-[60px]">
+                  <Animation>
+                    <div className="relative h-[240px] rounded-[7px] border-[0.9px] border-white/[9%] bg-black/[51%] p-5">
+                      <div className="flex items-start justify-between">
+                        <Icon
+                          icon="fa6-regular:handshake"
+                          className="text-[25px] text-white"
+                        />
 
-                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
-                        02
-                      </span>
+                        <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
+                          01
+                        </span>
+                      </div>
+
+                      <div className="absolute bottom-5 left-5 right-5">
+                        <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
+                          Step 1: Pre-Engagement
+                        </h3>
+
+                        <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1]">
+                          Define scope, objectives, and rules of engagement with stakeholders.
+                        </p>
+                      </div>
                     </div>
+                  </Animation>
 
-                    <div className="absolute bottom-[23px] left-[20px] right-[20px]">
-                      <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
-                        Step 2: Reconnaissance
-                      </h3>
+                  <Animation delay={0.9}>
+                    <div className="relative h-[240px] rounded-[7px] border-[0.9px] border-white/[9%] bg-black/[51%] p-5">
+                      <div className="flex items-start justify-between">
+                        <Icon
+                          icon="iconmind:goal-outline-bold"
+                          className="text-[25px] text-white"
+                        />
 
-                      <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1]">
-                        Gather OSINT, scan networks, and profile employees for
-                        attack planning.
-                      </p>
+                        <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
+                          03
+                        </span>
+                      </div>
+
+                      <div className="absolute bottom-5 left-5 right-5">
+                        <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
+                          Step 3: Attack Execution
+                        </h3>
+
+                        <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1]">
+                          Perform phishing, exploitation, lateral movement, and privilege escalation.
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Animation>
+                  </Animation>
+                </div>
 
-                {/* Card 03 */}
-                <Animation delay={0.9}>
-                  <div className="absolute left-[690px] top-[315px] h-[240px] w-[242px] rounded-[7px] border-[0.9px] border-white/[9%] bg-black/[50%] px-[20px] py-[20px]">
-                    <div className="flex items-start justify-between">
-                      <Icon
-                        icon="iconmind:goal-outline-bold"
-                        className="text-[25px] text-white"
-                      />
+                <div className="flex min-w-0 flex-1 flex-col gap-3">
+                  <Animation delay={0.5}>
+                    <div className="relative h-[240px] rounded-[7px] border-[0.9px] border-white/[9%] bg-black/[51%] p-5">
+                      <div className="flex items-start justify-between">
+                        <Icon
+                          icon="iconmind:click-and-collect-outline-regular"
+                          className="text-[25px] text-white"
+                        />
 
-                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
-                        03
-                      </span>
+                        <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
+                          02
+                        </span>
+                      </div>
+
+                      <div className="absolute bottom-5 left-5 right-5">
+                        <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
+                          Step 2: Reconnaissance
+                        </h3>
+
+                        <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1]">
+                          Gather OSINT, scan networks, and profile employees for attack planning.
+                        </p>
+                      </div>
                     </div>
+                  </Animation>
 
-                    <div className="absolute bottom-[23px] left-[20px] right-[20px]">
-                      <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
-                        Step 3: Attack Execution
-                      </h3>
+                  <Animation delay={1.3}>
+                    <div className="relative h-[240px] rounded-[7px] border-[0.9px] border-white/[9%] bg-black/[51%] p-5">
+                      <div className="flex items-start justify-between">
+                        <Icon
+                          icon="iconmind:growth-chart-outline-bold"
+                          className="text-[25px] text-white"
+                        />
 
-                      <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1]">
-                        Perform phishing, exploitation, lateral movement, and
-                        privilege escalation.
-                      </p>
+                        <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
+                          04
+                        </span>
+                      </div>
+
+                      <div className="absolute bottom-5 left-5 right-5">
+                        <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
+                          Step 4: Analysis & Reporting
+                        </h3>
+
+                        <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1]">
+                          Document findings, attack paths, and provide remediation guidance.
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </Animation>
-
-                {/* Card 04 */}
-                <Animation delay={1.3}>
-                  <div className="absolute left-[947px] top-[250px] h-[240px] w-[242px] rounded-[7px] border-[0.9px] border-white/[9%] bg-black/[51%] px-[20px] py-[20px]">
-                    <div className="flex items-start justify-between">
-                      <Icon
-                        icon="iconmind:growth-chart-outline-bold"
-                        className="text-[25px] text-white"
-                      />
-
-                      <span className="text-[38px] font-normal leading-none text-[#E24B4A85]">
-                        04
-                      </span>
-                    </div>
-
-                    <div className="absolute bottom-[23px] left-[20px] right-[20px]">
-                      <h3 className="text-[14px] font-medium leading-[1.45] text-[#F5F0E8]">
-                        Step 4: Analysis & Reporting
-                      </h3>
-
-                      <p className="mt-[11px] text-[13px] leading-[1.6] text-[#D1D1D1]">
-                        Document findings, attack paths, and provide remediation
-                        guidance.
-                      </p>
-                    </div>
-                  </div>
-                </Animation>
+                  </Animation>
+                </div>
               </div>
             </div>
 

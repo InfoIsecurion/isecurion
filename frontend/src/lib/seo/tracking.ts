@@ -16,7 +16,7 @@ export const pageTracking: Record<string, PageTracking> = {
   "/services/vapt": { hotjarId: 6527249, clarityId: "wqwbb470fz" },
   "/services/soc-2-compliance": { hotjarId: 6702241 },
   "/services/vciso": { hotjarId: 6702234, clarityId: "wqwdh2t96p" },
-  "/services/ai-augamented-red-team": { clarityId: null },
+  "/services/ai-augmented-red-team": { clarityId: null },
   "/services/dpdp-compliance": { clarityId: null },
 };
 

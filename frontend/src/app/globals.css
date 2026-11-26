@@ -2,7 +2,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Inter&family=Lato&display=swap'); */
 
 @import "tailwindcss";
-
+@custom-variant hover (&:hover);
 @layer base {
     html {
         font-family: 'Inter';
@@ -160,3 +160,4 @@ svg[style*="--icon-stroke"] {
   --font-roboto-serif: var(--font-roboto-serif);
 }
 
+/* @custom-variant touch (@media (hover: none)); */

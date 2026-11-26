@@ -29,9 +29,9 @@ function CaseStudies() {
     selectedCategory === "All"
       ? caseStudies
       : caseStudies.filter(
-          (item) =>
-            item.category?.toLowerCase() === selectedCategory.toLowerCase(),
-        );
+        (item) =>
+          item.category?.toLowerCase() === selectedCategory.toLowerCase(),
+      );
 
   const fetchCaseStudies = async () => {
     try {
@@ -112,11 +112,10 @@ function CaseStudies() {
                 <div
                   key={index}
                   onClick={() => setSelectedCategory(item)}
-                  className={`px-5 py-2.5 rounded-sm cursor-pointer ${
-                    selectedCategory === item
+                  className={`px-5 py-2.5 rounded-sm cursor-pointer ${selectedCategory === item
                       ? "bg-linear-to-r from-[#121828] to-[#40558E]"
                       : " bg-[#121828] border border-[#DADADA17]"
-                  }`}
+                    }`}
                 >
                   <p className="text-sm font-semibold text-[#FFFFFF]">{item}</p>
                 </div>
@@ -147,13 +146,12 @@ function CaseStudies() {
                 {/* Category */}
                 <p
                   className={`absolute top-4 right-4 text-sm font-semibold px-4 py-1.5 rounded-[5px] uppercase sectionheading bg-[#121828] border border-[#242A38]
-      ${
-        item.category?.toLowerCase() === "red team"
-          ? "text-[#E24B4A]"
-          : item.category?.toLowerCase() === "compliance audit"
-            ? "text-[#0F66EA]"
-            : "text-[#0FEADB]"
-      }`}
+                  ${item.category?.toLowerCase() === "red team"
+                      ? "text-[#E24B4A]"
+                      : item.category?.toLowerCase() === "compliance audit"
+                        ? "text-[#0F66EA]"
+                        : "text-[#0FEADB]"
+                    }`}
                 >
                   {item.category}
                 </p>

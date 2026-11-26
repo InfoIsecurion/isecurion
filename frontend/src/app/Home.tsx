@@ -7,6 +7,25 @@ import indegene from "../assets/home/client/indegene.png";
 import allianz from "../assets/home/client/allianz.png";
 import shellinfo from "../assets/home/client/shellinfo.png";
 import bosch from "../assets/home/client/Bosch_logo.png";
+import capital108 from "../assets/home/client/capital108.png"
+import eficyent from "../assets/home/client/eficyent.png"
+import ashokaBuildcon from "../assets/home/client/ashoka-buildcon-limited-logo.png"
+import ascenthr from "../assets/home/client/ascenthr.png"
+import avantiFinance from "../assets/home/client/avanti-logo.png"
+import beltechAi from "../assets/home/client/BeltechAI.png"
+import bluekaktus from "../assets/home/client/Bluekaktus.png"
+import bugsmirror from "../assets/home/client/bugsmirror-logo.png"
+import campaignHq from "../assets/home/client/campaignHq.png"
+import codemonk from "../assets/home/client/Codemonk.png"
+import cognida from "../assets/home/client/Cognida Pvt Limited.svg"
+import cohsem from "../assets/home/client/COHSEM.png"
+import dista from "../assets/home/client/DistaPvt. Ltd.png"
+import driffle from "../assets/home/client/driffle.svg"
+import envision from "../assets/home/client/Envision.png"
+import indgrowth from "../assets/home/client/Indgrowth.png"
+import kiocl from "../assets/home/client/KIOCL.png"
+import taghash from "../assets/home/client/Taghash.svg"
+import zirka from "../assets/home/client/zrika.svg"
 import Link from "next/link";
 import React from "react";
 import FAQSection from "../components/sections/FAQSection";
@@ -16,7 +35,7 @@ import continuousvalidation from "../assets/home/continuousvalidattion.png";
 import defence from "../assets/home/defence.png";
 import buildtrust from "../assets/home/buildtrust.png";
 
-import vulnytics from "../assets/home/vulnytics.svg";
+import vulnytics from "../assets/home/vulnytics1.png";
 import lms from "../assets/home/lms.svg";
 import drosera from "../assets/home/droseradashboard.svg";
 
@@ -125,7 +144,7 @@ const ourExpertise = [
     descriptionColor: "text-[#D1D1D1]",
     headingColor: "text-[#E24B4A]",
     listColor: "text-[#A8A8A8]",
-    link: "services/vulnerability-assessment-penetration-testing",
+    link: "/services/vulnerability-assessment-penetration-testing",
   },
   {
     Icon: "lucide:monitor-cog",
@@ -148,7 +167,7 @@ const ourExpertise = [
     descriptionColor: "text-[#D1D1D1]",
     headingColor: "text-[#0F66EA]",
     listColor: "text-[#A8A8A8]",
-    link: "services/managed-security-services",
+    link: "/services/managed-security-services",
   },
   {
     Icon: "gridicons:cloud-outline",
@@ -180,7 +199,7 @@ const ourExpertise = [
     descriptionColor: "text-[#D1D1D1]",
     headingColor: "text-[#0F66EA]",
     listColor: "text-[#A8A8A8]",
-    link: "services/cloud-security-assessment",
+    link: "/services/cloud-security-assessment",
   },
   {
     Icon: "charm:notes-tick",
@@ -204,7 +223,7 @@ const ourExpertise = [
     descriptionColor: "text-[#D1D1D1]",
     headingColor: "text-[#0F66EA]",
     listColor: "text-[#A8A8A8]",
-    link: "services/iso-27001",
+    link: "/services/iso-27001",
   },
   {
     Icon: "lucide:users-round",
@@ -224,7 +243,7 @@ const ourExpertise = [
     descriptionColor: "text-[#D1D1D1]",
     headingColor: "text-[#0F66EA]",
     listColor: "text-[#A8A8A8]",
-    link: "services/vciso",
+    link: "/services/vciso",
   },
   {
     Icon: "material-symbols:warning-outline-rounded",
@@ -250,7 +269,7 @@ const ourExpertise = [
     descriptionColor: "text-[#D1D1D1]",
     headingColor: "text-[#E24B4A]",
     listColor: "text-[#A8A8A8]",
-    link: "services/phishing-simulation",
+    link: "/services/phishing-simulation",
   },
 ];
 
@@ -258,11 +277,10 @@ const mapMarkers = [
   { id: 1, x: "18.4%", y: "38.6%", type: "red", country: "USA" },
   { id: 2, x: "49.3%", y: "31%", type: "red", country: "UK" },
   { id: 3, x: "73%", y: "51%", type: "blue", country: "India" },
-  { id: 4, x: "63.9%", y: "49%", type: "red", country: "UAE" },
-  { id: 5, x: "65.8%", y: "49%", type: "red", country: "Qatar" },
-  { id: 6, x: "72.5%", y: "41.7%", type: "red", country: "Singapore" },
-  { id: 7, x: "80.1%", y: "59.1%", type: "red", country: "Australia" },
-  { id: 8, x: "93.7%", y: "77.9%", type: "red", country: "GCC" },
+  { id: 4, x: "63.9%", y: "49%", type: "red", country: "Qatar" },
+  { id: 5, x: "65.8%", y: "49%", type: "red", country: "UAE" },
+  { id: 6, x: "80.5%", y: "56.7%", type: "red", country: "Singapore" },
+  { id: 7, x: "90.1%", y: "75.1%", type: "red", country: "Australia" },
 ];
 
 const auditorCertificates = [
@@ -320,6 +338,83 @@ const trustedCompanies = [
     alt: "ShellInfo",
     className: "h-10 w-35",
   },
+  {
+    src: eficyent.src,
+    alt: "Eficyent",
+    className: "h-10 w-35",
+  },
+  {
+    src: cohsem.src,
+    alt: "Cohsem",
+    className: "h-10 w-35",
+  },
+  {
+    src: ashokaBuildcon.src,
+    alt: "Ashoka-Buildcon Limited",
+    className: "h-10 w-35",
+  },
+  {
+    src: ascenthr.src,
+    alt: "Ascent HR Technologies",
+    className: "h-50 w-35",
+  },
+  {
+    src: avantiFinance.src,
+    alt: "Avanti Finance",
+    className: "h-12 w-35",
+  },
+   {
+    src: cognida.src,
+    alt: "Cognida",
+    className: "h-8 w-35",
+  },
+   {
+    src: dista.src,
+    alt: "Dista Technology Pvt.Ltd",
+    className: "h-8 w-35",
+  },
+  {
+    src: codemonk.src,
+    alt: "Codemonk",
+    className: "h-15 w-35",
+  },
+  {
+    src: bluekaktus.src,
+    alt: "BlueKaktus",
+    className: "h-10 w-35",
+  },
+  {
+    src: driffle.src,
+    alt: "Driffle Inc",
+    className: "h-8 w-35",
+  },
+  {
+    src: envision.src,
+    alt: "Envision",
+    className: "h-6 w-30",
+  },
+  {
+    src: indgrowth.src,
+    alt: "Indgrowth",
+    className: "h-20 w-35",
+  },
+  {
+    src: kiocl.src,
+    alt: "KIOCL Limited",
+    className: "h-10 w-35",
+  },
+  {
+    src: taghash.src,
+    alt: "#taghash",
+    className: "h-10 w-35",
+  },
+  {
+    src: zirka.src,
+    alt: "Zrika",
+    className: "h-10 w-35",
+  },
+
+ 
 ];
 
 const impactCards = [
@@ -496,12 +591,11 @@ const homeFAQs = [
 export default function Home() {
   return (
     <div className="w-full bg-[#060D1B]">
-      {/* this is the hero section  */}
-      <section
-        className="w-full xl:h-[70vh] 2xl:h-[80vh] flex items-center py-14 bg-cover bg-center"
+     <section
+        className="flex w-full items-center bg-cover bg-center bg-no-repeat py-12 sm:py-14 lg:py-16 xl:min-h-[70vh] 2xl:min-h-[80vh]"
         style={{ backgroundImage: `url(${herobackground.src})` }}
       >
-        <div className="max-w-7xl w-full mx-auto px-6 sm:px-10">
+        <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
           <div className="space-y-5 text-center lg:text-left">
             <p
               className="text-sm sm:text-base font-semibold text-[#0F66EA] sectionheading animate-hero-reveal uppercase"
@@ -511,58 +605,47 @@ export default function Home() {
             </p>
 
             <WordReveal
-              text="CREST MEMBER & CERT-IN EMPANELLED VAPT COMPANY IN INDIA"
-              className="text-transparent font-bold bg-clip-text bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2] max-w-[840px]"
+              text="CREST Member & CERT-In Empanelled VAPT Company - ISECURION"
+              className="mx-auto max-w-[840px] bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2] bg-clip-text font-bold text-transparent lg:mx-0"
             ></WordReveal>
 
             <p
-              className="text-sm sm:text-base lg:text-[17px] font-medium  lg:max-w-xl leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] animate-hero-reveal"
+              className="mx-auto max-w-2xl text-sm sm:text-base lg:mx-0 lg:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] animate-hero-reveal"
               style={{ animationDelay: "650ms" }}
             >
-              ISECURION is a CERT-In empanelled, ISO 27001:2022 certified
-              cybersecurity company and a CREST Member, accredited for
-              Penetration Testing. We help organizations anticipate threats,
-              reduce cyber risk, and build lasting resilience through VAPT,
-              cloud security, SOC 2 compliance, phishing simulation and
-              intelligent security platforms.
+              ISECURION is a CERT-In empanelled and ISO 27001:2022 certified information security consulting company and a CREST Member, 
+              accredited for Penetration Testing. We are fully compliant with India's Digital Personal Data Protection (DPDP) Act, 2023, 
+              providing outstanding service quality, innovation and research in the field 
+              of Information Security and Consultancy. 
             </p>
           </div>
-          <div
-            className="flex flex-col justify-center lg:justify-start sm:flex-row gap-3 py-4 opacity-0 animate-hero-reveal mt-5"
-            style={{ animationDelay: "600ms" }}
-          >
-            <Animation>
-              <Link href="/company/contact">
-              <button
-                className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer rounded-[10px] text-[#FFFFFF] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] border-2 border-[#3263B1] animate-hero-reveal"
-                style={{ animationDelay: "1200ms" }}
-              >
-                Schedule a Consultation 
-                <span>
-                  <Icon icon="mdi:arrow-right" width={20} />
-                </span>
-              </button>
-              </Link>
-            </Animation>
-            <Animation>
-              <button
-                onClick={() =>
-                  document
-                    .getElementById("services")
-                    ?.scrollIntoView({ behavior: "smooth", block: "start" })
-                }
-                className="flex items-center justify-center gap-3 py-3 px-5 text-base font-medium cursor-pointer text-white rounded-lg border border-[#FFFFFF29] animate-hero-reveal"
-                style={{ animationDelay: "1800ms" }}
-              >
-                <span></span>
-                Explore services ›
-              </button>
-            </Animation>
+
+          {/* Buttons */}
+          <div className="mx-auto mt-5 flex w-full max-w-[360px] flex-col gap-3 py-4 sm:mx-0 sm:max-w-none sm:flex-row sm:justify-center lg:justify-start">
+            <Link
+              href="/company/contact"
+              className="animate-hero-reveal flex cursor-pointer items-center justify-center gap-3 rounded-[10px] border-2 border-[#3263B1] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] px-5 py-3 text-base font-medium text-white"
+              style={{ animationDelay: "1200ms" }}
+            >
+              Schedule a Consultation
+              <Icon icon="mdi:arrow-right" width={20} />
+            </Link>
+
+            <button
+              type="button"
+              onClick={() =>
+                document
+                  .getElementById("services")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
+              }
+              className="animate-hero-reveal flex cursor-pointer items-center justify-center gap-3 rounded-lg border border-[#FFFFFF29] px-5 py-3 text-base font-medium text-white"
+              style={{ animationDelay: "1800ms" }}
+            >
+              Explore services ›
+            </button>
           </div>
         </div>
       </section>
-
-      {/* STATS SECTION */}
 
       {/* STATS SECTION */}
       <section className="w-full bg-[#01060E] shadow-[0_0_45px_rgba(15,102,234,0.20)]">
@@ -618,7 +701,7 @@ export default function Home() {
 
                   <div className="flex flex-col gap-1">
                     <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-[#0F66EA]">
-                      15+
+                      10+
                     </p>
 
                     <p className="mt-1 lg:min-h-[56px] text-base sm:text-lg font-medium leading-7 text-[#999999]">
@@ -673,7 +756,7 @@ export default function Home() {
         </div>
         {/*logos */}
         <div className="pb-10 overflow-hidden">
-          <div className="flex  animate-tcar03-scroll">
+          <div className="flex w-max animate-tcar03-scroll" style={{ animationDuration: `${trustedCompanies.length * 3}s` }}>
             {/* First set */}
             <div className="flex shrink-0 items-center gap-16 pr-16">
               {trustedCompanies.map((company, index) => (
@@ -754,18 +837,18 @@ export default function Home() {
                       className="h-full w-full object-cover transition-transform duration-800 ease-in-out group-hover:scale-115 "
                     />
                   </div>
-                  <div className="relative z-10 flex max-w-[360px] rounded-[5px] bg-linear-to-r from-[#002A69] to-[#000000] px-4 py-8">
+                  <div className="relative z-10 flex max-w-[360px] rounded-[5px] bg-linear-to-r from-[#002A69] to-[#000000] px-4 py-10 lg:py-8">
                     <div className="w-full">
-                      <h3 className="mb-3 text-base font-medium h-[20px] text-white">
+                      <h3 className="mb-3 text-base font-medium leading-5 text-white">
                         Identify Risk
                       </h3>
 
-                      <div className="relative h-[70px]">
+                      <div className="relative min-h-[40px]">
                         <Link
-                          href="services/vulnerability-assessment-penetration-testing"
-                          className="peer group/btn absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F66EA] px-3 text-white overflow-hidden transition-[width] duration-500 ease-in-out hover:w-full hover:justify-between focus-visible:w-full focus-visible:justify-between"
+                          href="/services/vulnerability-assessment-penetration-testing"
+                          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F66EA] px-3 text-white overflow-hidden transition-[width] duration-500 ease-in-out group-hover:w-full group-hover:justify-between group-focus-within:w-full group-focus-within:justify-between"
                         >
-                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-300 group-hover/btn:max-w-[250px] group-hover/btn:opacity-100 group-hover/btn:delay-150">
+                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-300 group-hover:max-w-[250px] group-hover:opacity-100 group-hover:delay-150 group-focus-within:max-w-[250px] group-focus-within:opacity-100">
                             Explore VAPT & Penetration Testing
                           </span>
 
@@ -775,7 +858,7 @@ export default function Home() {
                           />
                         </Link>
 
-                        <p className="absolute left-0 top-3 pr-12 transition-opacity duration-300 peer-hover:opacity-0 peer-focus-visible:opacity-0 pointer-events-none text-[11px] sm:text-sm font-medium text-[#ACACAC] max-w- ">
+                        <p className="relative break-words pr-14 transition-opacity duration-300 group-hover:opacity-0 group-focus-within:opacity-0 pointer-events-none text-[11px] sm:text-sm font-medium text-[#ACACAC] lg:leading-[21px]">
                           Uncover exploitable vulnerabilities through
                           vulnerability assessment and penetration testing
                           (VAPT) before they become business disruptions.
@@ -792,18 +875,18 @@ export default function Home() {
                       className="h-full w-full object-cover group-hover:scale-115 transition-all duration-500 ease-in-out"
                     />
                   </div>
-                  <div className="relative z-10 flex max-w-md rounded-[5px] bg-linear-to-r from-[#002A69] to-[#000000] px-4 py-8">
+                  <div className="relative z-10 flex max-w-xl rounded-[5px] bg-linear-to-r from-[#002A69] to-[#000000] px-4 py-8">
                     <div className="w-full">
-                      <h3 className="mb-3 text-base font-medium h-[20px] text-white">
+                      <h3 className="mb-3 text-base font-medium leading-5 text-white">
                         Validate Continuously
                       </h3>
 
-                      <div className="relative h-[70px]">
+                      <div className="relative min-h-[40px]">
                         <Link
-                          href="services/web-application-security-assessment"
-                          className="peer group/btn absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F66EA] px-3 text-white overflow-hidden transition-[width] duration-500 ease-in-out hover:w-full hover:justify-between focus-visible:w-full focus-visible:justify-between"
+                          href="/services/web-application-security-assessment"
+                          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F66EA] px-3 text-white overflow-hidden transition-[width] duration-500 ease-in-out group-hover:w-full group-hover:justify-between group-focus-within:w-full group-focus-within:justify-between"
                         >
-                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-300 group-hover/btn:max-w-[250px] group-hover/btn:opacity-100 group-hover/btn:delay-150">
+                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-300 group-hover:max-w-[250px] group-hover:opacity-100 group-hover:delay-150 group-focus-within:max-w-[250px] group-focus-within:opacity-100">
                             Explore Continuous Validation
                           </span>
 
@@ -813,7 +896,7 @@ export default function Home() {
                           />
                         </Link>
 
-                        <p className="absolute left-0 top-3 pr-12 transition-opacity duration-300 peer-hover:opacity-0 peer-focus-visible:opacity-0 pointer-events-none text-[11px] sm:text-sm font-medium max-w-full text-[#ACACAC] lg:leading-[21px]">
+                        <p className="relative break-words pr-14 transition-opacity duration-300 group-hover:opacity-0 group-focus-within:opacity-0 pointer-events-none text-[11px] sm:text-sm font-medium text-[#ACACAC] lg:leading-[21px]">
                           Continuously test security across web applications,
                           mobile apps, APIs, cloud (AWS, Azure and GCP),
                           identities and infrastructure.
@@ -836,16 +919,16 @@ export default function Home() {
                   </div>
                   <div className="relative z-10 flex max-w-md rounded-md bg-linear-to-r from-[#002A69] to-[#000000] px-4 py-8">
                     <div className="w-full">
-                      <h3 className="mb-4 text-base font-medium h-[20px] text-white">
+                      <h3 className="mb-3 text-base font-medium leading-5 text-white">
                         Strengthen Defenses
                       </h3>
 
-                      <div className="relative h-[60px]">
+                      <div className="relative min-h-[40px]">
                         <Link
-                          href="services/red-team-assessment"
-                          className="peer group/btn absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F66EA] px-3 text-white overflow-hidden transition-[width] duration-500 ease-in-out hover:w-full hover:justify-between focus-visible:w-full focus-visible:justify-between"
+                          href="/services/red-team-assessment"
+                          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F66EA] px-3 text-white overflow-hidden transition-[width] duration-500 ease-in-out group-hover:w-full group-hover:justify-between group-focus-within:w-full group-focus-within:justify-between"
                         >
-                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-300 group-hover/btn:max-w-[250px] group-hover/btn:opacity-100 group-hover/btn:delay-150">
+                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-300 group-hover:max-w-[250px] group-hover:opacity-100 group-hover:delay-150 group-focus-within:max-w-[250px] group-focus-within:opacity-100">
                             Explore Offensive Security
                           </span>
 
@@ -855,7 +938,7 @@ export default function Home() {
                           />
                         </Link>
 
-                        <p className="absolute left-0 top-3 pr-12 transition-opacity duration-300 peer-hover:opacity-0 peer-focus-visible:opacity-0 pointer-events-none text-[11px] sm:text-sm max-w-full font-medium text-[#ACACAC] lg:leading-[21px]">
+                        <p className="relative break-words pr-14 transition-opacity duration-300 group-hover:opacity-0 group-focus-within:opacity-0 pointer-events-none text-[11px] sm:text-sm font-medium text-[#ACACAC] lg:leading-[21px]">
                           Red team assessment and AI-augmented red teaming that
                           transform findings into measurable resilience.
                         </p>
@@ -863,7 +946,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="relative group bg-cover bg-center flex-2 min-h-[350px] flex flex-col justify-end rounded-xl p-4 cursor-pointer group overflow-hidden">
+                <div className="relative group bg-cover bg-center flex-2 min-h-[350px] flex flex-col justify-end rounded-xl p-4  cursor-pointer group overflow-hidden">
                   <div className="absolute inset-0">
                     <Image
                       src={buildtrust}
@@ -871,18 +954,18 @@ export default function Home() {
                       className="h-full w-full object-cover group-hover:scale-115 transition-all duration-500 ease-in-out"
                     />
                   </div>
-                  <div className="relative z-10 flex max-w-[370px] rounded-md bg-linear-to-l to-[#002A69] from-[#000000] px-4 py-8">
+                  <div className="relative z-10 flex max-w-[370px] rounded-md bg-linear-to-l to-[#002A69] from-[#000000] px-4 py-10 lg:py-8">
                     <div className="w-full">
-                      <h3 className="mb-3 text-base font-medium h-[20px] text-white">
+                      <h3 className="mb-3 text-base font-medium leading-5 text-white">
                         Build Trust
                       </h3>
 
-                      <div className="relative h-[60px]">
+                      <div className="relative min-h-[40px]">
                         <Link
-                          href="services/soc-2-compliance"
-                          className="peer group/btn absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F66EA] px-3 text-white overflow-hidden transition-[width] duration-500 ease-in-out hover:w-full hover:justify-between focus-visible:w-full focus-visible:justify-between"
+                          href="/services/soc-2-compliance"
+                          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F66EA] px-3 text-white overflow-hidden transition-[width] duration-500 ease-in-out group-hover:w-full group-hover:justify-between group-focus-within:w-full group-focus-within:justify-between"
                         >
-                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-300 group-hover/btn:max-w-[250px] group-hover/btn:opacity-100 group-hover/btn:delay-150">
+                          <span className="max-w-0 overflow-hidden whitespace-nowrap opacity-0 text-[12px] transition-all duration-300 group-hover:max-w-[250px] group-hover:opacity-100 group-hover:delay-150 group-focus-within:max-w-[250px] group-focus-within:opacity-100">
                             Explore Compliance & Trust
                           </span>
 
@@ -892,7 +975,7 @@ export default function Home() {
                           />
                         </Link>
 
-                        <p className="absolute left-0 top-4 pr-12 transition-opacity duration-300 peer-hover:opacity-0 peer-focus-visible:opacity-0 pointer-events-none text-[11px] sm:text-sm  font-medium text-[#ACACAC] lg:leading-[21px] max-w-full">
+                        <p className="relative break-words pr-14 transition-opacity duration-300 group-hover:opacity-0 group-focus-within:opacity-0 pointer-events-none text-[11px] sm:text-sm font-medium text-[#ACACAC] lg:leading-[21px]">
                           SOC 2, ISO 27001 and DPDP Act compliance that protects
                           business continuity and strengthens customer trust.
                         </p>
@@ -1431,7 +1514,7 @@ export default function Home() {
               <div className="mx-auto flex w-full max-w-[550px] items-center gap-4 px-3 py-1">
                 <span className="h-px flex-1 bg-linear-to-r to-[#FFFFFFE3] from-[#DADADA0A]" />
 
-                <p className="whitespace-nowrap text-base sm:text-lg font-medium text-[#D9D9D9] uppercase">
+                <p className="text-base sm:text-lg font-medium text-[#D9D9D9] uppercase">
                   Recognition and Certifications
                 </p>
 
@@ -1495,10 +1578,10 @@ export default function Home() {
                   className="relative z-10 w-[120px] sm:w-[150px]"
                 />
 
-                <Icon
+                {/* <Icon
                   icon="line-md:star-twotone"
                   className="absolute left-1/2 top-1/2 z-20 h-[100px] w-[100px] -translate-x-1/2 -translate-y-1/2 text-[#0F66EA33] sm:h-[150px] sm:w-[150px]"
-                />
+                /> */}
 
                 <img
                   src={iso90001.src}

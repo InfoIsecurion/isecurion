@@ -23,7 +23,7 @@ interface RedTeam {
   companyName: string
   assessment: string
 }
-interface AiAugamentedRedTeam {
+interface AiaugmentedRedTeam {
   email: string
   orgname: string
   phonenumber: string
@@ -113,6 +113,12 @@ interface Soc2 {
   phonenumber: string
   country: string
   target: string
+  turnstileToken: string
+}
+
+interface doraCompliance {
+  email: string
+  companyname: string
   turnstileToken: string
 }
 
@@ -399,7 +405,7 @@ export async function redTeam(request: PayloadRequest) {
   }
 }
 
-export async function aiAugamentedRedTeam(request: PayloadRequest) {
+export async function aiaugmentedRedTeam(request: PayloadRequest) {
   try {
     const body: unknown = await request.json?.()
 
@@ -448,7 +454,7 @@ export async function aiAugamentedRedTeam(request: PayloadRequest) {
       )
     }
 
-    const validatedData: AiAugamentedRedTeam = {
+    const validatedData: AiaugmentedRedTeam = {
       email,
       orgname,
       phonenumber,
@@ -459,7 +465,7 @@ export async function aiAugamentedRedTeam(request: PayloadRequest) {
 
     await sendContactEmail({
       email: validatedData.email,
-      subject: `Ai Augamented Red Team`,
+      subject: `Ai augmented Red Team`,
       fields: {
         Email: validatedData.email,
         Company: validatedData.orgname,
@@ -1509,3 +1515,116 @@ export async function soc2Compliance(request: PayloadRequest) {
     )
   }
 }
+
+export async function doraCompliance(request: PayloadRequest) {
+  try {
+    const body: unknown = await request.json?.();
+
+    if (!body || typeof body !== "object" || Array.isArray(body)) {
+      return Response.json(
+        { message: "Request body is missing or invalid" },
+        { status: 400 },
+      );
+    }
+
+    const { email, companyName, turnstileToken } = body as Record<
+      string,
+      unknown
+    >;
+
+    if (!email || typeof email !== "string") {
+      return Response.json({ message: "Invalid email" }, { status: 400 });
+    }
+
+    if (typeof companyName !== "string") {
+      return Response.json({ message: "Invalid company name" }, { status: 400 });
+    }
+
+    if (typeof turnstileToken !== "string" || !turnstileToken.trim()) {
+      return Response.json({ message: "Missing Turnstile token" }, { status: 400 });
+    }
+    // Required field validation
+    if (!email || typeof email !== "string") {
+      return Response.json(
+        { success: false, message: "Email is required." },
+        { status: 400 },
+      );
+    }
+
+    if (typeof companyName !== "string") {
+      return Response.json(
+        { success: false, message: "Invalid company name." },
+        { status: 400 },
+      );
+    }
+
+    if (typeof turnstileToken !== "string" || !turnstileToken.trim()) {
+      return Response.json(
+        {
+          success: false,
+          message: "Please complete CAPTCHA verification.",
+        },
+        { status: 400 },
+      );
+    }
+
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+      return Response.json(
+        { success: false, message: "Please enter a valid email address." },
+        { status: 400 },
+      );
+    }
+
+    // Verify Cloudflare Turnstile
+    const isVerified = await verifyTurnstile(turnstileToken);
+
+    if (!isVerified) {
+      return Response.json(
+        {
+          success: false,
+          message: "CAPTCHA verification failed. Please try again.",
+        },
+        { status: 400 },
+      );
+    }
+
+    // Send email
+    await sendContactEmail({
+      email,
+      subject: "DORA Compliance",
+      fields: {
+        Email: email,
+        Company: companyName || "Not provided",
+      },
+    });
+
+    return Response.json(
+      {
+        success: true,
+        message: "Your message has been sent successfully.",
+      },
+      { status: 200 },
+    );
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      return Response.json(
+        { success: false, message: "Invalid request body." },
+        { status: 400 },
+      );
+    }
+
+    console.error("DORA compliance form submission failed:", error);
+
+    return Response.json(
+      {
+        success: false,
+        message: "Unable to send your message. Please try again later.",
+      },
+      { status: 500 },
+    );
+  }
+}
+

@@ -31,11 +31,11 @@ export const contactForm = async (data) => {
   }
 };
 
-// this is for aiAugamented
+// this is for aiaugmented
 
-export const aiAugamented = async (data) => {
+export const aiaugmented = async (data) => {
   try {
-    const response = await fetch(`${API_URL}/api/ai-augamented`, {
+    const response = await fetch(`${API_URL}/api/ai-augmented`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

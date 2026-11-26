@@ -155,8 +155,8 @@ export const services: ServiceEntry[] = [
     ],
   },
   {
-    slug: "ai-augamented-red-team",
-    path: "/services/ai-augamented-red-team",
+    slug: "ai-augmented-red-team",
+    path: "/services/ai-augmented-red-team",
     name: "AI-Augmented Red Team Services",
     serviceType: "AI Red Team Testing",
     title: "AI-Augmented Red Team Services | Global LLM & AI Security Testing",
@@ -1139,6 +1139,35 @@ export const services: ServiceEntry[] = [
     ogDescription:
       "Read through the terms of use applicable when using the website of iSecurion, a leading cyber security vendor & IT data security auditor based in Bangalore.",
     keywords: [],
+  },
+  {
+    slug: "dora-compliance",
+    path: "/services/dora-compliance",
+    name: "Dora Compliance",
+    serviceType: "Dora Compliance",
+    title: "DORA Compliance & Digital Operational Resilience Services",
+    description:
+      "ISECURION provides expert DORA compliance and Digital Operational Resilience services for financial institutions. Ensure ICT risk management, incident reporting, operational resilience testing & third-party risk management with our end-to-end solutions.",
+    keywords: ["dora compliance", "dora regulation", "dora act", "digital operational resilience act", "dora eu", "dora europe", "digital operational resilience", "dora cyber security", "dora legislation", "dora ict" , "dora operational resilience", "dora eu regulation", "dora european commission", "digital resilience", "dora cyber", "digital operational resilience act eu", "dora banking regulation" ],
+    ogTitle: "DORA Compliance & Digital Operational Resilience Services",
+    ogDescription:
+      "ISECURION provides expert DORA compliance and Digital Operational Resilience services for financial institutions. Ensure ICT risk management, incident reporting, operational resilience testing & third-party risk management with our end-to-end solutions.",
+    ogType: "website",
+  },
+    {
+    slug: "case-studies",
+    path: "/case-studies",
+    isPage: true,
+    name: "Case Studies",
+    serviceType: "Page",
+    title: "ISECURION - Case Studies | Real-World VAPT, Red Team & DFIR Engagements",
+    description:
+      "Real engagement case studies from ISECURION - Active Directory penetration tests, red team assessments, DFIR investigations, and regulatory IS audits, documented end-to-end.",
+    keywords: ["ISECURION case studies", "penetration testing case study", "red team case study", "DFIR case study", "Active Directory pentest", "cloud compromise case study", "CERT-In audit case study", "RBI audit case study", "AI red teaming case study"],
+     ogTitle: "ISECURION - Case Studies",
+    ogDescription:
+      "Real-world engagement walkthroughs from ISECURION's VAPT, red team, and DFIR practices.",
+    ogType: "website",
   },
 ];
 

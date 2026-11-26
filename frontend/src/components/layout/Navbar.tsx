@@ -276,21 +276,52 @@ const serviceCategories: Service[] = [
 ];
 
 // product
-const product = [
+type ProductId = "vulnytics" | "drosera";
+type ProductGroup = {
+  id: ProductId;
+  name: string;
+  icon: string;
+  description: string;
+  items: { name: string; description: string; href: string }[];
+};
+
+// "\n" = intentional line break (rendered with whitespace-pre-line)
+const productGroups: ProductGroup[] = [
   {
+    id: "vulnytics",
     name: "Vulnytics",
+    icon: "mdi:shield-search",
     description: "Vulnerability intelligence and security risk visibility",
-    href: "https://vulnytics.isecurion.com/",
+    items: [
+      {
+        name: "Vulnytics",
+        description: "Vulnerability intelligence and\nsecurity risk visibility",
+        href: "https://vulnytics.isecurion.com/",
+      },
+    ],
   },
   {
+    id: "drosera",
     name: "Drosera",
+    icon: "mdi:fish",
     description: "Phishing simulations and human risk management",
-    href: "https://drosera.ai/",
-  },
-  {
-    name: "LMS",
-    description: "Security awareness training and employee learning",
-    href: "https://lms.drosera.ai/",
+    items: [
+      {
+        name: "Drosera Phishing\nSimulation Platform",
+        description: "Realistic Human Attack\nSurface Testing",
+        href: "https://drosera.ai/",
+      },
+      {
+        name: "Drosera Learning\nManagement (LMS)",
+        description: "Security Awareness Management\n& Learning Platform.",
+        href: "https://lms.drosera.ai/",
+      },
+      {
+        name: "Drosera Security\nAwareness Suite",
+        description: "Security Awareness Training\nContent for your existing LMS.",
+        href: "https://drosera.ai/",
+      },
+    ],
   },
 ];
 
@@ -332,9 +363,101 @@ const company = [
   },
 ];
 
+// Products mega menu (shared by desktop dropdown + mobile accordion)
+function ProductsPanel({
+  activeProduct,
+  onSelect,
+  onNavigate,
+}: {
+  activeProduct: ProductId;
+  onSelect: (id: ProductId) => void;
+  onNavigate: () => void;
+}) {
+  const activeGroup =
+    productGroups.find((group) => group.id === activeProduct) ??
+    productGroups[0];
+
+  return (
+    <div className="grid grid-cols-1 overflow-hidden rounded-xl border border-[#ECECF4] bg-white text-left shadow-xl lg:grid-cols-[230px_1fr]">
+      {/* LEFT */}
+      <div className="p-4 sm:p-5">
+        <h3 className="text-sm font-medium uppercase text-[#0F66EA]">
+          OUR PRODUCTS
+        </h3>
+
+        <div className="mt-4 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-1">
+          {productGroups.map((group) => {
+            const isActive = activeProduct === group.id;
+
+            return (
+              <button
+                key={group.id}
+                type="button"
+                onMouseEnter={() => onSelect(group.id)}
+                onFocus={() => onSelect(group.id)}
+                onClick={() => onSelect(group.id)}
+                className={`flex h-12 w-full cursor-pointer items-center justify-between rounded-[10px] border-[1.5px] px-4 text-left text-[15px] font-semibold transition-colors duration-200 ${
+                  isActive
+                    ? "border-[#EBECF7] bg-[#F4F5FD] text-[#1558D6]"
+                    : "border-[#E4E2FA] bg-white text-[#6E6C8E]"
+                }`}
+              >
+                <span>{group.name}</span>
+                {isActive && (
+                  <Icon
+                    icon="akar-icons:chevron-right-small"
+                    className="shrink-0 rotate-90 text-lg text-[#555770] lg:rotate-0"
+                  />
+                )}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* RIGHT */}
+      <div className="border-t border-[#ECECF4] bg-[#F8F8FD] p-4 lg:min-h-[330px] lg:border-l lg:border-t-0">
+        <div className="flex flex-col gap-2.5">
+          {activeGroup.items.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onNavigate}
+              className="flex items-center justify-between gap-3 rounded-[10px] border border-[#ECEBF8] bg-white px-4 py-3 transition-colors duration-200 hover:border-[#E9E9F8] hover:bg-[#F4F5FD]"
+            >
+              <div className="min-w-0">
+                <h4 className="whitespace-pre-line text-sm font-semibold leading-5 text-[#1B1448]">
+                  {item.name}
+                </h4>
+                <p className="mt-1 whitespace-pre-line text-[13px] font-medium leading-5 text-[#0F66EA]">
+                  {item.description}
+                </p>
+              </div>
+
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-[#ECECF3] bg-gradient-to-b from-[#F8F8FC] to-[#EEEEF4] text-[#4A4A5A] shadow-[0_1px_2px_rgba(0,0,0,0.08)]">
+                <Icon
+                  icon="akar-icons:chevron-right-small"
+                  className="text-lg"
+                />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Navbar() {
   const [activeService, setActiveService] =
-    useState<keyof typeof serviceDetails>("detection");
+    useState<keyof typeof serviceDetails>("application");
+
+  const [activeProduct, setActiveProduct] = useState<ProductId>("drosera");
+  const activeProductGroup =
+    productGroups.find((group) => group.id === activeProduct) ??
+    productGroups[0];
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -355,8 +478,41 @@ function Navbar() {
     setDesktopMenu(null); // closes desktop dropdowns too
   };
 
+  const headerRef = useRef<HTMLElement>(null);
+
+  // Mobile menu: close on outside click / Escape, and lock page scroll while open
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const close = () => {
+      setIsOpen(false);
+      setOpenDropdown(null);
+    };
+
+    const handleOutside = (e: MouseEvent | TouchEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+        close();
+      }
+    };
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+    };
+
+    document.body.style.overflow = "hidden";
+    document.addEventListener("mousedown", handleOutside);
+    document.addEventListener("touchstart", handleOutside);
+    document.addEventListener("keydown", handleKey);
+
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("mousedown", handleOutside);
+      document.removeEventListener("touchstart", handleOutside);
+      document.removeEventListener("keydown", handleKey);
+    };
+  }, [isOpen]);
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-black">
+    <header ref={headerRef} className="sticky top-0 z-50 w-full bg-black">
       <div className="">
         <div className="relative mx-auto w-full max-w-7xl flex h-[65px]  items-center justify-between px-6 sm:px-8 lg:px-10">
           {/* Logo */}
@@ -395,29 +551,14 @@ function Navbar() {
                     />
                   </span>
                 </Link>
-                <div className="flex flex-col items-center invisible absolute left-1/2 top-full z-50 mt-5 w-sm px-6 py-4 -translate-x-1/2 translate-y-2 rounded-xl bg-gradient-to-b from-[#F5F9FD] to-[#FFFFFF] opacity-0 shadow-xl transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 ">
-                  <span className="invisible group-hover:visible absolute  -top-0.5   w-[100px] h-[5px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
-                  <div>
-                    <h3 className="text-sm font-medium pb-2 border-b border-[#D8E3EF] text-[#29559D]">
-                      OUR PRODUCTS
-                    </h3>
-                    <div className="flex flex-col gap-4 mt-5">
-                      {product.map((item, index) => (
-                        <Link
-                          href={item.href}
-                          key={index}
-                          className="space-y-1"
-                        >
-                          <h3 className="text-sm font-semibold text-[#090B21]">
-                            {item.name}
-                          </h3>
-                          <p className="text-[13px] font-medium text-[#979797]">
-                            {item.description}
-                          </p>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
+
+                {/* pt-5 keeps hover alive while moving from the link to the panel */}
+                <div className="invisible absolute left-1/2 top-full z-50 w-[600px] max-w-[calc(100vw-2rem)] -translate-x-1/2 translate-y-2 pt-5 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <ProductsPanel
+                    activeProduct={activeProduct}
+                    onSelect={setActiveProduct}
+                    onNavigate={closeMenu}
+                  />
                 </div>
               </li>
               {/* this is the service link  */}
@@ -730,9 +871,9 @@ function Navbar() {
 
         {/* Mobile Navigation */}
         <div
-          className={`absolute left-0 right-0 top-[65px] z-50 overflow-y-auto bg-[#020E1C] transition-all duration-300 lg:hidden ${isOpen
+          className={`absolute left-0 right-0 top-[65px] z-50 overflow-y-auto overscroll-contain bg-[#020E1C] transition-all duration-300 lg:hidden ${isOpen
               ? "max-h-[calc(100dvh-65px)] opacity-100"
-              : "max-h-0 opacity-0"
+              : "pointer-events-none max-h-0 opacity-0"
             }`}
         >
           <nav className="border-t border-white/10 px-6 py-6 sm:px-8">
@@ -770,24 +911,67 @@ function Navbar() {
                     }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="flex flex-col gap-4 py-4 pl-4">
-                      {product.map((item) => (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={closeMenu}
-                          className="space-y-1"
-                        >
-                          <h3 className="text-sm font-semibold text-white">
-                            {item.name}
-                          </h3>
-                          <p className="text-[12px] font-normal text-gray-400">
-                            {item.description}
-                          </p>
-                        </Link>
+                    <div className="flex flex-col gap-3 py-4 pl-4">
+                      {/* PRODUCT CATEGORIES */}
+                      {productGroups.map((group) => (
+                        <div key={group.id}>
+                          <button
+                            type="button"
+                            onClick={() => setActiveProduct(group.id)}
+                            className={`flex w-full items-center gap-3 rounded-lg p-2 text-left transition-colors ${activeProduct === group.id
+                                ? "bg-[#102C49]"
+                                : "hover:bg-[#102C49]"
+                              }`}
+                          >
+                            <Icon
+                              icon={group.icon}
+                              className="shrink-0 text-xl text-[#05B9EE]"
+                            />
+
+                            <span>
+                              <span className="block text-sm font-semibold text-white">
+                                {group.name}
+                              </span>
+                              <span className="block text-xs font-normal text-gray-400">
+                                {group.description}
+                              </span>
+                            </span>
+                          </button>
+                        </div>
                       ))}
+
+                      {/* SELECTED PRODUCT LINKS */}
+                      <div className="mt-2 border-l border-[#05B9EE]/50 pl-4">
+                        <h4 className="mb-3 text-sm font-semibold text-[#05B9EE]">
+                          {activeProductGroup.name}
+                        </h4>
+
+                        <div className="flex flex-col gap-4">
+                          {activeProductGroup.items.map((item) => (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={closeMenu}
+                              className="group flex items-center justify-between gap-2"
+                            >
+                              <span>
+                                <span className="block text-[13px] font-normal text-gray-300 transition-colors group-hover:text-[#05B9EE]">
+                                  {item.name.replace(/\n/g, " ")}
+                                </span>
+                                <span className="block text-[11px] font-normal text-gray-400">
+                                  {item.description.replace(/\n/g, " ")}
+                                </span>
+                              </span>
+                              <Icon
+                                icon="akar-icons:chevron-right-small"
+                                className="shrink-0 text-lg text-[#7590B8]"
+                              />
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -896,7 +1080,7 @@ function Navbar() {
               <li>
                 <button
                   type="button"
-                  className="font-flex w-full items-center gap-1"
+                  className="flex w-full items-center gap-1"
                   onClick={() =>
                     setOpenDropdown(
                       openDropdown === "company" ? null : "company",

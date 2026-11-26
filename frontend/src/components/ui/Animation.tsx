@@ -176,52 +176,41 @@ function GradientIcon({
   );
 }
 
-
 interface WordRevealProps {
   text: string;
   className?: string;
-  as?: "h2" | "span";
+  as?: "h1" | "span";
 }
 
 export default function WordReveal({
   text,
   className = "",
-  as = "h2",
+  as = "h1",
 }: WordRevealProps) {
-  const MotionTag = as === "span" ? motion.span : motion.h2;
+  const MotionTag = as === "span" ? motion.span : motion.h1;
+  const words = text.split(" ");
 
   return (
     <MotionTag
       className={className}
+      aria-label={text}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.6 }}
-      variants={{
-        hidden: {},
-        visible: {
-          transition: {
-            staggerChildren: 0.11,
-          },
-        },
-      }}
+      animate="visible"
+      transition={{ staggerChildren: 0.06 }}
     >
-      {text.split(" ").map((word, index) => (
-        <motion.span
-          key={index}
-          className="inline-block mr-[0.25em]"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1],
-              },
-            },
-          }}
-        >
-          {word}
-        </motion.span>
+      {words.map((word, i) => (
+        <span key={i} aria-hidden="true">
+          <motion.span
+            className="inline-block"
+            variants={{
+              hidden: { opacity: 0, y: 12 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
+            {word}
+          </motion.span>
+          {i < words.length - 1 && " "}
+        </span>
       ))}
     </MotionTag>
   );

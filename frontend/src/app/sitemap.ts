@@ -35,6 +35,7 @@ const serviceFolders = [
   "vulnerability-assessment-penetration-testing",
   "vciso",
   "web-application-security-assessment",
+  "dora-compliance"
 ];
 
 const companyPages = ["/company/about", "/company/contact"];

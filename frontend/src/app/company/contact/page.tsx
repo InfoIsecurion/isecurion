@@ -110,25 +110,51 @@ const services: Record<string, string[]> = {
   "Application Security": [
     "Web Application Security",
     "Mobile Application Security",
-    "Secure Code Review",
+    "Secure Code Review", 
+  ],
+  "Cloud & Infrastructure" : [
+    "Vulnerability Assessment & Penetration Testing (VAPT)",
+    "Cloud Security Assessment",
+  ],
+  "Digital Platforms":[
+    "Crypto Currency Exchange Pentest",
+    "Smart Contract Security Audit",
+  ],
+  "Connected & Industrial":[
+    "Iot Security Testing",
+    "Industrial Control System Security Assessment",
   ],
   "Offensive Security": [
     "Breach Attack Simulation",
     "Phishing Simulation",
     "Red Team Assessment",
+    "AI-Augmented Red Team",
   ],
-  "Cyber Risk & Advisory": ["CISO / vCISO"],
-  "Compliance & Assurance": [
+  "Security Operations": [
+    "Managed Security Services(MSSP)",
+    "In-House SOC Service",
+    "Hybrid SOC Service",
+  ],
+  "Security Governance": [
+    "vCISO Services",
     "ISO 27001",
-    "ISO 42001",
-    "SOC 2",
-    "DPDPA",
-    "GDPR",
-    "HIPAA",
-    "RBI Information Security Audit",
-    "SEBI",
-    "CERT-In",
+    "SOC 2 Compliance"
   ],
+  "Regulatory & Industry": [
+    "DORA Compliance",
+    "CICRA Audit Services",
+    "BSE/NSE Audit Services ",
+  ],
+  "Privacy & Data Protection": [
+    "DPO Services",
+    "GDPR",
+    "DPDP Compliance",
+  ],
+  "Identity & Trust":[
+    "Aadhaar/UIDAI Audit",
+    "IRDA Information Security Audit",
+    "RBI Information Security Audit",
+  ]
 };
 
 function Contact() {
@@ -455,7 +481,7 @@ function Contact() {
                                       setIsServiceOpen(false);
                                       setSelectedCategory("");
                                     }}
-                                    className={`block w-full rounded px-3 py-1 text-left text-sm ${
+                                    className={`block w-full rounded px-3 py-1 text-left text-sm cursor-pointer ${
                                       selectedService === service
                                         ? "bg-blue-600 text-white"
                                         : "text-gray-300 hover:bg-white/10"
