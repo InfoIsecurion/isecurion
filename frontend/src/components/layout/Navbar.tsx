@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import { usePathname } from "next/navigation";
 
 import isecurionLogo from "../../assets/home/isecurion_logo.png";
 
@@ -21,6 +22,7 @@ const navItems = [
   { label: "Services", href: "/services" },
   { label: "Company", href: "/company" },
 ];
+
 const serviceDetails = {
 
   application: {
@@ -156,10 +158,10 @@ const serviceDetails = {
             label: "DPO Services",
             href: "/services/outsourced-dpo",
           },
-          // {
-          //   label: "Data Localization Audit",
-          //   href: "/services/identity-access-review",
-          // },
+          {
+            label: "Data Localization Audit",
+            href: "/services/data-localization",
+          },
           {
             label: "GDPR",
             href: "/services/gdpr",
@@ -248,7 +250,7 @@ const serviceDetails = {
 } as const;
 
 const serviceCategories: Service[] = [
-   {
+  {
     id: "application",
     icon: "ant-design:cloud-outlined",
     title: "Application, Cloud & Platform",
@@ -260,7 +262,7 @@ const serviceCategories: Service[] = [
     title: "Detection & Response",
     description: "Detect threats. Respond fast.",
   },
- 
+
   {
     id: "data",
     icon: "energy-icons:database-20",
@@ -319,7 +321,7 @@ const productGroups: ProductGroup[] = [
       {
         name: "Drosera Security\nAwareness Suite",
         description: "Security Awareness Training\nContent for your existing LMS.",
-        href: "https://drosera.ai/",
+        href: "https://drosera.ai/security-awareness",
       },
     ],
   },
@@ -396,11 +398,10 @@ function ProductsPanel({
                 onMouseEnter={() => onSelect(group.id)}
                 onFocus={() => onSelect(group.id)}
                 onClick={() => onSelect(group.id)}
-                className={`flex h-12 w-full cursor-pointer items-center justify-between rounded-[10px] border-[1.5px] px-4 text-left text-[15px] font-semibold transition-colors duration-200 ${
-                  isActive
-                    ? "border-[#EBECF7] bg-[#F4F5FD] text-[#1558D6]"
-                    : "border-[#E4E2FA] bg-white text-[#6E6C8E]"
-                }`}
+                className={`flex h-12 w-full cursor-pointer items-center justify-between rounded-[10px] border-[1.5px] px-4 text-left text-[15px] font-semibold transition-colors duration-200 ${isActive
+                  ? "border-[#EBECF7] bg-[#E8F3FF] text-[#1558D6]"
+                  : "border-[#E4E2FA] bg-white text-[#6E6C8E]"
+                  }`}
               >
                 <span>{group.name}</span>
                 {isActive && (
@@ -425,7 +426,7 @@ function ProductsPanel({
               target="_blank"
               rel="noopener noreferrer"
               onClick={onNavigate}
-              className="flex items-center justify-between gap-3 rounded-[10px] border border-[#ECEBF8] bg-white px-4 py-3 transition-colors duration-200 hover:border-[#E9E9F8] hover:bg-[#F4F5FD]"
+              className="flex items-center justify-between gap-3 rounded-[10px] border border-[#ECEBF8] bg-white px-4 py-3 transition-colors duration-200 hover:border-[#E9E9F8] hover:bg-[#E8F3FF]"
             >
               <div className="min-w-0">
                 <h4 className="whitespace-pre-line text-sm font-semibold leading-5 text-[#1B1448]">
@@ -467,6 +468,13 @@ function Navbar() {
   //   setOpenDropdown(null);
   // };
 
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    pathname === href || pathname.startsWith(href + "/");
+
+  const activeLink = "bg-[#E8F3FF] font-medium text-[#0F66EA]"; // current page style
+
   type DesktopMenu = "products" | "services" | "company" | null;
 
   // inside Navbar()
@@ -477,6 +485,12 @@ function Navbar() {
     setOpenDropdown(null);
     setDesktopMenu(null); // closes desktop dropdowns too
   };
+
+  const currentCategory = (Object.keys(serviceDetails) as ServiceId[]).find((id) =>
+  serviceDetails[id].sections.some((section) =>
+    section.links.some((link) => isActive(link.href)),
+  ),
+);
 
   const headerRef = useRef<HTMLElement>(null);
 
@@ -551,6 +565,7 @@ function Navbar() {
                     />
                   </span>
                 </Link>
+                <span className="invisible group-hover:visible absolute left-0 top-[30px] w-[70px] h-[3px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
 
                 {/* pt-5 keeps hover alive while moving from the link to the panel */}
                 <div className="invisible absolute left-1/2 top-full z-50 w-[600px] max-w-[calc(100vw-2rem)] -translate-x-1/2 translate-y-2 pt-5 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
@@ -563,8 +578,11 @@ function Navbar() {
               </li>
               {/* this is the service link  */}
               <li
-                className="list-none"
-                onMouseEnter={() => setDesktopMenu("services")}
+                className="relative group"
+                onMouseEnter={() => {
+    setActiveService(currentCategory ?? "application");
+    setDesktopMenu("services");
+  }}
                 onMouseLeave={() => setDesktopMenu(null)}
               >
                 <Link
@@ -578,15 +596,17 @@ function Navbar() {
                       className="h-[14px] w-[14px]"
                     />
                   </span>
+
                 </Link>
+                <span className="invisible group-hover:visible absolute left-0 top-[30px] w-[70px] h-[3px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
 
                 <div
                   className={`flex flex-col fixed top-full z-50 mt-5 w-[calc(100vw-2rem)] max-w-6xl -translate-x-1/2 rounded-xl bg-gradient-to-b from-[#F5F9FD] to-[#FFFFFF] shadow-xl transition-all duration-200 ${desktopMenu === "services"
-                      ? "visible translate-y-0 opacity-100"
-                      : "invisible translate-y-2 opacity-0"
+                    ? "visible translate-y-0 opacity-100"
+                    : "invisible translate-y-2 opacity-0"
                     }`}
                 >
-                  <span className="invisible group-hover:visible absolute left-140  -top-0.5   w-[100px] h-[5px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
+
                   <div className="flex gap-5">
                     {/* LEFT */}
                     <div className="flex-1 space-y-2 border-r border-[#E0E8F1] py-6 pr-4">
@@ -597,8 +617,8 @@ function Navbar() {
                           onMouseEnter={() => setActiveService(service.id)}
                           onFocus={() => setActiveService(service.id)}
                           className={`flex w-full cursor-pointer items-center gap-3 rounded-br-2xl rounded-tr-2xl border-l-4 border-transparent p-3 text-left transition-all duration-200 ${activeService === service.id
-                              ? "border-l-[#05B9EE] bg-[#E8F3FF]"
-                              : "hover:border-l-[#05B9EE] hover:bg-[#E8F3FF]"
+                            ? "border-l-[#05B9EE] bg-[#E8F3FF]"
+                            : "hover:border-l-[#05B9EE] hover:bg-[#E8F3FF]"
                             }`}
                         >
                           <span className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full bg-[#DCE9FA]">
@@ -652,7 +672,8 @@ function Navbar() {
                                         <Link
                                           href={service.href}
                                           onClick={closeMenu}
-                                          className="flex items-start justify-between gap-2 py-1 text-sm text-[#415675]"
+                                          className={`-mx-2 flex items-start justify-between gap-2 rounded-md px-2 py-2 text-sm text-[#415675] ${isActive(service.href) ? activeLink : ""
+                                            }`}
                                         >
                                           <span>{service.label}</span>
                                           <Icon
@@ -692,7 +713,8 @@ function Navbar() {
                                         <Link
                                           href={service.href}
                                           onClick={closeMenu}
-                                          className="flex items-start justify-between gap-2 py-1 text-sm text-[#415675]"
+                                          className={`-mx-2 flex items-start justify-between gap-2 rounded-md px-2 py-2 text-sm text-[#415675] ${isActive(service.href) ? activeLink : ""
+                                            }`}
                                         >
                                           <span>{service.label}</span>
                                           <Icon
@@ -727,7 +749,8 @@ function Navbar() {
                                         <Link
                                           href={service.href}
                                           onClick={closeMenu}
-                                          className="flex items-start justify-between gap-2 py-1 text-sm text-[#415675]"
+                                          className={`-mx-2 flex items-start justify-between gap-2 rounded-md px-2 py-2 text-sm text-[#415675] ${isActive(service.href) ? activeLink : ""
+                                            }`}
                                         >
                                           <span>{service.label}</span>
                                           <Icon
@@ -762,7 +785,8 @@ function Navbar() {
                                       <Link
                                         href={service.href}
                                         onClick={closeMenu}
-                                        className=" flex items-center justify-between gap-2 rounded-md py-1 text-sm text-[#415675]"
+                                        className={`-mx-2 flex items-start justify-between gap-2 rounded-md px-2 py-2 text-sm text-[#415675] ${isActive(service.href) ? activeLink : ""
+                                          }`}
                                       >
                                         <span>{service.label}</span>
                                         <Icon
@@ -784,7 +808,7 @@ function Navbar() {
               </li>
               {/* this is the company  */}
               <li
-                className="relative"
+                className="relative group"
                 onMouseEnter={() => setDesktopMenu("company")}
                 onMouseLeave={() => setDesktopMenu(null)}
               >
@@ -800,13 +824,14 @@ function Navbar() {
                     />
                   </span>
                 </Link>
+                <span className="invisible group-hover:visible absolute left-0 top-[30px] w-[75px] h-[3px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
                 <div
                   className={`flex flex-col items-center absolute left-1/2 top-full z-50 mt-5 px-6 py-6 w-xl -translate-x-1/2 rounded-xl bg-gradient-to-b from-[#F5F9FD] to-[#FFFFFF] transition-all duration-200 ${desktopMenu === "company"
-                      ? "visible translate-y-0 opacity-100"
-                      : "invisible translate-y-2 opacity-0"
+                    ? "visible translate-y-0 opacity-100"
+                    : "invisible translate-y-2 opacity-0"
                     }`}
                 >
-                  <span className="invisible group-hover:visible absolute  -top-0.5   w-[100px] h-[5px] rounded-xl transition-all duration-200 bg-[#0F66EA] "></span>
+
                   <div>
                     <div className="grid grid-cols-2 gap-5">
                       {company.map((item, index) => (
@@ -821,7 +846,8 @@ function Navbar() {
                                 key={listIndex}
                                 onClick={closeMenu}
                                 href={listItem.link}
-                                className="block space-y-1 group/item"
+                                className={`-mx-2 block space-y-1 rounded-md px-2 py-2 group/item ${isActive(listItem.link) ? "bg-[#E8F3FF]" : ""
+                                  }`}
                               >
                                 <h5 className="text-sm font-semibold text-[#090B21] transition-colors group-hover/item:text-[#0F66EA]">
                                   {listItem.name}
@@ -872,8 +898,8 @@ function Navbar() {
         {/* Mobile Navigation */}
         <div
           className={`absolute left-0 right-0 top-[65px] z-50 overflow-y-auto overscroll-contain bg-[#020E1C] transition-all duration-300 lg:hidden ${isOpen
-              ? "max-h-[calc(100dvh-65px)] opacity-100"
-              : "pointer-events-none max-h-0 opacity-0"
+            ? "max-h-[calc(100dvh-65px)] opacity-100"
+            : "pointer-events-none max-h-0 opacity-0"
             }`}
         >
           <nav className="border-t border-white/10 px-6 py-6 sm:px-8">
@@ -906,8 +932,8 @@ function Navbar() {
 
                 <div
                   className={`grid transition-all duration-300 ${openDropdown === "product"
-                      ? "grid-rows-[1fr] opacity-100"
-                      : "grid-rows-[0fr] opacity-0"
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
                     }`}
                 >
                   <div className="overflow-hidden">
@@ -919,8 +945,8 @@ function Navbar() {
                             type="button"
                             onClick={() => setActiveProduct(group.id)}
                             className={`flex w-full items-center gap-3 rounded-lg p-2 text-left transition-colors ${activeProduct === group.id
-                                ? "bg-[#102C49]"
-                                : "hover:bg-[#102C49]"
+                              ? "bg-[#102C49]"
+                              : "hover:bg-[#102C49]"
                               }`}
                           >
                             <Icon
@@ -998,8 +1024,8 @@ function Navbar() {
 
                 <div
                   className={`grid transition-all duration-300 ${openDropdown === "services"
-                      ? "grid-rows-[1fr] opacity-100"
-                      : "grid-rows-[0fr] opacity-0"
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
                     }`}
                 >
                   <div className="overflow-hidden">
@@ -1011,8 +1037,8 @@ function Navbar() {
                             type="button"
                             onClick={() => setActiveService(item.id)}
                             className={`flex w-full items-center gap-3 rounded-lg p-2 text-left transition-colors ${activeService === item.id
-                                ? "bg-[#102C49]"
-                                : "hover:bg-[#102C49]"
+                              ? "bg-[#102C49]"
+                              : "hover:bg-[#102C49]"
                               }`}
                           >
                             <Icon
@@ -1056,7 +1082,10 @@ function Navbar() {
                                       key={service.href}
                                       href={service.href}
                                       onClick={closeMenu}
-                                      className="flex items-center justify-between gap-2 text-[13px] font-normal text-gray-300 transition-colors hover:text-[#05B9EE]"
+                                      className={`flex items-center justify-between gap-2 rounded-md px-2 py-1 text-[13px] font-normal transition-colors hover:text-[#05B9EE] ${isActive(service.href)
+                                          ? "bg-[#102C49] text-[#05B9EE]"
+                                          : "text-gray-300"
+                                        }`}
                                     >
                                       <span>{service.label}</span>
                                       <Icon
@@ -1097,8 +1126,8 @@ function Navbar() {
 
                 <div
                   className={`grid transition-all duration-300 ${openDropdown === "company"
-                      ? "grid-rows-[1fr] opacity-100"
-                      : "grid-rows-[0fr] opacity-0"
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
                     }`}
                 >
                   <div className="overflow-hidden">

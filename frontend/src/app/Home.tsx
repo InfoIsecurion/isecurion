@@ -35,7 +35,7 @@ import continuousvalidation from "../assets/home/continuousvalidattion.png";
 import defence from "../assets/home/defence.png";
 import buildtrust from "../assets/home/buildtrust.png";
 
-import vulnytics from "../assets/home/vulnytics1.png";
+import vulnytics from "../assets/home/vulnyticsone.png";
 import lms from "../assets/home/lms.svg";
 import drosera from "../assets/home/droseradashboard.svg";
 
@@ -363,12 +363,12 @@ const trustedCompanies = [
     alt: "Avanti Finance",
     className: "h-12 w-35",
   },
-   {
+  {
     src: cognida.src,
     alt: "Cognida",
     className: "h-8 w-35",
   },
-   {
+  {
     src: dista.src,
     alt: "Dista Technology Pvt.Ltd",
     className: "h-8 w-35",
@@ -414,7 +414,7 @@ const trustedCompanies = [
     className: "h-10 w-35",
   },
 
- 
+
 ];
 
 const impactCards = [
@@ -591,7 +591,7 @@ const homeFAQs = [
 export default function Home() {
   return (
     <div className="w-full bg-[#060D1B]">
-     <section
+      <section
         className="flex w-full items-center bg-cover bg-center bg-no-repeat py-12 sm:py-14 lg:py-16 xl:min-h-[70vh] 2xl:min-h-[80vh]"
         style={{ backgroundImage: `url(${herobackground.src})` }}
       >
@@ -608,28 +608,39 @@ export default function Home() {
               text="CREST Member & CERT-In Empanelled VAPT Company - ISECURION"
               className="mx-auto max-w-[840px] bg-linear-to-r from-[#E5ECF7] via-[#8FB1F4] to-[#86D7E2] bg-clip-text font-bold text-transparent lg:mx-0"
             ></WordReveal>
+            
 
             <p
               className="mx-auto max-w-2xl text-sm sm:text-base lg:mx-0 lg:text-[17px] font-medium leading-[27px] sm:leading-[30px] md:leading-[32px] text-[#ACAFEE] animate-hero-reveal"
               style={{ animationDelay: "650ms" }}
             >
-              ISECURION is a CERT-In empanelled and ISO 27001:2022 certified information security consulting company and a CREST Member, 
-              accredited for Penetration Testing. We are fully compliant with India's Digital Personal Data Protection (DPDP) Act, 2023, 
-              providing outstanding service quality, innovation and research in the field 
-              of Information Security and Consultancy. 
+              ISECURION is a CERT-In empanelled and ISO 27001:2022 certified information security consulting company and a CREST Member,
+              accredited for Penetration Testing. We are fully compliant with India's Digital Personal Data Protection (DPDP) Act, 2023,
+              providing outstanding service quality, innovation and research in the field
+              of Information Security and Consultancy.
             </p>
           </div>
 
           {/* Buttons */}
-          <div className="mx-auto mt-5 flex w-full max-w-[360px] flex-col gap-3 py-4 sm:mx-0 sm:max-w-none sm:flex-row sm:justify-center lg:justify-start">
-            <Link
+          <div className="mx-auto mt-5 flex w-full max-w-[360px] flex-col gap-3 py-4 sm:mx-0 sm:max-w-none sm:flex-row sm:justify-center lg:justify-start ">
+            {/* <Link
               href="/company/contact"
-              className="animate-hero-reveal flex cursor-pointer items-center justify-center gap-3 rounded-[10px] border-2 border-[#3263B1] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] px-5 py-3 text-base font-medium text-white"
+              className="animate-hero-reveal flex cursor-pointer items-center justify-center gap-3 rounded-[10px] border-2 border-[#3263B1] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] px-5 py-3 text-base font-medium text-white transition-all duration-200 hover:brightness-110"
               style={{ animationDelay: "1200ms" }}
             >
               Schedule a Consultation
               <Icon icon="mdi:arrow-right" width={20} />
-            </Link>
+            </Link> */}
+            <div className="animate-hero-reveal" style={{ animationDelay: "1200ms" }}>
+              <Link
+                href="/company/contact"
+                className="flex items-center justify-center gap-3 rounded-[10px] border-2 border-[#3263B1] bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] px-5 py-3 text-base font-medium text-white transition-all duration-200 hover:brightness-120"
+              >
+                Schedule a Consultation
+                <Icon icon="mdi:arrow-right" width={20} />
+              </Link>
+            </div>
+
 
             <button
               type="button"
@@ -638,7 +649,7 @@ export default function Home() {
                   .getElementById("services")
                   ?.scrollIntoView({ behavior: "smooth", block: "start" })
               }
-              className="animate-hero-reveal flex cursor-pointer items-center justify-center gap-3 rounded-lg border border-[#FFFFFF29] px-5 py-3 text-base font-medium text-white"
+              className="animate-hero-reveal flex cursor-pointer items-center justify-center gap-3 rounded-lg border border-[#FFFFFF29] px-5 py-3 text-base font-medium text-white shadow-[0_6px_20px_rgba(45,100,180,0.25)] transition-all duration-200 hover:brightness-110"
               style={{ animationDelay: "1800ms" }}
             >
               Explore services ›
@@ -1189,7 +1200,7 @@ export default function Home() {
                     <img
                       src={vulnytics.src}
                       alt="vulnytics"
-                      className="w-full translate-x-[8%] translate-y-[8%] rounded-none transition-all duration-700 ease-in-out group-hover:translate-x-[3%] group-hover:translate-y-[2%] group-hover:rounded-4xl"
+                      className="w-full translate-x-[8%] translate-y-[8%] rounded-none transition-all duration-700 ease-in-out group-hover:translate-x-[3%] group-hover:translate-y-[4%] group-hover:rounded-4xl"
                     />
                   </div>
                 </div>
@@ -1259,7 +1270,7 @@ export default function Home() {
                     <img
                       src={drosera.src}
                       alt="Drosera"
-                      className="w-full translate-x-[8%] translate-y-[8%] rounded-none transition-all duration-700 ease-in-out group-hover:translate-x-[3%] group-hover:translate-y-[2%] group-hover:rounded-4xl"
+                      className="w-full translate-x-[8%] translate-y-[8%] rounded-none transition-all duration-700 ease-in-out group-hover:translate-x-[3%] group-hover:translate-y-[3%] group-hover:rounded-4xl"
                     />
                   </div>
                 </div>
@@ -1327,7 +1338,7 @@ export default function Home() {
                     <img
                       src={lms.src}
                       alt="LMS (Learning Management Sysytem)"
-                      className="w-full translate-x-[8%] translate-y-[8%] rounded-none transition-all duration-700 ease-in-out group-hover:translate-x-[3%] group-hover:translate-y-[2%] group-hover:rounded-4xl"
+                      className="w-full translate-x-[8%] translate-y-[8%] rounded-none transition-all duration-700 ease-in-out group-hover:translate-x-[3%] group-hover:translate-y-[3%] group-hover:rounded-4xl"
                     />
                   </div>
                 </div>
@@ -1388,9 +1399,8 @@ export default function Home() {
                 <AnimatedCard
                   key={index}
                   delay={index * 0.1}
-                  className={`mx-auto px-14 text-center ${
-                    index !== 4 ? "lg:border-r lg:border-[#888888]" : ""
-                  }`}
+                  className={`mx-auto px-14 text-center ${index !== 4 ? "lg:border-r lg:border-[#888888]" : ""
+                    }`}
                 >
                   <h3 className="text-[16px] font-normal text-white sm:text-3xl">
                     {item.value}
@@ -1431,7 +1441,7 @@ export default function Home() {
             </p>
 
             {/* Country Tabs */}
-            <div className="mt-6 flex w-full min-w-0 items-center gap-2 overflow-x-auto whitespace-nowrap pb-2 scrollbar-hide sm:gap-3 lg:max-w-full lg:gap-2">
+            <div className="mt-6 flex w-full flex-wrap items-center gap-x-2 gap-y-3 sm:gap-x-3 lg:max-w-full lg:gap-x-2">
               {/* India - Active Country */}
               <div className="flex shrink-0 items-center gap-2 rounded-full bg-[#F1F5FF] px-3 py-2 text-sm font-medium text-[#111827]">
                 <span className="relative flex h-3 w-3 items-center justify-center">
@@ -1441,28 +1451,21 @@ export default function Home() {
                 India
               </div>
 
+
               <span className="h-6 w-px shrink-0 bg-[#88888880]" />
 
-              {/* Other Countries */}
-              {[
-                "USA",
-                "UK",
-                "UAE",
-                "Qatar",
-                "Singapore",
-                "Australia",
-                "GCC",
-              ].map((country, index) => (
-                <React.Fragment key={country}>
-                  <span className="shrink-0 text-sm font-medium text-[#D1D1D1] sm:text-base">
-                    {country}
-                  </span>
+              {["USA", "UK", "UAE", "Qatar", "Singapore", "Australia", "GCC"].map(
+                (country, index) => (
+                  <React.Fragment key={country}>
+                    <span className="shrink-0 text-sm font-medium text-[#D1D1D1] sm:text-base">
+                      {country}
+                    </span>
 
-                  {index !== 6 && (
-                    <span className="h-6 w-px shrink-0 bg-[#787891]" />
-                  )}
-                </React.Fragment>
-              ))}
+                    {index !== 6 && <span className="hidden h-6 w-px shrink-0 bg-[#787891] sm:block" />
+                    }
+                  </React.Fragment>
+                ),
+              )}
             </div>
           </div>
 
@@ -1484,11 +1487,10 @@ export default function Home() {
                 style={{ left: marker.x, top: marker.y }}
               >
                 <span
-                  className={`block cursor-pointer rounded-full ${
-                    marker.type === "blue"
-                      ? "h-3.5 w-3.5 bg-[#2563EB] shadow-[0_0_12px_5px_#2563EB80]"
-                      : "h-2.5 w-2.5 bg-[#EF5350] shadow-[0_0_8px_3px_#EF535080]"
-                  }`}
+                  className={`block cursor-pointer rounded-full ${marker.type === "blue"
+                    ? "h-3.5 w-3.5 bg-[#2563EB] shadow-[0_0_12px_5px_#2563EB80]"
+                    : "h-2.5 w-2.5 bg-[#EF5350] shadow-[0_0_8px_3px_#EF535080]"
+                    }`}
                 />
 
                 {/* Tooltip */}

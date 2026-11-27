@@ -172,41 +172,41 @@ function Footer() {
             </div>
 
             {/* CONTACT CARD */}
-            <div className="mt-10 flex flex-col gap-5 rounded-[8px] bg-[#1E2433] px-2 py-4 sm:flex-row sm:items-center sm:justify-center sm:gap-2 sm:px-6 lg:justify-start lg:px-10 xl:px-12">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white">
-                  <Icon
-                    icon="material-symbols:mail-shield-rounded"
-                    className="text-[#0F66EA]"
-                    width={20}
-                  />
-                </div>
-
-                <span className="whitespace-nowrap text-sm font-medium text-white">
-                  <Link href="mailto:info@isecurion.com" target="_blank">
+            <div className="@container mt-10 w-full">
+              <div className="flex w-full flex-col gap-4 rounded-lg bg-[#1E2433] p-5 @[30rem]:w-fit @[30rem]:flex-row @[30rem]:items-center @[30rem]:gap-6 @[30rem]:px-6 @[30rem]:py-4">
+                {/* Email */}
+                <Link
+                  href="mailto:info@isecurion.com"
+                  className="flex items-center gap-3"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white">
+                    <Icon
+                      icon="material-symbols:mail-shield-rounded"
+                      className="text-[#0F66EA]"
+                      width={20}
+                    />
+                  </span>
+                  <span className="whitespace-nowrap text-sm font-medium text-white">
                     info@isecurion.com
-                  </Link>
-                </span>
+                  </span>
+                </Link>
 
-      
-              </div>
+                {/* Divider: horizontal when stacked, vertical when in a row */}
+                <div className="h-px w-full bg-[#454D5F] @[30rem]:h-10 @[30rem]:w-px" />
 
-              <div className="hidden h-[40px] w-[2px] bg-[#454D5F] sm:block"></div>
-
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white">
-                  <Icon
-                    icon="solar:call-medicine-bold"
-                    className="text-[#0F66EA]"
-                    width={20}
-                  />
-                </div>
-
-                <span className="whitespace-nowrap text-sm font-medium text-white">
-                  <Link href="tel:+918861201570" target="_blank">
+                {/* Phone */}
+                <Link href="tel:+918861201570" className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white">
+                    <Icon
+                      icon="solar:call-medicine-bold"
+                      className="text-[#0F66EA]"
+                      width={20}
+                    />
+                  </span>
+                  <span className="whitespace-nowrap text-sm font-medium text-white">
                     +91 88612 01570
-                  </Link>
-                </span>
+                  </span>
+                </Link>
               </div>
             </div>
           </div>
@@ -234,9 +234,8 @@ function Footer() {
                       />
 
                       <span
-                        className={`transition-colors duration-300 ${
-                          isActive ? "text-white" : "text-[#BFBFBF]"
-                        }`}
+                        className={`transition-colors duration-300 ${isActive ? "text-white" : "text-[#BFBFBF]"
+                          }`}
                       >
                         {location.name}
                         {location.name === "Bangalore" && " (HQ)"}
@@ -245,11 +244,10 @@ function Footer() {
 
                     {/* Address Dropdown */}
                     <div
-                      className={`grid transition-all duration-500 ease-in-out ${
-                        isActive
+                      className={`grid transition-all duration-500 ease-in-out ${isActive
                           ? "grid-rows-[1fr] opacity-100"
                           : "grid-rows-[0fr] opacity-0"
-                      }`}
+                        }`}
                     >
                       <div className="overflow-hidden">
                         <p className="ml-5 pt-2 leading-5 text-[#BFBFBF] max-w-[250px]">

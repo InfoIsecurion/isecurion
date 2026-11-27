@@ -19,7 +19,7 @@ function VAPT_CTA() {
 
             <div className="flex flex-col gap-4 py-3 sm:flex-row">
               <Link href="/company/contact">
-              <button className="flex gap-2 cursor-pointer items-center justify-center rounded-lg bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] px-5 py-3 text-base font-semibold text-white">
+              <button className="flex gap-2 cursor-pointer items-center justify-center rounded-lg bg-linear-to-r from-[#3263B1] via-[#29559D] to-[#1C3D70] px-5 py-3 text-base font-semibold text-white shadow-[0_6px_20px_rgba(45,100,180,0.25)] transition-all duration-200 hover:brightness-110">
                 Request Free Consultation 
                 <span><Icon icon="ep:right" width={20}/> </span>
               </button>

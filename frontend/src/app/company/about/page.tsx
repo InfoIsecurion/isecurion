@@ -17,7 +17,7 @@ import productlead from "../../../assets/about/productLead.png";
 import hrteam from "../../../assets/about/hrteam.png";
 import team from "../../../assets/about/team.png";
 import team1 from "../../../assets/about/team1.png";
-import crestLogo from "../../../assets/about/crest.png" 
+import crestLogo from "../../../assets/about/crest.png"
 import certinLogo from "../../../assets/about/certin.png"
 import isoLogo from "../../../assets/about/iso.png"
 import rama from "../../../assets/about/Rama Photo.jpg"
@@ -128,9 +128,7 @@ const accreditations = [
   {
     id: 2,
     title: "CERT-IN EMPANELLED",
-    logo: certinLogo,
-    alt: "CERT-In",
-    logoClass: "mt-2.5 h-[42px] sm:h-[44px]",
+    logoText: true,
     description: (
       <>
         ISECURION is empanelled by{" "}
@@ -233,13 +231,13 @@ function About() {
                 <span className="text-[#9AA4BA]">
                   CERT-In Empanelled and ISO 27001:2022 certified
                 </span>{" "}
-                information security consulting company and a <span className="text-[#9AA4BA]"> CREST Member </span>, accredited for Penetration Testing. 
-                ISECURION is fully compliant with India's Digital Personal Data Protection (DPDP) Act, 2023, providing out-most service quality, innovation and research in the 
+                information security consulting company and a <span className="text-[#9AA4BA]"> CREST Member </span>, accredited for Penetration Testing.
+                ISECURION is fully compliant with India's Digital Personal Data Protection (DPDP) Act, 2023, providing out-most service quality, innovation and research in the
                 field of Information Security and Consultancy. We provide a unique blend of services to our customers catering to the current information security and data privacy landscape.
               </p>
               <p className="text-base sm:text-base font-medium max-w-3xl mx-auto lg:mx-0 text-center lg:text-left leading-6 md:leading-7 text-[#D1D1D1] max-w-[853px]">
-                  Our business oriented approach helps us understand our client’s security requirements based on their business type and processes related to it. Along with identifying critical 
-                  loopholes in our client systems, ISECURION also provides support in remediation by aligning them with <Link href="/services/vulnerability-assessment-penetration-testing" className="hover:underline text-[#0F66CA]" >industry best practices</Link>  and <Link href="/services/iso-27001" className="hover:underline text-[#0F66CA]"> compliance requirements</Link>.
+                Our business oriented approach helps us understand our client’s security requirements based on their business type and processes related to it. Along with identifying critical
+                loopholes in our client systems, ISECURION also provides support in remediation by aligning them with <Link href="/services/vulnerability-assessment-penetration-testing" className="hover:underline text-[#0F66CA]" >industry best practices</Link>  and <Link href="/services/iso-27001" className="hover:underline text-[#0F66CA]"> compliance requirements</Link>.
               </p>
             </div>
           </Animation>
@@ -327,13 +325,20 @@ function About() {
                   key={item.id}
                   className="w-full max-w-[420px] rounded-md border-t-[5px] border-[#56A0D2] bg-gradient-to-b from-[#080E1B] to-[#050A15] px-4 pb-6 pt-[26px] sm:w-[calc(50%-12px)] sm:max-w-none lg:w-[calc(33.333%-16px)]"
                 >
-                  {/* Logo */}
-                  <div className="flex h-[100px] items-start">
-                    <Image
-                      src={item.logo}
-                      alt={item.alt}
-                      className={`w-auto object-contain ${item.logoClass}`}
-                    />
+                  {/* Logo / Text */}
+                  <div className="flex h-[100px] items-center">
+                    {item.logoText ? (
+                      <p className="text-[24px] font-bold tracking-[-0.5px] sm:text-[28px]">
+                        <span className="text-[#3169B2]">CERT-In</span>{" "}
+                        <span className="text-[#C9D3E2]">Certified</span>
+                      </p>
+                    ) : (
+                      <Image
+                        src={item.logo}
+                        alt={item.alt}
+                        className={`w-auto object-contain ${item.logoClass}`}
+                      />
+                    )}
                   </div>
 
                   {/* Title */}
@@ -698,7 +703,7 @@ function About() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  mt-8 gap-10">
             <div className="flex flex-col items-center gap-5 ">
-              
+
               <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={saleshead}
@@ -716,7 +721,7 @@ function About() {
               </p>
             </div>
             <div className="flex flex-col items-center gap-5 ">
-              
+
               <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={compliancehead}
@@ -734,7 +739,7 @@ function About() {
               </p>
             </div>
             <div className="flex flex-col items-center gap-5">
-              
+
               <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={rama}
@@ -753,7 +758,7 @@ function About() {
               </p>
             </div>
             <div className="flex flex-col items-center gap-5 ">
-              
+
               <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={offensivesecurityhead}
@@ -771,7 +776,7 @@ function About() {
               </p>
             </div>
             <div className="flex flex-col items-center gap-5">
-              
+
               <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={satish}
@@ -781,7 +786,7 @@ function About() {
               </div>
               <div className="w-fit px-5 py-2 rounded-3xl bg-[#F8FAFF]">
                 <p className="text-base sm:text-xl font-semibold text-[#19213D]">
-                  Sathish
+                  Satish Shekdar
                 </p>
 
               </div>
@@ -790,7 +795,7 @@ function About() {
               </p>
             </div>
             <div className="flex flex-col items-center gap-5 ">
-              
+
               <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={productlead}
@@ -807,7 +812,7 @@ function About() {
                 Product Lead
               </p>
             </div>
-            <div className="flex flex-col items-center gap-5"> 
+            <div className="flex flex-col items-center gap-5">
               <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
                   src={hrteam}
@@ -824,7 +829,7 @@ function About() {
                 HR Manager
               </p>
             </div>
-            
+
             <div className="flex flex-col items-center gap-5">
               <div className="w-[230px] h-[230px] rounded-full border border-[#455F6D] bg-linear-to-b from-[#032557] to-[#00000000] overflow-hidden flex  justify-center">
                 <Image
@@ -840,7 +845,7 @@ function About() {
 
               </div>
               <p className="text-base font-semibold text-[#2388FF]">
-                
+                Advisory
               </p>
             </div>
           </div>

@@ -832,7 +832,7 @@ function AadharAudit() {
                 >
                   <div className="flex">
                     <div className="space-y-1">
-                      <h3 className="text-sm font-semibold tracking-[3px] flex items-center  gap-2 text-[#3B9E6A]">
+                      <h3 className="text-sm font-semibold tracking-[2.5px] flex items-center  gap-2 text-[#3B9E6A]">
                         <span className="inline-block w-[35px] h-[1px] bg-[#3B9E6A]"></span>{" "}
                         {service.heading}
                       </h3>
@@ -841,7 +841,7 @@ function AadharAudit() {
                       </p>
                     </div>
                     <div className="w-[48px] h-[48px] flex items-center justify-center rounded-xl shrink-0 text-[#FFFFFF] bg-[#182331]">
-                      <Icon icon={service.Icon} />
+                      <Icon icon={service.Icon} className="w-7 h-7"/>
                     </div>
                   </div>
                   <div className="mt-6 ml-3">
