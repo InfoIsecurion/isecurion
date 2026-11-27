@@ -1,11 +1,8 @@
+
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "../lib/seo/site.config";
 import { services } from "../lib/seo/services";
 
-/**
- * Folder names inside src/app/services.
- * Each one must contain a page.tsx, otherwise remove it from this list.
- */
 const serviceFolders = [
   "aadhar-audit",
   "ai-augmented-red-team",
@@ -35,28 +32,37 @@ const serviceFolders = [
   "vulnerability-assessment-penetration-testing",
   "vciso",
   "web-application-security-assessment",
-  "dora-compliance"
+  "dora-compliance",
 ];
 
 const companyPages = ["/company/about", "/company/contact"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Pages already in services.ts and the folder list above are merged, with no duplicates
-  const servicePaths = Array.from(
-    new Set([...services.map((s) => s.path), ...serviceFolders.map((f) => `/services/${f}`)]),
+  const servicePaths = serviceFolders.map(
+    (folder) => `/services/${folder}`
+  );
+
+  // Combine all paths and remove duplicates globally
+  const allPaths = Array.from(
+    new Set([
+      ...services.map((service) => service.path),
+      ...servicePaths,
+      ...companyPages,
+    ])
   );
 
   return [
-    { url: absoluteUrl("/"), changeFrequency: "weekly", priority: 1 },
-    ...servicePaths.map((path) => ({
+    {
+      url: absoluteUrl("/"),
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    ...allPaths.map((path) => ({
       url: absoluteUrl(path),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    })),
-    ...companyPages.map((path) => ({
-      url: absoluteUrl(path),
-      changeFrequency: "yearly" as const,
-      priority: 0.6,
+      changeFrequency: companyPages.includes(path)
+        ? ("yearly" as const)
+        : ("monthly" as const),
+      priority: companyPages.includes(path) ? 0.6 : 0.8,
     })),
   ];
 }
